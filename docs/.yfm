@@ -5,7 +5,12 @@ langs: ['ru']
 docs-viewer:
   project-name: diplodoc
   favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
-  logo-src: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg
-  logo-link-preview: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg
   github-url-prefix: https://github.com/diplodoc-platform/docs/blob/master
-  logo-title: Diplodoc
+  logo-link-preview: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg
+  logo-options:
+    src: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg
+    src-dark: https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg
+    title: Diplodoc
+    img-has:
+      width: 158px
+      offset: true
