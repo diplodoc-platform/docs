@@ -6,7 +6,7 @@ meta:
 links:
 - title: Обзор системы
   description: Описание платформы, ее основные возможности, особенности и преимущества.
-  href: about.md.md
+  href: about.md
 - title: Как попробовать
   description: С чего начать работу
   href: how-it-work.md
