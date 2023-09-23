@@ -3,7 +3,7 @@ href: index.yaml
 items:
   - name: Обзор системы
     href: about.md
-  - name: Как поробовать
+  - name: Как попробовать
     href: how-it-work.md
   - name: Yandex Flavored Markdown
     href: index-yfm.md
