@@ -6,6 +6,7 @@ items:
   - name: Начало работы
     href: how-it-work.md
   - name: Yandex Flavored Markdown
+    expanded: true
     href: index-yfm.md
     items:
       - name: Синтаксис
