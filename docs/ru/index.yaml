@@ -7,7 +7,7 @@ links:
 - title: Обзор системы
   description: Описание платформы, ее основные возможности, особенности и преимущества.
   href: about.md.md
-- title: Как поробовать
+- title: Как попробовать
   description: С чего начать работу
   href: how-it-work.md
 - title: Yandex Flavored Markdown
