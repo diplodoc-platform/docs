@@ -1,6 +1,6 @@
 # Transformer
 
-[@doc-tools/transform](https://www.npmjs.com/package/@doc-tools/transform) — пакет для трансформации Yandex Flavored Markdown в HTML.
+[@diplodoc/transform](https://www.npmjs.com/package/@diplodoc/transform) — пакет для трансформации Yandex Flavored Markdown в HTML.
 
 Вы можете мспользовать его в своем коде для работы с текстом во время выполнения программы. Например, чтобы отображать пользовательский контент.
 
@@ -9,23 +9,23 @@
 1. Установите пакет:
 
     ```shell
-    npm i @doc-tools/transform
+    npm i @diplodoc/transform
     ```
 
 1. Подключите пакет в своем коде, используя функцию `require()` или `import()`:
 
     ```javascript
-    const transform = require('@doc-tools/transform');
+    const transform = require('@diplodoc/transform');
     ```
 
 1. Для корректного отображения подключите в проект CSS-стили и клиентские скрипты:
 
      ```css
-     @import '~@doc-tools/transform/dist/css/yfm.css';
+     @import '~@diplodoc/transform/dist/css/yfm.css';
      ```
 
      ```javascript
-     import '@doc-tools/transform/dist/js/yfm';
+     import '@diplodoc/transform/dist/js/yfm';
      ```
 
 ## Использование {#use}
@@ -53,7 +53,7 @@
 
 ```javascript
 const fs = require('fs');
-const transform = require('@doc-tools/transform');
+const transform = require('@diplodoc/transform');
 
 const content = fs.readFileSync(filePath, 'utf');
 const vars = { user: { name: 'Alice' } };
@@ -61,5 +61,5 @@ const vars = { user: { name: 'Alice' } };
 const {
     result: {html, meta, title, headings},
     logs,
-    } = transform(content, {vars});    
+    } = transform(content, {vars});
 ```

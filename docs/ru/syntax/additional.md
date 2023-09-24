@@ -51,7 +51,7 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 Импортируйте плагин из пакета следующий образом:
 ```
-const checkbox = require('@doc-tools/transform/lib/plugins/checkbox');
+const checkbox = require('@diplodoc/transform/lib/plugins/checkbox');
 ```
 
 Список задач представляет из себя список чекбоксов. Обычному элементу соответствует символ `- [ ]` , отмеченному — `- [x]`. В описании задачи можно использовать [строчное форматирование](./base.md#line).
