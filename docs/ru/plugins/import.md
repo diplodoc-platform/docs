@@ -16,11 +16,11 @@ npm i markdown-it-emoji
 
    {% note warning %}
 
-   При переопределении параметра `plugins` необходимо заново подключать [плагины YFM](index.md). Для этого импортируйте их из пакета `@doc-tools/transform` и передайте в массиве плагинов. 
+   При переопределении параметра `plugins` необходимо заново подключать [плагины YFM](index.md). Для этого импортируйте их из пакета `@diplodoc/transform` и передайте в массиве плагинов.
 
-   {% endnote %}  
+   {% endnote %}
 
-   1. Подключите плагин в своем коде, используя функцию `require()` или `import()`:  
+   1. Подключите плагин в своем коде, используя функцию `require()` или `import()`:
       ```javascript
       const plugin1 = require('<имя_плагина>');
       ```
@@ -29,18 +29,18 @@ npm i markdown-it-emoji
       ```javascript
       const {result: {html, meta}, logs} = transform(content, {plugins: [<имя_плагина>]});
       ```
-   
+
    **Пример:**
    ```javascript
    const fs = require('fs');
-   const transform = require('@doc-tools/transform');
-   const cut = require('@doc-tools/transform/lib/plugins/cut');
-   const sup = require('@doc-tools/transform/lib/plugins/sup');
+   const transform = require('@diplodoc/transform');
+   const cut = require('@diplodoc/transform/lib/plugins/cut');
+   const sup = require('@diplodoc/transform/lib/plugins/sup');
    const emoji = require('markdown-it-emoji');
    const content = fs.readFileSync(filePath, 'utf');
    const {result: {html, meta}, logs} = transform(content, {plugins: [cut, sup, emoji]});
    ```
- 
+
 
 - Builder
 

@@ -56,7 +56,7 @@ npm i highlight.js
 * значение — функция, определяющая язык.
 
 ```javascript
-const transform = require('@doc-tools/transform');
+const transform = require('@diplodoc/transform');
 const customLang = require('./custom-lang');
 
 const highlightLangs = { 'custom-lang': customLang };
