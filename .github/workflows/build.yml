@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        uses: ./actions/build
+        uses: diplodoc-platform/docs-build-action@v1
         with:
           revision: "pr-${{ github.event.pull_request.number }}"
           project-name: ${{ secrets.DOCS_PROJECT_NAME }}
