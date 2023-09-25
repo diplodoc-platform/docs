@@ -10,6 +10,9 @@ docs-viewer:
   logo-options:
     src: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg
     src-dark: https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg
+    src-preview:
+      ru: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-share-doc-ru.png
+      default: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-share-doc-eng.png
     title: Diplodoc
     img-has:
       width: 158px
