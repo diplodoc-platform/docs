@@ -2,6 +2,10 @@ disableLiquid: true
 allowHTML: true
 langs: ['ru']
 
+resources:
+  style:
+    - _assets/style/custom.css
+
 docs-viewer:
   project-name: diplodoc
   favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
