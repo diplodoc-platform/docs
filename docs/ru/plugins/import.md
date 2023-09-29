@@ -44,7 +44,7 @@ npm i markdown-it-emoji
 
 - Builder
 
-   1. Перенесите установленный плагин в папку `./plugins` в пакете `@doc-tools/docs`.
+   1. Перенесите установленный плагин в папку `./plugins` в пакете `@diplodoc/cli`.
 
    {% note tip %}
 

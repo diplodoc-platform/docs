@@ -1,6 +1,6 @@
 # Сборка
 
-[Пакет](https://www.npmjs.com/package/@doc-tools/docs) предоставляет команду `yfm` интерфейса командной строки.
+[Пакет](https://www.npmjs.com/package/@diplodoc/cli) предоставляет команду `yfm` интерфейса командной строки.
 
 ## HTML {#html}
 
