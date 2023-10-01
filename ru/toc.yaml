@@ -83,7 +83,7 @@ items:
                 href: tools/docs/singlepage.md
               - name: Выкладка на S3
                 href: tools/docs/publish-s3.md
-          - name: Библиотеа Mermaid
+          - name: Библиотека Mermaid
             href: tools/mermaid.md
       - name: Плагины
         items:
