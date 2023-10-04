@@ -2,9 +2,9 @@
 
 Исходные файлы этого документа и инструментов YFM хранятся в репозиториях:
 
-* [Документация YFM](https://github.com/yandex-cloud/yfm-documentation).
-* [Transformer](https://github.com/yandex-cloud/yfm-transform).
-* [Builder](https://github.com/yandex-cloud/docs).
+* [Документация YFM](https://github.com/diplodoc-platform/docs).
+* [Transformer](https://github.com/diplodoc-platform/transform).
+* [Builder](https://github.com/diplodoc-platform/cli).
 
 Баги и предложения по улучшению можно заводить в виде GitHub issues в соответствующем репозитории.
 
