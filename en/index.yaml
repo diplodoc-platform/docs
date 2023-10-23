@@ -1,0 +1,18 @@
+title: Diplodoc
+description: Diplodoc - платформа работы с документацией в парадигме Documentation as a Code. 
+meta:
+  title: Metadata
+  noIndex: true
+links:
+- title: Overview
+  description: Platform Overview, Capabilities and Benefits.
+  href: about.md
+- title: Quick Start
+  description: How to start
+  href: how-it-work.md
+- title: Yandex Flavored Markdown
+  description: Definition for Yandex Flavored Markdown.
+  href: index-yfm.md
+
+   
+  

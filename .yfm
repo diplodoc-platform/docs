@@ -1,6 +1,6 @@
 disableLiquid: true
 allowHTML: true
-langs: ['ru']
+langs: ['en','ru']
 
 resources:
   style:
@@ -8,6 +8,7 @@ resources:
 
 docs-viewer:
   project-name: diplodoc
+  langs: ['en','ru']
   favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
   github-url-prefix: https://github.com/diplodoc-platform/docs/blob/master
   logo-link-preview: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg
