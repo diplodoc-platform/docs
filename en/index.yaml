@@ -1,0 +1,18 @@
+title: Diplodoc
+description: Diplodoc Platform is open platform for work with your documentation in accordance with "Documentation as a Code" paradigm. 
+meta:
+  title: Metadata
+  noIndex: true
+links:
+- title: Overview
+  description: Platform Overview, Capabilities and Benefits.
+  href: about.md
+- title: Quick Start
+  description: How to start
+  href: how-it-work.md
+- title: Yandex Flavored Markdown
+  description: Definition for Yandex Flavored Markdown.
+  href: index-yfm.md
+
+   
+  
