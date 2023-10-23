@@ -1,1 +1,0 @@
-# Yandex Flavored Markdown

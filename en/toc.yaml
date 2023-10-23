@@ -1,9 +1,0 @@
-title: Diplodoc
-href: index.yaml
-items:
-  - name: Overview
-    href: about.md
-  - name: Quick start
-    href: how-it-work.md
-  - name: Yandex Flavored Markdown  
-    href: index-yfm.md
