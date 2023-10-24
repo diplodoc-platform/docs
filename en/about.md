@@ -1,6 +1,6 @@
 # Diplodoc
 
-Diplodoc Platform is open platform for work with your documentation in accordance with "Documentation as a Code" paradigm.
+Diplodoc is an open-source platform for working with your documentation in the "Documentation as a Code" paradigm.
 Simple and comfortable solution for everyone.
 
 ## Advantages of the platform
