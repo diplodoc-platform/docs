@@ -1,9 +1,3 @@
-[*term]: Explaining a term or abbreviation using definition syntax.
-The _term_ definition may *include* [basic markup](base.md):
-* lists;
-* links;
-* images, etc.
-
 # Definition
 
 The syntax for definitions is:
@@ -28,3 +22,9 @@ At the moment, the use of definitions in code blocks is possible only if the cod
 {% endnote %}
 
 ![terms_sample](../_images/terms_sample.png)
+
+[*term]: Explaining a term or abbreviation using definition syntax.
+The _term_ definition may *include* [basic markup](base.md):
+* lists;
+* links;
+* images, etc.
