@@ -1,5 +1,26 @@
 title: Diplodoc
 href: index.yaml
+navigation:
+  logo:
+    url: 'https://diplodoc.com'
+    dark:
+      icon: 'https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg'
+    light:
+      icon: 'https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg'
+  header:
+    leftItems:
+      - text: 'Как все устроено'
+        type: 'link'
+        url: 'https://diplodoc.com/how-to/'
+      - text: 'Документация'
+        type: 'link'
+        url: 'https://diplodoc.com/docs/ru/'
+      - text: 'Тelegram'
+        type: 'link'
+        url: 'https://t.me/diplodoc_ru'
+      - text: 'Github'
+        type: 'link'
+        url: 'https://github.com/diplodoc-platform/'
 items:
   - name: Обзор системы
     href: about.md
@@ -49,6 +70,8 @@ items:
             href: project/index.md
           - name: Оглавление
             href: project/toc.md
+          - name: Расширенная навигация
+            href: project/navigation.md
           - name: Разводящая страница
             href: project/leading-page.md
           - name: Пресеты переменных
