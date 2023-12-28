@@ -11,10 +11,10 @@ navigation:
     leftItems:
       - text: 'Как все устроено'
         type: 'link'
-        url: '../how-to/'
+        url: '../../how-to/'
       - text: 'Документация'
         type: 'link'
-        url: '../docs/ru/'
+        url: '../../docs/ru/'
       - text: 'Тelegram'
         type: 'link'
         url: 'https://t.me/diplodoc_ru'
