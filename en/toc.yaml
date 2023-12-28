@@ -11,10 +11,10 @@ navigation:
     leftItems:
       - text: 'How it works'
         type: 'link'
-        url: '../how-to/'
+        url: '../../how-to/'
       - text: 'Documentation'
         type: 'link'
-        url: '../docs/en/'
+        url: '../../docs/en/'
       - text: 'Github'
         type: 'link'
         url: 'https://github.com/diplodoc-platform/'
