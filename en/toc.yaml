@@ -2,7 +2,7 @@ title: Diplodoc
 href: index.yaml
 navigation:
   logo:
-    url: 'https://diplodoc.com'
+    url: '../en'
     dark:
       icon: 'https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg'
     light:
@@ -11,10 +11,10 @@ navigation:
     leftItems:
       - text: 'How it works'
         type: 'link'
-        url: 'https://diplodoc.com/how-to/'
+        url: '../how-to/'
       - text: 'Documentation'
         type: 'link'
-        url: 'https://diplodoc.com/docs/en/'
+        url: '../docs/en/'
       - text: 'Github'
         type: 'link'
         url: 'https://github.com/diplodoc-platform/'
