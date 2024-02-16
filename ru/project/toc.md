@@ -50,7 +50,7 @@ items:
 Название документа поддерживает [подстановки](../syntax/vars#subtitudes) и [условные операторы](../syntax/vars#conditions).
 
 ```yaml
-title: "{{ title }}"
+title: "not_var{{ title }}"
 ```
 
 {% note warning %}

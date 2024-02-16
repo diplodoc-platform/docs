@@ -63,7 +63,7 @@ default:
 ```
 Тогда использование циклов приведет к следующим результатам:
 ```markdown
-Prefix {% for user in users %} {{user}} {% endfor %} Postfix
+Prefix {% for user in users %} not_var{{user}} {% endfor %} Postfix
 ```
 Prefix Alice Mark Postfix
 
@@ -72,7 +72,7 @@ Prefix
 
 {% for user in users %}
 
-{{user}}
+not_var{{user}}
 
 {% endfor %}
 
@@ -110,15 +110,15 @@ default:
 Тогда использование фильтров приведет к следующим результатам:
 
 ```markdown
-Hello {{ user.name | capitalize }}!
+Hello not_var{{ user.name | capitalize }}!
 ```
 
 Hello Alice!
 
 ```markdown
-{{ users | length }}
+not_var{{ users | length }}
 
-{{ user.name | length }} | length
+not_var{{ user.name | length }} | length
 ```
 2
 
@@ -147,9 +147,9 @@ default:
 
 Тогда использование функций приведет к следующим результатам:
 ```markdown
-Hello P{{ user.name.slice(1) }}!
+Hello Pnot_var{{ user.name.slice(1) }}!
 
-Hello P{{ user.name.slice(1, 2) }}vel!
+Hello Pnot_var{{ user.name.slice(1, 2) }}vel!
 ```
 Hello Pasha!
 
