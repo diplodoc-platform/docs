@@ -118,3 +118,8 @@ items:
         href: contribution.md
       - name: Релизы YFM
         href: changelog.md
+  - name: Вакансии
+    hidden: true
+    items:
+      - name: Старший разработчик
+        href: vacancy.md

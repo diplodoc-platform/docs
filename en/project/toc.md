@@ -50,7 +50,7 @@ Possible comparison operators: `==`, `!=`, `<`, `>`, `<=`, `>=`.
 Document title supports [substitutions](../syntax/vars#subtitudes) and [conditional operators](../syntax/vars#conditions).
 
 ```yaml
-title: "{{ title }}"
+title: "not_var{{ title }}"
 ```
 
 {% note warning %}

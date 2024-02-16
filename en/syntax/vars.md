@@ -12,13 +12,13 @@ Methods for using variables in documents are discussed below.
 To substitute a value with a variable in the text, enter the variable name with double curly brackets before and after.
 
 ```
-Some text {{ variable_name }} text continued.
+Some text not_var{{ variable_name }} text continued.
 ```
 
 If the text contains double curly brackets but doesn't require variable substitution, add `not_var` before the construction.
 
 ```
-Some text not_var{{ also_text }} text continued.
+Some text not_varnot_var{{ also_text }} text continued.
 ```
 
 ## Conditional operators {#conditions}
@@ -50,7 +50,7 @@ Use loops to output repetitive content for each element of an array. Inside the 
 ```
 {% for variable_name in array_name %}
 
-Some text {{ variable_name }} text continued.
+Some text not_var{{ variable_name }} text continued.
 
 {% endfor %}
 ```
@@ -69,7 +69,7 @@ default:
 Then using loops will result in the following:
 
 ```markdown
-Prefix {% for user in users %} {{user}} {% endfor %} Postfix
+Prefix {% for user in users %} not_var{{user}} {% endfor %} Postfix
 ```
 
 Prefix Alice Mark Postfix
@@ -79,7 +79,7 @@ Prefix
 
 {% for user in users %}
 
-{{user}}
+not_var{{user}}
 
 {% endfor %}
 
@@ -118,15 +118,15 @@ default:
 Then using filters will result in the following:
 
 ```markdown
-Hello {{ user.name | capitalize }}!
+Hello not_var{{ user.name | capitalize }}!
 ```
 
 Hello Alice!
 
 ```markdown
-{{ users | length }}
+not_var{{ users | length }}
 
-{{ user.name | length }} | length
+not_var{{ user.name | length }} | length
 ```
 
 2
@@ -156,9 +156,9 @@ default:
 Then using functions will result in the following:
 
 ```markdown
-Hello P{{ user.name.slice(1) }}!
+Hello Pnot_var{{ user.name.slice(1) }}!
 
-Hello P{{ user.name.slice(1, 2) }}vel!
+Hello Pnot_var{{ user.name.slice(1, 2) }}vel!
 ```
 
 Hello Pasha!
