@@ -6,7 +6,7 @@ resources:
     - _assets/style/custom.css
 
 translate:
-  folderId: b1gpieerntm5sa95psrk
+  folder: b1gpieerntm5sa95psrk
 
 docs-viewer:
   project-name: diplodoc

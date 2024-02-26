@@ -1,0 +1,13 @@
+default:
+  required: '<b style="color:red" title="Обязательный">*</b>'
+  fmt:
+    glob: '[Glob](https://en.wikipedia.org/wiki/Glob_(programming))'
+    locale: '[Locale](https://en.wikipedia.org/wiki/ISO_639-1)'
+    iam-token: '[IAM‑токен](https://cloud.yandex.ru/ru/docs/translate/api-ref/authentication)'
+    api-key: '[API‑ключ](https://cloud.yandex.ru/ru/docs/iam/operations/api-key/create)'
+  translate:
+    google-support: false
+    glossary-support: false
+    source: ru-RU
+    source-lang: ru
+    target: en-US
