@@ -1,6 +1,6 @@
 ---
 meta:
-  tags: ['translate', 'xliff', 'cat']
+  tags: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'internationalization']
 ---
 # Локализация
 
@@ -11,6 +11,10 @@ meta:
 Поддерживается перевод как `*.md` файлов так и `*.json` (в том числе `*.yaml`) файлов по [описанным схемам](#json-schemas).
 
 ## Автоматический перевод {#auto}
+
+```bash
+{{PROGRAM}} translate --source {{translate.source}} --target {{translate.target}}
+```
 
 Автоматический перевод может быть выполнен с использованием таких сервисов, как [Yandex Translate](https://cloud.yandex.ru/docs/translate/){% if translate.google-support == true %} или [Cloud Translate](https://cloud.google.com/translate/docs){% endif %}.
 
@@ -24,9 +28,23 @@ meta:
 
 Если лимиты превышены, команда завершится с ошибкой `TRANSLATE_LIMIT_EXCEED`.
 
+### Использование
+
+* Перевести проект в текущей директории с `{{translate.source-lang}}` на `{{translate.target-lang}}`:
+
+  ```
+  {{PROGRAM}} translate --source {{translate.source-lang}} --target {{translate.target-lang}}
+  ```
+
+* Не переводить скрытые файлы в проекте:
+
+  ```
+  {{PROGRAM}} translate --exclude {{translate.source-lang}}/**/_*.* --source {{translate.source-lang}} --target {{translate.target-lang}}
+  ```
+
 ### Параметры вызова
 
-#### Основные
+##### Основные
 
 #|
 || Параметр             | Формат    | Описание ||
@@ -74,7 +92,7 @@ meta:
 ||
 |#
 
-#### Система переводов
+##### Система переводов
 
 {% list tabs %}
 
@@ -109,3 +127,26 @@ meta:
   |#
 
 {% endlist %}
+
+### Файл фильтр
+
+Если необходимо ограничить переводимые тексты фиксированным набором файлов, механизм гибких фильтров `include/exclude` может не подойти.
+В таком случае можно сформировать файл с расширением `*.list`. Например `translate.list`.
+
+```
+# Файл поддерживает комментарии и пустые строки
+
+# Пути до файлов должны быть сформированы относительно самого файла translate.list.
+./some/path/to/translated/file-1.md
+./some/path/to/translated/file-2.md
+
+# Пути до файлов не должны находиться выше чем translate.list.
+# Пример неправильного пути:
+../some/path/to/translated/file.md
+```
+
+Пример вызова команды с файлом фильтром
+
+```bash
+{{PROGRAM}} translate --input ./translate.list --source {{translate.source-lang}} --target {{translate.target-lang}}
+```
