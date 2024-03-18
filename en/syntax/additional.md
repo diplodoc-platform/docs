@@ -51,7 +51,7 @@ You can vote to include footnote support in YFM by default in [GitHub issues](ht
 
 Import plugin from package like so:
 ```
-const checkbox = require('@doc-tools/transform/lib/plugins/checkbox');
+const checkbox = require('@diplodoc/transform/lib/plugins/checkbox');
 ```
 
 The task list is a list of checkboxes. A normal item is represented by the `- [ ]` symbol, a checked one by `- [x]`. You can use [line formatting](./base.md#line) in the task description.

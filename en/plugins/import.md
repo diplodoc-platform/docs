@@ -30,9 +30,9 @@ npm i markdown-it-emoji
 
    ```javascript
    const fs = require('fs');
-   const transform = require('@doc-tools/transform');
-   const cut = require('@doc-tools/transform/lib/plugins/cut');
-   const sup = require('@doc-tools/transform/lib/plugins/sup');
+   const transform = require('@diplodoc/transform');
+   const cut = require('@diplodoc/transform/lib/plugins/cut');
+   const sup = require('@diplodoc/transform/lib/plugins/sup');
    const emoji = require('markdown-it-emoji');
    const content = fs.readFileSync(filePath, 'utf');
    const {result: {html, meta}, logs} = transform(content, {plugins: [cut, sup, emoji]});
@@ -40,7 +40,7 @@ npm i markdown-it-emoji
 
    {% note warning %}
 
-   When overriding the `plugins` parameter, you must reconnect [YFM plugins](index.md). To do this, import them from the `@doc-tools/transform` package and pass them in the plugin array.
+   When overriding the `plugins` parameter, you must reconnect [YFM plugins](index.md). To do this, import them from the `@diplodoc/transform` package and pass them in the plugin array.
 
    {% endnote %}
 
