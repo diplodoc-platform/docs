@@ -9,7 +9,7 @@ Use it in your code to work with text during program execution. For example, to 
 1. Install a package:
 
     ```shell
-    npm i @doc-tools/transform
+    npm i @diplodoc/transform
     ```
 
 1. Add the package in your code using the `require()` or `import()` function:
