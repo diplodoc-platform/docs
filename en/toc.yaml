@@ -1,5 +1,7 @@
 title: Diplodoc
 href: index.yaml
+analytics:
+  text: 'By clicking "Accept," you agree to our website using Yandex Metrics cookies to help us provide better services and collect analytical data. You also have an option to "Decline".'
 navigation:
   logo:
     url: '../en'
@@ -23,7 +25,7 @@ items:
     href: about.md
   - name: Quick start
     href: how-it-work.md
-  - name: Yandex Flavored Markdown  
+  - name: Yandex Flavored Markdown
     expanded: true
     href: index-yfm.md
     items:
