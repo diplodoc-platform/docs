@@ -5,6 +5,9 @@ resources:
   style:
     - _assets/style/custom.css
 
+translate:
+  folder: b1gpieerntm5sa95psrk
+
 docs-viewer:
   project-name: diplodoc
   langs: ['en','ru']
