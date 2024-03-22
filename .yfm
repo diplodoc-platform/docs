@@ -24,3 +24,5 @@ docs-viewer:
     img-has:
       width: 158px
       offset: true
+  gtm:
+    id: GTM-D84DCCD2
