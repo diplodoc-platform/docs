@@ -57,7 +57,7 @@ A set of languages is passed as an object, with:
 * A function that defines the language as the value.
 
 ```javascript
-const transform = require('@doc-tools/transform');
+const transform = require('@diplodoc/transform');
 const customLang = require('./custom-lang');
 
 const highlightLangs = { 'custom-lang': customLang };
