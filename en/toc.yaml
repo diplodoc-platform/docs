@@ -15,16 +15,16 @@ navigation:
     light:
       icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
   header:
-    leftitems:
-      - text: "how it works"
-        type: "link"
-        url: "../../how-to/"
-      - text: "documentation"
-        type: "link"
-        url: "../../docs/en/"
-      - text: "github"
-        type: "link"
-        url: "https://github.com/diplodoc-platform/"
+    leftItems:
+      - text: 'How it works'
+        type: 'link'
+        url: '../../how-to/'
+      - text: 'Documentation'
+        type: 'link'
+        url: '../../docs/en/'
+      - text: 'Github'
+        type: 'link'
+        url: 'https://github.com/diplodoc-platform/'
 items:
   - name: Overview
     href: about.md
