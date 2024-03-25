@@ -2,6 +2,8 @@ title: Diplodoc
 href: index.yaml
 analytics:
   text: "We use cookies to ensure that you have the best experience on our website. If you continue to use our website, we assume that you are happy with it."
+  buttons:
+    accept: "OK"
 navigation:
   logo:
     url: "../en"

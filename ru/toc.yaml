@@ -2,6 +2,8 @@ title: Diplodoc
 href: index.yaml
 analytics:
   text: "Мы используем файлы cookie, чтобы вы могли наилучшим образом пользоваться нашим веб-сайтом. Если вы продолжаете использовать наш веб-сайт, мы полагаем, что вы согласны с таким использованием."
+  buttons:
+    accept: "OK"
 navigation:
   logo:
     url: "../ru"
@@ -125,4 +127,3 @@ items:
     items:
       - name: Старший разработчик
         href: vacancy.md
-
