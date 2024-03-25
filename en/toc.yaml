@@ -1,7 +1,7 @@
 title: Diplodoc
 href: index.yaml
 analytics:
-  text: "We use [cookies](https://yandex.com/legal/cookies_policy_eng) to ensure that you have the best experience on our website. If you continue to use our website, we assume that you are happy with it."
+  text: 'We use <a href="https://yandex.com/legal/cookies_policy_eng">cookies</a> to ensure that you have the best experience on our website. If you continue to use our website, we assume that you are happy with it.'
   buttons:
     accept:
       text: "Ok"
