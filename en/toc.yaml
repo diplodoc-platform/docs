@@ -1,12 +1,19 @@
 title: Diplodoc
 href: index.yaml
+analytics:
+  text: 'We use <a href="https://yandex.com/legal/cookies_policy_eng">cookies</a> to ensure that you have the best experience on our website. If you continue to use our website, we assume that you are happy with it.'
+  buttons:
+    accept:
+      text: "Ok"
+      theme: "accent"
+      size: "xl"
 navigation:
   logo:
-    url: '../en'
+    url: "../en"
     dark:
-      icon: 'https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg'
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg"
     light:
-      icon: 'https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg'
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
   header:
     leftItems:
       - text: 'How it works'
@@ -23,7 +30,7 @@ items:
     href: about.md
   - name: Quick start
     href: how-it-work.md
-  - name: Yandex Flavored Markdown  
+  - name: Yandex Flavored Markdown
     expanded: true
     href: index-yfm.md
     items:

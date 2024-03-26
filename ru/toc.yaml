@@ -1,26 +1,33 @@
 title: Diplodoc
 href: index.yaml
+analytics:
+  text: 'Мы используем <a href="https://yandex.ru/legal/cookies_policy">файлы cookie</a>, чтобы вы могли наилучшим образом пользоваться нашим веб-сайтом. Если вы продолжаете использовать наш веб-сайт, мы полагаем, что вы согласны с таким использованием.'
+  buttons:
+    accept:
+      text: "Ок"
+      theme: "accent"
+      size: "xl"
 navigation:
   logo:
-    url: '../ru'
+    url: "../ru"
     dark:
-      icon: 'https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg'
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg"
     light:
-      icon: 'https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg'
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
   header:
     leftItems:
-      - text: 'Как все устроено'
-        type: 'link'
-        url: '../../how-to/'
-      - text: 'Документация'
-        type: 'link'
-        url: '../../docs/ru/'
-      - text: 'Тelegram'
-        type: 'link'
-        url: 'https://t.me/diplodoc_ru'
-      - text: 'Github'
-        type: 'link'
-        url: 'https://github.com/diplodoc-platform/'
+      - text: "Как все устроено"
+        type: "link"
+        url: "../../how-to/"
+      - text: "Документация"
+        type: "link"
+        url: "../../docs/ru/"
+      - text: "Тelegram"
+        type: "link"
+        url: "https://t.me/diplodoc_ru"
+      - text: "Github"
+        type: "link"
+        url: "https://github.com/diplodoc-platform/"
 items:
   - name: Обзор системы
     href: about.md
