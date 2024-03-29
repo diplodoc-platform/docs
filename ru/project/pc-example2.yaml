@@ -20,7 +20,7 @@ blocks:
         desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover.png'
         mobile: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover-mini.png'
       color: '#C6FE4D'
-      fullWidth: true
+      fullWidth: false
 
   - type: 'extended-features-block'
     title:
