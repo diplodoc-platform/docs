@@ -8,8 +8,8 @@ blocks:
     description: 'Платформа для создания технической документации в концепции Docs as Сode с открытым исходным кодом. Простое и удобное решение для развёртывания документации больших и маленьких команд.'
     background:
       image:
-        mobile: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover-mini.png'
-        desktop: '../../_images/mountain.jpg'
+        mobile: '../../_images/mountain.jpg'
+        desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover.png'
       color: '#C6FE4D'
       fullWidth: false
     buttons:
