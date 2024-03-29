@@ -21,6 +21,7 @@ blocks:
         mobile: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover-mini.png'
       color: '#C6FE4D'
       fullWidth: false
+    theme: 'light'
 
   - type: 'extended-features-block'
     title:
@@ -110,6 +111,7 @@ blocks:
           disableCompress: true
         paddingBottom: 'm'
         border: none
+        theme: 'light'
       - type: 'background-card'
         title: 'GitHub'
         text: 'Полная интеграция с системами контроля версий, в первую очередь, с GitHub — одним из основных инструментов разработки.'
@@ -118,6 +120,7 @@ blocks:
           disableCompress: true
         paddingBottom: 'm'
         border: none
+        theme: 'light'
       - type: 'background-card'
         title: 'Elasticsearch'
         text: 'Быстрая индексация и поиск на основе Elasticsearch для обеспечения релевантности и точности результатов запросов.'
@@ -126,6 +129,7 @@ blocks:
           disableCompress: true
         paddingBottom: 'm'
         border: none
+        theme: 'light'
 
   - type: 'icons-block'
     size: 'm'

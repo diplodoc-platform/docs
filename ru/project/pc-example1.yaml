@@ -7,17 +7,24 @@ blocks:
     verticalOffset: 'l'
     description: 'Платформа для создания технической документации в концепции Docs as Сode с открытым исходным кодом. Простое и удобное решение для развёртывания документации больших и маленьких команд.'
     background:
-      image:
-        mobile: '../../_images/mountain.jpg'
-        desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover.png'
-      color: '#C6FE4D'
-      fullWidth: false
+      light:
+        image:
+          mobile: '../../_images/mountain.jpg'
+          desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover.png'
+        color: '#C6FE4D'
+        fullWidth: false
+      dark:
+        image:
+          mobile: '../../_images/mountain.jpg'
+          desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover-dark.png'
+        color: '#C6FE4D'
+        fullWidth: false
     buttons:
       - text: 'Начать'
         primary: true
         theme: 'outlined'
         size: 'promo'
-        url: '/quickstart'
+        url: '/'
       - text: 'GitHub'
         primary: true
         theme: 'outlined'
@@ -181,6 +188,7 @@ blocks:
       - type: 'background-card'
         title: 'Обсудить пилотный проект'
         text: 'Расскажите нам про свой проект и пожелания — команда Diplodoc поможет вам сделать документацию.'
+        theme: 'light'
         background:
           src: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-card-01.png'
           disableCompress: true
@@ -193,6 +201,7 @@ blocks:
       - type: 'background-card'
         title: 'Попробовать самостоятельно'
         text: 'Создайте и опубликуйте проект документации для вашего продукта.'
+        theme: 'light'
         background:
           src: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-card-02.png'
           disableCompress: true
