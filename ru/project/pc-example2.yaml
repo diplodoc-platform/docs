@@ -16,12 +16,18 @@ blocks:
 
       Система выполняет основные операции на Node.js и React.'
     background:
-      image:
-        desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover.png'
-        mobile: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover-mini.png'
-      color: '#C6FE4D'
-      fullWidth: false
-    theme: 'light'
+      light:
+        image:
+          desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover.png'
+          mobile: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover-mini.png'
+        color: '#C6FE4D'
+        fullWidth: false
+      dark:
+        image:
+          desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover-dark.png'
+          mobile: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover-mini.png'
+        color: '#C6FE4D'
+        fullWidth: false
 
   - type: 'extended-features-block'
     title:

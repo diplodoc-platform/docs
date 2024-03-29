@@ -188,7 +188,7 @@ blocks:
       - type: 'background-card'
         title: 'Обсудить пилотный проект'
         text: 'Расскажите нам про свой проект и пожелания — команда Diplodoc поможет вам сделать документацию.'
-        theme: 'light'
+        theme: 'raised'
         background:
           src: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-card-01.png'
           disableCompress: true
@@ -201,7 +201,7 @@ blocks:
       - type: 'background-card'
         title: 'Попробовать самостоятельно'
         text: 'Создайте и опубликуйте проект документации для вашего продукта.'
-        theme: 'light'
+        theme: 'raised'
         background:
           src: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-card-02.png'
           disableCompress: true
