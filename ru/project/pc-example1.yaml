@@ -197,6 +197,7 @@ blocks:
             theme: 'raised'
             url: '/#contact'
         border: none
+        theme: 'light'
       - type: 'background-card'
         title: 'Попробовать самостоятельно'
         text: 'Создайте и опубликуйте проект документации для вашего продукта.'
@@ -209,6 +210,7 @@ blocks:
             theme: 'raised'
             url: 'https://github.com/codespaces/new?repo=688437532'
         border: none
+        theme: 'light'
       - type: 'background-card'
         title: 'Посмотреть проект на GitHub'
         text: 'Мы выложили исходный код нашей платформы в открытый доступ. Вы можете помочь нам стать лучше.'
