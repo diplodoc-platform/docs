@@ -28,7 +28,7 @@ blocks:
     buttons:
       - text: 'Начать'
         primary: true
-        theme: 'outlined'
+        theme: 'dark'
         size: 'promo'
         url: '/quickstart'
       - text: 'GitHub'
