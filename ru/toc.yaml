@@ -82,6 +82,8 @@ items:
                 href: project/pc-example1.yaml
               - name: Пример 2
                 href: project/pc-example2.yaml
+              - name: Пример 3 (fullScreen mode)
+                href: project/pc-example3.yaml
           - name: Пресеты переменных
             href: project/presets.md
           - name: Файл конфигурации
