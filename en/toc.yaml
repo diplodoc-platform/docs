@@ -99,6 +99,16 @@ items:
             href: project/toc.md
           - name: Leading page
             href: project/leading-page.md
+          - name: Page constructor
+            items:
+              - name: Overview
+                href: project/page-constructor.md
+              - name: Example 1
+                href: project/pc-example1.yaml
+              - name: Example 2
+                href: project/pc-example2.yaml
+              - name: Example 3 (fullScreen mode)
+                href: project/pc-example3.yaml
           - name: Variable presets
             href: project/presets.md
           - name: Configuration file

@@ -1,0 +1,251 @@
+blocks:
+  - type: 'header-block'
+    width: 's'
+    offset: 'default'
+    title: 'Diplodoc'
+    resetPaddings: true
+    verticalOffset: 'l'
+    description: 'A platform with open-source code for creating technical documentation based on the concept of Docs as Code. A simple and convenient document management solution for large and small teams.'
+    background:
+      light:
+        image:
+          mobile: '../../_images/mountain.jpg'
+          desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover.png'
+          disableCompress: true
+        color: '#C6FE4D'
+        fullWidth: false
+      dark:
+        image:
+          mobile: '../../_images/mountain.jpg'
+          desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover-dark.png'
+          disableCompress: true
+        color: '#C6FE4D'
+        fullWidth: false
+    buttons:
+      - text: 'Quickstart'
+        primary: true
+        theme: 'outlined'
+        size: 'promo'
+        url: '/'
+      - text: 'GitHub'
+        primary: true
+        theme: 'outlined'
+        size: 'promo'
+        url: 'https://github.com/diplodoc-platform'
+
+  - type: 'extended-features-block'
+    title:
+      text: 'Platform Benefits'
+    items:
+      - title: 'Ease of Use'
+        icon: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/diplodoc-icon-1.svg'
+        text: 'Manage documents as if they were source code: in a familiar environment with minimal deployment and maintenance effort.'
+      - title: 'High Performance'
+        icon: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/diplodoc-icon-2.svg'
+        text: 'Quickly create, check, and format large documents. Accelerate your work with full integration into your CI/CD infrastructure.'
+      - title: 'Standard Markdown Format'
+        icon: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/diplodoc-icon-3.svg'
+        text: 'Simple syntax with built-in support for basic Markdown. Focus on the content itself, not on how to deliver it to the user.'
+      - title: 'Robust Functionality'
+        icon: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/diplodoc-icon-4.svg'
+        text: 'Create documents of any level of complexity, including those generated from a single source and containing variables. Flexible display and personalization options to ensure user satisfaction.'
+      - title: 'Integration with document management systems'
+        icon: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/diplodoc-icon-5.svg'
+        text: 'OpenAPI support out of the box. Facilitating the operation of specialized systems via the interface of connected external documents'
+      - title: 'Integrated Search Functionality'
+        icon: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/diplodoc-icon-6.svg'
+        text: 'The most typical use case for document searching on the platform, without extra costs or support efforts.'
+
+  - type: 'filter-block'
+    centered: true
+    title:
+      text: 'Trusted by users'
+    tags:
+      - id: 'one'
+        label: 'DoubleСloud'
+      - id: 'two'
+        label: 'Yandex Support'
+      - id: 'three'
+        label: 'Yandex Cloud'
+      - id: 'four'
+        label: 'YDB'
+      - id: 'five'
+        label: 'CatBoost'
+    colSizes:
+      all: 12
+      xl: 12
+      md: 12
+      sm: 12
+    items:
+      - tags:
+          - 'one'
+        card:
+          type: 'layout-item'
+          media:
+            image: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/diplodoc-tab-1.png'
+            disableCompress: true
+          border: true
+          content:
+            links:
+              - text: 'View documentation'
+                url: 'https://double.cloud/docs/en/'
+                theme: 'normal'
+                arrow: true
+                color: #54BA7E
+
+      - tags:
+          - 'two'
+        card:
+          type: 'layout-item'
+          media:
+            image: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-trust-support.png'
+            disableCompress: true
+          border: true
+          content:
+            links:
+              - text: 'View documentation'
+                url: 'https://yandex.ru/support2/audience/ru/'
+                theme: 'normal'
+                arrow: true
+                color: #54BA7E
+      - tags:
+          - 'three'
+        card:
+          type: 'layout-item'
+          media:
+            image: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/ddos-index-trust-yandex-cloud.png'
+            disableCompress: true
+          border: true
+          content:
+            links:
+              - text: 'View documentation'
+                url: 'https://cloud.yandex.ru/docs/compute/'
+                theme: 'normal'
+                arrow: true
+                color: #54BA7E
+      - tags:
+          - 'four'
+        card:
+          type: 'layout-item'
+          media:
+            image: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/ddos-index-trust-ydb.png'
+            disableCompress: true
+          border: true
+          content:
+            links:
+              - text: 'View documentation'
+                url: 'https://ydb.tech/en/docs/'
+                theme: 'normal'
+                arrow: true
+                color: #54BA7E
+      - tags:
+          - 'five'
+        card:
+          type: 'layout-item'
+          media:
+            image: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/ddos-index-trust-yandex-cat.png'
+            disableCompress: true
+          border: true
+          content:
+            links:
+              - text: 'View documentation'
+                url: 'https://catboost.ai/en/docs/'
+                theme: 'normal'
+                arrow: true
+                color: #54BA7E
+
+  - type: 'card-layout-block'
+    title: 'How does it work?'
+    colSizes:
+      all: 12
+      md: 4
+      sm: 6
+    children:
+      - type: 'layout-item'
+        content:
+          title: 'Architecture'
+          text: 'The Diplodoc platform has a client-server architecture, with the server part made up of Node.js components that generate and display documentation projects. This architecture ensures reliability and horizontal scaling, if needed.  '
+        media:
+          image: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-item-01-01.png'
+          disableCompress: true
+        fullScreen: true
+        border: true
+        disableCompress: true
+      - type: 'layout-item'
+        content:
+          title: 'Integration with GitHub'
+          text: 'Diplodoc''s end-to-end integration with GitHub provides a simple and stable method for creating and deploying documentation projects. GitHub is used as a repository for document source code and the execution of project pipelines.'
+        media:
+          image: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-item-01-02.png'
+          disableCompress: true
+        fullScreen: true
+        border: true
+        disableCompress: true
+      - type: 'layout-item'
+        content:
+          title: 'Deployment'
+          text: |
+            Companies using the Diplodoc service employ built-in mechanisms for document layout, indexing, and version tracking. Documents can be updated automatically or semi-automatically with the help of an administrator on the user's side.
+        media:
+          image: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-item-01-03.png'
+          disableCompress: true
+        fullScreen: true
+        border: true
+        disableCompress: true
+
+  - type: 'card-layout-block'
+    title: 'How to get started with Diplodoc'
+    children:
+      - type: 'background-card'
+        title: 'Discuss the pilot project'
+        text: 'Tell us about your project and goals, and the Diplodoc team will work with you to create documentation.'
+        background:
+          src: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-card-01.png'
+          disableCompress: true
+        paddingBottom: 'm'
+        buttons:
+          - text: 'Contact us'
+            theme: 'raised'
+            url: '/#contact'
+        border: none
+        theme: 'light'
+      - type: 'background-card'
+        title: 'Try it yourself'
+        text: 'Create and publish a documentation project for your product.'
+        background:
+          src: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-card-02.png'
+          disableCompress: true
+        paddingBottom: 'm'
+        buttons:
+          - text: 'Open online demo'
+            theme: 'raised'
+            url: 'https://github.com/codespaces/new?repo=688437532'
+        border: none
+        theme: 'light'
+      - type: 'background-card'
+        title: 'Check out the project on GitHub'
+        text: 'We released our source code to the public. Help us to get better'
+        background:
+          src: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-card-03.png'
+          disableCompress: true
+        paddingBottom: 'm'
+        buttons:
+          - text: 'Go to GitHub'
+            theme: 'raised'
+            url: 'https://github.com/diplodoc-platform'
+        theme: 'dark'
+        border: none
+
+  - type: 'icons-block'
+    size: 'm'
+    title: 'Join us'
+    items:
+      - src: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/github.svg'
+        text: 'GitHub'
+        url: 'https://github.com/diplodoc-platform'
+      - src: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/telegram.svg'
+        text: 'Telegram'
+        url: 'https://t.me/diplodoc_ru'
+      - src: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/stackoverflow.svg'
+        text: 'Stack Overflow'
+        url: 'https://stackoverflow.com/tags/diplodoc'
