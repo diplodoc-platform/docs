@@ -22,7 +22,7 @@ blocks:
     background:
       image:
         mobile: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover-mini.png'
-        desktop: '../../_images/mountain.jpg'
+        desktop: '../../_images/cover.png'
       color: '#C6FE4D'
       fullWidth: false
     buttons:
