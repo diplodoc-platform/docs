@@ -20,12 +20,14 @@ blocks:
         image:
           desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover.png'
           mobile: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover-mini.png'
+          disableCompress: true
         color: '#C6FE4D'
         fullWidth: false
       dark:
         image:
           desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover-dark.png'
           mobile: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-cover-mini.png'
+          disableCompress: true
         color: '#C6FE4D'
         fullWidth: false
 
@@ -87,18 +89,21 @@ blocks:
           text: 'Документационный проект из S3-совместимого хранилища выкладывается на Diplodoc.com.'
         media:
           image: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-item-03-01.png'
+          disableCompress: true
       - type: 'layout-item'
         content:
           title: 'Проксирование'
           text: 'Возможно проксирование с сайта клиента на сайт diplodoc.com для бесшовной интеграции.'
         media:
           image: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-item-03-02.png'
+          disableCompress: true
       - type: 'layout-item'
         content:
           title: 'Поиск'
           text: 'Поддержка поиска с помощью Elasticsearch.  '
         media:
           image: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/how-to-diplodoc/ddos-how-item-03-03.png'
+          disableCompress: true
       - type: 'layout-item'
         content:
           title: 'Локализация'
