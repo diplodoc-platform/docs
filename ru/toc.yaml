@@ -81,6 +81,16 @@ items:
             href: project/navigation.md
           - name: Разводящая страница
             href: project/leading-page.md
+          - name: Page constructor
+            items:
+              - name: Обзор
+                href: project/page-constructor.md
+              - name: Пример 1
+                href: project/pc-example1.yaml
+              - name: Пример 2
+                href: project/pc-example2.yaml
+              - name: Пример 3 (fullScreen mode)
+                href: project/pc-example3.yaml
           - name: Пресеты переменных
             href: project/presets.md
           - name: Файл конфигурации
