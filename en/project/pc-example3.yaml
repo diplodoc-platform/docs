@@ -24,12 +24,10 @@ blocks:
         fullWidth: false
     buttons:
       - text: 'Quickstart'
-        primary: true
         theme: 'outlined'
         size: 'promo'
         url: '/'
       - text: 'GitHub'
-        primary: true
         theme: 'outlined'
         size: 'promo'
         url: 'https://github.com/diplodoc-platform'
