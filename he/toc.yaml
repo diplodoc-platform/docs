@@ -1,0 +1,142 @@
+title: Diplodoc
+href: index.yaml
+analytics:
+  text: 'Мы используем <a href="https://yandex.ru/legal/cookies_policy">файлы cookie</a>, чтобы вы могли наилучшим образом пользоваться нашим веб-сайтом. Если вы продолжаете использовать наш веб-сайт, мы полагаем, что вы согласны с таким использованием.'
+  buttons:
+    accept:
+      text: "Ок"
+      theme: "accent"
+      size: "xl"
+navigation:
+  logo:
+    url: "../ru"
+    dark:
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg"
+    light:
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
+  header:
+    leftItems:
+      - text: "Как все устроено"
+        type: "link"
+        url: "../../how-to/"
+      - text: "Документация"
+        type: "link"
+        url: "../../docs/ru/"
+      - text: "Тelegram"
+        type: "link"
+        url: "https://t.me/diplodoc_ru"
+      - text: "Github"
+        type: "link"
+        url: "https://github.com/diplodoc-platform/"
+items:
+  - name: Обзор системы
+    href: about.md
+  - name: Начало работы
+    href: how-it-work.md
+  - name: Yandex Flavored Markdown
+    expanded: true
+    href: index-yfm.md
+    items:
+      - name: Синтаксис
+        items:
+          - name: Обзор
+            href: syntax/index.md
+          - name: Базовая разметка
+            href: syntax/base.md
+          - name: Списки
+            href: syntax/lists.md
+          - name: Таблицы
+            items:
+              - name: Простые таблицы
+                href: syntax/tables/gfm.md
+              - name: Многострочные таблицы
+                href: syntax/tables/multiline.md
+          - name: Заметки
+            href: syntax/notes.md
+          - name: Каты и табы
+            href: syntax/cuts-tabs.md
+          - name: Ссылки
+            href: syntax/links.md
+          - name: Медиа
+            href: syntax/media.md
+          - name: Фрагменты кода
+            href: syntax/code.md
+          - name: Комментарии и метаданные
+            href: syntax/meta.md
+          - name: Переменные
+            href: syntax/vars.md
+          - name: Всплывающие подсказки
+            href: syntax/term.md
+          - name: Дополнительные возможности
+            href: syntax/additional.md
+      - name: Настройки YFM-проекта
+        href: settings.md
+      - name: Организация YFM-проекта
+        items:
+          - name: Обзор
+            href: project/index.md
+          - name: Оглавление
+            href: project/toc.md
+          - name: Расширенная навигация
+            href: project/navigation.md
+          - name: Разводящая страница
+            href: project/leading-page.md
+          - name: Page constructor
+            items:
+              - name: Обзор
+                href: project/page-constructor.md
+              - name: Пример 1
+                href: project/pc-example1.yaml
+              - name: Пример 2
+                href: project/pc-example2.yaml
+              - name: Пример 3 (fullScreen mode)
+                href: project/pc-example3.yaml
+          - name: Пресеты переменных
+            href: project/presets.md
+          - name: Файл конфигурации
+            href: project/config.md
+          - name: Переиспользование контента
+            href: project/includes.md
+          - name: Файл конфигурации линтера
+            href: project/lint.md
+      - name: Инструменты и библиотеки
+        items:
+          - name: Transformer
+            items:
+              - name: Обзор
+                href: tools/transform/index.md
+              - name: Настройки
+                href: tools/transform/settings.md
+              - name: Подсветка кода
+                href: tools/transform/highlight.md
+          - name: Builder
+            items:
+              - name: Обзор
+                href: tools/docs/index.md
+              - name: Сборка
+                href: tools/docs/build.md
+              - name: Настройки сборки
+                href: tools/docs/settings.md
+              - name: Перевод
+                href: tools/docs/translate.md
+              - name: Одностраничная сборка
+                href: tools/docs/singlepage.md
+              - name: Выкладка на S3
+                href: tools/docs/publish-s3.md
+          - name: Библиотека Mermaid
+            href: tools/mermaid.md
+      - name: Плагины
+        items:
+          - name: Обзор
+            href: plugins/index.md
+          - name: Дополнительные плагины
+            href: plugins/import.md
+      - name: Внесение изменений
+        href: contribution.md
+      - name: Релизы YFM
+        href: changelog.md
+  - name: Вакансии
+    hidden: true
+    items:
+      - name: Старший разработчик
+        href: vacancy.md
