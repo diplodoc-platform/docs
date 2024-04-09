@@ -1,6 +1,6 @@
 # Builder
 
-[@doc-tools/docs](https://www.npmjs.com/package/@doc-tools/docs) is a package for building a documentation project with navigation, internal transitions, and full support for Yandex Flavored Markdown.
+[@diplodoc/cli](https://www.npmjs.com/package/@diplodoc/cli) is a package for building a documentation project with navigation, internal transitions, and full support for Yandex Flavored Markdown.
 
 A built project is a set of static HTML files that can be viewed locally or on a host, in GitHub Pages, or in [S3](publish-s3.md).
 
@@ -9,7 +9,7 @@ A built project is a set of static HTML files that can be viewed locally or on a
 To install the package, run this command:
 
 ```shell
-npm i @doc-tools/docs -g
+npm i @diplodoc/cli -g
 ```
 
 ## Commands

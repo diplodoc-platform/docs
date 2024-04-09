@@ -45,7 +45,7 @@ npm i markdown-it-emoji
    {% endnote %}
 
 - Builder
-   1. Move the installed plugin to the `./plugins` folder in the `@doc-tools/docs` package.
+   1. Move the installed plugin to the `./plugins` folder in the `@diplodoc/cli` package.
 
    {% note tip %}
 

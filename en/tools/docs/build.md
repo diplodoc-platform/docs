@@ -1,6 +1,6 @@
 # Build
 
-The [package](https://www.npmjs.com/package/@doc-tools/docs) provides the `yfm` CLI command.
+The [package](https://www.npmjs.com/package/@diplodoc/cli) provides the `yfm` CLI command.
 
 ## HTML {#html}
 
