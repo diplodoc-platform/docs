@@ -25,7 +25,7 @@ blocks:
       - text: 'Начать'
         theme: 'outlined'
         size: 'promo'
-        url: '/'
+        url: 'page-constructor.md'
       - text: 'GitHub'
         theme: 'outlined'
         size: 'promo'
