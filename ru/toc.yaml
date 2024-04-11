@@ -33,6 +33,8 @@ items:
     href: about.md
   - name: Начало работы
     href: how-it-work.md
+  - name: Начало работы
+    href: EgorB.md
   - name: Yandex Flavored Markdown
     expanded: true
     href: index-yfm.md
