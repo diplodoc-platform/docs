@@ -140,3 +140,6 @@ items:
     items:
       - name: Старший разработчик
         href: vacancy.md
+  - name: Yandex Open Source Jam 2024
+    hidden: true
+    href: jam.md
