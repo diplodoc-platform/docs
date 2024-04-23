@@ -50,4 +50,16 @@
   
 {% endlist %}
 
-3\. Ссылка на [воркшоп](https://github.com/diplodoc-platform/notconf-steps)
+3\. [Репозиторий воркшопа](https://github.com/diplodoc-platform/notconf-steps)
+4\. Основные шаги:
+```bash
+function step { rm -rf ./**; cp -fr ../steps/step-$1/ .; }
+
+git clone git@github.com:diplodoc-platform/notconf-steps.git steps
+# create <docs-example> gh project from scratch
+gh repo create
+cd docs-example
+
+# install our cli as an gh extension, may take some take
+gh extension install diplodoc-platform/gh-docs
+```
