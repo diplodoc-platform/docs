@@ -128,3 +128,4 @@ items:
         href: contribution.md
       - name: YFM releases
         href: changelog.md
+        hidden: true

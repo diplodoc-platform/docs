@@ -134,6 +134,7 @@ items:
       - name: Внесение изменений
         href: contribution.md
       - name: Релизы YFM
+        hidden: true
         href: changelog.md
   - name: Вакансии
     hidden: true
