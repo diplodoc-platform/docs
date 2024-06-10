@@ -2,7 +2,7 @@
 
 Tables with support inside cells for more than just simple content. Example, [lists](../lists.md), [code snippets](../code.md) and other tables.
 
-### Syntax {#syntax}
+## Syntax {#syntax}
 
 * a table starts with `#|` and ends with `|#`;
 * lines start and end with `||`;
@@ -28,7 +28,7 @@ Multiline tables do not contain headers, but they can be done by applying format
 || Text | Text ||
 |#
 
-### Multiline content {#multirow}
+## Multiline content {#multirow}
 
 Any multiline content can be placed in a table cell. For example, lists.
 
@@ -97,3 +97,113 @@ Text after other table||
 || 3
 | 4||
 |#
+
+
+## Cell Merging {#span}
+
+Cells can be merged vertically using the "^" symbol:
+
+```markdown
+#|
+|| Header1                | Header2      ||
+|| Text spanning two rows | Another text ||
+|| ^                      | More text    ||
+|#
+```
+
+**Result**
+
+#|
+|| Header1                | Header2      ||
+|| Text spanning two rows | Another text ||
+|| ^                      | More text    ||
+|#
+
+
+Horizontal merging is supported with the ">" symbol:
+
+```markdown
+#|
+|| Header1                   | Header2     ||
+|| Text spanning two columns | >           ||
+|| Another text              | More text   ||
+|#
+```
+
+**Result**
+
+#|
+|| Header1                   | Header2     ||
+|| Text spanning two columns | >           ||
+|| Another text              | More text   ||
+|#
+
+Merging symbols can be used together:
+
+```markdown
+#|
+|| Header1                                | Header2     | Header3    || 
+|| Text spanning two columns and two rows | >           | Text       ||
+|| ^                                      | >           | More text  ||
+|#
+```
+
+**Result**
+
+#|
+|| Header1                                | Header2     | Header3     ||
+|| Text spanning two columns and two rows | >           | Text        ||
+|| ^                                      | >           | More text   ||
+|#
+
+### Text Alignment in Cells
+
+To control the alignment of text in cells, you can use attribute syntax within the cells:
+
+```markdown
+#|
+|| Header1                                                     | Header2     | Header3    || 
+|| Text spanning two columns and two rows {.cell-align-center} | >           | Text      ||
+|| ^                                                           | >           | More text  ||
+|#
+```
+
+**Result**
+
+#|
+|| Header1                                           | Header2     | Header3 ||
+|| Text spanning two columns and two rows {.cell-align-center} | >        | Text      ||
+|| ^                                                | >        | More text  ||
+|#
+
+The following alignment options are available:
+
+- cell-align-top-left
+- cell-align-top-center
+- cell-align-top-right
+- cell-align-center
+- cell-align-bottom-left
+- cell-align-bottom-center
+- cell-align-bottom-right
+
+### Escaping Cell Merging Symbols
+
+To include a merging symbol as plain text in a cell, use escaping with "",
+i.e., "\^" and "\>".
+
+```markdown
+#|
+|| Header1                 | Header2 | Header3 || 
+|| Text in one cell        | \>      | Text    ||
+|| \^                      | \>      | More text ||
+|#
+```
+
+**Result**
+
+#|
+|| Header1                 | Header2 | Header3 ||
+|| Text in one cell        | \>      | Text    ||
+|| \^                      | \>      | More text ||
+|#
+
