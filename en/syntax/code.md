@@ -26,9 +26,14 @@ To make a code snippet a separate block, separate it from the rest of the text o
 
 To highlight the syntax, specify the language in which the code is written in the initial line. For example:
 
-```markdown
+````markdown
 ```sql
+  price= '2000'
+  size= '24'
+  color= 'primary'
+  variant= 'detailed'
 ```
+````
 
 The list of available languages can be found on [Github](https://github.com/highlightjs/highlight.js/tree/master/src/languages). For information on how to transfer an additional set of languages, see [Connecting an additional language](../tools/transform/highlight.md#add).
 
