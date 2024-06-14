@@ -1,4 +1,5 @@
 default:
+  platform: Default
   PROGRAM: yfm
   algorithms: |
     - Массив - и его отличие от списков
@@ -14,6 +15,6 @@ default:
     - OpenSearch/ElasticSearch - индекс по документациям
     - Redis - кеширование серверных ответов
     - Kubernetes/Kubernetes like - управление контейнерами
-    - Terraform + Helm - автоматическое разворачивание инсталяции, автоматический деплой 
+    - Terraform + Helm - автоматическое разворачивание инсталяции, автоматический деплой
     - ALB/API Gateway/Nginx - балансеры
     - Serverless - внутренние задачи инсталяции
