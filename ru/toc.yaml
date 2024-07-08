@@ -32,7 +32,7 @@ items:
   - name: Обзор системы
     href: about.md
   - name: Быстрый старт
-    href: how-it-work.md
+    href: quickstart.md
   - name: Yandex Flavored Markdown
     expanded: true
     href: index-yfm.md
