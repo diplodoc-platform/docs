@@ -221,14 +221,13 @@ items:
     hidden: true
   - name: Контрибьюторам    
     hidden: true
-      items:
-        - name: Участие в разрботке
-          href: readme.md
-          hidden: true
-        - name: Венесение вклада в документацию
-          href: readme.md
-          hidden: true
-        - name: Участие в переводах
-          href: readme.md
-          hidden: true
-    
+    items:
+      - name: Участие в разрботке
+        href: readme.md
+        hidden: true
+      - name: Венесение вклада в документацию
+        href: readme.md
+        hidden: true
+      - name: Участие в переводах
+        href: readme.md
+        hidden: true
