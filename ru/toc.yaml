@@ -170,7 +170,7 @@ items:
           - name: Пресеты переменных
             href: project/presets.md
       - name: Автоматизация переводов
-        href: docs/tools/translate.md
+        href: tools/docs/translate.md
       - name: Поддержка приватных репозиториев
         href: readme.md
         hidden: true
