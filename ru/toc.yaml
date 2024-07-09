@@ -133,10 +133,11 @@ items:
         hidden: true
       - name: Файл конфигурации линтера
         href: project/lint.md
-  - name: Делплой и конфигурация
+  - name: Деплой и конфигурация
     items:
       - name: Настройки сборки
-        href: tools/docs/settings.md
+        href: readme.md
+        hidden: true
       - name: Процесс сборки
         href: readme.md
         hidden: true
@@ -170,7 +171,8 @@ items:
           - name: Пресеты переменных
             href: project/presets.md
       - name: Автоматизация переводов
-        href: tools/docs/translate.md
+        href: readme.md
+        hidden: true
       - name: Поддержка приватных репозиториев
         href: readme.md
         hidden: true
