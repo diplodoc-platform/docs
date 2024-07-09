@@ -29,15 +29,27 @@ navigation:
         type: "link"
         url: "https://github.com/diplodoc-platform/"
 items:
-  - name: Обзор системы
-    href: about.md
-  - name: Начало работы
-    href: how-it-work.md
-  - name: Yandex Flavored Markdown
+  - name: Платформа Diplodoc
     expanded: true
-    href: index-yfm.md
     items:
-      - name: Синтаксис
+      - name: Назначение и область применения
+        href: about.md
+      - name: Функциональные возможности системы
+        href: index-yfm.md
+  - name: Начало работы
+    expanded: true
+    items:
+      - name: Быстрый старт
+        href: how-it-work.md
+      - name: Установка
+        href: readme.md
+        hidden: true
+      - name: Минимальное содержание проекта
+        href: readme.md
+        hidden: true
+  - name: Редактирование контента
+    items:
+      - name: Синтаксис YFM
         items:
           - name: Обзор
             href: syntax/index.md
@@ -69,28 +81,15 @@ items:
             href: syntax/term.md
           - name: Дополнительные возможности
             href: syntax/additional.md
-      - name: Настройки YFM-проекта
-        href: settings.md
-      - name: Организация YFM-проекта
-        items:
-          - name: Обзор
-            href: project/index.md
+      - name: Организация контента
+        href: project/index.md
+        items:        
           - name: Оглавление
             href: project/toc.md
           - name: Расширенная навигация
             href: project/navigation.md
           - name: Разводящая страница
-            href: project/leading-page.md
-          - name: Page constructor
-            items:
-              - name: Обзор
-                href: project/page-constructor.md
-              - name: Пример 1
-                href: project/pc-example1.yaml
-              - name: Пример 2
-                href: project/pc-example2.yaml
-              - name: Пример 3 (fullScreen mode)
-                href: project/pc-example3.yaml
+            href: project/leading-page.md          
           - name: Пресеты переменных
             href: project/presets.md
           - name: Файл конфигурации
@@ -99,48 +98,137 @@ items:
             href: project/includes.md
           - name: Файл конфигурации линтера
             href: project/lint.md
-      - name: Инструменты и библиотеки
+      - name: Страницы на PageConstructor
+        href: project/page-constructor.md
         items:
-          - name: Transformer
-            items:
-              - name: Обзор
-                href: tools/transform/index.md
-              - name: Настройки
-                href: tools/transform/settings.md
-              - name: Подсветка кода
-                href: tools/transform/highlight.md
-          - name: Builder
-            items:
-              - name: Обзор
-                href: tools/docs/index.md
-              - name: Сборка
-                href: tools/docs/build.md
-              - name: Настройки сборки
-                href: tools/docs/settings.md
-              - name: Перевод
-                href: tools/docs/translate.md
-              - name: Одностраничная сборка
-                href: tools/docs/singlepage.md
-              - name: Выкладка на S3
-                href: tools/docs/publish-s3.md
-          - name: Библиотека Mermaid
-            href: tools/mermaid.md
-      - name: Плагины
+          - name: Пример 1
+            href: project/pc-example1.yaml
+          - name: Пример 2
+            href: project/pc-example2.yaml
+          - name: Пример 3 (fullScreen mode)
+            href: project/pc-example3.yaml
+  - name: Конфигурация проекта
+    href: settings.md
+    items:      
+      - name: Структура проекта
+        href: readme.md
+        hidden: true
+      - name: Front matter
+        href: readme.md
+        hidden: true
+      - name: Кастомные стили
+        href: readme.md
+        hidden: true
+      - name: Меню
+        href: readme.md
+        hidden: true
+      - name: Управление доступом
+        href: readme.md
+        hidden: true
+      - name: SEO-оптимизация
+        href: readme.md
+        hidden: true
+      - name: Right-to-left
+        href: readme.md
+        hidden: true
+      - name: Файл конфигурации линтера
+        href: project/lint.md
+  - name: Делплой и конфигурация
+    items:
+      - name: Настройки сборки
+        href: tools/docs/settings.md
+      - name: Процесс сборки
+        href: readme.md
+        hidden: true
+      - name: Публикация
         items:
-          - name: Обзор
+          - name: Diplodoc.com
+            href: https://diplodoc.com/ru
+          - name: GitHub Pages
+            href: readme.md
+            hidden: true
+          - name: GitLab Pages
+            href: readme.md
+            hidden: true
+          - name: Статическая сборка
+            href: tools/docs/build.md
+          - name: Проксирование
+            href: readme.md
+            hidden: true
+  - name: Практические руководства
+    items:
+      - name: Сборка тестового документационного проекта
+        href: readme.md
+        hidden: true
+      - name: Генерация документации из OpenAPI спецификации
+        href: readme.md
+        hidden: true
+      - name: Единый источник
+        items:
+          - name: Переиспользование контента
+            href: project/includes.md
+          - name: Пресеты переменных
+            href: project/presets.md
+      - name: Автоматизация переводов
+        href: docs/tools/translate.md
+      - name: Поддержка приватных репозиториев
+        href: readme.md
+        hidden: true
+  - name: CLI    
+    items:
+      - name: Установка
+        href: readme.md
+        hidden: true
+      - name: Команды
+        href: readme.md
+        hidden: true
+      - name: Гайды
+        href: readme.md
+        hidden: true
+      - name: Расширения
+        items:
+          - name: Плагины
             href: plugins/index.md
           - name: Дополнительные плагины
             href: plugins/import.md
-      - name: Внесение изменений
-        href: contribution.md
-      - name: Релизы YFM
-        hidden: true
-        href: changelog.md
-  - name: Вакансии
-    hidden: true
+  - name: Инструменты и библиотеки
     items:
-      - name: Старший разработчик
-        href: vacancy.md
-  - name: Yandex Open Source Jam 2024
+      - name: Transformer (архитектура, назначение, требования к PR)
+        href: tools/transform/index.md
+        items:
+          - name: Настройки
+            href: tools/transform/settings.md
+          - name: Подсветка кода
+            href: tools/transform/highlight.md
+      - name: Builder
+        href: tools/docs/index.md
+        items:
+          - name: Сборка
+            href: tools/docs/build.md
+          - name: Настройки сборки
+            href: tools/docs/settings.md
+          - name: Перевод
+            href: tools/docs/translate.md
+          - name: Одностраничная сборка
+            href: tools/docs/singlepage.md
+          - name: Выкладка на S3
+            href: tools/docs/publish-s3.md
+      - name: Tranlation
+        href: readme.md
+        hidden: true
+  - name: Примеры проектов Diplodoc
+    href: readme.md
     hidden: true
-    href: jam.md
+  - name: Контрибьюторам    
+    hidden: true
+      items:
+        - name: Участие в разрботке
+          href: readme.md
+          hidden: true
+        - name: Венесение вклада в документацию
+          href: readme.md
+          hidden: true
+        - name: Участие в переводах
+          href: readme.md
+          hidden: true
+    
