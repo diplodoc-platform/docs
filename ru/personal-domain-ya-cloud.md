@@ -23,9 +23,9 @@
     ```
     Ключи от каталога с документацией в S3.
     Идентификатор ключа:
-    YCAJEmTm6zlPbQ14F8pLv2xgV
+    YCAJEmFaBcTmNBfg1M6zlPbQ14F8pLv2V
     Секретный ключ:
-    YCO6ctaYJxgdXU5qOaq73ucAfm3BfAc6gZW-1_fk
+    YCO6ctaYJxgdXU5qOaq7uKerBhSfAc6gZW-1_fk
 
     Сохраните идентификатор и ключ. После закрытия диалога значение ключа будет недоступно. Ключ будет добавлен в созданный репозиторий автоматически.
     ```
