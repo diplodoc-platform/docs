@@ -1,5 +1,5 @@
-![logo](.github/assets/diplodoc-logo.svg#gh-light-mode-only)
-![logo](.github/assets/diplodoc-logo-dark.svg#gh-dark-mode-only)
+![logo](https://github.com/diplodoc-platform/diplodoc/raw/master/.github/assets/diplodoc-logo.svg#gh-light-mode-only)
+![logo](https://github.com/diplodoc-platform/diplodoc/raw/master/.github/assets/diplodoc-logo-dark.svg#gh-dark-mode-only)
 
 
 ---
