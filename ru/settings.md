@@ -15,6 +15,6 @@
 `disableLiquid` | Отключить использование переменных | `bool` | `false`
 `supportGithubAnchors` | Генерировать дополнительные [якоря](./syntax/base.md#headers), совместимые с GitHub | `bool` | `false`
 `lang` | Язык локализации дефолтных текстов | `string` | `ru`
-`needToSanitizeHtml` | Нужно ли санитайзить сгенерированный HTML | `bool` | `false`
+`needToSanitizeHtml` | Нужно ли санитайзить сгенерированный HTML | `bool` | `true`
 `sanitizeOptions` | Конфигурация санитайзера | `Object` | `undefined`
 `linkifyTlds` | Настройка tld для плагина linkify | `string \| string[]` | `undefined`
