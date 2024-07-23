@@ -53,8 +53,8 @@ items:
                 href: syntax/tables/multiline.md
           - name: Заметки
             href: syntax/notes.md
-          - name: Каты и табы
-            href: syntax/cuts-tabs.md
+          - name: Каты, табы и радиобаттоны
+            href: syntax/cuts-tabs-radio.md
           - name: Ссылки
             href: syntax/links.md
           - name: Медиа
