@@ -31,8 +31,8 @@ navigation:
 items:
   - name: Обзор системы
     href: about.md
-  - name: Начало работы
-    href: how-it-work.md
+  - name: Быстрый старт
+    href: quickstart.md
   - name: Yandex Flavored Markdown
     expanded: true
     href: index-yfm.md

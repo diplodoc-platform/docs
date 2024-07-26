@@ -7,9 +7,9 @@ links:
 - title: Обзор системы
   description: Описание платформы, ее основные возможности, особенности и преимущества.
   href: about.md
-- title: Как попробовать
+- title: Быстрый старт
   description: С чего начать работу
-  href: how-it-work.md
+  href: quickstart.md
 - title: Yandex Flavored Markdown
   description: Описание языка Yandex Flavored Markdown.
   href: index-yfm.md
