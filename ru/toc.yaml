@@ -31,8 +31,8 @@ navigation:
 items:
   - name: Обзор системы
     href: about.md
-  - name: Начало работы
-    href: how-it-work.md
+  - name: Быстрый старт
+    href: quickstart.md
   - name: Собственный домен в Яндекс Облаке и его проксирование
     href: personal-domain-ya-cloud.md
   - name: Yandex Flavored Markdown
