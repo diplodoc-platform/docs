@@ -33,6 +33,8 @@ items:
     href: about.md
   - name: Быстрый старт
     href: quickstart.md
+  - name: Настройка личного домена
+    href: personal-domain-ya-cloud.md
   - name: Yandex Flavored Markdown
     expanded: true
     href: index-yfm.md
