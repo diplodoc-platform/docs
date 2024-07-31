@@ -16,6 +16,6 @@ Standard YFM settings are listed below. Depending on the tool you use, you can c
 | `disableLiquid` | Disable the use of variables | `bool` | `false` |
 | `supportGithubAnchors` | Generate additional [anchors](./syntax/base.md#headers) that are compatible with GitHub | `bool` | `false` |
 | `lang` | Localization language of default texts | `string` | `ru` |
-`needToSanitizeHtml` | Need to sanitize the generated HTML | `bool` | `false`
+`needToSanitizeHtml` | Need to sanitize the generated HTML | `bool` | `true`
 `sanitizeOptions` | Sanitizer configuration | `Object` | `undefined`
 `linkifyTlds` | Allow set tld for the linkify plugin | `string \| string[]` | `undefined`
