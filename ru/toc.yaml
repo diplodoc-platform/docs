@@ -33,7 +33,7 @@ items:
     href: about.md
   - name: Быстрый старт
     href: quickstart.md
-  - name: Собственный домен в Яндекс Облаке и его проксирование
+  - name: Личный домен в Yandex Cloud и его проксирование
     href: personal-domain-ya-cloud.md
   - name: Yandex Flavored Markdown
     expanded: true
