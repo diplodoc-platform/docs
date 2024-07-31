@@ -17,7 +17,7 @@
 Синтаксис Yandex Flavored Markdown базируется на [CommonMark Spec](https://spec.commonmark.org/), дополняя его уникальными элементами из других языков разметки и шаблонизаторов:
 
 * [заметки](./syntax/notes.md);
-* [каты и табы](./syntax/cuts-tabs.md);
+* [каты, табы и радиобаттоны](./syntax/cuts-tabs-radio.md);
 * [всплывающие окна](./syntax/term.md);
 * [видео](./syntax/media.md#video);
 * [переменные](./syntax/vars.md);

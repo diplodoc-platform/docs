@@ -7,7 +7,7 @@
 * [списки](./lists.md);
 * [простые](./tables/gfm.md) и [многострочные таблицы](./tables/multiline.md);
 * [заметки](./notes.md);
-* [каты и табы](./cuts-tabs.md);
+* [каты, табы и радиобаттоны](./cuts-tabs-radio.md);
 * [ссылки](./links.md);
 * [медиа](./media.md);
 * [фрагменты кода](./code.md);
