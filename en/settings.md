@@ -19,3 +19,7 @@ Standard YFM settings are listed below. Depending on the tool you use, you can c
 `needToSanitizeHtml` | Need to sanitize the generated HTML | `bool` | `true`
 `sanitizeOptions` | Sanitizer configuration | `Object` | `undefined`
 `linkifyTlds` | Allow set tld for the linkify plugin | `string \| string[]` | `undefined`
+`analytics` | Analytics module configuration | `Object` | `undefined`
+`analytics.gtm` | Options for Google Tag Manager analytics | `Object` | `undefined`
+`analytics.gtm.id` | ID of Google Tag Manager at format GTM-* | `string` | `undefined`
+`analytics.gtm.mode` | Notification type before analytics events start being sent `base` or `notification`  | `string` | `base`
