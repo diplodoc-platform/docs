@@ -25,12 +25,12 @@
   
 Для подсветки синтаксиса укажите в начальной строке язык, на котором написан код. Например: 
 
-```markdown
+````markdown
 ```sql
   price= '2000'
   size= '24'  
   color= 'primary'
   variant= 'detailed' 
 ```
-```
+````
 Ознакомиться с перечнем доступных языков можно в [Github](https://github.com/highlightjs/highlight.js/tree/master/src/languages). О том, как передать дополнительный набор языков, смотрите в разделе [Подключить дополнительный язык](../tools/transform/highlight.md#add).
