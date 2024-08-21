@@ -10,6 +10,7 @@ analytics:
 navigation:
   logo:
     url: "../en"
+    urlTitle: 'Back to main page'
     dark:
       icon: "https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg"
     light:
