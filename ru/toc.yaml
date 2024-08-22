@@ -23,7 +23,7 @@ navigation:
       - text: "Документация"
         type: "link"
         url: "../../docs/ru/"
-      - text: "Тelegram"
+      - text: "Telegram"
         type: "link"
         url: "https://t.me/diplodoc_ru"
       - text: "Github"
