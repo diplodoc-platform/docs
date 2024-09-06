@@ -9,7 +9,7 @@ links:
   href: about.md
 - title: Быстрый старт
   description: С чего начать работу
-  href: quickstart.md
+  href: how-it-work.md
 - title: Yandex Flavored Markdown
   description: Описание языка Yandex Flavored Markdown.
   href: index-yfm.md
