@@ -29,6 +29,9 @@ navigation:
       - text: "Github"
         type: "link"
         url: "https://github.com/diplodoc-platform/"
+    rightItems:
+      - type: search
+      - type: controls
 items:
   - name: Обзор системы
     href: about.md
@@ -84,6 +87,8 @@ items:
             href: project/navigation.md
           - name: Разводящая страница
             href: project/leading-page.md
+          - name: Поиск
+            href: project/search.md
           - name: Page constructor
             items:
               - name: Обзор
@@ -120,7 +125,7 @@ items:
                 href: tools/docs/build.md
               - name: Настройки сборки
                 href: tools/docs/settings.md
-              - name: Перевод
+              - name: Локализация
                 href: tools/docs/translate.md
               - name: Одностраничная сборка
                 href: tools/docs/singlepage.md
@@ -128,6 +133,7 @@ items:
                 href: tools/docs/publish-s3.md
           - name: Библиотека Mermaid
             href: tools/mermaid.md
+            hidden: true
       - name: Плагины
         items:
           - name: Обзор

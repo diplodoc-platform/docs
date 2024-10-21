@@ -8,6 +8,8 @@ resources:
 translate:
   folder: b1gpieerntm5sa95psrk
 
+search: true
+
 docs-viewer:
   project-name: diplodoc
   langs: ['en','ru']
