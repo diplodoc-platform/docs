@@ -30,7 +30,6 @@ navigation:
         type: "link"
         url: "https://github.com/diplodoc-platform/"
     rightItems:
-      - type: search
       - type: controls
 items:
   - name: Обзор системы
