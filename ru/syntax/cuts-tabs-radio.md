@@ -167,7 +167,7 @@
 
 {% endnote %}
 
-#### Элемент по умолчанию
+### Элемент по умолчанию
 
 {% note info %}
 
@@ -180,17 +180,13 @@
 ```markdown
 {% list tabs radio %}
 
-- name
+- Название пункта 1
 
-  hello world
+  Текст
 
-- name 2 {selected}
+- название пункта 2 {selected}
 
-  hello world 2
-
-- name 3
-
-  hello world 3
+  Пункт будет открыт по умолчанию.
 
 {% endlist %}
 ```
@@ -199,16 +195,12 @@
 
 {% list tabs radio %}
 
-- name
+- Название пункта 1
 
-  hello world
+  Текст
 
-- name 2 {selected}
+- название пункта 2 {selected}
 
-  hello world 2
-
-- name 3
-
-  hello world 3
+  Пункт будет открыт по умолчанию.
 
 {% endlist %}
