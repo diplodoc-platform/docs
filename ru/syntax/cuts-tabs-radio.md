@@ -204,3 +204,35 @@
   Пункт будет открыт по умолчанию.
 
 {% endlist %}
+
+##  Дропдаун {#dropdawn}
+
+ Дропдаун — выпадающий список, который отобразит контент при выборе элемента.
+
+```markdown
+{% list tabs dropdown %}
+
+- name
+
+    hello world
+
+- name 2
+
+    hello world 2 
+
+{% endlist %}
+```
+
+**Результат:**
+
+{% list tabs dropdown %}
+
+- name
+
+    hello world
+
+- name 2
+
+    hello world 2 
+
+{% endlist %}
