@@ -69,7 +69,7 @@
 
 {% endcut %}
 
-{% include title [default-value-for-tabs-and-radiobtns](../_includes/default-value-for-tabs-and-radiobtns.md) %}
+{% include [default-value-for-tabs-and-radiobtns](../_includes/default-value-for-tabs-and-radiobtns.md) %}
 
 ## Радиобаттоны {#radio}
 
@@ -169,7 +169,7 @@
 
 {% endnote %}
 
-{% include title [default-value-for-tabs-and-radiobtns](../_includes/default-value-for-tabs-and-radiobtns.md) %}
+{% include [default-value-for-tabs-and-radiobtns](../_includes/default-value-for-tabs-and-radiobtns.md) %}
 
 ##  Дропдаун {#dropdawn}
 
