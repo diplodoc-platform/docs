@@ -166,3 +166,49 @@
 - отступ для содержимого таба - два пробела.
 
 {% endnote %}
+
+#### Элемент по умолчанию
+
+{% note info %}
+
+Поддерживается в табах и радиобаттонах.
+
+{% endnote %}
+
+Если нужно, чтобы выбранный элемент был раскрыт по умолчанию, добавьте атрибут `{selected}` к нужному пункту.
+
+```markdown
+{% list tabs radio %}
+
+- name
+
+  hello world
+
+- name 2 {selected}
+
+  hello world 2
+
+- name 3
+
+  hello world 3
+
+{% endlist %}
+```
+
+**Результат:**
+
+{% list tabs radio %}
+
+- name
+
+  hello world
+
+- name 2 {selected}
+
+  hello world 2
+
+- name 3
+
+  hello world 3
+
+{% endlist %}
