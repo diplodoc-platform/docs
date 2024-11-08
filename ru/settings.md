@@ -14,7 +14,7 @@
 `conditionsInCode` | Выполнять условия в блоках кода | `bool` | `false`
 `disableLiquid` | Отключить использование переменных | `bool` | `false`
 `supportGithubAnchors` | Генерировать дополнительные [якоря](./syntax/base.md#headers), совместимые с GitHub | `bool` | `false`
-`lang` | Язык локализации дефолтных текстов.
+`lang` | Язык локализации дефолтных текстов. 
 Для [следующих языков](https://github.com/diplodoc-platform/client/blob/34a5139620874627cfdebe9be74902cf9d3961b1/src/constants.ts#L15) контент будет отображаться в формате RTL (right-to-left) | `string` | `ru`
 `needToSanitizeHtml` | Нужно ли санитайзить сгенерированный HTML | `bool` | `true`
 `sanitizeOptions` | Конфигурация санитайзера | `Object` | `undefined`
