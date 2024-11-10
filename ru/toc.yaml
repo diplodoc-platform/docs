@@ -34,6 +34,13 @@ navigation:
 items:
   - name: Обзор системы
     href: about.md
+  - name: Начало работы
+    items:
+      - name: Быстрый старт
+        href: how-it-work.md
+      - name: Тестовый шаблон
+        href: static-template.md
+    href: getting-started.md
   - name: Быстрый старт
     href: how-it-work.md
   - name: Настройка личного домена
