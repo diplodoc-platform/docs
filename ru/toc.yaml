@@ -39,10 +39,7 @@ items:
       - name: Быстрый старт
         href: how-it-work.md
       - name: Тестовый шаблон
-        href: static-template.md
-    href: getting-started.md
-  - name: Быстрый старт
-    href: how-it-work.md
+        href: static-template.md      
   - name: Настройка личного домена
     href: personal-domain-ya-cloud.md
   - name: Yandex Flavored Markdown
