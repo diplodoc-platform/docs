@@ -245,4 +245,4 @@
 
 {% endlist %}
 
-{% include [default-value-for-tabs-and-radiobtns](../_includes/default-value-for-tabs-and-radiobtns.md) %}
+{% include [default-value-for-tabs-and-radiobtns](../_includes/default-value.md) %}
