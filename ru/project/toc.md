@@ -88,6 +88,30 @@ items:
 {% endnote %}
 
 
+## Labeled-разделы в навигации {#labeled}
+
+Специальные заголовки, которые визуально группируют отдельные пункты в оглавлении.
+
+В файле `toc.yaml` у соответствующего пункта меню укажите атрибут `labeled: true`:
+
+```yaml
+title: Имя документа
+href: index.yaml
+items:
+  - name: Имя раздела
+    labeled: true
+    href: path/to/file.md
+  - name: Имя группы разделов
+    labeled: true
+    items:
+      - name: Имя раздела
+        href: path/to/file.md
+      - name: Имя раздела
+        href: path/to/file.md
+  - name: Имя раздела
+    labeled: true
+    href: path/to/file.md
+```
 
 ## Скрытые разделы {#hidden}
 
