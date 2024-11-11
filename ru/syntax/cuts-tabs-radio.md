@@ -28,6 +28,12 @@
 
 {% endcut %}
 
+{% cut "Заголовок ката" %} {selected}
+
+Контент, который отобразится по нажатию.
+
+{% endcut %}
+
 ## Табы {#tabs}
 
 Используйте табы для взаимоисключающих разделов. Например, чтобы разделить инструкции для разных ОС.
@@ -68,8 +74,6 @@
 {% endlist %}
 
 {% endcut %}
-
-{% include [default-value-for-tabs-and-radiobtns](../_includes/default-value-for-tabs-and-radiobtns.md) %}
 
 ## Радиобаттоны {#radio}
 
@@ -169,8 +173,6 @@
 
 {% endnote %}
 
-{% include [default-value-for-tabs-and-radiobtns](../_includes/default-value-for-tabs-and-radiobtns.md) %}
-
 ##  Дропдаун {#dropdawn}
 
 Выпадающий список позволяет удобно организовать выбор элементов списка, если таких элементов много. Дропдаун отображает контент при выборе одного из элементов в выпадающем списке.
@@ -229,7 +231,7 @@
 
 {% list tabs accordion %}
 
-- Название пункта 1 {selected}
+- Название пункта 1
 
   Контент для пункта 1.
 
@@ -242,3 +244,5 @@
   Контент для пункта 3.
 
 {% endlist %}
+
+{% include [default-value-for-tabs-and-radiobtns](../_includes/default-value-for-tabs-and-radiobtns.md) %}
