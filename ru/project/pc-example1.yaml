@@ -9,14 +9,14 @@ blocks:
     background:
       light:
         image:
-          mobile: '../../_images/cover.png'
+          mobile: '../_images/cover.png'
           desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover.png'
           disableCompress: true
         color: '#C6FE4D'
         fullWidth: false
       dark:
         image:
-          mobile: '../../_images/cover-dark.png'
+          mobile: '../_images/cover-dark.png'
           desktop: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover-dark.png'
           disableCompress: true
         color: '#C6FE4D'
