@@ -29,12 +29,12 @@
 Вы можете сделать изображение кликабельным, используя [правила оформления ссылок](./links.md). Для этого добавьте стандартную разметку изображения в ту часть, которая предназначена для указания текста ссылки.
 
 ```markdown
-[![An old rock in the desert](../../_images/mountain.jpg "Mountain" =100x200)](https://yandex.com/images/search?text=mountain)
+[![An old rock in the desert](../_images/mountain.jpg "Mountain" =100x200)](https://yandex.com/images/search?text=mountain)
 ```
 
 **Результат:**
 
-[![An old rock in the desert](../../_images/mountain.jpg "Mountain" =100x200)](https://yandex.com/images/search?text=mountain)
+[![An old rock in the desert](../_images/mountain.jpg "Mountain" =100x200)](https://yandex.com/images/search?text=mountain)
 
 ### Reference-style разметка для изображений {#reference-style}
 
@@ -43,14 +43,14 @@
 ```markdown
 ![An old rock in the desert][image1]
 
-[image1]: ../../_images/mountain.jpg "Mountain"
+[image1]: ../_images/mountain.jpg "Mountain"
 ```
 
 **Результат:**
 
 ![An old rock in the desert][image1]
 
-[image1]: ../../_images/mountain.jpg "Mountain"
+[image1]: ../_images/mountain.jpg "Mountain"
 
 ## Видео {#video}
 
