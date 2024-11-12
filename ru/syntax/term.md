@@ -65,11 +65,9 @@
 
 {% cut "Пример [переиспользования](../project/includes.md)" %}
 
-```markdown
-
-[*popup-1]: {% include notitle [popup_1](<путь_к_файлу>#popup-1) %}
-
-[*popup-2]: {% include notitle [popup_2](<путь_к_файлу>#popup-2) %}
+```
+[*popup-1]: {% include notitle [popup_1](../_includes/popups_examples.md#popup-1) %}
+[*popup-2]: {% include notitle [popup_2](../_includes/popups_examples.md#popup-2) %}
 ```
 
 {% endcut %}
