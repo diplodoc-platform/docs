@@ -148,6 +148,10 @@ items:
       - name: Релизы YFM
         hidden: true
         href: changelog.md
+  - name: Практические руководства
+    items:
+      - name: Контентная аналитика
+        href: guides/content-analytics.md
   - name: Вакансии
     hidden: true
     items:
