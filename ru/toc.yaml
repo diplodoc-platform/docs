@@ -152,6 +152,8 @@ items:
     items:
       - name: Контентная аналитика
         href: guides/content-analytics.md
+      - name: Генерация из OpenAPI-спецификации
+        href: guides/openapi.md        
   - name: Вакансии
     hidden: true
     items:
