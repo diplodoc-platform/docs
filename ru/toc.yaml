@@ -120,6 +120,8 @@ items:
                 href: tools/transform/settings.md
               - name: Подсветка кода
                 href: tools/transform/highlight.md
+              - name: Css variables
+                href: tools/transform/css-vars.md
           - name: Builder
             items:
               - name: Обзор
