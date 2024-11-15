@@ -36,6 +36,7 @@
 `--yfm-color-note-warning-background` | <span style="display:block;background-color:var(--yfm-color-note-warning-background-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
 `--yfm-color-note-important` | <span style="display:block;background-color:var(--yfm-color-note-important-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
 `--yfm-color-note-important-background` | <span style="display:block;background-color:var(--yfm-color-note-important-background-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
+`--yfm-color-note-info` | <span style="display:block;background-color:var(--yfm-color-note-info-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
 `--yfm-color-note-info-background` | <span style="display:block;background-color:var(--yfm-color-note-info-background-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
 | _term_ | | Примеры можно посмотреть на [странице](../../syntax/term.md) документации всплывающих подсказок|
 `--yfm-color-term-title` | <span style="display:block;background-color:var(--yfm-color-term-title-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
