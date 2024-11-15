@@ -109,3 +109,9 @@ Super [^men^](https://en.wikipedia.org/wiki/Major_Grom_(2017_film)).
 ```
 
 {% file src="data:text/plain;base64,Cg==" name="empty.txt" %}
+
+{% file src="../../_images/cover.png" %}
+
+{% file src="notes.md" %}
+
+{% file src="./notes.md" %}
