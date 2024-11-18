@@ -2,6 +2,12 @@
 
 Пакет предоставляет набор css переменных, которые вы можете переопределить исходя из своих потребностей
 
+{% note tip %}
+
+В репозитории документации уже используется переопределение базовых цветов, поэтому цвета в таблице могут отличаться от того что вы увидите на страницах с примерами
+
+{% endnote %}
+
 
 | Переменная | Значение по умолчанию | Пример |
 | :--------- | :-------------------: | :----- |
@@ -19,17 +25,17 @@
 `--yfm-color-inline-code-background` | <span style="display:block;background-color:var(--yfm-color-inline-code-background-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Background-color блока [inline-code](../../syntax/code.md#inline) |
 `--yfm-color-code-background` | <span style="display:block;background-color:var(--yfm-color-code-background-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Background-color блока [code](../../syntax/code.md#block) |
 | _hljs_ | | |
-`--yfm-color-hljs-background` | <span style="display:block;background-color:var(--yfm-color-hljs-background-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
-`--yfm-color-hljs-subst` | <span style="display:block;background-color:var(--yfm-color-hljs-subst-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
-`--yfm-color-hljs-comment` | <span style="display:block;background-color:var(--yfm-color-hljs-comment-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
-`--yfm-color-hljs-deletion` | <span style="display:block;background-color:var(--yfm-color-hljs-deletion-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
-`--yfm-color-hljs-section` | <span style="display:block;background-color:var(--yfm-color-hljs-section-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
-`--yfm-color-hljs-pseudo` | <span style="display:block;background-color:var(--yfm-color-hljs-pseudo-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
-`--yfm-color-hljs-literal` | <span style="display:block;background-color:var(--yfm-color-hljs-literal-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
-`--yfm-color-hljs-addition` | <span style="display:block;background-color:var(--yfm-color-hljs-addition-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
-`--yfm-color-hljs-meta` | <span style="display:block;background-color:var(--yfm-color-hljs-meta-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
+`--yfm-color-hljs-background` | <span style="display:block;background-color:var(--yfm-color-hljs-background-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Примеры можно посомтреть на любой странице со вставккой кода, [например](../../syntax/base.md) |
+`--yfm-color-hljs-subst` | <span style="display:block;background-color:var(--yfm-color-hljs-subst-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Примеры на странице [Page Constructor](../../project/page-constructor.md) |
+`--yfm-color-hljs-comment` | <span style="display:block;background-color:var(--yfm-color-hljs-comment-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Пример на [странице](../../project//toc.md#includes) орагнизации оглавления |
+`--yfm-color-hljs-deletion` | <span style="display:block;background-color:var(--yfm-color-hljs-deletion-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Пример на странице [ссылок](../../syntax/links.md#formatting) |
+`--yfm-color-hljs-section` | <span style="display:block;background-color:var(--yfm-color-hljs-section-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Пример на странице [многострочных таблиц](../../syntax/tables/multiline.md#multirow) |
+`--yfm-color-hljs-pseudo` | <span style="display:block;background-color:var(--yfm-color-hljs-pseudo-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Пример на странице [ссылок](../../syntax/links.md#formatting) |
+`--yfm-color-hljs-literal` | <span style="display:block;background-color:var(--yfm-color-hljs-literal-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Примеры на странице [Page Constructor](../../project/page-constructor.md) |
+`--yfm-color-hljs-addition` | <span style="display:block;background-color:var(--yfm-color-hljs-addition-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Примеры на странице [Page Constructor](../../project/page-constructor.md) (bullet) |
+`--yfm-color-hljs-meta` | <span style="display:block;background-color:var(--yfm-color-hljs-meta-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" /> | Пример на странице синтаксиса [комментариев](../../syntax/meta.md#meta) |
 `--yfm-color-hljs-meta-string` | <span style="display:block;background-color:var(--yfm-color-hljs-meta-string-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
-| _note_ | | Примеры можно посмотреть на [странице](../../syntax/notes.md) документации заметок|
+| _note_ | | Примеры можно посмотреть на [странице](../../syntax/notes.md) документации заметок |
 `--yfm-color-note-tip` | <span style="display:block;background-color:var(--yfm-color-note-tip-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
 `--yfm-color-note-tip-background` | <span style="display:block;background-color:var(--yfm-color-note-tip-background-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
 `--yfm-color-note-warning` | <span style="display:block;background-color:var(--yfm-color-note-warning-private);width:20px;height:20px;border: 0.5px solid black;border-radius: 50%;" />
