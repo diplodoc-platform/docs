@@ -2,7 +2,7 @@
 
 ## Description
 
-The included: true flag is a configuration parameter that is designed to speed up document processing. It merges all dependent .md files into a single final file, improving performance and simplifying document management.
+The "included: true" flag is a configuration parameter that is designed to speed up document processing. It merges all dependent .md files into a single final file, improving performance and simplifying document management.
 
 ## Features
 
@@ -35,7 +35,7 @@ Once enabled, the system will automatically merge all .md files that are marked 
 
 ## Example
 
-### Input files
+### Input
 
 ```md
 start main
@@ -45,7 +45,9 @@ start main
 end main
 ```
 
-```md (included/file-1-deep.md)
+#### included/file-1-deep.md
+
+```md
 start file 1
 
 {% include [Text](file-2-deep.md) %}
@@ -53,7 +55,9 @@ start file 1
 end file 1
 ```
 
-```md (included/file-2-deep.md)
+#### included/file-2-deep.md
+
+```md
 start file 2
 
 {% include [Text](file-3.md) %}
@@ -61,13 +65,15 @@ start file 2
 end file 2
 ```
 
-```md (included/file-3.md)
+#### included/file-3.md
+
+```md
 start file 3
 
 end file 3
 ```
 
-### Результат
+### Result
 
 ```md
 start main

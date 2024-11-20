@@ -2,7 +2,7 @@
 
 ## Описание
 
-Флаг included: true — это параметр конфигурации, который предназначен для ускорения обработки документов. Он объединяет все зависимые .md файлы в один конечный файл, что позволяет улучшить производительность и упростить управление документами.
+Флаг "included: true" — это параметр конфигурации, который предназначен для ускорения обработки документов. Он объединяет все зависимые .md файлы в один конечный файл, что позволяет улучшить производительность и упростить управление документами.
 
 ## Особенности
 
@@ -45,7 +45,9 @@ start main
 end main
 ```
 
-```md (included/file-1-deep.md)
+#### included/file-1-deep.md
+
+```md
 start file 1
 
 {% include [Text](file-2-deep.md) %}
@@ -53,7 +55,9 @@ start file 1
 end file 1
 ```
 
-```md (included/file-2-deep.md)
+#### included/file-2-deep.md
+
+```md
 start file 2
 
 {% include [Text](file-3.md) %}
@@ -61,7 +65,9 @@ start file 2
 end file 2
 ```
 
-```md (included/file-3.md)
+#### included/file-3.md
+
+```md
 start file 3
 
 end file 3
