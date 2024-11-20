@@ -85,10 +85,12 @@ items:
                 href: tools/docs/index.md
               - name: Build
                 href: tools/docs/build.md
-              - name: Translate
-                href: tools/docs/translate.md
               - name: Settings
                 href: tools/docs/settings.md
+              - name: Translate
+                href: tools/docs/translate.md
+              - name: Gluing dependencies
+                href: tools/docs/included.md
               - name: Single-page build
                 href: tools/docs/singlepage.md
               - name: Uploading to S3
