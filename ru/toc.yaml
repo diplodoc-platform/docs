@@ -97,16 +97,6 @@ items:
             href: project/navigation.md
           - name: Разводящая страница
             href: project/leading-page.md
-          - name: Поиск
-            href: project/search.md
-          - name: Пресеты переменных
-            href: project/presets.md
-          - name: Файл конфигурации
-            href: project/config.md
-          - name: Переиспользование контента
-            href: project/includes.md
-          - name: Файл конфигурации линтера
-            href: project/lint.md
       - name: Page constructor
         items:
           - name: Обзор
@@ -117,11 +107,24 @@ items:
             href: project/pc-example2.yaml
           - name: Пример 3 (fullScreen mode)
             href: project/pc-example3.yaml 
-  - name: Деплой и конфигурация проекта
+  - name: Конфигурация проекта
     labeled: true
     items:
       - name: Настройки проекта
         href: settings.md
+      - name: Файл конфигурации
+        href: project/config.md
+      - name: Поиск
+        href: project/search.md
+      - name: Пресеты переменных
+        href: project/presets.md
+      - name: Переиспользование контента
+        href: project/includes.md
+      - name: Файл конфигурации линтера
+        href: project/lint.md
+  - name: Деплой
+    labeled: true
+    items:
       - name: Github Pages
         href: github-pages.md
   - name: Внесение изменений
