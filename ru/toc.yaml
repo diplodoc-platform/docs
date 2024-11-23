@@ -125,10 +125,12 @@ items:
   - name: Внесение изменений
     href: contribution.md
   - name: Практические руководства
+    labeled: true
     items:
       - name: Контентная аналитика
         href: guides/content-analytics.md
   - name: Инструменты и библиотеки
+    labeled: true
     items:
       - name: Transformer
         items:
