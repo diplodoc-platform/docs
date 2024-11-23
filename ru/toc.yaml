@@ -33,8 +33,13 @@ items:
   - name: Платформа Diplodoc
     labeled: true
     href: index.yaml
-  - name: Функциональные возможности
+  - name: О платформе
     href: about.md
+  - name: Функциональные возможности
+    href: features.md
+  - name: Релизы YFM
+    hidden: true
+    href: changelog.md
   - name: Начало работы
     labeled: true
     items:
@@ -112,16 +117,13 @@ items:
             href: project/pc-example2.yaml
           - name: Пример 3 (fullScreen mode)
             href: project/pc-example3.yaml 
-      - name: Конфигурация проекта
-        labeled: true
-        items:
-          - name: Настройки проекта
-            href: settings.md
-      - name: Внесение изменений
-        href: contribution.md
-      - name: Релизы YFM
-        hidden: true
-        href: changelog.md
+  - name: Конфигурация проекта
+    labeled: true
+    items:
+      - name: Настройки проекта
+        href: settings.md
+  - name: Внесение изменений
+    href: contribution.md
   - name: Практические руководства
     items:
       - name: Контентная аналитика
