@@ -131,6 +131,8 @@ items:
                 href: tools/docs/settings.md
               - name: Локализация
                 href: tools/docs/translate.md
+              - name: Склеивание зависимостей
+                href: tools/docs/included.md
               - name: Одностраничная сборка
                 href: tools/docs/singlepage.md
               - name: Выкладка на S3
