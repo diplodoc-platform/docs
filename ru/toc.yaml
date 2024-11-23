@@ -113,13 +113,10 @@ items:
           - name: Пример 3 (fullScreen mode)
             href: project/pc-example3.yaml 
       - name: Конфигурация проекта
-        href: settings.md
-      - name: Плагины
+        labeled: true
         items:
-          - name: Обзор
-            href: plugins/index.md
-          - name: Дополнительные плагины
-            href: plugins/import.md
+          - name: Настройки проекта
+            href: settings.md
       - name: Внесение изменений
         href: contribution.md
       - name: Релизы YFM
@@ -153,6 +150,12 @@ items:
             href: tools/docs/singlepage.md
           - name: Выкладка на S3
             href: tools/docs/publish-s3.md
+      - name: Плагины
+        items:
+          - name: Обзор
+            href: plugins/index.md
+          - name: Дополнительные плагины
+            href: plugins/import.md
       - name: Библиотека Mermaid
         href: tools/mermaid.md
         hidden: true
