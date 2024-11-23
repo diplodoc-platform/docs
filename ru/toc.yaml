@@ -117,11 +117,13 @@ items:
             href: project/pc-example2.yaml
           - name: Пример 3 (fullScreen mode)
             href: project/pc-example3.yaml 
-  - name: Конфигурация проекта
+  - name: Деплой и конфигурация проекта
     labeled: true
     items:
       - name: Настройки проекта
         href: settings.md
+      - name: Github Pages
+        href: github-pages.md
   - name: Внесение изменений
     href: contribution.md
   - name: Практические руководства
