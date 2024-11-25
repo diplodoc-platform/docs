@@ -20,7 +20,7 @@ Openapi-инклюдер требует разрешение на использ
 
 2. OpenAPI-спецификацию размещаем по пути `doc_root/openapi.yaml`.
 
-3. Включаем её в оглавление `doc_root/toc.yaml` с помощью [openapi-инклюдера](https://diplodoc.com/docs/ru/project/toc#includers).
+3. Включаем её в оглавление `doc_root/toc.yaml` с помощью [openapi-инклюдера](includers.md).
 
 4. Подключаем разводящую в `doc_root/index.yaml`.
 

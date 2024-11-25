@@ -10,11 +10,11 @@ noindex: true
 
 #### 2.0.0
 
-- [Новый интерфейс инклюдеров](./project/toc.md#includers).
-- [Generic инклюдер](./project/toc.md#includers-generic).
-- [Open API инклюдер](./project/toc.md#includers-open-api).
-- [Unarchive инклюдер](./project/toc.md#includers-unarchive).
-- [Source Docs инклюдер](./project/toc.md#includers-source-docs).
+- [Новый интерфейс инклюдеров](./guides/includers.md).
+- [Generic инклюдер](./guides/generic.md).
+- [Open API инклюдер](./guides/openapi.md).
+- [Unarchive инклюдер](./guides/unarchive.md).
+- [Source Docs инклюдер](./guides/source-docs.md).
 
 
 ## Ноябрь 2022
@@ -82,7 +82,7 @@ noindex: true
 
 - include/includers: возможность интеграции сторонних форматов в документацию.
 - include/includers/sourcedocs: возможность интеграции sourcedocs документации в yfm-документацию.
-  [Includers](./project/toc.md#includers)
+  [Includers](./guides/includers.md)
 
 ## Июнь 2022
 

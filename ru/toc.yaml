@@ -153,8 +153,17 @@ items:
     items:
       - name: Контентная аналитика
         href: guides/content-analytics.md
-      - name: Генерация из OpenAPI-спецификации
-        href: guides/openapi.md        
+      - name: Автогенерация и интеграция документации
+        href: guides/includers.md
+        items:
+          - name: Generic
+            href: guides/generic.md
+          - name: Open API
+            href: guides/openapi.md
+          - name: Unarchive
+            href: guides/unarchive.md
+          - name: Source Docs
+            href: guides/source-docs.md
   - name: Вакансии
     hidden: true
     items:
