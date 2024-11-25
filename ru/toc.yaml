@@ -44,11 +44,13 @@ items:
     labeled: true
     items:
       - name: Быстрый старт
-        href: how-it-work.md
-      - name: Установка
-        href: installation.md
-      - name: Шаблон проекта
-        href: static-template.md      
+        items:
+        - name: Публикация на Diplodoc.com
+          href: how-it-work.md
+        - name: Локальная сборка проекта
+          href: installation.md
+        - name: Шаблон проекта
+          href: static-template.md      
   - name: Настройка личного домена
     href: personal-domain-ya-cloud.md
   - name: Редактирование контента
