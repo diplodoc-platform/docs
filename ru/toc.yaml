@@ -1,5 +1,3 @@
-title: Diplodoc
-href: index.yaml
 analytics:
   text: 'Мы используем <a href="https://yandex.ru/legal/cookies_policy">файлы cookie</a>, чтобы вы могли наилучшим образом пользоваться нашим веб-сайтом. Если вы продолжаете использовать наш веб-сайт, мы полагаем, что вы согласны с таким использованием.'
   buttons:
@@ -32,6 +30,9 @@ navigation:
     rightItems:
       - type: controls
 items:
+  - name: О платформе
+    labeled: true
+    href: index.yaml
   - name: Обзор системы
     href: about.md
   - name: Начало работы
@@ -162,3 +163,12 @@ items:
   - name: Yandex Open Source Jam 2024
     hidden: true
     href: jam.md
+  - name: Для разработчиков
+    labeled: true
+    href: dev/index.yaml
+  - name: Быстрый старт
+    href: dev/quickstart.md
+  - name: Внесение изменений
+    href: dev/contribution.md
+  - name: Метапакет
+    href: dev/metapackage.md
