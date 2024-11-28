@@ -105,5 +105,3 @@
     {% endcut %}
 
 Ознакомиться с вариантами оформления и перечнем доступных видеохостингов можно на странице плагина [markdown-it-video](https://www.npmjs.com/package/markdown-it-video).
-
-
