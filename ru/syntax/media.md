@@ -56,45 +56,51 @@
 
 Поддерживаются все сервисы, в которых есть медиапроигрыватели.
 
-- YouTube — youtube
-- Vimeo — vimeo
-- Vine — vine
-- Prezi — prezi
-- Osf — osf
-- Yandex — yandex
-- Vk — vk
-- Rutube — rutube
+Чтобы добавить на страницу видео:
 
-Чтобы добавить на страницу видео, используйте разметку: 
-
-```markdown
-@[название_видеохостинга](id_видео_или_ссылка_на_него)
-```
-
-{% cut "Инструкция по получению ссылки на видео" %}
-
-1. Откройте видео.
-1. Найдите код для публикации видео (его можно найти при экспорте, например, в разделе «Поделиться»).
-
-    {% cut "Пример кода публикации" %}
-
-    ```html
-    <iframe width="480" height="270" src="https://dzen.ru/embed/vYxYrEqN_VWQ?from_block=partner&from=zen&mute=0&autoplay=0&tv=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
-    ```
-
-    {% endcut %}
-
-1. Используйте ссылку из атрибута `src` в разметке.
+1. используйте разметку: 
 
     ```markdown
-    @[dzen](https://dzen.ru/embed/vYxYrEqN_VWQ?from_block=partner&from=zen&mute=0&autoplay=0&tv=0)
+    @[название_видеохостинга](id_видео_или_ссылка_на_него)
     ```
 
-    **Результат**:
+1. Замените `название_видеохостинга` на значение:
 
-    @[dzen](https://dzen.ru/embed/vYxYrEqN_VWQ?from_block=partner&from=zen&mute=0&autoplay=0&tv=0)
+    - YouTube — youtube
+    - Vimeo — vimeo
+    - Vine — vine
+    - Prezi — prezi
+    - Osf — osf
+    - Yandex — yandex
+    - Vk — vk
+    - Rutube — rutube
 
-{% endcut %}
+1. Получите ссылку на видео.
+
+    {% cut "Инструкция по получению ссылки на видео" %}
+
+    1. Откройте видео.
+    1. Найдите код для публикации видео (его можно найти при экспорте, например, в разделе «Поделиться»).
+
+        {% cut "Пример кода публикации" %}
+
+        ```html
+        <iframe width="480" height="270" src="https://dzen.ru/embed/vYxYrEqN_VWQ?from_block=partner&from=zen&mute=0&autoplay=0&tv=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        ```
+
+        {% endcut %}
+
+    1. Используйте ссылку из атрибута `src` в разметке.
+
+        ```markdown
+        @[dzen](vYxYrEqN_VWQ)
+        ```
+
+        **Результат**:
+
+        @[dzen](vYxYrEqN_VWQ)
+
+    {% endcut %}
 
 Ознакомиться с вариантами оформления и перечнем доступных видеохостингов можно на странице плагина [markdown-it-video](https://www.npmjs.com/package/markdown-it-video).
 
