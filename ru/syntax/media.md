@@ -95,12 +95,12 @@
     1. Используйте ссылку из атрибута `src` в разметке.
 
         ```markdown
-        @[](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
+        @[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
         ```
 
         **Результат**:
 
-        @[](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
+        @[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
 
     {% endcut %}
 
