@@ -54,44 +54,7 @@
 
 ## Видео {#video}
 
-В недавних обновлениях добавлена поддержка сервисов VK Video/Rutube и других сервисов, в которых есть медиапроигрыватели.
-
-Чтобы добавить на страницу видео, используйте разметку: 
-
-```markdown
-@[название_видеохостинга](id_видео_или_ссылка_на_него)
-```
-
-{% list tabs accordion %}
-
-- Пример использования
-
-  ```markdown
-  @[](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
-  ```
-
-  **Результат:**
-
-  @[](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
-
-{% endlist %}
-
-{% note warning %}
-
-❗️Для VK Video, Rutube и других платформ нужно использовать ссылку, которая появляется при экспорте в iframe, а также заполнить квадратные скобки соответственно vk или rutube
-
-```markdown
-@[vk](https://vk.com/video_ext.php id=-220754053&id=456241713&hd=2)
-```
-
-**Результат:**
-
-@[vk](https://vk.com/video_ext.php id=-220754053&id=456241713&hd=2)
-
-
-{% endnote %}
-
-Заполните поле [название_видеохостинга] зарезервированным словом из списка:
+Поддерживаются все сервисы, в которых есть медиапроигрыватели.
 
 - YouTube — youtube
 - Vimeo — vimeo
@@ -101,6 +64,37 @@
 - Yandex — yandex
 - Vk — vk
 - Rutube — rutube
+
+Чтобы добавить на страницу видео, используйте разметку: 
+
+```markdown
+@[название_видеохостинга](id_видео_или_ссылка_на_него)
+```
+
+{% cut "Инструкция по получению ссылки на видео" %}
+
+1. Откройте видео.
+1. Найдите код для публикации видео (его можно найти при экспорте, например, в разделе «Поделиться»).
+
+    {% cut "Пример кода публикации" %}
+
+    ```html
+    <iframe width="480" height="270" src="https://dzen.ru/embed/vYxYrEqN_VWQ?from_block=partner&from=zen&mute=0&autoplay=0&tv=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    ```
+
+    {% endcut %}
+
+1. Используйте ссылку из атрибута `src` в разметке.
+
+    ```markdown
+    @[dzen](https://dzen.ru/embed/vYxYrEqN_VWQ?from_block=partner&from=zen&mute=0&autoplay=0&tv=0)
+    ```
+
+    **Результат**:
+
+    @[dzen](https://dzen.ru/embed/vYxYrEqN_VWQ?from_block=partner&from=zen&mute=0&autoplay=0&tv=0)
+
+{% endcut %}
 
 Ознакомиться с вариантами оформления и перечнем доступных видеохостингов можно на странице плагина [markdown-it-video](https://www.npmjs.com/package/markdown-it-video).
 
