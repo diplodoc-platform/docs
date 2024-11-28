@@ -93,12 +93,12 @@
     1. Используйте ссылку из атрибута `src` в разметке.
 
         ```markdown
-        @[dzen](vYxYrEqN_VWQ)
+        @[yandex](vYxYrEqN_VWQ)
         ```
 
         **Результат**:
 
-        @[dzen](vYxYrEqN_VWQ)
+        @[yandex](vYxYrEqN_VWQ)
 
     {% endcut %}
 
