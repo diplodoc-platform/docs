@@ -87,7 +87,7 @@
         {% cut "Пример кода публикации" %}
 
         ```html
-        <iframe width="480" height="270" src="https://dzen.ru/embed/vYxYrEqN_VWQ?from_block=partner&from=zen&mute=0&autoplay=0&tv=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        <iframe width="720" height="405" src="https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         ```
 
         {% endcut %}
@@ -95,12 +95,12 @@
     1. Используйте ссылку из атрибута `src` в разметке.
 
         ```markdown
-        @[](https://rutube.ru/play/embed/49fc639bedbaa42a621b6336032cf7db/)
+        @[](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
         ```
 
         **Результат**:
 
-        @[](hhttps://rutube.ru/play/embed/49fc639bedbaa42a621b6336032cf7db/)
+        @[](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
 
     {% endcut %}
 
