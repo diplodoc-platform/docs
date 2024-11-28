@@ -134,6 +134,17 @@ items:
         href: guides/content-analytics.md
       - name: Настройка личного домена
         href: personal-domain-ya-cloud.md
+      - name: Автогенерация и интеграция документации
+        href: guides/includers.md
+        items:
+          - name: Generic
+            href: guides/generic.md
+          - name: Open API
+            href: guides/openapi.md
+          - name: Unarchive
+            href: guides/unarchive.md
+          - name: Source Docs
+            href: guides/source-docs.md
   - name: Инструменты и библиотеки
     labeled: true
     items:
