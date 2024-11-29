@@ -120,7 +120,8 @@ items:
         href: project/includes.md
       - name: Файл конфигурации линтера
         href: project/lint.md
-  - name: Деплой
+  - name: Публикация 
+    href: deploy.md
     labeled: true
     items:
       - name: Github Pages
