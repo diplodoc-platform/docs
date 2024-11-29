@@ -4,6 +4,9 @@ langs: ['en','ru']
 resources:
   style:
     - _assets/style/custom.css
+  csp:
+    - "frame-src":
+        - "https://rutube.ru/"
 
 docs-viewer:
   project-name: diplodoc
