@@ -30,27 +30,33 @@ navigation:
     rightItems:
       - type: controls
 items:
-  - name: О платформе
+  - name: Платформа Diplodoc
     labeled: true
     href: index.yaml
-  - name: Обзор системы
+  - name: О платформе
     href: about.md
+  - name: Функциональные возможности
+    href: features.md
+  - name: Релизы YFM
+    hidden: true
+    href: changelog.md
   - name: Начало работы
+    labeled: true
     items:
-      - name: Быстрый старт
+      - name: Публикация на Diplodoc.com
         href: how-it-work.md
-      - name: Тестовый шаблон
+      - name: Локальная сборка проекта
+        href: installation.md
+      - name: Шаблон проекта
         href: static-template.md      
-  - name: Настройка личного домена
-    href: personal-domain-ya-cloud.md
-  - name: Yandex Flavored Markdown
-    expanded: true
-    href: index-yfm.md
+  - name: Редактирование контента
+    labeled: true
     items:
       - name: Синтаксис
+        href: syntax/index.md
         items:
-          - name: Обзор
-            href: syntax/index.md
+          - name: Yandex Flawored Markdown
+            href: index-yfm.md 
           - name: Базовая разметка
             href: syntax/base.md
           - name: Списки
@@ -79,9 +85,7 @@ items:
             href: syntax/term.md
           - name: Дополнительные возможности
             href: syntax/additional.md
-      - name: Настройки YFM-проекта
-        href: settings.md
-      - name: Организация YFM-проекта
+      - name: Организация контента
         items:
           - name: Обзор
             href: project/index.md
@@ -91,68 +95,91 @@ items:
             href: project/navigation.md
           - name: Разводящая страница
             href: project/leading-page.md
-          - name: Поиск
-            href: project/search.md
-          - name: Page constructor
-            items:
-              - name: Обзор
-                href: project/page-constructor.md
-              - name: Пример 1
-                href: project/pc-example1.yaml
-              - name: Пример 2
-                href: project/pc-example2.yaml
-              - name: Пример 3 (fullScreen mode)
-                href: project/pc-example3.yaml
-          - name: Пресеты переменных
-            href: project/presets.md
-          - name: Файл конфигурации
-            href: project/config.md
-          - name: Переиспользование контента
-            href: project/includes.md
-          - name: Файл конфигурации линтера
-            href: project/lint.md
-      - name: Инструменты и библиотеки
+      - name: Page constructor
         items:
-          - name: Transformer
-            items:
-              - name: Обзор
-                href: tools/transform/index.md
-              - name: Настройки
-                href: tools/transform/settings.md
-              - name: Подсветка кода
-                href: tools/transform/highlight.md
-          - name: Builder
-            items:
-              - name: Обзор
-                href: tools/docs/index.md
-              - name: Сборка
-                href: tools/docs/build.md
-              - name: Настройки сборки
-                href: tools/docs/settings.md
-              - name: Локализация
-                href: tools/docs/translate.md
-              - name: Одностраничная сборка
-                href: tools/docs/singlepage.md
-              - name: Выкладка на S3
-                href: tools/docs/publish-s3.md
-          - name: Библиотека Mermaid
-            href: tools/mermaid.md
-            hidden: true
+          - name: Обзор
+            href: project/page-constructor.md
+          - name: Пример 1
+            href: project/pc-example1.yaml
+          - name: Пример 2
+            href: project/pc-example2.yaml
+          - name: Пример 3 (fullScreen mode)
+            href: project/pc-example3.yaml 
+  - name: Конфигурация проекта
+    labeled: true
+    items:
+      - name: Настройки проекта
+        href: settings.md
+      - name: Файл конфигурации
+        href: project/config.md
+      - name: Поиск
+        href: project/search.md
+      - name: Пресеты переменных
+        href: project/presets.md
+      - name: Переиспользование контента
+        href: project/includes.md
+      - name: Файл конфигурации линтера
+        href: project/lint.md
+  - name: Публикация 
+    href: deploy.md
+    labeled: true
+    items:
+      - name: Github Pages
+        href: github-pages.md
+  - name: Внесение изменений
+    href: contribution.md
+  - name: Практические руководства
+    labeled: true
+    items:
+      - name: Контентная аналитика
+        href: guides/content-analytics.md
+      - name: Настройка личного домена
+        href: personal-domain-ya-cloud.md
+      - name: Автогенерация и интеграция документации
+        href: guides/includers.md
+        items:
+          - name: Generic
+            href: guides/generic.md
+          - name: Open API
+            href: guides/openapi.md
+          - name: Unarchive
+            href: guides/unarchive.md
+          - name: Source Docs
+            href: guides/source-docs.md
+  - name: Инструменты и библиотеки
+    labeled: true
+    items:
+      - name: Transformer
+        items:
+          - name: Обзор
+            href: tools/transform/index.md
+          - name: Настройки
+            href: tools/transform/settings.md
+          - name: Подсветка кода
+            href: tools/transform/highlight.md
+      - name: Builder
+        items:
+          - name: Обзор
+            href: tools/docs/index.md
+          - name: Сборка
+            href: tools/docs/build.md
+          - name: Настройки сборки
+            href: tools/docs/settings.md
+          - name: Локализация
+            href: tools/docs/translate.md
+          - name: Одностраничная сборка
+            href: tools/docs/singlepage.md
+          - name: Выкладка на S3
+            href: tools/docs/publish-s3.md
       - name: Плагины
         items:
           - name: Обзор
             href: plugins/index.md
           - name: Дополнительные плагины
             href: plugins/import.md
-      - name: Внесение изменений
-        href: contribution.md
-      - name: Релизы YFM
+      - name: Библиотека Mermaid
+        href: tools/mermaid.md
         hidden: true
-        href: changelog.md
-  - name: Практические руководства
-    items:
-      - name: Контентная аналитика
-        href: guides/content-analytics.md
   - name: Вакансии
     hidden: true
     items:

@@ -4,15 +4,9 @@ meta:
   title: Метаданные
   noIndex: true
 links:
-- title: Обзор системы
-  description: Описание платформы, ее основные возможности, особенности и преимущества.
+- title: О платформе
+  description: Описание платформы, ее особенности и преимущества.
   href: about.md
-- title: Быстрый старт
-  description: С чего начать работу
-  href: how-it-work.md
-- title: Yandex Flavored Markdown
-  description: Описание языка Yandex Flavored Markdown.
-  href: index-yfm.md
-
-   
-  
+- title: Возможности платформы
+  description: Функциональные возможности Diplodoc
+  href: features.md  
