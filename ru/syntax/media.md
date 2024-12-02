@@ -96,12 +96,8 @@
     <iframe width="720" height="405" src="https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
     ```
 
-    3\. Используйте ссылку из атрибута `src` в разметке.
-
-    ```html
-    https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/
-    ```
-
+    3\. Замените `id_видео_или_ссылка_на_него` на ссылку из атрибута `src`.
+    
 {% note alert %}
 
 Если видео не отображается, и окно проигрывателя выдает ошибку `ERR_BLOCKED_BY_CSP`:
