@@ -89,18 +89,18 @@
 
 1. Получите ссылку на видео:
 
-    1. Откройте видео на видеохостинге.
-    1. Найдите код для публикации видео (его можно найти при экспорте, например, в разделе «Поделиться»).
+    1\. Откройте видео на видеохостинге.
+    2\. Найдите код для публикации видео (его можно найти при экспорте, например, в разделе «Поделиться»).
 
-        ```html
-        <iframe width="720" height="405" src="https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-        ```
+    ```html
+    <iframe width="720" height="405" src="https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    ```
 
-    1. Используйте ссылку из атрибута `src` в разметке.
+    3\. Используйте ссылку из атрибута `src` в разметке.
 
-        ```html
-        https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/
-        ```
+    ```html
+    https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/
+    ```
 
 {% note alert %}
 
