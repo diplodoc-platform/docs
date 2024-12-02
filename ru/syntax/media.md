@@ -56,7 +56,7 @@
 
 {% note info %}
 
-Поддерживающиеся видеохостинги: Youtube, Vimeo, Vine, Prezi, Osf, Yandex, VK, Rutube.
+Поддерживаемый список видеохостингов: Youtube, Vimeo, Vine, Prezi, Osf, Yandex, VK, Rutube.
 
 {% endnote %}
 
