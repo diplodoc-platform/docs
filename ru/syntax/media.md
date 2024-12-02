@@ -58,14 +58,14 @@
 
 Поддерживаются следующие видеохостинги:
 
-- `Youtube`
-- `Vimeo`
-- `Vine`
-- `Prezi`
-- `Osf`
-- `Yandex`
-- `Vk`
-- `Rutube`
+- Youtube;
+- Vimeo;
+- Vine;
+- Prezi;
+- Osf;
+- Yandex;
+- Vk;
+- Rutube.
 
 {% endnote %}
 
