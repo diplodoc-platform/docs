@@ -75,36 +75,42 @@
 @[название_видеохостинга](id_видео_или_ссылка_на_него)
 ```
 
+**Пример реализации:**
+
+```markdown
+@[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
+```
+
+**Результат:**
+
+@[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
+
 1. Замените `название_видеохостинга` на значение из списка, соответствующее вашему видеохостингу: [`youtube`, `vimeo`, `vine`, `prezi`, `osf`, `yandex`, `vk`, `rutube`].
 
 1. Получите ссылку на видео.
 
     Для получения ссылки на видео:
 
-    1. Откройте видео.
-    1. Найдите код для публикации видео (его можно найти при экспорте, например, в разделе «Поделиться»).
+    1\. Откройте видео.
+    2\. Найдите код для публикации видео (его можно найти при экспорте, например, в разделе «Поделиться»).
 
-        {% cut "Пример кода публикации" %}
+    {% cut "Пример кода публикации" %}
 
-        ```html
-        <iframe width="720" height="405" src="https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-        ```
+    ```html
+    <iframe width="720" height="405" src="https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    ```
 
-        {% endcut %}
+    {% endcut %}
 
-    1. Используйте ссылку из атрибута `src` в разметке.
+    3\. Используйте ссылку из атрибута `src` в разметке.
 
-        ```markdown
-        @[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
-        ```
-
-        **Результат**:
-
-        @[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
+     ```html
+    https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/
+    ```
 
 {% note alert %}
 
-Если видео не показывается в окне проигрывателя с ошибкой `ERR_BLOCKED_BY_CSP`, то внесите изменения в файл конфигурации `.yfm`, добавив видеохостинг в список разрешенных доменов.
+Если видео не показывается в окне проигрывателя из-за ошибки `ERR_BLOCKED_BY_CSP`, то внесите изменения в файл конфигурации `.yfm`, добавив видеохостинг в список разрешенных доменов.
 
 ```yaml
 resources:
