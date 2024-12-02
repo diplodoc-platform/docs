@@ -76,7 +76,7 @@
 
 @[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
 
-Замените `название_видеохостинга` на значение из списка, соответствующее вашему видеохостингу:
+1. Замените `название_видеохостинга` на значение из списка, соответствующее вашему видеохостингу:
 
 - `youtube`;
 - `vimeo`;
@@ -87,39 +87,38 @@
 - `vk`;
 - `rutube`.
 
-Получите из атрибута `src` блока `iframe` ссылку на видео или воспользуйтесь инструкцией под катом.
+1. Получите ссылку на видео. Для этого воспользуйтесь инструкцией под катом.
 
-{% cut "Инструкция по получению ссылки на видео" %}
+    {% cut "Получение ссылки на видео" %}
 
-1. Откройте видео на видеохостинге.
-1. Найдите код для публикации видео (его можно найти при экспорте, например, в разделе «Поделиться»).
+    1. Откройте видео на видеохостинге.
+    1. Найдите код для публикации видео (его можно найти при экспорте, например, в разделе «Поделиться»).
 
-    {% cut "Пример кода публикации" %}
+        ```html
+        <iframe width="720" height="405" src="https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        ```
 
-    ```html
-    <iframe width="720" height="405" src="https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-    ```
+    1. Используйте ссылку из атрибута `src` в разметке.
+
+        ```html
+        https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/
+        ```
 
     {% endcut %}
 
-1. Используйте ссылку из атрибута `src` в разметке.
-
-    ```html
-    https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/
-    ```
-
-{% endcut %}
-
 {% note alert %}
 
-Если видео не отображается в окне проигрывателя из-за ошибки `ERR_BLOCKED_BY_CSP`, то внесите изменения в файл конфигурации `.yfm`, добавив видеохостинг в список разрешенных доменов.
+Если видео не отображается в окне проигрывателя из-за ошибки `ERR_BLOCKED_BY_CSP`:
 
-```yaml
-resources:
-  csp:
-    - "frame-src":
-        - "https://rutube.ru"
-```
+1. Откройте `.yfm` файл конфигурации.
+1. Добавьте видеохостинг в список разрешенных доменов.
+
+    ```yaml
+    resources:
+    csp:
+        - "frame-src":
+            - "https://rutube.ru"
+    ```
 
 {% cut "Пример конфига" %}
 
@@ -132,7 +131,7 @@ resources:
     - _assets/style/custom.css
   csp:
     - "frame-src":
-        - "https://rutube.ru"
+      - "https://rutube.ru"
 
 docs-viewer:
   project-name: diplodoc
