@@ -54,7 +54,7 @@
 
 ## Видео {#video}
 
-{% note warning %}
+{% note info %}
 
 Поддерживаются следующие видеохостинги: Youtube, Vimeo, Vine, Prezi, Osf, Yandex, Vk, Rutube.
 
