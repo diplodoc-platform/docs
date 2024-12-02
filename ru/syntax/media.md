@@ -66,16 +66,6 @@
 @[название_видеохостинга](id_видео_или_ссылка_на_него)
 ```
 
-**Пример разметки:**
-
-```markdown
-@[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
-```
-
-**Результат:**
-
-@[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
-
 1. Замените `название_видеохостинга` на название видеохостинга из списка:
 
     - `youtube`;
@@ -97,6 +87,16 @@
     ```
 
     3\. Замените `id_видео_или_ссылка_на_него` на ссылку из атрибута `src`.
+
+**Пример разметки:**
+
+```markdown
+@[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
+```
+
+**Результат:**
+
+@[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
 
 {% note alert %}
 
