@@ -238,5 +238,3 @@
   Контент для пункта 3.
 
 {% endlist %}
-
-{% include [default-value-for-tabs-and-radiobtns](../_includes/default-element.md) %}

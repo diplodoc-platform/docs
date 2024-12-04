@@ -71,6 +71,9 @@ items:
             href: syntax/notes.md
           - name: Каты, табы и радиобаттоны
             href: syntax/cuts-tabs-radio.md
+            items:
+              - name: Элемент по умолчанию
+                href: syntax/default-element.md
           - name: Ссылки
             href: syntax/links.md
           - name: Медиа
