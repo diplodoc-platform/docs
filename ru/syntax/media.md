@@ -76,7 +76,7 @@
 1. Найдите код для публикации видео (код можно найти при экспорте, например, в разделе «Поделиться»).
 
     ```html
-    <iframe width="720" height="405" src="https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <iframe width="720" height="405" src="https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
     ```
 
 1. Замените `id_видео_или_ссылка_на_него` на ссылку из атрибута `src`.
@@ -84,12 +84,12 @@
 **Пример разметки:**
 
 ```markdown
-@[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
+@[rutube](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
 ```
 
 **Результат:**
 
-@[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
+@[rutube](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
 
 {% note alert %}
 
@@ -139,11 +139,11 @@ docs-viewer:
 **Пример разметки:**
 
 ```markdown
-@[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
+@[rutube](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
 ```
 
 **Результат:**
 
-@[rutube](https://rutube.ru/play/embed/c25a0402e866c6fed5347be6d7dbf9ca/)
+@[rutube](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
 
 Ознакомиться с вариантами оформления и перечнем доступных видеохостингов можно на странице плагина [markdown-it-video](https://www.npmjs.com/package/markdown-it-video).
