@@ -54,12 +54,6 @@
 
 ## Видео {#video}
 
-Чтобы добавить на страницу видео, используйте разметку:
-
-```markdown
-@[название_видеохостинга](id_видео_или_ссылка_на_него)
-```
-
 ### Видео из поддерживаемых видеохостингов
 
 {% note info %}
@@ -68,12 +62,18 @@
 
 {% endnote %}
 
+1. Чтобы добавить на страницу видео, используйте разметку:
+
+    ```markdown
+    @[название_видеохостинга](id_видео_или_ссылка_на_него)
+    ```
+
 1\. Замените `название_видеохостинга` на название видеохостинга из списка: `yandex`, `rutube`, `vk`, `youtube`, `vimeo`, `vine`, `osf`, `prezi`.
 
 2\. Получите ссылку на видео: {#href-for-video}
 
 1. Откройте видео на видеохостинге.
-1. Найдите код для публикации видео (код можно найти при экспорте, например, в разделе «Поделиться»).
+1. Найдите код для публикации видео (код можно найти при экспорте в теге `iframe`, например, в разделе «Поделиться»).
 
     ```html
     <iframe width="720" height="405" src="https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -130,6 +130,12 @@ docs-viewer:
 
 ### Видео из любого видеохостинга, где есть ваш проигрыватель.
 
+1. Чтобы добавить на страницу видео, используйте разметку:
+
+    ```markdown
+    @[название_видеохостинга](id_видео_или_ссылка_на_него)
+    ```
+
 1. Замените `название_видеохостинга` на название видеохостинга из списка: `yandex`, `rutube`, `vk`, `youtube`, `vimeo`, `vine`, `osf`, `prezi`.
 
 1. Получите ссылку на [видео](#href-for-video).
@@ -145,5 +151,3 @@ docs-viewer:
 **Результат:**
 
 @[rutube](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
-
-Ознакомиться с вариантами оформления и перечнем доступных видеохостингов можно на странице плагина [markdown-it-video](https://www.npmjs.com/package/markdown-it-video).
