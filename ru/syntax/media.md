@@ -122,7 +122,7 @@ resources:
     - _assets/style/custom.css
   csp:
     - "frame-src":
-      - "https://rutube.ru"
+      - "https://runtime.strm.yandex.ru"
 
 docs-viewer:
   project-name: diplodoc
@@ -141,10 +141,10 @@ docs-viewer:
 1. Чтобы добавить на страницу видео, используйте разметку:
 
     ```markdown
-    @[название_видеохостинга](id_видео_или_ссылка_на_него)
+    @[](id_видео_или_ссылка_на_него)
     ```
 
-1. Замените `название_видеохостинга` на название видеохостинга из списка: `yandex`, `rutube`, `vk`, `youtube`, `vimeo`, `vine`, `osf`, `prezi`.
+1. Квадратные скобки оставьте пустыми.
 
 1. Получите ссылку на [видео](#href-for-video).
 
@@ -153,9 +153,9 @@ docs-viewer:
 **Пример разметки:**
 
 ```markdown
-@[rutube](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
+@[](https://frontend.vh.yandex.ru/runtime/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
 ```
 
 **Результат:**
 
-@[rutube](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
+@[](https://frontend.vh.yandex.ru/runtime/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
