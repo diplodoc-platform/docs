@@ -89,7 +89,7 @@
 
 **Результат:**
 
-@[yandex](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
+@[](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
 
 {% note alert %}
 
