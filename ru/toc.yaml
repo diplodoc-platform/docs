@@ -146,6 +146,8 @@ items:
             href: guides/unarchive.md
           - name: Source Docs
             href: guides/source-docs.md
+      - name: Content Security Policy (CSP)
+        href: guides/csp.md      
   - name: Инструменты и библиотеки
     labeled: true
     items:

@@ -22,5 +22,6 @@
 || `analytics` | Конфигурация для модуля аналитки | `Object` | `undefined` ||
 || `analytics.gtm` | Настройки Google Tag Manager аналитики | `Object` | `undefined` ||
 || `analytics.gtm.id` | Идентификатор Google Tag Manager в формате GTM-* | `string` | `undefined` ||
-|| `analytics.gtm.mode` | Тип уведомления перед отправкой событий `base` или `notification`  | `string` | `base` ||
+|| `analytics.gtm.mode` | Тип уведомления перед отправкой событий `base` или `notification` | `string` | `base` ||
+|| `csp` | Управление [Content Security Policy](./guides/csp.md) (CSP) | `string` | - ||
 |#
