@@ -54,9 +54,97 @@
 
 ## Видео {#video}
 
-Чтобы добавить на страницу видео, используйте разметку: 
+{% note info %}
+
+Поддерживаемый список видеохостингов: Yandex, Rutube, VK, Youtube, Vimeo, Vine, Osf, Prezi.
+
+{% endnote %}
+
+Если ваш видеохостинг не поддерживается, но у него есть кнопка экспорта видео, то воспользуйтесь разделом [Видео из другого видеохостинга](#personal-player).
+
+### Видео из поддерживаемого видеохостинга
+
+1. Чтобы добавить на страницу видео, используйте разметку:
+
+    ```markdown
+    @[название_хостинга](id_видео_или_ссылка_на_него)
+    ```
+
+1. Замените `название_хостинга` на название видеохостинга из списка: `yandex`, `rutube`, `vk`, `youtube`, `vimeo`, `vine`, `osf`, `prezi`.
+
+1. Откройте страницу с видео, которое нужно встроить в документацию. {#href-for-video}
+
+1. Найдите код для публикации видео (код можно найти при экспорте в теге `iframe`, например, в разделе «Поделиться»).
+
+    ```html
+    <iframe width="720" height="405" src="https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    ```
+
+1. Замените `id_видео_или_ссылка_на_него` на ссылку из атрибута `src`.
+
+**Пример разметки:**
 
 ```markdown
-@[название_видеохостинга](id_видео_или_ссылка_на_него)
+@[yandex](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
 ```
-Ознакомиться с вариантами оформления и перечнем доступных видеохостингов можно на странице плагина [markdown-it-video](https://www.npmjs.com/package/markdown-it-video).
+
+**Результат:**
+
+@[](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
+
+{% note alert %}
+
+Если видео не отображается, и окно проигрывателя выдает ошибку `ERR_BLOCKED_BY_CSP`:
+
+1\. Откройте `.yfm` файл конфигурации.
+2\. Добавьте видеохостинг в список разрешенных доменов.
+
+```yaml
+resources:
+  csp:
+    - "frame-src":
+      - "ссылка_на_видеохостинг"
+```
+
+{% cut "Пример конфига" %}
+
+```yaml
+allowHTML: true
+langs: ['en','ru']
+
+resources:
+  csp:
+    - "frame-src":
+      - "https://runtime.strm.yandex.ru"
+
+docs-viewer:
+  project-name: diplodoc
+  langs: ['en','ru']
+...
+```
+
+{% endcut %}
+
+{% endnote %}
+
+### Видео из другого видеохостинга {#personal-player}
+
+1. Чтобы добавить на страницу видео, используйте разметку:
+
+    ```
+    @[](id_видео_или_ссылка_на_него)
+    ```
+
+1. Получите ссылку на [видео](#href-for-video).
+
+1. Замените `id_видео_или_ссылка_на_него` на полученную ссылку.
+
+**Пример разметки:**
+
+```markdown
+@[](https://frontend.vh.yandex.ru/runtime/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
+```
+
+**Результат:**
+
+@[](https://frontend.vh.yandex.ru/runtime/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)

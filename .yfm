@@ -4,6 +4,9 @@ langs: ['en','ru']
 resources:
   style:
     - _assets/style/custom.css
+  csp:
+    - "frame-src":
+        - "runtime.strm.yandex.ru"
 
 docs-viewer:
   project-name: diplodoc
