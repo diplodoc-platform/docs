@@ -112,8 +112,6 @@ allowHTML: true
 langs: ['en','ru']
 
 resources:
-  style:
-    - _assets/style/custom.css
   csp:
     - "frame-src":
       - "https://runtime.strm.yandex.ru"
