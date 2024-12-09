@@ -76,9 +76,9 @@
 
 1. Найдите код для публикации видео (код можно найти при экспорте в теге `iframe`, например, в разделе «Поделиться»).
 
-  ```html
-  <iframe width="720" height="405" src="https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-  ```
+    ```html
+    <iframe width="720" height="405" src="https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    ```
 
 1. Замените `id_видео_или_ссылка_на_него` на ссылку из атрибута `src`.
 
