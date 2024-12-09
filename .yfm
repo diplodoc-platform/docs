@@ -6,7 +6,7 @@ resources:
     - _assets/style/custom.css
   csp:
     - "frame-src":
-        - "https://rutube.ru"
+        - "runtime.strm.yandex.ru"
 
 docs-viewer:
   project-name: diplodoc
