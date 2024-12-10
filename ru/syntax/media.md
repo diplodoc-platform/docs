@@ -62,89 +62,91 @@
 
 Если ваш видеохостинг не поддерживается, но у него есть кнопка экспорта видео, то воспользуйтесь разделом [Видео из другого видеохостинга](#personal-player).
 
-### Видео из поддерживаемого видеохостинга
+{% list tabs %}
 
-1. Чтобы добавить на страницу видео, используйте разметку:
+- Видео из поддерживаемого видеохостинга
 
-    ```markdown
-    @[название_хостинга](id_видео_или_ссылка_на_него)
-    ```
+  1. Чтобы добавить на страницу видео, используйте разметку:
 
-1. Замените `название_хостинга` на название видеохостинга из списка: `yandex`, `rutube`, `vk`, `youtube`, `vimeo`, `vine`, `osf`, `prezi`.
+      ```markdown
+      @[название_хостинга](id_видео_или_ссылка_на_него)
+      ```
 
-1. Откройте страницу с видео, которое нужно встроить в документацию. {#href-for-video}
+  1. Замените `название_хостинга` на название видеохостинга из списка: `yandex`, `rutube`, `vk`, `youtube`, `vimeo`, `vine`, `osf`, `prezi`.
 
-1. Найдите код для публикации видео (код можно найти при экспорте в теге `iframe`, например, в разделе «Поделиться»).
+  1. Откройте страницу с видео, которое нужно встроить в документацию. {#href-for-video}
 
-    ```html
-    <iframe width="720" height="405" src="https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-    ```
+  1. Найдите код для публикации видео (код можно найти при экспорте в теге `iframe`, например, в разделе «Поделиться»).
 
-1. Замените `id_видео_или_ссылка_на_него` на ссылку из атрибута `src`.
+      ```html
+      <iframe width="720" height="405" src="https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      ```
 
-**Пример разметки:**
+  1. Замените `id_видео_или_ссылка_на_него` на ссылку из атрибута `src`.
 
-```markdown
-@[yandex](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
-```
+  **Пример разметки:**
 
-**Результат:**
+  ```markdown
+  @[yandex](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
+  ```
 
-@[](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
+  **Результат:**
 
-{% note alert %}
+  @[](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
 
-Если видео не отображается, и окно проигрывателя выдает ошибку `ERR_BLOCKED_BY_CSP`:
+  {% note alert %}
 
-1\. Откройте `.yfm` файл конфигурации.
-2\. Добавьте видеохостинг в список разрешенных доменов.
+  Если видео не отображается, и окно проигрывателя выдает ошибку `ERR_BLOCKED_BY_CSP`:
 
-```yaml
-resources:
-  csp:
-    - "frame-src":
-      - "ссылка_на_видеохостинг"
-```
+  1\. Откройте `.yfm` файл конфигурации.
+  2\. Добавьте видеохостинг в список разрешенных доменов.
 
-{% cut "Пример конфига" %}
+  ```yaml
+  resources:
+    csp:
+      - "frame-src":
+        - "ссылка_на_видеохостинг"
+  ```
 
-```yaml
-allowHTML: true
-langs: ['en','ru']
+  {% cut "Пример конфига" %}
 
-resources:
-  csp:
-    - "frame-src":
-      - "https://runtime.strm.yandex.ru"
-
-docs-viewer:
-  project-name: diplodoc
+  ```yaml
+  allowHTML: true
   langs: ['en','ru']
-...
-```
 
-{% endcut %}
+  resources:
+    csp:
+      - "frame-src":
+        - "https://runtime.strm.yandex.ru"
 
-{% endnote %}
+  docs-viewer:
+    project-name: diplodoc
+    langs: ['en','ru']
+  ...
+  ```
 
-### Видео из другого видеохостинга {#personal-player}
+  {% endcut %}
 
-1. Чтобы добавить на страницу видео, используйте разметку:
+  {% endnote %}
 
-    ```
-    @[](id_видео_или_ссылка_на_него)
-    ```
+- Видео из другого видеохостинга {#personal-player}
 
-1. Получите ссылку на [видео](#href-for-video).
+  1. Чтобы добавить на страницу видео, используйте разметку:
 
-1. Замените `id_видео_или_ссылка_на_него` на полученную ссылку.
+      ```
+      @[](id_видео_или_ссылка_на_него)
+      ```
 
-**Пример разметки:**
+  1. Получите ссылку на [видео](#href-for-video).
 
-```markdown
-@[](https://frontend.vh.yandex.ru/runtime/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
-```
+  1. Замените `id_видео_или_ссылка_на_него` на полученную ссылку.
 
-**Результат:**
+  **Пример разметки:**
 
-@[](https://frontend.vh.yandex.ru/runtime/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
+  ```markdown
+  @[](https://frontend.vh.yandex.ru/runtime/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
+  ```
+
+  **Результат:**
+
+  @[](https://frontend.vh.yandex.ru/runtime/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
