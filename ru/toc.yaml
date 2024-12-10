@@ -69,8 +69,19 @@ items:
                 href: syntax/tables/multiline.md
           - name: Заметки
             href: syntax/notes.md
-          - name: Каты, табы и радиобаттоны
-            href: syntax/cuts-tabs-radio.md
+          - name: Интерактивные элементы разметки
+            href: syntax/interactive-elements/index.md
+            items:
+              - name: Каты
+                href: syntax/interactive-elements/cuts.md
+              - name: Табы
+                href: syntax/interactive-elements/tabs.md
+              - name: Радиобаттоны
+                href: syntax/interactive-elements/radio.md
+              - name: Дропдаун
+                href: syntax/interactive-elements/dropdawn.md
+              - name: Аккордеон
+                href: syntax/interactive-elements/accordion.md
           - name: Ссылки
             href: syntax/links.md
           - name: Медиа
