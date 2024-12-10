@@ -70,6 +70,7 @@ items:
           - name: Заметки
             href: syntax/notes.md
           - name: Интерактивные элементы разметки
+            href: syntax/interactive-elements/index.md
             items:
               - name: Каты
                 href: syntax/interactive-elements/cuts.md
