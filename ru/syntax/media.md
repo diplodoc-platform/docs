@@ -87,12 +87,12 @@
   **Пример разметки:**
 
   ```markdown
-  @[yandex](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
+  @[vk](https://vk.com/video_ext.php id=-220754053&id=456241713&hd=2)
   ```
 
   **Результат:**
 
-  @[](https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\)
+  @[vk](https://vk.com/video_ext.php id=-220754053&id=456241713&hd=2)
 
   {% note alert %}
 
