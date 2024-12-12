@@ -117,7 +117,7 @@
   resources:
     csp:
       - "frame-src":
-        - "https://runtime.strm.yandex.ru"
+        - "https:///vk.com"
 
   docs-viewer:
     project-name: diplodoc
