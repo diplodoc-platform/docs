@@ -62,7 +62,7 @@
 
 {% endnote %}
 
-{% list tabs radio %}
+{% list tabs %}
 
 - Видео из поддерживаемого видеохостинга {#supported-host}
 
