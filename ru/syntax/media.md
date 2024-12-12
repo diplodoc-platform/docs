@@ -62,7 +62,7 @@
 
 {% endnote %}
 
-{% list tabs %}
+{% list tabs radio %}
 
 - Видео из поддерживаемого видеохостинга {#supported-host}
 
@@ -79,7 +79,7 @@
   1. Найдите код для публикации видео (код можно найти при экспорте в теге `iframe`, например, в разделе «Поделиться»).
 
       ```html
-      <iframe width="720" height="405" src="https://runtime.strm.yandex.ru/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect\_from=ugc\" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      <iframe src="https://vk.com/video_ext.php?oid=-207738372&id=456239060&hd=2&autoplay=1" width="853" height="480" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
       ```
 
   1. Замените `id_видео_или_ссылка_на_него` на ссылку из атрибута `src`.
@@ -87,12 +87,12 @@
   **Пример разметки:**
 
   ```markdown
-  @[vk](https://vk.com/video_ext.php id=-220754053&id=456241713&hd=2)
+  @[vk](https://vk.com/video_ext.php?oid=-207738372&id=456239060&hd=2&autoplay=1)
   ```
 
   **Результат:**
 
-  @[vk](https://vk.com/video_ext.php id=-220754053&id=456241713&hd=2)
+  @[vk](https://vk.com/video_ext.php?oid=-207738372&id=456239060&hd=2&autoplay=1)
 
   {% note alert %}
 
