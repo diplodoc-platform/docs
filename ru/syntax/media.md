@@ -54,9 +54,99 @@
 
 ## Видео {#video}
 
-Чтобы добавить на страницу видео, используйте разметку: 
+{% note info %}
+
+Поддерживаемый список видеохостингов: Yandex, Rutube, VK, Youtube, Vimeo, Vine, Osf, Prezi.
+
+Если ваш видеохостинг не поддерживается, но у него есть кнопка экспорта видео, то воспользуйтесь разделом [Видео из другого видеохостинга](#unsupported-player).
+
+{% endnote %}
+
+### Видео из поддерживаемого видеохостинга {#supported-host}
+
+1. Чтобы добавить на страницу видео, используйте разметку:
+
+    ```markdown
+    @[название_хостинга](id_видео_или_ссылка_на_него)
+    ```
+
+1. Замените `название_хостинга` на название видеохостинга из списка: `yandex`, `rutube`, `vk`, `youtube`, `vimeo`, `vine`, `osf`, `prezi`.
+
+1. Откройте страницу с видео, которое нужно встроить в документацию. {#href-for-video}
+
+1. Найдите код для публикации видео (код можно найти при экспорте в теге `iframe`, например, в разделе «Поделиться»).
+
+    ```html
+    <iframe src="https://vk.com/video_ext.php?oid=-207738372&id=456239060&hd=2&autoplay=1" width="853" height="480" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+    ```
+
+1. Замените `id_видео_или_ссылка_на_него` на ссылку из атрибута `src`.
+
+**Пример разметки:**
 
 ```markdown
-@[название_видеохостинга](id_видео_или_ссылка_на_него)
+@[vk](https://vk.com/video_ext.php?oid=-207738372&id=456239060&hd=2&autoplay=1)
 ```
-Ознакомиться с вариантами оформления и перечнем доступных видеохостингов можно на странице плагина [markdown-it-video](https://www.npmjs.com/package/markdown-it-video).
+
+**Результат:**
+
+@[vk](https://vk.com/video_ext.php?oid=-207738372&id=456239060&hd=2&autoplay=1)
+
+{% note alert %}
+
+Если видео не отображается, и окно проигрывателя выдает ошибку `ERR_BLOCKED_BY_CSP`:
+
+1\. Откройте `.yfm` файл конфигурации.
+2\. Добавьте видеохостинг в список разрешенных доменов.
+
+```yaml
+resources:
+  csp:
+    - "frame-src":
+        - "ссылка_на_видеохостинг"
+```
+
+{% cut "Пример конфига" %}
+
+```yaml
+allowHTML: true
+langs: ['en','ru']
+
+resources:
+  csp:
+    - "frame-src":
+        - "https://vk.com"
+        - "https://login.vk.com"        
+        - "https://runtime.strm.yandex.ru"
+
+docs-viewer:
+  project-name: diplodoc
+  langs: ['en','ru']
+...
+```
+
+{% endcut %}
+
+{% endnote %}
+
+### Видео из другого видеохостинга {#unsupported-player}
+
+1. Чтобы добавить на страницу видео, используйте разметку:
+
+    ```
+    @[](id_видео_или_ссылка_на_него)
+    ```
+
+1. Получите ссылку на [видео](#href-for-video).
+
+1. Замените `id_видео_или_ссылка_на_него` на полученную ссылку.
+
+**Пример разметки:**
+
+```markdown
+@[](https://frontend.vh.yandex.ru/runtime/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
+```
+
+**Результат:**
+
+@[](https://frontend.vh.yandex.ru/runtime/player/video/vplvic7jsotpobyc7o5b?autoplay=0&branding=0&from=documentation&mute=0&redirect_from=ugc)
