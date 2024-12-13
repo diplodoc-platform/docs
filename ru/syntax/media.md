@@ -115,7 +115,7 @@ langs: ['en','ru']
 resources:
   csp:
     - "frame-src":
-      - "https:///vk.com"
+      - "https://vk.com"
 
 docs-viewer:
   project-name: diplodoc
