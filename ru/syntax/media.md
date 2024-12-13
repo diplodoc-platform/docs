@@ -103,7 +103,7 @@
 resources:
   csp:
     - "frame-src":
-      - "ссылка_на_видеохостинг"
+        - "ссылка_на_видеохостинг"
 ```
 
 {% cut "Пример конфига" %}
@@ -115,7 +115,8 @@ langs: ['en','ru']
 resources:
   csp:
     - "frame-src":
-      - "https://vk.com"
+        - "https://vk.com"
+        - "https://runtime.strm.yandex.ru"
 
 docs-viewer:
   project-name: diplodoc
