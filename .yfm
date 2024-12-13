@@ -6,7 +6,8 @@ resources:
     - _assets/style/custom.css
   csp:
     - "frame-src":
-        - "runtime.strm.yandex.ru"
+        - "https://runtime.strm.yandex.ru"
+        - "https://vk.com"
 
 docs-viewer:
   project-name: diplodoc
