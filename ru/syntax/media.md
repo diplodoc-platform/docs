@@ -116,6 +116,7 @@ resources:
   csp:
     - "frame-src":
         - "https://vk.com"
+        - "https://login.vk.com"        
         - "https://runtime.strm.yandex.ru"
 
 docs-viewer:
