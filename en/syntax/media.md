@@ -25,6 +25,23 @@ The standard markup for inserting an image is:
 
     {% endnote %}
 
+### Images with captions
+
+You can enable the display of the caption you need to add the { caption } as attribute, the default value is equal to the title, but it can also be passed in the attribute.
+
+```markdown
+![Alt text](../../_images/mountain.jpg "Default caption text" =100x100){ caption }
+
+![Alt text](../../_images/mountain.jpg "Title" =100x100){ caption="Specified caption text" }
+```
+
+**Result**
+
+![Alt text](../../_images/mountain.jpg "Default caption text" =100x100){ caption }
+
+![Alt text](../../_images/mountain.jpg "Title" =100x100){ caption="Specified caption text" }
+
+
 ### Images as links {#image-link}
 
 You can make an image clickable using [link design rules](./links.md). To do this, add the standard image markup to the part where the link text usually goes.
