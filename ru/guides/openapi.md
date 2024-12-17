@@ -54,6 +54,7 @@ links:
 #### Синтаксис
 
 ```yaml
+# doc_root/toc.yaml
 tags:
     __root__:
         name: Новое название оглавления на верхнем уровне
@@ -86,6 +87,7 @@ tags:
 #### Синтаксис
 
 ```yaml
+# doc_root/toc.yaml
  leadingPage:
     name: Новое имя всех оглавлений
     spec:
@@ -103,6 +105,7 @@ tags:
 #### Синтаксис
 
 ```yaml
+# doc_root/toc.yaml
 sandbox:
     tabName: Название таба с песочницей
     host: 'https://sandbox.doc.ru'
@@ -111,6 +114,7 @@ sandbox:
 ## Скрытие полей
 
 ```yaml
+# openapi.yaml
 x-hidden: true
 ```
 Чтобы скрыть параметры операции или поля объекта, добавьте в их описание `x-hidden: true`.
@@ -137,6 +141,7 @@ x-hidden: true
 Они имеют общий интерфейс фильтрации:
 
 ```yaml
+# doc_root/toc.yaml
 filter:
     endpoint: tags contains "nobuild" != true
     tag: name == "noindex"
@@ -176,6 +181,7 @@ filter:
 #### Синтаксис
 
 ```yaml
+# doc_root/toc.yaml
 noindex:
     tag: name == "noindex"
 ```
