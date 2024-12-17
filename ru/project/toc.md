@@ -8,7 +8,7 @@
 
 {% endnote %}
 
-Миниток (Minitoc)
+## Миниток (Minitoc)
 
 {% note warning %}
 
@@ -39,7 +39,7 @@
 ```
 
 
-### Структура {#structure}
+## Структура {#structure}
 
 Стандартная структура файла `toc.yaml` имеет вид:
 
