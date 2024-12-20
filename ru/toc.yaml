@@ -103,7 +103,7 @@ items:
           - name: Оглавление
             href: project/toc.md
             items:
-              - name: Оглавление на странице документации
+              - name: Удобная навигация по странице
                 href: project/minitoc.md
           - name: Расширенная навигация
             href: project/navigation.md
