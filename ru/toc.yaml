@@ -104,6 +104,9 @@ items:
             href: project/index.md
           - name: Оглавление
             href: project/toc.md
+            items:
+              - name: Оглавление на странице документации
+                href: project/minitoc.md
           - name: Расширенная навигация
             href: project/navigation.md
           - name: Разводящая страница
