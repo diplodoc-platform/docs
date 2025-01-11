@@ -29,7 +29,7 @@ docs-viewer:
   metrika: [21930706, 96924079, 96924106]
 ```
 |
-`string | string[]`
+`string \| string[]`
 |
 `undefined`
 ||
@@ -38,7 +38,7 @@ docs-viewer:
 || `sanitizeOptions` | Конфигурация санитайзера | `Object` | `undefined` ||
 || `singlePage` | Собирать однострачник из всех файлов проекта | `bool` | `false` ||
 || `strict` | Запуск в строгом режиме | `bool` | `true` ||
-|| `linkifyTlds` | Настройка tld для плагина linkify | `string | string[]` | `undefined` ||
+|| `linkifyTlds` | Настройка tld для плагина linkify | `string \| string[]` | `undefined` ||
 || `add-map-file` | Создает json-файл со всеми путями проекта | `bool` | `false` ||
 || `analytics` | Конфигурация для модуля аналитки | `Object` | `undefined` ||
 || `analytics.gtm` | Настройки Google Tag Manager аналитики | `Object` | `undefined` ||
