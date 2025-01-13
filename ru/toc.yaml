@@ -145,6 +145,7 @@ items:
       - name: Выкладка на S3
         href: tools/docs/publish-s3.md
   - name: CLI
+    labeled: true
     items:
       - name: Обзор
         href: tools/docs/index.md
@@ -155,9 +156,7 @@ items:
       - name: Локализация
         href: tools/docs/translate.md
       - name: Одностраничная сборка
-        href: tools/docs/singlepage.md
-      - name: Выкладка на S3
-        href: tools/docs/publish-s3.md 
+        href: tools/docs/singlepage.md 
   - name: Внесение изменений
     href: contribution.md
   - name: Практические руководства
