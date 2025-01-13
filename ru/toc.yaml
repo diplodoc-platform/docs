@@ -42,6 +42,8 @@ items:
   - name: Релизы YFM
     hidden: true
     href: changelog.md
+  - name: Внесение изменений
+    href: contribution.md
   - name: Начало работы
     labeled: true
     items:
@@ -144,9 +146,6 @@ items:
         href: github-pages.md
       - name: Выкладка на S3
         href: tools/docs/publish-s3.md 
-      - name: Внесение изменений
-        hidden: true
-        href: contribution.md
   - name: CLI
     labeled: true
     items:
