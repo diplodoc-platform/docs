@@ -143,7 +143,10 @@ items:
       - name: Github Pages
         href: github-pages.md
       - name: Выкладка на S3
-        href: tools/docs/publish-s3.md
+        href: tools/docs/publish-s3.md 
+      - name: Внесение изменений
+        hidden: true
+        href: contribution.md
   - name: CLI
     labeled: true
     items:
@@ -156,9 +159,7 @@ items:
       - name: Локализация
         href: tools/docs/translate.md
       - name: Одностраничная сборка
-        href: tools/docs/singlepage.md 
-  - name: Внесение изменений
-    href: contribution.md
+        href: tools/docs/singlepage.md
   - name: Практические руководства
     labeled: true
     items:
