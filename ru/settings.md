@@ -34,6 +34,36 @@ docs-viewer:
 `undefined`
 ||
 || `needToSanitizeHtml` | Нужно ли санитайзить сгенерированный HTML | `bool` | `true` ||
+|| `remove-hidden-toc-items` | Убрать из оглавления все объекты, отмеченные атрибутом `hidden: true` | `bool` | `false` || 
+||
+`merge-includes`
+|
+Мержить содержимое [инклюдов](./project/includes.md) в документацию, где они используются.
+
+{% note info %}
+
+Используйте вместе с параметром `output-format: md`.
+
+{% endnote %}
+|
+`bool`
+|
+`false`
+||
+||
+`allow-custom-resources`
+
+`static-content`
+
+`resource, --resources <value...>`
+|
+Разрешить загрузку ресурсов в статически сгенерированные страницы
+|
+`bool`
+|
+`false`
+||
+|| `add-system-meta` | Добавлять метаданные с системными переменными из пресетов в файлы документации | `bool` | `false` ||
 || `output-format` | Формат файлов итоговой сборки | `string` (`html` или `md`) | `html` ||
 || `sanitizeOptions` | Конфигурация санитайзера | `Object` | `undefined` ||
 || `singlePage` | Собирать однострачник из всех файлов проекта | `bool` | `false` ||
