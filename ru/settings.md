@@ -55,7 +55,9 @@ docs-viewer:
 
 `static-content`
 
-`resource, --resources <value...>`
+`resource`
+
+`resources <value...>`
 |
 Разрешить загрузку ресурсов в статически сгенерированные страницы
 |
