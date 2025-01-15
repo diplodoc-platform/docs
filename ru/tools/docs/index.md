@@ -1,4 +1,4 @@
-# Builder
+# CLI
 
 [@diplodoc/cli](https://www.npmjs.com/package/@diplodoc/cli) — пакет для сборки документационного проекта с навигацией, внутренними переходами и полной поддержкой Yandex Flavored Markdown.
 
