@@ -57,7 +57,7 @@ items:
       - name: Синтаксис
         href: syntax/index.md
         items:
-          - name: Yandex Flawored Markdown
+          - name: Yandex Flavored Markdown
             href: index-yfm.md 
           - name: Базовая разметка
             href: syntax/base.md
