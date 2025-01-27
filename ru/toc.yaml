@@ -144,6 +144,20 @@ items:
         href: github-pages.md
   - name: Внесение изменений
     href: contribution.md
+  - name: CLI
+    items:
+      - name: Обзор
+        href: tools/docs/index.md
+      - name: Сборка
+        href: tools/docs/build.md
+      - name: Настройки сборки
+        href: tools/docs/settings.md
+      - name: Локализация
+        href: tools/docs/translate.md
+      - name: Одностраничная сборка
+        href: tools/docs/singlepage.md
+      - name: Выкладка на S3
+        href: tools/docs/publish-s3.md
   - name: Практические руководства
     labeled: true
     items:
@@ -175,20 +189,6 @@ items:
             href: tools/transform/settings.md
           - name: Подсветка кода
             href: tools/transform/highlight.md
-      - name: Builder
-        items:
-          - name: Обзор
-            href: tools/docs/index.md
-          - name: Сборка
-            href: tools/docs/build.md
-          - name: Настройки сборки
-            href: tools/docs/settings.md
-          - name: Локализация
-            href: tools/docs/translate.md
-          - name: Одностраничная сборка
-            href: tools/docs/singlepage.md
-          - name: Выкладка на S3
-            href: tools/docs/publish-s3.md
       - name: Плагины
         items:
           - name: Обзор
