@@ -145,6 +145,7 @@ items:
   - name: Внесение изменений
     href: contribution.md
   - name: CLI
+    labeled: true
     items:
       - name: Обзор
         href: tools/docs/index.md
