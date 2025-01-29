@@ -38,7 +38,7 @@ docs-viewer:
 ||
 `merge-includes`
 |
-Мержить содержимое [инклюдов](./project/includes.md) в документацию, где они используются.
+Объеденить содержимое [инклюдов](./project/includes.md) с документацией.
 
 {% note info %}
 
