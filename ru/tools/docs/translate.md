@@ -10,6 +10,16 @@ meta:
 
 Поддерживается перевод как `*.md` файлов так и `*.json` (в том числе `*.yaml`) файлов по [описанным схемам](#json-schemas).
 
+## Параметры вызова подкоманды extract
+
+#|
+|| Параметр             | Path
+|| --schema {{optional}}| 
+Путь до одного или нескольких файлов, содержащих кастомные схемы для перевода.
+\
+`{{PROGRAM}} translate extract --schema ./some/path/to/file.yaml ./some/path/toAnother/file.yaml`
+|#
+
 ## Автоматический перевод {#auto}
 
 ```bash
