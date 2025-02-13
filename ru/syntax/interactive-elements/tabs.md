@@ -77,3 +77,103 @@
   Текст таба 3.
 
 {% endlist %}
+
+
+## Синхронизация
+
+Чтобы одновременно переключать единообразные вкладки в пределах одной страницы, примените атрибут `group`:
+
+```markdown
+{% list tabs group=instructions %}
+
+  - Python
+
+    About python
+
+    - Tab with list
+    - One
+    - Two
+
+  - Tab with list
+    1. One
+    2. Two
+
+  - Next
+
+    hello world
+
+{% endlist %}
+
+
+
+{% list tabs group=instructions %}
+
+  - Python
+
+    About python
+
+    - Tab with list
+    - One
+    - Two
+
+  - Tab with list
+    1. One
+    2. Two
+
+  - Next
+
+    hello world 2
+
+
+{% endlist %}
+```
+
+**Результат:**
+
+{% list tabs group=instructions %}
+
+  - Python
+
+    About python
+
+    - Tab with list
+    - One
+    - Two
+
+
+  - Tab with list
+
+    1. One
+    2. Two
+
+
+  - Next
+
+    hello world
+
+{% endlist %}
+
+
+
+{% list tabs group=instructions %}
+
+  - Python
+
+    About python
+
+    - Tab with list
+    - One
+    - Two
+
+
+  - Tab with list
+
+    1. One
+    2. Two
+
+
+  - Next
+
+    hello world 2
+
+{% endlist %}
