@@ -65,17 +65,12 @@ Description...
 - Name of tab2
 
   Second step of tab2.
-  
-  {% note info %}
-
-  Try reloading the page to see that Tab 2 is active.
-
-  {% endnote %}
 
 {% endlist %}
 ```
 
 **Result**
+
 
 {% list tabs group=instructions %}
 
@@ -103,15 +98,16 @@ Description...
 
   Second step of Tab 2.
 
-  {% note info %}
-
-  Try reloading the page to see that Tab 2 is active.
-
-  {% endnote %}
-
 
 
 {% endlist %}
+
+
+{% note info %}
+
+  The state of the tabs is saved upon page reload.
+
+{% endnote %}
 
 {% endcut %}
 
