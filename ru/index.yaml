@@ -1,11 +1,11 @@
 title: Diplodoc
 description: Diplodoc - платформа работы с документацией в парадигме Documentation as a Code. 
 meta:
-  title: Метаданные
+  title: Diplodoc
   noIndex: true
 links:
 - title: О платформе
-  description: Описание платформы, ее особенности и преимущества.
+  description: Описание платформы, ее особенности и преимущества
   href: about.md
 - title: Возможности платформы
   description: Функциональные возможности Diplodoc
