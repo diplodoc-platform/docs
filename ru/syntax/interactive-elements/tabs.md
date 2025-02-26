@@ -171,9 +171,14 @@
     1. One
     2. Two
 
-
   - Next
 
     hello world 2
 
 {% endlist %}
+
+{% note info %}
+
+  Состояние табов сохраняется при перезагрузки страницы
+
+{% endnote %}

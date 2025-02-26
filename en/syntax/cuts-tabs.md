@@ -32,43 +32,82 @@ Content displayed when clicked.
 
 Use tabs for mutually exclusive sections. For example, to separate instructions for different operating systems.
 
-To display tabs correctly, separate them with empty lines:
+To ensure tabs are displayed correctly, separate each tab list and the text within the tabs with empty lines:
 
-* `{% list tabs %}` and `{% endlist %}`.
-* The text of one tab and the name of the next tab.
+* Use `{% list tabs %}` to start a tab list and `{% endlist %}` to end it.
+* Place the text for one tab followed by the name of the next tab on a new line.
+
+### Example of Grouped Tabs
 
 ```markdown
-{% list tabs %}
+{% list tabs group=instructions %}
 
-- The name of tab1
+- Name of tab1
 
-  The text of tab1.
-
+  First step of tab1.
   * You can use lists.
   * And **other** markup.
 
-- The name of tab2
+- Name of tab2
 
-  The text of tab2.
+  First step of tab2.
+
+{% endlist %}
+
+Description...
+
+{% list tabs group=instructions %}
+
+- Name of tab1
+
+  Second step of tab1.
+
+- Name of tab2
+
+  Second step of tab2.
 
 {% endlist %}
 ```
 
 **Result**
 
-{% list tabs %}
+
+{% list tabs group=instructions %}
 
 - Name of tab1
 
-  The text of tab1.
+  First step of tab1.
   * You can use lists.
   * And **other** markup.
 
 - Name of tab2
 
-  The text of tab2.
+  First step of tab2.
 
 {% endlist %}
+
+Description...
+
+{% list tabs group=instructions %}
+
+- Name of tab1
+
+  Second step of tab1.
+
+- Name of tab2
+
+  Second step of Tab 2.
+
+
+
+{% endlist %}
+
+
+{% note info %}
+
+  The state of the tabs is saved upon page reload.
+
+{% endnote %}
 
 {% endcut %}
 
