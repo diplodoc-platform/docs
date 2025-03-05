@@ -41,10 +41,9 @@ Parameter | Description
 `base-misc-light`| Background of code fragments in the text and large blocks of code
 `base-generic`| The color of the highlighted rows in tables, buttons, and search bar
 `base-generic-hover`| The color of the hovered buttons.
-`quote`| The color of the quotes.  Depends on the `base-brand`.
-`tab`| Tab line color.  Depends on the `base-brand`
-`tab-text-hover`| The color of the tab text when hovering over it.  Depends on the `text-link`
-`accordion-line`| The color of the accordion line.
+`quote`| The color of the quotes. Higher priority than `base-brand`.
+`tab`| Tab line color.  Higher priority than `base-brand`
+`tab-text-hover`| The color of the tab text when hovering over it.  Higher priority than `text-link`
 `popup-background`| Background of popup
 `popup-border`| Border of popup
 `text-link`| Link color. Depends on the `base-brand`.
@@ -55,11 +54,11 @@ Parameter | Description
 `text-hint`| "Previous" and "Next" at the bottom of the page
 `line-generic`| The color of the line between the page elements, the outer borders of the table, the general line of tabs, the general line of the article content.
 `simple-hover`| The color when hovering over the page in the table of contents, the selected dropdown point, on the icons of settings, language, etc.
-`code`| The color of the text in the code block. Priority is given to `text-complementary`.
+`code`| The color of the text in the code block. Higher priority than `text-complementary`.
 `code-background`| Background of the code block.
 `inline-code`| The color of the text in the code snippet.
 `inline-code-background`| Background of the code fragment.
-`table`| The color of the text in the table. Priority is given to `text-primary`.
+`table`| The color of the text in the table. Higher priority than `text-primary`.
 `table-background`| Table background.
 `table-row-background`| The background color of the highlighted rows of the table.
 `table-table-outer-border`| The frame of the table.
@@ -76,6 +75,11 @@ Parameter | Description
 `note-important`| The color of the icon in the "Alert" note
 `note-important-background`| Background color in the "Alert" note
 `note-important-border`| The frame in the "Alert" note
+`mini-toc-border` | The color of mini-toc. Higher priority than`line-generic`.
+`mini-toc` | The color of text in mini-toc.  Higher priority than `text-secondary`.
+`mini-toc-hover` | The color of hovered text in mini-toc.  Higher priority than `text-complementary`.
+`mini-toc-active`, | The color of text in active item in mini-toc.  Higher priority than `text-primary`.
+`mini-toc-active-border` | The color of line in active item in mini-toc.  Higher priority than `text-primary`.
 
 
 ## Defining the base-brand in the sturtup
