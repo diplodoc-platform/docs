@@ -25,7 +25,7 @@ search:
 ```yaml
 search:
   provider: local
-  toleranse: 2
+  tolerance: 2
   confidense: phrased
 ```
 
