@@ -199,6 +199,8 @@ items:
       - name: Библиотека Mermaid
         href: tools/mermaid.md
         hidden: true
+      - name: Темизация
+        href: tools/theme.md
   - name: Вакансии
     hidden: true
     items:
