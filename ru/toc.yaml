@@ -178,7 +178,9 @@ items:
           - name: Source Docs
             href: guides/source-docs.md
       - name: Content Security Policy (CSP)
-        href: guides/csp.md      
+        href: guides/csp.md
+      - name: Настройка версионирования документации
+        href: guides/release-version.md 
   - name: Инструменты и библиотеки
     labeled: true
     items:
