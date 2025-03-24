@@ -64,7 +64,7 @@ yfm -i ./input-folder -o ./ouput-folder
 Чтобы опубликовать документацию на локальном сервере, выполните команду:
    
 ```
-npx -y @diplodoc/cli@next -i ./input-docs -o ~/output-docs --output-format html && npx http-server ~/output-docs -p 5005
+npx -y @diplodoc/cli -i ./input-docs -o ~/output-docs --output-format html && npx http-server ~/output-docs -p 5005
 ```
 
 Документация будет доступна по адресу <http://localhost:5005>
