@@ -1,6 +1,6 @@
 # Подсветка кода
 
-Для подсветки кода используется пакет [highlight.js](https://www.npmjs.com/package/highlight.js). Ознакомиться с перечнем доступных языков можно в [Github](https://github.com/highlightjs/highlight.js/tree/master/src/languages).
+Для подсветки кода используется пакет [highlight.js](https://www.npmjs.com/package/highlight.js). Ознакомиться с перечнем доступных языков можно в [GitHub](https://github.com/highlightjs/highlight.js/tree/master/src/languages).
 
 Чтобы установить пакет, выполните команду:
 ```shell

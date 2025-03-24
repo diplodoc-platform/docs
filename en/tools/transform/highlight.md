@@ -1,6 +1,6 @@
 # Syntax highlighting
 
-The [highlight.js](https://www.npmjs.com/package/highlight.js) package is used to highlight code. For the list of available languages, see [Github](https://github.com/highlightjs/highlight.js/tree/master/src/languages).
+The [highlight.js](https://www.npmjs.com/package/highlight.js) package is used to highlight code. For the list of available languages, see [GitHub](https://github.com/highlightjs/highlight.js/tree/master/src/languages).
 
 To install the package, run this command:
 

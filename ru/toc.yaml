@@ -26,7 +26,7 @@ navigation:
       - text: "Telegram"
         type: "link"
         url: "https://t.me/diplodoc_ru"
-      - text: "Github"
+      - text: "GitHub"
         type: "link"
         url: "https://github.com/diplodoc-platform/"
     rightItems:
@@ -140,7 +140,7 @@ items:
     href: deploy.md
     labeled: true
     items:
-      - name: Github Pages
+      - name: GitHub Pages
         href: github-pages.md
   - name: Внесение изменений
     href: contribution.md

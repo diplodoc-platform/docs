@@ -1,6 +1,6 @@
 # Быстрый старт
 
-Платформа diplodoc разрабатывается на осноне набора независимых модулей, расположенных в Github организации [diplodoc-platform](https://github.com/diplodoc-platform).
+Платформа diplodoc разрабатывается на осноне набора независимых модулей, расположенных в GitHub организации [diplodoc-platform](https://github.com/diplodoc-platform).
 
 Каждый модуль можно разрабатывать как по отдельности, так и в составе [метапакета](./metapackage.md).
 

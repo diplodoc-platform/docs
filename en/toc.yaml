@@ -23,7 +23,7 @@ navigation:
       - text: 'Documentation'
         type: 'link'
         url: '../../docs/en/'
-      - text: 'Github'
+      - text: 'GitHub'
         type: 'link'
         url: 'https://github.com/diplodoc-platform/'
 items:

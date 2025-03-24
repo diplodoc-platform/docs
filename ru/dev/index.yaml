@@ -4,7 +4,7 @@ meta:
   noIndex: true
 links:
 - title: Быстрый старт
-  description: Как быстро начать разработку с использованием Github Codespaces
+  description: Как быстро начать разработку с использованием GitHub Codespaces
   href: quickstart.md
 - title: Внесение изменений
   description: Правила по оформлению коммитов и пулл реквестов. Рекомендации к используемым технологиям.
