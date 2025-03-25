@@ -1,6 +1,15 @@
 allowHTML: true
 langs: ['en','ru']
 
+search:
+  enabled: true
+  index: true
+  provider: algolia
+  appId: L6T02M2L5A
+  apiKey: 6b76bcff90a5f89ad2cc996e7f8c2f6e
+  searchKey: 544ccb72d154b30b63a51aa4a1bde3bb
+  indexPrefix: diplodoc
+
 resources:
   style:
     - _assets/style/custom.css
