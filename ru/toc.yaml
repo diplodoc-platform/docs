@@ -107,8 +107,6 @@ items:
             items:
               - name: Оглавление на странице документации
                 href: project/minitoc.md
-          - name: Расширенная навигация
-            href: project/navigation.md
           - name: Разводящая страница
             href: project/leading-page.md
       - name: Page constructor
@@ -136,11 +134,13 @@ items:
         href: project/includes.md
       - name: Файл конфигурации линтера
         href: project/lint.md
-  - name: Стилизация справки
+  - name: Настройки внешнего вида
     labeled: true
     items:
       - name: Темизация
         href: style/theme.md
+      - name: Расширенная навигация
+        href: project/navigation.md
   - name: Публикация 
     href: deploy.md
     labeled: true
