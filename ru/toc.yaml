@@ -134,7 +134,7 @@ items:
         href: project/includes.md
       - name: Файл конфигурации линтера
         href: project/lint.md
-  - name: Настройки внешнего вида
+  - name: Настройка внешнего вида
     labeled: true
     items:
       - name: Темизация
