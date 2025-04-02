@@ -136,6 +136,11 @@ items:
         href: project/includes.md
       - name: Файл конфигурации линтера
         href: project/lint.md
+  - name: Стилизация справки
+    labeled: true
+    items:
+      - name: Темизация
+        href: style/theme.md
   - name: Публикация 
     href: deploy.md
     labeled: true
