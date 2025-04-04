@@ -137,8 +137,8 @@ items:
   - name: Настройка внешнего вида
     labeled: true
     items:
-      - name: Темизация
-        href: style/theme.md
+      #- name: Темизация
+      #  href: style/theme.md
       - name: Расширенная навигация
         href: project/navigation.md
   - name: Публикация 
