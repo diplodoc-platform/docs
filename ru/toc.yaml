@@ -141,6 +141,8 @@ items:
       #  href: style/theme.md
       - name: Расширенная навигация
         href: project/navigation.md
+      - name: Подключение CSS
+        href: style/css.md
   - name: Публикация 
     href: deploy.md
     labeled: true
