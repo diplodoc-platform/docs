@@ -32,3 +32,26 @@ To highlight the syntax, specify the language in which the code is written in th
 
 The list of available languages can be found on [GitHub](https://github.com/highlightjs/highlight.js/tree/master/src/languages). For information on how to transfer an additional set of languages, see [Connecting an additional language](../tools/transform/highlight.md#add).
 
+### Displaying Line Numbers {#line-numbers}
+
+If you need to enable the line numbers display in the code block, use the keyword `showLineNumbers'.
+
+Usage example:
+
+````markdown
+```sql showLineNumbers
+  price= '2000'
+  size= '24'  
+  color= 'primary'
+  variant= 'detailed' 
+```
+````
+
+**Результат:**
+
+```sql showLineNumbers
+  price= '2000'
+  size= '24'  
+  color= 'primary'
+  variant= 'detailed' 
+```
