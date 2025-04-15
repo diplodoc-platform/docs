@@ -39,6 +39,11 @@ items:
     href: about.md
   - name: Функциональные возможности
     href: features.md
+  - name: Релизы
+    labeled: true
+    items:
+      - name: Diplodoc v6.0
+        href: releases/v6.0.md
   - name: Релизы YFM
     hidden: true
     href: changelog.md
@@ -216,3 +221,28 @@ items:
     href: dev/contribution.md
   - name: Метапакет
     href: dev/metapackage.md
+  - name: Extensions API
+    labeled: true
+    items:
+      - name: Обзор
+        href: extensions/overview.md
+      - name: Сервисы
+        items:
+          - name: TOC Service
+            href: extensions/services/toc-service.md
+          - name: Leading Service
+            href: extensions/services/leading-service.md
+          - name: Markdown Service
+            href: extensions/services/markdown-service.md
+          - name: Meta Service
+            href: extensions/services/meta-service.md
+          - name: Vars Service
+            href: extensions/services/vars-service.md
+      - name: Команды
+        items:
+          - name: Build
+            items:
+              - name: Сервисы
+                items:
+                  - name: Search Service
+                    href: extensions/commands/build/services/search-service.md

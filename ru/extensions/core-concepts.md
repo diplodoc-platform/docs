@@ -1,10 +1,10 @@
-# Core Concepts
+# Основные концепции
 
-The Diplodoc Extensions API is built around several key concepts that work together to provide a flexible and powerful extension system.
+API расширений Diplodoc построено вокруг нескольких ключевых концепций, которые работают вместе, чтобы обеспечить гибкую и мощную систему расширений.
 
-## Extension Interface
+## Интерфейс расширения
 
-At the heart of the system is the `IExtension` interface:
+Любое расширение должно реализовывать интерфейс `IExtension`:
 
 ```typescript
 interface IExtension<Program extends BaseProgram = BaseProgram> {
@@ -12,13 +12,26 @@ interface IExtension<Program extends BaseProgram = BaseProgram> {
 }
 ```
 
-This simple yet powerful interface is the foundation for all extensions. The `apply` method is called when the extension is loaded and receives the program instance as its argument.
+Основные моменты:
+- Каждое расширение должно иметь метод `apply`
+- Через метод `apply` расширение получает доступ к экземпляру программы
+- Метод `apply` вызывается при инициализации каждой команды
+  - Например, если у вас есть команды `build`, `translate`, `publish`, то `apply` будет вызван три раза
+  - Дополнительно `apply` вызывается при инициализации корневой программы
+- Ограничения:
+  - Расширение не может быть уверено, с какой именно командой оно работает в данный момент
+  - Это накладывает определенные ограничения на логику работы расширения
+- Работа с хуками:
+  - Получив доступ к программе, расширение может подписаться на ее хуки
+  - Попытка подписаться на хуки чужой программы будет проигнорирована
+  - Например, если расширение вызывается для программы `translate`, то `getBuildHooks(program)` вернет набор хуков, который никогда не будет вызван
+  - Это позволяет подписываться на хуки программы, не задумываясь о том, с какой именно программой вы работаете в данный момент
 
-## Program Architecture
+## Архитектура программы
 
 ### BaseProgram
 
-The `BaseProgram` class is the foundation of the Diplodoc CLI:
+Класс `BaseProgram` является основой CLI Diplodoc:
 
 ```typescript
 export class BaseProgram<TConfig extends BaseConfig = BaseConfig, TArgs extends BaseArgs = BaseArgs> {
@@ -32,18 +45,18 @@ export class BaseProgram<TConfig extends BaseConfig = BaseConfig, TArgs extends 
 }
 ```
 
-Key components:
-- **name**: Unique identifier for the program
-- **command**: CLI command instance
-- **config**: Program configuration
-- **logger**: Logging system
-- **options**: Command-line options
-- **modules**: List of extensions and subprograms
-- **extensions**: Extension configurations
+Ключевые компоненты:
+- **name**: Уникальный идентификатор программы
+- **command**: Экземпляр CLI команды
+- **config**: Конфигурация программы
+- **logger**: Система логирования
+- **options**: Опции командной строки
+- **modules**: Список расширений и подпрограмм
+- **extensions**: Конфигурации расширений
 
-### Hook System
+### Система хуков
 
-The hook system is based on [tapable](https://github.com/webpack/tapable) and provides several types of hooks:
+Система хуков основана на [tapable](https://github.com/webpack/tapable) и предоставляет несколько типов хуков:
 
 ```typescript
 export function hooks<TRun extends Run, TConfig extends BaseConfig, TArgs extends BaseArgs>(name: string) {
@@ -57,11 +70,11 @@ export function hooks<TRun extends Run, TConfig extends BaseConfig, TArgs extend
 }
 ```
 
-## Configuration System
+## Система конфигурации
 
-Extensions can be configured in two ways:
+Расширения могут быть настроены двумя способами:
 
-### 1. File Configuration
+### 1. Конфигурация через файл
 
 ```json
 {
@@ -77,7 +90,7 @@ Extensions can be configured in two ways:
 }
 ```
 
-### 2. Programmatic Configuration
+### 2. Программная конфигурация
 
 ```typescript
 class Build extends BaseProgram {
@@ -90,9 +103,9 @@ class Build extends BaseProgram {
 }
 ```
 
-## Run Context
+## Контекст выполнения
 
-The `Run` class provides the context for document processing:
+Класс `Run` предоставляет контекст для обработки документов:
 
 ```typescript
 export class Run extends BaseRun<BuildConfig> {

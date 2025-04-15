@@ -85,21 +85,25 @@ export class Extension {
     apply(program: Build) {
         getBaseHooks(program).BeforeAnyRun.tap('MyExtension', (run) => {
             // Доступ к сервисам
-            const {toc, markdown, leading} = run;
+            const {toc, markdown, leading, meta, vars} = run;
             
             // Получение hooks сервисов
             const tocHooks = getTocHooks(toc);
             const markdownHooks = getMarkdownHooks(markdown);
             const leadingHooks = getLeadingHooks(leading);
+            const metaHooks = getMetaHooks(meta);
+            const varsHooks = getVarsHooks(vars);
         });
     }
 }
 ```
 
 Подробное описание каждого сервиса:
-- [TOC Service](./toc-service.md) - управление структурой документации
-- [Leading Service](./leading-service.md) - обработка страниц оглавления
-- [Markdown Service](./markdown-service.md) - трансформация markdown-контента
+- [TOC Service](./services/toc-service.md) - управление структурой документации
+- [Leading Service](./services/leading-service.md) - обработка страниц оглавления
+- [Markdown Service](./services/markdown-service.md) - трансформация markdown-контента
+- [Meta Service](./services/meta-service.md) - работа с метаданными документации
+- [Vars Service](./services/vars-service.md) - управление переменными и шаблонами
 
 ## Important Note
 
