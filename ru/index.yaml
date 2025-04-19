@@ -105,6 +105,23 @@ blocks:
 
       - type: basic-card
         title: 
+          text: CLI
+          textSize: s
+        text: |
+          [Обзор](tools/docs/index.md)
+
+          [Сборка](tools/docs/build.md)
+
+          [Настройки сборки](tools/docs/settings.md)
+
+          [Локализация](tools/docs/translate.md)
+
+          [Одностраничная сборка](tools/docs/singlepage.md)
+
+          [Выкладка на S3](tools/docs/publish-s3.md)
+
+      - type: basic-card
+        title: 
           text: Практические руководства
           textSize: s
         text: |
