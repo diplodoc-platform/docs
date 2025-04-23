@@ -16,7 +16,7 @@ blocks:
 
       - type: basic-card
         title: 
-          text: О платформе
+          text: О платформе
           textSize: s
         text: |
           [Описание](about.md)
@@ -25,7 +25,7 @@ blocks:
 
       - type: basic-card
         title: 
-          text: Начало работы
+          text: Начало работы
           textSize: s
         text: |
           [Публикация на Diplodoc.com](how-it-work.md)
@@ -131,7 +131,7 @@ blocks:
   
       - type: basic-card
         title: 
-          text: Для разработчиков
+          text: Для разработчиков
           textSize: s
         text: |
           [Быстрый старт](dev/quickstart.md)
