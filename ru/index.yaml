@@ -54,13 +54,9 @@ blocks:
 
           [Файл конфигурации](project/config.md)
 
-          [Поиск](project/search.md)
-
           [Пресеты переменных](project/presets.md)
 
           [Переиспользование контента](project/includes.md)
-
-          [Файл конфигурации линтера](project/lint.md)
 
       - type: basic-card
         title: 
@@ -70,23 +66,6 @@ blocks:
           [Расширенная навигация](project/navigation.md)
 
           [Подключение CSS](style/css.md)
-      
-      - type: basic-card
-        title: 
-          text: Настройка внешнего вида
-          textSize: s
-        text: |
-          [Обзор](tools/docs/index.md)
-
-          [Сборка](tools/docs/build.md)
-
-          [Настройки сборки](tools/docs/settings.md)
-
-          [Локализация](tools/docs/translate.md)
-
-          [Одностраничная сборка](tools/docs/singlepage.md)
-
-          [Выкладка на S3](tools/docs/publish-s3.md)
 
       - type: basic-card
         title: 
@@ -101,10 +80,6 @@ blocks:
 
           [Локализация](tools/docs/translate.md)
 
-          [Одностраничная сборка](tools/docs/singlepage.md)
-
-          [Выкладка на S3](tools/docs/publish-s3.md)
-
       - type: basic-card
         title: 
           text: Практические руководства
@@ -115,10 +90,6 @@ blocks:
           [Настройка личного домена](personal-domain-ya-cloud.md)
 
           [Автогенерация и интеграция документации](guides/includers.md)
-
-          [Content Security Policy (CSP)](guides/csp.md)
-
-          [Настройка версионирования документации](guides/release-version.md )
 
       - type: basic-card
         title: 
@@ -138,11 +109,7 @@ blocks:
 
           [Внесение изменений](dev/contribution.md)
 
-          [Метапакет](dev/metapackage.md)
-
           [Публикация](deploy.md)
-
-          [GitHub Pages](github-pages.md)
 
   - type: content-layout-block
     size: s
