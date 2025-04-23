@@ -17,18 +17,11 @@ blocks:
       - type: basic-card
         title: 
           text: О платформе
-          url: about.md
           textSize: s
         text: |
-          Описание платформы, ее особенности и преимущества
+          [Описание](about.md)
 
-      - type: basic-card
-        title: 
-          text: Возможности платформы
-          url: features.md
-          textSize: s
-        text: |
-          Функциональные возможности Diplodoc
+          [Возможности платформы](features.md)
 
       - type: basic-card
         title: 
@@ -78,14 +71,6 @@ blocks:
 
           [Подключение CSS](style/css.md)
       
-      - type: basic-card
-        title: 
-          text: Публикация
-          url: deploy.md
-          textSize: s
-        text: |
-          [GitHub Pages](github-pages.md)
-
       - type: basic-card
         title: 
           text: Настройка внешнего вида
@@ -147,7 +132,6 @@ blocks:
       - type: basic-card
         title: 
           text: Для разработчиков
-          url: dev/index.yaml
           textSize: s
         text: |
           [Быстрый старт](dev/quickstart.md)
@@ -155,6 +139,10 @@ blocks:
           [Внесение изменений](dev/contribution.md)
 
           [Метапакет](dev/metapackage.md)
+
+          [Публикация](deploy.md)
+
+          [GitHub Pages](github-pages.md)
 
   - type: content-layout-block
     size: s
