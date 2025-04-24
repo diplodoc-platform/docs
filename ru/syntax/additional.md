@@ -49,7 +49,7 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 ## Списки задач {#tasks-list}
 
-Импортируйте плагин из пакета следующий образом:
+Импортируйте плагин из пакета следующим образом:
 ```
 const checkbox = require('@diplodoc/transform/lib/plugins/checkbox');
 ```
