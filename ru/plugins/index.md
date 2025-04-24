@@ -10,4 +10,4 @@
 
 {% include [plugins.md](../_includes/plugins.md) %}
 
-Выше перечислены плагины, включенные в пакет YFM. Но вы можете [подключить дополнительные](import.md) или написать свой плагин, используя [руководством от markdown-it](https://github.com/markdown-it/markdown-it/tree/master/docs). 
+Выше перечислены плагины, включенные в пакет YFM. Но вы можете [подключить дополнительные](import.md) или написать свой плагин, используя [руководство от markdown-it](https://github.com/markdown-it/markdown-it/tree/master/docs). 

@@ -20,7 +20,7 @@ npm i markdown-it-emoji
 
    {% endnote %}
 
-   1. Подключите плагин в своем коде, используя функцию `require()` или `import()`:
+   1. Подключите плагин в своем коде с помощью функций `require()` или `import()`:
       ```javascript
       const plugin1 = require('<имя_плагина>');
       ```
