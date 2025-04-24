@@ -12,4 +12,5 @@ The transformation settings are listed below. You can configure them and [standa
 | `extractTitle` | Return the first first-level header as the title of the entire document | `bool` | `false` |
 | `needTitle` | Return the first first-level header without removing it from the document text | `bool` | `false` |
 |`needFlatListHeadings` | Generate a flat list of all headers in a document | `bool` | `false` |
+| `disableCommonAnchors` | Disable generation of heading anchors | `bool` | `false` |
 
