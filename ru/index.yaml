@@ -1,12 +1,118 @@
-title: Diplodoc
-description: Diplodoc - платформа работы с документацией в парадигме Documentation as a Code. 
-meta:
-  title: Diplodoc
-  noIndex: true
-links:
-- title: О платформе
-  description: Описание платформы, ее особенности и преимущества
-  href: about.md
-- title: Возможности платформы
-  description: Функциональные возможности Diplodoc
-  href: features.md  
+# fullScreen: true
+blocks:
+  - type: header-block
+    title: Diplodoc
+    description: |
+      Платформа работы с документацией в парадигме Documentation as a Code.
+    textWidth: 'm'
+
+  - type: card-layout-block
+    colSizes:
+      all: 12
+      xl: 4
+      sm: 6
+      md: 4
+    children:
+
+      - type: basic-card
+        title: 
+          text: О платформе
+          textSize: s
+        text: |
+          [Описание](about.md)
+
+          [Возможности платформы](features.md)
+
+      - type: basic-card
+        title: 
+          text: Начало работы
+          textSize: s
+        text: |
+          [Публикация на Diplodoc.com](how-it-work.md)
+
+          [Локальная сборка проекта](installation.md)
+
+          [Шаблон проекта](static-template.md)
+
+      - type: basic-card
+        title: 
+          text: Редактирование контента
+          textSize: s
+        text: |
+          [Синтаксис](syntax/index.md)
+
+          [Организация контента](project/index.md)
+          
+          [Page Constructor](project/page-constructor.md)
+
+      - type: basic-card
+        title: 
+          text: Конфигурация проекта
+          textSize: s
+        text: |
+          [Настройки проекта](settings.md)
+
+          [Файл конфигурации](project/config.md)
+
+          [Пресеты переменных](project/presets.md)
+
+          [Переиспользование контента](project/includes.md)
+
+      - type: basic-card
+        title: 
+          text: Настройка внешнего вида
+          textSize: s
+        text: |
+          [Расширенная навигация](project/navigation.md)
+
+          [Подключение CSS](style/css.md)
+
+      - type: basic-card
+        title: 
+          text: CLI
+          textSize: s
+        text: |
+          [Обзор](tools/docs/index.md)
+
+          [Сборка](tools/docs/build.md)
+
+          [Настройки сборки](tools/docs/settings.md)
+
+          [Локализация](tools/docs/translate.md)
+
+      - type: basic-card
+        title: 
+          text: Практические руководства
+          textSize: s
+        text: |
+          [Контентная аналитика](guides/content-analytics.md)
+
+          [Настройка личного домена](personal-domain-ya-cloud.md)
+
+          [Автогенерация и интеграция документации](guides/includers.md)
+
+      - type: basic-card
+        title: 
+          text: Инструменты и библиотеки
+          textSize: s
+        text: |
+          [Transformer](tools/transform/index.md)
+
+          [Плагины](plugins/index.md)
+  
+      - type: basic-card
+        title: 
+          text: Для разработчиков
+          textSize: s
+        text: |
+          [Быстрый старт](dev/quickstart.md)
+
+          [Внесение изменений](dev/contribution.md)
+
+          [Публикация](deploy.md)
+
+  - type: content-layout-block
+    size: s
+    textContent:
+      text: "\_"
+animated: true             
