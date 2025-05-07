@@ -2,9 +2,9 @@
 
 В файле конфигурации можно задать:
 
-* [стандартные настройки YFM](../settings.md);
-* [настройки трансформации YFM в HTML](../tools/transform/settings.md);
-* [настройки сборки](../tools/docs/settings.md).
+* [параметры сборки YFM](../settings.md#build);
+* [параметры отображения в интерфейсе](../settings.md#docs-viewer).
+* [настройки трансформации YFM в HTML](../tools/transform/settings.md).
 
 По умолчанию используется файл `.yfm` в корне документа. При сборке можно указать путь до другого файла с помощью [ключа запуска](../tools/docs/settings.md) `--config`. 
 

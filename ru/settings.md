@@ -5,6 +5,64 @@
 * в качестве параметра функции ([Transformer](./tools/transform/settings.md));
 * через ключи запуска ([Builder](./tools/docs/settings.md)).
 
+Настройки в `.yfm` отличаются в зависимости от того, на внешнюю или внутреннюю инсталляцию будет выкладываться документ.
+
+{% cut "Пример файла `.yfm`" %}
+
+{% list tabs %}
+
+- Внутренний документационный проект
+
+    ```yaml
+    # Параметры сборки
+    strict: true
+    breaks: false
+    apply-presets: true
+    varsPreset: 'internal'
+
+    langs: ['en', 'ru']
+
+    # Параметры отображения в интерфейсе
+    docs-viewer:
+
+      project-name: project-name
+      langs: ['en', 'ru']
+      metrika: 678489
+      abc-slug: docstools
+
+      index-page:
+        hidden: false
+        title: YT
+        description: Cистема распределенных вычислений
+        service-url: https://yt.yandex-team.ru
+        url:
+          production: https://yt.yandex-team.ru/docs/
+
+      startrek:
+        queue: YTFRONT
+        components: [docs]
+        tags: [документация, documentation]
+        ticket-type: documentation
+
+      feedback:
+        notifications:
+          interval: daily
+          receivers:
+            - yt-docs-fb-daily-digest
+
+    ```
+
+- Внешний документационный проект
+
+    {% include notitle [Миграция на новую внешнюю инсталляцию](../_includes/new-external-warn.md) %}
+
+    {% include notitle [Пример .yfm конфига](../_includes/yfm-ext-config-example.md) %}
+
+{% endlist %}
+
+{% endcut %}
+
+
 {% note info %}
 
 Обязательные параметры:
@@ -57,6 +115,7 @@
 || `add-map-file` | Создает json-файл со всеми путями проекта | `bool` | `false` ||
 || `lint` | Подключить [файл линтера](./project/lint.md). | `bool` | `false` ||
 || `conditionsInCode` | Выполнять условия в блоках кода | `bool` | `false` ||
+|| `output-format` | Формат файлов итоговой сборки | `string` (`html` или `md`) | `html` | Везде ||
 || `merge-includes` | Объеденить содержимое [инклюдов](./project/includes.md) с документацией.
 
 {% note info %}
@@ -67,7 +126,7 @@
 
 | `bool` | `false` ||
 || `langs` | Массив языков, участвующих в сборке. | ||
-|#
+|# {wide-content}
 
 ## Параметры отображения в интерфейсе {#docs-viewer}
 
@@ -207,13 +266,12 @@ docs-viewer:
   metrika: [21930706, 96924079, 96924106]
 ```
 | `string \| string[]` | `undefined` | Везде ||
-|| `output-format` | Формат файлов итоговой сборки | `string` (`html` или `md`) | `html` | Везде ||
 || `sanitizeOptions` | Конфигурация санитайзера | `Object` | `undefined` | Везде ||
 || `analytics` | Конфигурация для модуля аналитки | `Object` | `undefined` | Везде ||
 || `analytics.gtm` | Настройки Google Tag Manager аналитики | `Object` | `undefined`| Везде ||
 || `analytics.gtm.id` | Идентификатор Google Tag Manager в формате GTM | `string` | `undefined` | Везде  ||
 || `analytics.gtm.mode` | Тип уведомления перед отправкой событий `base` или `notification` | `string` | `base` |Везде ||
-|#
+|# {wide-content}
 
 ## Ресурсы {#resources}
 
@@ -222,8 +280,6 @@ docs-viewer:
 `allow-custom-resources`
 
 `static-content`
-
-`resource`
 
 `resources <value...>`
 | Разрешить загрузку ресурсов в статически сгенерированные страницы | `bool` | `false` | Везде ||
