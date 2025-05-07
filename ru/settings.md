@@ -54,14 +54,62 @@
 
 - Внешний документационный проект
 
-    {% include notitle [Миграция на новую внешнюю инсталляцию](../_includes/new-external-warn.md) %}
+    {% note warning %}
+    
+    Параметр `is-external`, используемый для выкладки внешней документации на yandex.ru/support2 и собственные домены, устарел. Для проектов с этим параметром необходима [миграция](../migrations/new-ci.md).
+    
+    Для новых проектов используйте параметр `is-new-external`.
+    
+    {% endnote %}
 
-    {% include notitle [Пример .yfm конфига](../_includes/yfm-ext-config-example.md) %}
+    ```yaml
+    # Параметры сборки
+    strict: true
+    breaks: false
+    
+    singlePage: true
+    
+    apply-presets: true
+    varsPreset: 'external'
+    
+    langs: ['en', 'ru']
+    
+    # Параметры отображения в интерфейсе
+    docs-viewer:
+    
+      project-name: project-name
+      is-new-external: true
+    
+      no-index: true
+    
+      github-url-prefix: https://github.com/yandex-cloud/yfm-documentation/blob/master
+    
+      langs: ['en', 'ru']
+      metrika: 678489
+    
+      themes: [light]
+    
+      favicon-src: https://raw.githubusercontent.com/yandex-cloud/yfm-documentation/master/_images/logo_blue_32x32.png
+    
+      # Настройки логотипа
+      logo-options:
+        url: https://diplodoc.com/docs/{lang}/
+    
+        src: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+        src-dark: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+    
+        src-mobile: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+        src-mobile-dark: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+    
+        src-preview: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/share-logo-dark.svg
+    
+        # Если логотипа нет, то вместо него можно задать текст
+        title: Yandex Flavored Markdown
+    ```
 
 {% endlist %}
 
 {% endcut %}
-
 
 {% note info %}
 
