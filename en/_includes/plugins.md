@@ -1,6 +1,6 @@
 | Plugin name  | Description | Parameters | Added</br>by default |
 |--------------| --- | --- | --- |
-| **Anchors**  | Automatically generate [anchors for headers](../syntax/base.md#headers) | `extractTitle`: Consider the first level header</br>(type: bool, default value: false)</br></br>`supportGithubAnchors`: Generate additional anchors compatible with GitHub</br>(type: bool, default value: false) | + |
+| **Anchors**  | Automatically generate [anchors for headers](../syntax/base.md#headers) | `extractTitle`: Consider the first level header</br>(type: bool, default value: false)</br></br>`supportGithubAnchors`: Generate additional anchors compatible with GitHub</br>(type: bool, default value: false)</br></br>`disableCommonAnchors`: Disable generation of heading anchors</br>(type: bool, default value: false) | + |
 | **code**     | Display the copy button in [code blocks](../syntax/code.md#block) | - | + |
 | **Cut**      | Support for the [cut](../syntax/cuts-tabs.md#cuts) markup | - | + |
 | **Deflist**   | Support for the [definition list](../syntax/lists.md#terms) markup | - | + |
