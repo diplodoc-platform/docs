@@ -44,7 +44,19 @@ npm i markdown-it-emoji
 
 - Builder
 
-   1. Перенесите установленный плагин в папку `./plugins` в пакете `@diplodoc/cli`.
+   1. Создайте файл `index.js` в папке `./plugins` в пакете `@diplodoc/cli` со следующим содержимым:
+ 
+  ```javascript
+   // node_modules/@diplodoc/cli/build/plugins/index.js
+   const emojiPlugin = require('markdown-it-emoji');
+
+   // Плагины необходимо экспортировать в виде массива функций, а не как отдельные именованные экспорты.
+   // Экспортируем массив функций плагинов
+   module.exports = [
+     emojiPlugin.full, // Используем конкретную версию плагина
+     // Добавьте другие плагины при необходимости
+   ];
+   ```
 
    {% note tip %}
 
