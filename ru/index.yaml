@@ -52,8 +52,6 @@ blocks:
         text: |
           [Настройки проекта](settings.md)
 
-          [Файл конфигурации](project/config.md)
-
           [Пресеты переменных](project/presets.md)
 
           [Переиспользование контента](project/includes.md)
