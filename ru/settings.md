@@ -299,6 +299,7 @@ themes: ['light']
 | `string` | `light` ||
 |# {wide-content}
 
+
 ## Ресурсы {#resources}
 
 #|
