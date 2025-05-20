@@ -29,6 +29,11 @@ navigation:
 items:
   - name: Overview
     href: about.md
+  - name: Releases
+    labeled: true
+    items:
+      - name: Diplodoc v6.0
+        href: releases/v6.0.md
   - name: Quick start
     href: how-it-work.md
   - name: Yandex Flavored Markdown
