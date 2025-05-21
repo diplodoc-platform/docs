@@ -155,17 +155,7 @@ docs-viewer:
 || `is-external` /  `is-new-external` |
 Проект будет доступен внешним пользователям, если установлено значение параметра `true`.
 
-Параметр `is-external` используется для проектов на yandex.ru/dev или yandex.ru/legal. Для проектов на yandex.ru/support2 используется параметр `is-new-external`.
-
-{% note warning %}
-
-Параметр `is-external`, используемый для выкладки внешней документации на yandex.ru/support2 и собственные домены, устарел. Для проектов с этим параметром необходима [миграция](../migrations/new-ci.md).
-
-Для новых проектов используйте параметр `is-new-external`.
-
-{% endnote %}
-
-| `bool` | `true` ||
+Параметр `is-external` используется для проектов на yandex.ru/dev или yandex.ru/legal. Для проектов на yandex.ru/support2 используется параметр `is-new-external`. | `bool` | `true` ||
 || `lang` | Язык по умолчанию для локализации. 
 Для [следующих языков](https://github.com/diplodoc-platform/client/blob/34a5139620874627cfdebe9be74902cf9d3961b1/src/constants.ts#L15) контент будет отображаться в формате RTL (right-to-left). | `string` | `ru` ||
 || `langs` | Массив языков, отображаемых в интерфейсе документации. Язык по умолчанию при открытии страницы — первый элемент в массиве.
