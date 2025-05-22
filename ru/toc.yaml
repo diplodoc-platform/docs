@@ -124,8 +124,6 @@ items:
     items:
       - name: Настройки проекта
         href: settings.md
-      - name: Файл конфигурации
-        href: project/config.md
       - name: Поиск
         href: project/search.md
       - name: Пресеты переменных
