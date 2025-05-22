@@ -187,7 +187,7 @@ input-folder
 
 Пример ссылки: https://diplodoc.com/ru или diplodoc.com/ru.
 | `bool` | `false` ||
-|| `linkifyTlds` | Настройка tld для плагина linkify. | `string \| string[]` | `undefined` ||
+|| `linkifyTlds` | Настройка `tld` для плагина linkify. | `string \| string[]` | `undefined` ||
 || `logo-options` |
 Настройки логотипа:
 
