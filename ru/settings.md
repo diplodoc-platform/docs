@@ -26,91 +26,12 @@ parameter: value
 * `parameter` — имя задаваемой настройки;
 * `value` — значение настройки.
 
-{% cut "Пример файла `.yfm`" %}
+## Параметры {#parameters}
 
-```yaml
-# Параметры сборки
-strict: true
-breaks: false
-
-singlePage: true
-
-apply-presets: true
-varsPreset: 'external'
-
-langs: ['en', 'ru']
-
-# Параметры отображения в интерфейсе
-docs-viewer:
-
-  project-name: project-name
-  is-new-external: true
-
-  no-index: true
-
-  github-url-prefix: https://github.com/yandex-cloud/yfm-documentation/blob/master
-
-  langs: ['en', 'ru']
-  metrika: 678489
-
-  themes: [light]
-
-  favicon-src: https://raw.githubusercontent.com/yandex-cloud/yfm-documentation/master/_images/logo_blue_32x32.png
-
-  # Настройки логотипа
-  logo-options:
-    url: https://diplodoc.com/docs/{lang}/
-
-    src: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
-    src-dark: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
-
-    src-mobile: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
-    src-mobile-dark: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
-
-    src-preview: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/share-logo-dark.svg
-
-    # Если логотипа нет, то вместо него можно задать текст
-    title: Yandex Flavored Markdown
-```
-
-{% endcut %}
-
-{% note info %}
-
-Обязательные параметры:
-
-{% list tabs %}
-
-- yandex.ru/dev
-
-  ```
-  docs-viewer:
-    project-name: dev-<project-name>
-    is-external: true
-    internal-s3: true
-  ```
-
-- yandex.ru/support2
-
-  ```
-  docs-viewer:
-    project-name: support-<project-name>
-    is-new-external: true
-  ```
-
-{% endlist %}
-
-{% endnote %}
-
-## Параметры сборки {#build}
+### Корневая секция параметров {#root}
 
 #|
 || **Параметр** | **Описание** | **Тип** | **Значение по умолчанию** ||
-|| `add-map-file` | Создает json-файл со всеми путями проекта. | `bool` | `false` ||
-|| `add-system-meta` | Добавлять метаданные с системными переменными из пресетов в файлы документации.
-В файле [presets.yaml](project/presets) можно задать секцию `system`, содержимое которой будет добавлено в meta-данные каждой страницы.
-Отображается при генерации файлов в формате md.
- | `bool` | `false` ||
 || `allowHTML` | Разрешить [использование html-элементов](syntax/base.md#html) в разметке. | `bool` | `false` ||
 || `apply-presets` | Применять ли пресеты переменных. 
 
@@ -119,16 +40,7 @@ docs-viewer:
 || `conditionsInCode` | Разрешить блоки кода с условиями с помощью [операторов](syntax/vars#conditions). | `bool` | `false` ||
 || `langs` | Массив языков, участвующих в сборке. | ||
 || `lint` | Подключить [файл линтера](./project/lint.md). | `bool` | `false` ||
-|| `merge-includes` | Параметр, который отвечает за корректную обработку включений [инклюдов](./project/includes.md) при сборке документов в формате `md`. Позволяет объединять содержимое инклюдов в единый документ.
-
-{% note warning %}
-
-Работает только вместе с параметром `output-format: md`.
-
-{% endnote %} 
-
-| `bool` | `false` ||
-|| `needToSanitizeHtml` | Определяет разрешенные и запрещенные HTML-теги, атрибуты, стили и другие элементы при очистке HTML-контента. Работает в связке с параметром `needToSanitizeHtml`. | `bool` | `false` ||
+|| `needToSanitizeHtml` | Включает очистку HTML-разметки от потенциально опасных элементов в `.md`-файлах с помощью HTML-санитайзера. Определяет разрешенные и запрещенные теги, атрибуты, стили и другие элементы при очистке HTML-контента. | `bool` | `false` ||
 || `output-format` | Формат файлов итоговой сборки. | `string` (`html` или `md`) | `html` ||
 || `pdf` | При значении `pdf: true` для документа будет собираться pdf-версия. Чтобы сборка прошла корректно, обязательно должен быть указан параметр `singlePage: true`. После завершения сборки в левом нижнем углу документа отображается значок собранного PDF-файла, который можно скачать. | `bool` | `false` ||
 || `remove-hidden-toc-items` | Убрать из оглавления все объекты, отмеченные атрибутом `hidden: true`. | `bool` | `false` ||
@@ -137,7 +49,7 @@ docs-viewer:
 || `varsPreset` | Имя пресета переменных, который необходимо использовать при сборке. | `string` | ||
 |# {wide-content}
 
-## Параметры отображения в интерфейсе {#docs-viewer}
+### Секция параметров `docs-viewer` {#docs-viewer}
 
 #|
 || **Название** | **Описание** | **Тип** | **Значение по умолчанию** ||
@@ -149,13 +61,6 @@ docs-viewer:
 || `favicon-src` | Иконка во вкладке браузера.
 
 Можно использовать любую ссылку на изображение, подходящее под стандартные требования к фавиконкам. |  |  ||
-|| `github-url-prefix` | Github-префикс до директории корня документации, если она хранится на Github.
-
-Если параметр не задан, внешним пользователям не будет отображаться ссылка на редактирование страницы (иконка карандаша в правом верхнем углу). | | ||
-|| `is-external` /  `is-new-external` |
-Проект будет доступен внешним пользователям, если установлено значение параметра `true`.
-
-Параметр `is-external` используется для проектов на yandex.ru/dev или yandex.ru/legal. Для проектов на yandex.ru/support2 используется параметр `is-new-external`. | `bool` | `true` ||
 || `lang` | Язык по умолчанию для локализации. 
 Для [следующих языков](https://github.com/diplodoc-platform/client/blob/34a5139620874627cfdebe9be74902cf9d3961b1/src/constants.ts#L15) контент будет отображаться в формате RTL (right-to-left). | `string` | `ru` ||
 || `langs` | Массив языков, отображаемых в интерфейсе документации. Язык по умолчанию при открытии страницы — первый элемент в массиве.
@@ -187,7 +92,6 @@ input-folder
 
 Пример ссылки: https://diplodoc.com/ru или diplodoc.com/ru.
 | `bool` | `false` ||
-|| `linkifyTlds` | Настройка `tld` для плагина linkify. | `string \| string[]` | `undefined` ||
 || `logo-options` |
 Настройки логотипа:
 
@@ -270,9 +174,7 @@ docs-viewer:
 
 {% endnote %}
 | `string` | ||
-|| `sanitizeOptions` | Объект настроек, который определяет, какие HTML-теги, атрибуты, стили и другие элементы будут разрешены или запрещены при очистке HTML-контента. | `Object` | `undefined` ||
 || `supportGithubAnchors` | Генерировать дополнительные [якоря](syntax/base.md#headers), совместимые с GitHub. | `bool` | `false` ||
-|| `support-widget` | Виджет Яндекс Мессенджера с чатом поддержки. |  | ||
 || `themes` | Выбор темы оформления: светлая или темная. По умолчанию доступны обе. Можно отключить одну из них, указав используемую по умолчанию, например:
 
 ```yaml
@@ -282,17 +184,52 @@ themes: ['light']
 | `string` | `light` ||
 |# {wide-content}
 
-
-## Ресурсы {#resources}
+### Секция ресурсов {#resources}
 
 #|
 || **Название** | **Описание** | **Тип** | **Значение по умолчанию** ||
-||
-`allow-custom-resources`
-
-`static-content`
-
-`resources <value...>`
-| Разрешить загрузку ресурсов в статически сгенерированные страницы. | `bool` | `false` ||
+|| `allow-custom-resources` | Разрешить загрузки пользовательских ресурсов в статически сгенерированные страницы. | `bool` | `false` ||
+|| `static-content` | Разрешить использовать статический контент (например, файлов изображений, CSS или JS). | `bool` | `false` ||
+|| `resources <value...>` | Список разрешенных ресурсов. |  |  ||
 || `csp` | Управление [Content Security Policy](./guides/csp.md) (CSP). | `string` | - ||
-|#
+|# {wide-content}
+
+## Пример файла `.yfm `{#yfm}
+
+```yaml
+# Корневая секция параметров
+strict: true
+breaks: false
+singlePage: true
+apply-presets: true
+varsPreset: 'external'
+needToSanitizeHtml: true
+langs: ['en', 'ru']
+
+# Секция параметров вьюера (docs-viewer)
+docs-viewer:
+  project-name: project-name
+  no-index: true
+  langs: ['en', 'ru']
+  metrika: 678489
+  themes: [light]
+  favicon-src: https://raw.githubusercontent.com/yandex-cloud/yfm-documentation/master/_images/logo_blue_32x32.png
+
+  # Настройки логотипа
+  logo-options:
+    url: https://diplodoc.com/docs/{lang}/
+    src: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+    src-dark: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+    src-mobile: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+    src-mobile-dark: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+    src-preview: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/share-logo-dark.svg
+    # Если логотипа нет, то вместо него можно задать текст
+    title: Yandex Flavored Markdown
+
+# Секция ресурсов
+resources:
+  csp:
+    - "frame-src":
+        - "https://test.site"
+
+```
