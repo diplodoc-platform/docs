@@ -160,17 +160,11 @@ docs-viewer:
 
 {% note warning %}
 
-1. Чтобы проверить уникальность вашего `project-name`, воспользуйтесь поиском по вхождению `project-name: <project-name>` в репозитории с установленным флагом **Ignore case**.
+Есть три зарезервированных имени, которые нельзя указывать в качестве значения `project-name`:
 
-2. Есть три зарезервированных имени, которые нельзя указывать в качестве значения `project-name`:
-
-    * `build`;
-    * `docs-assets`;
-    * `api`.
-
-3. Для проектов на доменах dev/support2 значение `project-name` должно начинаться с префикса `dev-`/`support-`.
-
-    Например, `project-name: support-project-name`.
+- `build`;
+- `docs-assets`;
+- `api`.
 
 {% endnote %}
 | `string` | ||
