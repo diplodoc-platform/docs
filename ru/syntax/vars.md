@@ -23,7 +23,7 @@
 
 {% note warning %}
 
-Чтобы применять условные операторы, в [файле конфигурации .yfm](https://diplodoc.com/docs/ru/project/config) установите параметр `conditionsInCode` со значением `true`.
+Чтобы применять условные операторы, в [файле конфигурации .yfm](../settings.md) установите параметр `conditionsInCode` со значением `true`.
 
 {% endnote %}
 
