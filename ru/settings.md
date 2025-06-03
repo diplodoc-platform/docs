@@ -46,9 +46,9 @@ parameter: value
 || `conditionsInCode` | Разрешить блоки кода с условиями с помощью [операторов](syntax/vars#conditions). | `bool` 
 
 `false` ||
-|| `langs` | Массив языков, участвующих в сборке. | - 
+|| `langs` | Массив языков, участвующих в сборке. | — 
 
-- ||
+— ||
 || `lint` | Подключить [файл линтера](./project/lint.md). | `bool`
 
 `false` ||
@@ -72,7 +72,7 @@ parameter: value
 `false` ||
 || `varsPreset` | Имя пресета переменных, который необходимо использовать при сборке. | `string` 
 
-- ||
+— ||
 |#
 
 ### Секция параметров `docs-viewer` {#docs-viewer}
@@ -96,9 +96,9 @@ parameter: value
 `false` ||
 || `favicon-src` | Иконка во вкладке браузера.
 
-Можно использовать любую ссылку на изображение, подходящее под стандартные требования к фавиконкам. | -
+Можно использовать любую ссылку на изображение, подходящее под стандартные требования к фавиконкам. | —
 
-- ||
+— ||
 || `lang` | Язык по умолчанию для локализации. 
 Для [следующих языков](https://github.com/diplodoc-platform/client/blob/34a5139620874627cfdebe9be74902cf9d3961b1/src/constants.ts#L15) контент будет отображаться в формате RTL (right-to-left). | `string`
 
@@ -128,7 +128,7 @@ input-folder
 
 | `string`
 
-- ||
+— ||
 || `linkify` | Преобразовывать ссылкоподобные строки в ссылки.
 
 Пример ссылки: https://diplodoc.com/ru или diplodoc.com/ru.
@@ -182,18 +182,18 @@ src:
 
 {% endcut %}
 
-| -
+| —
 
-- ||
+— ||
 || `metrika` | Номер счетчика [Яндекс Метрики](https://metrika.yandex.ru/).
 
 Можно подключить несколько счетчиков:
 
 ```yaml
 docs-viewer:
-  metrika: [21930706, 96924079, 96924106]
+  metrika: [21930706, 96924079]
 ```
-| `string \| string[]`
+| `string|string[]`
 
 `undefined` ||
 || `no-index` | Запрет на индексирование внешними роботами.
@@ -218,7 +218,7 @@ docs-viewer:
 {% endnote %}
 | `string`
 
-- ||
+— ||
 || `supportGithubAnchors` | Генерировать дополнительные [якоря](syntax/base.md#headers), совместимые с GitHub. | `bool` 
 
 `false` ||
@@ -243,12 +243,12 @@ themes: ['light']
 || `static-content` | Разрешить использовать статический контент (например, файлов изображений, CSS или JS). | `bool`
 
 `false` ||
-|| `resources <value...>` | Список разрешенных ресурсов. | -
+|| `resources <value...>` | Список разрешенных ресурсов. | —
 
-- ||
+— ||
 || `csp` | Управление [Content Security Policy](./guides/csp.md) (CSP). | `string`
 
-- ||
+— ||
 |#
 
 
