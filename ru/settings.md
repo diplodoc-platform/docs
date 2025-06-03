@@ -193,7 +193,7 @@ src:
 docs-viewer:
   metrika: [21930706, 96924079]
 ```
-| `string|string[]`
+| `string` \| `string[]`
 
 `undefined` ||
 || `no-index` | Запрет на индексирование внешними роботами.
