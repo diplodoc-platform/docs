@@ -127,7 +127,7 @@ items:
       - name: Поиск
         items:
           - name: Локальный поиск (lunr.js)
-            href: project/search.md
+            href: project/lunr.md
           - name: Algolia
             href: project/algolia.md
       - name: Пресеты переменных
