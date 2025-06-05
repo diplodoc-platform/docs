@@ -3,24 +3,22 @@
 [Algolia](https://www.algolia.com/) — облачная система поиска для быстрого и релевантного поиска по документации Diplodoc. Подходит для больших объемов данных, обеспечивает мгновенную выдачу результатов и легко интегрируется во фронтенд документации.
 
 **Исходный код и дополнительные инструкции расширения Algolia:**
-https://github.com/diplodoc-platform/algolia-extension
+[https://github.com/diplodoc-platform/algolia-extension](https://github.com/diplodoc-platform/algolia-extension)
 
 > Для регистрации аккаунта Algolia может понадобиться VPN.
-
----
 
 ## Быстрый старт
 
 1. **Зарегистрируйтесь в Algolia**  
-   Перейдите на [algolia.com](https://www.algolia.com/) и создайте аккаунт. После этого получите App ID, Admin API Key и Search-Only API Key для вашего приложения.  
-   _(Подробнее см. раздел “Регистрация и настройки Algolia”)_
+   Перейдите на [algolia.com](https://www.algolia.com/) и создайте аккаунт. После этого получите App ID, Write API Key и Search API Key для вашего приложения.  
+   _(Подробнее см. раздел [“Регистрация и настройки Algolia”](#registraciya-i-nastrojki-algolia))_
 
 2. **Установите Diplodoc CLI и расширение Algolia (глобально)**  
    ```bash
    npm install -g @diplodoc/cli
    npm install -g @diplodoc/algolia
    ```
-   _(Подробнее о вариантах установки — в разделе “Установка”)_
+   _(Подробнее о вариантах установки — в разделе [“Установка”](#ustanovka))_
 
 3. **Сконфигурируйте поиск в `.yfm`**  
    В корневом `.yfm` пропишите:
@@ -28,19 +26,25 @@ https://github.com/diplodoc-platform/algolia-extension
    search:
      provider: algolia
      appId: <ваш app id>
-     indexName: docs
-     index: true
      searchKey: <ваш search key>
+     index: true
    ```
-   _(Пример с расширенными настройками — см. “Пример расширенной настройки”)_
+   _(Пример с расширенными настройками — см. [“Пример расширенной настройки”](#primer-rasshirennoj-nastrojki))_
 
 4. **Передайте ключи и запустите сборку**  
-   Для безопасной сборки передавайте admin API key через флаг CLI:
+   Для безопасной сборки передавайте Write API Key через флаг CLI:
    ```bash
-   yfm -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia" --api-key "your-admin-key"
+   yfm -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia" --api-key "your-write-key"
    ```
 
----
+### Регистрация и настройки Algolia
+
+1. Зарегистрируйтесь на [algolia.com](https://www.algolia.com/) (может потребоваться VPN).
+2. В панели Algolia создайте приложение (Application) и получите:
+   - **App ID** ― идентификатор приложения
+   - **Write API Key** ― секретный ключ для индексации данных
+   - **Search API Key** ― ключ для поиска на клиенте
+3. Имя индекса (`indexName`) можно не задавать, по умолчанию `"docs"`.
 
 ### Установка
 
@@ -56,37 +60,17 @@ npm install -g @diplodoc/algolia
 ```
 Запуск сборки с расширением:
 ```bash
-yfm -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia" --api-key "your-admin-key"
+yfm -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia" --api-key "your-write-key"
 ```
 
 **Локальная установка в проекте @diplodoc/cli:**
 ```bash
 npm install @diplodoc/algolia
-npm start -- -i ./docs -o ./docs-out --extensions @diplodoc/algolia --api-key "your-admin-key"
 ```
-
----
-
-### Регистрация и настройки Algolia
-
-1. Зарегистрируйтесь на [algolia.com](https://www.algolia.com/) (может потребоваться VPN).
-2. В панели Algolia создайте приложение (Application) и получите:
-   - **App ID** ― идентификатор приложения
-   - **Admin API Key** ― секретный ключ для индексации данных
-   - **Search-Only API Key** ― ключ только для поиска на клиенте
-3. Имя индекса (`indexName`) можно не задавать, по умолчанию `"docs"`.
-
----
-
-### Пояснение по видам ключей
-
-- **apiKey (Admin API Key):**
-  Секретный ключ, используется для загрузки и обновления данных в Algolia во время сборки или индексации. Храните его секретно, не публикуйте в репозитории или выложенных файлах конфигурации: используйте переменные среды либо флаги CLI.
-
-- **searchKey (Search-Only API Key):**
-  Ключ для фронтенд-поиска, попадает в финальную сборку документации. Без него поиск на клиенте работать не будет. Этот ключ безопасен для публикации в файле `.yfm`.
-
----
+Запуск сборки с расширением:
+```bash
+npm start -- -i ./docs -o ./docs-out --extensions @diplodoc/algolia --api-key "your-write-key"
+```
 
 ### Источники для передачи параметров
 
@@ -104,7 +88,16 @@ npm start -- -i ./docs -o ./docs-out --extensions @diplodoc/algolia --api-key "y
 | indexSettings | -                   | -                      | search.indexSettings       | Настройки индекса Algolia                |
 | querySettings | -                   | -                      | search.querySettings       | Настройки поисковых запросов              |
 
----
+
+{% note warning "Пояснение по видам ключей" %}
+
+- **apiKey (Write API Key):**
+  Секретный ключ, используется для загрузки и обновления данных в Algolia во время сборки или индексации. Храните его секретно, не публикуйте в репозитории или выложенных файлах конфигурации: используйте переменные среды либо флаги CLI.
+
+- **searchKey (Search API Key):**
+  Ключ для фронтенд-поиска, попадает в финальную сборку документации. Без него поиск на клиенте работать не будет. Этот ключ безопасен для публикации в файле `.yfm`.
+
+{% endnote %}
 
 ### Пример расширенной настройки
 
@@ -140,11 +133,11 @@ search:
 - Если вы хотите разделить эти процессы — например, сначала собрать документацию, проверить результат, а индекс загружать только после финальной проверки или отдельно по расписанию — настройте сборку без параметра `index` (или явно с `index: false`). Тогда при сборке создаются только локальные индексы. Позднее для загрузки или обновления индекса в облако используйте отдельную команду:
 
 ```bash
-yfm index -i ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia" --api-key "your-admin-key"
+yfm index -i ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia" --api-key "your-write-key"
 ```
 
 #### Частые вопросы и проблемы
 
 - Поиск не работает — проверьте, что `searchKey` корректно передан в конфиге.
-- Ошибка при индексации — проверьте правильность и способ передачи `admin apiKey`.
+- Ошибка при индексации — проверьте правильность и способ передачи `write apiKey`.
 - Данные не появляются в Algolia — убедитесь, что выставлен параметр `index: true` в конфиге или используется ключ `--index` при запуске.
