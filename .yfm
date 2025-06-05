@@ -1,6 +1,22 @@
 allowHTML: true
 langs: ['en','ru']
 
+mtimes: true
+authors: true
+contributors: true
+vcs:
+  enabled: true
+  owner: diplodoc-platform
+  repo: docs
+  branch: master
+
+search:
+  enabled: false
+  index: true
+  provider: algolia
+  appId: L6T02M2L5A
+  indexPrefix: diplodoc
+
 resources:
   style:
     - _assets/style/custom.css
