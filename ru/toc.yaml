@@ -125,7 +125,11 @@ items:
       - name: Настройки проекта
         href: settings.md
       - name: Поиск
-        href: project/search.md
+        items:
+          - name: Локальный поиск (lunr.js)
+            href: project/lunr.md
+          - name: Algolia
+            href: project/algolia.md
       - name: Пресеты переменных
         href: project/presets.md
       - name: Переиспользование контента
