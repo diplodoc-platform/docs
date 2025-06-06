@@ -125,6 +125,7 @@ items:
       - name: Настройки проекта
         href: settings.md
       - name: Поиск
+        href: project/search.md
         items:
           - name: Локальный поиск (lunr.js)
             href: project/lunr.md
