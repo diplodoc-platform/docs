@@ -227,3 +227,27 @@ items:
     href: dev/contribution.md
   - name: Метапакет
     href: dev/metapackage.md
+  - name: Extensions API
+    href: dev/extensions-api.md
+    items:
+      - name: Core Concepts
+        href: dev/extensions/core-concepts.md
+      - name: Services
+        href: dev/extensions/services.md
+        items:
+          - name: TOC Service
+            href: dev/extensions/services/toc-service.md
+          - name: Leading Service
+            href: dev/extensions/services/leading-service.md
+          - name: Markdown Service
+            href: dev/extensions/services/markdown-service.md
+          - name: Meta Service
+            href: dev/extensions/services/meta-service.md
+          - name: Vars Service
+            href: dev/extensions/services/vars-service.md
+          - name: VCS Service
+            href: dev/extensions/services/vcs-service.md
+          - name: Search Service
+            href: dev/extensions/services/search-service.md
+          - name: Logger Service
+            href: dev/extensions/services/logger-service.md
