@@ -252,3 +252,7 @@ items:
             href: dev/extensions/services/search-service.md
           - name: Logger Service
             href: dev/extensions/services/logger-service.md
+  - name: Релизы
+    items:
+      - name: Версия 5.0
+        href: ./releases/v5.md          
