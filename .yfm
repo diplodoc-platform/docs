@@ -9,6 +9,9 @@ resources:
         - "https://vk.com"
         - "https://login.vk.com"
         - "https://runtime.strm.yandex.ru"
+    - "img-src":
+        - "data:"
+        - "https://storage.yandexcloud.net"
 
 docs-viewer:
   project-name: diplodoc
@@ -28,3 +31,9 @@ docs-viewer:
       offset: true
   gtm:
     id: GTM-D84DCCD2
+
+search:
+  provider: algolia
+  # index: true
+  appId: 6JJWKETH1R
+  searchKey: 134d6721ed12507a0a35d42060f9933d
