@@ -28,49 +28,118 @@ parameter: value
 
 ## Параметры {#parameters}
 
-### Корневая секция параметров {#root}
+### Корневая секция параметров {#root-settings}
 
 #|
 || **Параметр** | **Описание** | **Тип и значение по умолчанию** ||
-|| `allowHTML` | Разрешить [использование html-элементов](syntax/base.md#html) в разметке. | `bool`
+|| `allowCustomResources` | Разрешить загрузки пользовательских ресурсов в статически сгенерированные страницы. | `bool`<br>`false` ||
+|| `allowHtml` | Разрешить [использование html-элементов](syntax/base.md#html) в разметке. | `bool`<br>`false` ||
+|| `applyPresets` | Применять ли пресеты переменных.<br>[Подробнее о пресетах](project/presets.md). | `bool`<br>`false` ||
+|| `authors` | Включить отображение автора статьи. Данные берутся из vcs. | `bool` или `object`<br>`false`
+Параметры объекта:
+- `enabled` - `bool` - Включить отображение автора статьи.
+- `ignore` - `string[]` - Игнорировать авторов по паттернам перечисленным в списке.
 
-`false` ||
-|| `apply-presets` | Применять ли пресеты переменных. 
+Пример:
+```
+authors:
+    enabled: true
+    ignore:
+      - robot-*
+      - noreply@company.com
+```
+||
+|| `breaks` | [Переносить строки](syntax/base.md#breaks) по символу перевода каретки. | `bool`<br>`true` ||
+|| `contributors` | Включить отображение контрибьюторов в статье. Данные берутся из vcs. | `bool` или `object`<br>`false`
+Параметры объекта:
+- `enabled` - `bool` - Включить отображение автора статьи.
+- `ignore` - `string[]` - Игнорировать авторов по паттернам перечисленным в списке.
 
-[Подробнее о пресетах](project/presets.md). | `bool`
+Пример:
+```
+authors:
+    enabled: true
+    ignore:
+      - robot-*
+      - noreply@company.com
+```
+||
+|| `langs` | Массив языков, участвующих в сборке. | —<br>— ||
+|| `lint` | Подключить [файл линтера](./project/lint.md). | `bool`<br>`false` ||
+|| `mtimes` | Включить отображение даты изменения статьи. Берется из данных vcs. | `bool`<br>`false` ||
+|| `outputFormat` | Формат файлов итоговой сборки. | `string` (`html` или `md`)<br>`html` ||
+|| `pdf` | При значении `pdf: true` для документа будет собираться pdf-версия. Чтобы сборка прошла корректно, обязательно должен быть указан параметр `singlePage: true`. После завершения сборки в левом нижнем углу документа отображается значок собранного PDF-файла, который можно скачать. | `bool`<br>`false` ||
+|| `removeHiddenTocItems` | Убрать из оглавления все объекты, отмеченные атрибутом `hidden: true`. | `bool`<br>`false` ||
+|| `sanitizeHtml` | Включает очистку HTML-разметки от потенциально опасных элементов в `.md`-файлах с помощью HTML-санитайзера. Определяет разрешенные и запрещенные теги, атрибуты, стили и другие элементы при очистке HTML-контента. | `bool`<br>`true` ||
+|| `singlePage` | Собирать [одностраничную сборку](tools/docs/singlepage.md) из всех файлов проекта. | `bool`<br>`false` ||
+|| `staticContent` | Разрешить использовать статический контент (например, файлов изображений, CSS или JS). | `bool`<br>`false` ||
+|| `strict` | Cтрогий режим сборки, все предупреждения YFM отображаются как ошибки. | `bool`<br>`false` ||
+|| `supportGithubAnchors` | Генерировать дополнительные [якоря](syntax/base.md#headers), совместимые с GitHub. | `bool`<br>`false` ||
+|| `varsPreset` | Имя пресета переменных, который необходимо использовать при сборке. | `string`<br>— ||
+|| `vcs` | Настройка подключения к vcs ситеме. Если выключена, то не работают фичи `authors` и `contributors` | `boolean` или `object`<br>`undefined` ||
+|| [analytics](#analytics) | Конфигурация для модуля аналитки. | `Object`<br>`undefined` ||
+|| [resources](#resources) | Список разрешенных ресурсов. | `Object`<br>`undefined` ||
+|| [template](#template) | Конфигурация синтаксиса шаблонизации | `Object`<br>`undefined` ||
+|#
 
-`false` ||
-|| `breaks` | [Переносить строки](syntax/base.md#breaks) по символу перевода каретки. | `bool`
+### Секция параметров template {#template}
 
-`true` ||
-|| `conditionsInCode` | Разрешить блоки кода с условиями с помощью [операторов](syntax/vars#conditions). | `bool` 
+#|
+|| **Параметр** | **Описание** | **Тип и значение по умолчанию** ||
+|| `enabled` | Включает обработку синтаксиса шаблонов в документации. Если не указан, шаблонизашия считается включенной | `bool`<br>`true` ||
+|| `scopes` | > | > ||
+|| `scopes.code` | Включает обработку синтаксиса [условных операторов](syntax/vars#conditions) в блоках кода. | `bool`<br>`false` ||
+|| `scopes.text` | Включает обработку синтаксиса [условных операторов](syntax/vars#conditions) в тексе документа. | `bool`<br>`true` ||
+|| `features` | > | > ||
+|| `features.cicles` | Включает обработку синтаксиса [циклов](syntax/vars#cycles). | `bool`<br>`true` ||
+|| `features.conditions` | Включает обработку синтаксиса [условных операторов](syntax/vars#conditions). | `bool`<br>`true` ||
+|| `features.substitutions` | Включает обработку синтаксиса [переменных](syntax/vars#substitutions). | `bool`<br>`true` ||
+|#
 
-`false` ||
-|| `langs` | Массив языков, участвующих в сборке. | — 
+### Секция параметров template {#analytics}
 
-— ||
-|| `lint` | Подключить [файл линтера](./project/lint.md). | `bool`
+#|
+|| **Название** | **Описание** | **Тип и значение по умолчанию** ||
+|| `gtm` | Настройки аналитики Google Tag Manager. | `Object`<br>`undefined` ||
+|| `gtm.id` | Идентификатор Google Tag Manager в формате GTM. | `string`<br>`undefined` ||
+|| `gtm.mode` | Тип уведомления перед отправкой событий `base` или `notification`. | `string`<br>`base` ||
+|#
 
-`false` ||
-|| `needToSanitizeHtml` | Включает очистку HTML-разметки от потенциально опасных элементов в `.md`-файлах с помощью HTML-санитайзера. Определяет разрешенные и запрещенные теги, атрибуты, стили и другие элементы при очистке HTML-контента. | `bool`
+### Секция параметров `resources` {#resources}
 
-`true` ||
-|| `output-format` | Формат файлов итоговой сборки. | `string` (`html` или `md`)
+#|
+|| **Название** | **Описание** | **Тип и значение по умолчанию** ||
+|| `script` | Добавление пользовательских скриптов на страницу. | ||
+|| `style` | Добавление пользовательских стилей на страницу. | ||
+|| `csp` | Управление [Content Security Policy](./guides/csp.md) (CSP).
 
-`html` ||
-|| `pdf` | При значении `pdf: true` для документа будет собираться pdf-версия. Чтобы сборка прошла корректно, обязательно должен быть указан параметр `singlePage: true`. После завершения сборки в левом нижнем углу документа отображается значок собранного PDF-файла, который можно скачать. | `bool`
+{% cut "Пример структуры" %}
 
-`false` ||
-|| `remove-hidden-toc-items` | Убрать из оглавления все объекты, отмеченные атрибутом `hidden: true`. | `bool`
+```yaml
+csp:
+	- "script-src":
+    	- "self"
+        - "domain1.com"
+        - "domain2.com"
+        "*.domain3.com"
+    - "style-src":
+    	- "self"
+    ...
+    ...
+    ...
+    
+```
+Данная конфигурация преобразуется в HTML-тег вида:
 
-`false` ||
-|| `singlePage` | Собирать [одностраничную сборку](tools/docs/singlepage.md) из всех файлов проекта. | `bool`
+```html
+<meta http-equiv="content-security-policy" content="script-src 'self' domain1.com domain2.com *.domain3.com; style-src 'self' ... ... ...">
+```
 
-`false` ||
-|| `strict` | Cтрогий режим сборки, все предупреждения YFM отображаются как ошибки. | `bool`
+Ключи объекта соответствуют поддерживаемым директивам CSP. Система не проверяет корректность указанных значений — они берутся из `.yfm`-файла и автоматически включаются в мета-тег.
 
-`false` ||
-|| `varsPreset` | Имя пресета переменных, который необходимо использовать при сборке. | `string` 
+{% endcut %}
+
+| `object`
 
 — ||
 |#
@@ -79,30 +148,8 @@ parameter: value
 
 #|
 || **Название** | **Описание** | **Тип и значение по умолчанию** ||
-|| `analytics` | Конфигурация для модуля аналитки. | `Object`
-
-`undefined`  ||
-|| `analytics.gtm` | Настройки аналитики Google Tag Manager. | `Object`
-
-`undefined` ||
-|| `analytics.gtm.id` | Идентификатор Google Tag Manager в формате GTM. | `string`
-
-`undefined` ||
-|| `analytics.gtm.mode` | Тип уведомления перед отправкой событий `base` или `notification`. | `string`
-
-`base` ||
-|| `disableLiquid` | Отключить использование [переменных](syntax/vars.md). | `bool`
-
-`false` ||
-|| `favicon-src` | Иконка во вкладке браузера.
-
-Можно использовать любую ссылку на изображение, подходящее под стандартные требования к фавиконкам. | `string`
-
-— ||
-|| `lang` | Язык по умолчанию для локализации. 
-Для [следующих языков](https://github.com/diplodoc-platform/client/blob/34a5139620874627cfdebe9be74902cf9d3961b1/src/constants.ts#L15) контент будет отображаться в формате RTL (right-to-left). | `string`
-
-`ru` ||
+|| `favicon-src` | Иконка во вкладке браузера.<br>Можно использовать любую ссылку на изображение, подходящее под стандартные требования к фавиконкам. | `string`<br>— ||
+|| `lang` | Язык по умолчанию для локализации.<br>Для [следующих языков](https://github.com/diplodoc-platform/client/blob/34a5139620874627cfdebe9be74902cf9d3961b1/src/constants.ts#L15) контент будет отображаться в формате RTL (right-to-left). | `string`<br>`ru` ||
 || `langs` | Массив языков, отображаемых в интерфейсе документации. Язык по умолчанию при открытии страницы — первый элемент в массиве.
 
 {% cut "Пример структуры проекта с несколькими языками" %}
@@ -174,12 +221,7 @@ input-folder
 | `string[]`
 
 — ||
-|| `linkify` | Преобразовывать ссылкоподобные строки в ссылки.
-
-Пример ссылки: _https://diplodoc.com/ru_ или _diplodoc.com/ru_.
-| `bool`
-
-`false` ||
+|| `linkify` | Преобразовывать ссылкоподобные строки в ссылки.<br>Пример ссылки: _https://diplodoc.com/ru_ или _diplodoc.com/ru_. | `bool`<br>`false` ||
 || `logo-options` |
 Настройки логотипа:
 
@@ -227,9 +269,7 @@ src:
 
 {% endcut %}
 
-| —
-
-— ||
+| —<br>— ||
 || `metrika` | Номер счетчика [Яндекс Метрики](https://metrika.yandex.ru/).
 
 Можно подключить несколько счетчиков:
@@ -264,9 +304,6 @@ docs-viewer:
 | `string`
 
 — ||
-|| `supportGithubAnchors` | Генерировать дополнительные [якоря](syntax/base.md#headers), совместимые с GitHub. | `bool` 
-
-`false` ||
 || `themes` | Выбор темы оформления: светлая или темная. По умолчанию доступны обе. Можно отключить одну из них, указав используемую по умолчанию, например:
 
 ```yaml
@@ -276,52 +313,6 @@ themes: ['light']
 | `string`
 
 `light` ||
-|#
-
-### Секция параметров `resources` {#resources}
-
-#|
-|| **Название** | **Описание** | **Тип и значение по умолчанию** ||
-|| `allow-custom-resources` | Разрешить загрузки пользовательских ресурсов в статически сгенерированные страницы. | `bool`
-
-`false` ||
-|| `static-content` | Разрешить использовать статический контент (например, файлов изображений, CSS или JS). | `bool`
-
-`false` ||
-|| `resources <value...>` | Список разрешенных ресурсов. | —
-
-— ||
-|| `csp` | Управление [Content Security Policy](./guides/csp.md) (CSP).
-
-{% cut "Пример структуры" %}
-
-```yaml
-csp:
-	- "script-src":
-    	- "self"
-        - "domain1.com"
-        - "domain2.com"
-        "*.domain3.com"
-    - "style-src":
-    	- "self"
-    ...
-    ...
-    ...
-    
-```
-Данная конфигурация преобразуется в HTML-тег вида:
-
-```html
-<meta http-equiv="content-security-policy" content="script-src 'self' domain1.com domain2.com *.domain3.com; style-src 'self' ... ... ...">
-```
-
-Ключи объекта соответствуют поддерживаемым директивам CSP. Система не проверяет корректность указанных значений — они берутся из `.yfm`-файла и автоматически включаются в мета-тег.
-
-{% endcut %}
-
-| `object`
-
-— ||
 |#
 
 ### Секция параметров поиска `search` {#search}
