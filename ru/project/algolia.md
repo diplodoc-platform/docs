@@ -16,7 +16,7 @@
 2. **Установите Diplodoc CLI и расширение Algolia (глобально)**  
    ```bash
    npm install -g @diplodoc/cli
-   npm install -g @diplodoc/algolia
+   npm install -g @diplodoc/algolia-extension
    ```
    _(Подробнее о вариантах установки — в разделе [“Установка”](#ustanovka))_
 
@@ -34,7 +34,7 @@
 4. **Передайте ключи и запустите сборку**  
    Для безопасной сборки передавайте Write API Key через флаг CLI:
    ```bash
-   yfm -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia" --api-key "your-write-key"
+   yfm -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia-extension" --api-key "your-write-key"
    ```
 
 ### Регистрация и настройки Algolia
@@ -56,20 +56,20 @@
 **Глобальная установка:**
 ```bash
 npm install -g @diplodoc/cli
-npm install -g @diplodoc/algolia
+npm install -g @diplodoc/algolia-extension
 ```
 Запуск сборки с расширением:
 ```bash
-yfm -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia" --api-key "your-write-key"
+yfm -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia-extension" --api-key "your-write-key"
 ```
 
 **Локальная установка в проекте @diplodoc/cli:**
 ```bash
-npm install @diplodoc/algolia
+npm install @diplodoc/algolia-extension
 ```
 Запуск сборки с расширением:
 ```bash
-npm start -- -i ./docs -o ./docs-out --extensions @diplodoc/algolia --api-key "your-write-key"
+npm start -- -i ./docs -o ./docs-out --extensions @diplodoc/algolia-extension --api-key "your-write-key"
 ```
 
 ### Источники для передачи параметров
@@ -133,7 +133,7 @@ search:
 - Если вы хотите разделить эти процессы — например, сначала собрать документацию, проверить результат, а индекс загружать только после финальной проверки или отдельно по расписанию — настройте сборку без параметра `index` (или явно с `index: false`). Тогда при сборке создаются только локальные индексы. Позднее для загрузки или обновления индекса в облако используйте отдельную команду:
 
 ```bash
-yfm index -i ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia" --api-key "your-write-key"
+yfm index -i ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia-extension" --api-key "your-write-key"
 ```
 
 #### Частые вопросы и проблемы
