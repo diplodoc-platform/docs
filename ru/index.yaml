@@ -54,8 +54,6 @@ blocks:
 
           [Пресеты переменных](project/presets.md)
 
-          [Переиспользование контента](project/includes.md)
-
       - type: basic-card
         title: 
           text: Настройка внешнего вида
