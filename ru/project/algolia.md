@@ -26,7 +26,7 @@
    search:
      provider: algolia
      appId: <ваш app id>
-     searchKey: <ваш search key>
+     searchApiKey: <ваш search key>
      index: true
    ```
    _(Пример с расширенными настройками — см. [“Пример расширенной настройки”](#primer-rasshirennoj-nastrojki))_
@@ -83,10 +83,10 @@ npm start -- -i ./docs -o ./docs-out --extensions @diplodoc/algolia-extension --
 | apiKey        | --api-key           | ALGOLIA_API_KEY        | search.apiKey (см. выше)   | Секретный ключ для индексации            |
 | indexName     | --index-name        | ALGOLIA_INDEX_NAME     | search.indexName           | Имя индекса (по умолчанию "docs")        |
 | index         | --index             | -                      | search.index               | Загружать ли индекс в Algolia            |
-| searchKey     | --search-key        | ALGOLIA_SEARCH_KEY     | search.searchKey           | Ключ для поиска на клиенте               |
+| searchApiKey  | --search-api-key    | ALGOLIA_SEARCH_API_KEY | search.searchApiKey        | Ключ для поиска на клиенте               |
 | api           | --search-api        | ALGOLIA_API_PATH       | search.api                 | Путь к JS-API поиска                     |
 | indexSettings | -                   | -                      | search.indexSettings       | Настройки индекса Algolia                |
-| querySettings | -                   | -                      | search.querySettings       | Настройки поисковых запросов              |
+| querySettings | -                   | -                      | search.querySettings       | Настройки поисковых запросов             |
 
 
 {% note warning "Пояснение по видам ключей" %}
@@ -94,7 +94,7 @@ npm start -- -i ./docs -o ./docs-out --extensions @diplodoc/algolia-extension --
 - **apiKey (Write API Key):**
   Секретный ключ, используется для загрузки и обновления данных в Algolia во время сборки или индексации. Храните его секретно, не публикуйте в репозитории или выложенных файлах конфигурации: используйте переменные среды либо флаги CLI.
 
-- **searchKey (Search API Key):**
+- **searchApiKey (Search API Key):**
   Ключ для фронтенд-поиска, попадает в финальную сборку документации. Без него поиск на клиенте работать не будет. Этот ключ безопасен для публикации в файле `.yfm`.
 
 {% endnote %}
@@ -107,7 +107,7 @@ search:
   appId: <ваш app id>
   indexName: docs
   index: true
-  searchKey: <ваш search key>
+  searchApiKey: <ваш search api key>
   indexSettings:
     searchableAttributes:
       - title
@@ -138,6 +138,6 @@ yfm index -i ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia-extension
 
 #### Частые вопросы и проблемы
 
-- Поиск не работает — проверьте, что `searchKey` корректно передан в конфиге.
+- Поиск не работает — проверьте, что `searchApiKey` корректно передан в конфиге.
 - Ошибка при индексации — проверьте правильность и способ передачи `write apiKey`.
 - Данные не появляются в Algolia — убедитесь, что выставлен параметр `index: true` в конфиге или используется ключ `--index` при запуске.
