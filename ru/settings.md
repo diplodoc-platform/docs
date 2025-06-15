@@ -355,7 +355,7 @@ Diplodoc поддерживает в режиме статической сбо�
 | `apiKey`        | **Секретный** Admin API Key для индексации.<br>Рекомендуется передавать через переменные среды или CLI. | string | —                     |
 | `indexName`     | Имя индекса в Algolia.                                                                                   | string | `docs`                |
 | `index`         | Если `true`, индекс будет автоматически загружаться в Algolia после сборки.<br>Если `false`, только создаётся локальный индекс. | bool   | false                 |
-| `searchKey`     | Search-Only API Key.<br>Клиентский ключ для поиска на фронте. Без него облачный поиск не работает на клиенте. | string | `search-api-key`      |
+| `searchApiKey`  | Search API Key.<br>Клиентский ключ для поиска на фронте. Без него облачный поиск не работает на клиенте. | string | `search-api-key`      |
 | `api`           | Путь к js-API поиска на клиенте.                                                                        | string | `_search/api.js`      |
 | `indexSettings` | [Настройки индекса Algolia](https://www.algolia.com/doc/api-reference/settings-api-parameters/).         | object | —                     |
 | `querySettings` | [Настройки параметров поиска Algolia](https://www.algolia.com/doc/api-reference/api-parameters/).        | object | —                     |
@@ -379,7 +379,7 @@ search:
   appId: <ВАШ_APP_ID>
   indexName: docs
   index: true
-  searchKey: <ВАШ_SEARCH_ONLY_API_KEY>
+  searchApiKey: <ВАШ_SEARCH_API_KEY>
   indexSettings:
     searchableAttributes:
       - title
