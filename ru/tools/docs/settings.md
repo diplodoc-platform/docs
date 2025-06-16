@@ -66,7 +66,7 @@ yfm -e ./local-extension
 ||
 `--merge-includes`
 |
-Объеденить содержимое [инклюдов](../../project/includes.md) с документацией.
+Объеденить содержимое [инклюдов](../../syntax/includes.md) с документацией.
 
 {% note info %}
 

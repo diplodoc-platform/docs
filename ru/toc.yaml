@@ -96,6 +96,8 @@ items:
             href: syntax/vars.md
           - name: Всплывающие подсказки
             href: syntax/term.md
+          - name: Переиспользование контента
+            href: syntax/includes.md
           - name: Дополнительные возможности
             href: syntax/additional.md
       - name: Организация контента
@@ -133,8 +135,6 @@ items:
             href: project/algolia.md
       - name: Пресеты переменных
         href: project/presets.md
-      - name: Переиспользование контента
-        href: project/includes.md
       - name: Файл конфигурации линтера
         href: project/lint.md
   - name: Настройка внешнего вида
