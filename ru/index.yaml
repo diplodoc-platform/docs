@@ -3,7 +3,7 @@ blocks:
   - type: header-block
     title: Diplodoc
     description: |
-      Платформа работы с документацией в парадигме Documentation as a Code.
+      Платформа работы с документацией в парадигме Documentation as Code.
     textWidth: 'm'
 
   - type: card-layout-block
