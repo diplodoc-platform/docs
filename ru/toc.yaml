@@ -206,7 +206,7 @@ items:
         items:
           - name: Предустановленные
             href: plugins/index.md
-          - name: Дополнительные плагины
+          - name: Дополнительные
             href: plugins/import.md
       - name: Библиотека Mermaid
         href: tools/mermaid.md
