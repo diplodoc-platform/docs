@@ -65,6 +65,7 @@ authors:
 ```
 ||
 || `langs` | Массив языков, участвующих в сборке. | —<br>— ||
+|| `linkify` | Преобразовывать ссылкоподобные строки в ссылки.<br>Пример ссылки: _https://diplodoc.com/ru_ или _diplodoc.com/ru_. | `bool`<br>`false` ||
 || `lint` | Подключить [файл линтера](./project/lint.md). | `bool`<br>`false` ||
 || `mtimes` | Включить отображение даты изменения статьи. Берется из данных vcs. | `bool`<br>`false` ||
 || `outputFormat` | Формат файлов итоговой сборки. | `string` (`html` или `md`)<br>`html` ||
@@ -221,7 +222,6 @@ input-folder
 | `string[]`
 
 — ||
-|| `linkify` | Преобразовывать ссылкоподобные строки в ссылки.<br>Пример ссылки: _https://diplodoc.com/ru_ или _diplodoc.com/ru_. | `bool`<br>`false` ||
 || `logo-options` |
 Настройки логотипа:
 
