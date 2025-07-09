@@ -107,6 +107,8 @@ blocks:
 
           [Публикация](deploy.md)
 
+          [Программа для контрибьюторов](dev/for-contributors.md)
+
   - type: content-layout-block
     size: s
     textContent:
