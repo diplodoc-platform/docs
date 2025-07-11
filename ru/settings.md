@@ -97,7 +97,7 @@ authors:
 || `features.substitutions` | Включает обработку синтаксиса [переменных](syntax/vars#substitutions). | `bool`<br>`true` ||
 |#
 
-### Секция параметров template {#analytics}
+### Секция параметров analytics {#analytics}
 
 #|
 || **Название** | **Описание** | **Тип и значение по умолчанию** ||
