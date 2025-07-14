@@ -1,6 +1,6 @@
 # Page constructor
 
-Page constructor (далее -- PC) - это библиотека семейства [Gravity UI](https://gravity-ui.com/) для рендеринга веб-страниц на основе данных представленных в YAML формате.
+Page constructor (далее – PC) — это библиотека семейства [Gravity UI](https://gravity-ui.com/) для рендеринга веб-страниц на основе данных представленных в YAML формате.
 При создании страниц используется компонентный подход: страница строится с использованием набора готовых блоков, которые можно размещать в любом порядке. Каждый блок имеет определенный тип и набор параметров входных данных.
 Формат входных данных и список доступных блоков можно посмотреть в [документации библиотеки](https://preview.gravity-ui.com/page-constructor/?path=/docs/documentation-blocks--docs). В сторибуке PC есть [удобная песочница](https://preview.gravity-ui.com/page-constructor/?path=/story/editor-main--default), в которой сначала можно опробовать все блоки и собрать страницу, а уже потом скопировать готовый конфиг к себе в документацию.
 
@@ -8,12 +8,12 @@ Page constructor (далее -- PC) - это библиотека семейст
 
 ## Способы использования
 
-Page Constructor можно использовать двумя способами:
+Page constructor можно использовать двумя способами:
 
 1. **Отдельные YAML-файлы** — создание полноценных страниц с помощью YAML-конфигурации.
-2. **Встраивание блоков** — добавление отдельных блоков Page Constructor прямо в markdown-документацию.
+2. **Встраивание блоков** — добавление отдельных блоков Page constructor прямо в markdown-документацию.
 
-## Добавление Page constructor страниц
+## Добавление Page constructor страниц { #page }
 
 Стандартная структура конфигурации PC страницы хранится в `.yaml` формате и имеет вид:
 
@@ -43,15 +43,15 @@ blocks:
         url: 'https://github.com/diplodoc-platform'
 ```
 
-Описание полей для каждого блока можно посмотреть в [документации](https://preview.gravity-ui.com/page-constructor/?path=/story/blocks-header--docs&viewMode=docs).
+Описание полей для каждого блока можно посмотреть в [документации](https://preview.gravity-ui.com/page-constructor/?path=/docs/documentation-blocks--docs).
 
-## Добавление блоков Page Constructor в Markdown
+## Добавление блоков Page constructor в Markdown { #block }
 
-Вы можете встраивать отдельные блоки Page Constructor непосредственно в markdown-документацию. Это позволяет комбинировать обычный markdown-контент с интерактивными блоками Page Constructor на одной странице.
+Вы можете встраивать отдельные блоки Page constructor непосредственно в markdown-документацию. Это позволяет комбинировать обычный markdown-контент с интерактивными блоками Page constructor на одной странице.
 
 ### Синтаксис
 
-Для добавления блока Page Constructor в markdown используйте директиву `page-constructor`:
+Для добавления блока Page constructor в markdown используйте директиву `page-constructor`:
 
 ```yaml
 ::: page-constructor
@@ -66,7 +66,7 @@ blocks:
 
 ### Примеры использования
 
-Вы можете использовать Page Constructor для добавления одного блока или нескольких блоков одновременно.
+Вы можете использовать Page constructor для добавления одного блока или нескольких блоков одновременно.
 
 {% cut "Разметка блока" %}
 
