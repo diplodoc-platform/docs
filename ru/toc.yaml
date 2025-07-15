@@ -34,6 +34,8 @@ navigation:
 items:
   - name: Баннеры
     href: features.md
+  - name: Баннеры
+    href: features.md
     items:
       - name: Баннер с внешним переходом
         href: about.md
