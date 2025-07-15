@@ -1,0 +1,36 @@
+allowHTML: true
+langs: ['en','ru']
+
+interface:
+  favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
+
+resources:
+  style:
+    - _assets/style/custom.css
+  csp:
+    - "frame-src":
+        - "https://vk.com"
+        - "https://login.vk.com"
+        - "https://runtime.strm.yandex.ru"
+    - "img-src":
+        - "data:"
+        - "https://storage.yandexcloud.net"
+
+docs-viewer:
+  project-name: diplodoc
+  langs: ['en','ru']
+  favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
+  github-url-prefix: https://github.com/diplodoc-platform/docs/blob/master
+  logo-link-preview: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg
+  logo-options:
+    src: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg
+    src-dark: https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg
+    src-preview:
+      ru: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-share-doc-ru.png
+      default: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-share-doc-eng.png
+    title: Diplodoc
+    img-has:
+      width: 158px
+      offset: true
+  gtm:
+    id: GTM-D84DCCD2

@@ -40,7 +40,7 @@ items:
       - name: Баннер с внешним переходом
         href: about.md
         hidden: true
-  - name: Платформа Diplodoc
+  - name: Платформа diplodoc
     labeled: true
     href: index.yaml
   - name: О платформе
