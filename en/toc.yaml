@@ -19,13 +19,18 @@ navigation:
     leftItems:
       - text: 'How it works'
         type: 'link'
-        url: '../../how-to/'
+        url: '../../en/how-to/'
       - text: 'Documentation'
         type: 'link'
         url: '../../docs/en/'
+      - text: 'Live editor'
+        type: "link"
+        url: "https://diplodoc-platform.github.io/playground/?prefill=true"
       - text: 'GitHub'
         type: 'link'
         url: 'https://github.com/diplodoc-platform/'
+    rightItems:
+      - type: controls
 items:
   - name: Overview
     href: about.md
