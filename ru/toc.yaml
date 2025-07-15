@@ -33,10 +33,10 @@ navigation:
       - type: controls
 items:
   - name: Баннеры
-    href: about.md
+    href: features.md
     items:
       - name: Баннер с внешним переходом
-        href: features.md
+        href: about.md
         hidden: true
   - name: Платформа Diplodoc
     labeled: true
