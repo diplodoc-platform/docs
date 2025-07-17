@@ -32,6 +32,10 @@ navigation:
     rightItems:
       - type: controls
 items:
+  - name: Тест 1
+    href: test1.md
+  - name: Тест 2
+    href: test2.md
   - name: Баннеры 1
     href: about.md
   - name: Баннеры 2
