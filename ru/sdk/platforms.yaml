@@ -1,0 +1,40 @@
+blocks:
+  - type: 'content-layout-block'
+    textWidth: 'l'
+    textContent:
+      title: 'Платформы'
+      text: "<p>AppMetrica — набор библиотек для сбора статистики использования приложения, для создания и ведения push-кампаний и сбора статистики по ним. Собранные данные можно просматривать в [веб-интерфейсе AppMetrica](https://appmetrica.yandex.ru/).</p></br>
+
+<p>AppMetrica включает в себя следующие библиотеки:</p>
+<ul>
+  <li>AppMetrica SDK — позволяет получать статистическую информацию о приложении и его пользователях. Например, информацию о сессиях, количестве пользователей, установивших приложение, источниках их переходов на страницу скачивания приложения и другое.</li>
+  <li>AppMetrica Push SDK — позволяет работать с push-уведомлениями и отслеживать ход push-кампании.</li>
+</ul>
+</br>
+<p>SDK позволяет отслеживать следующие данные:</p>
+<ul>
+  <li>информация об устройстве;</li>
+  <li>информация о сессиях;</li>
+  <li>информация об источнике перехода пользователя на страницу скачивания приложения;</li>
+  <li>действия, выполненные пользователем в приложении;</li>
+  <li>местоположение пользователя;</li>
+  <li>ошибки, возникающие во время использования приложения;</li>
+  <li>собственные события;</li>
+  <li>другие данные (например, количество пользователей, установивших приложение).</li>
+</ul>"
+  - type: 'card-layout-block'
+    animated: false
+    children:
+      - type: 'basic-card'
+        title: '<a href="android">Android</a>'
+        text: "<b>Актуальные версии SDK:</b>
+        </br>
+        <ul>
+          <li>AppMetrica SDK: {{ io-appmetrica-analytics-analytics }}</li>
+          <li>AppMetrica Gradle Plugin: {{ io-appmetrica-analytics-gradle }}</li>
+          <li>AppMetrica Push SDK: {{ push-sdk-android-version }}</li>
+        </ul>"
+        urlTitle: 'Android'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'android'

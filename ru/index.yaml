@@ -1,114 +1,96 @@
-# fullScreen: true
 blocks:
-  - type: header-block
-    title: Diplodoc
-    description: |
-      Платформа работы с документацией в парадигме Documentation as Code.
-    textWidth: 'm'
-
-  - type: card-layout-block
-    colSizes:
-      all: 12
-      xl: 4
-      sm: 6
-      md: 4
-    children:
-
-      - type: basic-card
-        title: 
-          text: О платформе
-          textSize: s
-        text: |
-          [Описание](about.md)
-
-          [Возможности платформы](features.md)
-
-      - type: basic-card
-        title: 
-          text: Начало работы
-          textSize: s
-        text: |
-          [Публикация на Diplodoc.com](how-it-work.md)
-
-          [Локальная сборка проекта](installation.md)
-
-          [Шаблон проекта](static-template.md)
-
-      - type: basic-card
-        title: 
-          text: Редактирование контента
-          textSize: s
-        text: |
-          [Синтаксис](syntax/index.md)
-
-          [Организация контента](project/index.md)
-          
-          [Page Constructor](project/page-constructor.md)
-
-      - type: basic-card
-        title: 
-          text: Конфигурация проекта
-          textSize: s
-        text: |
-          [Настройки проекта](settings.md)
-
-          [Пресеты переменных](project/presets.md)
-
-      - type: basic-card
-        title: 
-          text: Настройка внешнего вида
-          textSize: s
-        text: |
-          [Расширенная навигация](project/navigation.md)
-
-          [Подключение CSS](style/css.md)
-
-      - type: basic-card
-        title: 
-          text: CLI
-          textSize: s
-        text: |
-          [Обзор](tools/docs/index.md)
-
-          [Сборка](tools/docs/build.md)
-
-          [Настройки сборки](tools/docs/settings.md)
-
-          [Локализация](tools/docs/translate.md)
-
-      - type: basic-card
-        title: 
-          text: Практические руководства
-          textSize: s
-        text: |
-          [Контентная аналитика](guides/content-analytics.md)
-
-          [Настройка личного домена](personal-domain-ya-cloud.md)
-
-          [Автогенерация и интеграция документации](guides/includers.md)
-
-      - type: basic-card
-        title: 
-          text: Инструменты и библиотеки
-          textSize: s
-        text: |
-          [Transformer](tools/transform/index.md)
-
-          [Плагины](plugins/index.md)
-  
-      - type: basic-card
-        title: 
-          text: Для разработчиков
-          textSize: s
-        text: |
-          [Быстрый старт](dev/quickstart.md)
-
-          [Внесение изменений](dev/contribution.md)
-
-          [Публикация](deploy.md)
-
-  - type: content-layout-block
-    size: s
+  - type: 'content-layout-block'
+    textWidth: 'l'
     textContent:
-      text: "\_"
-animated: true             
+      title: 'О сервисе'
+      text: "[AppMetrica](https://appmetrica.yandex.ru/about) — это платформа мобильной аналитики полного цикла. Отчеты по источникам трафика, ключевым показателям мобильного приложения, аудитории и сценариям использования, а также статистика по сбоям — все это в одном SDK для каждой популярной платформы."
+      #buttons:
+      #  - text: ''
+      #   theme: 'google-play'
+      #    url: 'https://play.google.com/store/apps/details?id=ru.yandex.mobile.appmetrica'
+      #  - text: ''
+      #    theme: 'app-store'
+      #    url: 'https://itunes.apple.com/us/app/appmetrica/id1282946899'
+  - type: 'card-layout-block'
+    animated: false
+    children:
+      - type: 'basic-card'
+        title: 'Начало работы'
+        text: "Пошагово о том, как настроить работу с AppMetrica, расшифровка терминов, описание ограничений"
+        urlTitle: 'Начало работы'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'common/quick-start.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'SDK Developer docs'
+        text: "Техническая документация для разработчиков: инструкции по интеграции AppMetrica SDK и Push SDK"
+        urlTitle: 'SDK Developer docs'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'sdk/platforms.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Настройка сбора данных'
+        text: "Инструкции о том, как настроить сбор данных для аналитики: трекинг deeplink, крэши, in-app подписки, in-app покупки, e-commerce и другие данные"
+        urlTitle: 'Настройка сбора данных'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'data-collection/index.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Безопасность и соблюдение политик'
+        text: "Стандарты безопасности, которые поддерживает AppMetrica"
+        urlTitle: 'Безопасность и соблюдение политик'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'data-security/gdpr.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Работа с отчетами'
+        text: "Создание воркспейсов, настройка виджетов и отчетов"
+        urlTitle: 'Работа с отчетами'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'mobile-reports/index.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Работа с API'
+        text: "Инструкции по работе с различными API: API управления, API отчетов, Logs API, Data Stream API, Post API и Push API"
+        urlTitle: 'Работа с API'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'mobile-api/index.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Трекинг'
+        text: "Как работает трекинг. Создание и настройка трекера"
+        urlTitle: 'Трекинг'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'mobile-tracking/index.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Push-кампании'
+        text: "Инструкция по запуску push-кампании"
+        urlTitle: 'Push-кампании'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'push/index.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Эксперименты'
+        text: "А/Б эксперименты Varioqub"
+        urlTitle: 'Эксперименты'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'common/varioqub-app-about.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Поддержка и решение проблем'
+        text: "Частые вопросы и форма для обращения в службу поддержки"
+        urlTitle: 'Поддержка и решение проблем'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'troubleshooting/index.md'
+        animated: false

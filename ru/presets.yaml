@@ -1,19 +1,204 @@
 default:
-  PROGRAM: yfm
-  algorithms: |
-    - Массив - и его отличие от списков
-    - Связный список - и его реализации на js
-    - Двусвязный список - и где его применяют
-    - Hash-map - почему эффективен
-    - Дерево, бинарное дерево, AST - красно-черные не нужны, мы про другое
+    locale: ru
+    domain: ru
+    service: AppMetrica
+    api-url: https://api.appmetrica.yandex.ru
+    push-api-url: https://push.api.appmetrica.yandex.net
+    profile-url: https://appmetrica.yandex.ru
 
-  servers: |
-    - NodeJS - основная среда исполнения кода
-    - S3/S3 API - хранилище контента
-    - PostgreSQL - хранилище пользовательских данных
-    - OpenSearch/ElasticSearch - индекс по документациям
-    - Redis - кеширование серверных ответов
-    - Kubernetes/Kubernetes like - управление контейнерами
-    - Terraform + Helm - автоматическое разворачивание инсталяции, автоматический деплой 
-    - ALB/API Gateway/Nginx - балансеры
-    - Serverless - внутренние задачи инсталяции
+    # Icons
+    hum: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-tracking/hum.png
+    check: ../../_images/check.svg
+    cross: ../../_images/cross.svg
+    check-1: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/common/check-1.png
+    check-2: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/common/check-2.png
+    cog: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-reports/cog.png
+    edit-icon: ../../_images/icon-edit.svg
+    copy-icon: ../../_images/icon-copy.svg
+    trash-icon: ../../_images/icon-trash.svg
+    filter-icon: ../../_images/icon-filter.svg
+    tab__flat-tree: ../../_images/icon-flat-tree.svg
+    show-list: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-sdk-dg/show-list.png
+
+    # Texts
+    feedback: Если вы не нашли ответ на свой вопрос, то вы можете задать его через форму обратной связи. Пожалуйста, опишите возникшую проблему как можно подробнее. Если возможно, приложите скриншот.
+
+    # все для Android
+    io-appmetrica-analytics-analytics: 7.9.0
+    com-android-installreferrer-installreferrer: 2.2
+    com-google-android-gms-play-services-appset: 16.0.0
+    org-jetbrains-kotlin-kotlin-stdlib: 1.4.32
+    io-appmetrica-analytics-gradle: 1.0.1
+    io-appmetrica-analytics-analytics-ndk-crashes: 3.0.0
+    # все для iOS
+    ios-appmetrica-sdk-version: 5.11.0
+    ios-push-sdk: 3.1.0
+    apphud-adapter-ios: 1.0.0
+    load-appmetrica-ios: https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/175948/YandexMobileMetrica-4.5.2-ios-d70f8cb3-2746-4c3d-aa5f-dcd6acaaa5d8.zip
+    load-appmetrica-push-ios-sdk: https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/128534/YandexMobileMetricaPush-1.0.0-ios-11df8ee2-df87-4f7f-a7b1-1c0718953680.zip
+    api-key: API key — уникальный идентификатор приложения, который выдается в веб-интерфейсе AppMetrica при [добавлении приложения](https://appmetrica.yandex.ru/application/new). Он находится в разделе **Настройки**.
+    # все для Android Push sdk
+    push-sdk-android-version: 4.1.1
+    push-sdk-android-version-firebase-messaging: 22.0.0
+    com-google-gms-google-services: 4.4.0
+    com-google-android-gms-play-services-base: 17.5.0
+    # Flutter
+    appmetrica-flutter-plugin: 3.2.0
+    appmetrica-push-flutter-plugin: 2.0.0
+    # Unity
+    appmetrica-unity-plugin: 6.4.0
+    appmetrica-push-unity-plugin: 2.0.0
+    google-external-dependency-manager: 1.2.183
+    # React Native
+    appmetrica-react-native-plugin: 3.3.0
+    app-id: |
+     `APP_ID` — идентификатор приложения в Firebase. Его можно узнать в [консоли Firebase](https://console.firebase.google.com/): перейдите в **Настройки проекта**. В разделе **Ваши приложения** скопируйте значение поля **Идентификатор приложения**.
+    sender-id: |
+     `SENDER_ID`— уникальный идентификатор отправителя в Firebase. Его можно узнать в [консоли Firebase](https://console.firebase.google.com/): перейдите во вкладку **Настройки проекта**&nbsp;→ **Cloud Messaging** и скопируйте значение поля **Идентификатор отправителя**.
+    api-key-push: |
+     `API_KEY` — ключ приложения в Firebase. Его можно найти в поле `current_key` файла `google-services.json`. Файл можно скачать из [консоли Firebase](https://support.google.com/firebase/answer/7015592).
+    project-id: |
+     `PROJECT_ID` — id приложения в Firebase. Его можно найти в поле `project_id` файла `google-services.json`. Файл можно скачать из [консоли Firebase](https://console.firebase.google.com/).
+    silent-push: Сообщение, которое обрабатывается приложением в фоновом режиме без отображения пользователю. С помощью silent push можно передать дополнительные данные, либо проверить доставляемость уведомлений.
+    deeplink: Ссылка, которая открывает установленное на устройстве приложение и передает ему указанные данные. В общем случае имеет вид myapp://some_data.
+    # Метрики
+    iap: Выручка от покупок, которые сделаны пользователем через приложение. Например, предметы улучшения в играх, заказы товаров в магазинах, подписки.
+    ad: Выручка от рекламы, которая размещена в приложении.
+    ad-revenue: Выручка от рекламы, которая размещена в приложении.
+    arpu: Средняя выручка на одного пользователя (average revenue per user). Рассчитывается как отношение общей выручки приложения от in-app покупок и подписок к общему количеству пользователей приложения за выбранный период.
+    arppu: Отношение общей выручки приложения от in-app покупок и подписок к количеству платящих пользователей за выбранный период.
+    re-engagement: Переход пользователя в установленное приложение в рамках рекламной кампании. Обычно переход осуществляется с помощью deeplink.
+    new-installs: Число уникальных устройств с установленным приложением.
+    total-revenue: Суммарная выручка от рекламной монетизации, in-app покупок и подписок в приложении за период отчета.
+    total-arpu: Отношение общей выручки приложения от рекламной монетизации, in-app покупок и подписок за период отчета к количеству пользователей приложения за этот же период.
+    purchases: Количество in-app покупок и событий с подписками с положительной выручкой.
+    in-app-revenue: Суммарная выручка от in-app покупок и подписок в приложении.
+    average-order: Отношение выручки от всех in-app покупок и подписок к их количеству.
+    paying-users: Количество пользователей, которые совершили хотя бы одну in-app покупку или подписку за выбранный период.
+    purchases-per-user: Отношение количества in-app покупок и подписок к количеству платящих пользователей за выбранный период.
+    percent-per-paying-user: Отношение количества пользователей с in-app покупками или подписками ко всем пользователям за выбранный период.
+    invalid-revenue: Суммарная выручка от невалидных in-app покупок и подписок за выбранный период. Невалидные in-app покупки не учитываются в остальных метриках по Revenue.
+    users-with-invalid-revenue: Количество пользователей, которые совершили невалидные in-app покупки и подписки за выбранный период. Невалидные in-app покупки не учитываются в остальных метриках по Revenue.
+    ad-revenue-events: Количество событий с рекламной выручкой (Ad Revenue) за выбранный период.
+    ad-revenue-new: Суммарная выручка от рекламной монетизации за выбранный период.
+    ad-arpu: Отношение выручки приложения от рекламной монетизации за выбранный период к количеству пользователей приложения за этот же период.
+    ecpm: Отношение суммарной выручки от рекламной монетизации к количеству событий с рекламной выручкой (Ad Revenue) за выбранный период, умноженное на 1000.
+    users-with-ad-revenue: Количество пользователей с событиями рекламной выручки (Ad Revenue) за выбранный период.
+    ad-revenue-events-per-user: Отношение количества событий с рекламной выручкой (Ad Revenue) к количеству пользователей за выбранный период.
+    sessions-with-ad-revenue: Количество сессий, в рамках которых были совершены события с рекламной выручкой (Ad Revenue) за выбранный период.
+    ad-revenue-events-per-session: Отношение количества событий с рекламной выручкой (Ad Revenue) к общему количеству сессий за выбранный период.
+    percent-users-with-ad-revenue: Отношение количества пользователей с событиями c рекламной выручкой (Ad Revenue) ко всем пользователям за выбранный период.
+    loyal-users: Процент от общего количества пользователей, которые совершили определенное количество сессий. Количество сессий задается пользователем.
+    currency-conversion: Подробнее о [конвертации](../data-collection/about-revenue.md#currency) валют.
+    retention: Доля пользователей от числа установивших приложение за указанный день/неделю/месяц (нулевой период), вернувшихся в приложение (запустивших его) на определенный день/неделю/месяц после установки. Рассчитывается как отношение числа пользователей, запустивших приложение на N-й день/неделю/месяц, к числу пользователей, установивших приложение в нулевой период (это число принимается за 100%).
+    # SDK
+    presentationOptions: Параметры представления push-уведомлений.
+    nextDelegate: Делегат, в который передаются вызовы этого протокола.
+    # элементы интерфейса
+    data-export: Экспорт данных
+    upload-cloud: Загрузить в облако
+    segment-not-selected: Сегмент • Не выбран
+    any-segment: Произвольный сегмент
+    comparison: Сравнение
+    compare-to-period: Сравнить с предыдущим периодом
+    compare-to-segment: С готовым или новым сегментом
+    cancel-comparison: Отменить сравнение
+    apply: Применить
+    export: Экспортировать
+    technology: Технологии
+    save-as: Сохранить как...
+    save: Сохранить
+    to-archive: В архив
+    edit: Редактировать
+    button-groups-and-metrics: Группировки и метрики
+    funnels-button-create: Создать воронку
+    funnels-button-add-step: Добавить шаг
+    dimensions-button: Группировки
+    funnels-tab-abs-rel: Абсолютные конверсии | Относительные
+    profile-report-column-button: Столбцы
+    show-list-dropdown: NotificationServiceExtension
+    dimension-sources: Источники
+    fraud-assessment: Оценка фрода
+    tracking: Трекинг
+    create-tracker: Создать трекер
+    tracker-list: Список трекеров
+    tracker-data: Данные трекера
+    pre-installing: Предустановка
+    this-is-a-remarketing-campaign: Это ремаркетинговый трекер
+    application: Приложение
+    app-store: Магазин приложений
+    destination-url: Целевая ссылка
+    media-source: Партнер
+    media-sources: Партнеры
+    media-source-new: Добавить партнера
+    your: Ваши
+    create-postback-template: Создать шаблон
+    attribution-settings: Настройка атрибуции
+    clicks-impressions: Клики/Показы
+    reattribution: Реатрибуция
+    postback-settings: Настройка постбеков
+    add-postback: Добавить постбек
+    event-installation: Установка
+    send-postback-on-first-target-event-only: Отправлять постбек только для первого целевого события
+    send-postback-on-actions-of-all-users: Отправлять постбек по действиям всех пользователей
+    tracking-url: Трекинг-ссылка
+    find-tracker: Найти трекер
+    settings: Настройки
+    main: Основное
+    manage-access: Управление доступом
+    organization: Организация
+    tariff: Оплата и тариф
+    tracking-apphud: Трекинг подписок (Apphud)
+    iOS-app: iOS приложение
+    settings-button: Настроить
+    apphud-inapp: Отслеживание in-app покупок и подписок Apphud
+    disabled: Отключено
+    create: Создать
+    syncing-the-ads-sdk: Синхронизация Ads SDK
+    button-add: Добавить
+    reports: Отчеты
+    add-workspace: Добавить workspace
+    create-copy: Создать копию
+    widgets: Виджеты
+    to-workspace: На workspace
+    overview: Обзор
+    add-to-overview: Добавить в обзор
+    delete: Удалить
+    saved: Сохраненные
+    all-reports: Все отчеты
+    popular: Популярные
+    ab-experiment: А/В эксперименты
+    flag-config: Конфиг флагов
+    varioqub: Вариокуб
+    title: Заголовок
+    preset-widget: Готовый
+    new-widget: + Новый виджет
+    show-in-widget: Показывать в виджете
+    total-or-average: Итого или среднее
+    automatically-selected-dimension-values: Автоматически выбранные значения группировок
+    manually-selected-dimension-values: Выбранные вручную значения группировок
+    dimensions: Группировки
+    conversions: Конверсии
+    find-conversion: Найти конверсию
+    add-conversion: Создать конверсию
+    all-events: Все события
+    first-event-only: Только первое событие
+    # отчеты
+    report-events: События
+    report-product: Продукт
+    report-marketing: Маркетинг
+    report-monetization: Монетизация
+    report-crashes-and-errors: Крэши и ошибки
+    # LINKS
+    helpcenter-quickstart-step3: https://ads.yandex.com/helpcenter/ru/quick-start#shag-3-projdite-proverku-vladeniya-prilozheniem
+
+tld-com:
+    tld: com
+
+tld-ru:
+    tld: ru
+
+tld-com-appboost:
+    tld: com    
+    service: AppBoost
+    profile-url: https://appboost.yandex.com

@@ -1,0 +1,13 @@
+items:
+  - name: Частые вопросы и решение проблем
+    href: troubleshooting.md
+  - name: Лимитирование кастомных событий
+    href: limit-events.md  
+  - name: Обратная связь
+    href: feedback-new.md
+  - name: Предложить идею
+    href: improvement-idea.md
+  - name: Написать в службу поддержки ключевых клиентов AppMetrica
+    href: feedback-priority.md
+    hidden: true
+    

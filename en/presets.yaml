@@ -1,0 +1,204 @@
+default:
+    locale: en
+    domain: com
+    service: AppMetrica
+    api-url: https://api.appmetrica.yandex.ru
+    push-api-url: https://push.api.appmetrica.yandex.net
+    profile-url: https://appmetrica.yandex.ru
+
+    # Icons
+    hum: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-tracking/hum.png
+    check: ../../_images/check.svg
+    cross: ../../_images/cross.svg
+    check-1: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/common/check-1.png
+    check-2: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/common/check-2.png
+    cog: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-reports/cog.png
+    edit-icon: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-reports/funnels-edit.png
+    copy-icon: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-reports/funnels-copy.png
+    trash-icon: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-reports/funnels-remove-step.png
+    filter-icon: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-reports/funnels-filter.png
+    tab__flat-tree: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-reports/tab__flat-tree.png
+    show-list: https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/images/mobile-sdk-dg/show-list.png
+
+    # Texts
+    feedback: If you didn't find the answer you were looking for, you can use the feedback form to submit your question. Please describe the problem in as much detail as possible. Attach a screenshot if possible.
+
+    # все для Android
+    io-appmetrica-analytics-analytics: 7.9.0
+    com-android-installreferrer-installreferrer: 2.2
+    com-google-android-gms-play-services-appset: 16.0.0
+    org-jetbrains-kotlin-kotlin-stdlib: 1.4.32
+    io-appmetrica-analytics-gradle: 1.0.1
+    io-appmetrica-analytics-analytics-ndk-crashes: 3.0.0
+    # все для iOS
+    ios-appmetrica-sdk-version: 5.11.0
+    ios-push-sdk: 3.0.2
+    apphud-adapter-ios: 1.0.0
+    load-appmetrica-ios: https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/175948/YandexMobileMetrica-4.5.2-ios-d70f8cb3-2746-4c3d-aa5f-dcd6acaaa5d8.zip
+    load-appmetrica-push-ios-sdk: https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/128534/YandexMobileMetricaPush-1.0.0-ios-11df8ee2-df87-4f7f-a7b1-1c0718953680.zip
+    api-key: The API key is a unique app ID issued in the AppMetrica web interface at [app registration](https://appmetrica.yandex.com/application/new). You can find it under **Settings**.
+    # все для Android Push sdk
+    push-sdk-android-version: 4.1.1
+    push-sdk-android-version-firebase-messaging: 22.0.0
+    com-google-gms-google-services: 4.4.0
+    com-google-android-gms-play-services-base: 17.5.0
+    # Flutter
+    appmetrica-flutter-plugin: 3.2.0
+    appmetrica-push-flutter-plugin: 2.0.0
+    # Unity
+    appmetrica-unity-plugin: 6.4.0
+    appmetrica-push-unity-plugin: 2.0.0
+    google-external-dependency-manager: 1.2.183
+    # React Native
+    appmetrica-react-native-plugin: 3.3.0
+    app-id: |
+     `APP_ID` — ID of the app in Firebase. You can find it in the [Firebase console](https://console.firebase.google.com/): go to the **Project settings**. In the **Your application** section copy the value of the **application ID** field.
+    sender-id: |
+     `SENDER_ID` — The unique ID of sender in Firebase. You can find it in the [Firebase console](https://console.firebase.google.com/): go to **Project settings**&nbsp;→ **Cloud Messaging** and copy the value of the **Sender ID** field.
+    api-key-push: |
+     `API_KEY` — App key in Firebase. You can find it in the `current_key` field of the `google-services.json` file. You can download the file in the [Firebase console](https://support.google.com/firebase/answer/7015592).
+    project-id: |
+     `PROJECT_ID` — App ID in Firebase. You can find it in the `project_id` field of the `google-services.json` file. You can download the file in the [Firebase console](https://console.firebase.google.com/).
+    silent-push: A message that is processed by the application in the background without displaying to the user. You can transfer additional data to the application via silent push messages or check the delivery of notifications.
+    deeplink: A link that opens an app installed on the device and transmits the specified data to it. It has the general format myapp://some_data.
+    # Метрики
+    iap: Revenue from purchases made by the user in the app. For example, game improvements, goods in stores, subscriptions.
+    ad: Revenue from advertising placements in the app.
+    ad-revenue: Revenue from advertising placements in the app.
+    arpu: Average revenue per user. Calculated as the ratio of the total revenue from in-app purchases and subscriptions to the total number of app users for the selected period.
+    arppu: The ratio of total revenue from in-app purchases to the number of paying users for the selected period.
+    re-engagement: User's return to the installed application as a result of an advertising campaign. The return is usually made via deeplink.
+    new-installs: The number of unique devices with the app installed.
+    total-revenue: Total revenue from advertising monetization, in-app purchases, and in-app subscriptions for the reporting period.
+    total-arpu: The ratio of the total app revenue from advertising monetization, in-app purchases, and subscriptions for the reporting period to the number of app users for the same period.
+    purchases: The number of in-app purchases and subscription events with positive revenue.
+    in-app-revenue: Total revenue from in-app purchases and in-app subscriptions.
+    average-order: The ratio of revenue from all in-app purchases and subscriptions to their number.
+    paying-users: The number of users who made at least one in-app purchase or subscription during the selected period.
+    purchases-per-user: The ratio of the number of in-app purchases and subscriptions to the number of paying users for the selected period.
+    percent-per-paying-user: The ratio of the number of users making in-app purchases or subscribing to all users for the selected period.
+    invalid-revenue: Total revenue from invalid in-app purchases and subscriptions for the selected period. Invalid in-app purchases aren't counted in other Revenue metrics.
+    users-with-invalid-revenue: The number of users with invalid in-app purchases and subscriptions over the selected period. Invalid in-app purchases aren't counted in other Revenue metrics.
+    ad-revenue-events: The number of events with advertising revenue (Ad Revenue) for the selected period.
+    ad-revenue-new: Total revenue from advertising monetization for the selected period.
+    ad-arpu: The ratio of app revenue from advertising monetization for the selected period to the number of app users for the same period.
+    ecpm: The ratio of the total revenue from advertising monetization to the number of events with Ad Revenue for the selected period multiplied by 1000.
+    users-with-ad-revenue: The number of users with advertising revenue (Ad Revenue) events for the selected period.
+    ad-revenue-events-per-user: The ratio of the number of events with advertising revenue (Ad Revenue) to the number of users for the selected period.
+    sessions-with-ad-revenue: The number of sessions during which events with advertising revenue (Ad Revenue) were committed for the selected period.
+    ad-revenue-events-per-session: The ratio of the number of events with advertising revenue (Ad Revenue) to the total number of sessions for the selected period.
+    percent-users-with-ad-revenue: The ratio of the number of users with advertising revenue (Ad Revenue) events to all users for the selected period.
+    loyal-users: The percentage of the total number of users who have a certain number of sessions. You can set the number of sessions.
+    currency-conversion: Learn more about currency [conversions](../data-collection/about-revenue.md#currency).
+    retention: The percentage of users who installed the app during a given day, week, or month (the reference period) and then returned to the app (opened it) on a specific day, week, or month after installing. Is calculated as the ratio of the number of users running the app during the Nth day, week, or month to the number of users who installed the app in the reference period (this number is taken as 100%).
+    # SDK
+    presentationOptions: Parameters for displaying push notifications.
+    nextDelegate: A delegate to which calls of this protocol will be proxied.
+    # элементы интерфейса
+    data-export: Data export
+    upload-cloud: Upload to cloud
+    segment-not-selected: Segment not selected
+    any-segment: Any segment
+    comparison: Comparison
+    compare-to-period: With previous period
+    compare-to-segment: With existing or new segment
+    cancel-comparison: Cancel comparison
+    apply: Apply
+    export: Export
+    technology: Technologies
+    save-as: Save as...
+    save: Save
+    to-archive: Archive
+    edit: Edit
+    button-groups-and-metrics: Groupings and metrics
+    funnels-button-create: Create funnel
+    funnels-button-add-step: Add step
+    dimensions-button: Groupings
+    funnels-tab-abs-rel: Absolute conversion | Relative
+    profile-report-column-button: Columns
+    show-list-dropdown: NotificationServiceExtension
+    dimension-sources: Sources
+    fraud-assessment: Fraud assessment
+    tracking: Tracking
+    create-tracker: Add tracker
+    tracker-list: Tracker list
+    tracker-data: Tracker data
+    pre-installing: Pre-installing
+    this-is-a-remarketing-campaign: This is a remarketing campaign
+    application: Application
+    app-store: App store
+    destination-url: Destination URL
+    media-source: Media source
+    media-sources: Media sources
+    media-source-new: Add Media Source
+    your: Your
+    create-postback-template: Create template
+    attribution-settings: Attribution settings
+    clicks-impressions: Clicks/Impressions
+    reattribution: Reattribution
+    postback-settings: Postback settings
+    add-postback: Add postback
+    event-installation: Installation
+    send-postback-on-first-target-event-only: Send postback on first target event only
+    send-postback-on-actions-of-all-users: Send postback on actions of all users
+    tracking-url: Tracking URL
+    find-tracker: Find tracker
+    settings: Settings
+    main: Main
+    manage-access: Manage access
+    organization: Organization
+    tariff: Payment and plan
+    tracking-apphud: Subscriptions tracking (Apphud)
+    iOS-app: iOS application
+    settings-button: Settings
+    apphud-inapp: Tracking in-app purchases and Apphud subscriptions
+    disabled: Disabled
+    create: Create
+    syncing-the-ads-sdk: Syncing the Ads SDK
+    button-add: Add
+    reports: Reports
+    add-workspace: Add workspace
+    create-copy: Create copy
+    widgets: Widgets
+    to-workspace: Add to workspace
+    overview: Overview
+    add-to-overview: Add to overview
+    delete: Delete
+    saved: Saved
+    all-reports: All reports
+    popular: Popular
+    ab-experiment: A/B experiments
+    flag-config: Flag configuration
+    varioqub: Varioqub
+    title: Title
+    preset-widget: Preset widget
+    new-widget: + New widget
+    show-in-widget: Show in widget
+    total-or-average: Total or average
+    automatically-selected-dimension-values: Automatically selected dimension values
+    manually-selected-dimension-values: Manually selected dimension values
+    dimensions: Dimensions
+    conversions: Conversions
+    find-conversion: Find conversion
+    add-conversion: Create conversion
+    all-events: All events
+    first-event-only: First event only
+    # отчеты
+    report-events: Events
+    report-product: Product
+    report-marketing: Marketing
+    report-monetization: Monetization
+    report-crashes-and-errors: Crashes and errors
+    # LINKS
+    helpcenter-quickstart-step3: https://ads.yandex.com/helpcenter/en/quick-start#step-3-verify-your-ownership-of-the-app
+
+tld-com:
+    tld: com
+
+tld-ru:
+    tld: ru
+
+tld-com-appboost:
+    tld: com    
+    service: AppBoost
+    profile-url: https://appboost.yandex.com

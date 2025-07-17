@@ -1,0 +1,25 @@
+items:
+  - name: Соответствие GDPR
+    href: gdpr.md
+  - name: Соответствие ISO / IEC-27001
+    href: iso-27001.md
+  - name: Соответствие CCPA
+    href: ccpa.md
+  - name: Соответствие COPPA
+    href: coppa.md
+  - name: >-
+          Соответствие политикам Google Play (использование и передача
+          геоданных)
+    href: requirements-google-play.md
+  - name: Конфиденциальность приложения в App Store
+    href: app-privacy-apple.md
+  - name: Безопасность данных в Google Play
+    href: google-data-safety.md
+  - name: Поддержка детских приложений (iOS)
+    href: app-for-kids.md
+  - name: Маскировка IP-адреса
+    href: ip-masking.md
+  - name: Предупреждение о сборе данных
+    href: notification.md
+  - name: Удаление данных
+    href: delete-data.md

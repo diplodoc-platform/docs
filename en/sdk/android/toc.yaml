@@ -1,0 +1,53 @@
+title: Android
+items:
+  - name: Changelog
+    href: changelog-android.md
+  - name: List of modules
+    href: android-modules.md
+  - name: Excluding geo from the list of dependencies
+    href: geo-exclude.md
+  - name: Disabling automatic collection of Ad Revenue data
+    href: off-adrevenue.md
+  - name: Getting advertising IDs
+    href: get-ad-id.md
+  - name: Migration guides
+    items:
+      - name: AppMetrica SDK. Migrating to version 6.0.0
+        href: analytics/migration-io-6-0-0.md
+      - name: AppMetrica Push SDK. Migrating to version 3.0.0
+        href: push/migration-io-3-0-0.md
+  - name: AppMetrica SDK
+    items:
+      - name: SDK integration
+        href: analytics/quick-start.md
+      - name: Library features
+        href: analytics/android-features.md
+      - name: Tracking user activity
+        href: analytics/android-listen.md
+      - name: Logging
+        href: analytics/android-logs.md  
+      - name: Usage examples
+        href: analytics/android-operations.md
+      - name: Analyzing crashes
+        href: analytics/android-crash.md
+      - name: AppMetrica Gradle Plugin
+        href: analytics/android-gradle-plugin.md
+      - name: Deferred deeplinks support
+        href: analytics/android-deferred-deeplinks.md
+      - name: Error descriptions
+        href: analytics/android-errors.md
+      - name: SDK reference
+        href: analytics/ref.md
+  - name: Push SDK
+    items:
+      - name: Installation and initialization
+        href: push/quick-start.md
+      - name: Configuring your app
+        href: push/android-settings.md
+      - name: Using with other push services
+        href: push/android-other-push-services-settings.md
+      - name: List of optional modules for Push SDK
+        href: push/android-modules-push.md
+      - name: Push SDK reference
+        href: push/ref.md
+

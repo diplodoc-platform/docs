@@ -1,0 +1,26 @@
+items:
+  - name: Быстрый старт
+    href: quick-start.md
+  - name: Ограничения
+    href: limits.md
+  - name: Термины и определения
+    href: glossary.md
+  - name: Записи докладов
+    when: locale == "ru"
+    href: video-conf.md
+  - name: Тарифы для RU
+    href: pricing/ru-currency.md
+    hidden: true
+  - name: Тарифы для UAE
+    href: pricing/uae-currency.md
+    hidden: true
+  - name: Условия для агентств (RU)
+    href: pricing/ru-agency.md
+    hidden: true
+  - name: Pricing plans for agencies (WW)
+#    when: tld == "com"
+    href: pricing/en-agency.md
+    hidden: true
+  - name: AppMetrica обновляет тарифные планы
+    href: pricing/plans-updated.md
+    hidden: true

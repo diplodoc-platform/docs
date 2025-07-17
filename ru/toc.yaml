@@ -1,270 +1,110 @@
-title: Diplodoc
-href: index.yaml
-analytics:
-  text: 'Мы используем <a href="https://yandex.ru/legal/cookies_policy">файлы cookie</a>, чтобы вы могли наилучшим образом пользоваться нашим веб-сайтом. Если вы продолжаете использовать наш веб-сайт, мы полагаем, что вы согласны с таким использованием.'
-  buttons:
-    accept:
-      text: "Ок"
-      theme: "accent"
-      size: "xl"
+title: AppMetrica
 navigation:
-  logo:
-    url: "../ru"
-    urlTitle: 'Вернуться на главную'
-    dark:
-      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg"
-    light:
-      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
   header:
     leftItems:
-      - text: "Как все устроено"
-        type: "link"
-        url: "../../how-to/"
-      - text: "Документация"
-        type: "link"
-        url: "../../docs/ru/"
-      - text: "Telegram"
-        type: "link"
-        url: "https://t.me/diplodoc_ru"
-      - text: "GitHub"
-        type: "link"
-        url: "https://github.com/diplodoc-platform/"
-    rightItems:
-      - type: controls
+      - text: 'Зарегистрироваться'
+        type: 'button'
+        url: 'https://passport.yandex.ru/passport?mode=register'
+      - text: 'SDK'
+        type: 'dropdown'
+        items:
+          - text: 'Android'
+            url: 'sdk/android'
+          - text: 'iOS'
+            url: 'sdk/ios'
+          - text: 'Unity'
+            url: 'sdk/unity'
+          - text: 'Flutter'
+            url: 'sdk/flutter'
+          - text: 'React Native'
+            url: 'sdk/react-native'
+      - text: 'FAQ'
+        type: 'link'
+        url: 'troubleshooting/troubleshooting'
+      - text: 'Changelog'
+        type: 'link'
+        url: 'common/changelog'
+      - text: Тарифы
+        type: 'dropdown'
+        items:
+          - text: 'RU'
+            url: 'common/pricing/ru-currency'
+          - text: 'USD и AED'
+            url: 'common/pricing/uae-currency'
+          - text: 'Для агентств'
+            url: 'common/pricing/ru-agency'
+      - text: 'Блог'
+        type: 'link'
+        url: 'https://appmetrica.yandex.ru/ru/about/blog'
+  logo:
+    light:
+      icon: 'https://yastatic.net/s3/doc-binary/src/dev/appmetrica/common/appmetrica-new-logo.svg'
+      url: 'https://appmetrica.yandex.ru'
+
 items:
-  - name: Тест 1
-    href: test1.md
-  - name: Тест 2
-    href: test2.md
-  - name: Баннеры 1
-    href: about.md
-  - name: Баннеры 2
-    href: about.md
-    items:
-      - name: Баннер с внешним переходом
-        href: features.md
-        hidden: true
-  - name: Платформа Diplodoc
-    labeled: true
+  - name: О сервисе
     href: index.yaml
-  - name: О платформе
-    href: about.md
-  - name: Функциональные возможности
-    href: features.md
-  - name: Релизы YFM
-    hidden: true
-    href: changelog.md
+  - name: Changelog
+    href: common/changelog.md
   - name: Начало работы
-    labeled: true
-    items:
-      - name: Публикация на Diplodoc.com
-        href: how-it-work.md
-      - name: Локальная сборка проекта
-        href: installation.md
-      - name: Шаблон проекта
-        href: static-template.md      
-  - name: Редактирование контента
-    labeled: true
-    items:
-      - name: Синтаксис
-        href: syntax/index.md
-        items:
-          - name: Yandex Flavored Markdown
-            href: index-yfm.md 
-          - name: Базовая разметка
-            href: syntax/base.md
-          - name: Списки
-            href: syntax/lists.md
-          - name: Таблицы
-            items:
-              - name: Простые таблицы
-                href: syntax/tables/gfm.md
-              - name: Многострочные таблицы
-                href: syntax/tables/multiline.md
-          - name: Заметки
-            href: syntax/notes.md
-          - name: Интерактивные элементы разметки
-            href: syntax/interactive-elements/index.md
-            items:
-              - name: Каты
-                href: syntax/interactive-elements/cuts.md
-              - name: Табы
-                href: syntax/interactive-elements/tabs.md
-              - name: Радиобаттоны
-                href: syntax/interactive-elements/radio.md
-              - name: Дропдаун
-                href: syntax/interactive-elements/dropdawn.md
-              - name: Аккордеон
-                href: syntax/interactive-elements/accordion.md
-          - name: Ссылки
-            href: syntax/links.md
-          - name: Медиа
-            href: syntax/media.md
-          - name: Фрагменты кода
-            href: syntax/code.md
-          - name: Комментарии и метаданные
-            href: syntax/meta.md
-          - name: Переменные
-            href: syntax/vars.md
-          - name: Всплывающие подсказки
-            href: syntax/term.md
-          - name: Переиспользование контента
-            href: syntax/includes.md
-          - name: Дополнительные возможности
-            href: syntax/additional.md
-      - name: Организация контента
-        items:
-          - name: Обзор
-            href: project/index.md
-          - name: Оглавление
-            href: project/toc.md
-            items:
-              - name: Оглавление на странице документации
-                href: project/minitoc.md
-          - name: Разводящая страница
-            href: project/leading-page.md
-      - name: Page constructor
-        items:
-          - name: Обзор
-            href: project/page-constructor.md
-          - name: Пример 1
-            href: project/pc-example1.yaml
-          - name: Пример 2
-            href: project/pc-example2.yaml
-          - name: Пример 3 (fullScreen mode)
-            href: project/pc-example3.yaml 
-  - name: Конфигурация проекта
-    labeled: true
-    items:
-      - name: Настройки проекта
-        href: settings.md
-      - name: Поиск
-        href: project/search.md
-        items:
-          - name: Локальный поиск (lunr.js)
-            href: project/lunr.md
-          - name: Algolia
-            href: project/algolia.md
-      - name: Пресеты переменных
-        href: project/presets.md
-      - name: Файл конфигурации линтера
-        href: project/lint.md
-  - name: Настройка внешнего вида
-    labeled: true
-    items:
-      #- name: Темизация
-      #  href: style/theme.md
-      - name: Расширенная навигация
-        href: project/navigation.md
-      - name: Подключение CSS
-        href: style/css.md
-  - name: Публикация 
-    href: deploy.md
-    labeled: true
-    items:
-      - name: GitHub Pages
-        href: github-pages.md
-  - name: Внесение изменений
-    href: contribution.md
-  - name: CLI
-    labeled: true
-    items:
-      - name: Обзор
-        href: tools/docs/index.md
-      - name: Сборка
-        href: tools/docs/build.md
-      - name: Настройки сборки
-        href: tools/docs/settings.md
-      - name: Локализация
-        href: tools/docs/translate.md
-      - name: Одностраничная сборка
-        href: tools/docs/singlepage.md
-      - name: Выкладка на S3
-        href: tools/docs/publish-s3.md
-  - name: Практические руководства
-    labeled: true
-    items:
-      - name: Контентная аналитика
-        href: guides/content-analytics.md
-      - name: Настройка личного домена
-        href: personal-domain-ya-cloud.md
-      - name: Автогенерация и интеграция документации
-        href: guides/includers.md
-        items:
-          - name: Generic
-            href: guides/generic.md
-          - name: Open API
-            href: guides/openapi.md
-          - name: Unarchive
-            href: guides/unarchive.md
-          - name: Source Docs
-            href: guides/source-docs.md
-      - name: Content Security Policy (CSP)
-        href: guides/csp.md
-      - name: Настройка версионирования документации
-        href: guides/release-version.md 
-  - name: Инструменты и библиотеки
-    labeled: true
-    items:
-      - name: Transformer
-        items:
-          - name: Обзор
-            href: tools/transform/index.md
-          - name: Настройки
-            href: tools/transform/settings.md
-          - name: Подсветка кода
-            href: tools/transform/highlight.md
-      - name: Плагины
-        items:
-          - name: Обзор
-            href: plugins/index.md
-          - name: Дополнительные плагины
-            href: plugins/import.md
-      - name: Библиотека Mermaid
-        href: tools/mermaid.md
-        hidden: true
-  - name: Вакансии
+    include:
+      path: common/toc.yaml
+      mode: link
+  - name: Интеграция с Yandex Ads SDK
+    href: common/ads-sdk-integration.md
+  - name: Антифрод
+    href: common/fraud-score.md
+    when: tld == "ru"
+  - name: Подключение Apphud
+    href: data-collection/apphud/apphud-about.md
+    when: tld == "com"
+  - name: Вариокуб
+    href: common/varioqub-app-about.md
+  - name: Управление доступом к приложению
+    href: common/access.md
+  - name: SDK Developer docs
+    include:
+      path: sdk/toc.yaml
+      mode: link
+  - name: Push-кампании
+    include:
+      path: push/toc.yaml
+      mode: link
+  - name: Настройка сбора данных
+    include:
+      path: data-collection/toc.yaml
+      mode: link
+  - name: Трекинг и конверсии
+    include:
+      path: mobile-tracking/toc.yaml
+      mode: link
+  - name: Партнеры и интеграции
+    include:
+      path: ad-network/toc.yaml
+      mode: link
+  - name: Отчеты и воркспейсы
+    include:
+      path: mobile-reports/toc.yaml
+      mode: link
+  - name: Работа с API
+    include:
+      path: mobile-api/toc.yaml
+      mode: link
+  - name: Безопасность и соблюдение политик
+    include:
+      path: data-security/toc.yaml
+      mode: link
+  - name: Поддержка и решение проблем
+    href: troubleshooting/index.md
+    include:
+      path: troubleshooting/toc.yaml
+      mode: link
+  - name: Большое обновление интерфейса в AppMetrica
     hidden: true
-    items:
-      - name: Старший разработчик
-        href: vacancy.md
-  - name: Yandex Open Source Jam 2024
+    href: blog/interface-major-update.md
+  - name: Обновление отчётов User Acquisition, Remarketing, События в AppMetrica
     hidden: true
-    href: jam.md
-  - name: Для разработчиков
-    labeled: true
-    href: dev/index.yaml
-  - name: Быстрый старт
-    href: dev/quickstart.md
-  - name: Внесение изменений
-    href: dev/contribution.md
-  - name: Метапакет
-    href: dev/metapackage.md
-  - name: Extensions API
-    href: dev/extensions-api.md
-    items:
-      - name: Core Concepts
-        href: dev/extensions/core-concepts.md
-      - name: Services
-        href: dev/extensions/services.md
-        items:
-          - name: TOC Service
-            href: dev/extensions/services/toc-service.md
-          - name: Leading Service
-            href: dev/extensions/services/leading-service.md
-          - name: Markdown Service
-            href: dev/extensions/services/markdown-service.md
-          - name: Meta Service
-            href: dev/extensions/services/meta-service.md
-          - name: Vars Service
-            href: dev/extensions/services/vars-service.md
-          - name: VCS Service
-            href: dev/extensions/services/vcs-service.md
-          - name: Search Service
-            href: dev/extensions/services/search-service.md
-          - name: Logger Service
-            href: dev/extensions/services/logger-service.md
-  - name: Релизы
-    items:
-      - name: Версия 5.0
-        href: ./releases/v5.md          
+    href: blog/reports-update.md
+  - name: Сравнение периодов и сегментов
+    href: blog/periods-segments-comparison.md
+    hidden: true

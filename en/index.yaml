@@ -1,18 +1,96 @@
-title: Diplodoc
-description: Diplodoc Platform is open platform for work with your documentation in accordance with "Documentation as Code" paradigm. 
-meta:
-  title: Metadata
-  noIndex: true
-links:
-- title: Overview
-  description: Platform Overview, Capabilities and Benefits.
-  href: about.md
-- title: Quick Start
-  description: How to start
-  href: how-it-work.md
-- title: Yandex Flavored Markdown
-  description: Definition for Yandex Flavored Markdown.
-  href: index-yfm.md
-
-   
-  
+blocks:
+  - type: 'content-layout-block'
+    textWidth: 'l'
+    textContent:
+      title: 'About the service'
+      text: "[AppMetrica](https://appmetrica.yandex.com/en/about) is a full-service mobile analytics platform. It offers reports covering traffic sources, mobile app KPIs for audience statistics and use cases, and crash analytics, all in a single SDK for every popular platform."
+      #buttons:
+      #  - text: ''
+      #   theme: 'google-play'
+      #    url: 'https://play.google.com/store/apps/details?id=ru.yandex.mobile.appmetrica'
+      #  - text: ''
+      #    theme: 'app-store'
+      #    url: 'https://itunes.apple.com/us/app/appmetrica/id1282946899'
+  - type: 'card-layout-block'
+    animated: false
+    children:
+      - type: 'basic-card'
+        title: 'Getting started'
+        text: "Step-by-step guide to getting started with AppMetrica, term definitions, and information on the service's usage limits"
+        urlTitle: 'Getting started'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'common/quick-start.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'SDK Developer docs'
+        text: "Technical documentation for developers: guides to integrating the AppMetrica SDK and Push SDK"
+        urlTitle: 'SDK Developer docs'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'sdk/platforms.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Setting up data collection'
+        text: "Guide on how to set up data tracking for comprehensive app analytics, including deeplinks, crashes, in-app subscriptions, in-app purchases, e-commerce events, and other valuable data."
+        urlTitle: 'Setting up data collection'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'data-collection/index.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Security and policy compliance'
+        text: "Security standards supported by AppMetrica"
+        urlTitle: 'Security and policy compliance'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'data-security/gdpr.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Managing reports'
+        text: "Creating workspaces and configuring widgets and reports"
+        urlTitle: 'Working with reports'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'mobile-reports/index.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Managing APIs'
+        text: "Guide to working with the various APIs: Management API, Reporting API, Logs API, Data Stream API, Post API, and Push API"
+        urlTitle: 'Working with the API'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'mobile-api/index.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Tracking'
+        text: "How tracking works. Creating and configuring a tracker"
+        urlTitle: 'Tracking'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'mobile-tracking/index.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Push campaigns'
+        text: "Guide to launching a push campaign"
+        urlTitle: 'Push campaigns'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'push/index.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Experiments'
+        text: "A/B experiments in Varioqub β"
+        urlTitle: 'Experiments'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'common/varioqub-app-about.md'
+        animated: false
+      - type: 'basic-card'
+        title: 'Support and troubleshooting'
+        text: "FAQ and the support form"
+        urlTitle: 'Support and troubleshooting'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'troubleshooting/index.md'
+        animated: false

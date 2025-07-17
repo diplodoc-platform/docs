@@ -1,0 +1,210 @@
+# ANR
+
+An ANR (Application Not Responding) occurs when a task running on the main thread takes a long time to complete. During this time, the application interface stops updating and responding to user actions. As a result, a dialog box opens, offering the user to wait or close the app.
+
+The report shows when ANRs occur most often. Use this information to prepare fixes.
+
+You can configure the ANR monitoring mechanism and set up the timeout:
+
+{% list tabs %}
+
+- Android
+
+   1. [Enable ANR monitoring](https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/javadoc/io/appmetrica/analytics/AppMetricaConfig.Builder.html#withAnrMonitoring(boolean)). It's disabled by default.
+
+   1. [Set the timeout](https://yastatic.net/s3/doc-binary/src/dev/appmetrica/ru/javadoc/io/appmetrica/analytics/AppMetricaConfig.Builder.html#withAnrMonitoringTimeout(int)) to indicate how long a thread is to remain unresponsive for the ANR error to be logged. The default and minimum value is 5 seconds.
+
+   {% list tabs group=instructions %}
+
+   - Java
+
+      ```java translate=no
+      // Creating an extended library configuration.
+      AppMetricaConfig config = AppMetricaConfig.newConfigBuilder(API_KEY)
+            // Enabling ANR monitoring. The default value is false.
+            .withAnrMonitoring(true)
+            // Override the ANR timeout if needed. The default value is 5.
+            .withAnrMonitoringTimeout(7)
+            .build();
+      // Initializing the AppMetrica SDK.
+      AppMetrica.activate(getApplicationContext(), config);
+      ```
+
+   - Kotlin
+
+      ```kotlin translate=no
+      // Creating an extended library configuration.
+      val config = AppMetricaConfig.newConfigBuilder(API_KEY)
+         // Enabling ANR monitoring. The default value is false.
+            .withAnrMonitoring(true)
+            // Override the ANR timeout if needed. The default value is 5.
+            .withAnrMonitoringTimeout(7)
+         .build()
+      // Initializing the AppMetrica SDK.
+      AppMetrica.activate(applicationContext, config)
+      ```
+
+   {% endlist %}
+
+- iOS
+
+  {% list tabs group=instructions %}
+
+  - Swift
+
+      ```swift translate=no
+      var configuration = AppMetricaCrashesConfiguration()
+
+      // Enables detection of situations when the main application thread stops responding (ANR)
+      configuration.applicationNotRespondingDetection = true 
+
+      // Sets the time interval that the watchdog will wait before reporting the ANR status
+      configuration.applicationNotRespondingWatchdogInterval = 4.0 
+
+      // Sets the frequency with which the watchdog will check the ANR status
+      configuration.applicationNotRespondingPingInterval = 0.1 
+
+      AppMetricaCrashes.crashes().setConfiguration(configuration)
+      ```
+
+      or
+
+      ```swift translate=no
+      AppMetricaCrashes.crashes().enableANRMonitoring()
+      ```
+
+  - Objective-C  
+
+      ```obj-c translate=no
+      AMAAppMetricaCrashesConfiguration *configuration = [[AMAAppMetricaCrashesConfiguration alloc] init];
+
+      // Enables detection of situations when the main application thread stops responding (ANR)
+      configuration.applicationNotRespondingDetection = YES; 
+
+      // Sets the time interval that the watchdog will wait before reporting the ANR status
+      configuration.applicationNotRespondingWatchdogInterval = 4.0; 
+
+      // Sets the frequency with which the watchdog will check the ANR status
+      configuration.applicationNotRespondingPingInterval = 0.1; 
+
+      [[AMAAppMetricaCrashes crashes] setConfiguration:configuration];
+      ```
+      
+      or
+
+      ```obj-c translate=no
+      [[AMAAppMetricaCrashes crashes] enableANRMonitoring];
+      ```
+      
+  {% endlist %}
+
+{% endlist %}   
+
+## Report period {#period-anr}
+
+You can view the report for a certain day or generate it for a specific time period.
+
+{% include [period](_includes/period.md) %}
+
+## Grouping data {#group-anr}
+
+The data in the report can be grouped by:
+
+- ANR group
+- App version
+- Device
+- OS version
+- Manufacturer
+
+## Metrics {#measure}
+
+![](../../_images/anr-info-{{locale}}.png)
+
+The following metrics are available for analysis:
+
+- **ANRs**: The number of errors.
+- **Devices**: The number of devices that registered an error at least once during the selected time period.
+- **% of all devices**: The percentage of devices that registered the error out of the total number of devices running the app during the selected time period.
+- **Detected in version**: The app version where the error was registered for the first time.
+- **Last reproduction**: The app version where the error was last registered.
+
+You can access the ANR group details page. To do this, click on the ANR group name in the upper-right corner.
+
+## ANR symbolication {#symbolization-anr}
+
+{% note info %}
+
+You can't rebuild mapping files for the previous builds. However, if you have archives generated by our [crash plugin](../sdk/android/analytics/android-crash.md) for previous builds, you can upload them manually.
+
+{% endnote %}
+
+If the mapping or dSYM file was not uploaded during the app build process, a warning about unsymbolicated ANRs will appear in the group list.
+
+![](../../_images/symbolization-anr-{{locale}}.png){style="border: solid 1px #cccccc; max-width: 330px;"}
+
+How to symbolicate ANRs:
+
+{% list tabs %}
+
+- Android
+
+   ![](../../_images/mapping-upload-manual-{{locale}}.png){style="border: solid 1px #cccccc; max-width: 800px;"}
+
+   To upload mapping files:
+
+   1. Open **Settings** → **Crashes**.
+   2. Make sure that file upload is selected for Android.
+   3. Select the file to upload.
+
+   You can view the list of missing files on the **Settings** → **Crashes** page of your app in AppMetrica.
+
+- iOS
+
+   Upload [dSYM files on iOS](../data-collection/upload-dsym.md). You can view the list of missing files on the **Settings** → **Crashes** page of your app in AppMetrica.
+
+{% endlist %}
+
+## Viewing the ANR log {#show-crash-log-anr}
+
+To view the log:
+
+1. Select the ANR group from the list on the page.
+2. In the table, click **Open ANR log**.
+
+The log displays device information and the ANR details.
+
+Go to the profile card from the log to see the events that preceded the ANR. To do this, click **View session events**.
+
+## Adding a comment {#comment-anr}
+
+You can add a comment to the ANR if needed. This can be useful if the report is viewed by multiple developers. For example, you can add a link to an issue in a comment in Yandex Tracker.
+
+To add a comment, open the appropriate group and enter your text in the **Comment** field.
+
+## Closing ANRs {#close-anr}
+
+Close fixed ANRs to remove them from the report. Closed ANRs will be automatically reopened if they are detected in versions where they were not previously found.
+
+To close an ANR, open the relevant group. In the top right corner, set the **ANR group status** to **Closed**.
+
+![](../../_images/anr-status-{{locale}}.png){style="border: solid 1px #cccccc; max-width: 200px;"}
+
+## Data export {#export}
+
+You can export the ANR log description as a TXT file. To do this, open the relevant ANR group and click **Open ANR log**→ **Export**.
+
+### Learn more {#learn-more}
+
+- [Debugging and fixing ANRs on Unity-Android](https://developer.android.com/games/engines/unity/unity-anrs?hl=en)
+- [Debugging and fixing ANRs on Android](https://developer.android.com/topic/performance/anrs/diagnose-and-fix-anrs?hl=en)
+- [Crashes and errors](../data-collection/about-crashes-and-errors.md)
+- [Uploading mapping files and debugging symbols on Android](../data-collection/upload-mapping.md)
+- [Uploading dSYM files on iOS](../data-collection/upload-dsym.md)
+
+{{ feedback }}
+
+<a href="../troubleshooting/feedback-new.html">
+  <span class="button">Contact support</span>
+</a>
+
+{% include notitle [feedback](../_includes/feedback-button.md) %}

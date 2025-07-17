@@ -1,0 +1,65 @@
+items:
+  - name: Overview
+    href: dashboard.md
+  - name: Workspaces
+    href: workspaces.md
+  - name: Widgets
+    href: widgets.md
+  - name: Reports
+    href: index.md
+  - name: Saving reports
+    href: save-reports.md
+  - name: Segmentation
+    items:
+      - name: Segmentation
+        href: segmentation.md
+      - name: Creating a segment
+        href: segment-creation.md
+      - name: Comparing segments and time periods
+        href: segment-comparison.md
+  - name: Marketing
+    items:
+      - name: User Acquisition
+        href: user-acquisition-report.md
+      - name: User Acquisition SKAdNetwork
+        href: user-acquisition-skadnetwork.md
+      - name: Remarketing
+        href: remarketing-report.md
+      - name: Push campaigns
+        href: push-campaign.md
+      - name: Conversions
+        href: conversions-report.md
+  - name: Product
+    items:
+      - name: Audience
+        href: audience-report.md
+      - name: Events
+        href: events-report.md
+      - name: Funnels
+        href: funnels-report.md
+      - name: Retention Analysis
+        href: retention-report.md
+      - name: Cohort analysis
+        href: cohort-report.md
+      - name: Engagement
+        href: engagement-report.md
+      - name: Profiles report
+        href: profile-report.md
+      - name: Profile list
+        href: profile-list.md
+  - name: Monetization
+    items:
+      - name: In-app and Ad Revenue
+        href: revenue-report.md
+      - name: E-commerce
+        href: ecommerce-report.md
+  - name: Technical reports
+    items:
+      - name: Crashes and errors
+        href: crashes-and-errors.md
+      - name: ANR
+        href: anr.md
+  - name: Insights
+    href: insights.md
+  - name: Metrics
+    href: metrics.md

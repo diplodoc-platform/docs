@@ -1,0 +1,15 @@
+blocks:
+  - type: 'content-layout-block'
+    textWidth: 'l'
+    textContent:
+      title: 'Документация для React Native'
+  - type: 'card-layout-block'
+    animated: false
+    children:
+      - type: 'basic-card'
+        title: 'AppMetrica SDK'
+        text: "Инструкция по подключению SDK, Примеры использования и другие статьи"
+        urlTitle: 'AppMetrica SDK'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'react-native/analytics/quick-start.md'

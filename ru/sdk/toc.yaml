@@ -1,0 +1,31 @@
+items:
+    #- name: Платформы
+    #href: platforms.yaml
+  - name: Платформы
+    href: platforms.md
+  - name: Android
+    href: android.yaml
+    include:
+      path: android/toc.yaml
+      mode: link
+  - name: iOS
+    href: ios.yaml
+    include:
+      path: ios/toc.yaml
+      mode: link
+  - name: Unity
+    href: unity.yaml
+    include:
+      path: unity/toc.yaml
+      mode: link
+  - name: Flutter
+    href: flutter.yaml
+    include:
+      path: flutter/toc.yaml
+      mode: link
+  - name: React Native
+    href: react-native.yaml
+    include:
+      path: react-native/toc.yaml
+      mode: link
+    

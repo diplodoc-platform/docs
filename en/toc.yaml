@@ -1,132 +1,110 @@
-title: Diplodoc
-href: index.yaml
-analytics:
-  text: 'We use <a href="https://yandex.com/legal/cookies_policy_eng">cookies</a> to ensure that you have the best experience on our website. If you continue to use our website, we assume that you are happy with it.'
-  buttons:
-    accept:
-      text: "Ok"
-      theme: "accent"
-      size: "xl"
+title: AppMetrica
 navigation:
-  logo:
-    url: "../en"
-    urlTitle: 'Back to main page'
-    dark:
-      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg"
-    light:
-      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
   header:
     leftItems:
-      - text: 'How it works'
+      - text: 'Register'
+        type: 'button'
+        url: 'https://passport.yandex.com/passport?mode=register'
+      - text: 'SDK'
+        type: 'dropdown'
+        items:
+          - text: 'Android'
+            url: 'sdk/android'
+          - text: 'iOS'
+            url: 'sdk/ios'
+          - text: 'Unity'
+            url: 'sdk/unity'
+          - text: 'Flutter'
+            url: 'sdk/flutter'
+          - text: 'React Native'
+            url: 'sdk/react-native'
+      - text: 'FAQ'
         type: 'link'
-        url: '../../how-to/'
-      - text: 'Documentation'
+        url: 'troubleshooting/troubleshooting'
+      - text: 'Changelog'
         type: 'link'
-        url: '../../docs/en/'
-      - text: 'GitHub'
+        url: 'common/changelog'
+      - text: Pricing plans
+        type: 'dropdown'
+        items:
+          - text: 'RU'
+            url: 'common/pricing/ru-currency'
+          - text: 'USD and AED'
+            url: 'common/pricing/uae-currency'
+          - text: 'Agencies'
+            url: 'common/pricing/en-agency'
+      - text: 'Blog'
         type: 'link'
-        url: 'https://github.com/diplodoc-platform/'
+        url: 'https://appmetrica.yandex.com/en/about/blog'
+  logo:
+    light:
+      icon: 'https://yastatic.net/s3/doc-binary/src/dev/appmetrica/common/appmetrica-new-logo.svg'
+      url: 'https://appmetrica.yandex.com'
+
 items:
-  - name: Overview
-    href: about.md
-  - name: Quick start
-    href: how-it-work.md
-  - name: Yandex Flavored Markdown
-    expanded: true
-    href: index-yfm.md
-    items:
-      - name: Syntax
-        items:
-          - name: Overview
-            href: syntax/index.md
-          - name: Basic markup
-            href: syntax/base.md
-          - name: Lists
-            href: syntax/lists.md
-          - name: Tables
-            items:
-              - name: GFM Tables
-                href: syntax/tables/gfm.md
-              - name: Multiline tables
-                href: syntax/tables/multiline.md
-          - name: Notes
-            href: syntax/notes.md
-          - name: Cuts and tabs
-            href: syntax/cuts-tabs.md
-          - name: Links
-            href: syntax/links.md
-          - name: Media
-            href: syntax/media.md
-          - name: Code snippets
-            href: syntax/code.md
-          - name: Comments and metadata
-            href: syntax/meta.md
-          - name: Variables
-            href: syntax/vars.md
-          - name: Definition
-            href: syntax/term.md
-          - name: Additional features
-            href: syntax/additional.md
-      - name: Settings
-        href: settings.md
-      - name: Tools
-        items:
-          - name: Transformer
-            items:
-              - name: Overview
-                href: tools/transform/index.md
-              - name: Settings
-                href: tools/transform/settings.md
-              - name: Syntax highlighting
-                href: tools/transform/highlight.md
-          - name: Builder
-            items:
-              - name: Overview
-                href: tools/docs/index.md
-              - name: Build
-                href: tools/docs/build.md
-              - name: Translate
-                href: tools/docs/translate.md
-              - name: Settings
-                href: tools/docs/settings.md
-              - name: Single-page build
-                href: tools/docs/singlepage.md
-              - name: Uploading to S3
-                href: tools/docs/publish-s3.md
-      - name: Plugins
-        items:
-          - name: Overview
-            href: plugins/index.md
-          - name: Adding additional plugins
-            href: plugins/import.md
-      - name: Organizing a YFM project
-        items:
-          - name: Overview
-            href: project/index.md
-          - name: Contents
-            href: project/toc.md
-          - name: Leading page
-            href: project/leading-page.md
-          - name: Page constructor
-            items:
-              - name: Overview
-                href: project/page-constructor.md
-              - name: Example 1
-                href: project/pc-example1.yaml
-              - name: Example 2
-                href: project/pc-example2.yaml
-              - name: Example 3 (fullScreen mode)
-                href: project/pc-example3.yaml
-          - name: Variable presets
-            href: project/presets.md
-          - name: Configuration file
-            href: project/config.md
-          - name: Reusing content
-            href: project/includes.md
-          - name: Linter configuration file
-            href: project/lint.md
-      - name: Making edits
-        href: contribution.md
-      - name: YFM releases
-        href: changelog.md
-        hidden: true
+  - name: About the service
+    href: index.yaml
+  - name: Changelog
+    href: common/changelog.md
+  - name: Getting started
+    include:
+      path: common/toc.yaml
+      mode: link
+  - name: Integration with Yandex Ads SDK
+    href: common/ads-sdk-integration.md
+  - name: Anti-fraud solution
+    href: common/fraud-score.md
+    when: tld == "ru"
+  - name: Enabling Apphud
+    href: data-collection/apphud/apphud-about.md
+    when: tld == "com"
+  - name: Varioqub
+    href: common/varioqub-app-about.md
+  - name: Managing app access
+    href: common/access.md
+  - name: SDK Developer docs
+    include:
+      path: sdk/toc.yaml
+      mode: link
+  - name: Push campaigns
+    include:
+      path: push/toc.yaml
+      mode: link
+  - name: Setting up data collection
+    include:
+      path: data-collection/toc.yaml
+      mode: link
+  - name: Tracking and conversions
+    include:
+      path: mobile-tracking/toc.yaml
+      mode: link
+  - name: Partners and Integrations
+    include:
+      path: ad-network/toc.yaml
+      mode: link
+  - name: Reports and workspaces
+    include:
+      path: mobile-reports/toc.yaml
+      mode: link
+  - name: Working with the API
+    include:
+      path: mobile-api/toc.yaml
+      mode: link
+  - name: Security and policy compliance
+    include:
+      path: data-security/toc.yaml
+      mode: link
+  - name: Support and troubleshooting
+    href: troubleshooting/index.md
+    include:
+      path: troubleshooting/toc.yaml
+      mode: link
+  - name: Major interface update in AppMetrica
+    hidden: true
+    href: blog/interface-major-update.md
+  - name: Update to AppMetrica Report Interfaces
+    hidden: true
+    href: blog/reports-update.md
+  - name: Comparing time periods and segments
+    href: blog/periods-segments-comparison.md
+    hidden: true

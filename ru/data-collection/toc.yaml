@@ -1,0 +1,56 @@
+items:
+  - name: О событиях
+    href: index.md
+  - name: Трекинг deeplink
+    href: deeplinks.md
+  - name: События
+    href: about-events.md
+  - name: Профиль пользователя и его атрибуты
+    items:
+      - name: Профиль пользователя
+        href: about-profiles.md
+      - name: Пользовательские атрибуты профилей
+        href: profile-attributes.md
+  - name: ECommerce
+    href: about-ecommerce.md
+  - name: Трекинг подписок и покупок
+    items:
+      - name: In-App подписки
+        href: about-subscription.md
+      - name: In-app подписки Google Play
+        href: subscription-android.md
+        when: tld == "ru"
+      - name: In-app подписки App Store
+        href: subscription-ios.md
+        when: tld == "ru"
+      - name: In-App покупки
+        href: about-revenue.md
+      - name: Поддерживаемые валюты
+        href: currency-codes.md
+  - name: Ad Revenue
+    href: about-adrevenue.md
+  - name: Крэши и ошибки
+    items:
+      - name: Отчеты Крэши/Ошибки
+        href: about-crashes-and-errors.md
+      - name: Загрузка mapping-файлов и отладочных символов на Android
+        href: upload-mapping.md
+      - name: Загрузка dSYM-файлов на iOS
+        href: upload-dsym.md
+      - name: Уведомления по email
+        href: crash-mails.md
+  - name: Определение местоположения
+    href: geo.md
+  - name: Импорт атрибуций из других SDK
+    href: attribution-integration.yaml
+    items:
+      - name: Импорт атрибуций на Android
+        href: attribution-integration-android.md
+      - name: Импорт атрибуций на iOS
+        href: attribution-integration-ios.md
+      - name: Импорт атрибуций на Unity
+        href: attribution-integration-unity.md
+      - name: Импорт атрибуций на Flutter
+        href: attribution-integration-flutter.md
+      - name: Импорт атрибуций на React Native
+        href: attribution-integration-react.md

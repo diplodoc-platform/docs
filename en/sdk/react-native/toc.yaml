@@ -1,0 +1,16 @@
+title: React Native
+items:
+  - name: Changelog
+    href: changelog.md
+  - name: Migration guides
+    items:
+    - name: AppMetrica React Native Plugin. Migrating to version 3.0.0
+      href: analytics/migration-io-3-0-0.md
+  - name: AppMetrica SDK
+    items:
+      - name: Integrating the plugin
+        href: analytics/quick-start.md
+      - name: Methods
+        href: analytics/methods.md
+      - name: Usage examples
+        href: analytics/react-native-operations.md

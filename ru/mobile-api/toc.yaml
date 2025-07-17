@@ -1,0 +1,201 @@
+items:
+  - name: Введение
+    href: index.md
+  - name: Вызов методов
+    href: intro/method-call.md
+  - name: Авторизация
+    href: intro/authorization.md
+  - name: Квотирование
+    href: intro/quotas.md
+  - name: API управления
+    href: management/intro.md
+    items:
+      - name: Форматы входных данных и результата
+        href: management/formats.md
+      - name: Ресурсы API
+        href: management/resources.md
+        items:
+          - name: Информация о приложении
+            href: management/applications/getapplication.md
+          - name: Список приложений
+            href: management/applications/getapplicationslist.md
+          - name: Список категорий
+            href: management/applications/get-categories.md
+          - name: Добавление приложения
+            href: management/applications/createapplication.md
+          - name: Изменение настроек приложения
+            href: management/applications/updateapplication.md
+          - name: Управление доступом к приложению
+            items:
+              - name: Предоставление доступа
+                href: management/applications/access/grant.md
+              - name: Редактирование доступа
+                href: management/applications/access/edit.md
+              - name: Список партнеров
+                href: management/applications/access/list-partners.md
+              - name: Список событий
+                href: management/applications/access/list-events.md
+              - name: Удаление доступа
+                href: management/applications/access/delete.md
+          - name: Удаление приложения
+            href: management/applications/deleteapplication.md
+          - name: Управление отпечатками сертификатов приложения
+            items:
+              - name: Информация об отпечатках сертификатов приложения
+                href: management/fingerprints/fingerprints-android-get.md
+              - name: Загрузка отпечатка сертификата приложения
+                href: management/fingerprints/fingerprints-android-post.md
+              - name: Удаление отпечатка сертификата приложения
+                href: management/fingerprints/fingerprints-android-delete.md
+          - name: Проверка доступности Logs API
+            href: management/logs-api-status.md
+      - name: Описание ошибок
+        href: management/errors.md
+  - name: API отчетов
+    href: api_v1/intro.md
+    items:
+      - name: Запросы к API
+        items:
+          - name: Таблица
+            href: api_v1/data.md
+          - name: Drill down
+            href: api_v1/drilldown.md
+      - name: Группировки
+        items:
+          - name: Приложение
+            href: api_v1/attributes/mobmet_events/app.md
+          - name: Устройство
+            href: api_v1/attributes/mobmet_events/device.md
+          - name: Экран
+            href: api_v1/attributes/mobmet_events/screen.md
+          - name: Отправка данных
+            href: api_v1/attributes/mobmet_events/events.md
+          - name: Дата и время
+            href: api_v1/attributes/mobmet_events/date_time.md
+          - name: Крэши
+            href: api_v1/attributes/mobmet_events/crashes.md
+          - name: Ошибки
+            href: api_v1/attributes/mobmet_events/errors.md
+          - name: Регион
+            href: api_v1/attributes/mobmet_events/region.md
+          - name: Сессии
+            items:
+              - name: Фрагмент даты/времени
+                href: >-
+                    api_v1/attributes/mobmet_sessionssessions_/date_time_partial.md
+          - name: Трекеры
+            href: api_v1/attributes/mobmet_campaigns/adv.md
+      - name: Метрики
+        items:
+          - name: Основные метрики
+            href: api_v1/metrics/mainmetr.md
+          - name: Метрики трекеров
+            href: api_v1/metrics/mcmetr.md
+      - name: Сегментация
+        href: api_v1/segmentation.md
+        items:
+          - name: Операторы
+            href: api_v1/relations/relations.md
+  - name: Logs API
+    href: logs/about.md
+    items:
+      - name: Процедура запроса
+        href: logs/request-procedure.md
+      - name: Квотирование
+        href: logs/quotas.md
+      - name: Доступные точки запроса
+        href: logs/endpoints.md
+      - name: Ресурсы API
+        href: logs/ref/index.md
+        items:
+          - name: Трекинговые клики
+            href: logs/ref/clicks.md
+          - name: Установки приложения
+            href: logs/ref/installations.md
+          - name: Постбеки
+            href: logs/ref/postbacks.md
+          - name: События приложения
+            href: logs/ref/events.md
+          - name: E-commerce
+            href: logs/ref/ecommerce_events.md
+          - name: Профили
+            href: logs/ref/profiles.md
+          - name: Revenue
+            href: logs/ref/revenue_events.md
+          - name: Ad Revenue
+            href: logs/ref/ad_revenue_events.md
+          - name: Открытия приложения через deeplink
+            href: logs/ref/deeplinks.md
+          - name: Крэши
+            href: logs/ref/crashes.md
+          - name: Ошибки
+            href: logs/ref/errors.md
+          - name: Push-токены
+            href: logs/ref/push_tokens.md
+          - name: Начало сессий
+            href: logs/ref/sessions_starts.md
+  - name: Data Stream API
+    href: datastream/about.md
+    items:
+      - name: Быстрый старт
+        href: datastream/quick-start.md
+      - name: Типы данных для экспорта
+        href: datastream/data-type-fields.md
+      - name: Лимиты
+        href: datastream/limits.md
+      - name: Ресурсы API
+        href: datastream/ref/resources.md
+        items:
+          - name: Состояние потока
+            href: datastream/ref/status.md
+          - name: Скачивание данных
+            href: datastream/ref/data.md
+          - name: Получение настроек
+            href: datastream/ref/settings.md
+          - name: Изменение настроек
+            href: datastream/ref/settings-post.md
+  - name: Post API
+    href: post/about.md
+    items:
+      - name: Ограничения
+        href: post/restrictions.md
+      - name: Ресурсы API
+        items:
+          - name: Загрузка событий
+            href: post/post-import-events.md
+          - name: Загрузка событий In-app Revenue
+            href: post/post-revenue.md
+          - name: Загрузка событий Ad Revenue
+            href: post/post-adrevenue.md
+          - name: Загрузка событий Ecommerce
+            href: post/post-ecommerce.md
+          - name: Атрибуты профиля
+            href: post/post-profile-attributes.md
+  - name: Push API
+    href: push/about.md
+    items:
+      - name: Сценарии использования
+        href: push/use-cases.md
+      - name: Ресурсы API
+        href: push/all-resources.md
+        items:
+          - name: Создание группы
+            href: push/post-groups.md
+          - name: Получение списка групп
+            href: push/get-groups.md
+          - name: Получение группы
+            href: push/get-group-id.md
+          - name: Обновление группы
+            href: push/put-group-id.md
+          - name: Архивирование группы
+            href: push/delete-group-id.md
+          - name: Вывод группы из архива
+            href: push/post-group-id.md
+          - name: Отправка push-сообщений
+            href: push/post-send-batch.md
+          - name: Проверка статуса отправки по transferId
+            href: push/get-status-id.md
+          - name: Проверка статуса отправки по clientTransferId
+            href: push/get-status-group-id.md
+      - name: Типы файлов в push-сообщениях
+        href: push/file-type.md

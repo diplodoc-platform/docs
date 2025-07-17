@@ -1,0 +1,69 @@
+items:
+  - name: Что такое трекинг
+    href: index.md
+  - name: Как работает трекинг
+    items:
+      - name: Технология трекинга AppMetrica
+        href: technology.md
+      - name: Автоматический трекинг
+        href: auto-create-tracking.md
+      - name: Атрибуция установки приложения
+        href: policy.md
+      - name: Атрибуция по показам
+        href: vta-tracking-specification.md
+      - name: Атрибуция ремаркетинг-кампаний
+        href: remarketing-attribution.md
+      - name: Политика отправки postback
+        href: postback-quota.md
+  - name: Настройка трекинга
+    items:
+      - name: Создание трекера
+        href: add-tracker.md
+      - name: Создание ремаркетинг-трекера
+        href: add-remarketing-tracker.md
+      - name: Создание трекера для предустановок
+        href: add-preinstall.md
+      - name: Тестирование атрибуции
+        href: testing-attribution.md
+      - name: Добавление партнера
+        href: add-partner.md
+      - name: Параметры трекинг-ссылки
+        href: tracking-specification.md
+      - name: Параметры postback
+        href: postback-specification.md
+      - name: S2S интеграция
+        href: s2s.md
+  - name: Трекинг в iOS 14.5+
+    href: ios-tracking.md
+    items:
+      - name: Трекинг в iOS 15
+        href: ios15-tracking.md
+      - name: Интеграция для рекламных сетей в рамках SKAdNetwork
+        href: ios-tracking-skadnetwork.md
+      - name: Управление Conversion Value
+        href: conversion-value.md
+  - name: Трекинг кампаний Яндекс Директ
+    items:
+      - name: Трекинг Единой перфоманс-кампании (ЕПК)
+        href: yandex-direct-upc-tracking.md
+      - name: Трекинг Web+App
+        href: yandex-direct-web-app-tracking.md
+      - name: Трекинг медийной рекламы
+        href: yandex-direct-media-tracking.md
+  - name: Трекинг кампаний Facebook* для Android
+    href: facebook-tracking.md
+  - name: Трекинг кампаний Google Ads
+    href: adwords-settings.md
+  - name: Трекинг кампаний Apple Search Ads
+    href: searchads-settings.md
+  - name: Трекинг кампаний DoubleClick
+    href: doubleclick-settings.md
+  - name: Трекинг кампаний Petal Ads
+    href: petalads-settings.md
+  - name: Трекинг предустановленных приложений
+    href: preinstalled-app-attr.md
+  - name: Конверсии
+    href: conversions.md
+  - name: Изменения в настройке postback
+    href: postback-first-target-event-only.md
+    hidden: true

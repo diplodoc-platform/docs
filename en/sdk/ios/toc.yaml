@@ -1,0 +1,275 @@
+title: iOS
+items:
+  #- name: О библиотеках
+  #  href: index.md
+  #  hidden: true
+  - name: Changelog
+    href: changelog-ios.md
+  - name: Migration guides
+    items:
+      - name: AppMetrica SDK. Migrating to version 5.0.0
+        href: analytics/migration-io-5-0-0.md
+      - name: AppMetrica Push SDK. Migrating to version 2.0.0
+        href: push/migration-io-push-2-0-0.md
+  - name: AppMetrica SDK
+    items:
+      - name: SDK integration
+        href: analytics/quick-start.md
+      - name: Usage examples
+        href: analytics/ios-operations.md
+      - name: Tracking user activity
+        href: analytics/ios-listen.md
+      - name: Analysis of app crashes
+        href: analytics/ios-crash.md
+      - name: Device identification using a vendor keychain
+        href: analytics/ios-vendor-keychain.md
+      - name: Work in App Extensions
+        href: analytics/ios-appgroup.md
+      - name: Universal Links support
+        href: analytics/ios-universal-links.md
+      - name: Error descriptions
+        href: analytics/ios-errors.md
+      - name: Objective-C reference
+        items:
+          - name: Classes
+            items:
+              - name: AMAAdRevenueInfo class
+                href: analytics/objectivec/AMAAdRevenueInfo.md
+              - name: AMAAppMetrica class
+                href: analytics/objectivec/AMAAppMetrica.md
+              - name: AMAAppMetricaConfiguration class
+                href: analytics/objectivec/AMAAppMetricaConfiguration.md
+              - name: AMAAppMetricaCrashes class
+                href: analytics/objectivec/AMAAppMetricaCrashes.md
+              - name: AMAAppMetricaCrashesConfiguration class
+                href: analytics/objectivec/AMAAppMetricaCrashesConfiguration.md
+              - name: AMAAppMetricaPreloadInfo class
+                href: analytics/objectivec/AMAAppMetricaPreloadInfo.md
+              - name: AMAECommerce class
+                href: analytics/objectivec/AMAECommerce.md
+              - name: AMAECommerceAmount class
+                href: analytics/objectivec/AMAECommerceAmount.md
+              - name: AMAECommerceCartItem class
+                href: analytics/objectivec/AMAECommerceCartItem.md
+              - name: AMAECommerceOrder class
+                href: analytics/objectivec/AMAECommerceOrder.md
+              - name: AMAECommercePrice class
+                href: analytics/objectivec/AMAECommercePrice.md
+              - name: AMAECommerceProduct class
+                href: analytics/objectivec/AMAECommerceProduct.md
+              - name: AMAECommerceReferrer class
+                href: analytics/objectivec/AMAECommerceReferrer.md
+              - name: AMAECommerceScreen class
+                href: analytics/objectivec/AMAECommerceScreen.md
+              - name: AMAError class
+                href: analytics/objectivec/AMAError.md
+              - name: AMAMutableAdRevenueInfo class
+                href: analytics/objectivec/AMAMutableAdRevenueInfo.md
+              - name: AMAMutableReporterConfiguration class
+                href: analytics/objectivec/AMAMutableReporterConfiguration.md
+              - name: AMAMutableRevenueInfo class
+                href: analytics/objectivec/AMAMutableRevenueInfo.md
+              - name: AMAMutableUserProfile class
+                href: analytics/objectivec/AMAMutableUserProfile.md
+              - name: AMAPluginErrorDetails class
+                href: analytics/objectivec/AMAPluginErrorDetails.md
+              - name: AMAProfileAttribute class
+                href: analytics/objectivec/AMAProfileAttribute.md
+              - name: AMAReporterConfiguration class
+                href: analytics/objectivec/AMAReporterConfiguration.md
+              - name: AMARevenueInfo class
+                href: analytics/objectivec/AMARevenueInfo.md
+              - name: AMAStackTraceElement class
+                href: analytics/objectivec/AMAStackTraceElement.md
+              - name: AMAUserProfile class
+                href: analytics/objectivec/AMAUserProfile.md
+          - name: Protocols
+            items:
+              - name: AMAAppMetricaCrashReporting protocol
+                href: analytics/objectivec/AMAAppMetricaCrashReporting.md
+              - name: AMAAppMetricaPluginReporting protocol
+                href: analytics/objectivec/AMAAppMetricaPluginReporting.md
+              - name: AMAAppMetricaPlugins protocol
+                href: analytics/objectivec/AMAAppMetricaPlugins.md
+              - name: AMAAppMetricaReporting protocol
+                href: analytics/objectivec/AMAAppMetricaReporting.md
+              - name: AMABirthDateAttribute protocol
+                href: analytics/objectivec/AMABirthDateAttribute.md
+              - name: AMACustomBoolAttribute protocol
+                href: analytics/objectivec/AMACustomBoolAttribute.md
+              - name: AMACustomCounterAttribute protocol
+                href: analytics/objectivec/AMACustomCounterAttribute.md
+              - name: AMACustomNumberAttribute protocol
+                href: analytics/objectivec/AMACustomNumberAttribute.md
+              - name: AMACustomStringAttribute protocol
+                href: analytics/objectivec/AMACustomStringAttribute.md
+              - name: AMAErrorRepresentable protocol
+                href: analytics/objectivec/AMAErrorRepresentable.md
+              - name: AMAGenderAttribute protocol
+                href: analytics/objectivec/AMAGenderAttribute.md
+              - name: AMANameAttribute protocol
+                href: analytics/objectivec/AMANameAttribute.md
+              - name: AMANotificationsEnabledAttribute protocol
+                href: analytics/objectivec/AMANotificationsEnabledAttribute.md
+          - name: Enumerations
+            items:
+              - name: AMAAdType
+                href: analytics/objectivec/AMAAdType.md
+              - name: AMAErrorReportingOptions
+                href: analytics/objectivec/AMAErrorReportingOptions.md
+              - name: AMAGenderType
+                href: analytics/objectivec/AMAGenderType.md
+          - name: Constants
+            items:
+              - name: AMABacktraceErrorKey
+                href: analytics/objectivec/AMABacktraceErrorKey.md
+              - name: kAMACrashReportingStateCrashedLastLaunchKey
+                href: analytics/objectivec/kAMACrashReportingStateCrashedLastLaunchKey.md
+              - name: kAMACrashReportingStateEnabledKey
+                href: analytics/objectivec/kAMACrashReportingStateEnabledKey.md
+          - name: Type Definitions
+            items:
+              - name: AMAAttributionSource
+                href: analytics/objectivec/AMAAttributionSource.md
+      - name: Swift reference
+        items:
+          - name: Classes
+            items:
+              - name: AdRevenueInfo class
+                href: analytics/swift/AdRevenueInfo.md
+              - name: AppMetrica class
+                href: analytics/swift/AppMetrica.md
+              - name: AppMetricaConfiguration class
+                href: analytics/swift/AppMetricaConfiguration.md
+              - name: AppMetricaCrashes class
+                href: analytics/swift/AppMetricaCrashes.md
+              - name: AppMetricaCrashesConfiguration class
+                href: analytics/swift/AppMetricaCrashesConfiguration.md
+              - name: AppMetricaError class
+                href: analytics/swift/AppMetricaError.md
+              - name: AppMetricaPreloadInfo class
+                href: analytics/swift/AppMetricaPreloadInfo.md
+              - name: ECommerce class
+                href: analytics/swift/ECommerce.md
+              - name: ECommerceAmount class
+                href: analytics/swift/ECommerceAmount.md
+              - name: ECommerceCartItem class
+                href: analytics/swift/ECommerceCartItem.md
+              - name: ECommerceOrder class
+                href: analytics/swift/ECommerceOrder.md
+              - name: ECommercePrice class
+                href: analytics/swift/ECommercePrice.md
+              - name: ECommerceProduct class
+                href: analytics/swift/ECommerceProduct.md
+              - name: ECommerceReferrer class
+                href: analytics/swift/ECommerceReferrer.md
+              - name: ECommerceScreen class
+                href: analytics/swift/ECommerceScreen.md
+              - name: MutableAdRevenueInfo class
+                href: analytics/swift/MutableAdRevenueInfo.md
+              - name: MutableReporterConfiguration class
+                href: analytics/swift/MutableReporterConfiguration.md
+              - name: MutableRevenueInfo class
+                href: analytics/swift/MutableRevenueInfo.md
+              - name: MutableUserProfile class
+                href: analytics/swift/MutableUserProfile.md
+              - name: PluginErrorDetails class
+                href: analytics/swift/PluginErrorDetails.md
+              - name: ProfileAttribute class
+                href: analytics/swift/ProfileAttribute.md
+              - name: ReporterConfiguration class
+                href: analytics/swift/ReporterConfiguration.md
+              - name: RevenueInfo class
+                href: analytics/swift/RevenueInfo.md
+              - name: StackTraceElement class
+                href: analytics/swift/StackTraceElement.md
+              - name: UserProfile class
+                href: analytics/swift/UserProfile.md
+          - name: Protocols
+            items:
+              - name: AppMetricaCrashReporting protocol
+                href: analytics/swift/AppMetricaCrashReporting.md
+              - name: AppMetricaPluginReporting protocol
+                href: analytics/swift/AppMetricaPluginReporting.md
+              - name: AppMetricaPlugins protocol
+                href: analytics/swift/AppMetricaPlugins.md
+              - name: AppMetricaReporting protocol
+                href: analytics/swift/AppMetricaReporting.md
+              - name: BirthDateAttribute protocol
+                href: analytics/swift/BirthDateAttribute.md
+              - name: CustomBoolAttribute protocol
+                href: analytics/swift/CustomBoolAttribute.md
+              - name: CustomCounterAttribute protocol
+                href: analytics/swift/CustomCounterAttribute.md
+              - name: CustomNumberAttribute protocol
+                href: analytics/swift/CustomNumberAttribute.md
+              - name: CustomStringAttribute protocol
+                href: analytics/swift/CustomStringAttribute.md
+              - name: ErrorRepresentable protocol
+                href: analytics/swift/ErrorRepresentable.md
+              - name: GenderAttribute protocol
+                href: analytics/swift/GenderAttribute.md
+              - name: NameAttribute protocol
+                href: analytics/swift/NameAttribute.md
+              - name: NotificationsEnabledAttribute protocol
+                href: analytics/swift/NotificationsEnabledAttribute.md
+          - name: Enumerations
+            items:
+              - name: AdType
+                href: analytics/swift/AdType.md
+              - name: ErrorReportingOptions
+                href: analytics/swift/ErrorReportingOptions.md
+              - name: GenderType
+                href: analytics/swift/GenderType.md
+          - name: Constants
+            items:
+              - name: BacktraceErrorKey
+                href: analytics/swift/BacktraceErrorKey.md
+              - name: CrashReportingStateKey.enabledKey
+                href: analytics/swift/CrashReportingStateKey_enabledKey.md
+              - name: CrashReportingStateKey.crashedLastLaunchKey
+                href: analytics/swift/CrashReportingStateKey_crashedLastLaunchKey.md
+          - name: Structures
+            items:
+              - name: AttributionSource
+                href: analytics/swift/AttributionSource.md
+  - name: Push SDK
+    items:
+      - name: Installation and initialization
+        href: push/quick-start.md
+      - name: Configuring your app
+        href: push/ios-settings.md
+      - name: Uploading attached files
+        href: push/ios-push-download-file.md
+      - name: Objective-c reference
+        items:
+          - name: Classes
+            items:
+              - name: AMPAppMetricaPush
+                href: push/objectivec/AMPAppMetricaPush.md
+          - name: Protocols
+            items:
+              - name: AMPUserNotificationCenterDelegate
+                href: push/objectivec/AMPUserNotificationCenterDelegate.md
+              - name: AMPUserNotificationCenterHandling
+                href: push/objectivec/AMPUserNotificationCenterHandling.md
+          - name: Enumerations
+            items:
+              - name: AMPAppMetricaPushEnvironment
+                href: push/objectivec/AMPAppMetricaPushEnvironment.md
+      - name: Swift reference
+        items:
+          - name: Classes
+            items:
+              - name: AppMetricaPush
+                href: push/swift/AppMetricaPush.md
+          - name: Protocols
+            items:
+              - name: UserNotificationCenterDelegate
+                href: push/swift/UserNotificationCenterDelegate.md
+              - name: UserNotificationCenterHandling
+                href: push/swift/UserNotificationCenterHandling.md
+          - name: Enumerations
+            items:
+              - name: AppMetricaPushEnvironment
+                href: push/swift/AppMetricaPushEnvironment.md

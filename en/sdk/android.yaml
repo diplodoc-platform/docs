@@ -1,0 +1,22 @@
+blocks:
+  - type: 'content-layout-block'
+    textWidth: 'l'
+    textContent:
+      title: 'Android documentation'
+  - type: 'card-layout-block'
+    animated: false
+    children:
+      - type: 'basic-card'
+        title: 'AppMetrica SDK'
+        text: "Instructions on connecting the SDK,\_Usage examples and other articles"
+        urlTitle: 'AppMetrica SDK'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'android/analytics/quick-start.md'
+      - type: 'basic-card'
+        title: 'AppMetrica Push SDK'
+        text: "Instructions on connecting the SDK,\_Usage examples and other articles"
+        urlTitle: 'AppMetrica Push SDK'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'android/push/quick-start.md'

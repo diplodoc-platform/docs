@@ -1,0 +1,1 @@
+The report contains a visual chart with a choice of metrics. You can select multiple metrics at the same time if they have the same units. If a metric is not available in the list (its name is written in gray), it means that it has a different unit.

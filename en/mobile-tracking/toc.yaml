@@ -1,0 +1,70 @@
+items:
+  - name: What is tracking?
+    href: index.md
+  - name: How tracking works
+    items:
+      - name: AppMetrica tracking technology
+        href: technology.md
+      - name: Automatic tracking
+        href: auto-create-tracking.md
+      - name: App install attribution
+        href: policy.md
+      - name: Impression attribution
+        href: vta-tracking-specification.md
+      - name: Attributing remarketing campaigns
+        href: remarketing-attribution.md
+      - name: Postback policy
+        href: postback-quota.md
+  - name: Setting up tracking
+    items:
+      - name: Creating a tracker
+        href: add-tracker.md
+      - name: Creating a remarketing tracker
+        href: add-remarketing-tracker.md
+      - name: Creating a tracker for pre-installs
+        href: add-preinstall.md
+      - name: Testing attribution
+        href: testing-attribution.md
+      - name: Adding a media source
+        href: add-partner.md
+      - name: Parameters of the tracking URL
+        href: tracking-specification.md
+      - name: Postback parameters
+        href: postback-specification.md
+      - name: S2S integration
+        href: s2s.md
+  - name: Tracking in iOS 14.5+
+    href: ios-tracking.md
+    items:
+      - name: Tracking in iOS 15
+        href: ios15-tracking.md
+      - name: Integration for ad networks within SKAdNetwork
+        href: ios-tracking-skadnetwork.md
+      - name: Managing the Conversion Value
+        href: conversion-value.md
+  - name: Tracking Yandex Direct campaigns
+    items:
+      - name: Unified performance campaign (UPC) tracking
+        href: yandex-direct-upc-tracking.md
+      - name: Web+App tracking
+        href: yandex-direct-web-app-tracking.md
+      - name: Yandex display advertising tracking
+        href: yandex-direct-media-tracking.md
+  - name: Tracking Facebook* campaigns for Android devices
+    href: facebook-tracking.md
+  - name: Tracking Google Ads campaigns
+    href: adwords-settings.md
+  - name: Tracking Apple Search Ads campaigns
+    href: searchads-settings.md
+  - name: Tracking DoubleClick campaigns
+    href: doubleclick-settings.md
+  - name: Tracking Petal Ads campaigns
+    href: petalads-settings.md
+  - name: Tracking pre-installed apps
+    href: preinstalled-app-attr.md
+  - name: Conversions
+    href: conversions.md
+  - name: Changes to postback sending
+    href: postback-first-target-event-only.md
+    hidden: true
+

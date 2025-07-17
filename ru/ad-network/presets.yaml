@@ -1,0 +1,4 @@
+default:
+    locale: ru
+    engines-and-environments: Механизмы и среды
+    

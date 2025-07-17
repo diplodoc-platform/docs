@@ -1,0 +1,76 @@
+title: Appmetrica-io-common
+service: making-documentation
+
+arcanum:
+  review:
+    min_approvers_count: 1
+    groups:
+      - name: appmetrica
+        roles: appmetricasdkduty:@scope=services_management
+    rules:
+      - subpaths: >-
+          a.yaml,
+          ru/sdk/**,
+          ru/presets.yaml
+        reviewers:
+          name: appmetrica
+          assign: 2
+          ship: 0
+          ignore_self_ship: false
+
+shared:
+  l10n:
+    create_l10n_issue_params: &create_l10n_issue_params
+      src: docs/support/appmetrica-io/common
+      tracker:
+        abc_id: 983
+        service_group: AppMetrica
+        assignee: revolg
+        followers: [revolg, alderson, robot-xliff-farmer]
+        src_lang: ru-RU # по умолчанию всегда ру
+        target_langs: [en-US] # по умолчанию всегда только английский
+        component: TECHDOC
+      yfm:
+        use_yfm_cli: false
+        exclude: [presets.yaml,toc.yaml]
+
+ci:
+  secret: sec-01fzfs0sbxsqb628z9zrswfmtp
+  runtime:
+    sandbox:
+      owner: DOCLOC
+      notifications:
+        - statuses: FAILURE
+          transport: email
+          recipients: DOCLOC
+
+  actions:
+    mdcheck:
+      title: Запустить автошип
+      flow: mdcheck
+      triggers:
+        - on: pr
+          on-demand: false
+          required: false 
+
+  permissions:
+    start-flow:
+      - service: making-documentation
+      - service: edition_129_appmetrica_mobileadssdk_cs
+
+  includes:
+    l10n: locdoc/doc_tools/l10n/example/templatev2.a.yaml
+  extends: l10n#/ci
+  flows:
+    l10n:
+      jobs:
+        create_l10n_issue:
+          input:
+            params: *create_l10n_issue_params
+    mdcheck:
+      title: Запустить автошип
+      jobs:
+        mdcheck:
+          title: Запустить автошип
+          task: projects/security/markdown_check/mdcheck            
+

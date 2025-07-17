@@ -1,0 +1,26 @@
+title: Flutter
+items:
+  - name: О плагине
+    href: index.md
+  - name: История изменений
+    href: changelog.md
+  - name: Руководства по миграции
+    items:
+      - name: AppMetrica SDK. Миграция на версию 3.0.0
+        href: analytics/migration-io-3-0-0.md
+  - name: AppMetrica SDK
+    items:
+      - name: Интеграция плагина
+        href: analytics/quick-start.md
+      - name: Примеры использования методов
+        href: analytics/flutter-operations.md
+      - name: Получение рекламных идентификаторов
+        href: analytics/get-ad-id.md
+  - name: Push SDK
+    items:
+      - name: О плагине
+        href: push/about.md
+      - name: Подключение и инциализация
+        href: push/quick-start.md
+      - name: Особенности использования
+        href: push/usage-features.md

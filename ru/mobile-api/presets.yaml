@@ -1,0 +1,459 @@
+default:
+    locale: ru
+    # endpoints
+    application_id: Уникальный числовой идентификатор приложения в AppMetrica.
+    attributed_touch_type: |
+     Тип рекламного взаимодействия: `click` \| `impression` \| `unknown`.
+    click_datetime: Дата и время клика/показа в формате `yyyy-mm-dd hh:mm:ss`.
+    click_id: Идентификатор клика/показа или `''` (пустая строка, если недоступен).
+    click_ipv6: |
+     IP-адрес в момент клика/показа в формате [IPv6](https://en.wikipedia.org/wiki/IPv6). Например, `2a02:6b8::40c:6676:baff:fea6:53d8, ::ffff:5.255.232.147`.
+    click_timestamp: |
+     Время клика/показа в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time) в секундах.
+    click_url_parameters: |
+     Параметры, как они представлены в ссылке. При этом специальные символы необходимо экранировать (например, `?param1=1&param2=2...` будет выглядеть в запросе как `?param1%3D1%26param2%3D2...`).
+    click_user_agent: User-agent клика/показа.
+    publisher_id_postback: ID партнера в AppMetrica. Может использоваться для определения партнера в отчетах AppMetrica. Если для трекера включены неатрибутированные постбеки, то значение поля будет равно 0.
+    publisher_name_postback: Название партнера AppMetrica. Если для трекера включены неатрибутированные постбеки, то значение поля будет пустым.
+    tracker_name_postback: Название трекера, который добавляется в интерфейсе AppMetrica. Если для трекера включены неатрибутированные постбеки, то значение поля будет пустым.
+    tracking_id_postback: ID трекера в AppMetrica. Может использоваться для определения партнера в отчетах AppMetrica. Если для трекера включены неатрибутированные постбеки, то значение поля будет равно 0.
+    touch_type: |
+     Тип: клик или показ. Возможные значения: `click` \| `impression` \| `unknown`.
+    country: Название страны на английском языке.
+    district: Название федерального округа на английском языке.
+    area: Название области на английском языке.
+    city: Название города на английском языке.
+    city_click: Название города на английском языке, где был произведен клик.
+    country_iso_code: ISO-код страны.
+    device_manufacturer: Производитель устройства, определяется сервисом AppMetrica (например, Apple или Samsung).
+    device_model: Модель устройства, определяется сервисом AppMetrica (например, Galaxy S6).
+    device_type: |
+     Тип устройства, определяется сервисом AppMetrica. Возможные значения: `phone` \| `tablet` \| `unknown`.
+    event_source: |
+     Источник возникновения события: `sdk` \| `import_api` \| `js` \| `system`.
+    google_aid: Google AID устройства в формате, в котором получен от устройства.
+    oaid: Huawei OAID устройства в формате, в котором получен от устройства.
+    ios_ifa: IFA устройства в формате, в котором получен от устройства.
+    ios_ifv: IFV для приложения в формате, в котором получен от устройства.
+    os_name: |
+     Операционная система на устройстве пользователя: `ios` \| `android` \| `windows`.
+    os_version: Версия операционной системы на устройстве пользователя.
+    windows_aid: Windows AID устройства в формате, в котором получен от устройства.
+    huawei_oaid: Huawei OAID устройства в формате, в котором получен от устройства.
+    profile_id: Идентификатор пользовательского профиля.
+    install_datetime: Дата и время установки в формате `yyyy-mm-dd hh:mm:ss`.
+    install_ipv6: |
+     IP-адрес в момент установки в формате [IPv6](https://en.wikipedia.org/wiki/IPv6) (например, 2a02:6b8::40c:6676:baff:fea6:53d8, ::ffff:5.255.232.147).
+    install_receive_datetime: Дата и время получения сервером события об установке. Может отличаться от `install_datetime` из-за задержек в сети или отсутствия подключения у пользователя на момент события.
+    install_receive_timestamp: |
+     Время получения сервером события об установке в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time). Может отличаться от `install_timestamp` из-за задержек в сети или отсутствия подключения у пользователя на момент события.
+    install_timestamp: |
+     Время установки в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time) в секундах.
+    is_reattribution: |
+     Признак реатрибутирования установки новому источнику. Возможные значения: `true` \| `false`.
+    is_reinstallation: |
+     Признак переустановки приложения. Возможные значения: `true` \| `false`.
+    event_version: |
+     Числовой номер версии установки. В потоке экспорта одна и та же установка может встретиться несколько раз с одним и тем же `installation_id`, но с обновленными значениями других полей. Установка с наибольшим `version` содержит актуальные данные.
+    event_sign: |
+     Числовой признак добавления или удаления установки. Возможные значения: `1` и `-1`. Это поле позволяет на потоке считать реальное количество установок при обновляемых `version`, для этого нужно суммировать значения `sign`.
+    fraud_status: |
+     Оценка фрода для установок по трекерам, в которых включена опция антифрода. Возможные значения: `ok` \| `low` \| `mid` \| `high` \| `unknown`. Изначально все установки имеют значение `unknown`, но после анализа от FraudScore установки повторно появятся в экспорте с обновленным значением `fraud_status`, см. описание полей `version` и `sign`.
+    #match_type: '[Способ атрибуции](../mobile-tracking/technology.md): `fingerprint` | `referrer` | `identifier` | `''` (пустая строка).'
+    app_installer: Имя пакета источника установки приложения, определенное с помощью метода [getInstallSourceInfo](https://developer.android.com/reference/android/content/pm/PackageManager#getInstallSourceInfo(java.lang.String))
+    appmetrica_device_id: Уникальный идентификатор устройства, который устанавливает AppMetrica. В Android от [AppSetId](https://developer.android.com/identity/app-set-id), в IOS от [IFV](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor).
+    android_id: Идентификатор Android.
+    connection_type: |
+     Тип подключения устройства. Возможные значения: `wifi` \| `cell` \| `unknown`.
+    device_locale: Язык интерфейса устройства.
+    mcc: Мобильный код страны.
+    mnc: Код мобильной сети.
+    operator_name: Имя оператора сотовой связи.
+    app_package_name: Имя пакета для Android или Bundle ID для iOS (например, ru.yandex.metro).
+    app_version_name: Версия приложения в виде, как указана разработчиком.
+    identifier: |
+     `''` (пустая строка).
+    conversion_datetime: Дата и время события (для CPA postback), установки (для CPI postback) или re-engagement (для CPR postback) в формате `yyyy-mm-dd hh:mm:ss`.
+    conversion_timestamp: |
+     Время события (для CPA postback), установки (для CPI postback) или re-engagement (для CPR postback) в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time).
+    event_name: Имя события (как передано в SDK).
+    attempt_datetime: Дата и время отправки в формате `yyyy-mm-dd hh:mm:ss`.
+    attempt_timestamp: |
+     Время отправки в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time).
+    cost_model: |
+     Тип постбека. Возможные значения: `cpi` (установка) \| `cpa` (событие) \| `cpr` (re-engagement).
+    notifying_status: |
+     Статус отправки postback (`failed` \| `sent`). Один и тот же postback может присутствовать в ответе несколько раз, если его отправка не была успешной.
+    postback_url: Полный Postback URL.
+    postback_url_parameters: |
+     Параметры Postback URL, как они представлены в URL. Например, `param1=1&param2=2...`.
+    response_body: Данные, полученные от сервера.
+    response_code: HTTP-код отправки postback.
+    event_datetime: Дата и время события в формате `yyyy-mm-dd hh:mm:ss`.
+    event_json: Атрибуты события, сериализованные в JSON.
+    event_receive_datetime: Дата и время получения сервером события. Может отличаться от `event_datetime` из-за задержек в сети или отсутствия подключения у пользователя на момент события.
+    event_receive_timestamp: |
+     Время получения сервером события в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time). Может отличаться от `event_timestamp` из-за задержек в сети или отсутствия подключения у пользователя на момент события.
+    event_timestamp: |
+     Время события в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time).
+
+     Post API позволяет загрузить только те события, у которых разница между датой совершения события (`event_timestamp`) и датой загрузки не больше 14 дней. Ожидается значение в секундах.
+    session_id: Идентификатор сессии. Набор из значений `installation_id`, `session_id` и платформенного идентификатора устройства (`google_aid` / `ios_ifa`) позволяет однозначно идентифицировать сессию пользователя.
+    installation_id: Идентификатор установки.
+    testids: Массив числовых идентификаторов вариантов эксперимента.
+    device_ipv6: |
+     IP-адрес в момент совершения события в формате [IPv6](https://en.wikipedia.org/wiki/IPv6). Например, 2a02:6b8::40c:6676:baff:fea6:53d8, ::ffff:5.255.232.147.
+    app_build_number: Номер сборки приложения.
+    appmetrica_gender: Пол.
+    appmetrica_birth_date: Возраст.
+    appmetrica_notifications_enabled: Push разрешены.
+    appmetrica_name: Имя.
+    any-attribute-name: Название собственного атрибута.
+    appmetrica_crashes: Количество крэшей.
+    appmetrica_errors: Количество ошибок.
+    appmetrica_first_session_date: Дата начала первой сессии.
+    appmetrica_last_start_date: Дата последнего запуска приложения.
+    appmetrica_push_opens: Количество открытых push-уведомлений.
+    appmetrica_push_send_count: Количество отправленных push-уведомлений.
+    appmetrica_sdk_version: Версия AppMetrica SDK.
+    appmetrica_sessions: Количество сессий.
+    app_framework: |
+     Тип фреймворка.
+
+     Возвращает следующие возможные значения:
+     - "0" — Native.
+     - "1" — Unity.
+     - "2" — Xamarin.
+     - "3" — React.
+     - "4" — Cordova.
+    ad_revenue_receive_datetime: |
+     Дата и время получения сервером события. Может отличаться от `ad_revenue_datetime` из-за задержек в сети или отсутствия подключения у пользователя на момент события.
+    ad_revenue_receive_timestamp: |
+     Время получения сервером события в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time). Может отличаться от `ad_revenue_timestamp` из-за задержек в сети или отсутствия подключения у пользователя на момент события.
+    ad_revenue: Сумма денег Ad Revenue.
+    ad_revenue_currency: Валюта Ad Revenue.
+    ad_revenue_type: |
+     Тип Ad Revenue. Возможные значения:
+
+     * `native`
+     * `banner`
+     * `rewarded`
+     * `interstitial`
+     * `mrec`
+     * `other`
+    ad_revenue_data_source: |
+     Признак [автособранного Ad Revenue](https://appmetrica.yandex.ru/docs/ru/sdk/android/off-adrevenue). Возможные значения:
+
+     * `autocollected`
+     * `manual`
+    ad_revenue_network: Рекламная сеть.
+    ad_revenue_placement_id: ID расположения рекламы.
+    ad_revenue_placement_name: Название расположения рекламы.
+    ad_revenue_unit_id: ID рекламной единицы.
+    ad_revenue_unit_name: Название рекламной единицы.
+    ad_revenue_precision: Точность суммы Ad Revenue, как передано в SDK. Например, "publisher_defined" или "estimated".
+    ad_revenue_payload: Дополнительные данные, сериализованные в JSON.
+    revenue_quantity: Количество покупок (купленных товаров).
+    revenue_price: Стоимость. Может быть отрицательной (например, для возврата).
+    revenue_currency: Код валюты покупки в формате [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+    revenue_product_id: Идентификатор товара.
+    revenue_order_id: Идентификатор заказа.
+    revenue_order_id_source: |
+     Источник идентификатора заказа. Возможные значения: `autogenerated` \| `user_defined`.
+    is_revenue_verified: |
+     Признак верификации покупки в магазине. Возможные значения:
+
+     - `true` — проверено;
+     - `false` — проверено и отбраковано;
+     - `undefined` — неизвестно.
+    is_revenue_autocollected: |
+     Признак [автоматического отслеживания In-App покупок](../../data-collection/about-revenue#in-app-tracking).
+     Возможные значения:
+
+     - `true` — собрано автоматически;
+     - `false` — отправлено вручную;
+     - `undefined` — неизвестно.
+    revenue_inapp_type: |
+     Признак покупки или взаимодействия с подпиской. Возможные значения:
+
+     - `one_time_purchase`
+     - `subscription`
+    revenue_event_type: |
+     Подтип события. Возможные значения:
+
+     - `one_time_purchase`
+     - `trial_subscription_started`
+     - `intro_subscription_started`
+     - `promo_subscription_started`
+     - `subscription_converted`
+     - `subscription_started`
+     - `subscription_renewed`
+     - `subscription_cancelled`
+     - `subscription_uncancelled`
+     - `subscription_expired`
+     - `subscription_billing_issues`
+     - `refund`
+     - `unknown`
+    original_device_model: |
+     Заводская модель устройства (например, для Galaxy S8 возможны следующие значения: SM-G9550, SM-G9558 и т. д.).
+    deeplink_url_host: Доменное имя deeplink. Например, для ссылки вида `[scheme]:[//host][/path][?parameters]` возвращает `host`.
+    deeplink_url_parameters: Параметры, которые передаются в deeplink.
+    deeplink_url_path: |
+     URL-путь deeplink. Например, для ссылки вида `[scheme]:[//host][/path][?parameters]` возвращает `path`.
+    deeplink_url_scheme: |
+     URL-схема deeplink. Например, для ссылки вида `[scheme]:[//host][/path][?parameters]` возвращает `scheme`.
+    is_reengagement: Признак, который определяет, что трекер создан для ремаркетинг-кампании.
+    token: Значение push-токена.
+    token_datetime: Время создания токена в формате `yyyy-mm-dd hh:mm:ss`.
+    token_receive_datetime: Время получения токена сервером в формате `yyyy-mm-dd hh:mm:ss`. Может отличаться от `token_datetime` из-за задержек в сети или отсутствия подключения у пользователя.
+    token_receive_timestamp: |
+     Время получения токена сервером в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time). Может отличаться от `token_datetime` из-за задержек в сети или отсутствия подключения у пользователя.
+    token_timestamp: |
+     Время создания токена в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time).
+    crash: Отслеживание стека.
+    crash_datetime: Дата и время аварийной остановки приложения в формате `yyyy-mm-dd hh:mm:ss`.
+    crash_group_id: Идентификатор группы схожих аварийных остановок.
+    crash_id: Идентификатор аварийной остановки.
+    crash_name: Имя аварийной остановки.
+    crash_receive_datetime: |
+     Дата и время получения сервером сообщения об аварийной остановке в формате `yyyy-mm-dd hh:mm:ss`. Может отличаться от `crash_datetime` из-за задержек в сети или отсутствия подключения у пользователя.
+    crash_receive_timestamp: |
+     Время получения сервером сообщения об аварийной остановке в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time). Может отличаться от `crash_timestamp` из-за задержек в сети или отсутствия подключения у пользователя.
+    crash_timestamp: |
+     Время аварийной остановки приложения в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time).
+    error: Текст ошибки.
+    error_datetime: Дата и время ошибки в формате `yyyy-mm-dd hh:mm:ss`.
+    error_id: Идентификатор ошибки.
+    error_name: Имя ошибки.
+    error_receive_datetime: |
+     Время получения сервером сообщения об ошибке в формате `yyyy-mm-dd hh:mm:ss`. Может отличаться от `error_datetime` из-за задержек в сети или отсутствия подключения у пользователя.
+    error_receive_timestamp: |
+     Время получения сервером сообщения об ошибке в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time). Может отличаться от `error_timestamp` из-за задержек в сети или отсутствия подключения у пользователя.
+    error_timestamp: |
+     Время ошибки в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time).
+    session_start_datetime: Дата и время начала сессии в формате `yyyy-mm-dd hh:mm:ss`.
+    session_start_receive_datetime: Время получения сервером сообщения о начале сессии в формате `yyyy-mm-dd hh:mm:ss`. Может отличаться от `session_datetime` из-за задержек в сети или отсутствия подключения у пользователя.
+    session_start_receive_timestamp: |
+     Время получения сервером сообщения о начале сессии в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time). Может отличаться от `session_timestamp` из-за задержек в сети или отсутствия подключения у пользователя.
+    session_start_timestamp: |
+     Время начала сессии в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time).
+    session_end_datetime: Дата и время завершения сессии в формате `yyyy-mm-dd hh:mm:ss`.
+    session_end_receive_datetime: Время получения сервером сообщения о завершении сессии в формате `yyyy-mm-dd hh:mm:ss`. Может отличаться от `session_datetime` из-за задержек в сети или отсутствия подключения у пользователя.
+    session_end_receive_timestamp: |
+     Время получения сервером сообщения о завершении сессии в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time). Может отличаться от `session_timestamp` из-за задержек в сети или отсутствия подключения у пользователя.
+    session_end_timestamp: |
+     Время завершения сессии в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time).
+    session_type: |
+     Тип сессии. Возможные значения: `foreground` \| `background`.
+    is_bot: Признак клика, совершённого не из браузера.
+    # resources
+    clicks: Возвращает данные о трекинговых кликах и показах за определенный интервал дат.
+    installations: Возвращает данные об установках за определенный интервал дат.
+    postbacks: Возвращает данные о постбеках за определенный интервал дат.
+    events: Возвращает данные о событиях за определенный интервал дат.
+    profiles: Возвращает информацию о профилях, обновленных за определенный интервал дат.
+    revenue_events: Возвращает данные о покупках за определенный интервал дат.
+    ad_revenue_events: Возвращает данные о доходах за показ рекламы (Ad Revenue) за определенный интервал дат.
+    ecommerce_events: Возвращает данные о покупках за определенный интервал дат.
+    deeplinks: Возвращает данные об открытиях приложения через deeplink за определенный интервал дат.
+    crashes: Возвращает данные об аварийных остановках за определенный интервал дат.
+    errors: Возвращает данные об ошибках за определенный интервал дат.
+    push_tokens: Возвращает данные о push-токенах.
+    sessions_starts: Возвращает данные о сессиях за определенный интервал дат.
+    application_id_query: Фильтрация выборки по числовому идентификатору приложения в AppMetrica.
+    date_since-query: Начало интервала дат в формате `yyyy-mm-dd hh:mm:ss`. Также с помощью query-параметра `date_dimension` можно определить, относительно какого события считать дату.
+    date_until-query: Конец интервала дат в формате `yyyy-mm-dd hh:mm:ss`. Также с помощью query-параметра `date_dimension` можно определить, относительно какого события считать дату.
+    date_since-query-postback: Начало интервала дат в формате `yyyy-mm-dd hh:mm:ss`.
+    date_until-query-postback: Конец интервала дат в формате `yyyy-mm-dd hh:mm:ss`.
+    update_timestamp: Время обновления профиля в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time).
+    version_profile: Версия профиля.
+    objective-c-fields: application_id,installation_id,touch_type,click_datetime,click_id,click_ipv6,click_timestamp,click_url_parameters,click_user_agent,publisher_id,publisher_name,tracker_name,tracking_id,city,country_iso_code,device_type,device_model,device_manufacturer,os_version,os_name,windows_aid,google_aid,ios_ifv,ios_ifa
+    date_dimension-query: |
+     Параметр определяет, относительно какого события считается дата:
+     - `default` — относительно момента, когда событие произошло на устройстве пользователя;
+     - `receive` — относительно момента, когда информация о событии была получена сервером.
+    limit-query: Ограничение на число элементов в списке. По умолчанию принимает максимальное значение. Совпадение результатов идентичных запросов не гарантируется (возможно отличие в сортировке результатов).
+    use_utf8_bom-query: |
+     Параметр, который включает использование метки порядка байтов. Значение по умолчанию: `false`.
+    any-field-name-query: Фильтрация выборки по значению любого из доступных полей. Поддерживается только операция проверки равенства.
+    # datastream resources
+    status: Возвращает список потоков по каждому типу событий. Каждый поток содержит список 5-минутных окон с размерами данных и составом полей экспорта.
+    data: Скачивает файл CSV, содержащий данные одного окна.
+    get-settings: Получает текущие настройки экспорта Data Stream.
+    post-settings: Изменяет текущие настройки экспорта Data Stream.
+    response-status: Ответ API.
+    response-streams: Список потоков с данными экспорта.
+    fingerptints-get: Возвращает список отпечатков сертификатов приложения.
+    fingerptints-post: Загружает отпечаток сертификата на сервер AppMetrica.
+    fingerptints-delete: Удаляет указанный отпечаток сертификата с сервера AppMetrica.
+    response-data_type: |
+     Тип данных, из которых сформирован поток. Допустимые значения:
+     - `event`
+     - `installation`
+     - `session_start`
+     - `session_end`
+     - `push_token`
+     - `crash`
+     - `error`
+     - `click`
+     - `revenue`
+     - `ecommerce`
+     - `ad_revenue`
+     - `attributed_event`
+     - `deeplink`
+    ecom-type: |
+     Тип события покупки. Допустимые значения:
+     - `show_screen`
+     - `show_product_card`
+     - `show_product_details`
+     - `add_cart_item`
+     - `remove_cart_item`
+     - `begin_checkout`
+     - `purchase`
+    response-stream_windows: Список окон потока.
+    response-stream_window_timestamp: Секундный unix-timestamp, указывающий на окно данных. Он используется для указания окна для скачивания данных.
+    response-export_schema_id: Идентификатор набора полей CSV.
+    response-payload_bytes: Размер файла CSV в байтах без учета заголовка CSV.
+    response-event_count: Количество событий в файле CSV.
+    response-update_timestamp: Секундный unix-timestamp. Означает время последнего изменения данных в данном окне. Изменения происходят в последних окнах, в которые данные дописываются в настоящее время.
+    response-export_fields: Содержит список наборов полей CSV, которые были использованы для формирования окон данных.
+    response-field_names: Список строковых имен полей, выбранных для экспорта.
+    response-export_format: |
+     Формат экспорта данных. Допустимые значения: `csv`, `json`.
+    response-include_events: |
+     «Белый список» имен событий. Если список не пуст, в экспорт попадут только те события, `event_name` которых присутствуют в списке. Ограничение: 10 тыс. элементов.
+    response-exclude_events: |
+     «Черный список» имен событий. Из экспорта будут исключены события, `event_name` которых присутствуют в списке. Ограничение: 10 тыс. элементов.
+    response-event_attribution: |
+     Модель атрибуции для типа данных `attributed_event`. Допустимые значения:
+     - `first_appmetrica` — «first click» в терминах AppMetrica;
+     - `last_appmetrica` — «last click» в терминах AppMetrica.
+
+     Если не указать, будет использоваться значение по умолчанию: `last_appmetrica`.
+    fingerprints: Список отпечатков сертификатов приложения.
+    fingerprints-id: Идентификатор отпечатка сертификата. В запросе параметр называется `fingerprint_id`.
+    fingerprint: Отпечаток сертификата.
+    certificate_verification_status:  |
+     Результат сравнения отпечатка сертификата приложения (отпечаток, который был загружен через API управления и отпечаток, который пришел вместе с событием). Используется для [верификации событий](../../data-collection/index.md#verification-events). Возможные значения:
+
+     - `unknown` — статус неизвестен;
+     - `valid` — подпись успешно прошла проверку;
+     - `invalid` — сертификаты не совпадают;
+     - `unsupported_operating_system` — операционная система не Android;
+     - `empty_event_certificate` — в событии отсутствует сертификат.
+    attributed_event_type: |
+     Тип атрибутированного события. Позволяет различить типы данных экспорта, объединенные в общий тип `attributed_event`. Возможные значения:
+
+     - `event` — События приложения;
+     - `revenue` — Revenue;
+     - `ecommerce` — Покупки;
+     - `ad_revenue` — Ad Revenue.
+    event_attribution_model: |
+     Выбранная модель атрибуции в настройках Data Stream. Возможные значения:
+
+     - `first_appmetrica` — «first click» в терминах AppMetrica;
+     - `last_appmetrica` — «last click» в терминах AppMetrica.
+
+     Если модель не задана, используется модель по умолчанию: `last_appmetrica`.
+    event_initial_event_type: |
+     Первое взаимодействие пользователя с приложением после просмотра или клика рекламы. Возможные значения:
+
+     - `installation` — установка приложения;
+     - `deeplink` — открытие диплинка.
+    conversion_id: |
+     Список ID конверсий, достигнутых вместе с данным событием. Имеет формат JSON-списка чисел, например: `[1,2,3]`.
+    conversion_name: |
+     Список названий конверсий. Соответствует списку `conversion_id`. Имеет формат JSON-списка строк, например: `["conv 1","conv 2","conv 3"]`.
+    conversion_attribution_window_size: |
+     Список размеров окон атрибуции конверсий. Соответствует списку `conversion_id`. Измеряется в секундах. Имеет формат JSON-списка чисел, например: `[86400,604800,86400]`.
+    tracker_name: Название трекера, который добавляется в интерфейсе AppMetrica.
+    tracking_id: ID трекера в AppMetrica.
+    publisher_id: ID партнера в AppMetrica.
+    publisher_name: Название партнера AppMetrica.
+    # post api
+    post_api_key: Токен для загрузки данных. Его можно получить в разделе **Настройки** вашего приложения.
+    post-profile_id: Идентификатор профиля пользователя. Post API позволяет загружать данные только для идентификаторов, которые предварительно были отправлены через SDK.
+    post-appmetrica_device_id: Хеш от уникального идентификатора устройства, который устанавливает AppMetrica. Post API позволяет загружать данные только для идентификаторов, которые предварительно были отправлены через SDK.
+    post-timestamp: |
+     Время события в формате [UNIX-time](https://en.wikipedia.org/wiki/Unix_time).
+     Post API позволяет загрузить только те события, у которых разница между датой совершения события (`event_timestamp`) и датой загрузки не больше 7 дней.
+    # post-session_type: |
+     #"Тип сессии. Возможные значения:
+     #- `foreground` — в отчете [События](../mobile-reports/events-report.md) будет увеличиваться метрика **Пользователи**.
+     #- `background` — в отчете [События](../mobile-reports/events-report.md) будет увеличиваться метрика **Устройства**. Такие события не будут попадать в отчет с группировкой по пользователям и в карточку профиля.
+
+     #Значение по умолчанию: `background`."
+    post-revenue_event_type: |
+     Тип события покупки. Список доступных типов:
+
+     - `one_time_purchase` — оформление разовой покупки;
+     - `trial_started` — оформление подписки с триальным периодом;
+     - `intro_started` — оформление подписки с intro предложением;
+     - `promo_started` — оформление подписки с promo предложением;
+     - `subscription_converted` — оплата полной стоимости подписки после одного из вводных предложений;
+     - `subscription_started` — оформление подписки без вводных предложений;
+     - `subscription_renewed` — продление оплаты нового периода подписки;
+     - `cancellation` — отмена подписки. После этого события у пользователя может остаться оплаченный период, но еще одного списания не произойдет;
+     - `uncancellation` — событие включения подписки из настроек Apple ID;
+     - `expired` — действие подписки закончилось;
+     - `billing_issues` — ошибка при оплате возобновления подписки;
+     - `refund` — возврат средств за подписку или разовую покупку.
+    post-price: Стоимость. Сумма дохода в формате decimal(10,8) — десятичная дробь с 10 знаками до точки и 8 знаками после точки.
+    post-currency: Валюта покупки.
+    post-payload: "Произвольный payload: дополнительная информация, представленная в виде пар key-value. Максимальный размер составляет 30 КБ. Если значение превышает этот предел, оно будет усечено AppMetrica."
+    post-transaction_id: Уникальный идентификатор транзакции.
+    post-revenue: Выручка от одного показа рекламы. Сумма дохода в формате decimal(10,8) — десятичная дробь с 10 знаками до точки и 8 знаками после точки.
+    post-ad_type: |
+     Тип рекламного объявления. Доступные значения: `native, banner, rewarded, interstitial, mrec, other`.
+    post-ad_network: Название рекламной сети.
+    post-ad_unit_id: Unit ID от рекламной сети.
+    post-ad_unit_name: Unit name от рекламной сети.
+    post-ad_placement_id: Placement ID от рекламной сети.
+    post-ad_placement_name: Placement name от рекламной сети.
+    post-precision: Точность передачи данных. Например, `publisher_defined, estimated`.
+    post-ecom_event_type: |
+     Тип ecommerce события. Возможные значения: SHOW_SCREEN, SHOW_PRODUCT_CARD, SHOW_PRODUCT_DETAILS, ADD_TO_CART, REMOVE_FROM_CART, BEGIN_CHECKOUT, PURCHASE.
+    post-product_name: Название продукта.
+    # push api
+    push-group: Группа для отправки push-сообщений.
+    push-app_id: ID приложения, для которого создается группа.
+    push-name: Уникальное название группы.
+    push-send_rate: |
+     Ограничение на максимальную скорость отправки push-сообщений (количество в секунду).
+
+     Значение по умолчанию — 5000 (максимальное).
+
+     Минимально допустимое значение — 100.
+    push-id: Идентификатор (ID) созданной группы.
+    app_id: Идентификатор (ID) приложения.
+    push-get-groups: Информация о группах.
+    push-get-id: Идентификатор (ID) группы.
+    push-transfer: Информация об отправке.
+    push-transfer-id: Идентификатор (ID) отправки.
+    push-transfer-status: |
+     Статус отправки push-сообщений. Возможные статусы:
+
+     - `failed` — запрос на отправку не прошел валидацию. Причина доступна в поле `errors`.
+     - `in_progress` — запрос на отправку успешно прошел валидацию. Производится отправка сообщений.
+     - `pending` — запрос на отправку принят и ждет валидации.
+     - `sent` — отправка завершена.
+    push-transfer-errors: Описание ошибки валидации. Поле доступно при статусе `failed`.
+    push-transfer-creation-date: Дата создания запроса на отправку.
+    #types
+    type1: "`!*` — не равно, с возможностью поиска по *."
+    type2: "`!.` — не встречается среди значений."
+    type3: "`!=` — не равно."
+    type4: "`!@` — не является подстрокой."
+    type5: "`!~` — не попадает под регулярное выражение."
+    type6: "`<` — меньше."
+    type7: "`<=` — меньше либо равно."
+    type8: "`=*` — равно, с возможностью поиска по *."
+    type9: "`=.` — встречается среди значений."
+    type10: "`==` — равно."
+    type11: "`=@` — является подстрокой."
+    type12: "`=~` — регулярное выражение."
+    type13: "`>` — больше."
+    type14: "`>=` — больше либо равно."
+
+
+

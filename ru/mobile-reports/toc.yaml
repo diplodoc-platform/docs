@@ -1,0 +1,67 @@
+items:
+  - name: Обзор
+    href: dashboard.md
+  - name: Воркспейсы
+    href: workspaces.md
+  - name: Виджеты
+    href: widgets.md
+  - name: Отчеты
+    href: index.md
+  - name: Сохранение отчетов
+    href: save-reports.md
+  - name: Сегментация
+    items:
+      - name: Сегментирование
+        href: segmentation.md
+      - name: Создание сегмента
+        href: segment-creation.md
+      - name: Сравнение сегментов и периодов
+        href: segment-comparison.md
+  - name: Маркетинг
+    items:
+      - name: User Acquisition
+        href: user-acquisition-report.md
+      - name: User Acquisition SKAdNetwork
+        href: user-acquisition-skadnetwork.md
+      - name: Remarketing
+        href: remarketing-report.md
+      - name: Push-кампании
+        href: push-campaign.md
+      - name: Конверсии
+        href: conversions-report.md
+  - name: Продукт
+    items:
+      - name: Аудитория
+        href: audience-report.md
+      - name: События
+        href: events-report.md
+      - name: Воронки
+        href: funnels-report.md
+      - name: Retention-анализ
+        href: retention-report.md
+      - name: Когортный анализ
+        href: cohort-report.md
+      - name: Вовлеченность
+        href: engagement-report.md
+      - name: Отчет по профилям
+        href: profile-report.md
+      - name: Список профилей
+        href: profile-list.md
+  - name: Монетизация
+    items:
+      - name: In-app и Ad Revenue
+        href: revenue-report.md
+      - name: Ecommerce
+        href: ecommerce-report.md
+  - name: Технические отчеты
+    items:
+      - name: Крэши и ошибки
+        href: crashes-and-errors.md
+      - name: ANR
+        href: anr.md
+  - name: Инсайты
+    href: insights.md
+  - name: Все метрики
+    href: metrics.md
+
+

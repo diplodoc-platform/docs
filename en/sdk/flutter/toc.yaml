@@ -1,0 +1,26 @@
+title: Flutter
+items:
+  - name: About the plugin
+    href: index.md
+  - name: Changelog
+    href: changelog.md
+  - name: Migration guides
+    items:
+      - name: AppMetrica SDK. Migrating to version 3.0.0
+        href: analytics/migration-io-3-0-0.md
+  - name: AppMetrica SDK
+    items:
+      - name: Integrating the plugin
+        href: analytics/quick-start.md
+      - name: Usage examples
+        href: analytics/flutter-operations.md
+      - name: Getting advertising IDs
+        href: analytics/get-ad-id.md
+  - name: Push SDK
+    items:
+      - name: About the plugin
+        href: push/about.md
+      - name: Installation and initialization
+        href: push/quick-start.md
+      - name: Usage features
+        href: push/usage-features.md

@@ -1,0 +1,24 @@
+items:
+  - name: GDPR compliance
+    href: gdpr.md
+  - name: ISO/IEC 27001 compliance
+    href: iso-27001.md
+  - name: CCPA Compliance
+    href: ccpa.md
+  - name: COPPA compliance
+    href: coppa.md
+  - name: >-
+          Compliance with Google Play policies (use and transfer of geodata)
+    href: requirements-google-play.md
+  - name: App privacy in the App Store
+    href: app-privacy-apple.md
+  - name: App privacy in Google Play
+    href: google-data-safety.md
+  - name: Support for children's apps (iOS)
+    href: app-for-kids.md
+  - name: Masking IP addresses
+    href: ip-masking.md
+  - name: Notice about collecting statistics
+    href: notification.md
+  - name: Deleting data
+    href: delete-data.md

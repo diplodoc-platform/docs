@@ -1,0 +1,25 @@
+items:
+  - name: Интеграции
+    items:
+      - name: Платформы и среды разработки
+        href: integrations/engines-and-environments.md
+      - name: Рекламные сети и технологии
+        href: integrations/ad-networks-and-technologies.md
+      - name: Антифрод
+        href: integrations/anti-fraud.md
+      - name: Push-сервисы
+        href: integrations/push-services.md
+      - name: Трекинг подписок
+        href: integrations/subscription-tracking.md
+      - name: Другое
+        href: integrations/other.md
+  - name: Партнеры
+    items:
+      - name: Маркетинговые агентства
+        href: partner-directory/performance-agencies.md
+      - name: Реселлеры
+        href: partner-directory/resellers.md
+  - href: connect-ad.md
+    hidden: true
+  - name: Экспорт данных в Yandex Cloud
+    href: ../common/cloud.md

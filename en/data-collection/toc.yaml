@@ -1,0 +1,56 @@
+items:
+  - name: About events
+    href: index.md
+  - name: Deeplink tracking
+    href: deeplinks.md
+  - name: Events
+    href: about-events.md
+  - name: User profile and attributes
+    items:
+      - name: User profile
+        href: about-profiles.md
+      - name: User profile attributes
+        href: profile-attributes.md
+  - name: E-commerce
+    href: about-ecommerce.md
+  - name: Subscription and purchase tracking
+    items:
+      - name: In-app subscriptions
+        href: about-subscription.md
+      - name: Google Play in-app subscriptions
+        href: subscription-android.md
+        when: tld == "ru"
+      - name: In-app App Store subscriptions
+        href: subscription-ios.md
+        when: tld == "ru"
+      - name: In-app purchases and currencies
+        href: about-revenue.md
+      - name: Supported currencies
+        href: currency-codes.md
+  - name: Ad revenue
+    href: about-adrevenue.md
+  - name: Crashes and errors
+    items:
+      - name: Crashes/Errors reports
+        href: about-crashes-and-errors.md
+      - name: Uploading mapping files and debugging symbols on Android
+        href: upload-mapping.md
+      - name: Uploading dSYM files on iOS
+        href: upload-dsym.md
+      - name: Email notifications
+        href: crash-mails.md
+  - name: Determining the location
+    href: geo.md
+  - name: Importing attributions from other SDKs
+    href: attribution-integration.yaml
+    items:
+      - name: Importing attributions on Android
+        href: attribution-integration-android.md
+      - name: Importing attributions on iOS
+        href: attribution-integration-ios.md
+      - name: Importing attributions on Unity
+        href: attribution-integration-unity.md
+      - name: Importing attributions on Flutter
+        href: attribution-integration-flutter.md
+      - name: Importing attributions on React Native
+        href: attribution-integration-react.md

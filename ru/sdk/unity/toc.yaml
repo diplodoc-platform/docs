@@ -1,0 +1,24 @@
+title: Unity
+items:
+  - name: История изменений
+    href: changelog.md
+  - name: Получение рекламных идентификаторов
+    href: get-ad-id.md
+  - name: Руководства по миграции
+    items:
+      - name: AppMetrica Unity Plugin. Миграция на версию 6.0.0
+        href: analytics/migration-io-6-0-0.md
+      - name: AppMetrica Push Unity Plugin. Миграция на версию 2.0.0
+        href: push/migration-io-2-0-0.md
+  - name: AppMetrica SDK
+    items:
+      - name: Интеграция плагина
+        href: analytics/quick-start.md
+      - name: Справочник методов
+        href: analytics/methods.md
+      - name: Примеры использования методов
+        href: analytics/unity-operations.md
+  - name: Push SDK
+    items:
+      - name: Подключение и инициализация
+        href: push/quick-start.md

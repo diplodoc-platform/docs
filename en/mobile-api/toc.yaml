@@ -1,0 +1,201 @@
+items:
+  - name: Introduction
+    href: index.md
+  - name: Method calls
+    href: intro/method-call.md
+  - name: Authorization
+    href: intro/authorization.md
+  - name: Quotas
+    href: intro/quotas.md
+  - name: Management API
+    href: management/intro.md
+    items:
+      - name: Formats for input data and results
+        href: management/formats.md
+      - name: API resources
+        href: management/resources.md
+        items:
+          - name: App information
+            href: management/applications/getapplication.md
+          - name: App list
+            href: management/applications/getapplicationslist.md
+          - name: Category list
+            href: management/applications/get-categories.md
+          - name: Adding an app
+            href: management/applications/createapplication.md
+          - name: Updating app settings
+            href: management/applications/updateapplication.md
+          - name: Managing app access
+            items:
+              - name: Granting access
+                href: management/applications/access/grant.md
+              - name: Editing access
+                href: management/applications/access/edit.md
+              - name: Partner list
+                href: management/applications/access/list-partners.md
+              - name: Event list
+                href: management/applications/access/list-events.md
+              - name: Removing access
+                href: management/applications/access/delete.md
+          - name: Deleting an app
+            href: management/applications/deleteapplication.md
+          - name: Managing app certificate fingerprints
+            items:
+              - name: Information about app certificate fingerprints
+                href: management/fingerprints/fingerprints-android-get.md
+              - name: Uploading app certificate fingerprints
+                href: management/fingerprints/fingerprints-android-post.md
+              - name: Deleting app certificate fingerprints
+                href: management/fingerprints/fingerprints-android-delete.md
+          - name: Checking the availability of the Logs API
+            href: management/logs-api-status.md
+      - name: Error descriptions
+        href: management/errors.md
+  - name: Reporting API
+    href: api_v1/intro.md
+    items:
+      - name: API requests
+        items:
+          - name: Table
+            href: api_v1/data.md
+          - name: Drill down
+            href: api_v1/drilldown.md
+      - name: Dimensions
+        items:
+          - name: Application
+            href: api_v1/attributes/mobmet_events/app.md
+          - name: Device
+            href: api_v1/attributes/mobmet_events/device.md
+          - name: Screen
+            href: api_v1/attributes/mobmet_events/screen.md
+          - name: Sending data
+            href: api_v1/attributes/mobmet_events/events.md
+          - name: Date and time
+            href: api_v1/attributes/mobmet_events/date_time.md
+          - name: Crashes
+            href: api_v1/attributes/mobmet_events/crashes.md
+          - name: Errors
+            href: api_v1/attributes/mobmet_events/errors.md
+          - name: Region
+            href: api_v1/attributes/mobmet_events/region.md
+          - name: Sessions
+            items:
+              - name: Date/time fragment
+                href: >-
+                    api_v1/attributes/mobmet_sessionssessions_/date_time_partial.md
+          - name: Trackers
+            href: api_v1/attributes/mobmet_campaigns/adv.md
+      - name: Metrics
+        items:
+          - name: Main metrics
+            href: api_v1/metrics/mainmetr.md
+          - name: Tracker metrics
+            href: api_v1/metrics/mcmetr.md
+      - name: Segmentation
+        href: api_v1/segmentation.md
+        items:
+          - name: Operators
+            href: api_v1/relations/relations.md
+  - name: Logs API
+    href: logs/about.md
+    items:
+      - name: Request flow
+        href: logs/request-procedure.md
+      - name: Quotas
+        href: logs/quotas.md
+      - name: Available endpoints
+        href: logs/endpoints.md
+      - name: API resources
+        href: logs/ref/index.md
+        items:
+          - name: Tracking clicks
+            href: logs/ref/clicks.md
+          - name: App installations
+            href: logs/ref/installations.md
+          - name: Postbacks
+            href: logs/ref/postbacks.md
+          - name: App events
+            href: logs/ref/events.md
+          - name: E-commerce
+            href: logs/ref/ecommerce_events.md
+          - name: Profiles
+            href: logs/ref/profiles.md
+          - name: Revenue
+            href: logs/ref/revenue_events.md
+          - name: Ad Revenue
+            href: logs/ref/ad_revenue_events.md
+          - name: App openings via a deeplink
+            href: logs/ref/deeplinks.md
+          - name: Crashes
+            href: logs/ref/crashes.md
+          - name: Errors
+            href: logs/ref/errors.md
+          - name: Push tokens
+            href: logs/ref/push_tokens.md
+          - name: Session starts
+            href: logs/ref/sessions_starts.md
+  - name: Data Stream API
+    href: datastream/about.md
+    items:
+      - name: Quick start
+        href: datastream/quick-start.md
+      - name: Data types for export
+        href: datastream/data-type-fields.md
+      - name: Limits
+        href: datastream/limits.md
+      - name: API resources
+        href: datastream/ref/resources.md
+        items:
+          - name: Stream status
+            href: datastream/ref/status.md
+          - name: Downloading data
+            href: datastream/ref/data.md
+          - name: Getting settings
+            href: datastream/ref/settings.md
+          - name: Changing settings
+            href: datastream/ref/settings-post.md
+  - name: Post API
+    href: post/about.md
+    items:
+      - name: Restrictions
+        href: post/restrictions.md
+      - name: API resources
+        items:
+          - name: Uploading events
+            href: post/post-import-events.md
+          - name: Uploading In-App Revenue events
+            href: post/post-revenue.md
+          - name: Uploading Ad Revenue events
+            href: post/post-adrevenue.md
+          - name: Uploading E-commerce events
+            href: post/post-ecommerce.md
+          - name: Profile attributes
+            href: post/post-profile-attributes.md
+  - name: Push API
+    href: push/about.md
+    items:
+      - name: Use cases
+        href: push/use-cases.md
+      - name: API resources
+        href: push/all-resources.md
+        items:
+          - name: Creating a group
+            href: push/post-groups.md
+          - name: Getting a list of groups
+            href: push/get-groups.md
+          - name: Getting a group
+            href: push/get-group-id.md
+          - name: Updating a group
+            href: push/put-group-id.md
+          - name: Archiving a group
+            href: push/delete-group-id.md
+          - name: Unarchiving a group
+            href: push/post-group-id.md
+          - name: Sending batch push messages
+            href: push/post-send-batch.md
+          - name: Checking the sending status by transferId
+            href: push/get-status-id.md
+          - name: Checking the sending status by clientTransferId
+            href: push/get-status-group-id.md
+      - name: File types in push messages
+        href: push/file-type.md

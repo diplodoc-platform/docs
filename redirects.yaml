@@ -1,3 +1,476 @@
+# Общая секция редиректов для всех языков документации
 common:
-    - from: /project/includes
-      to: /syntax/includes
+    # смена пути
+     # - from: /mobile-tracking/concepts/vta-tracking-specification.md
+     # to: /mobile-tracking/vta-tracking-specification.md
+    - from: /mobile-tracking/concepts/tracking.md
+      to: /mobile-tracking/index.md
+    - from: /mobile-reports/concepts/about.md
+      to: /mobile-reports/index.md
+    - from: /mobile-api/concept/about.html
+      to: /mobile-api/index.md
+    - from: /mobile-sdk-dg/concepts/ios-universal-links.md
+      to: /sdk/ios/analytics/ios-universal-links.md
+    - from: /mobile-sdk-dg/concepts/flutter-plugin.md
+      to: /sdk/flutter/index.md
+    - from: /mobile-sdk-dg/concepts/unity-plugin.md
+      to: /sdk/unity.md
+    - from: /mobile-sdk-dg/tasks/winphone-quickstart.md
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/tasks/ios-quickstart.md
+      to: /sdk/ios/analytics/quick-start.md
+    - from: /mobile-sdk-dg/concepts/android-initialize.md
+      to: /sdk/android/analytics/quick-start.md
+    - from: /mobile-settings/concepts/access.md
+      to: /common/access.md
+    - from: /mobile-sdk-dg/push/ios-settings.md
+      to: /sdk/ios/push/ios-settings.md
+    - from: /mobile-sdk-dg/push/ios-statistics-settings.md
+      to: /sdk/ios/push/ios-settings.md
+    - from: /mobile-sdk-dg/push/ios-push-download-file.md
+      to: /sdk/ios/push/ios-push-download-file.md
+    - from: /mobile-sdk-dg/android/ref/ru/yandex/metrica/profile/Attribute.md
+      to: /sdk/android/analytics/ref.md
+    - from: /mobile-sdk-dg/push/android-initialize.md
+      to: /sdk/android/push/quick-start.md
+    - from: /mobile-sdk-dg/push/android-settings.md
+      to: /sdk/android/push/android-settings.md
+    - from: /mobile-sdk-dg/push/android-other-push-services-settings.md
+      to: /sdk/android/push/android-other-push-services-settings.md
+    - from: /mobile-sdk-dg/push/windows-settings.md
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/push/unity-initialize.md
+      to: /sdk/unity/push/quick-start.md
+    - from: /mobile-sdk-dg/push/unity-gcm-to-fcm-migration.md
+      to: /sdk/unity/push/unity-gcm-to-fcm-migration.md
+    - from: /quick-start/concepts/quick-start.md
+      to: /common/quick-start.md
+    - from: /mobile-sdk-dg/android/about/android-initialize.md
+      to: /sdk/android/analytics/quick-start.md
+    - from: /mobile-sdk-dg/android/about/android-features.md
+      to: /sdk/android/analytics/android-features.md
+    - from: /mobile-sdk-dg/android/about/android-listen.md
+      to: /sdk/android/analytics/android-listen.md
+    - from: /mobile-sdk-dg/android/about/android-operations.md
+      to: /sdk/android/analytics/android-operations.md
+    - from: /mobile-sdk-dg/android/about/android-crash.md
+      to: /sdk/android/analytics/android-crash.md
+    - from: /mobile-sdk-dg/android/about/android-build-plugin.md
+      to: /sdk/android/analytics/android-build-plugin.md
+    - from: /sdk/android/analytics/android-build-plugin.md
+      to: /sdk/android/analytics/android-gradle-plugin.md
+    - from: /mobile-sdk-dg/android/about/android-deferred-deeplinks.md
+      to: /sdk/android/analytics/android-deferred-deeplinks.md
+    - from: /mobile-sdk-dg/android/about/android-errors.md
+      to: /sdk/android/analytics/android-errors.md
+    - from: /mobile-sdk-dg/android/about/android-history.md
+      to: /sdk/android/changelog-android.md
+    - from: /mobile-sdk-dg/android-studio-plugin/
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/ios/ios-quickstart.md
+      to: /sdk/ios/analytics/quick-start.md
+    - from: /mobile-sdk-dg/ios/ios-extension-quickstart.md
+      to: /sdk/ios/analytics/quick-start.md
+    - from: /mobile-sdk-dg/ios/ios-watch-quickstart.md
+      to: /sdk/ios/analytics/quick-start.md
+    - from: /mobile-sdk-dg/ios/tvos-quickstart.md
+      to: /sdk/ios/analytics/quick-start.md
+    - from: /mobile-sdk-dg/ios/ios-history.md
+      to: /sdk/ios/changelog-ios.md
+    - from: /mobile-sdk-dg/ios/ios-operations.md
+      to: /sdk/ios/analytics/ios-operations.md
+    - from: /mobile-sdk-dg/ios/ios-listen.md
+      to: /sdk/ios/analytics/ios-listen.md
+    - from: /mobile-sdk-dg/ios/ios-crash.md
+      to: /sdk/ios/analytics/ios-crash.md
+    - from: /mobile-sdk-dg/ios/ios-vendor-keychain.md
+      to: /sdk/ios/analytics/ios-vendor-keychain.md
+    - from: /mobile-sdk-dg/ios/ios-universal-links.md
+      to: /sdk/ios/analytics/ios-universal-links.md
+    - from: /mobile-sdk-dg/windows/
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/plugins/unity/unity-plugin.md
+      to: /sdk/unity/analytics/quick-start.md
+    - from: /mobile-sdk-dg/plugins/unity/unity-methods.md
+      to: /sdk/unity/analytics/methods.md
+    - from: /mobile-sdk-dg/plugins/unity/unity-usecases.md
+      to: /sdk/unity/analytics/unity-operations.md
+    - from: /sdk/unity/analytics/usecases.md
+      to: /sdk/unity/analytics/unity-operations.md
+    - from: /mobile-sdk-dg/plugins/unity/unity-history.md
+      to: /sdk/unity/changelog.md
+    - from: /mobile-sdk-dg/plugins/react-native/react-native-plugin.md
+      to: /sdk/react-native/analytics/quick-start.md
+    - from: /mobile-sdk-dg/plugins/react-native/react-native-methods.md
+      to: /sdk/react-native/analytics/methods.md
+    - from: /mobile-sdk-dg/plugins/react-native/react-native-history.md
+      to: /sdk/react-native/changelog.md
+    - from: /mobile-sdk-dg/plugins/flutter/flutter-plugin.md
+      to: /sdk/flutter/analytics/quick-start.md
+    - from: /mobile-sdk-dg/plugins/flutter/flutter-history.md
+      to: /sdk/flutter/changelog.md
+    - from: /mobile-sdk-dg/plugins/cordova/
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/plugins/xamarin/
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/push/android-gcm-to-fcm-migration.md
+      to: /sdk/android/push/quick-start.md
+    - from: /mobile-sdk-dg/push/android-history.md
+      to: /sdk/android/changelog-android.md
+    - from: /mobile-sdk-dg/push/ios-initialize.md
+      to: /sdk/ios/push/quick-start.md
+    - from: /mobile-sdk-dg/push/ios-history.md
+      to: /sdk/ios/changelog-ios.md
+    - from: /mobile-sdk-dg/push/windows-initialize.md
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/push/windows-settings.md
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/push/windows-history.md
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/push/unity-history.md
+      to: /sdk/unity/changelog.md
+    - from: /mobile-sdk-dg/push/flutter/flutter-about.md
+      to: /sdk/flutter/index.md
+    - from: /mobile-sdk-dg/push/flutter/flutter-plugin.md
+      to: /sdk/flutter/analytics/quick-start.md
+    - from: /mobile-sdk-dg/push/flutter/flutter-history.md
+      to: /sdk/flutter/changelog.md
+    - from: /mobile-sdk-dg/push/cordova-initialize.md
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/push/cordova-history.md
+      to: /sdk/platforms.md
+    - from: /push/concepts/about.md
+      to: /push/index.md
+    - from: /mobile-api/concept/about.md
+      to: /mobile-api/index.md
+    - from: /data-security/privacy-and-security/app-privacy-apple.md
+      to: /data-security/app-privacy-apple.md
+    - from: /data-security/privacy-and-security/google-data-safety.md
+      to: /data-security/google-data-safety.md
+    - from: /mobile-sdk-dg/android/ref/ru/yandex/metrica/profile/Attribute.md
+      to: /sdk/android/analytics/ref.md
+    - from: /mobile-sdk-dg/ios/objective-c/ref/YMMProfileAttribute.md
+      to: /sdk/ios/analytics/objectivec/YMMProfileAttribute.md
+    # перенесли из подкаталога выше
+    - from: /quick-start/concepts/about.md
+      to: index.md
+    - from: /quick-start/concepts/about-events-limit.md
+      to: /common/limits.md
+    - from: /quick-start/concepts/changelog-full.md
+      to: /common/changelog.md
+    - from: /quick-start/concepts/glossary.md
+      to: /common/glossary.md
+    - from: /mobile-sdk-dg/integration/mobilesdk-about.md
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/android-studio-plugin/
+      to: index.md
+    - from: /mobile-sdk-dg/android/ref-gen/
+      to: /sdk/android/analytics/ref.md
+    - from: /mobile-sdk-dg/ios/objective-c/ref/
+      to: /sdk/ios/analytics/objectivec/
+    - from: /mobile-sdk-dg/ios/swift/ref/
+      to: /sdk/ios/analytics/swift/
+    - from: /mobile-sdk-dg/plugins/unity/
+      to: /sdk/unity/analytics/
+    - from: /mobile-sdk-dg/plugins/react-native/
+      to: /sdk/react-native/analytics/
+    - from: /mobile-sdk-dg/plugins/flutter/flutter-about.md
+      to: /sdk/flutter/
+    - from: /mobile-sdk-dg/plugins/flutter/
+      to: /sdk/flutter/analytics/
+    - from: /mobile-sdk-dg/push/push-about.md
+      to: /sdk/platforms.md
+    - from: /mobile-sdk-dg/push/ios/objective-c/ref/
+      to: /sdk/ios/push/objectivec/
+    - from: /mobile-sdk-dg/push/ios/swift/ref/
+      to: /sdk/ios/push/swift/
+    - from: /mobile-sdk-dg/push/flutter/
+      to: /sdk/flutter/push/
+    - from: /varioqub-app/about.md
+      to: /common/varioqub-app-about.md
+    - from: /push/concepts/
+      to: /push/
+    - from: /mobile-tracking/concepts/
+      to: /mobile-tracking/
+    - from: /mobile-reports/concepts/
+      to: /mobile-reports/
+    - from: /mobile-api/concept/
+      to: /mobile-api/
+    - from: /common/mobile-settings/access.md
+      to: /common/access.md
+    - from: /common/cloud/about.md
+      to: /common/cloud.md
+    - from: /mobile-glossary/glossary.md
+      to: /common/glossary.md
+    - from: /mobile-tracking/ad-network.md
+      to: /ad-network/integrations/ad-networks-and-technologies.md
+    - from: /sdk/ios/push/objectivec/YMPYandexMetricaPush.md
+      to: /sdk/ios/push/objectivec/AMPAppMetricaPush.md
+    - from: /sdk/ios/push/swift/YMPYandexMetricaPush.md
+      to: /sdk/ios/push/swift/AppMetricaPush.md
+    - from: /sdk/ios/push/objectivec/YMPYandexMetricaPushEnvironment.md
+      to: /sdk/ios/push/objectivec/AMPAppMetricaPushEnvironment.md
+    - from: /sdk/ios/push/swift/YMPYandexMetricaPushEnvironment.md
+      to: /sdk/ios/push/swift/AppMetricaPushEnvironment.md
+    - from: /sdk/ios/push/swift/YMPUserNotificationCenterDelegate.md
+      to: /sdk/ios/push/swift/UserNotificationCenterDelegate.md
+    - from: /sdk/ios/push/swift/YMPUserNotificationCenterHandling.md
+      to: /sdk/ios/push/swift/UserNotificationCenterHandling.md
+    - from: /sdk/ios/push/objectivec/YMPUserNotificationCenterDelegate.md
+      to: /sdk/ios/push/objectivec/AMPUserNotificationCenterDelegate.md
+    - from: /sdk/ios/push/objectivec/YMPUserNotificationCenterHandling.md
+      to: /sdk/ios/push/objectivec/AMPUserNotificationCenterHandling.md
+    - from: /sdk/unity/push/unity-gcm-to-fcm-migration.md
+      to: /sdk/unity/push/quick-start.md
+    # Objective-C prefix
+    - from: /sdk/ios/analytics/objectivec/YMMYandexMetrica.md
+      to: /sdk/ios/analytics/objectivec/AMAAppMetrica.md
+    - from: /sdk/ios/analytics/objectivec/YMMYandexMetricaConfiguration.md
+      to: /sdk/ios/analytics/objectivec/AMAAppMetricaConfiguration.md
+    - from: /sdk/ios/analytics/objectivec/YMMYandexMetricaPreloadInfo.md
+      to: /sdk/ios/analytics/objectivec/AMAAppMetricaPreloadInfo.md
+    - from: /sdk/ios/analytics/objectivec/YMMMutableReporterConfiguration.md
+      to: /sdk/ios/analytics/objectivec/AMAMutableReporterConfiguration.md
+    - from: /sdk/ios/analytics/objectivec/YMMReporterConfiguration.md
+      to: /sdk/ios/analytics/objectivec/AMAReporterConfiguration.md
+    - from: /sdk/ios/analytics/objectivec/YMMYandexMetricaReporting.md
+      to: /sdk/ios/analytics/objectivec/AMAAppMetricaReporting.md
+    - from: /sdk/ios/analytics/objectivec/YMMMutableUserProfile.md
+      to: /sdk/ios/analytics/objectivec/AMAMutableUserProfile.md
+    - from: /sdk/ios/analytics/objectivec/YMMProfileAttribute.md
+      to: /sdk/ios/analytics/objectivec/AMAProfileAttribute.md
+    - from: /sdk/ios/analytics/objectivec/YMMUserProfile.md
+      to: /sdk/ios/analytics/objectivec/AMAUserProfile.md
+    - from: /sdk/ios/analytics/objectivec/YMMGenderType.md
+      to: /sdk/ios/analytics/objectivec/AMAGenderType.md
+    - from: /sdk/ios/analytics/objectivec/YMMBirthDateAttribute.md
+      to: /sdk/ios/analytics/objectivec/AMABirthDateAttribute.md
+    - from: /sdk/ios/analytics/objectivec/YMMCustomBoolAttribute.md
+      to: /sdk/ios/analytics/objectivec/AMACustomBoolAttribute.md
+    - from: /sdk/ios/analytics/objectivec/YMMCustomCounterAttribute.md
+      to: /sdk/ios/analytics/objectivec/AMACustomCounterAttribute.md
+    - from: /sdk/ios/analytics/objectivec/YMMCustomNumberAttribute.md
+      to: /sdk/ios/analytics/objectivec/AMACustomNumberAttribute.md
+    - from: /sdk/ios/analytics/objectivec/YMMCustomStringAttribute.md
+      to: /sdk/ios/analytics/objectivec/AMACustomStringAttribute.md
+    - from: /sdk/ios/analytics/objectivec/YMMGenderAttribute.md
+      to: /sdk/ios/analytics/objectivec/AMAGenderAttribute.md
+    - from: /sdk/ios/analytics/objectivec/YMMNameAttribute.md
+      to: /sdk/ios/analytics/objectivec/AMANameAttribute.md
+    - from: /sdk/ios/analytics/objectivec/YMMNotificationsEnabledAttribute.md
+      to: /sdk/ios/analytics/objectivec/AMANotificationsEnabledAttribute.md
+    - from: /sdk/ios/analytics/objectivec/YMMError.md
+      to: /sdk/ios/analytics/objectivec/AMAError.md
+    - from: /sdk/ios/analytics/objectivec/YMMBacktraceErrorKey.md
+      to: /sdk/ios/analytics/objectivec/AMABacktraceErrorKey.md
+    - from: /sdk/ios/analytics/objectivec/YMMErrorReportingOptions.md
+      to: /sdk/ios/analytics/objectivec/AMAErrorReportingOptions.md
+    - from: /sdk/ios/analytics/objectivec/YMMErrorRepresentable.md
+      to: /sdk/ios/analytics/objectivec/AMAErrorRepresentable.md
+    - from: /sdk/ios/analytics/objectivec/YMMAdRevenueInfo.md
+      to: /sdk/ios/analytics/objectivec/AMAAdRevenueInfo.md
+    - from: /sdk/ios/analytics/objectivec/YMMMutableAdRevenueInfo.md
+      to: /sdk/ios/analytics/objectivec/AMAMutableAdRevenueInfo.md
+    - from: /sdk/ios/analytics/objectivec/YMMAdType.md
+      to: /sdk/ios/analytics/objectivec/AMAAdType.md
+    - from: /sdk/ios/analytics/objectivec/YMMECommerceAmount.md
+      to: /sdk/ios/analytics/objectivec/AMAECommerceAmount.md
+    - from: /sdk/ios/analytics/objectivec/YMMECommerceCartItem.md
+      to: /sdk/ios/analytics/objectivec/AMAECommerceCartItem.md
+    - from: /sdk/ios/analytics/objectivec/YMMECommerceOrder.md
+      to: /sdk/ios/analytics/objectivec/AMAECommerceOrder.md
+    - from: /sdk/ios/analytics/objectivec/YMMECommercePrice.md
+      to: /sdk/ios/analytics/objectivec/AMAECommercePrice.md
+    - from: /sdk/ios/analytics/objectivec/YMMECommerceReferrer.md
+      to: /sdk/ios/analytics/objectivec/AMAECommerceReferrer.md
+    - from: /sdk/ios/analytics/objectivec/YMMECommerceScreen.md
+      to: /sdk/ios/analytics/objectivec/AMAECommerceScreen.md
+    - from: /sdk/ios/analytics/objectivec/YMMECommerce.md
+      to: /sdk/ios/analytics/objectivec/AMAECommerce.md
+    - from: /sdk/ios/analytics/objectivec/YMMMutableRevenueInfo.md
+      to: /sdk/ios/analytics/objectivec/AMAMutableRevenueInfo.md
+    - from: /sdk/ios/analytics/objectivec/YMMRevenueInfo.md
+      to: /sdk/ios/analytics/objectivec/AMARevenueInfo.md
+    # Swift prefix
+    - from: /sdk/ios/analytics/swift/YMMYandexMetrica.md
+      to: /sdk/ios/analytics/swift/AppMetrica.md
+    - from: /sdk/ios/analytics/swift/YMMYandexMetricaConfiguration.md
+      to: /sdk/ios/analytics/swift/AppMetricaConfiguration.md
+    - from: /sdk/ios/analytics/swift/YMMYandexMetricaPreloadInfo.md
+      to: /sdk/ios/analytics/swift/AppMetricaPreloadInfo.md
+    - from: /sdk/ios/analytics/swift/YMMMutableReporterConfiguration.md
+      to: /sdk/ios/analytics/swift/MutableReporterConfiguration.md
+    - from: /sdk/ios/analytics/swift/YMMReporterConfiguration.md
+      to: /sdk/ios/analytics/swift/ReporterConfiguration.md
+    - from: /sdk/ios/analytics/swift/YMMYandexMetricaReporting.md
+      to: /sdk/ios/analytics/swift/AppMetricaReporting.md
+    - from: /sdk/ios/analytics/swift/YMMMutableUserProfile.md
+      to: /sdk/ios/analytics/swift/MutableUserProfile.md
+    - from: /sdk/ios/analytics/swift/YMMProfileAttribute.md
+      to: /sdk/ios/analytics/swift/ProfileAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMUserProfile.md
+      to: /sdk/ios/analytics/swift/UserProfile.md
+    - from: /sdk/ios/analytics/swift/YMMGenderType.md
+      to: /sdk/ios/analytics/swift/GenderType.md
+    - from: /sdk/ios/analytics/swift/YMMBirthDateAttribute.md
+      to: /sdk/ios/analytics/swift/BirthDateAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMCustomBoolAttribute.md
+      to: /sdk/ios/analytics/swift/CustomBoolAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMCustomCounterAttribute.md
+      to: /sdk/ios/analytics/swift/CustomCounterAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMCustomNumberAttribute.md
+      to: /sdk/ios/analytics/swift/CustomNumberAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMCustomStringAttribute.md
+      to: /sdk/ios/analytics/swift/CustomStringAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMGenderAttribute.md
+      to: /sdk/ios/analytics/swift/GenderAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMNameAttribute.md
+      to: /sdk/ios/analytics/swift/NameAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMNotificationsEnabledAttribute.md
+      to: /sdk/ios/analytics/swift/NotificationsEnabledAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMError.md
+      to: /sdk/ios/analytics/swift/AppMetricaError.md
+    - from: /sdk/ios/analytics/swift/YMMBacktraceErrorKey.md
+      to: /sdk/ios/analytics/swift/BacktraceErrorKey.md
+    - from: /sdk/ios/analytics/swift/YMMErrorReportingOptions.md
+      to: /sdk/ios/analytics/swift/ErrorReportingOptions.md
+    - from: /sdk/ios/analytics/swift/YMMErrorRepresentable.md
+      to: /sdk/ios/analytics/swift/ErrorRepresentable.md
+    - from: /sdk/ios/analytics/swift/YMMCustomNumberAttribute.md
+      to: /sdk/ios/analytics/swift/CustomNumberAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMCustomStringAttribute.md
+      to: /sdk/ios/analytics/swift/CustomStringAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMGenderAttribute.md
+      to: /sdk/ios/analytics/swift/GenderAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMNameAttribute.md
+      to: /sdk/ios/analytics/swift/NameAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMNotificationsEnabledAttribute.md
+      to: /sdk/ios/analytics/swift/NotificationsEnabledAttribute.md
+    - from: /sdk/ios/analytics/swift/YMMAdRevenueInfo.md
+      to: /sdk/ios/analytics/swift/AdRevenueInfo.md
+    - from: /sdk/ios/analytics/swift/YMMMutableAdRevenueInfo.md
+      to: /sdk/ios/analytics/swift/MutableAdRevenueInfo.md
+    - from: /sdk/ios/analytics/swift/YMMAdType.md
+      to: /sdk/ios/analytics/swift/AdType.md
+    - from: /sdk/ios/analytics/swift/YMMECommerceAmount.md
+      to: /sdk/ios/analytics/swift/ECommerceAmount.md
+    - from: /sdk/ios/analytics/swift/YMMECommerceCartItem.md
+      to: /sdk/ios/analytics/swift/ECommerceCartItem.md
+    - from: /sdk/ios/analytics/swift/YMMECommerceOrder.md
+      to: /sdk/ios/analytics/swift/ECommerceOrder.md
+    - from: /sdk/ios/analytics/swift/YMMECommercePrice.md
+      to: /sdk/ios/analytics/swift/ECommercePrice.md
+    - from: /sdk/ios/analytics/swift/YMMECommerceProduct.md
+      to: /sdk/ios/analytics/swift/ECommerceProduct.md
+    - from: /sdk/ios/analytics/swift/YMMECommerceReferrer.md
+      to: /sdk/ios/analytics/swift/ECommerceReferrer.md
+    - from: /sdk/ios/analytics/swift/YMMECommerceScreen.md
+      to: /sdk/ios/analytics/swift/ECommerceScreen.md
+    - from: /sdk/ios/analytics/swift/YMMECommerce.md
+      to: /sdk/ios/analytics/swift/ECommerce.md
+    - from: /sdk/ios/analytics/swift/YMMMutableRevenueInfo.md
+      to: /sdk/ios/analytics/swift/MutableRevenueInfo.md
+    - from: /sdk/ios/analytics/swift/YMMRevenueInfo.md
+      to: /sdk/ios/analytics/swift/RevenueInfo.md
+    - from: /sdk/flutter/analytics/migration-io-2-0-0.md
+      to: /sdk/flutter/analytics/migration-io-3-0-0.md
+    # FAQ
+    - from: /troubleshooting/api-key.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/app-stores.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/archive-version-old-documentations.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/change-device-id.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/differences-logs-api-and-reports.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/differences.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/downloads.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/format.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/get-id.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/logs.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/moderation.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/newest-android-version.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/no-installs.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/organika.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/raw-data.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/region.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/remarketing-campaign.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/retention-value.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/tracker-archived.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/tracking-url.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/trouble-with-spm.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/security.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/week-audience.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/ua-events.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/update-firebase.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/update-version.md
+      to: /troubleshooting/troubleshooting.md
+    - from: /troubleshooting/utm.md
+      to: /troubleshooting/troubleshooting.md
+    # Примеры
+    - from: /data-collection/events-android.md
+      to: /sdk/android/analytics/android-operations.md
+    - from: /data-collection/events-flutter.md
+      to: /sdk/android/analytics/flutter-operations.md
+    - from: /data-collection/events-ios.md
+      to: /sdk/android/analytics/ios-operations.md#
+    - from: /data-collection/geo-android.md
+      to: /sdk/android/analytics/android-operations.md
+    - from: /data-collection/geo-ios.md
+      to: /sdk/android/analytics/ios-operations.md
+    - from: /data-collection/sending-adrevenue-android.md
+      to: /sdk/android/analytics/android-operations.md
+    - from: /data-collection/sending-adrevenue-flutter.md
+      to: /sdk/android/analytics/flutter-operations.md
+    - from: /data-collection/sending-adrevenue-ios.md
+      to: /sdk/android/analytics/ios-operations.md
+    - from: /data-collection/sending-ecommerce-android.md
+      to: /sdk/android/analytics/android-operations.md
+    - from: /data-collection/sending-ecommerce-flutter.md
+      to: /sdk/android/analytics/flutter-operations.md
+    - from: /data-collection/sending-ecommerce-ios.md
+      to: /sdk/android/analytics/ios-operations.md
+    - from: /data-collection/sending-errors-android.md
+      to: /sdk/android/analytics/android-operations.md
+    - from: /data-collection/sending-errors-ios.md
+      to: /sdk/android/analytics/ios-operations.md
+    - from: /data-collection/sending-revenue-android.md
+      to: /sdk/android/analytics/android-operations.md
+    - from: /data-collection/sending-revenue-ios.md
+      to: /sdk/android/analytics/ios-operations.md
+    - from: /data-collection/tracking-deeplink-android.md
+      to: /sdk/android/analytics/android-operations.md
+    - from: /data-collection/tracking-deeplink-ios.md
+      to: /sdk/android/analytics/ios-operations.md
+    - from: /data-collection/profile-settings.md
+      to: /data-collection/about-profiles.md
+  # временно, пока не заменят в интерфейсе https://st.yandex-team.ru/DOC-25707#6798a58d92645a2b5a482b6f
+    - from: data-collection/apphud/subscription-ios.md
+      to: /data-collection/apphud/apphud-about.md
+    - from: data-collection/apphud/subscription-android.md
+      to: /data-collection/apphud/apphud-about.md
+  # в интерфейсе ссылка не на ту страницу
+    - from: /mobile-tracking/fraudscore.md
+      to: /common/fraud-score.md

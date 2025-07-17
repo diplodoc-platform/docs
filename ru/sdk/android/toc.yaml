@@ -1,0 +1,53 @@
+title: Android
+items:
+  - name: История изменений
+    href: changelog-android.md
+  - name: Список модулей
+    href: android-modules.md
+  - name: Исключение гео из списка зависимостей
+    href: geo-exclude.md
+  - name: Выключение автосбора Ad Revenue
+    href: off-adrevenue.md
+  - name: Получение рекламных идентификаторов
+    href: get-ad-id.md
+  - name: Руководства по миграции
+    items:
+      - name: AppMetrica SDK. Миграция на версию 6.0.0
+        href: analytics/migration-io-6-0-0.md
+      - name: AppMetrica Push SDK. Миграция на версию 3.0.0
+        href: push/migration-io-3-0-0.md
+  - name: AppMetrica SDK
+    items:
+      - name: Интеграция SDK
+        href: analytics/quick-start.md
+      - name: Особенности библиотеки
+        href: analytics/android-features.md
+      - name: Отслеживание активности пользователей
+        href: analytics/android-listen.md
+      - name: Логирование
+        href: analytics/android-logs.md
+      - name: Примеры использования методов
+        href: analytics/android-operations.md
+      - name: Анализ крэшей
+        href: analytics/android-crash.md
+      - name: AppMetrica Gradle Plugin
+        href: analytics/android-gradle-plugin.md
+      - name: Поддержка отложенных deeplinks
+        href: analytics/android-deferred-deeplinks.md
+      - name: Описание ошибок
+        href: analytics/android-errors.md
+      - name: Справочник SDK
+        href: analytics/ref.md
+  - name: Push SDK
+    items:
+      - name: Подключение и инициализация
+        href: push/quick-start.md
+      - name: Настройка приложения
+        href: push/android-settings.md
+      - name: Использование с другими push-сервисами
+        href: push/android-other-push-services-settings.md
+      - name: Список опциональных модулей для Push SDK
+        href: push/android-modules-push.md
+      - name: Справочник Push SDK
+        href: push/ref.md
+

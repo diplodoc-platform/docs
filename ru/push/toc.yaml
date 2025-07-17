@@ -1,0 +1,7 @@
+items:
+  - name: О push-кампаниях
+    href: index.md
+  - name: Запуск push-кампании
+    href: marketing.md
+  - name: Отмена push-кампании
+    href: cancel.md

@@ -1,0 +1,22 @@
+blocks:
+  - type: 'content-layout-block'
+    textWidth: 'l'
+    textContent:
+      title: 'Документация для iOS'
+  - type: 'card-layout-block'
+    animated: false
+    children:
+      - type: 'basic-card'
+        title: 'AppMetrica SDK'
+        text: "Инструкция по подключению SDK, Примеры использования и другие статьи"
+        urlTitle: 'AppMetrica SDK'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'ios/analytics/quick-start.md'
+      - type: 'basic-card'
+        title: 'AppMetrica Push SDK'
+        text: "Инструкция по подключению SDK, Примеры использования и другие статьи"
+        urlTitle: 'AppMetrica Push SDK'
+        border: 'shadow'
+        controlPosition: 'content'
+        url: 'ios/push/quick-start.md'

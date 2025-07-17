@@ -1,0 +1,275 @@
+title: iOS
+items:
+  #- name: О библиотеках
+  #  href: index.md
+  #  hidden: true
+  - name: Историй изменений
+    href: changelog-ios.md
+  - name: Руководства по миграции
+    items:
+      - name: AppMetrica SDK. Миграция на версию 5.0.0
+        href: analytics/migration-io-5-0-0.md
+      - name: AppMetrica Push SDK. Миграция на версию 2.0.0
+        href: push/migration-io-push-2-0-0.md
+  - name: AppMetrica SDK
+    items:
+      - name: Интеграция SDK
+        href: analytics/quick-start.md
+      - name: Примеры использования методов
+        href: analytics/ios-operations.md
+      - name: Отслеживание активности пользователей
+        href: analytics/ios-listen.md
+      - name: Анализ аварийных остановок приложения
+        href: analytics/ios-crash.md
+      - name: Идентификация устройств — vendor keychain
+        href: analytics/ios-vendor-keychain.md
+      - name: Поддержка App Extensions
+        href: analytics/ios-appgroup.md
+      - name: Поддержка Universal Links
+        href: analytics/ios-universal-links.md
+      - name: Описание ошибок
+        href: analytics/ios-errors.md
+      - name: Справочник Objective-C
+        items:
+          - name: Классы
+            items:
+              - name: Класс AMAAdRevenueInfo
+                href: analytics/objectivec/AMAAdRevenueInfo.md
+              - name: Класс AMAAppMetrica
+                href: analytics/objectivec/AMAAppMetrica.md
+              - name: Класс AMAAppMetricaConfiguration
+                href: analytics/objectivec/AMAAppMetricaConfiguration.md
+              - name: Класс AMAAppMetricaCrashes
+                href: analytics/objectivec/AMAAppMetricaCrashes.md
+              - name: Класс AMAAppMetricaCrashesConfiguration
+                href: analytics/objectivec/AMAAppMetricaCrashesConfiguration.md
+              - name: Класс AMAAppMetricaPreloadInfo
+                href: analytics/objectivec/AMAAppMetricaPreloadInfo.md
+              - name: Класс AMAECommerce
+                href: analytics/objectivec/AMAECommerce.md
+              - name: Класс AMAECommerceAmount
+                href: analytics/objectivec/AMAECommerceAmount.md
+              - name: Класс AMAECommerceCartItem
+                href: analytics/objectivec/AMAECommerceCartItem.md
+              - name: Класс AMAECommerceOrder
+                href: analytics/objectivec/AMAECommerceOrder.md
+              - name: Класс AMAECommercePrice
+                href: analytics/objectivec/AMAECommercePrice.md
+              - name: Класс AMAECommerceProduct
+                href: analytics/objectivec/AMAECommerceProduct.md
+              - name: Класс AMAECommerceReferrer
+                href: analytics/objectivec/AMAECommerceReferrer.md
+              - name: Класс AMAECommerceScreen
+                href: analytics/objectivec/AMAECommerceScreen.md
+              - name: Класс AMAError
+                href: analytics/objectivec/AMAError.md
+              - name: Класс AMAMutableAdRevenueInfo
+                href: analytics/objectivec/AMAMutableAdRevenueInfo.md
+              - name: Класс AMAMutableReporterConfiguration
+                href: analytics/objectivec/AMAMutableReporterConfiguration.md
+              - name: Класс AMAMutableRevenueInfo
+                href: analytics/objectivec/AMAMutableRevenueInfo.md
+              - name: Класс AMAMutableUserProfile
+                href: analytics/objectivec/AMAMutableUserProfile.md
+              - name: Класс AMAPluginErrorDetails
+                href: analytics/objectivec/AMAPluginErrorDetails.md
+              - name: Класс AMAProfileAttribute
+                href: analytics/objectivec/AMAProfileAttribute.md
+              - name: Класс AMAReporterConfiguration
+                href: analytics/objectivec/AMAReporterConfiguration.md
+              - name: Класс AMARevenueInfo
+                href: analytics/objectivec/AMARevenueInfo.md
+              - name: Класс AMAStackTraceElement
+                href: analytics/objectivec/AMAStackTraceElement.md
+              - name: Класс AMAUserProfile
+                href: analytics/objectivec/AMAUserProfile.md
+          - name: Протоколы
+            items:
+              - name: Протокол AMAAppMetricaCrashReporting
+                href: analytics/objectivec/AMAAppMetricaCrashReporting.md
+              - name: Протокол AMAAppMetricaPluginReporting
+                href: analytics/objectivec/AMAAppMetricaPluginReporting.md
+              - name: Протокол AMAAppMetricaPlugins
+                href: analytics/objectivec/AMAAppMetricaPlugins.md
+              - name: Протокол AMAAppMetricaReporting
+                href: analytics/objectivec/AMAAppMetricaReporting.md
+              - name: Протокол AMABirthDateAttribute
+                href: analytics/objectivec/AMABirthDateAttribute.md
+              - name: Протокол AMACustomBoolAttribute
+                href: analytics/objectivec/AMACustomBoolAttribute.md
+              - name: Протокол AMACustomCounterAttribute
+                href: analytics/objectivec/AMACustomCounterAttribute.md
+              - name: Протокол AMACustomNumberAttribute
+                href: analytics/objectivec/AMACustomNumberAttribute.md
+              - name: Протокол AMACustomStringAttribute
+                href: analytics/objectivec/AMACustomStringAttribute.md
+              - name: Протокол AMAErrorRepresentable
+                href: analytics/objectivec/AMAErrorRepresentable.md
+              - name: Протокол AMAGenderAttribute
+                href: analytics/objectivec/AMAGenderAttribute.md
+              - name: Протокол AMANameAttribute
+                href: analytics/objectivec/AMANameAttribute.md
+              - name: Протокол AMANotificationsEnabledAttribute
+                href: analytics/objectivec/AMANotificationsEnabledAttribute.md
+          - name: Перечисления
+            items:
+              - name: AMAAdType
+                href: analytics/objectivec/AMAAdType.md
+              - name: AMAErrorReportingOptions
+                href: analytics/objectivec/AMAErrorReportingOptions.md
+              - name: AMAGenderType
+                href: analytics/objectivec/AMAGenderType.md
+          - name: Константы
+            items:
+              - name: AMABacktraceErrorKey
+                href: analytics/objectivec/AMABacktraceErrorKey.md
+              - name: kAMACrashReportingStateCrashedLastLaunchKey
+                href: analytics/objectivec/kAMACrashReportingStateCrashedLastLaunchKey.md
+              - name: kAMACrashReportingStateEnabledKey
+                href: analytics/objectivec/kAMACrashReportingStateEnabledKey.md
+          - name: Type Definitions
+            items:
+              - name: AMAAttributionSource
+                href: analytics/objectivec/AMAAttributionSource.md
+      - name: Справочник Swift
+        items:
+          - name: Классы
+            items:
+              - name: Класс AdRevenueInfo
+                href: analytics/swift/AdRevenueInfo.md
+              - name: Класс AppMetrica
+                href: analytics/swift/AppMetrica.md
+              - name: Класс AppMetricaConfiguration
+                href: analytics/swift/AppMetricaConfiguration.md
+              - name: Класс AppMetricaCrashes
+                href: analytics/swift/AppMetricaCrashes.md
+              - name: Класс AppMetricaCrashesConfiguration
+                href: analytics/swift/AppMetricaCrashesConfiguration.md
+              - name: Класс AppMetricaError
+                href: analytics/swift/AppMetricaError.md
+              - name: Класс AppMetricaPreloadInfo
+                href: analytics/swift/AppMetricaPreloadInfo.md
+              - name: Класс ECommerce
+                href: analytics/swift/ECommerce.md
+              - name: Класс ECommerceAmount
+                href: analytics/swift/ECommerceAmount.md
+              - name: Класс ECommerceCartItem
+                href: analytics/swift/ECommerceCartItem.md
+              - name: Класс ECommerceOrder
+                href: analytics/swift/ECommerceOrder.md
+              - name: Класс ECommercePrice
+                href: analytics/swift/ECommercePrice.md
+              - name: Класс ECommerceProduct
+                href: analytics/swift/ECommerceProduct.md
+              - name: Класс ECommerceReferrer
+                href: analytics/swift/ECommerceReferrer.md
+              - name: Класс ECommerceScreen
+                href: analytics/swift/ECommerceScreen.md
+              - name: Класс MutableAdRevenueInfo
+                href: analytics/swift/MutableAdRevenueInfo.md
+              - name: Класс MutableReporterConfiguration
+                href: analytics/swift/MutableReporterConfiguration.md
+              - name: Класс MutableRevenueInfo
+                href: analytics/swift/MutableRevenueInfo.md
+              - name: Класс MutableUserProfile
+                href: analytics/swift/MutableUserProfile.md
+              - name: Класс PluginErrorDetails
+                href: analytics/swift/PluginErrorDetails.md
+              - name: Класс ProfileAttribute
+                href: analytics/swift/ProfileAttribute.md
+              - name: Класс ReporterConfiguration
+                href: analytics/swift/ReporterConfiguration.md
+              - name: Класс RevenueInfo
+                href: analytics/swift/RevenueInfo.md
+              - name: Класс StackTraceElement
+                href: analytics/swift/StackTraceElement.md
+              - name: Класс UserProfile
+                href: analytics/swift/UserProfile.md
+          - name: Протоколы
+            items:
+              - name: Протокол AppMetricaCrashReporting
+                href: analytics/swift/AppMetricaCrashReporting.md
+              - name: Протокол AppMetricaPluginReporting
+                href: analytics/swift/AppMetricaPluginReporting.md
+              - name: Протокол AppMetricaPlugins
+                href: analytics/swift/AppMetricaPlugins.md
+              - name: Протокол AppMetricaReporting
+                href: analytics/swift/AppMetricaReporting.md
+              - name: Протокол BirthDateAttribute
+                href: analytics/swift/BirthDateAttribute.md
+              - name: Протокол CustomBoolAttribute
+                href: analytics/swift/CustomBoolAttribute.md
+              - name: Протокол CustomCounterAttribute
+                href: analytics/swift/CustomCounterAttribute.md
+              - name: Протокол CustomNumberAttribute
+                href: analytics/swift/CustomNumberAttribute.md
+              - name: Протокол CustomStringAttribute
+                href: analytics/swift/CustomStringAttribute.md
+              - name: Протокол ErrorRepresentable
+                href: analytics/swift/ErrorRepresentable.md
+              - name: Протокол GenderAttribute
+                href: analytics/swift/GenderAttribute.md
+              - name: Протокол NameAttribute
+                href: analytics/swift/NameAttribute.md
+              - name: Протокол NotificationsEnabledAttribute
+                href: analytics/swift/NotificationsEnabledAttribute.md
+          - name: Перечисления
+            items:
+              - name: AdType
+                href: analytics/swift/AdType.md
+              - name: ErrorReportingOptions
+                href: analytics/swift/ErrorReportingOptions.md
+              - name: GenderType
+                href: analytics/swift/GenderType.md
+          - name: Константы
+            items:
+              - name: BacktraceErrorKey
+                href: analytics/swift/BacktraceErrorKey.md
+              - name: CrashReportingStateKey.enabledKey
+                href: analytics/swift/CrashReportingStateKey_enabledKey.md
+              - name: CrashReportingStateKey.crashedLastLaunchKey
+                href: analytics/swift/CrashReportingStateKey_crashedLastLaunchKey.md
+          - name: Структуры
+            items:
+              - name: AttributionSource
+                href: analytics/swift/AttributionSource.md
+  - name: Push SDK
+    items:
+      - name: Подключение и инициализация
+        href: push/quick-start.md
+      - name: Настройка приложения
+        href: push/ios-settings.md
+      - name: Загрузка прикрепленных файлов
+        href: push/ios-push-download-file.md
+      - name: Справочник Objective-c
+        items:
+          - name: Классы
+            items:
+              - name: AMPAppMetricaPush
+                href: push/objectivec/AMPAppMetricaPush.md
+          - name: Протоколы
+            items:
+              - name: AMPUserNotificationCenterDelegate
+                href: push/objectivec/AMPUserNotificationCenterDelegate.md
+              - name: AMPUserNotificationCenterHandling
+                href: push/objectivec/AMPUserNotificationCenterHandling.md
+          - name: Перечисления
+            items:
+              - name: AMPAppMetricaPushEnvironment
+                href: push/objectivec/AMPAppMetricaPushEnvironment.md
+      - name: Справочник Swift
+        items:
+          - name: Классы
+            items:
+              - name: AppMetricaPush
+                href: push/swift/AppMetricaPush.md
+          - name: Протоколы
+            items:
+              - name: UserNotificationCenterDelegate
+                href: push/swift/UserNotificationCenterDelegate.md
+              - name: UserNotificationCenterHandling
+                href: push/swift/UserNotificationCenterHandling.md
+          - name: Перечисления
+            items:
+              - name: AppMetricaPushEnvironment
+                href: push/swift/AppMetricaPushEnvironment.md

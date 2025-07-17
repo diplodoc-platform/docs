@@ -1,0 +1,461 @@
+default:
+    locale: en
+    # endpoints
+    application_id: Unique numeric identifier for the application in AppMetrica.
+    attributed_touch_type: |
+     Ad interaction type: `click` \| `impression` \| `unknown`.
+    click_datetime: Date and time of the click/impression in `yyyy-mm-dd hh:mm:ss` format.
+    click_id: ID of the click/impression or `''` (an empty string if the ID is not available).
+    click_ipv6: |
+     IP address at the time of the click/impression in [IPv6](https://en.wikipedia.org/wiki/IPv6) format. For example: `2a02:6b8::40c:6676:baff:fea6:53d8, ::ffff:5.255.232.147`.
+    click_timestamp: |
+     Time of the click/impression in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format, in seconds.
+    click_url_parameters: |
+     Parameters as they are shown in the URL. Special characters must be escaped (for example, `?param1=1&param2=2...` will look like `?param1%3D1%26param2%3D2...` in the request).
+    click_user_agent: User-agent of the click/impression.
+    publisher_id_postback: ID of the AppMetrica publisher. You may use it to identify the publisher in AppMetrica reports. If unattributed postbacks are enabled for the tracker, the field value will be 0.
+    publisher_name_postback: Name of the AppMetrica partner. If unattributed postbacks are enabled for the tracker, the field value will be empty.
+    tracker_name_postback: Name of the tracker being added to the AppMetrica interface. If unattributed postbacks are enabled for the tracker, the field value will be empty.
+    tracking_id_postback: ID of the AppMetrica tracker. You may use it to identify the publisher in AppMetrica reports. If unattributed postbacks are enabled for the tracker, the field value will be 0.
+    touch_type: |
+     Type: click or impression. Possible values: `click` \| `impression` \| `unknown`.
+    country: The country name in English.
+    district: The federal district name in English.
+    area: The region name in English.
+    city: The name of the city in English.
+    city_click: The name of the city where the click was made (in English).
+    country_iso_code: ISO country code.
+    device_manufacturer: The device manufacturer detected by the AppMetrica service (for example, Apple or Samsung).
+    device_model: The device model detected by the AppMetrica service (for example, Galaxy S6).
+    device_type: |
+     The device type detected by the AppMetrica service. Possible values: `phone` \| `tablet` \| `unknown`.
+    event_source: |
+     Event source: `sdk` \| `import_api` \| `js` \| `system`.
+    google_aid: The device's Google AID in the format received from the device.
+    oaid: The device's Huawei OAID in the format received from the device.
+    ios_ifa: The device's IFA in the format received from the device.
+    ios_ifv: IFV for the app in the format received from the device.
+    os_name: |
+     Operating system on the user's device: `ios` \| `android` \| `windows`.
+    os_version: The version of the operating system on the user's device.
+    windows_aid: The device's Windows AID in the format received from the device.
+    huawei_oaid: The device's Huawei OAID in the format received from the device.
+    profile_id: User profile ID.
+    install_datetime: Date and time of the installation in `yyyy-mm-dd hh:mm:ss`.
+    install_ipv6: |
+     The IP address at the time of the installation in [IPv6](https://en.wikipedia.org/wiki/IPv6) format (for example, 2a02:6b8::40c:6676:baff:fea6:53d8, ::ffff:5.255.232.147).
+    install_receive_datetime: Date and time when the install event was received on the server side. May differ from `install_datetime` due to network delays or if the user's device was not connected at the time of the event.
+    install_receive_timestamp: |
+     Time when the install event was received on the server side in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format. May differ from `install_timestamp` due to network delays or if the user's device was not connected at the time of the event.
+    install_timestamp: |
+     Time of the installation in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format, in seconds.
+    is_reattribution: |
+     Whether the installation is reattributed to the new source. Possible values: `true` \| `false`.
+    is_reinstallation: |
+     Whether the app has been reinstalled. Possible values: `true` \| `false`.
+    event_version: |
+     The numeric version number of the installation. In the export stream, the same installation can occur several times with the same `installation_id`, but with updated values of other fields. The installation with the highest `version` contains the actual data.
+    event_sign: |
+     Numeric indicator of adding or removing an installation. Possible values: `1` and `-1`. This field allows you to count the actual number of installations on the stream when `version` is updated, for this you need to sum the `sign` values.
+    fraud_status: |
+     The fraud assessment for installations by trackers with the anti-fraud option enabled. Possible values: `ok` \| `low` \| `mid` \| `high` \| `unknown`. Initially, all installations have the `unknown` value, but after analysis by FraudScore, the installations will reappear in the export with the updated `fraud_status` value. See the descriptions of the `version` and `sign` fields.
+    #match_type: '[Способ атрибуции](../mobile-tracking/technology.md): `fingerprint` | `referrer` | `identifier` | `''` (пустая строка).'
+    app_installer: The name of the app install source package determined by the [getInstallSourceInfo](https://developer.android.com/reference/android/content/pm/PackageManager#getInstallSourceInfo(java.lang.String)) method.
+    appmetrica_device_id: A unique device identifier detected by the AppMetrica service. In Android from [AppSetId](https://developer.android.com/identity/app-set-id), in iOS from [IFV](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor).
+    android_id: Android device ID.
+    connection_type: |
+     Type of connection. Possible values: `wifi` \| `cell` \| `unknown`.
+    device_locale: The language on the device.
+    mcc: Mobile country code.
+    mnc: Mobile network code.
+    operator_name: Name of the mobile operator.
+    app_package_name: The package name for Android, or the Bundle ID for iOS (for example, ru.yandex.metro).
+    app_version_name: The app version in the format specified by the developer.
+    identifier: |
+     `''` (empty string).
+    conversion_datetime: Date and time of the event (for CPA postback), installation (for CPI postback), or re-engagement (for CPR postback) in `yyyy-mm-dd hh:mm:ss` format.
+    conversion_timestamp: |
+     Time of the event (for CPA postback), installation (for CPI postback), or re-engagement (for CPR postback) in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format.
+    event_name: Name of the event (as passed to the SDK).
+    attempt_datetime: Date and time of sending in yyyy-mm-dd hh:mm:ss` format.
+    attempt_timestamp: |
+     Time of sending in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format.
+    cost_model: |
+     Postback type. Possible values: `cpi` (installation) \| `cpa` (event) \| `cpr` (re-engagement).
+    notifying_status: |
+     The status of the postback sending (`failed` \| `sent`). The same postback may appear multiple times in the response if sending failed.
+    postback_url: Full Postback URL.
+    postback_url_parameters: |
+     Postback URL parameters as shown in the URL. For example, `param1=1&param2=2...`.
+    response_body: Data received from the server.
+    response_code: HTTP code for sending the postback.
+    event_datetime: Date and time of the event in `yyyy-mm-dd hh:mm:ss` format.
+    event_json: Event attributes serialized into JSON.
+    event_receive_datetime: Date and time the event was received on the server side. May differ from `event_datetime` due to network delays or if the user's device was not connected at the time of the event.
+    event_receive_timestamp: |
+     Time when the event was received on the server side in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format. May differ from `event_timestamp` due to network delays or if the user's device was not connected at the time of the event.
+    event_timestamp: |
+     Time of the event in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format.
+
+     With the Post API, you can upload events only if the difference between the event date (event_timestamp) and the upload date is no more than 14 days. The API expects a value in seconds.
+    session_id: Session ID. The set of values `installation_id`, `session_id` and the platform device ID (`google_aid` / `ios_ifa`) allows you to uniquely identify a user's session.
+    installation_id: Installation ID.
+    testids: Array of numeric IDs of experiment variants.
+    device_ipv6: |
+     The IP address at the time of the event in [IPv6](https://en.wikipedia.org/wiki/IPv6) format. For example, 2a02:6b8::40c:6676:baff:fea6:53d8, ::ffff:5.255.232.147.
+    app_build_number: App build number.
+    appmetrica_gender: Gender.
+    appmetrica_birth_date: Age.
+    appmetrica_notifications_enabled: Notifications are enabled.
+    appmetrica_name: Name.
+    any-attribute-name: Name of a custom attribute.
+    appmetrica_crashes: Number of crashes.
+    appmetrica_errors: Number of errors.
+    appmetrica_first_session_date: Date of the first session.
+    appmetrica_last_start_date: Date when the app was last launched.
+    appmetrica_push_opens: Number of opened push notifications.
+    appmetrica_push_send_count: Number of sent push notifications.
+    appmetrica_sdk_version: Version of the AppMetrica SDK.
+    appmetrica_sessions: Number of sessions.
+    app_framework: |
+     Framework type.
+
+     Returns one of the following values:
+     - "0": Native.
+     - "1": Unity.
+     - "2": Xamarin.
+     - "3": React.
+     - "4": Cordova.
+    ad_revenue_receive_datetime: |
+     Date and time the event was received on the server side. May differ from `ad_revenue_datetime` due to network delays or if the user's device was not connected at the time of the event.
+    ad_revenue_receive_timestamp: |
+     Time when the event was received on the server side in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format. May differ from `ad_revenue_timestamp` due to network delays or if the user's device was not connected at the time of the event.
+    ad_revenue: Ad Revenue amount.
+    ad_revenue_currency: Ad Revenue currency.
+    ad_revenue_type: |
+     Ad Revenue type. Possible values:
+
+     * `native`
+     * `banner`
+     * `rewarded`
+     * `interstitial`
+     * `mrec`
+     * `other`
+    ad_revenue_data_source: |
+     Flag indicating [that Ad Revenue was automatically collected](https://appmetrica.yandex.com/docs/en/sdk/android/off-adrevenue). Possible values:
+
+     * `autocollected`
+     * `manual`
+    ad_revenue_network: Advertising network.
+    ad_revenue_placement_id: Ad placement ID
+    ad_revenue_placement_name: Ad placement name.
+    ad_revenue_unit_id: Ad unit ID.
+    ad_revenue_unit_name: Ad unit name.
+    ad_revenue_precision: Accuracy of the Ad Revenue amount (as passed to the SDK). For example, "publisher_defined" or "estimated".
+    ad_revenue_payload: Additional data serialized into JSON.
+    revenue_quantity: Quantity of products purchased.
+    revenue_price: Price. It can be negative, e.g. for refunds.
+    revenue_currency: Currency code of the purchase in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format.
+    revenue_product_id: Item ID.
+    revenue_order_id: Order ID.
+    revenue_order_id_source: |
+     Source of the order ID. Possible values: `autogenerated` \| `user_defined`.
+    is_revenue_verified: |
+     The flag that indicates the purchase verification in the store. Possible values:
+
+     - `true`: Verified.
+     - `false`: Verified and rejected.
+     - `undefined`: Unknown.
+    is_revenue_autocollected: |
+     The flag of [In-App purchase automatic tracking](../../data-collection/about-revenue#in-app-tracking).
+     Possible values:
+
+     - `true`: Collected automatically.
+     - `false`: Sent manually.
+     - `undefined`: Unknown.
+    revenue_inapp_type: |
+     Purchase or subscription interaction flag. Possible values:
+
+     - `one_time_purchase`
+     - `subscription`
+    revenue_event_type: |
+     Event subtype. Possible values:
+
+     - `one_time_purchase`
+     - `trial_subscription_started`
+     - `intro_subscription_started`
+     - `promo_subscription_started`
+     - `subscription_converted`
+     - `subscription_started`
+     - `subscription_renewed`
+     - `subscription_cancelled`
+     - `subscription_uncancelled`
+     - `subscription_expired`
+     - `subscription_billing_issues`
+     - `refund`
+     - `unknown`
+    original_device_model: |
+     Factory model of the device (for example, the following values are possible for Galaxy S8: SM-G9550, SM-G9558, and so on).
+    deeplink_url_host: Deeplink domain name. For example, for a link formatted as `[scheme]:[//host][/path][?parameters]`, it returns `host`.
+    deeplink_url_parameters: Parameters that are passed to the deeplink.
+    deeplink_url_path: |
+     URL path of the deeplink. For example, for a link formatted as `[scheme]:[//host][/path][?parameters]`, it returns `path`.
+    deeplink_url_scheme: |
+     URL scheme of the deeplink. For example, for a link formatted as `[scheme]:[//host][/path][?parameters]`, it returns `scheme`.
+    is_reengagement: Indicates that the tracker was created for a remarketing campaign.
+    token: Push token value.
+    token_datetime: Time of token creation in `yyyy-mm-dd hh:mm:ss` format.
+    token_receive_datetime: Time when the token was received on the server side in `yyyy-mm-dd hh:mm:ss` format. It may differ from `token_datetime` due to network delays or problems with the user's internet connection.
+    token_receive_timestamp: |
+     Time when the token was received on the server side in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format. It may differ from `token_datetime` due to network delays or problems with the user's internet connection.
+    token_timestamp: |
+     Time of token creation in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format.
+    crash: Stack trace.
+    crash_datetime: Date and time of the app crash in `yyyy-mm-dd hh:mm:ss` format.
+    crash_group_id: ID of a group of similar crashes.
+    crash_id: Crash ID.
+    crash_name: Crash name.
+    crash_receive_datetime: |
+     Date and time the crash message was received on the server side in `yyyy-mm-dd hh:mm:ss` format. It may differ from `crash_datetime` due to network delays or problems with the user's internet connection
+    crash_receive_timestamp: |
+     Time when the crash message was received on the server side in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format. It may differ from `crash_timestamp` due to network delays or problems with the user's internet connection.
+    crash_timestamp: |
+     Time of the app crash in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format.
+    error: Error text.
+    error_datetime: Date and time of the error in `yyyy-mm-dd hh:mm:ss` format.
+    error_id: Error ID.
+    error_name: Error name.
+    error_receive_datetime: |
+     Time when the error message was received on the server side in `yyyy-mm-dd hh:mm:ss` format. It may differ from `error_datetime` due to network delays or problems with the user's internet connection.
+    error_receive_timestamp: |
+     Time when the error message was received on the server side in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format. It may differ from `error_timestamp` due to network delays or problems with the user's internet connection.
+    error_timestamp: |
+     Time of the error in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format.
+    session_start_datetime: Date and time of the session start in `yyyy-mm-dd hh:mm:ss` format.
+    session_start_receive_datetime: Time when the session start message was received on the server side in `yyyy-mm-dd hh:mm:ss` format. It may differ from `session_datetime` due to network delays or problems with the user's internet connection.
+    session_start_receive_timestamp: |
+     Time when the session start message was received on the server side in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format. It may differ from `session_timestamp` due to network delays or problems with the user's internet connection.
+    session_start_timestamp: |
+     Time of the session start in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format.
+    session_end_datetime: Date and time of the session end in `yyyy-mm-dd hh:mm:ss` format.
+    session_end_receive_datetime: Time when the server receives the session end message, in `yyyy-mm-dd hh:mm:ss` format. It may differ from `session_datetime` due to network delays or problems with the user's internet connection.
+    session_end_receive_timestamp: |
+     Time when the server receives the session end message, in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format. It may differ from `session_timestamp` due to network delays or problems with the user's internet connection.
+    session_end_timestamp: |
+     Time of the session end in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format.
+    session_type: |
+     Session type. Possible values: `foreground` \| `background`.
+    is_bot: Indicates a non-browser click.
+    # resources
+    clicks: Returns data on tracking clicks and impressions for a specific date range.
+    installations: Returns installations data for a specific date range.
+    postbacks: Returns postback data for a specific date range.
+    events: Returns event data for a specific date range.
+    profiles: Returns information about profiles updated within a specific date range.
+    revenue_events: Returns in-app purchase data for a specific date range.
+    ad_revenue_events: Returns Ad Revenue data for a specific date range.
+    ecommerce_events: Returns in-app purchase data for a specific date range.
+    deeplinks: Returns openings via deeplink data for a specific date range.
+    crashes: Returns crash data for a specific date range.
+    errors: Returns error data for a specific date range.
+    push_tokens: Returns data about push tokens.
+    sessions_starts: Returns session data for a specific date range.
+    application_id_query: Filtering by the app's numeric ID in AppMetrica
+    date_since-query: Start of the date range in `yyyy-mm-dd hh:mm:ss` format. You can also define the date and time type that affects the data in the `date_dimension` query parameter.
+    date_until-query: End of the date range in `yyyy-mm-dd hh:mm:ss` format. You can also define the date and time type that affects the data in the `date_dimension` query parameter.
+    date_since-query-postback: Start of the date range in `yyyy-mm-dd hh:mm:ss` format.
+    date_until-query-postback: End of the date range in `yyyy-mm-dd hh:mm:ss` format.
+    update_timestamp: Time of the profile update in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format.
+    version_profile: Profile version.
+    objective-c-fields: application_id,installation_id,touch_type,click_datetime,click_id,click_ipv6,click_timestamp,click_url_parameters,click_user_agent,publisher_id,publisher_name,tracker_name,tracking_id,city,country_iso_code,device_type,device_model,device_manufacturer,os_version,os_name,windows_aid,google_aid,ios_ifv,ios_ifa
+    date_dimension-query: |
+     This parameter defines the point to calculate the date range from:
+     - `default`: When the event occurred on the device.
+     - `receive`: When the server received information about the event.
+    limit-query: Limit on the number of items in the list. Takes the maximum value by default. There is no guarantee that results will match from request to request (there may be differences in results sorting).
+    use_utf8_bom-query: |
+     Parameter that enables the use of byte order mark. The default value is `false`.
+    any-field-name-query: Filtering by the value of one of the available fields. Only the equality check operation is supported.
+    # datastream resources
+    status: Returns a list of streams for each event type. Each stream contains a list of 5-minute windows with data sizes and the composition of export fields.
+    data: Downloads a CSV file containing the data of a single window.
+    get-settings: Gets the current Data Stream export settings.
+    post-settings: Changes the current Data Stream export settings.
+    response-status: API response.
+    response-streams: List of streams with export data.
+    fingerptints-get: Returns a list of certificate fingerprints for the app.
+    fingerptints-post: Uploads a certificate fingerprint to the AppMetrica server.
+    fingerptints-delete: Deletes the specified certificate fingerprint from the AppMetrica server.
+    response-data_type: |
+     The type of data that forms the stream.
+
+     Acceptable values:
+     - `event`
+     - `installation`
+     - `session_start`
+     - `session_end`
+     - `push_token`
+     - `crash`
+     - `error`
+     - `click`
+     - `revenue`
+     - `ecommerce`
+     - `ad_revenue`
+     - `attributed_event`
+     - `deeplink`
+    ecom-type: |
+     Purchase event type. Possible values:
+     - `show_screen`
+     - `show_product_card`
+     - `show_product_details`
+     - `add_cart_item`
+     - `remove_cart_item`
+     - `begin_checkout`
+     - `purchase`
+    response-stream_windows: List of stream windows.
+    response-stream_window_timestamp: Unix timestamp in seconds pointing to the data window. It is used to specify a window for downloading data.
+    response-export_schema_id: ID of the set of CSV fields.
+    response-payload_bytes: The size of the CSV file in bytes, excluding the CSV header.
+    response-event_count: The number of events in the CSV file.
+    response-update_timestamp: Unix timestamp in seconds. Indicates the time of the last data change in this window. Changes occur in the last windows to which data is currently being appended.
+    response-export_fields: Contains a list of sets of CSV fields that were used to generate data windows.
+    response-field_names: List of string names of fields selected for export.
+    response-export_format: |
+     Data export format. Acceptable values: `csv`, `json`.
+    response-include_events: |
+     White list of event names. If the list isn't empty, only events whose `event_name` are in the list will be exported. Limit: 10 thousand items.
+    response-exclude_events: |
+     Black list of event names. Those events whose `event_name` are in the list will be excluded from export. Limit: 10 thousand items.
+    response-event_attribution: |
+     The attribution model for the `attributed_event` data type. Acceptable values:
+     - `first_appmetrica` — "first click" in terms of AppMetrica;
+     - `last_appmetrica` — "last click" in terms of AppMetrica.
+
+     If not specified, the default value `last_appmetrica` is used.
+    fingerprints: List of certificate fingerprints for the app.
+    fingerprints-id: The ID of the certificate fingerprint (in the request, this parameter is called `fingerprint_id`).
+    fingerprint: Certificate fingerprint.
+    certificate_verification_status: |
+     Whether the certificate fingerprint of the app matches (the result of comparing the fingerprint uploaded via the Management API against the fingerprint associated with the event). It's used for [event verification](../../data-collection/index.md#verification-events). Acceptable values:
+
+     - `unknown`: Status is unknown.
+     - `valid`: The signature has successfully passed the check.
+     - `invalid`: The certificates do not match.
+     - `unsupported_operating_system`: The operating system is other than Android.
+     - `empty_event_certificate`: No certificate in the event.
+    attributed_event_type: |
+     The type of the attributed event. Allows you to distinguish between export data types combined into a common type `attributed_event`. Acceptable values:
+
+     - `event` — Application events;
+     - `revenue` — Revenue;
+     - `ecommerce` — In-App purchases;
+     - `ad_revenue` — Ad Revenue.
+    event_attribution_model: |
+     The selected attribution model in the Data Stream settings. Acceptable values:
+
+     - `first_appmetrica` — "first click" in terms of AppMetrica;
+     - `last_appmetrica` — "last click" in terms of AppMetrica.
+
+     If not specified, the default value `last_appmetrica` is used.
+    event_initial_event_type: |
+     The user's first interaction with the app after viewing or clicking an ad. Acceptable values:
+
+     - `installation` — application installation;
+     - `deeplink` — opening a deep link.
+    conversion_id: |
+     A list of conversion IDs achieved with this event. It has the format of a JSON list of numbers, for example: `[1,2,3]`.
+    conversion_name: |
+     A list of conversion names. Matches the list of `conversion_id`. It has the format of a JSON list of strings, for example: `["conv 1","conv 2","conv 3"]`.
+    conversion_attribution_window_size: |
+     List of conversion attribution window sizes. Matches the list of `conversion_id`. Measured in seconds. It has the format of a JSON list of numbers, for example: `[86400,604800,86400]`.
+    tracker_name: Name of the tracker being added to the AppMetrica interface.
+    tracking_id: ID of the AppMetrica tracker.
+    publisher_id: ID of the AppMetrica publisher.
+    publisher_name: Name of the AppMetrica partner.
+    # post api
+    post_api_key: A token for data uploading. You can get it in the **Settings** section of your application.
+    post-profile_id: User profile ID. The Post API allows you only to upload data for identifiers that were previously sent via the SDK.
+    post-appmetrica_device_id: Hash from the unique identifier of the device set by AppMetrica. The Post API allows you only to upload data for identifiers that were previously sent via the SDK.
+    post-timestamp: |
+     Time of the event in [Unix time](https://en.wikipedia.org/wiki/Unix_time) format.
+     With the Post API, you can upload events only if the difference between the event date (event_timestamp) and the upload date is no more than seven days.
+    # post-session_type: |
+     #"Тип сессии. Возможные значения:
+     #- `foreground` — в отчете [События](../mobile-reports/events-report.md) будет увеличиваться метрика **Пользователи**.
+     #- `background` — в отчете [События](../mobile-reports/events-report.md) будет увеличиваться метрика **Устройства**. Такие события не будут попадать в отчет с группировкой по пользователям и в карточку профиля.
+
+     #Значение по умолчанию: `background`."
+    post-revenue_event_type: |
+     Purchase event type. List of available types:
+
+     - `one_time_purchase`: Making a one-time purchase.
+     - `trial_started`: Starting a subscription with a trial period.
+     - `intro_started`: Starting a subscription with an intro offer.
+     - `promo_started`: Starting a subscription with a promo offer.
+     - `subscription_converted`: Paying the full subscription fee after an introductory offer.
+     - `subscription_started`: Starting a subscription without an introductory offer.
+     - `subscription_renewed`: Paying for a new subscription period.
+     - `cancellation`: Canceling a subscription. After this event, the user may have a paid period left, but no more fees will be charged.
+     - `uncancellation`: Subscription activation event from Apple ID settings.
+     - `expired`: Subscription has expired.
+     - `billing_issues`: Error when paying for subscription renewal.
+     - `refund`: Refunding a subscription or one-time purchase.
+    post-price: Price. Revenue amount in decimal(10.8) format (a decimal fraction with 10 digits before and 8 digits after the decimal point).
+    post-currency: Currency of the purchase.
+    post-payload: "Arbitrary payload: Additional information presented as key-value pairs. The maximum size is 30 KB. If the value exceeds this limit, it will be truncated by AppMetrica."
+    post-transaction_id: Unique transaction ID.
+    post-revenue: Revenue per ad impression. Revenue amount in decimal(10.8) format (a decimal fraction with 10 digits before and 8 digits after the decimal point).
+    post-ad_type: |
+     Ad type. Available values: `native, banner, rewarded, interstitial, mrec, other`.
+    post-ad_network: Advertising network name.
+    post-ad_unit_id: Unit ID from the advertising network.
+    post-ad_unit_name: Unit name from the advertising network.
+    post-ad_placement_id: Placement ID from the advertising network.
+    post-ad_placement_name: Placement name from the advertising network.
+    post-precision: Accuracy of data transmission. For example, `publisher_defined, estimated`.
+    post-ecom_event_type: |
+     E-commerce event type. Possible values: SHOW_SCREEN, SHOW_PRODUCT_CARD, SHOW_PRODUCT_DETAILS, ADD_TO_CART, REMOVE_FROM_CART, BEGIN_CHECKOUT, PURCHASE.
+    post-product_name: Product name.
+    # push api
+    push-group: Group for sending push messages.
+    push-app_id: App ID to create the group for.
+    push-name: Unique name of the group.
+    push-send_rate: |
+     Dispatch speed limit for push messages (messages per second).
+
+     The default value is 5000 (maximum).
+
+     The minimum value is 100.
+    push-id: ID of the created group.
+    app_id: App ID.
+    push-get-groups: Information about groups.
+    push-get-id: Group ID.
+    push-transfer: Information about the dispatch.
+    push-transfer-id: ID of the dispatch.
+    push-transfer-status: |
+     Dispatch status. Possible values:
+
+     - `failed`: The request failed validation. The reason is in the `errors` field.
+     - `in_progress`: The request was successfully validated. A dispatch is in progress.
+     - `pending`: The request has been accepted and is awaiting validation.
+     - `sent`: Dispatch completed.
+    push-transfer-errors: Description of the validation error. The field is available with the `failed` status.
+    push-transfer-creation-date: The date the dispatch request was created.
+    #types
+    type1: "`!*`: Not equal to, with wildcard search."
+    type2: "`!.`: Not found among the values."
+    type3: "`!=`: Not equal to."
+    type4: "`!@`: Not a substring."
+    type5: "`!~`: Doesn't match the regular expression."
+    type6: "`<`: Less than."
+    type7: "`<=`: Less than or equal to."
+    type8: "`=*`: Equal to, with wildcard search."
+    type9: "`=.`: Found among the values."
+    type10: "`==`: Equal to."
+    type11: "`=@`: Is a substring."
+    type12: "`=~`: Matches the regular expression."
+    type13: "`>`: Greater than."
+    type14: "`>=`: Greater than or equal to."
+
+
+

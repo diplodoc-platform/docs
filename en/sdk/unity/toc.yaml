@@ -1,0 +1,24 @@
+title: Unity
+items:
+  - name: Changelog
+    href: changelog.md
+  - name: Getting advertising IDs
+    href: get-ad-id.md
+  - name: Migration guides
+    items:
+      - name: AppMetrica Unity Plugin Migrating to version 6.0.0
+        href: analytics/migration-io-6-0-0.md
+      - name: AppMetrica Push Unity Plugin. Migrating to version 2.0.0
+        href: push/migration-io-2-0-0.md
+  - name: AppMetrica SDK
+    items:
+      - name: Integrating the plugin
+        href: analytics/quick-start.md
+      - name: Methods
+        href: analytics/methods.md
+      - name: Usage examples
+        href: analytics/unity-operations.md
+  - name: Push SDK
+    items:
+      - name: Installation and initialization
+        href: push/quick-start.md

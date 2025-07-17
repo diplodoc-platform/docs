@@ -1,0 +1,1 @@
+To set a custom reporting period, use the ![](../../../_images/button-date.png) button. The selected time interval can be grouped by hours, days, weeks, or months.

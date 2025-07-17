@@ -1,0 +1,25 @@
+items:
+  - name: Integrations
+    items:
+      - name: Engines and environments
+        href: integrations/engines-and-environments.md
+      - name: Ad networks and technologies
+        href: integrations/ad-networks-and-technologies.md
+      - name: Anti-fraud
+        href: integrations/anti-fraud.md
+      - name: Push services
+        href: integrations/push-services.md
+      - name: Subscription tracking
+        href: integrations/subscription-tracking.md
+      - name: Other
+        href: integrations/other.md
+  - name: Partners
+    items:
+      - name: Performance agencies
+        href: partner-directory/performance-agencies.md
+      - name: Resellers
+        href: partner-directory/resellers.md
+  - href: connect-ad.md
+    hidden: true
+  - name: Exporting data to Yandex Cloud
+    href: ../common/cloud.md

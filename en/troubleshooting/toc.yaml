@@ -1,0 +1,12 @@
+items:
+  - name: FAQ and troubleshooting
+    href: troubleshooting.md
+  - name: Limiting custom events
+    href: limit-events.md
+  - name: Contact support
+    href: feedback-new.md
+  - name: Make a suggestion
+    href: improvement-idea.md
+  - name: Contact AppMetrica key customer support
+    href: feedback-priority.md
+    hidden: true
