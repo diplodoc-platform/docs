@@ -38,6 +38,14 @@
 
 {% endcut %}
 
+
+{% note info %}
+
+Выбранный таб сохраняется в URL как параметр `?tab=name_value`, позволяя делиться прямой ссылкой на него.
+
+{% endnote %}
+
+
 ## Элемент по умолчанию
 
 Если нужно, чтобы элемент был раскрыт по умолчанию, добавьте к нему атрибут `{selected}`.
@@ -77,108 +85,3 @@
   Текст таба 3.
 
 {% endlist %}
-
-
-## Синхронизация
-
-Чтобы одновременно переключать единообразные вкладки в пределах одной страницы, примените атрибут `group`:
-
-```markdown
-{% list tabs group=instructions %}
-
-  - Python
-
-    About python
-
-    - Tab with list
-    - One
-    - Two
-
-  - Tab with list
-    1. One
-    2. Two
-
-  - Next
-
-    hello world
-
-{% endlist %}
-
-
-
-{% list tabs group=instructions %}
-
-  - Python
-
-    About python
-
-    - Tab with list
-    - One
-    - Two
-
-  - Tab with list
-    1. One
-    2. Two
-
-  - Next
-
-    hello world 2
-
-
-{% endlist %}
-```
-
-**Результат:**
-
-{% list tabs group=instructions %}
-
-  - Python
-
-    About python
-
-    - Tab with list
-    - One
-    - Two
-
-
-  - Tab with list
-
-    1. One
-    2. Two
-
-
-  - Next
-
-    hello world
-
-{% endlist %}
-
-
-
-{% list tabs group=instructions %}
-
-  - Python
-
-    About python
-
-    - Tab with list
-    - One
-    - Two
-
-
-  - Tab with list
-
-    1. One
-    2. Two
-
-  - Next
-
-    hello world 2
-
-{% endlist %}
-
-{% note info %}
-
-  Состояние табов сохраняется при перезагрузки страницы
-
-{% endnote %}
