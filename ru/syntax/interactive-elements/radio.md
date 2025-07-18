@@ -135,5 +135,3 @@
   Текст.
 
 {% endlist %}
-
-{% include [interactive-elements-sync](../../_includes/interactive-elements-sync.md) %}

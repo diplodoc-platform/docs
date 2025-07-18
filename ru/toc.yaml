@@ -84,6 +84,8 @@ items:
                 href: syntax/interactive-elements/dropdawn.md
               - name: Аккордеон
                 href: syntax/interactive-elements/accordion.md
+              - name: Общие параметры
+                href: syntax/interactive-elements/common-params.md
           - name: Ссылки
             href: syntax/links.md
           - name: Медиа

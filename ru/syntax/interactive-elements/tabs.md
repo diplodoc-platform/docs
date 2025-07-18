@@ -85,5 +85,3 @@
   Текст таба 3.
 
 {% endlist %}
-
-{% include [interactive-elements-sync](../../_includes/interactive-elements-sync.md) %}
