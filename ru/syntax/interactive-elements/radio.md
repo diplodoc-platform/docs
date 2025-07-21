@@ -95,3 +95,5 @@
 - отступ для содержимого таба - два пробела.
 
 {% endnote %}
+
+{% include [common-params](../../_includes/common-params-note.md) %}

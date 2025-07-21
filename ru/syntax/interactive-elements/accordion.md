@@ -37,3 +37,6 @@
   Контент для пункта 3.
 
 {% endlist %}
+
+{% include [common-params](../../_includes/common-params-note.md) %}
+

@@ -30,8 +30,4 @@
 
 {% endlist %}
 
-{% note info %}
-
-Выбранный дропдаун сохраняется в URL как параметр `?tab=name_value`, позволяя делиться прямой ссылкой на него.
-
-{% endnote %}
+{% include [common-params](../../_includes/common-params-note.md) %}
