@@ -1,3 +1,13 @@
+---
+title: Заголовок 2
+
+interface:
+  feedback: true
+  toc-header: false
+  favicon-src: https://cs11.pikabu.ru/post_img/big/2018/11/12/6/1542010753153392364.png
+---
+
+
 # Примеры использования методов
 
 ## Инициализация библиотеки с расширенной конфигурацией {#initialize}

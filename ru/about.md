@@ -1,5 +1,9 @@
 ---
-title: Заголовок
+title: Заголовок 1
+
+feedback: true
+toc: false
+favicon-src: https://cs11.pikabu.ru/post_img/big/2018/11/12/6/1542010753153392364.png
 ---
 
 
