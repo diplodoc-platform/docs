@@ -2,11 +2,12 @@
 
 {% note warning "Beta-функциональность" %}
 
+
 Функция находится в состоянии бета, поэтому может некорректно работать на больших проектах со сложной структурой. При возникновении проблем сообщите об этом с помощью [GitHub issues](https://github.com/yandex-cloud/yfm-docs/issues).
+
 
 {% endnote %}
 
-
 Вы можете собрать весь проект в виде одного HTML-файла. Для этого при выполнении команды `yfm` укажите ключ запуска `--single-page`.
 
-
+{% include [single-page-ex](./_includes/settings-single-page-ex.md) %}

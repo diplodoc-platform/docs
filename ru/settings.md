@@ -77,7 +77,7 @@ authors:
 |
 Собирать [одностраничную сборку](tools/docs/singlepage.md). Будет создан файл `single-page.html`, который объединит содержимое всех файлов проекта. 
 
-Страница доступна по адресу `<корень_документации>/single-page`.
+{% include [single-page-ex](./_includes/settings-single-page-ex.md) %}
 |
 `bool`<br>`false`
 ||
