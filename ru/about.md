@@ -1,3 +1,8 @@
+---
+title: Заголовок
+---
+
+
 # ECommerce
 
 При совершении покупок в приложении пользователи выполняют различные действия (ECommerce-события). Например:
@@ -35,3 +40,5 @@ AppMetrica позволяет собирать информацию о таки�
 - [Flutter](features.md#send-ecommerce)
 - [React Native](features.md#send-ecommerce)
 - [Unity](features.md#send-ecommerce)
+
+{% include notitle [feedback](./_includes/feedback-button.md) %}
