@@ -10,4 +10,4 @@
 
 Вы можете собрать весь проект в виде одного HTML-файла. Для этого при выполнении команды `yfm` укажите ключ запуска `--single-page`.
 
-{% include [single-page-ex](./_includes/settings-single-page-ex.md) %}
+{% include [single-page-ex](../../_includes/settings-single-page-ex.md) %}
