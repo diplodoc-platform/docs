@@ -93,7 +93,7 @@ You can add a "floating header" for tables. To do this, add the `{sticky-header}
 {sticky-header}
 ```
 
-**Результат**
+**Result**
 
 | Header 1  | Header 2  |
 | --------- | --------- |
