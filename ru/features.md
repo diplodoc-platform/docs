@@ -3,9 +3,12 @@ title: Заголовок 2
 
 interface:
   feedback: true
-  toc: false
+  toc-header: false
   favicon-src: https://cs11.pikabu.ru/post_img/big/2018/11/12/6/1542010753153392364.png
   qqq: wtf
+
+resources:
+  test: test
 
 docs-viewer:
   project-name: qqq
