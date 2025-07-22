@@ -50,6 +50,29 @@ Use the `:` symbol in the separator row to align the text in the columns to the 
 | Text | Text | Text |
 | Text | Text | Text |
 
+
+## Opening wide tables in a modal window
+
+It is convenient to open wide tables in a modal window. In simple tables, this is implemented using the attribute `{wide-content title="table name"}`. The attribute must be added after the table, leaving one empty row between them.
+
+```markdown
+| Header 1  | Header 2  |
+| --------- | --------  |
+| Текст     | Текст     |
+| Текст     | Текст     |
+
+{wide-content title="Table name"}
+```
+
+**Result**
+
+| Header 1  | Header 2  |
+| --------- | --------  |
+| Текст     | Текст     |
+| Текст     | Текст     |
+
+{wide-content title="Table name"}
+
 ## Adding a "floating header" to the table
 
 You can add a "floating header" for tables. To do this, add the `{sticky-header}` attribute after the table.
