@@ -1,5 +1,6 @@
 ---
 title: Заголовок 2
+description: Описание
 
 interface:
   feedback: true
