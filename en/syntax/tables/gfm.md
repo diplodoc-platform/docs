@@ -18,9 +18,9 @@ The header row is separated from table cells by three or more `-` characters. Co
 
 ```markdown
 | Header 1  | Header 2  |
-| ----------- | ----------- |
-| Text       | Text       |
-| Text       | Text       |
+| --------- | --------- |
+| Text      | Text      |
+| Text      | Text      |
 ```
 
 **Result**
@@ -37,8 +37,8 @@ In the table cells, you can use [line formatting](../base.md#line), [links](../l
 Use the `:` symbol in the separator row to align the text in the columns to the left, right, or center.
 
 ```markdown
-| Align left  | Align center        | Align right |
-| :---            |      :----:      |            ---: |
+| Align left     | Align center    | Align right    |
+| :---           |      :----:     |           ---: |
 | Text           | Text            | Text           |
 | Text           | Text            | Text           |
 ```
@@ -50,3 +50,82 @@ Use the `:` symbol in the separator row to align the text in the columns to the 
 | Text | Text | Text |
 | Text | Text | Text |
 
+
+## Opening wide tables in a modal window
+
+It is convenient to open wide tables in a modal window. In simple tables, this is implemented using the attribute `{wide-content title="table name"}`. The attribute must be added after the table, leaving one empty row between them.
+
+```markdown
+| Header 1  | Header 2  |
+| --------- | --------  |
+| Текст     | Текст     |
+| Текст     | Текст     |
+
+{wide-content title="Table name"}
+```
+
+**Result**
+
+| Header 1  | Header 2  |
+| --------- | --------  |
+| Текст     | Текст     |
+| Текст     | Текст     |
+
+{wide-content title="Table name"}
+
+## Adding a "floating header" to the table
+
+You can add a "floating header" for tables. To do this, add the `{sticky-header}` attribute after the table.
+
+```markdown
+| Header 1  | Header 2  |
+| --------- | --------- |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+...
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+
+{sticky-header}
+```
+
+**Result**
+
+| Header 1  | Header 2  |
+| --------- | --------- |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+
+{sticky-header}
