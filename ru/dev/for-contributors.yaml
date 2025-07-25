@@ -13,7 +13,7 @@ blocks:
       - type: basic-card
         content:
           title: Выберите задачу из [списка](https://github.com/orgs/diplodoc-platform/projects/7).
-          text: Есть разные уровни сложности задач: easy{style="color: green"}, medium{style="color: yellow"} и hard{style="color:red"}.
+          text: Есть разные уровни сложности задач — easy{style="color:green"}, medium{style="color:yellow"} и hard{style="color:red"}.
           textSize: s
 
       - type: basic-card
@@ -30,19 +30,19 @@ blocks:
 
       - type: basic-card
         content:
-          title: Если пул-реквест принят нашей командой, получите приз:
+          title: Если пул-реквест принят нашей командой, получите приз.
           text: 
           textSize: s
 
       - type: basic-card
         content:
-          title: За решение легких{style="color: green"} задач
+          title: За решение легких{style="color:green"} задач
           text: мерч Diplodoc
           textSize: s
 
       - type: basic-card
         content: 
-          title: За решение средних{style="color: yellow"} и сложных{style="color: red"} задач
+          title: За решение средних{style="color:yellow"} и сложных{style="color:red"} задач
           text: промокод на использование ресурсов Yandex Cloud. Количество задач для решения не ограничено, приз вы получите только за одно решение.
           textSize: s
 
