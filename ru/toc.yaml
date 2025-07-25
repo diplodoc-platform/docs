@@ -32,12 +32,6 @@ navigation:
     rightItems:
       - type: controls
 items:
-  - name: Баннеры
-    href: about.md
-    items:
-      - name: Баннер с внешним переходом
-        href: features.md
-        hidden: true
   - name: Платформа Diplodoc
     labeled: true
     href: index.yaml
