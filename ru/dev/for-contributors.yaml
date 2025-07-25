@@ -1,23 +1,17 @@
-# fullScreen: true
 blocks:
   - type: header-block
-    title: Программа для контрибьюторов
+    title: "Программа для контрибьюторов"
     description: |
       Программа для контрибьюторов — это возможность внести вклад в развитие Diplodoc и получить призы за участие.
 
   - type: card-layout-block
     title: Как принять участие
-    colSizes:
-      all: 12
-      xl: 4
-      sm: 6
-      md: 4
     children:
 
       - type: basic-card
         title: Выберите задачу из [списка](https://github.com/orgs/diplodoc-platform/projects/7).
         text: |
-          Есть разные уровни сложности задач: easy{style="color: green"}, medium{style="color: yellow"} и hard{style="color: red"}.
+          Есть разные уровни сложности задач: easy, medium и hard.
 
       - type: basic-card
         title: Ознакомьтесь с [документацией для контрибьюторов](https://diplodoc.com/docs/ru/dev/).
@@ -32,13 +26,13 @@ blocks:
 
       - type: basic-card
         title: |
-          За решение легких{style="color: green"} задач
+          За решение легких задач
         text: |
           мерч Diplodoc
 
       - type: basic-card
         title: |
-          За решение средних{style="color: yellow"} и сложных{style="color: red"} задач
+          За решение средних и сложных задач
         text: |
           промокод на использование ресурсов Yandex Cloud. Количество задач для решения не ограничено, приз вы получите только за одно решение.
 
