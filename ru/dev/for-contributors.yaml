@@ -4,47 +4,44 @@ blocks:
     title: Программа для контрибьюторов
     description: |
       Программа для контрибьюторов — это возможность внести вклад в развитие Diplodoc и получить призы за участие.
-    textWidth: 'm'
 
   - type: card-layout-block
+    colSizes:
+      all: 12
+      xl: 4
+      sm: 6
+      md: 4
     title: Как принять участие
     children:
 
       - type: basic-card
-        content:
-          title: Выберите задачу из [списка](https://github.com/orgs/diplodoc-platform/projects/7).
-          text: Есть разные уровни сложности задач — easy{style="color:green"}, medium{style="color:yellow"} и hard{style="color:red"}.
-          textSize: s
+        title: Выберите задачу из [списка](https://github.com/orgs/diplodoc-platform/projects/7).
+        text: |
+          Есть разные уровни сложности задач: easy{style="color: green"}, medium{style="color: yellow"} и hard{style="color: red"}.
 
       - type: basic-card
-        content:
-          title: Ознакомьтесь с [документацией для контрибьюторов](https://diplodoc.com/docs/ru/dev/).
-          text: 
-          textSize: s
+        title: Ознакомьтесь с [документацией для контрибьюторов](https://diplodoc.com/docs/ru/dev/).
+        text: 
+          
+      - type: basic-card
+        title: Примите [лицензионное соглашение](https://yandex.ru/legal/cla/?lang=ru).
+        text: |
+          Подготовьте ваш пул-реквест. Когда будете отправлять его, добавьте комментарий: «Я согласен с условиями лицензионного соглашения, размещенного по [ссылке](https://yandex.ru/legal/cla/?lang=ru)».
 
       - type: basic-card
-        content:
-          title: Примите [лицензионное соглашение](https://yandex.ru/legal/cla/?lang=ru).
-          text: Подготовьте ваш пул-реквест. Когда будете отправлять его, добавьте комментарий «Я согласен с условиями лицензионного соглашения, размещенного по [ссылке](https://yandex.ru/legal/cla/?lang=ru)».
-          textSize: s
+        title: Если пул-реквест принят нашей командой, получите приз.
+        text: 
 
       - type: basic-card
-        content:
-          title: Если пул-реквест принят нашей командой, получите приз.
-          text: 
-          textSize: s
+        title: |
+          За решение легких{style="color: green"} задач
+        text: |
+          мерч Diplodoc
 
       - type: basic-card
-        content:
-          title: За решение легких{style="color:green"} задач
-          text: мерч Diplodoc
-          textSize: s
-
-      - type: basic-card
-        content: 
-          title: За решение средних{style="color:yellow"} и сложных{style="color:red"} задач
-          text: промокод на использование ресурсов Yandex Cloud. Количество задач для решения не ограничено, приз вы получите только за одно решение.
-          textSize: s
+        title: |
+          За решение средних{style="color: yellow"} и сложных{style="color: red"} задач
+        text: промокод на использование ресурсов Yandex Cloud. Количество задач для решения не ограничено, приз вы получите только за одно решение.
 
   - type: content-layout-block
     size: s
