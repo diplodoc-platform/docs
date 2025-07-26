@@ -11,17 +11,19 @@ blocks:
     children:
 
       - type: basic-card
-        title: Выберите задачу из [списка](https://github.com/orgs/diplodoc-platform/projects/7).
-        text: |
-          Есть разные уровни сложности задач: easy, medium и hard.
+        title: Выберите задачу
+        text: | 
+          из [списка](https://github.com/orgs/diplodoc-platform/projects/7). Есть разные уровни сложности задач: easy, medium и hard.
 
       - type: basic-card
-        title: Ознакомьтесь с [документацией для контрибьюторов](https://diplodoc.com/docs/ru/dev/).
-          
-      - type: basic-card
-        title: Примите [лицензионное соглашение](https://yandex.ru/legal/cla/?lang=ru).
+        title: Ознакомьтесь
         text: |
-          Подготовьте ваш пул-реквест. Когда будете отправлять его, добавьте комментарий: «Я согласен с условиями лицензионного соглашения, размещенного по [ссылке](https://yandex.ru/legal/cla/?lang=ru)».
+          с [документацией для контрибьюторов](https://diplodoc.com/docs/ru/dev/).
+
+      - type: basic-card
+        title: Примите
+        text: |
+          [лицензионное соглашение](https://yandex.ru/legal/cla/?lang=ru). Подготовьте ваш пул-реквест. Когда будете отправлять его, добавьте комментарий: «Я согласен с условиями лицензионного соглашения, размещенного по [ссылке](https://yandex.ru/legal/cla/?lang=ru)».
 
       - type: basic-card
         title: |
