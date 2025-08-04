@@ -13,33 +13,36 @@ blocks:
       - type: basic-card
         title: Выберите задачу
         text: | 
-          из [списка](https://github.com/orgs/diplodoc-platform/projects/7). Есть разные уровни сложности задач: easy, medium и hard.
+          Список [здесь](https://github.com/orgs/diplodoc-platform/projects/7). Есть разные уровни сложности: easy, medium и hard.
 
       - type: basic-card
-        title: Ознакомьтесь
+        title: Изучите гайды
         text: |
-          с [документацией для контрибьюторов](https://diplodoc.com/docs/ru/dev/).
+          [О нюансах разработки Diplodoc](https://diplodoc.com/docs/ru/dev/).
 
       - type: basic-card
-        title: Примите
+        title: Примите лицензионное соглашение
         text: |
-          [лицензионное соглашение](https://yandex.ru/legal/cla/?lang=ru). Подготовьте ваш пул-реквест. Когда будете отправлять его, добавьте комментарий: «Я согласен с условиями лицензионного соглашения, размещенного по [ссылке](https://yandex.ru/legal/cla/?lang=ru)».
+          В пул-реквест добавьте комментарий: «Я согласен с условиями лицензионного соглашения, размещенного по [ссылке](https://yandex.ru/legal/cla/?lang=ru)».
 
       - type: basic-card
         title: |
-          Если пул-реквест принят нашей командой, получите приз:
+          Получите приз
+        text: |
+          Если наша команда примет пул-реквест.
+
 
       - type: basic-card
         title: |
-          За решение задач уровня easy
+          Мерч Diplodoc
         text: |
-          мерч Diplodoc
+          За задачи уровня easy.
 
       - type: basic-card
         title: |
-          За решение задач уровня medium и hard
+          Промокод Yandex Cloud
         text: |
-          промокод на использование ресурсов Yandex Cloud. Количество задач для решения не ограничено, приз вы получите только за одно решение.
+          За задачи уровня medium и hard. Приз вручается только один раз.
 
   - type: content-layout-block
     size: s
