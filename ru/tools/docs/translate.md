@@ -1,6 +1,5 @@
 ---
-meta:
-  tags: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'internationalization']
+keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'internationalization']
 ---
 # Локализация
 
