@@ -1,10 +1,10 @@
 ---
-title: Title
+title: Title 1
 
 interface:
+  toc: false
   favicon-src: https://s0.rbk.ru/v6_top_pics/media/img/3/74/347096291388743.jpeg
 ---
-
 
 # О Diplodoc
 
