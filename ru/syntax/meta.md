@@ -26,14 +26,19 @@ description: Описание
 
 #|
 || **Название** | **Описание** | **Тип и значение по умолчанию** ||
-|| `title` | Мета-заголовок страницы.
+|| `copyright` | Указание владельца контента страницы.
 
-Прописывается в `<meta name="title" content="..."/>`. | `string`
+Прописывается в `<meta name="copyright" content="..."/>` | `string`
 
 — ||
 || `description` | Мета-описание страницы.
 
 Прописывается в `<meta name="description" content="..."/>` | `string`
+
+— ||
+|| `keywords` | Список ключевых слов страницы для поисковых роботов.
+
+Прописывается в мета-тег `<meta name="keywords" content="keyword1,keyword2,..."/>` | `string[]`
 
 — ||
 || `interface` | Секция с настройками отображения интерфейса. Переопределяет установленные в [одноимённой секции .yfm](../settings.md#interface) настройки для текущей страницы.
@@ -50,7 +55,7 @@ interface:
 
 | `object`
 
-— ||
+`undefined` ||
 || `resources` | Секция для управления ресурсами страницы.
 
 Переопределяет настройки `resources`, установленные в [секции resources .yfm](../settings.md#resources).
@@ -62,6 +67,11 @@ interface:
 {% endnote %}
 
 | `object`
+
+`undefined` ||
+|| `title` | Мета-заголовок страницы.
+
+Прописывается в `<meta name="..." content="..."/>`. | `string`
 
 — ||
 
