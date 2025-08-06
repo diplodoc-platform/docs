@@ -6,17 +6,23 @@
 
 Стандартная разметка для вставки изображения имеет вид:
 ```
-![alt-текст](_images/image.png "текст_подсказки" =100x100)
+![alt-текст](_images/image.png "текст_подсказки"){width=100 height=100}
 ```
 
   * `alt-текст` —  название изображения, задается автором. В сборке не отображается.
   * `_images/image.png` — URL или путь до файла изображения.
   * `"текст_подсказки"` — подсказка, которая будет отображаться при наведении на изображение. Необязательный параметр.
-  * `=100x100` — размер изображения. Необязательный параметр.
+  * `width=100`, `height=100` — размер изображения. Необязательные параметры.
 
     {% note tip %}
 
-    Если вы хотите сохранить оригинальное соотношение сторон изображения, укажите только его ширину: `=100x`.
+    Если вы хотите сохранить оригинальное соотношение сторон изображения, укажите только его ширину: `width=100`.
+
+    {% endnote %}
+
+    {% note warning %}
+
+    Не рекомендуется использовать передачу размера изображения через `=100x200` внутри скобок со ссылкой — этот формат нарушает обратную совместимость с markdown-разметкой.
 
     {% endnote %}
 
@@ -25,12 +31,12 @@
 Вы можете сделать изображение кликабельным, используя [правила оформления ссылок](./links.md). Для этого добавьте стандартную разметку изображения в ту часть, которая предназначена для указания текста ссылки.
 
 ```markdown
-[![An old rock in the desert](../_images/mountain.jpg "Mountain" =100x200)](https://yandex.com/images/search?text=mountain)
+[![An old rock in the desert](../_images/mountain.jpg "Mountain"){width=100 height=200}](https://yandex.com/images/search?text=mountain)
 ```
 
 **Результат:**
 
-[![An old rock in the desert](../_images/mountain.jpg "Mountain" =100x200)](https://yandex.com/images/search?text=mountain)
+[![An old rock in the desert](../_images/mountain.jpg "Mountain"){width=100 height=200}](https://yandex.com/images/search?text=mountain)
 
 ### Reference-style разметка для изображений {#reference-style}
 
@@ -47,6 +53,12 @@
 ![An old rock in the desert][image1]
 
 [image1]: ../_images/mountain.jpg "Mountain"
+
+
+### Инлайнинг SVG
+
+Если в документации используются SVG-изображения, Diplodoc при генерации встраивает их напрямую в HTML-код в виде тега `<svg>`. Такое решение позволяет применять настройки текущей темы документации к SVG.
+
 
 ## Видео {#video}
 

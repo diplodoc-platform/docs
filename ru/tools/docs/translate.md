@@ -138,7 +138,7 @@ meta:
   
 {% endlist %}
 
-### Файл фильтр
+### Фильтрация файлов {#file-filter}
 
 Если необходимо ограничить переводимые тексты фиксированным набором файлов, механизм гибких фильтров `include/exclude` может не подойти.
 В таком случае можно сформировать файл с расширением `*.list`. Например `translate.list`.
@@ -160,3 +160,31 @@ meta:
 ```bash
 {{PROGRAM}} translate --input ./translate.list --source {{translate.source-lang}} --target {{translate.target-lang}}
 ```
+
+### Фильтрация контента страниц {#content-filter}
+
+Для исключения частей контента из перевода на платформе предусмотрены следующие синтаксические конструкции.
+
+* `translate=no` для блоков кода:
+  ````
+  ```sql translate=no
+  // этот блок не уйдёт на перевод
+  SELECT * FROM posts WHERE id=123 LIMIT 1
+  ```
+  ````
+
+* `:no-translate` для строковых фрагментов (работает в yaml- и в md-файлах):
+  ```
+  Формат даты: :no—translate[ISO 8601] со смещением относительно :no—translate[UTC].
+  ```
+
+* `:::no-translate` для блоков контента:
+  ```
+  :::no–translate
+  // весь этот блок не уйдёт на перевод
+  Inconsistent indentation for list items at the same level:
+    * One
+  * Two
+  * Three
+  :::
+  ```
