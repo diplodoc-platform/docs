@@ -36,13 +36,13 @@ blocks:
         title: |
           Мерч Diplodoc
         text: |
-          За задачи уровня easy.
+          За задачи уровня [easy](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Aeasy).
 
       - type: basic-card
         title: |
           Промокод Yandex Cloud
         text: |
-          За задачи уровня medium и hard. Приз вручается только один раз.
+          За задачи уровня [medium](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Amedium) и [hard](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Ahard). Приз вручается только один раз.
 
   - type: content-layout-block
     size: s
