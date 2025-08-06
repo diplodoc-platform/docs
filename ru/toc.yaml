@@ -38,6 +38,8 @@ items:
   - name: Платформа Diplodoc
     labeled: true
     href: index.yaml
+  - name: Поиск
+    href: search.md
   - name: О платформе
     href: about.md
   - name: Функциональные возможности
