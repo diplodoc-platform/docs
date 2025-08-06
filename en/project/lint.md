@@ -62,7 +62,7 @@ YFM001:
 
 Rules with the prefix `MD` are provided by the library [markdownlint](https://github.com/DavidAnson/markdownlint).
 A detailed description of all the rules with `MD` prefix can be found [here](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).
-A detailed description of all the rules with `YFM` prefix can be found [here](https://github.com/yandex-cloud/yfm-transform/blob/master/lib/yfmlint/README.md).
+A detailed description of all the rules with `YFM` prefix can be found [here](https://github.com/diplodoc-platform/transform/blob/master/src/transform/yfmlint/README.md).
 
 In the `.yfmlint` config in the `log-levels` section, you can override the logging level separately for each rule: `error`, `warn`, `disabled`.
 
@@ -90,7 +90,7 @@ log-levels:
 ```
 
 Default values for rules with the prefix `MD` are specified [here.](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml)
-Default values for rules with the prefix `YFM` are specified [here.](https://github.com/yandex-cloud/yfm-transform/blob/master/lib/yfmlint/yfmlint.js)
+Default values for rules with the prefix `YFM` are specified [here.](https://github.com/diplodoc-platform/transform/blob/master/src/transform/yfmlint/yfmlint.ts)
 
 Rules can be enabled, disabled, and configured for an entire file or a paragraph of a file.
 Look at the examples [here.](https://github.com/DavidAnson/markdownlint/blob/a852407c887ec60949aa5365ed964bab833f962f/README.md#configuration) 
