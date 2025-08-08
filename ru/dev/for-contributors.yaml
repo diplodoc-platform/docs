@@ -1,0 +1,51 @@
+blocks:
+  - type: header-block
+    title: "Программа для контрибьюторов"
+    description: |
+      Программа для контрибьюторов — это возможность внести вклад в развитие Diplodoc и получить призы за участие.
+
+  - type: card-layout-block
+    title: Как принять участие
+    colSizes:
+      all: 6
+    children:
+
+      - type: basic-card
+        title: Выберите задачу
+        text: | 
+          Список [здесь](https://github.com/orgs/diplodoc-platform/projects/7). Есть разные уровни сложности: easy, medium и hard.
+
+      - type: basic-card
+        title: Изучите гайды
+        text: |
+          [О нюансах разработки Diplodoc](https://diplodoc.com/docs/ru/dev/).
+
+      - type: basic-card
+        title: Примите лицензионное соглашение
+        text: |
+          В пул-реквест добавьте комментарий: «Я согласен с условиями лицензионного соглашения, размещенного по [ссылке](https://yandex.ru/legal/cla/?lang=ru)».
+
+      - type: basic-card
+        title: |
+          Получите приз
+        text: |
+          Если наша команда примет пул-реквест.
+
+
+      - type: basic-card
+        title: |
+          Мерч Diplodoc
+        text: |
+          За задачи уровня [easy](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Aeasy).
+
+      - type: basic-card
+        title: |
+          Промокод Yandex Cloud
+        text: |
+          За задачи уровня [medium](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Amedium) и [hard](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Ahard). Приз вручается только один раз.
+
+  - type: content-layout-block
+    size: s
+    textContent:
+      text: "\_"
+animated: true  

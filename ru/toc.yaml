@@ -260,4 +260,6 @@ items:
   - name: Релизы
     items:
       - name: Версия 5.0
-        href: ./releases/v5.md          
+        href: ./releases/v5.md   
+  - name: Программа для контрибьюторов
+    href: dev/for-contributors.yaml      
