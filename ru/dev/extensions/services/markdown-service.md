@@ -332,7 +332,7 @@ export class Extension {
 
 ### Интеграция с внешними сервисами
 
-```typescript
+```typescript translate=no
 export class Extension {
     constructor(private apiKey: string) {}
     
@@ -360,4 +360,5 @@ export class Extension {
     private formatExternalData(data: any) {
         // Форматирование данных в markdown
     }
-} 
+}
+```
