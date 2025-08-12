@@ -56,11 +56,11 @@
 Оператор `contains`:
 * для строки A проверяет, что она содержит подстроку B
   ```
-  {% if Object.title contains "API" %}
+  {% if Object.title contains 'API' %}
   ```
 * для массива A проверяет наличие в нём элемента B
   ```
-  {% if keywords contains "Extension" %}
+  {% if keywords contains 'Extension' %}
   ```
 
 ## Циклы {#cycles}
