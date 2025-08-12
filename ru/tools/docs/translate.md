@@ -57,17 +57,17 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
 #|
 || Параметр             | Формат    | Описание ||
-|| --source {{required}}| {{fmt.locale}} |
+|| `--source`{{required}}| {{fmt.locale}} |
 Код языка оригинального документа в формате ISO 639-1
 \
 `{{PROGRAM}} translate --source {{translate.source}}`
 ||
-|| --target {{required}}| {{fmt.locale}} |
+|| `--target`{{required}}| {{fmt.locale}} |
 Код языка переведенного документа в формате ISO 639-1
 \
 `{{PROGRAM}} translate --target {{translate.target}}`
 ||
-|| --input              | Path      | 
+|| `--input`              | Path      | 
 Путь до **корня** переводимого проекта или конкретного файла в проекте. Если не указан, используется директория запуска команды.
 \
 Директорию языка в пути указывать не надо — она добавляется автоматически. 
@@ -80,10 +80,10 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 \
 `{{PROGRAM}} translate -i translate.list` 
 ||
-|| --output             | Path      |
+|| `--output`             | Path      |
 Путь до **корня** проекта, в который нужно сохранить перевод. Если не указан, используется `input` директория.
 ||
-|| --include            | {{fmt.glob}} |
+|| `--include`            | {{fmt.glob}} |
 Набор правил для фильтрации отправляемых на перевод файлов. По умолчанию `{lang}/**/*.@(md\|yaml\|json)`.
 \
 Может быть передан несколько раз.
@@ -92,7 +92,7 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 \
 `{{PROGRAM}} translate --include {{translate.source-lang}}/**/*.md`
 ||
-|| --exclude            | {{fmt.glob}} |
+|| `--exclude`            | {{fmt.glob}} |
 Набор правил, запрещающих отправлять файлы на перевод. Применяется после `include`.
 \
 Может быть передан несколько раз.
@@ -109,7 +109,7 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
   #|
   || Параметр             | Формат         | Описание ||
-  || --auth {{required}}  | Path<br/>{{fmt.iam-token}}<br/>{{fmt.api-key}} |
+  || `--auth`{{required}}  | Path<br/>{{fmt.iam-token}}<br/>{{fmt.api-key}} |
   Токен авторизации. Может быть передан несколькими способами:
   \
   {{fmt.iam-token}} как параметр командной строки
@@ -125,11 +125,11 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
   `{{PROGRAM}} translate --auth path/to/.api-key`
 
   ||
-  || --folder {{required}}  | Id |
+  || `--folder`{{required}}  | Id |
   [Идентификатор каталога](https://cloud.yandex.ru/ru/docs/resource-manager/operations/folder/get-id), для которого у вашего аккаунта есть роль `ai.translate.user` или выше.
   ||
   {% if glossary-support == true %}
-  || --glossary | Path |
+  || `--glossary` | Path |
   TODO
   ||
   {% endif %}
