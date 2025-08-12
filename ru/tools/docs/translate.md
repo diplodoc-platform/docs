@@ -13,7 +13,7 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
 #|
 || Параметр             | Path
-|| --schema not_var{{optional}}| 
+|| --schema {{optional}}| 
 Путь до одного или нескольких файлов, содержащих кастомные схемы для перевода.
 \
 `{{PROGRAM}} translate extract --schema ./some/path/to/file.yaml ./some/path/toAnother/file.yaml`
@@ -39,16 +39,16 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
 ### Использование
 
-* Перевести проект в текущей директории с `{{translate.source-lang}}` на `not_var{{translate.target-lang}}`:
+* Перевести проект в текущей директории с `{{translate.source-lang}}` на `{{translate.target-lang}}`:
 
   ```
-  {{PROGRAM}} translate --source {{translate.source-lang}} --target not_var{{translate.target-lang}}
+  {{PROGRAM}} translate --source {{translate.source-lang}} --target {{translate.target-lang}}
   ```
 
 * Не переводить скрытые файлы в проекте:
 
   ```
-  {{PROGRAM}} translate --exclude {{translate.source-lang}}/**/_*.* --source {{translate.source-lang}} --target not_var{{translate.target-lang}}
+  {{PROGRAM}} translate --exclude {{translate.source-lang}}/**/_*.* --source {{translate.source-lang}} --target {{translate.target-lang}}
   ```
 
 ### Параметры вызова
@@ -157,7 +157,7 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 Пример вызова команды с файлом фильтром
 
 ```bash
-{{PROGRAM}} translate --input ./translate.list --source {{translate.source-lang}} --target not_var{{translate.target-lang}}
+{{PROGRAM}} translate --input ./translate.list --source {{translate.source-lang}} --target {{translate.target-lang}}
 ```
 
 ### Фильтрация контента страниц {#content-filter}
