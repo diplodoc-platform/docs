@@ -200,7 +200,7 @@ export class Extension {
 
 ### Сбор информации о контрибьюторах
 
-```typescript
+```typescript translate=no
 export class Extension {
     apply(program: Build) {
         getBaseHooks(program).BeforeAnyRun.tap('ContributorsCollector', (run) => {
@@ -222,3 +222,4 @@ export class Extension {
         });
     }
 } 
+```

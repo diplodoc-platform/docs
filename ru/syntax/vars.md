@@ -30,7 +30,7 @@
 
 Вы можете использовать условные операторы `if`, `else` и `elsif`, чтобы включать в документ определенные фрагменты текста в зависимости от значения переменных. Например, чтобы собрать две версии документа для разных ОС.
 
-```markdown
+```markdown translate=no
 {% if  OS == 'iOS' %}
 
 Скачайте приложение в [App Store](https://www.apple.com/ios/app-store/).
@@ -85,12 +85,12 @@ default:
     - Mark
 ```
 Тогда использование циклов приведет к следующим результатам:
-```markdown
+```markdown translate=no
 Prefix {% for user in users %} not_var{{user}} {% endfor %} Postfix
 ```
 Prefix Alice Mark Postfix
 
-```markdown
+```markdown translate=no
 Prefix
 
 {% for user in users %}
@@ -121,7 +121,7 @@ Postfix
 {% cut "Примеры использования фильтров" %}
 
 Пусть в [файле с пресетами переменных](../project/presets.md) заданы:
-```yaml
+```yaml translate=no
 default:
   user:
     name: alice
@@ -132,13 +132,13 @@ default:
 
 Тогда использование фильтров приведет к следующим результатам:
 
-```markdown
+```markdown translate=no
 Hello not_var{{ user.name | capitalize }}!
 ```
 
 Hello Alice!
 
-```markdown
+```markdown translate=no
 not_var{{ users | length }}
 
 not_var{{ user.name | length }} | length

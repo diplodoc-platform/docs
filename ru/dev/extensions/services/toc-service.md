@@ -337,7 +337,7 @@ export class Extension {
 
 ### Валидация структуры
 
-```typescript
+```typescript translate=no
 export class Extension {
     apply(program: Build) {
         getBaseHooks(program).BeforeAnyRun.tap('StructureValidator', (run) => {
@@ -351,3 +351,4 @@ export class Extension {
         });
     }
 } 
+```
