@@ -1,0 +1,51 @@
+blocks:
+  - type: header-block
+    title: "Contributor Program"
+    description: |
+      The Contributor Program is your chance to help develop Diplodoc and earn rewards for your participation.
+
+  - type: card-layout-block
+    title: How to participate
+    colSizes:
+      all: 6
+    children:
+
+      - type: basic-card
+        title: Pick a task
+        text: | 
+          The list is available [here](https://github.com/orgs/diplodoc-platform/projects/7). Tasks come in three difficulty levels: easy, medium, and hard.
+
+      - type: basic-card
+        title: Review the guides
+        text: |
+          [Diplodoc development guidelines](https://diplodoc.com/docs/ru/dev/).
+
+      - type: basic-card
+        title: Accept the License Agreement
+        text: |
+          In your pull request, add the following comment: “I accept the terms of the License Agreement published at [this link](https://yandex.ru/legal/cla/en/?lang=en)”.
+
+      - type: basic-card
+        title: |
+          Get your reward
+        text: |
+          If your pull request is accepted.
+
+
+      - type: basic-card
+        title: |
+          Diplodoc merch
+        text: |
+          For completing [easy](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Aeasy) tasks.
+
+      - type: basic-card
+        title: |
+          Yandex Cloud promo code
+        text: |
+          For completing [medium](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Amedium) and [hard](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Ahard) tasks. Each reward can be claimed only once.
+
+  - type: content-layout-block
+    size: s
+    textContent:
+      text: "\_"
+animated: true

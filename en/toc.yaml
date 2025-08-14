@@ -135,3 +135,5 @@ items:
       - name: YFM releases
         href: changelog.md
         hidden: true
+      - name: Contributor Program
+        href: for-contributors.yaml
