@@ -7,7 +7,8 @@ blocks:
   - type: card-layout-block
     title: How to participate
     colSizes:
-      all: 6
+      all: 12
+      sm: 6
     children:
 
       - type: basic-card
