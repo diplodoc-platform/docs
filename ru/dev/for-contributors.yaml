@@ -22,7 +22,8 @@ blocks:
   - type: card-layout-block
     title: Как принять участие
     colSizes:
-      all: 6
+      all: 12
+      sm: 6
     children:
 
       - type: basic-card
