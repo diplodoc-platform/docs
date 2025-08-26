@@ -8,13 +8,6 @@ analytics:
       theme: "accent"
       size: "xl"
 navigation:
-  logo:
-    url: "../ru"
-    urlTitle: 'Вернуться на главную'
-    dark:
-      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg"
-    light:
-      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
   header:
     leftItems:
       - text: "Как все устроено"
