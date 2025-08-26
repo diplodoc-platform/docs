@@ -50,3 +50,59 @@ Use the `:` symbol in the separator row to align the text in the columns to the 
 | Text | Text | Text |
 | Text | Text | Text |
 
+## Adding "sticky header" to a table
+
+For tables, you can add a "sticky header". To do this, you need to add the `{sticky-header}` attribute after the table.
+
+```markdown
+| Header1   | Header2   |
+| --------- | --------- |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+...
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+
+{sticky-header}
+```
+
+**Результат**
+
+| Header1   | Header2   |
+| --------- | --------- |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+| Text      | Text      |
+
+{sticky-header}

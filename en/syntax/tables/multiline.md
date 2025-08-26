@@ -207,3 +207,51 @@ i.e., "\^" and "\>".
 || \^                      | \>      | More text ||
 |#
 
+## Adding "sticky header" to a table
+
+For multi-line tables, just like for simple ones, you can add a "sticky header". To do this, you need to add the `{sticky-header}` attribute after the table.
+
+```markdown
+#|
+|| Header1                          | Header2    | Header3        ||
+|| Text in a single cell            | \>         | Text           ||
+|| \^                               | \>         | More text      ||
+|| Text in a single cell            | \>         | Text           ||
+...
+|| \^                               | \>         | More text      ||
+|| Text in a single cell            | \>         | Text           ||
+|| \^                               | \>         | **More text**  ||
+|#
+
+{sticky-header}
+```
+
+#|
+|| Header1                           | Header2.   | Header3        ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | More text      ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | **More text**  ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | More text      ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | **More text**  ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | More text      ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | **More text**  ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | More text      ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | **More text**  ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | More text.     ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | **More text**  ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | More text      ||
+|| Text in a single cell             | \>         | Text           ||
+|| \^                                | \>         | **More text**  ||
+|#
+
+{sticky-header}
