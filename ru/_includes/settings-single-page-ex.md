@@ -2,5 +2,5 @@
 
 ```
 <корень_документации>/
-single-page.
+single-page
 ```
