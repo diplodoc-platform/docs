@@ -1,6 +1,7 @@
 blocks:
   - type: header-block
     title: "Программа для контрибьюторов"
+    verticalOffset: 's'
     description: |
       Программа для контрибьюторов — это возможность внести вклад в развитие Diplodoc и получить призы за участие.
     background:
@@ -18,6 +19,14 @@ blocks:
           disableCompress: true
         color: '#C6FE4D'
         fullWidth: false
+    buttons:
+      - text: 'На GitHub'
+        size: 'promo'
+        url: 'https://github.com/diplodoc-platform'
+      - text: 'Задать вопрос'
+        theme: 'outlined'
+        size: 'promo'
+        url: 'https://t.me/diplodoc_ru'
 
   - type: card-layout-block
     title: Как принять участие
