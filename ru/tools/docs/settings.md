@@ -60,6 +60,9 @@ yfm -e ./local-extension
 ```
 ||
 ||
+`--watch, -w` | Запуск [watch-режима сборки](build.md#watch).
+||
+||
 `--lang, --langs` | Настроить поддерживаемые языки.
 ||
 ||
