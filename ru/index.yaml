@@ -21,6 +21,15 @@ blocks:
           disableCompress: true
         color: '#C6FE4D'
         fullWidth: false
+    buttons:
+      - text: 'Возможности платформы'
+        size: 'promo'
+        theme: 'outlined'
+        url: './features.md'
+      - text: 'Описание'
+        size: 'promo'
+        theme: 'outlined'
+        url: './about.md'
 
   - type: card-layout-block
     colSizes:
@@ -29,15 +38,6 @@ blocks:
       sm: 6
       md: 4
     children:
-
-      - type: basic-card
-        title: 
-          text: О платформе
-          textSize: s
-        text: |
-          [Описание](about.md)
-
-          [Возможности платформы](features.md)
 
       - type: basic-card
         title: 
@@ -124,6 +124,15 @@ blocks:
           [Публикация](deploy.md)
 
           [Программа для контрибьюторов](dev/for-contributors.yaml)
+
+      - type: basic-card
+        title: 
+          text: О платформе
+          textSize: s
+        text: |
+          [Описание](about.md)
+
+          [Возможности платформы](features.md)
 
   - type: content-layout-block
     size: s
