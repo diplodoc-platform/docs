@@ -5,7 +5,7 @@ blocks:
     description: |
       Платформа работы с документацией в парадигме Documentation as Code.
     textWidth: 'm'
-    verticalOffset: 'm'
+    verticalOffset: 's'
     background:
       light:
         image:
