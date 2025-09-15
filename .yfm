@@ -1,6 +1,9 @@
 allowHTML: true
 langs: ['en','ru']
 
+vcs: true
+mtimes: true
+
 interface:
   toc-header: false
   favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
