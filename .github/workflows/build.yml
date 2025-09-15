@@ -10,11 +10,13 @@ jobs:
     permissions: write-all
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Build
         uses: diplodoc-platform/docs-build-action@v3
         env:
           VCS_TOKEN: ${{ secrets.YC_UI_BOT_GITHUB_TOKEN }}
         with:
           revision: "pr-${{ github.event.pull_request.number }}"
+          cli-version: 5.11.4-fix-vcs-2
