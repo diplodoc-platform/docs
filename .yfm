@@ -9,6 +9,9 @@ interface:
   toc-header: false
   favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
 
+extensions:
+  - github-vcs
+
 resources:
   style:
     - _assets/style/custom.css
