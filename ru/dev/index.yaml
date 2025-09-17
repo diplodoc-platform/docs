@@ -1,7 +1,4 @@
 title: Гайды для разработчиков платформы Diplodoc
-meta:
-  title: Метаданные
-  noIndex: true
 links:
 - title: Быстрый старт
   description: Как быстро начать разработку с использованием GitHub Codespaces
@@ -12,6 +9,9 @@ links:
 - title: Метапакет
   description: Описание структуры метапакета. Нюансы работы с метапакетом.
   href: metapackage.md
-
-   
-  
+- title: Extensions API
+  description: Как создавать расширения функциональности Diplodoc. Примеры и справка.
+  href: extensions-api.md
+- title: Программа для контрибьюторов
+  description: 'Улучшаем платформу вместе: с чего начать, список известных проблем, правила участия.'
+  href: for-contributors.md
