@@ -114,6 +114,8 @@ items:
             items:
               - name: Оглавление на странице документации
                 href: project/minitoc.md
+          - name: Расширенная навигация
+            href: project/navigation.md
           - name: Разводящая страница
             href: project/leading-page.md
       - name: Page constructor
@@ -142,14 +144,8 @@ items:
         href: project/presets.md
       - name: Файл конфигурации линтера
         href: project/lint.md
-  - name: Публикация 
-    href: deploy.md
-    labeled: true
-    items:
-      - name: GitHub Pages
-        href: github-pages.md
-  - name: Внесение изменений
-    href: contribution.md
+      - name: Подключение CSS
+        href: style/css.md
   - name: CLI
     labeled: true
     items:
@@ -165,15 +161,19 @@ items:
         href: tools/docs/singlepage.md
       - name: Выкладка на S3
         href: tools/docs/publish-s3.md
-  - name: Настройка внешнего вида
+  - name: Публикация 
+    href: deploy.md
     labeled: true
     items:
+      - name: GitHub Pages
+        href: github-pages.md
+      - name: Внесение изменений
+        href: contribution.md
+#  - name: Настройка внешнего вида
+#    labeled: true
+#    items:
       #- name: Темизация
       #  href: style/theme.md
-      - name: Расширенная навигация
-        href: project/navigation.md
-      - name: Подключение CSS
-        href: style/css.md
   - name: Практические руководства
     labeled: true
     items:
@@ -257,9 +257,10 @@ items:
             href: dev/extensions/services/search-service.md
           - name: Logger Service
             href: dev/extensions/services/logger-service.md
+  - name: Программа для контрибьюторов
+    href: dev/for-contributors.yaml
   - name: Релизы
+    hidden: true
     items:
       - name: Версия 5.0
         href: ./releases/v5.md   
-  - name: Программа для контрибьюторов
-    href: dev/for-contributors.yaml      
