@@ -142,15 +142,6 @@ items:
         href: project/presets.md
       - name: Файл конфигурации линтера
         href: project/lint.md
-  - name: Настройка внешнего вида
-    labeled: true
-    items:
-      #- name: Темизация
-      #  href: style/theme.md
-      - name: Расширенная навигация
-        href: project/navigation.md
-      - name: Подключение CSS
-        href: style/css.md
   - name: Публикация 
     href: deploy.md
     labeled: true
@@ -174,6 +165,15 @@ items:
         href: tools/docs/singlepage.md
       - name: Выкладка на S3
         href: tools/docs/publish-s3.md
+  - name: Настройка внешнего вида
+    labeled: true
+    items:
+      #- name: Темизация
+      #  href: style/theme.md
+      - name: Расширенная навигация
+        href: project/navigation.md
+      - name: Подключение CSS
+        href: style/css.md
   - name: Практические руководства
     labeled: true
     items:
