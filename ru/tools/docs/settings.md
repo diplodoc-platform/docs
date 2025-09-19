@@ -75,17 +75,6 @@ yfm -e ./local-extension
 `--sanitize-html` | Включить очистку HTML.
 ||
 ||
-`--merge-includes`
-|
-Объеденить содержимое [инклюдов](../../syntax/includes.md) с документацией.
-
-{% note info %}
-
-Используйте вместе с параметром `--output-format 'md'`.
-
-{% endnote %}
-||
-||
 `--resource`, `--resources`, `--allow-custom-resources`, `--static-content`
 |
 Разрешить загрузку пользовательских ресурсов на статически сгенерированные страницы.
