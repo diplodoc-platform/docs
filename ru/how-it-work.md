@@ -1,5 +1,5 @@
 
-# Быстрый старт
+# Публикация на diplodoc.com
 
 {% note warning %}
 

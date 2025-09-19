@@ -48,8 +48,6 @@ items:
   - name: Начало работы
     labeled: true
     items:
-      - name: Публикация на Diplodoc.com
-        href: how-it-work.md
       - name: Локальная сборка проекта
         href: installation.md
       - name: Шаблон проекта
@@ -146,7 +144,7 @@ items:
         href: project/lint.md
       - name: Подключение CSS
         href: style/css.md
-  - name: CLI
+  - name: Пакет CLI
     labeled: true
     items:
       - name: Обзор
@@ -165,9 +163,12 @@ items:
     href: deploy.md
     labeled: true
     items:
-      - name: GitHub Pages
+      - name: На GitHub Pages
         href: github-pages.md
+      - name: На Diplodoc.com
+        href: how-it-work.md
       - name: Внесение изменений
+        hidden: true
         href: contribution.md
 #  - name: Настройка внешнего вида
 #    labeled: true
