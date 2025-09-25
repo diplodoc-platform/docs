@@ -1,4 +1,6 @@
-## Поиск с Algolia
+---
+title: Поиск с Algolia
+---
 
 [Algolia](https://www.algolia.com/) — облачная система поиска для быстрого и релевантного поиска по документации Diplodoc. Подходит для больших объемов данных, обеспечивает мгновенную выдачу результатов и легко интегрируется во фронтенд документации.
 
@@ -78,15 +80,15 @@ npm start -- -i ./docs -o ./docs-out --extensions @diplodoc/algolia-extension --
 
 | Параметр      | CLI-флаг            | Переменная среды       | .yfm                       | Назначение                               |
 |---------------|---------------------|------------------------|----------------------------|------------------------------------------|
-| provider      | --search-provider   | ALGOLIA_PROVIDER       | search.provider            | Провайдер поиска (`algolia`)             |
-| appId         | --app-id            | ALGOLIA_APP_ID         | search.appId               | Algolia App ID                           |
-| apiKey        | --api-key           | ALGOLIA_API_KEY        | search.apiKey (см. выше)   | Секретный ключ для индексации            |
-| indexName     | --index-name        | ALGOLIA_INDEX_NAME     | search.indexName           | Имя индекса (по умолчанию "docs")        |
-| index         | --index             | -                      | search.index               | Загружать ли индекс в Algolia            |
-| searchApiKey  | --search-api-key    | ALGOLIA_SEARCH_API_KEY | search.searchApiKey        | Ключ для поиска на клиенте               |
-| api           | --search-api        | ALGOLIA_API_PATH       | search.api                 | Путь к JS-API поиска                     |
-| indexSettings | -                   | -                      | search.indexSettings       | Настройки индекса Algolia                |
-| querySettings | -                   | -                      | search.querySettings       | Настройки поисковых запросов             |
+| `provider`      | `--search-provider`   | ALGOLIA_PROVIDER       | `search.provider`            | Провайдер поиска (`algolia`)             |
+| `appId`         | `--app-id`            | ALGOLIA_APP_ID         | `search.appId`               | Algolia App ID                           |
+| `apiKey`        | `--api-key`           | ALGOLIA_API_KEY        | `search.apiKey`   | Секретный ключ для индексации            |
+| `indexName`     | `--index-name`        | ALGOLIA_INDEX_NAME     | `search.indexName`           | Имя индекса (по умолчанию "docs")        |
+| `index`         | `--index`             | -                      | `search.index`               | Загружать ли индекс в Algolia            |
+| `searchApiKey`  | `--search-api-key`    | ALGOLIA_SEARCH_API_KEY | `search.searchApiKey`        | Ключ для поиска на клиенте               |
+| `api`           | `--search-api`        | ALGOLIA_API_PATH       | `search.api`                 | Путь к JS-API поиска                     |
+| `indexSettings` | -                   | -                      | `search.indexSettings`       | Настройки индекса Algolia                |
+| `querySettings` | -                   | -                      | `search.querySettings`       | Настройки поисковых запросов             |
 
 
 {% note warning "Пояснение по видам ключей" %}
