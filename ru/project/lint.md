@@ -54,6 +54,13 @@ log-levels:
   YFM001: 'warn'    # Inline code length
   YFM002: 'warn'    # No header found in the file for the link text
   YFM003: 'error'   # Link is unreachable
+  YFM004: 'error'   # Table not closed
+  YFM005: 'error'   # Tab list not closed
+  YFM006: 'warn'    # Term definition duplicated
+  YFM007: 'warn'    # Term used without definition
+  YFM008: 'warn'    # Term inside definition not allowed
+  YFM009: 'warn'    # Term definition used not at the end of file
+  YFM010: 'warn'    # Autotitle anchor is missed
 
 # Inline code length
 YFM001:
@@ -62,7 +69,7 @@ YFM001:
 
 Правила с префиксом `MD` предоставляются библиотекой [markdownlint](https://github.com/DavidAnson/markdownlint).
 Подробное описание всех правил с префиксом `MD` можно найти [по ссылке](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).
-Подробное описание всех правил с префиксом `YFM` можно найти [по ссылке](https://github.com/diplodoc-platform/transform/blob/master/src/transform/yfmlint/README.md).
+Подробное описание всех правил с префиксом `YFM` можно найти [по ссылке](https://github.com/diplodoc-platform/yfmlint/blob/master/README.md).
 
 Вы можете переопределить уровень логирования в конфиге `.yfmlint` в секции `log-levels` отдельно для каждого правила: `error`, `warn`, `disabled`.
 
@@ -90,7 +97,7 @@ log-levels:
 ```
 
 Дефолтные значения для правил с префиксом `MD` указаны [по ссылке](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml).
-Дефолтные значения для правил с префиксом `YFM` указаны [по ссылке](https://github.com/diplodoc-platform/transform/blob/master/src/transform/yfmlint/yfmlint.ts).
+Дефолтные значения для правил с префиксом `YFM` указаны [по ссылке](https://github.com/diplodoc-platform/yfmlint/blob/master/src/config.ts).
 
 Правила можно включить, выключить, настроить для всего файла или абзаца в файле.
 Примеры можно посмотреть [по ссылке](https://github.com/DavidAnson/markdownlint/blob/a852407c887ec60949aa5365ed964bab833f962f/README.md#configuration).
