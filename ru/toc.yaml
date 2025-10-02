@@ -95,7 +95,7 @@ items:
             href: syntax/code.md
           - name: Комментарии и метаданные
             href: syntax/meta.md
-          - name: Переменные
+          - name: Переменные и шаблоны
             href: syntax/vars.md
           - name: Всплывающие подсказки
             href: syntax/term.md
@@ -142,8 +142,6 @@ items:
         href: project/presets.md
       - name: Файл конфигурации линтера
         href: project/lint.md
-      - name: Подключение CSS
-        href: style/css.md
   - name: Пакет CLI
     labeled: true
     items:
@@ -196,7 +194,9 @@ items:
       - name: Content Security Policy (CSP)
         href: guides/csp.md
       - name: Настройка версионирования документации
-        href: guides/release-version.md 
+        href: guides/release-version.md
+      - name: Подключение CSS
+        href: style/css.md
   - name: Инструменты и библиотеки
     labeled: true
     items:
