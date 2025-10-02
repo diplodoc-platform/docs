@@ -84,6 +84,32 @@ authors:
     - noreply@company.com
 ```
 ||
+|| `extensions` | Список расширений Diplodoc, используемых для сборки проекта. 
+
+Объекты в списке могут содержать два параметра:
+* `name` — название расширения (обязательный)
+* `options` — параметры запуска расширения
+
+```yaml
+extensions:
+  - name: my-extension
+    options:
+      option1: true
+      ...
+```
+
+Строками в списке можно в упрощенном формате задавать названия расширения:
+```yaml
+extensions:
+  - algolia
+  - some-author/my-extension
+  - /my-local-extension
+```
+
+
+| `(string\|object)[]`
+
+— ||
 || `langs` | Массив языков, участвующих в сборке. | —
 
 — ||
@@ -122,7 +148,10 @@ authors:
 || `staticContent` | Разрешить использовать статический контент (например, файлов изображений, CSS или JS). | `bool`
 
 `false` ||
-|| `strict` | Cтрогий режим сборки, все предупреждения YFM отображаются как ошибки. | `bool`
+|| `strict` | Cтрогий режим сборки, все предупреждения YFM отображаются как ошибки.
+
+С полным список правил YFM можно ознакомиться [здесь](./project/lint.md).
+| `bool`
 
 `false` ||
 || `supportGithubAnchors` | Генерировать дополнительные [якоря](syntax/base.md#headers), совместимые с GitHub. | `bool`
@@ -136,44 +165,9 @@ authors:
 Её включение позволяет включать фичи `mtimes`, `authors` и `contributors`. | `boolean` или `object`
 
 `undefined` ||
-|| [analytics](#analytics) | Конфигурация для модуля аналитки. | `Object`
-
-`undefined` ||
-|| [resources](#resources) | Список разрешенных ресурсов. | `Object`
-
-`undefined` ||
-|| [template](#template) | Конфигурация синтаксиса шаблонизации. | `Object`
-
-`undefined` ||
 |#
 
-### Секция template {#template}
-
-#|
-|| **Параметр** | **Описание** | **Тип и значение по умолчанию** ||
-|| `enabled` | Включает обработку синтаксиса шаблонов в документации. Если не указан, шаблонизация считается включенной. | `bool`
-
-`true` ||
-|| `scopes` | > | > ||
-|| `scopes.code` | Включает обработку синтаксиса [условных операторов](syntax/vars#conditions) в блоках кода. | `bool`
-
-`false` ||
-|| `scopes.text` | Включает обработку синтаксиса [условных операторов](syntax/vars#conditions) в тексте документа. | `bool`
-
-`true` ||
-|| `features` | > | > ||
-|| `features.cicles` | Включает обработку синтаксиса [циклов](syntax/vars#cycles). | `bool`
-
-`true` ||
-|| `features.conditions` | Включает обработку синтаксиса [условных операторов](syntax/vars#conditions). | `bool`
-
-`true` ||
-|| `features.substitutions` | Включает обработку синтаксиса [переменных](syntax/vars#substitutions). | `bool`
-
-`true` ||
-|#
-
-### Секция analytics {#analytics}
+### Секция `analytics` {#analytics}
 
 #|
 || **Название** | **Описание** | **Тип и значение по умолчанию** ||
@@ -229,14 +223,11 @@ authors:
 
 ### Секция `resources` {#resources}
 
+Управление подключаемыми к проекту ресурсами.
+
 #|
 || **Название** | **Описание** | **Тип и значение по умолчанию** ||
-|| `script` | Добавление пользовательских скриптов на страницу. | —
 
-— ||
-|| `style` | Добавление пользовательских стилей на страницу. | —
-
-— ||
 || `csp` | Управление [Content Security Policy](./guides/csp.md) (CSP).
 
 {% cut "Пример структуры" %}
@@ -268,6 +259,55 @@ csp:
 | `object`
 
 — ||
+|| `script` | Добавление пользовательских скриптов на страницу. | —
+
+— ||
+|| `style` | Список подключаемых ко всем страницам проекта css-файлов.
+
+```yaml
+resources:
+  style:
+    - _assets/style/custom.css
+    - _assets/style/my.css
+```
+
+{% note warning %}
+
+Для подключения стилей должен быть установлен параметр `allowCustomResources: true`.
+
+{% endnote %}
+
+| `string[]`
+
+— ||
+|#
+
+### Секция `template` {#template}
+
+Управление поддерживаемыми конструкциями [синтаксиса шаблонов](./syntax/vars.md).
+
+#|
+|| **Параметр** | **Описание** | **Тип и значение по умолчанию** ||
+|| `enabled` | Включает обработку синтаксиса шаблонов в документации. Если не указан, шаблонизация считается включенной. | `bool`
+
+`true` ||
+|| `scopes` | > | > ||
+|| `scopes.code` | Включает обработку синтаксиса [условных операторов](syntax/vars#conditions) в блоках кода. | `bool`
+
+`false` ||
+|| `scopes.text` | Включает обработку синтаксиса [условных операторов](syntax/vars#conditions) в тексте документа. | `bool`
+
+`true` ||
+|| `features` | > | > ||
+|| `features.cicles` | Включает обработку синтаксиса [циклов](syntax/vars#cycles). | `bool`
+
+`true` ||
+|| `features.conditions` | Включает обработку синтаксиса [условных операторов](syntax/vars#conditions). | `bool`
+
+`true` ||
+|| `features.substitutions` | Включает обработку синтаксиса [переменных](syntax/vars#substitutions). | `bool`
+
+`true` ||
 |#
 
 ### Секция `docs-viewer` {#docs-viewer}
@@ -567,17 +607,20 @@ search:
 
 {% endnote %}
 
-## Пример файла `.yfm `{#yfm}
+## Пример файла `.yfm` {#yfm}
 
 ```yaml
 # Корневая секция параметров
 strict: true
 breaks: false
-singlePage: true
 apply-presets: true
 varsPreset: 'external'
 needToSanitizeHtml: true
 langs: ['en', 'ru']
+
+# Настройки интерфейса документации
+interface:
+  favicon-src: https://raw.githubusercontent.com/yandex-cloud/yfm-documentation/master/_images/logo_blue_32x32.png
 
 # Секция параметров вьюера (docs-viewer)
 docs-viewer:
@@ -585,8 +628,6 @@ docs-viewer:
   no-index: true
   langs: ['en', 'ru']
   metrika: 678489
-  themes: [light]
-  favicon-src: https://raw.githubusercontent.com/yandex-cloud/yfm-documentation/master/_images/logo_blue_32x32.png
 
   # Настройки логотипа
   logo-options:
