@@ -1,5 +1,35 @@
 title: Для разработчиков
 href: index.yaml
+navigation:
+  logo:
+    url: "../ru"
+    urlTitle: 'Вернуться на главную'
+    dark:
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg"
+    light:
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
+  header:
+    leftItems:
+      - text: "Как все устроено"
+        type: "link"
+        url: "../../how-to/"
+      - text: "Документация"
+        type: "link"
+        url: "../../docs/ru/"
+      - text: "Онлайн редактор"
+        type: "link"
+        url: "https://diplodoc-platform.github.io/playground/?prefill=true"
+      - text: "Telegram"
+        type: "link"
+        url: "https://t.me/diplodoc_ru"
+      - text: "GitHub"
+        type: "link"
+        url: "https://github.com/diplodoc-platform/"
+      - text: "Для разработчиков"
+        type: "link"
+        url: "../../docs/ru/dev/"
+    rightItems:
+      - type: controls
 items:
   - name: Быстрый старт
     href: quickstart.md

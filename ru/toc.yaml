@@ -228,3 +228,6 @@ items:
   - name: Yandex Open Source Jam 2024
     hidden: true
     href: jam.md
+  - name: Для разработчиков
+    href: dev/index.yaml
+
