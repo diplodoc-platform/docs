@@ -1,0 +1,71 @@
+title: Для разработчиков
+href: index.yaml
+navigation:
+  logo:
+    url: "../ru"
+    urlTitle: 'Вернуться на главную'
+    dark:
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg"
+    light:
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
+  header:
+    leftItems:
+      - text: "Как все устроено"
+        type: "link"
+        url: "../../../how-to/"
+      - text: "Документация"
+        type: "link"
+        url: "../../../docs/ru/"
+      - text: "Онлайн редактор"
+        type: "link"
+        url: "https://diplodoc-platform.github.io/playground/?prefill=true"
+      - text: "Telegram"
+        type: "link"
+        url: "https://t.me/diplodoc_ru"
+      - text: "GitHub"
+        type: "link"
+        url: "https://github.com/diplodoc-platform/"
+      - text: "Для разработчиков"
+        type: "link"
+        url: "../../../docs/ru/dev/"
+    rightItems:
+      - type: controls
+items:
+  - name: Быстрый старт
+    href: quickstart.md
+  - name: Внесение изменений
+    href: contribution.md
+  - name: Метапакет
+    href: metapackage.md
+  - name: Extensions API
+    href: extensions-api.md
+    items:
+      - name: Core Concepts
+        href: extensions/core-concepts.md
+      - name: Services
+        href: extensions/services.md
+        items:
+          - name: TOC Service
+            href: extensions/services/toc-service.md
+          - name: Leading Service
+            href: extensions/services/leading-service.md
+          - name: Markdown Service
+            href: extensions/services/markdown-service.md
+          - name: Meta Service
+            href: extensions/services/meta-service.md
+          - name: Vars Service
+            href: extensions/services/vars-service.md
+          - name: VCS Service
+            href: extensions/services/vcs-service.md
+          - name: Search Service
+            href: extensions/services/search-service.md
+          - name: Logger Service
+            href: extensions/services/logger-service.md
+  - name: Программа для контрибьюторов
+    href: for-contributors.yaml
+  - name: Релизы
+    hidden: true
+    items:
+      - name: Версия 5.0
+        href: ../releases/v5.md
+  

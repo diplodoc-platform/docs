@@ -32,6 +32,9 @@ navigation:
       - text: "GitHub"
         type: "link"
         url: "https://github.com/diplodoc-platform/"
+      - text: "Для разработчиков"
+        type: "link"
+        url: "../../docs/ru/dev/"
     rightItems:
       - type: controls
 items:
@@ -226,42 +229,5 @@ items:
     hidden: true
     href: jam.md
   - name: Для разработчиков
-    labeled: true
     href: dev/index.yaml
-  - name: Быстрый старт
-    href: dev/quickstart.md
-  - name: Внесение изменений
-    href: dev/contribution.md
-  - name: Метапакет
-    href: dev/metapackage.md
-  - name: Extensions API
-    href: dev/extensions-api.md
-    items:
-      - name: Core Concepts
-        href: dev/extensions/core-concepts.md
-      - name: Services
-        href: dev/extensions/services.md
-        items:
-          - name: TOC Service
-            href: dev/extensions/services/toc-service.md
-          - name: Leading Service
-            href: dev/extensions/services/leading-service.md
-          - name: Markdown Service
-            href: dev/extensions/services/markdown-service.md
-          - name: Meta Service
-            href: dev/extensions/services/meta-service.md
-          - name: Vars Service
-            href: dev/extensions/services/vars-service.md
-          - name: VCS Service
-            href: dev/extensions/services/vcs-service.md
-          - name: Search Service
-            href: dev/extensions/services/search-service.md
-          - name: Logger Service
-            href: dev/extensions/services/logger-service.md
-  - name: Программа для контрибьюторов
-    href: dev/for-contributors.yaml
-  - name: Релизы
-    hidden: true
-    items:
-      - name: Версия 5.0
-        href: ./releases/v5.md   
+
