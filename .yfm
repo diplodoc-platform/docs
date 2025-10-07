@@ -23,6 +23,8 @@ resources:
     - "img-src":
         - "data:"
         - "https://storage.yandexcloud.net"
+    - "style-src":
+        - "fonts.googleapis.com"
 
 docs-viewer:
   project-name: diplodoc
