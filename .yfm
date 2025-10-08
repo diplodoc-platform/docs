@@ -9,6 +9,12 @@ interface:
   toc-header: false
   favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
 
+search:
+  provider: algolia
+  appId: L6BU4JR6BT
+  searchApiKey: 47cb5594781c19c9b007d6d68bf494c0
+  index: true
+
 extensions:
   - github-vcs
 
