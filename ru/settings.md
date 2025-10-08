@@ -259,7 +259,22 @@ csp:
 | `object`
 
 — ||
-|| `script` | Добавление пользовательских скриптов на страницу. | —
+|| `script` | Список подключаемых ко всем страницам проекта javascript-файлов.
+
+```yaml
+resources:
+  script:
+    - _assets/scripts/custom.js
+    - _assets/scripts/some.js
+```
+
+{% note warning %}
+
+Для подключения скриптов должен быть установлен параметр `allowCustomResources: true`.
+
+{% endnote %}
+
+| `string[]`
 
 — ||
 || `style` | Список подключаемых ко всем страницам проекта css-файлов.
