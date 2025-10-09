@@ -19,4 +19,3 @@ jobs:
           VCS_TOKEN: ${{ secrets.YC_UI_BOT_GITHUB_TOKEN }}
         with:
           revision: "pr-${{ github.event.pull_request.number }}"
-          cli-version: 5.11.4-fix-vcs-2
