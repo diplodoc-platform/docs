@@ -72,6 +72,31 @@ interface:
 | `object`
 
 `undefined` ||
+|| `metadata` | Список с описанием произвольных метаполей статьи.
+
+Cписка содержит объекты вида:
+
+```yaml
+metadata:
+  - name: name 1
+    content: some content 1
+  - name: name 2
+    content: some content 2
+  - http-equiv: http-equiv 1
+    content: some content 3
+...
+```
+
+на основе которых формируется набор тегов:
+```html
+<meta name="name 1" content="some content 1"/>
+<meta name="name 2" content="some content 2"/>
+<meta http-equiv="http-equiv 1" content="some content 3">
+```
+
+| `object[]`
+
+— ||
 || `resources` | Секция для управления ресурсами страницы.
 
 Переопределяет настройки `resources`, установленные в [секции resources .yfm](../settings.md#resources).
