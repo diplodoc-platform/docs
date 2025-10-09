@@ -45,27 +45,7 @@ items:
     href: about.md
   - name: Функциональные возможности
     href: features.md
-  - name: Справочные материалы
-    items:
-      - name: Конфигурация проекта
-        labeled: true
-        items:
-          - name: Настройки проекта
-            href: settings.md
-          - name: Поиск
-            href: project/search.md
-            items:
-              - name: Локальный поиск (lunr.js)
-                href: project/lunr.md
-              - name: Algolia
-                href: project/algolia.md
-          - name: Пресеты переменных
-            href: project/presets.md
-          - name: Файл конфигурации линтера
-            href: project/lint.md
-  - name: Релизы YFM
-    hidden: true
-    href: changelog.md
+
   - name: Начало работы
     labeled: true
     items:
@@ -202,26 +182,49 @@ items:
         href: guides/release-version.md
       - name: Подключение CSS
         href: style/css.md
-  - name: Инструменты и библиотеки
-    labeled: true
+
+  - name: Справочные материалы
     items:
-      - name: Transformer
+      - name: Конфигурация проекта
+        labeled: true
         items:
-          - name: Обзор
-            href: tools/transform/index.md
-          - name: Настройки
-            href: tools/transform/settings.md
-          - name: Подсветка кода
-            href: tools/transform/highlight.md
-      - name: Плагины
+          - name: Настройки проекта
+            href: settings.md
+          - name: Поиск
+            href: project/search.md
+            items:
+              - name: Локальный поиск (lunr.js)
+                href: project/lunr.md
+              - name: Algolia
+                href: project/algolia.md
+          - name: Пресеты переменных
+            href: project/presets.md
+          - name: Файл конфигурации линтера
+            href: project/lint.md
+      - name: Инструменты и библиотеки
+        labeled: true
         items:
-          - name: Обзор
-            href: plugins/index.md
-          - name: Дополнительные плагины
-            href: plugins/import.md
-      - name: Библиотека Mermaid
-        href: tools/mermaid.md
-        hidden: true
+          - name: Transformer
+            items:
+              - name: Обзор
+                href: tools/transform/index.md
+              - name: Настройки
+                href: tools/transform/settings.md
+              - name: Подсветка кода
+                href: tools/transform/highlight.md
+          - name: Плагины
+            items:
+              - name: Обзор
+                href: plugins/index.md
+              - name: Дополнительные плагины
+                href: plugins/import.md
+          - name: Библиотека Mermaid
+            href: tools/mermaid.md
+            hidden: true
+
+  - name: Релизы YFM
+    hidden: true
+    href: changelog.md
   - name: Вакансии
     hidden: true
     items:
