@@ -1,6 +1,6 @@
 # Yandex Flavored Markdown
 
-**Yandex Flavored Markdown (YFM)** — это диалект Markdown с дополнительным набором инструментов для [трансформации](./tools/transform/index.md) Markdown в HTML в реальном времени и [сборки](./tools/docs/index.md) полноценных документационных проектов.
+**Yandex Flavored Markdown (YFM)** — это диалект Markdown с дополнительным набором инструментов для трансформации Markdown в HTML в реальном времени и [сборки](./tools/docs/index.md) полноценных документационных проектов.
 
 Преимущества:
 

@@ -3,7 +3,6 @@
 In the configuration file, you can specify:
 
 * [Standard YFM settings](../settings.md).
-* [YFM to HTML transformation settings](../tools/transform/settings.md).
 * [Build settings](../tools/docs/settings.md).
 
 By default, the `.yfm` file is located at the root of the document. When building, you can specify the path to another file using the [launch key](../tools/docs/settings.md) `--config`.

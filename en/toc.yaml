@@ -76,14 +76,6 @@ items:
         href: settings.md
       - name: Tools
         items:
-          - name: Transformer
-            items:
-              - name: Overview
-                href: tools/transform/index.md
-              - name: Settings
-                href: tools/transform/settings.md
-              - name: Syntax highlighting
-                href: tools/transform/highlight.md
           - name: Builder
             items:
               - name: Overview

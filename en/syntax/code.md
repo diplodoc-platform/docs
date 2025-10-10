@@ -30,7 +30,7 @@ To highlight the syntax, specify the language in which the code is written in th
 ```sql
 ```
 
-The list of available languages can be found on [GitHub](https://github.com/highlightjs/highlight.js/tree/master/src/languages). For information on how to transfer an additional set of languages, see [Connecting an additional language](../tools/transform/highlight.md#add).
+The list of available languages can be found on [GitHub](https://github.com/highlightjs/highlight.js/tree/master/src/languages).
 
 ### Displaying Line Numbers {#line-numbers}
 

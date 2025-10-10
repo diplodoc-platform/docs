@@ -1,3 +1,5 @@
 common:
     - from: /project/includes
       to: /syntax/includes
+    - from: /tools/transform/highlight
+      to: /syntax/code
