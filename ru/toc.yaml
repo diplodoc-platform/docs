@@ -46,6 +46,8 @@ items:
   - name: Функциональные возможности
     href: features.md
 
+# БЫСТРЫЙ СТАРТ
+
   - name: Начало работы
     labeled: true
     items:
@@ -53,8 +55,11 @@ items:
         href: installation.md
       - name: Шаблон проекта
         href: static-template.md
-  - name: Редактирование
-    labeled: true
+
+# ПРАКТИЧЕСКИЕ РУКОВОДСТВА
+
+  - name: Практические руководства
+    expanded: true
     items:
       - name: Организация контента
         items:
@@ -148,64 +153,31 @@ items:
           - name: Пример 2
             href: project/pc-example2.yaml
           - name: Пример 3 (fullScreen mode)
-            href: project/pc-example3.yaml 
-  - name: Пакет CLI
-    labeled: true
-    items:
-      - name: Обзор
-        href: tools/docs/index.md
-      - name: Сборка
-        href: tools/docs/build.md
-      - name: Настройки сборки
-        href: tools/docs/settings.md
-      - name: Локализация
-        href: tools/docs/translate.md
-      - name: Одностраничная сборка
-        href: tools/docs/singlepage.md
-      - name: Выкладка на S3
-        href: tools/docs/publish-s3.md
-  - name: Публикация 
-    href: deploy.md
-    labeled: true
-    items:
-      - name: На GitHub Pages
-        href: github-pages.md
-      - name: На Diplodoc.com
-        href: how-it-work.md
-      - name: Внесение изменений
-        hidden: true
-        href: contribution.md
+            href: project/pc-example3.yaml
+      - name: Подключение CSS
+        href: style/css.md
+      - name: Публикация 
+        href: deploy.md
+        labeled: true
+        items:
+          - name: На GitHub Pages
+            href: github-pages.md
+          - name: На Diplodoc.com
+            href: how-it-work.md
+          - name: Внесение изменений
+            hidden: true
+            href: contribution.md
+
 #  - name: Настройка внешнего вида
 #    labeled: true
 #    items:
       #- name: Темизация
       #  href: style/theme.md
-  - name: Практические руководства
-    labeled: true
-    items:
-      - name: Контентная аналитика
-        href: guides/content-analytics.md
-      - name: Настройка личного домена
-        href: personal-domain-ya-cloud.md
-      - name: Автогенерация и интеграция документации
-        href: guides/includers.md
-        items:
-          - name: Generic
-            href: guides/generic.md
-          - name: Open API
-            href: guides/openapi.md
-          - name: Unarchive
-            href: guides/unarchive.md
-          - name: Source Docs
-            href: guides/source-docs.md
-      - name: Content Security Policy (CSP)
-        href: guides/csp.md
-      - name: Настройка версионирования документации
-        href: guides/release-version.md
-      - name: Подключение CSS
-        href: style/css.md
+
+# СПРАВОЧНЫЕ МАТЕРИАЛЫ
 
   - name: Справочные материалы
+    expanded: true
     items:
       - name: Конфигурация проекта
         labeled: true
@@ -243,6 +215,42 @@ items:
           - name: Библиотека Mermaid
             href: tools/mermaid.md
             hidden: true
+      - name: Пакет CLI
+        labeled: true
+        items:
+          - name: Обзор
+            href: tools/docs/index.md
+          - name: Сборка
+            href: tools/docs/build.md
+          - name: Настройки сборки
+            href: tools/docs/settings.md
+          - name: Локализация
+            href: tools/docs/translate.md
+          - name: Одностраничная сборка
+            href: tools/docs/singlepage.md
+          - name: Выкладка на S3
+            href: tools/docs/publish-s3.md
+          - name: Контентная аналитика
+            href: guides/content-analytics.md
+          - name: Настройка личного домена
+            href: personal-domain-ya-cloud.md
+          - name: Автогенерация и интеграция документации
+            href: guides/includers.md
+            items:
+              - name: Generic
+                href: guides/generic.md
+              - name: Open API
+                href: guides/openapi.md
+              - name: Unarchive
+                href: guides/unarchive.md
+              - name: Source Docs
+                href: guides/source-docs.md
+          - name: Content Security Policy (CSP)
+            href: guides/csp.md
+          - name: Настройка версионирования документации
+            href: guides/release-version.md
+
+# НЕСОРТИРУЕМОЕ
 
   - name: Релизы YFM
     hidden: true
