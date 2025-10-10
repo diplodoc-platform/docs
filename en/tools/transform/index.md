@@ -32,7 +32,7 @@ Use it in your code to work with text during program execution. For example, to 
 
 The package provides the `transform()` function:
 
-* Input data: [Settings](settings.md) and a string with YFM.
+* Input data: Settings and a string with YFM.
 * Returned value: An object with the `result` and `logs` fields.
 
 ### Result field

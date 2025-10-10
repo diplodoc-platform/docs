@@ -36,7 +36,46 @@
 ```
 ````
 
-Ознакомиться с перечнем доступных языков можно в [GitHub](https://github.com/highlightjs/highlight.js/tree/master/src/languages). О том, как передать дополнительный набор языков, смотрите в разделе [Подключить дополнительный язык](../tools/transform/highlight.md#add).
+{% cut "Список поддерживаемых языков" %}
+
+* apache;
+* bash;
+* coffeescript;
+* cpp;
+* cs;
+* css;
+* diff;
+* go;
+* http;
+* ini;
+* java;
+* javascript;
+* json;
+* kotlin;
+* less;
+* lua;
+* makefile;
+* xml;
+* markdown;
+* nginx;
+* objectivec;
+* perl;
+* php;
+* plaintext;
+* properties;
+* python;
+* ruby;
+* rust;
+* scss;
+* shell;
+* sql;
+* swift;
+* typescript;
+* **yaml**.
+
+{% endcut %}
+
+Ознакомиться с полным перечнем доступных языков можно в [GitHub](https://github.com/highlightjs/highlight.js/tree/master/src/languages).
 
 ### Отображение номеров строк {#line-numbers}
 
@@ -46,18 +85,18 @@
 
 ````markdown
 ```sql showLineNumbers
-  price= '2000'
-  size= '24'  
-  color= 'primary'
-  variant= 'detailed' 
+  price = '2000'
+  size = '24'  
+  color = 'primary'
+  variant = 'detailed' 
 ```
 ````
 
 **Результат:**
 
 ```sql showLineNumbers
-  price= '2000'
-  size= '24'  
-  color= 'primary'
-  variant= 'detailed' 
+  price = '2000'
+  size = '24'  
+  color = 'primary'
+  variant = 'detailed' 
 ```

@@ -3,7 +3,6 @@
 Standard YFM settings are listed below. Depending on the tool you use, you can configure them in one of the following ways:
 
 * In a [configuration file](./project/config.md).
-* As a function parameter ([Transformer](./tools/transform/settings.md)).
 * Via startup keys ([Builder](./tools/docs/settings.md)).
 
 | Name | Description | Type | Default value |

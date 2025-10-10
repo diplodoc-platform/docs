@@ -207,10 +207,6 @@ items:
         items:
           - name: Обзор
             href: tools/transform/index.md
-          - name: Настройки
-            href: tools/transform/settings.md
-          - name: Подсветка кода
-            href: tools/transform/highlight.md
       - name: Плагины
         items:
           - name: Обзор
