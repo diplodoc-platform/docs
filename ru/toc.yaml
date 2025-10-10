@@ -48,8 +48,8 @@ items:
 
 # БЫСТРЫЙ СТАРТ
 
-  - name: Начало работы
-    labeled: true
+  - name: Быстрый старт
+    expanded: true
     items:
       - name: Локальная сборка проекта
         href: installation.md
