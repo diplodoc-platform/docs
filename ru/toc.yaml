@@ -106,6 +106,15 @@ items:
             href: syntax/includes.md
           - name: Дополнительные возможности
             href: syntax/additional.md
+      - name: Дополнительные возможности YFM
+        items:
+          - name: Диаграммы
+            items:
+            - name: Mermaid
+              href: custom-plugins/mermaid.md
+              items:
+                - name: Кастомизация Mermaid-диаграмм
+                  href: custom-plugins/mermaid-info.md
       - name: Организация контента
         items:
           - name: Обзор
