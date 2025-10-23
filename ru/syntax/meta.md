@@ -54,7 +54,7 @@ description: Описание
 — ||
 || `keywords` | Список ключевых слов страницы для поисковых роботов.
 
-Прописывается в `<meta name="keywords" content="keyword1,keyword2,..."/>`. | `string[]`
+Прописывается в `<meta name="keywords" content="key1,key2,..."/>`. | `string[]`
 
 — ||
 || `interface` | Секция с настройками отображения интерфейса. Переопределяет установленные в [одноимённой секции .yfm](../settings.md#interface) настройки для текущей страницы.
@@ -84,6 +84,8 @@ metadata:
     content: some content 2
   - http-equiv: http-equiv 1
     content: content 3
+  - property: name 4
+    content: content 4
 ...
 ```
 
@@ -92,6 +94,7 @@ metadata:
 <meta name="name 1" content="some content 1"/>
 <meta name="name 2" content="some content 2"/>
 <meta http-equiv="http-equiv 1" content="content 3">
+<meta property="name 4" content="content 4">
 ```
 
 | `object[]`
