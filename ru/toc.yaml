@@ -204,10 +204,13 @@ items:
     labeled: true
     items:
       - name: Плагины
-        href: plugins/index.md
         items:
-          - name: Дополнительные плагины
+          - name: Предустановленные
+            href: plugins/index.md
+          - name: Дополнительные
             href: plugins/import.md
+      - name: Расширения
+        href: plugins/extensions.md
       - name: Библиотека Mermaid
         href: tools/mermaid.md
         hidden: true

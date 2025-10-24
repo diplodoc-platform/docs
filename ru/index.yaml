@@ -110,7 +110,7 @@ blocks:
         text: |
           [Transformer](tools/transform/index.md)
 
-          [Плагины](plugins/index.md)
+          [Плагины](plugins/)
   
       - type: basic-card
         title: 
