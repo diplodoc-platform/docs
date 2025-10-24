@@ -2,6 +2,17 @@
 
 Добро пожаловать на платформу документирования Diplodoc — решение, созданное для тех, кто стремится эффективно управлять и публиковать документацию с использованием подхода «docs as code».
 
+
+PlantUML
+
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml
+
+
 Diplodoc предоставляет два варианта использования (оба из которых абсолютно бесплатны):
 
 {% list tabs %}
