@@ -1,102 +1,63 @@
 # Предустановленные плагины
 
-Diplodoc поставляется с набором предустановленных плагинов, которые расширяют базовый синтаксис [CommonMark Spec](https://spec.commonmark.org/) дополнительными возможностями и уникальными элементами разметки.
-
-## Как работают плагины
-
-Плагины — это модули [markdown-it](https://www.npmjs.com/package/markdown-it), которые обрабатывают и преобразуют разметку Markdown. Каждый плагин отвечает за определённый синтаксис или функциональность.
+Diplodoc предоставляет набор предустановленных плагинов, которые расширяют базовый синтаксис [CommonMark Spec](https://spec.commonmark.org/) дополнительными возможностями и уникальными элементами разметки.
 
 ## Подключение и настройка
 
-### Подключение отдельных плагинов
+Большинство предустановленных плагинов подключены по умолчанию. Однако некоторые требуют явного подключения.
 
-Большинство предустановленных плагинов включены по умолчанию. Однако некоторые плагины требуют явного подключения:
+### Пример подключения
 
-```javascript
-const transform = require('@diplodoc/transform');
+**Установка и настройка плагина `Tasks list` (списки задач):**
 
-// Подключение плагина списка задач
-const checkbox = require('@diplodoc/transform/lib/plugins/checkbox');
+1. Склонируйте репозиторий CLI:
 
-const {result: {html, meta}, logs} = transform(content, {
-  plugins: [checkbox]
-});
+    ```bash
+    git clone https://github.com/diplodoc-platform/cli.git
+    ```
+
+1. Установите зависимости и соберите проект:
+
+    ```bash
+    npm i && npm run build
+    ```
+
+1. Установите пакет с плагин:
+
+    ```bash
+      npm i markdown-it-plantuml
+      ```
+
+2. Перейдите в папку `node_modules/@diplodoc/cli/build/plugins` и создайте файл `index.js` со следующим содержимым:
+  
+    ```javascript
+    const plantuml = require('markdown-it-plantuml');
+    
+    module.exports = [
+      plantuml
+    ];
+    ```
+
+**Использование:**
+
+```markdown
+- [x] ~~Написать пресс-релиз~~
+- [ ] Обновить веб-сайт  
+- [ ] Связаться со СМИ
 ```
 
-### Настройка параметров плагинов
-
-Параметры плагинов передаются через объект `options`:
-
-```javascript
-const {result: {html, meta}, logs} = transform(content, {
-  plugins: [checkbox],
-  // Параметры применяются ко всем подключённым плагинам
-  extractTitle: true,        // для плагина Anchors
-  supportGithubAnchors: true // для плагина Anchors
-});
-```
-
-{% note warning %}
-
-При переопределении параметра `plugins` необходимо заново подключать все нужные плагины YFM. Порядок добавления плагинов важен — указывайте полный набор плагинов в правильной последовательности.
-
-{% endnote %}
+**Параметры:**
+- `divClass` — CSS-класс для `div`, который оборачивает чекбокс (по умолчанию: `checkbox`)
+- `idPrefix` — префикс для id чекбокса (по умолчанию: `checkbox`)
 
 ## Список предустановленных плагинов
 
 {% include [plugins.md](../_includes/plugins.md) %}
 
-## Примеры использования
-
-### Настройка якорей заголовков
-
-```javascript
-const transform = require('@diplodoc/transform');
-
-const result = transform(content, {
-  extractTitle: true,           // Учитывать заголовок первого уровня
-  supportGithubAnchors: true,   // Генерировать якоря, совместимые с GitHub
-  disableCommonAnchors: false   // Включить стандартные якоря
-});
-```
-
-### Настройка заметок
-
-```javascript
-const result = transform(content, {
-  lang: 'en' // Язык для отображения типа заметки (по умолчанию 'ru')
-});
-```
-
-### Настройка списка задач
-
-```javascript
-const checkbox = require('@diplodoc/transform/lib/plugins/checkbox');
-
-const result = transform(content, {
-  plugins: [checkbox],
-  divClass: 'custom-checkbox',  // CSS-класс для div, оборачивающего чекбокс
-  idPrefix: 'task'              // Префикс для id чекбокса
-});
-```
-
 ## Дополнительные возможности
 
 Помимо предустановленных плагинов, вы можете:
 
-- [Подключить дополнительные плагины](import.md) из экосистемы markdown-it
-- [Создать собственные расширения](extensions.md) для специфических потребностей
-- Использовать [встроенные расширения](extensions.md) как примеры для разработки
-
-## Отключение плагинов
-
-Чтобы отключить предустановленный плагин, исключите его из списка при явном указании плагинов:
-
-```javascript
-// Подключаем только нужные плагины
-const cut = require('@diplodoc/transform/lib/plugins/cut');
-const sup = require('@diplodoc/transform/lib/plugins/sup');
-
-const result = transform(content, {
-  plugins: [cut, sup] // Другие предустановленные плагины будут отключены
-});
+- [Подключить дополнительные плагины](import.md).
+- [Создать собственные расширения](extensions.md) для специфических потребностей.
+- Использовать [встроенные расширения](extensions.md) как примеры для разработки.
