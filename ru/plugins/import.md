@@ -101,13 +101,18 @@ YFM применяет неизвестные параметры из объек
    git clone https://github.com/diplodoc-platform/cli.git
    ```
 
-2. Установите зависимости и соберите проект:
+1. Установите зависимости и соберите проект:
 
    ```bash
    npm i && npm run build
    ```
+1. Установите пакет с плагином:
 
-3. Перейдите в папку `build` и создайте файл `index.js` со следующим содержимым:
+    ```bash
+      npm install markdown-it-plantuml --save
+      ```
+
+1. Перейдите в папку `build` и создайте файл `index.js` со следующим содержимым:
 
    ```javascript
    const plantuml = require('markdown-it-plantuml');
@@ -194,10 +199,5 @@ const {result: {html, meta}, logs} = transform(content, {
 **Использование:**
 
 ```markdown
-Inline формула: $E = mc^2$
-
-Блочная формула:
-$$
-\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
-$$
+$\sqrt{3x-1}+(1+x)^2$
 ```
