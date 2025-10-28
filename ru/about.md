@@ -13,6 +13,14 @@ Alice <-- Bob: another authentication Response
 @enduml
 
 
+
+```markdown
+- [x] ~~Write the press release~~
+- [ ] Update the website
+- [ ] Contact the media
+```
+
+
 Diplodoc предоставляет два варианта использования (оба из которых абсолютно бесплатны):
 
 {% list tabs %}
