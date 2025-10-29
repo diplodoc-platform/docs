@@ -14,11 +14,9 @@ Alice <-- Bob: another authentication Response
 
 
 
-```markdown
 - [x] ~~Write the press release~~
 - [ ] Update the website
 - [ ] Contact the media
-```
 
 
 Diplodoc предоставляет два варианта использования (оба из которых абсолютно бесплатны):
