@@ -4,10 +4,12 @@ YFM использует [markdown-it](https://www.npmjs.com/package/markdown-it
 
 ## Подключение {#require}
 
-Перед подключением установите пакет с нужным плагином с помощью команды `npm i <имя_плагина>`. Например, чтобы установить [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji), выполните:
+Для примера рассмотрим подключение плагина [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji) добавляет поддержку синтаксиса эмодзи и смайликов.
+
+Перед подключением установите пакет с нужным плагином с помощью команды `npm i <имя_плагина>`.
 
 ```shell
-npm i markdown-it-emoji
+npm install i markdown-it-emoji
 ```
 
 {% list tabs %}
@@ -20,13 +22,19 @@ npm i markdown-it-emoji
       git clone https://github.com/diplodoc-platform/cli.git
       ```
 
-  1. Установите зависимости и соберите проект:
+      Перейдите в папку cli:
+
+      ```bash
+      cd cli
+      ```
+
+  2. Установите зависимости и соберите проект:
 
       ```bash
       npm i && npm run build
       ```
 
-   1. Перейдите в папку `node_modules/@diplodoc/cli/build/plugins` и создайте файл `index.js` со следующим содержимым:
+   3. Перейдите в папку `node_modules/@diplodoc/cli/build/plugins` и создайте файл `index.js` со следующим содержимым:
  
       ```javascript
          const emojiPlugin = require('markdown-it-emoji');
@@ -83,6 +91,12 @@ npm i markdown-it-emoji
 
 {% endlist %}
 
+**Использование:**
+
+```markdown
+:smile: :heart: :thumbsup: :satellite:
+```
+
 ## Передача параметров {#options}
 
 YFM применяет неизвестные параметры из объекта `options` ко всем плагинам, поэтому для передачи параметров добавьте их в объект `options`.
@@ -93,7 +107,13 @@ YFM применяет неизвестные параметры из объек
 
 Плагин [markdown-it-plantuml](https://www.npmjs.com/package/markdown-it-plantuml) позволяет создавать UML-диаграммы прямо в Markdown.
 
-**Установка и настройка:**
+Установите пакет с плагином:
+
+   ```bash
+   npm install markdown-it-plantuml --save
+   ```
+
+**Подключение**:
 
 1. Склонируйте репозиторий CLI:
 
@@ -101,16 +121,17 @@ YFM применяет неизвестные параметры из объек
    git clone https://github.com/diplodoc-platform/cli.git
    ```
 
+   Перейдите в папку cli:
+
+      ```bash
+      cd cli
+      ```
+
 1. Установите зависимости и соберите проект:
 
    ```bash
    npm i && npm run build
    ```
-1. Установите пакет с плагином:
-
-    ```bash
-      npm install markdown-it-plantuml --save
-      ```
 
 1. Перейдите в папку `build` и создайте файл `index.js` со следующим содержимым:
 
@@ -143,41 +164,6 @@ Bob --> Alice: Authentication Response
 Alice -> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 @enduml
-
-### Эмодзи
-
-Плагин [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji) добавляет поддержку синтаксиса emoji и смайликов.
-
-**Установка:**
-
-```bash
-npm install i markdown-it-emoji
-```
-
-**Подключение:**
-
-```javascript
-import { full as emoji } from 'markdown-it-emoji'
-import markdownit from 'markdown-it'
-
-const md = markdownit().use(emoji/* , options */);
-
-// Для Transformer
-const {result: {html, meta}, logs} = transform(content, {
-  plugins: [emoji]
-});
-
-// Для Builder (в build/plugins/index.js)
-module.exports = [
-  emoji
-];
-```
-
-**Использование:**
-
-```markdown
-:smile: :heart: :thumbsup: :satellite:
-```
 
 ### Математические формулы
 
