@@ -146,18 +146,21 @@ Alice <-- Bob: another authentication Response
 
 ### Эмодзи
 
-Плагин [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji) добавляет поддержку эмодзи.
+Плагин [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji) добавляет поддержку синтаксиса emoji и смайликов.
 
 **Установка:**
 
 ```bash
-npm i markdown-it-emoji
+npm install i markdown-it-emoji
 ```
 
 **Подключение:**
 
 ```javascript
-const emoji = require('markdown-it-emoji');
+import { full as emoji } from 'markdown-it-emoji'
+import markdownit from 'markdown-it'
+
+const md = markdownit().use(emoji/* , options */);
 
 // Для Transformer
 const {result: {html, meta}, logs} = transform(content, {
@@ -173,7 +176,7 @@ module.exports = [
 **Использование:**
 
 ```markdown
-:smile: :heart: :thumbsup:
+:smile: :heart: :thumbsup: :satellite:
 ```
 
 ### Математические формулы
