@@ -1,9 +1,25 @@
-# О Diplodoc
-
-Добро пожаловать на платформу документирования Diplodoc — решение, созданное для тех, кто стремится эффективно управлять и публиковать документацию с использованием подхода «docs as code».
+# Plantum 
 
 
-Диаграмма - PlantUML
+Разметка:
+
+```
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml
+```
+
+Результат:
+
+```uml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+```
 
 @startuml
 Alice -> Bob: Authentication Request
@@ -19,25 +35,56 @@ Alice <-- Bob: another authentication Response
 - [ ] Contact the media
 
 
-Diplodoc предоставляет два варианта использования (оба из которых абсолютно бесплатны):
+$\sqrt{3x-1}+(1+x)^2$
 
-{% list tabs %}
 
-- Серверная версия
 
-  Серверная версия Diplodoc обеспечивает простоту и удобство использования платформы без необходимости организации собственного хостинга. В этом варианте вся обработка и рендеринг контента осуществляется на наших ресурсах.
+```
+classDiagram
+    Animal <|-- Duck
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+      +String beakColor
+      +swim()
+      +quack()
+    }
+    class Fish{
+      -int sizeInFeet
+      -canEat()
+    }
+    class Zebra{
+      +bool is_wild
+      +run()
+    }
+```
 
-  Вы просто работаете с Markdown-файлами на GitHub, и платформа автоматически генерирует из них документацию на домене [diplodoc.com](https://diplodoc.com/).
+Результат:
 
-  Одним из преимуществ серверной версии является возможность проксирования с вашего собственного домена, что позволяет сохранить брендовый стиль и профессиональный вид документационного портала.
-
-- Cтатическая документация
-
-  Для пользователей, предпочитающих полный контроль над инфраструктурой, Diplodoc предлагает вариант использования через интерфейс командной строки (CLI).
-
-  В этом сценарии вы можете использовать наш CLI для генерации статических HTML-страниц из вашего контента, написанного в Markdown.
-
-  Этот подход позволяет размещать собранные файлы на любых собственных хостинговых платформах, обеспечивая максимальную гибкость и независимость. Это идеальный вариант для команд, желающих интегрировать процесс создания документации в свои CI/CD пайплайны.
-
-{% endlist %}
-
+```mermaid
+classDiagram
+    Animal <|-- Duck
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+      +String beakColor
+      +swim()
+      +quack()
+    }
+    class Fish{
+      -int sizeInFeet
+      -canEat()
+    }
+    class Zebra{
+      +bool is_wild
+      +run()
+    }
+```
