@@ -24,7 +24,7 @@ parameter: value
 
 #|
 || **Параметр** | **Описание** | **Тип и значение по умолчанию** ||
-|| `allowCustomResources` | Разрешить загрузки пользовательских ресурсов в статически сгенерированные страницы. | `bool`
+|| `allowCustomResources` {#allow-custom-resources} | Разрешить загрузки пользовательских ресурсов в статически сгенерированные страницы. | `bool`
 
 `false` ||
 || `allowHtml` | Разрешить [использование html-элементов](syntax/base.md#html) в разметке. | `bool`
@@ -34,9 +34,9 @@ parameter: value
 [Подробнее о пресетах](project/presets.md). | `bool`
 
 `false` ||
-|| `authors` | Включить отображение автора статьи.
+|| `authors` {#vcs-authors} | Включить отображение автора статьи.
 
-Работает при включенном параметре `vcs`. | `bool` или `object`
+Работает при включенном параметре [##vcs##](#vcs). | `bool` или `object`
 
 `false`
 Параметры объекта:
@@ -58,9 +58,9 @@ authors:
 || `breaks` | [Переносить строки](syntax/base.md#breaks) по символу перевода каретки. | `bool`
 
 `true` ||
-|| `contributors` | Включить отображение контрибьюторов в статье.
+|| `contributors` {#vcs-contributors} | Включить отображение контрибьюторов в статье.
 
-Работает при включенном параметре `vcs`.
+Работает при включенном параметре [##vcs##](#vcs).
 
 
 | `bool` или `object`
@@ -118,9 +118,13 @@ extensions:
 || `lint` | Подключить [файл линтера](./project/lint.md). | `bool`
 
 `false` ||
-|| `mtimes` | Включить отображение даты изменения статьи.
+|| `mtimes` {#vcs-mtimes} | Включить отображение даты изменения статьи, которая берётся из данных VCS.
 
-Работает при включенном параметре `vcs`. | `bool`
+Работает при включенном параметре [##vcs##](#vcs).
+
+Также, дата изменения автоматически добавляется в метаданные страницы ##last-modified## и ##article:modified_time##.
+
+| `bool`
 
 `false` ||
 || `outputFormat` | Формат файлов итоговой сборки. | `string` (`html` или `md`)
@@ -158,7 +162,7 @@ extensions:
 || `varsPreset` | Имя пресета переменных, который необходимо использовать при сборке. | `string`
 
 — ||
-|| `vcs` | Настройка подключения к vcs системе. Её включение позволяет использовать функциональности `mtimes`, `authors` и `contributors`.
+|| `vcs` {#vcs} | Настройка подключения к vcs системе. Её включение позволяет использовать функциональности [##mtimes##](#vcs-mtimes), [##authors##](#vcs-authors) и [##contributors##](#vcs-contributors).
 
 Требует [подключения втроенного расширения](#extensions) `github-vcs`.
 
@@ -228,7 +232,7 @@ extensions:
 #|
 || **Название** | **Описание** | **Тип и значение по умолчанию** ||
 
-|| `csp` | Управление [Content Security Policy](./guides/csp.md) (CSP).
+|| `csp` {#resources-csp} | Управление [Content Security Policy](./guides/csp.md) (CSP).
 
 {% cut "Пример структуры" %}
 
@@ -268,7 +272,7 @@ resources:
     - _assets/scripts/some.js
 ```
 
-Для подключения скриптов должен быть установлен параметр `allowCustomResources: true`.
+Для подключения скриптов должен быть установлен параметр ##[allowCustomResources](#allow-custom-resources): true##.
 
 | `string[]`
 
@@ -282,7 +286,7 @@ resources:
     - _assets/style/my.css
 ```
 
-Для подключения стилей должен быть установлен параметр `allowCustomResources: true`.
+Для подключения стилей должен быть установлен параметр ##[allowCustomResources](#allow-custom-resources): true##.
 
 | `string[]`
 
