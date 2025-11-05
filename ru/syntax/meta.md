@@ -79,34 +79,33 @@ Cписка содержит объекты вида:
 ```yaml
 metadata:
   - name: name 1
-    content: some content 1
-  - name: name 2
-    content: some content 2
-  - http-equiv: http-equiv 1
+    content: content 1
+  - http-equiv: http-equiv 2
+    content: content 2
+  - property: property 3
     content: content 3
-  - property: name 4
-    content: content 4
 ...
 ```
 
 на основе которых формируется набор тегов:
 ```html
-<meta name="name 1" content="some content 1"/>
-<meta name="name 2" content="some content 2"/>
-<meta http-equiv="http-equiv 1" content="content 3">
-<meta property="name 4" content="content 4">
+<meta name="name 1" content="content 1"/>
+<meta http-equiv="http-equiv 2" content="content 2">
+<meta property="property 3" content="content 3">
 ```
+
+Примеры полей и их возможных значений можно найти в статье об [организации контентной аналитики](../guides/content-analytics.md#meta-information-example).
 
 | `object[]`
 
 — ||
 || `resources` | Секция для управления ресурсами страницы.
 
-Переопределяет настройки `resources`, установленные в [секции resources .yfm](../settings.md#resources).
+Переопределяет настройки ##resources##, установленные в [секции resources .yfm](../settings.md#resources).
 
 {% note warning %}
 
-Доступно только расширение списка значений `csp`.
+Доступно только расширение списка значений [##csp##](../settings.md#resources-csp).
 
 {% endnote %}
 
