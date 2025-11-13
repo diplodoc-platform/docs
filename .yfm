@@ -6,7 +6,8 @@ mtimes: true
 authors: true
 
 interface:
-  toc-header: false
+  toc: true
+  feedback: false
   favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
 
 extensions:

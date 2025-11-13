@@ -38,6 +38,16 @@ navigation:
     rightItems:
       - type: controls
 items:
+  - name: ECommerce
+    href: about.md
+  - name: Android
+    href: features.md
+  - name: Баннеры
+    href: about.md
+    items:
+      - name: Баннер с внешним переходом
+        href: features.md
+        hidden: true
   - name: Платформа Diplodoc
     labeled: true
     href: index.yaml
