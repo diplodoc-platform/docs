@@ -64,7 +64,7 @@ items:
           - name: Yandex Flavored Markdown
             href: index-yfm.md 
           - name: Базовая разметка
-            href: syntax/base.md
+            href: syntax/base2.md
           - name: Списки
             href: syntax/lists.md
           - name: Таблицы
