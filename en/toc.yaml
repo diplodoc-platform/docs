@@ -90,6 +90,8 @@ items:
                 href: tools/docs/singlepage.md
               - name: Uploading to S3
                 href: tools/docs/publish-s3.md
+          - name: Temization
+            href: tools/theme.md
       - name: Plugins
         items:
           - name: Overview
