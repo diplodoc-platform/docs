@@ -23,6 +23,7 @@ resources:
     - "img-src":
         - "data:"
         - "https://storage.yandexcloud.net"
+        - "https://avatars.githubusercontent.com"
     - "style-src":
         - "fonts.googleapis.com"
 
