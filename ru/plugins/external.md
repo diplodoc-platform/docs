@@ -8,7 +8,7 @@
 
 ### Примеры подключения популярных плагинов
 
-#### Установка и настройка плагина [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji)
+**Установка и настройка плагина [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji)**
 
 Плагин добавляет поддержку синтаксиса эмодзи и смайликов.
 
@@ -49,7 +49,7 @@
 
 :smile: :heart: :thumbsup: :satellite:
 
-#### Математические формулы
+**Математические формулы**
 
 Плагин [markdown-it-katex](https://www.npmjs.com/package/markdown-it-katex) позволяет отображать математические формулы.
 
