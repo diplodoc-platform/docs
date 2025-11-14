@@ -11,6 +11,12 @@ interface:
 
 extensions:
   - github-vcs
+  - name: mdit-plugins
+    plugins:
+        - "markdown-it-emoji"
+        - '@diplodoc/transform/lib/plugins/checkbox'
+        - "markdown-it-katex"
+  
 
 resources:
   style:

@@ -7,7 +7,7 @@
 * соответствует [CommonMark Spec](https://spec.commonmark.org/);
 * предоставляет собственный [набор плагинов](./plugins/index.md) с дополнительными возможностями и элементами разметки;
 * [быстрый](https://www.npmjs.com/package/markdown-it#benchmark);
-* расширяемый: можно [подключить](./plugins/import.md) любой плагин для markdown-it или [написать свой](https://github.com/markdown-it/markdown-it/tree/master/docs);
+* расширяемый: можно [подключить](./plugins/index.md) любой плагин для markdown-it или [написать свой](https://github.com/markdown-it/markdown-it/tree/master/docs);
 * безопасный: по умолчанию HTML экранируется;
 * использует динамическую валидацию;
 * позволяет собрать документационный проект.
