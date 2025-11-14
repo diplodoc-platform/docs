@@ -189,7 +189,3 @@ a.dc-breadcrumbs__text.dc-breadcrumbs__text_link:hover {
 .dc-sidebar .dc-toc-item__text {
     font-size: var(--g-text-body-2-font-size);
 }
-
-.pc-header-block__content_vertical-offset_m {
-    padding: 10px 0;
-}
