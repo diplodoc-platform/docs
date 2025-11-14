@@ -203,6 +203,8 @@ items:
   - name: Инструменты и библиотеки
     labeled: true
     items:
+      - name: Расширения
+        href: extensions/index.md
       - name: Плагины
         href: plugins/index.md
         items:
