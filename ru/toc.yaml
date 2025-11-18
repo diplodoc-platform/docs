@@ -207,8 +207,8 @@ items:
         href: guides/csp.md
       - name: Настройка версионирования документации
         href: guides/release-version.md
-      - name: Подключение CSS
-        href: style/css.md
+      - name: Подключение CSS и JS
+        href: style/css-js.md
   - name: Инструменты и библиотеки
     labeled: true
     items:
