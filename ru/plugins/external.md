@@ -6,11 +6,11 @@
 
 Для внешних плагинов в поле `plugins` указывется имя плагина.
 
-### Примеры подключения популярных плагинов
+### Пример подключения
 
-**Установка и настройка плагина [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji)**
+**Установка и настройка плагина [markdown-it-katex](https://www.npmjs.com/package/markdown-it-katex)**.
 
-Плагин добавляет поддержку синтаксиса эмодзи и смайликов.
+Плагин позволяет отображать математические формулы.
 
 1. Склонируйте репозиторий CLI:
 
@@ -24,44 +24,19 @@
     npm i && npm run build
     ```
 
-3. Установите пакет с плагином:
+3. Установите парсер и пакет с плагином:
 
    ```bash
-   npm install i markdown-it-emoji
+   npm install markdown-it
+   ```
+
+   ```bash
+   npm install i markdown-it-katex
    ```
 
 4. Добавьте в файл `.yfm` следующую конфигурацию:
 
    ```yaml
-   extensions:
-   - name: mdit-plugins
-      plugins:
-         - "markdown-it-emoji"
-   ```
-
-**Использование:**
-
-```markdown
-:smile: :heart: :thumbsup: :satellite:
-```
-
-**Результат:**
-
-:smile: :heart: :thumbsup: :satellite:
-
-**Математические формулы**
-
-Плагин [markdown-it-katex](https://www.npmjs.com/package/markdown-it-katex) позволяет отображать математические формулы.
-
-**Установка:**
-
-```bash
-npm install i markdown-it-katex
-```
-
-**Подключение:**
-
-```yaml
    extensions:
    - name: mdit-plugins
       plugins:
