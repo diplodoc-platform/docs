@@ -183,6 +183,19 @@ items:
         href: guides/content-analytics.md
       - name: Настройка личного домена
         href: personal-domain-ya-cloud.md
+      - name: Единый источник
+        href: guides/single-source/ei.md
+        items:
+          - name: Профилирование
+            href: guides/single-source/profiling.md
+          - name: Пресеты переменных
+            href: guides/single-source/presets.md
+          - name: Инклюды
+            href: guides/single-source/includes.md
+          - name: Вставки оглавлений
+            href: guides/single-source/toc_includes.md
+          - name: Локальная сборка YFM с переиспользованием (для КПБ)
+            href: guides/single-source/build.md
       - name: Автогенерация и интеграция документации
         href: guides/includers.md
         items:
