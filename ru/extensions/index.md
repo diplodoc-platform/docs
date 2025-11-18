@@ -53,6 +53,6 @@ npm install @diplodoc/algolia-extension
 ||
 `mdit-plugins`
 |
-Добавляет в парсер markdown-it [дополнительные плагины](../plugins/import.md) для расширения возможностей разметки документации.
+Добавляет в парсер markdown-it [дополнительные плагины](../plugins/index.md) для расширения возможностей разметки документации.
 ||
 |#
