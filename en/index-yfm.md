@@ -47,14 +47,3 @@ A built project is a set of static HTML files that can be viewed locally or on a
   You can try changing the settings right now: click ![settings-icon](./_images/user-settings.png) in the upper-right corner.
 
 In addition to building all files in HTML, you can build to a [single-page](./tools/docs/singlepage.md) and in [YFM](./tools/docs/build.md#yfm).
-
-## Under development {#future-releases}
-
-Future YFM releases are expected to include the following features:
-
-* Static linter.
-* YFM generators from proto, OpenAPI, auto-generated Java, Python, C++, and Go documentation.
-* Customer satisfaction score (CSAT) on documentation pages.
-* Automatic local rebuild when changes are made.
-* Displaying contributors on pages.
-* Free hosting for open-source documentation projects.
