@@ -21,22 +21,22 @@
 
 
     ```markdown
-    {% include [Описание](../_includes/file.md) %}
+    {% include [Описание](../../_includes/file.md) %}
     ```
     Если заголовок файла не нужно подставлять, добавьте ключевое слово `notitle`:
 
     ```markdown
-    {% include notitle [Описание](../_includes/file.md) %}
+    {% include notitle [Описание](../../_includes/file.md) %}
     ```
 
     Чтобы подставить только один раздел из файла, добавьте к ссылке [якорь на заголовок](https://diplodoc.com/docs/ru/syntax/base#headers) соответствующего раздела:
 
     ```markdown
-    {% include notitle [Описание](../_includes/file.md#anchor) %}
+    {% include notitle [Описание](../../_includes/file.md#anchor) %}
     ```
 
     * `[Описание]` — описание файла. Информация для авторов документа, не влияет на сборку.
-    * `(../_includes/file.md)` — путь к файлу.
+    * `(../../_includes/file.md)` — путь к файлу.
 
    {% note info %}
 
