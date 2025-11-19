@@ -4,6 +4,15 @@
 
 Единый источник упрощает обновление проекта и снижает количество ошибок. Повторяющийся текст находится в одном месте, поэтому при обновлении не нужно искать и править все его вхождения.
 
+{% cut "Примеры" %}
+
+* [Справка Яндекс Почты](https://yandex.ru/support/yandex-360/customers/mail/ru/web/letter/create/letter-from-mobile?tabs=defaultTabsGroup-002l0bah_android)
+* [Справка Яндекс Музыки](https://yandex.ru/support/music/ru/new-template/gettingstart)
+* [Справка Кинопоиска](https://yandex.ru/support/kinopoisk/ru/authorization/get-started)
+
+{% endcut %}
+
+
 ## Методы работы с единым источником {#methods}
 
 * [**Профилирование**](./profiling.md) используется для формирования нескольких похожих документов из одного документа-источника. Текст размечается с помощью [условных операторов](https://diplodoc.com/docs/ru/syntax/vars#conditions) или [переменных](https://diplodoc.com/docs/ru/syntax/vars). При сборке в каждый выходной документ подставляются только нужные фрагменты текста.
