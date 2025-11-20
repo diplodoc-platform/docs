@@ -21,16 +21,16 @@ YFM позволяет создавать и поддерживать докум
 
 ```
 input-folder
-|-- .yfm
-|-- toc.yaml
-|-- presets.yaml
-|-- index.yaml
-|-- pages
+|-- .yfm # файл конфигурации
+|-- toc.yaml # оглавление
+|-- presets.yaml # пресеты переменных
+|-- index.yaml # разводящая страница
+|-- pages # файлы с контентом
     |-- faq.md
     |-- how-to.md
-|-- _assets
+|-- _assets # каталог с изображениями
     |-- image1.png
     |-- image2.png
-|-- _includes
+|-- _includes # каталог с файлами для переиспользования
     |-- faq_shared_block.md
 ```
