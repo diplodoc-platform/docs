@@ -27,7 +27,7 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
 Автоматический перевод может быть выполнен с использованием таких сервисов, как [Yandex Translate](https://cloud.yandex.ru/docs/translate/){% if translate.google-support == true %} или [Cloud Translate](https://cloud.google.com/translate/docs){% endif %}.
 
-У этих систем есть [ограничения](https://cloud.yandex.ru/ru/docs/translate/concepts/limits) по объему переводимых документов и качеству перевода. Однако они значительно выигрывают с точки зрения скорости.
+У этих систем есть [ограничения](https://cloud.yandex.ru/ru/docs/translate/concepts/limits) по объему переводимых документов и качеству перевода. Однако они отличаются высокой скоростью работы.
 
 Для уменьшения объема текста для перевода документ разбивается на более короткие сегменты, например, предложения или заголовки. Повторяющиеся сегменты затем удаляются.
 
