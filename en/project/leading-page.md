@@ -27,7 +27,7 @@ links:
 
 * `title`: Document name. It's displayed in the table of contents above the list of all sections.
 * `description`: A description of the document.
-* `meta`: [Metadata](../syntax/meta.md#meta).
+* `meta`: [Metadata](../syntax/meta.md).
 * `links`: Grouping element. The following is set within each section:
     * `title`: Name of the section. Displayed as the name of the link.
     * `description`: Description of the section.
