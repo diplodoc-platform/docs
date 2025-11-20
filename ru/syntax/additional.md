@@ -49,18 +49,9 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 ## Списки задач {#tasks-list}
 
-Импортируйте плагин из пакета следующим образом:
-```
-const checkbox = require('@diplodoc/transform/lib/plugins/checkbox');
-```
-
 Список задач представляет из себя список чекбоксов. Обычному элементу соответствует символ `- [ ]` , отмеченному — `- [x]`. В описании задачи можно использовать [строчное форматирование](./base.md#line).
 
-```markdown
-- [x] ~~Write the press release~~
-- [ ] Update the website
-- [ ] Contact the media
-```
+[Пример подключения](../plugins/installed.md#example)
 
 Проголосовать за поддержку списков задач в YFM по умолчанию можно в [GitHub issues](https://github.com/yandex-cloud/yfm-transform/issues/73).
 
@@ -68,8 +59,6 @@ const checkbox = require('@diplodoc/transform/lib/plugins/checkbox');
 
 **Плагин:** [markdown-it-katex](https://www.npmjs.com/package/markdown-it-katex) (см. [другие версии](https://www.npmjs.com/search?q=markdown-it-katex))
 
-Плагин использует библиотеку KaTeX для отображения математических обозначений. Пример формулы:
+Плагин использует библиотеку KaTeX для отображения математических обозначений.
 
-```markdown
-$\sqrt{3x-1}+(1+x)^2$
-```
+[Пример подключения](../plugins/external.md#example)

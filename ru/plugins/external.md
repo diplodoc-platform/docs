@@ -6,35 +6,19 @@
 
 Для внешних плагинов в поле `plugins` указывется имя плагина.
 
-### Пример подключения
+### Пример подключения {#example}
 
 **Установка и настройка плагина [markdown-it-katex](https://www.npmjs.com/package/markdown-it-katex)**.
 
 Плагин позволяет отображать математические формулы.
 
-1. Склонируйте репозиторий CLI:
-
-    ```bash
-    git clone https://github.com/diplodoc-platform/cli.git
-    ```
-
-2. Установите зависимости и соберите проект:
-
-    ```bash
-    npm i && npm run build
-    ```
-
-3. Установите парсер и пакет с плагином:
+1. Установите пакет с плагином:
 
    ```bash
-   npm install markdown-it
+   npm install markdown-it-katex
    ```
 
-   ```bash
-   npm install i markdown-it-katex
-   ```
-
-4. Добавьте в файл `.yfm` следующую конфигурацию:
+2. Добавьте в файл `.yfm` следующую конфигурацию:
 
    ```yaml
    extensions:

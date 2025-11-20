@@ -11,7 +11,7 @@ extensions:
       - '@diplodoc/transform/lib/plugins/checkbox'
 ```
 
-### Пример подключения
+### Пример подключения {#example}
 
 **Установка и настройка плагина `Tasks list` (списки задач)**.
 
@@ -19,26 +19,14 @@ extensions:
 
 **Подключение:**
 
-1. Склонируйте репозиторий CLI:
+Добавьте в файл `.yfm` следующую конфигурацию:
 
-    ```bash
-    git clone https://github.com/diplodoc-platform/cli.git
-    ```
-
-1. Установите зависимости и соберите проект:
-
-    ```bash
-    npm i && npm run build
-    ```
-
-1. Добавьте в файл `.yfm` следующую конфигурацию:
-
-    ```yaml
-    extensions:
-    - name: mdit-plugins
-        plugins:
-        - '@diplodoc/transform/lib/plugins/checkbox'
-    ```
+```yaml
+extensions:
+- name: mdit-plugins
+    plugins:
+    - '@diplodoc/transform/lib/plugins/checkbox'
+```
 
 **Использование:**
 
