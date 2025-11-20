@@ -1,16 +1,18 @@
 # Быстрый старт
 
+{% note info "" %}
+
+Если вы хотите быстро приступить к разработке, воспользуйтесь [краткам руководством](https://github.com/diplodoc-platform/diplodoc/blob/master/DEVELOPMENT.md) в корневом репозитории.
+
+{% endnote %}
+
 Платформа diplodoc разрабатывается на основе набора независимых модулей, расположенных в GitHub организации [diplodoc-platform](https://github.com/diplodoc-platform).
 
 Каждый модуль можно разрабатывать как по отдельности, так и в составе [метапакета](./metapackage.md).
 
 Самый простой способ начать разрабатку любого модуля в системе - запустить преднастроенный GitHub Codespace в соответствующем репозитории.
 
-{% note info "" %}
-
 Подробнее про работу с GitHub Codespaces можно почитать в [официальной документации](https://docs.github.com/en/codespaces/getting-started/quickstart).
-
-{% endnote %}
 
 ## Подготовка модуля
 
