@@ -2,6 +2,9 @@
 
 Mermaid — библиотека для создания диаграмм и блок-схем с помощью языка разметки, похожего на Markdown. Все поддерживаемые типы диаграмм перечислены [в официальной документации](https://mermaid.js.org/intro/#diagram-types).
 
+Использовать Mermaid можно только после установки расширения `@diplodoc/mermaid-extension`.
+Подробнее о том, как устанавливать и подключать расширения, смотрите в разделе [Расширения Diplodoc](../extensions/index.md).
+
 #### Узнайте больше
 
 - [Синтаксис Mermaid](https://mermaid.js.org/intro/syntax-reference.html)
