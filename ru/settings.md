@@ -162,7 +162,7 @@ extensions:
 — ||
 || `vcs` {#vcs} | Настройка подключения к vcs системе. Её включение позволяет использовать функциональности [##mtimes##](#vcs-mtimes), [##authors##](#vcs-authors) и [##contributors##](#vcs-contributors).
 
-Требует [подключения втроенного расширения](#extensions) `github-vcs`.
+Требует [подключения встроенного расширения](#extensions) `github-vcs`.
 
 | `boolean` или `object`
 
