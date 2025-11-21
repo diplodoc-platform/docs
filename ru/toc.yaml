@@ -96,8 +96,6 @@ items:
             href: syntax/media.md
           - name: Фрагменты кода
             href: syntax/code.md
-          - name: Комментарии и метаданные
-            href: syntax/meta.md
           - name: Переменные и шаблоны
             href: syntax/vars.md
           - name: Всплывающие подсказки
@@ -128,6 +126,8 @@ items:
             href: project/navigation.md
           - name: Разводящая страница
             href: project/leading-page.md
+          - name: Метаданные
+            href: project/meta.md
       - name: Page constructor
         items:
           - name: Обзор
