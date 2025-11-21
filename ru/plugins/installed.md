@@ -23,7 +23,7 @@ extensions:
 
 ```yaml
 extensions:
-- name: mdit-plugins
+  - name: mdit-plugins
     plugins:
     - '@diplodoc/transform/lib/plugins/checkbox'
 ```
