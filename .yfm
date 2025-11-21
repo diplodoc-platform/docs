@@ -10,6 +10,9 @@ interface:
   favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
 
 extensions:
+  - name: mdit-plugins
+    plugins:
+    - '@diplodoc/transform/lib/plugins/checkbox'
   - github-vcs
 
 resources:
