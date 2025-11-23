@@ -1,3 +1,7 @@
+---
+description: Как устанавливать и подключать расширения Diplodoc.
+---
+
 # Расширения Diplodoc
 
 Расширения предназначены для дополнения функциональности Diplodoc новыми возможностями.
@@ -44,11 +48,6 @@ npm install @diplodoc/algolia-extension
 `github-vcs`
 |
 Получает информацию о [дате изменения](../settings.md#vcs-mtimes) и [авторах](../settings.md#vcs-authors) из репозитория Github при сборке проекта для размещения в контенте статей.
-||
-||
-`local-search`
-|
-Добавляет в проект [локальный поиск](../project/lunr.md) на базе lunr.js.
 ||
 ||
 `mdit-plugins`
