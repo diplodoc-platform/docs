@@ -52,7 +52,7 @@ blocks:
 
       - type: basic-card
         title: 
-          text: Редактирование контента
+          text: Контент документации
           textSize: s
         text: |
           [Синтаксис](syntax/index.md)
@@ -68,6 +68,8 @@ blocks:
         text: |
           [Настройки проекта](settings.md)
 
+          [Подключение поиска](project/search.md)
+
           [Пресеты переменных](project/presets.md)
 
       - type: basic-card
@@ -77,18 +79,16 @@ blocks:
         text: |
           [Расширенная навигация](project/navigation.md)
 
-          [Подключение CSS](style/css.md)
+          [Подключение JS и CSS](style/css-js.md)
 
       - type: basic-card
         title: 
           text: CLI
           textSize: s
         text: |
-          [Обзор](tools/docs/index.md)
+          [Установка](tools/docs/index.md) и [использование](tools/docs/build.md)
 
-          [Сборка](tools/docs/build.md)
-
-          [Настройки сборки](tools/docs/settings.md)
+          [Параметры вызова](tools/docs/settings.md)
 
           [Локализация](tools/docs/translate.md)
 
@@ -105,12 +105,12 @@ blocks:
 
       - type: basic-card
         title: 
-          text: Инструменты и библиотеки
+          text: Больше возможностей
           textSize: s
         text: |
-          [Transformer](tools/transform/index.md)
+          [Расширения Diplodoc](extensions/index.md)
 
-          [Плагины](plugins/index.md)
+          [Подключение плагинов markdown-it](plugins/index.md)
   
       - type: basic-card
         title: 
