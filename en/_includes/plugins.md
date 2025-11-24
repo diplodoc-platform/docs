@@ -10,7 +10,7 @@
 | **Imsize**   | Set the image size | - | - |
 | **Includes** | Reuse content in a document | `getVarsPerFile`: A function that returns calculated variables using the path to the file</br>(type: function, default value: -) | - |
 | **Links**    | Expand [link syntax](../syntax/links.md) | - | - |
-| **Meta**     | Add [metadata](../syntax/meta.md#meta) to the beginning of files | - | + |
+| **Meta**     | Add [metadata](../syntax/meta.md) to the beginning of files | - | + |
 | **Notes**    | Support for the [note](../syntax/notes.md) markup | `lang`: A language for displaying the note type</br>(type: string, default: ru) | + |
 | **Sup**      | Output text as [superscript](../syntax/base.md#line) | - | + |
 | **Table**    | Support for [multiline tables](../syntax/tables/multiline.md) | - | + |
