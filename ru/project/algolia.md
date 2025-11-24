@@ -4,7 +4,7 @@ title: Поиск с Algolia
 
 # Поиск с Algolia
 
-[Algolia](https://www.algolia.com/) — облачная система поиска для быстрого и релевантного поиска по документации Diplodoc. Подходит для больших объемов данных, обеспечивает мгновенную выдачу результатов и легко интегрируется во фронтенд документации.
+[Algolia](https://www.algolia.com/) — внешняя облачная поисковая система для работы с большими объемами данных. Интегрируется с фронтендом документации Diplodoc.
 
 **Исходный код и дополнительные инструкции расширения Algolia:**
 [https://github.com/diplodoc-platform/algolia-extension](https://github.com/diplodoc-platform/algolia-extension)
