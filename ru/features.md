@@ -2,7 +2,7 @@
 
 ## Расширенный Markdown
 
-Поддержка [расширенного синтаксиса Markdown](syntax/index.md) включая:
+Поддержка [расширенного синтаксиса Markdown](syntax/index.md), включая:
 - кодовые блоки;
 - изображения и диаграммы;
 - таблицы и списки.
@@ -30,6 +30,6 @@
 ## Визуализация данных
 
 Поддержка инструментов визуализации:
-- [Mermaid](custom-plugins/mermaid.md)
+- [Mermaid](custom-plugins/mermaid.md).
 - PlantUML.
 - LaTeX.
