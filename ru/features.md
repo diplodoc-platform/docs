@@ -30,6 +30,6 @@
 ## Визуализация данных
 
 Поддержка инструментов визуализации:
-- [Mermaid](tools/mermaid.md).
+- [Mermaid](custom-plugins/mermaid.md)
 - PlantUML.
 - LaTeX.

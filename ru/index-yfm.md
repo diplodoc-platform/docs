@@ -6,7 +6,7 @@
 
 * Совместимость со стандартом [CommonMark Spec](https://spec.commonmark.org/).
 * Включает набор [плагинов](./plugins/index.md) с дополнительными элементами разметки.
-* Возможность [подключения](./plugins/import.md) сторонних плагинов markdown-it и [создания собственных](https://github.com/markdown-it/markdown-it/tree/master/docs).
+* Возможность [подключения](./plugins/external.md) сторонних плагинов markdown-it и [создания собственных](https://github.com/markdown-it/markdown-it/tree/master/docs).
 * Безопасность: HTML экранируется по умолчанию.
 * Динамическая валидация.
 * Сборка документационного проекта.
