@@ -194,7 +194,7 @@ items:
             href: guides/single-source/includes.md
           - name: Вставки оглавлений
             href: guides/single-source/toc_includes.md
-          - name: Локальная сборка YFM с переиспользованием (для КПБ)
+          - name: Локальная сборка YFM с переиспользованием
             href: guides/single-source/build.md
       - name: Автогенерация и интеграция документации
         href: guides/includers.md
