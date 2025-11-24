@@ -221,9 +221,6 @@ items:
             href: plugins/installed.md
           - name: Внешние
             href: plugins/external.md
-      - name: Библиотека Mermaid
-        href: tools/mermaid.md
-        hidden: true
   - name: Вакансии
     hidden: true
     items:
