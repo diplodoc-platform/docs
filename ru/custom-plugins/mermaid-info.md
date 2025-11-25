@@ -36,7 +36,7 @@ Mermaid — это инструмент для создания диаграмм
 
 ### Блок кода
 
-```
+````
 ```mermaid
 %%{
   init: {
@@ -62,7 +62,7 @@ sequenceDiagram
     John -->>- Alice: Yeah! See you there.
     end
 ```
-```
+````
 
 Параметры для цветовой кастомизации:
 - `'primaryColor'::` — цветовое значение для «акторов» диаграммы «Alice» и «John» и соединяющих их линий. В соответствии с дизайн-проектом указываем `'#4DA0FF'`.
@@ -85,7 +85,7 @@ sequenceDiagram
 
 ### Блок кода
 
-```
+````
 ```mermaid
 ---
 title: Работа напрямую
@@ -104,7 +104,7 @@ A --> B
 %% Styling
 classDef orange fill:#FEEEE7,stroke:#FEEEE7,stroke-width:2px;
 ```
-```
+````
 
 Параметры для цветовой кастомизации:
 Для каждого «набора» цветов необходимо задавать параметры в строке
@@ -138,7 +138,7 @@ classDef orange fill:#FEEEE7,stroke:#FEEEE7,stroke-width:2px;
 
 ### Блок кода
 
-```
+````
 ```mermaid
 %%{
   init: {
@@ -155,7 +155,7 @@ erDiagram
     ORDER ||--|{ LINE-ITEM : contains
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 ```
-```
+````
 
 Параметры для цветовой кастомизации:
 
@@ -175,7 +175,7 @@ erDiagram
 
 ### Блок кода
 
-```
+````
 ```mermaid
 mindmap
   root((mindmap))
@@ -194,7 +194,7 @@ mindmap
       Pen and paper
       Mermaid
 ```
-```
+````
 
 {% note info %}
 
@@ -216,7 +216,7 @@ mindmap
 
 ### Блок кода
 
-```
+````
 ```mermaid
 graph TD
 A["Start"]
@@ -224,7 +224,7 @@ A --> C["Stop"]
 style A fill:#FEEEE7,stroke:#FEEEE7,stroke-width:4px
 style C fill:#FEEEE7,stroke:#FEEEE7,stroke-width:4px
 ```
-```
+````
 
 Цветовые значения в этой диаграмме задаются для каждого отдельного блока через строку вида:
 - `style A` — название блока, который нужно перекрасить.
