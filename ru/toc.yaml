@@ -107,12 +107,10 @@ items:
       - name: Дополнительные возможности YFM
         items:
           - name: Диаграммы
+            href: custom-plugins/mermaid.md
             items:
-            - name: Mermaid
-              href: custom-plugins/mermaid.md
-              items:
-                - name: Кастомизация Mermaid-диаграмм
-                  href: custom-plugins/mermaid-info.md
+              - name: Кастомизация Mermaid-диаграмм
+                href: custom-plugins/mermaid-info.md
       - name: Организация контента
         items:
           - name: Обзор
