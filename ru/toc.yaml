@@ -45,6 +45,24 @@ items:
     href: about.md
   - name: Функциональные возможности
     href: features.md
+  - name: Справочные материалы
+    items:
+      - name: Конфигурация проекта
+        labeled: true
+        items:
+          - name: Настройки проекта
+            href: settings.md
+          - name: Поиск
+            href: project/search.md
+            items:
+              - name: Локальный поиск (lunr.js)
+                href: project/lunr.md
+              - name: Algolia
+                href: project/algolia.md
+          - name: Пресеты переменных
+            href: project/presets.md
+          - name: Файл конфигурации линтера
+            href: project/lint.md
   - name: Релизы YFM
     hidden: true
     href: changelog.md
@@ -54,10 +72,23 @@ items:
       - name: Локальная сборка проекта
         href: installation.md
       - name: Шаблон проекта
-        href: static-template.md      
-  - name: Редактирование контента
+        href: static-template.md
+  - name: Редактирование
     labeled: true
     items:
+      - name: Организация контента
+        items:
+          - name: Обзор
+            href: project/index.md
+          - name: Оглавление
+            href: project/toc.md
+            items:
+              - name: Оглавление на странице документации
+                href: project/minitoc.md
+          - name: Расширенная навигация
+            href: project/navigation.md
+          - name: Разводящая страница
+            href: project/leading-page.md
       - name: Синтаксис
         href: syntax/index.md
         items:
@@ -138,22 +169,6 @@ items:
             href: project/pc-example2.yaml
           - name: Пример 3 (fullScreen mode)
             href: project/pc-example3.yaml 
-  - name: Конфигурация проекта
-    labeled: true
-    items:
-      - name: Настройки проекта
-        href: settings.md
-      - name: Поиск
-        href: project/search.md
-        items:
-          - name: Локальный поиск (lunr.js)
-            href: project/lunr.md
-          - name: Algolia
-            href: project/algolia.md
-      - name: Пресеты переменных
-        href: project/presets.md
-      - name: Файл конфигурации линтера
-        href: project/lint.md
   - name: Пакет CLI
     labeled: true
     items:
