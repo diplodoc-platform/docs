@@ -43,6 +43,16 @@
 
   [{#T}](base.md#headers)
 
+## Ограничение относительных путей в HTML
+
+В HTML-ссылках используйте абсолютные пути от корня документации.
+
+Пример:
+
+```html
+<a href="/root_folder/path_to_file">Ссылка</a>
+```
+
 ## URL или адрес электронной почты {#url-email}
 
 Чтобы преобразовать URL или адрес электронной почты в ссылку, добавьте с двух сторон угловые скобки `<>`.
@@ -111,3 +121,4 @@ Super [^men^](https://en.wikipedia.org/wiki/Major_Grom_(2017_film)).
 ```
 
 {% file src="data:text/plain;base64,Cg==" name="empty.txt" %}
+
