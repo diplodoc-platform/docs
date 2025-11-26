@@ -45,16 +45,57 @@ items:
     href: about.md
   - name: Функциональные возможности
     href: features.md
-  - name: Релизы YFM
-    hidden: true
-    href: changelog.md
-  - name: Начало работы
-    labeled: true
+
+# БЫСТРЫЙ СТАРТ
+
+  - name: Быстрый старт
     items:
       - name: Локальная сборка проекта
         href: installation.md
       - name: Шаблон проекта
-        href: static-template.md      
+        href: static-template.md
+
+# СПРАВОЧНЫЕ МАТЕРИАЛЫ
+
+  - name: Справочные материалы
+    items:
+
+      - name: Конфигурация проекта
+        labeled: true
+        items:
+          - name: Настройки проекта
+            href: settings.md
+          - name: Поиск
+            href: project/search.md
+            items:
+              - name: Локальный поиск (lunr.js)
+                href: project/lunr.md
+              - name: Algolia
+                href: project/algolia.md
+          - name: Пресеты переменных
+            href: project/presets.md
+          - name: Файл конфигурации линтера
+            href: project/lint.md
+      - name: Пакет CLI
+        labeled: true
+        items:
+          - name: Обзор
+            href: tools/docs/index.md
+          - name: Сборка
+            href: tools/docs/build.md
+          - name: Настройки сборки
+            href: tools/docs/settings.md
+          - name: Локализация
+            href: tools/docs/translate.md
+          - name: Одностраничная сборка
+            href: tools/docs/singlepage.md
+          - name: Выкладка на S3
+            href: tools/docs/publish-s3.md
+
+  - name: Релизы YFM
+    hidden: true
+    href: changelog.md
+
   - name: Редактирование контента
     labeled: true
     items:
@@ -135,38 +176,8 @@ items:
           - name: Пример 2
             href: project/pc-example2.yaml
           - name: Пример 3 (fullScreen mode)
-            href: project/pc-example3.yaml 
-  - name: Конфигурация проекта
-    labeled: true
-    items:
-      - name: Настройки проекта
-        href: settings.md
-      - name: Поиск
-        href: project/search.md
-        items:
-          - name: Локальный поиск (lunr.js)
-            href: project/lunr.md
-          - name: Algolia
-            href: project/algolia.md
-      - name: Пресеты переменных
-        href: project/presets.md
-      - name: Файл конфигурации линтера
-        href: project/lint.md
-  - name: Пакет CLI
-    labeled: true
-    items:
-      - name: Обзор
-        href: tools/docs/index.md
-      - name: Сборка
-        href: tools/docs/build.md
-      - name: Настройки сборки
-        href: tools/docs/settings.md
-      - name: Локализация
-        href: tools/docs/translate.md
-      - name: Одностраничная сборка
-        href: tools/docs/singlepage.md
-      - name: Выкладка на S3
-        href: tools/docs/publish-s3.md
+            href: project/pc-example3.yaml
+
   - name: Публикация 
     href: deploy.md
     labeled: true
