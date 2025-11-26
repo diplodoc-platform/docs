@@ -49,6 +49,7 @@ items:
 # БЫСТРЫЙ СТАРТ
 
   - name: Быстрый старт
+    expanded: true
     items:
       - name: Локальная сборка проекта
         href: installation.md
@@ -58,8 +59,8 @@ items:
 # СПРАВОЧНЫЕ МАТЕРИАЛЫ
 
   - name: Справочные материалы
+    expanded: true
     items:
-
       - name: Конфигурация проекта
         labeled: true
         items:
@@ -172,7 +173,6 @@ items:
                 href: project/pc-example2.yaml
               - name: Пример 3 (fullScreen mode)
                 href: project/pc-example3.yaml
-
       - name: Публикация 
         href: deploy.md
         labeled: true
@@ -193,6 +193,7 @@ items:
 # ПРАКТИЧЕСКИЕ РУКОВОДСТВА
 
   - name: Практические руководства
+    expanded: true
     items:
       - name: Контентная аналитика
         href: guides/content-analytics.md
@@ -215,18 +216,18 @@ items:
         href: guides/release-version.md
       - name: Подключение CSS и JS
         href: style/css-js.md
-  - name: Инструменты и библиотеки
-    labeled: true
-    items:
-      - name: Расширения
-        href: extensions/index.md
-      - name: Плагины
-        href: plugins/index.md
+      - name: Инструменты и библиотеки
+        labeled: true
         items:
-          - name: Предустановленные
-            href: plugins/installed.md
-          - name: Внешние
-            href: plugins/external.md
+          - name: Расширения
+            href: extensions/index.md
+          - name: Плагины
+            href: plugins/index.md
+            items:
+              - name: Предустановленные
+                href: plugins/installed.md
+              - name: Внешние
+                href: plugins/external.md
 
 # НЕСОРТИРУЕМОЕ
 
