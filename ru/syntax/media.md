@@ -13,7 +13,7 @@
 
       {% note info %}
       
-      Чтобы alt-текст отображался в SVG-изображение, добавьте [атрибут `inline=false`](#img-inline).
+      Чтобы отобразить alt-текст в SVG-изображении, добавьте [атрибут `inline=false`](#img-inline).
       
       {% endnote %}
       
