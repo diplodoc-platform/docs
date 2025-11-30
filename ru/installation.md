@@ -47,7 +47,7 @@ input-folder
 #### Пример
 
 ```
-yfm -i ./input-folder -o ./ouput-folder
+yfm -i ./input-folder -o ./output-folder
 ```
 
 ### Результат 
