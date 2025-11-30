@@ -5,7 +5,7 @@ blocks:
     title: 'Как всё устроено?'
     resetPaddings: true
     verticalOffset: 'l'
-    description: 'Diplodoc — это платформа документации со следущими компонентами:
+    description: 'Diplodoc — это платформа документации со следующими компонентами:
 
       * клиентская часть отвечает за отображение документов в браузере на стороне пользователя;
 
@@ -33,7 +33,7 @@ blocks:
 
   - type: 'extended-features-block'
     title:
-      text: 'Подход Docs as Сode'
+      text: 'Подход Docs as Code'
     colSizes:
       all: 12
       xl: 3
