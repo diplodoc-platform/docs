@@ -32,29 +32,29 @@
       
   * [Инклюды](https://diplodoc.com/docs/ru/syntax/includes) — отдельные файлы с текстом, ссылки на которые вставляются в нужном месте текста. При сборке текст из файла подставляется полностью.
 
-      {% cut "Пример" %}
+    {% cut "Пример" %}
 
       В [справке Яндекс Музыки](https://yandex.ru/support/music/ru/) некоторые разделы содержат повторяющуюся информацию. Такие блоки оформляются в виде инклюдов и включаются в нужные места текста. Например, [Дополнительные преимущества в сервисах Яндекса](https://yandex.ru/support/music/ru/new-template/gettingstart) и [Что входит в подписку Плюса](https://yandex.ru/support/music/ru/access-and-account/why-is-paid). 
 
-      {% endcut %}
+    {% endcut %}
 
   * [Пресеты переменных](https://diplodoc.com/docs/ru/project/presets) — набор переменных и их значений. При сборке документа в текст подставляется значение переменной в зависимости от условий сборки.
 
-      {% cut "Пример" %}
+    {% cut "Пример" %}
 
       В [справке Яндекс Почты](https://yandex.ru/support/yandex-360/customers/mail/ru/) переменная `действие_с_письмом` может иметь разные значения: 
-      * для [мобильного приложения](https://yandex.ru/support/yandex-360/customers/mail/ru/web/letter/create/letter-from-mobile?tabs=defaultTabsGroup-08mm4747_android) — «Нажмите значок  в правом нижнем углу экрана»; 
-      * для [веб-версии](https://yandex.ru/support/yandex-360/customers/mail/ru/web/letter/create/write-letter) — «Чтобы создать новое письмо, в левом верхнем углу экрана нажмите „Написать“».
+        * для [мобильного приложения](https://yandex.ru/support/yandex-360/customers/mail/ru/web/letter/create/letter-from-mobile?tabs=defaultTabsGroup-08mm4747_android) — «Нажмите значок  в правом нижнем углу экрана»; 
+        * для [веб-версии](https://yandex.ru/support/yandex-360/customers/mail/ru/web/letter/create/write-letter) — «Чтобы создать новое письмо, в левом верхнем углу экрана нажмите „Написать“».
 
-      {% endcut %}
+    {% endcut %}
 
   * [Вставки оглавлений](https://diplodoc.com/docs/ru/project/toc#includes) — блоки оглавления, которые вставляются в основное оглавление.
 
-      {% cut "Пример" %}
+    {% cut "Пример" %}
 
       В [справке Яндекс Почты](https://yandex.ru/support/yandex-360/customers/mail/ru/) основная справка содержит несколько крупных разделов, например, [«Управление контактами»](https://yandex.ru/support/yandex-360/customers/mail/ru/web/abook), [«Настройка почтового ящика»](https://yandex.ru/support/yandex-360/customers/mail/ru/box-settings). Для каждого раздела создается свой блок оглавления, который включает подразделы и ключевые темы. С помощью вставок оглавлений эти блоки включаются в общее оглавление справки, что позволяет пользователям быстро находить нужные разделы и ориентироваться в большом объеме информации.
 
-      {% endcut %}
+    {% endcut %}
 
 ## Особенности {#peculiaritys}
 
