@@ -188,8 +188,6 @@ items:
         items:
           - name: Профилирование
             href: guides/single-source/profiling.md
-          - name: Локальная сборка YFM с переиспользованием
-            href: guides/single-source/build.md
       - name: Автогенерация и интеграция документации
         href: guides/includers.md
         items:
