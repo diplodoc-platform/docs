@@ -13,7 +13,7 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
 #|
 || Параметр             | Path
-|| --schema {{optional}}| 
+|| `--schema not_var{{optional}}` | 
 Путь до одного или нескольких файлов, содержащих кастомные схемы для перевода.
 \
 `{{PROGRAM}} translate extract --schema ./some/path/to/file.yaml ./some/path/toAnother/file.yaml`
@@ -22,7 +22,7 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 ## Автоматический перевод {#auto}
 
 ```bash
-{{PROGRAM}} translate --source {{translate.source}} --target {{translate.target}}
+{{PROGRAM}} translate --source not_var{{translate.source}} --target not_var{{translate.target}}
 ```
 
 Автоматический перевод может быть выполнен с использованием таких сервисов, как [Yandex Translate](https://cloud.yandex.ru/docs/translate/){% if translate.google-support == true %} или [Cloud Translate](https://cloud.google.com/translate/docs){% endif %}.
@@ -39,16 +39,16 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
 ### Использование
 
-* Перевести проект в текущей директории с `{{translate.source-lang}}` на `{{translate.target-lang}}`:
+* Перевести проект в текущей директории с `not_var{{translate.source-lang}}` на `not_var{{translate.target-lang}}`:
 
   ```
-  {{PROGRAM}} translate --source {{translate.source-lang}} --target {{translate.target-lang}}
+  {{PROGRAM}} translate --source not_var{{translate.source-lang}} --target not_var{{translate.target-lang}}
   ```
 
 * Не переводить скрытые файлы в проекте:
 
   ```
-  {{PROGRAM}} translate --exclude {{translate.source-lang}}/**/_*.* --source {{translate.source-lang}} --target {{translate.target-lang}}
+  {{PROGRAM}} translate --exclude not_var{{translate.source-lang}}/**/_*.* --source not_var{{translate.source-lang}} --target not_var{{translate.target-lang}}
   ```
 
 ### Параметры вызова
@@ -157,7 +157,7 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 Пример вызова команды с файлом фильтром
 
 ```bash
-{{PROGRAM}} translate --input ./translate.list --source {{translate.source-lang}} --target {{translate.target-lang}}
+{{PROGRAM}} translate --input ./translate.list --source not_var{{translate.source-lang}} --target not_var{{translate.target-lang}}
 ```
 
 ### Фильтрация контента страниц {#content-filter}
