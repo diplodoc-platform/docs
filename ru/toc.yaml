@@ -190,6 +190,11 @@ items:
         href: guides/content-analytics.md
       - name: Настройка личного домена
         href: personal-domain-ya-cloud.md
+      - name: Единый источник
+        href: guides/single-source/index.md
+        items:
+          - name: Профилирование
+            href: guides/single-source/profiling.md
       - name: Автогенерация и интеграция документации
         href: guides/includers.md
         items:
