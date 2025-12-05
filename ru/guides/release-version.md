@@ -40,11 +40,11 @@ jobs:
       - name: Release
         uses: diplodoc-platform/docs-release-action@v2
         with:
-          revision: "${{ github.sha }}"
-          version: "${{ github.ref_name }}"
-          storage-bucket: ${{ secrets.DIPLODOC_STORAGE_BUCKET }}
-          storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID }}
-          storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
+          revision: "$not_var{{ github.sha }}"
+          version: "$not_var{{ github.ref_name }}"
+          storage-bucket: $not_var{{ secrets.DIPLODOC_STORAGE_BUCKET }}
+          storage-access-key-id: $not_var{{ secrets.DIPLODOC_ACCESS_KEY_ID }}
+          storage-secret-access-key: $not_var{{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
 ```
 
 {% endcut %}
@@ -55,7 +55,7 @@ jobs:
 
 1. Добавьте шаг `Set Default Version` в ваш **Actions** релиза.
 1. Укажите значение `DEFAULT_VERSION`.
-1. В шаге `Releas` добавьте `update-only-version`: `"${{ env.UPDATE_ONLY_VERSION }}"`.
+1. В шаге `Releas` добавьте `update-only-version`: `"$not_var{{ env.UPDATE_ONLY_VERSION }}"`.
    
 {% cut "Пример конфига" %}
   
@@ -77,7 +77,7 @@ jobs:
     needs: upload
     runs-on: ubuntu-latest
     concurrency:
-      group: release-documentation-${{ github.ref }}
+      group: release-documentation-$not_var{{ github.ref }}
       cancel-in-progress: true
     steps:
       - name: Extract version
@@ -101,12 +101,12 @@ jobs:
       - name: Release
         uses: diplodoc-platform/docs-release-action@v2
         with:
-          revision: "${{ github.sha }}"
-          version: "${{ steps.extract_version.outputs.version }}"
-          storage-bucket: ${{ secrets.DOCS_PROJECT_NAME }}
-          storage-access-key-id: ${{ secrets.DOCS_AWS_KEY_ID }}
-          storage-secret-access-key: ${{ secrets.DOCS_AWS_SECRET_ACCESS_KEY }}
-          update-only-version: "${{ env.UPDATE_ONLY_VERSION }}"
+          revision: "$not_var{{ github.sha }}"
+          version: "$not_var{{ steps.extract_version.outputs.version }}"
+          storage-bucket: $not_var{{ secrets.DOCS_PROJECT_NAME }}
+          storage-access-key-id: $not_var{{ secrets.DOCS_AWS_KEY_ID }}
+          storage-secret-access-key: $not_var{{ secrets.DOCS_AWS_SECRET_ACCESS_KEY }}
+          update-only-version: "$not_var{{ env.UPDATE_ONLY_VERSION }}"
 ```
 
 Параметры:
