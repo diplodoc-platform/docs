@@ -106,6 +106,15 @@ items:
             href: syntax/additional.md
       - name: Дополнительные возможности YFM
         items:
+          - name: Page constructor
+            href: project/page-constructor.md
+            items:
+              - name: Пример 1
+                href: project/pc-example1.yaml
+              - name: Пример 2
+                href: project/pc-example2.yaml
+              - name: Пример 3 (fullScreen mode)
+                href: project/pc-example3.yaml 
           - name: Диаграммы
             href: custom-plugins/mermaid.md
             items:
@@ -126,16 +135,6 @@ items:
             href: project/leading-page.md
           - name: Метаданные
             href: project/meta.md
-      - name: Page constructor
-        items:
-          - name: Обзор
-            href: project/page-constructor.md
-          - name: Пример 1
-            href: project/pc-example1.yaml
-          - name: Пример 2
-            href: project/pc-example2.yaml
-          - name: Пример 3 (fullScreen mode)
-            href: project/pc-example3.yaml 
   - name: Конфигурация проекта
     labeled: true
     items:
