@@ -63,6 +63,7 @@ log-levels:
   YFM010: 'warn'    # Autotitle anchor is missed
   YFM011: 'warn'    # Max svg size
   YFM012: 'error'   # Max output html size
+  YFM013: 'error'   # Max single asset size
 
 # Inline code length
 YFM001:
