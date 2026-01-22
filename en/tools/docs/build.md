@@ -12,7 +12,7 @@ To start rendering, run the command specifying the required [startup keys](setti
 * `--output, -o`: The path to the folder for output data (static HTMLs).
 
 ```shell script
-yfm -i ./input-folder -o ./ouput-folder
+yfm -i ./input-folder -o ./output-folder
 ```
 
 ## YFM {#yfm}
