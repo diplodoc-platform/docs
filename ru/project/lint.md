@@ -99,8 +99,8 @@ MD033:
 log-levels:
 ```
 
-Дефолтные значения для правил с префиксом `MD` указаны [по ссылке](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml).
-Дефолтные значения для правил с префиксом `YFM` указаны [по ссылке](https://github.com/diplodoc-platform/yfmlint/blob/master/src/config.ts).
+Исходные значения для правил с префиксом `MD` указаны [по ссылке](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml).
+Исходные значения для правил с префиксом `YFM` указаны [по ссылке](https://github.com/diplodoc-platform/yfmlint/blob/master/src/config.ts).
 
 Правила можно включить, выключить, настроить для всего файла или абзаца в файле.
 Примеры можно посмотреть [по ссылке](https://github.com/DavidAnson/markdownlint/blob/a852407c887ec60949aa5365ed964bab833f962f/README.md#configuration).

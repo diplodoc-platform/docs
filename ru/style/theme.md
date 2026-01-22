@@ -101,5 +101,5 @@ dark:
 Например:
 
 ```shell
-yfm -i ./input-folder -o ./ouput-folder --theme 'rgb(152, 223, 37)'
+yfm -i ./input-folder -o ./output-folder --theme 'rgb(152, 223, 37)'
 ```
