@@ -4,7 +4,7 @@ The source files of this document and Diplodoc Platform tools are stored in repo
 
 * [Documentation](https://github.com/diplodoc-platform/docs).
 * [Transformer](https://github.com/diplodoc-platform/transform).
-* [Builder](https://github.com/diplodoc-platform/cli).
+* [CLI](https://github.com/diplodoc-platform/cli).
 
 You can submit bugs and suggestions as GitHub issues in the corresponding repository.
 
