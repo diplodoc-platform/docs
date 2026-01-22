@@ -152,20 +152,21 @@ items:
       - name: Файл конфигурации линтера
         href: project/lint.md
   - name: Пакет CLI
+    href: tools/docs/index.md
     labeled: true
     items:
-      - name: Обзор
-        href: tools/docs/index.md
       - name: Сборка
         href: tools/docs/build.md
-      - name: Настройки сборки
-        href: tools/docs/settings.md
+        items:
+          - name: Параметры сборки
+            href: tools/docs/settings.md
+          - name: Одностраничная сборка
+            href: tools/docs/singlepage.md
       - name: Локализация
         href: tools/docs/translate.md
-      - name: Одностраничная сборка
-        href: tools/docs/singlepage.md
       - name: Выкладка на S3
         href: tools/docs/publish-s3.md
+        hidden: true
   - name: Публикация 
     href: deploy.md
     labeled: true
