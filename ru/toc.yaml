@@ -61,10 +61,10 @@ items:
       - name: Синтаксис
         href: syntax/index.md
         items:
-          - name: Yandex Flavored Markdown
-            href: index-yfm.md 
           - name: Базовая разметка
             href: syntax/base.md
+          - name: Ссылки
+            href: syntax/links.md
           - name: Списки
             href: syntax/lists.md
           - name: Таблицы
@@ -90,8 +90,6 @@ items:
                 href: syntax/interactive-elements/accordion.md
               - name: Общие параметры
                 href: syntax/interactive-elements/common-params.md
-          - name: Ссылки
-            href: syntax/links.md
           - name: Медиа
             href: syntax/media.md
           - name: Фрагменты кода

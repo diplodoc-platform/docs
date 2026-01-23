@@ -1,3 +1,6 @@
+ru:
+    - from: /index-yfm
+      to: /syntax/
 common:
     - from: /project/includes
       to: /syntax/includes
