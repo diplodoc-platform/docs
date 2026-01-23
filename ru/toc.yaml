@@ -45,16 +45,11 @@ items:
     href: features.md
   - name: Варианты использования
     href: about.md
+  - name: Быстрый старт
+    href: quickstart.md
   - name: Релизы YFM
     hidden: true
     href: changelog.md
-  - name: Начало работы
-    labeled: true
-    items:
-      - name: Локальная сборка проекта
-        href: installation.md
-      - name: Шаблон проекта
-        href: static-template.md      
   - name: Редактирование контента
     labeled: true
     items:
@@ -164,15 +159,6 @@ items:
         href: tools/docs/translate.md
       - name: Выкладка на S3
         href: tools/docs/publish-s3.md
-        hidden: true
-  - name: Публикация 
-    href: deploy.md
-    labeled: true
-    items:
-      - name: На GitHub Pages
-        href: github-pages.md
-      - name: На Diplodoc.com
-        href: how-it-work.md
       - name: Внесение изменений
         hidden: true
         href: contribution.md
@@ -223,7 +209,8 @@ items:
         href: plugins/index.md
         items:
           - name: Предустановленные
-            href: plugins/installed.md
+            href: plugins/
+            ed.md
           - name: Внешние
             href: plugins/external.md
   - name: Вакансии
