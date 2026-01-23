@@ -50,7 +50,7 @@ blocks:
 
           [Создание проекта](quickstart.md#create)
 
-          [Локальная сборка проекта](quickstart.md#build)
+          [Сборка проекта](quickstart.md#build)
 
       - type: basic-card
         title: 
