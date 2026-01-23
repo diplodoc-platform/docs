@@ -209,8 +209,7 @@ items:
         href: plugins/index.md
         items:
           - name: Предустановленные
-            href: plugins/
-            ed.md
+            href: plugins/installed.md
           - name: Внешние
             href: plugins/external.md
   - name: Вакансии
