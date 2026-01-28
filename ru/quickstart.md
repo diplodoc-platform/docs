@@ -28,13 +28,13 @@
 
 ```text
 doc-folder
-|-- .yfm (Файл конфигурации)
-|-- toc.yaml (Оглавление)
-|-- index.md (Разводящая страница)
-|-- content-page.md
+|-- .yfm # Файл конфигурации
+|-- toc.yaml # Оглавление
+|-- index.md # Разводящая страница
+|-- content-page.md Страница с контентом
 ```
 
-- [Конфигурационный файла .yfm](./settings.md#config).
+- [Конфигурационный файл .yfm](./settings.md#config).
 - [Разводящая страница](./project/leading-page.md)
 - Страницы с контентом.
 - [Файл оглавления toc.yaml](./project/toc.md).
@@ -77,11 +77,13 @@ yfm -i ./doc-folder -o ./output-folder
 
 ## Публикация на GitHub Pages {#gh-pages}
 
-1. В GitHub в репозитории вашего документа перейдите на вкладку **Settings** и в меню слева выберите **Pages**.
+1. Перейдите в репозиторий вашего документа на GitHub, откройте вкладку **Settings** и в меню слева выберите **Pages**.
 
-1. В разделе **Build and deployment** в выпадающем списке выберите **GitHub Actions** и в появившемся блоке **Static HTML** нажмите кнопку **Configure**. Откроется окно редактирования экшна.
+1. В разделе **Build and deployment** в выпадающем списке выберите **GitHub Actions**.
 
-1. В блоке `jobs` после строки `uses: actions/configure-pages@v5` добавьте код
+1. В появившемся блоке **Static HTML** нажмите **Configure**. Откроется окно GitHub Actions.
+
+1. В файле workflow найдите блок jobs и после строки uses: actions/configure-pages@v5 добавьте:
 
     ```yaml
     - name: Build docs
@@ -100,7 +102,7 @@ yfm -i ./doc-folder -o ./output-folder
         path: './docs-html'
     ```
 
-1. Вверху справа нажмите **Commit changes...**, укажите имя коммита в поле **Commit message** и нажмите кнопку **Commit changes**.
+1. В правом верхнем углу нажмите **Commit changes...**, в поле **Commit message** укажите сообщение коммита и нажмите **Commit changes**.
 
 1. Перейдите на вкладку **Actions**. Вверху списка будет ваш последний коммит.
 
