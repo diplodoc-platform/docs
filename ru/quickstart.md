@@ -83,7 +83,7 @@ yfm -i ./doc-folder -o ./output-folder
 
 1. В появившемся блоке **Static HTML** нажмите **Configure**. Откроется окно GitHub Actions.
 
-1. В файле workflow найдите блок jobs и после строки uses: actions/configure-pages@v5 добавьте:
+1. В файле `workflow` найдите блок `jobs` и после строки `uses: actions/configure-pages@v5` добавьте:
 
     ```yaml
     - name: Build docs
