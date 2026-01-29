@@ -210,6 +210,8 @@ items:
         href: guides/release-version.md
       - name: Подключение CSS и JS
         href: style/css-js.md
+      - name: Подключение темизатора
+        href: style/theme.md
       - name: Создание PDF из документации
         href: guides/generate-pdf.md
   - name: Инструменты и библиотеки
