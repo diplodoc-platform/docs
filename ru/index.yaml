@@ -35,10 +35,9 @@ blocks:
           text: О платформе
           textSize: s
         text: |
-          [Описание](about.md)
-
           [Возможности платформы](features.md)
 
+          [Варианты использования](about.md)
       - type: basic-card
         title: 
           text: Начало работы
@@ -120,8 +119,6 @@ blocks:
           [Быстрый старт](dev/quickstart.md)
 
           [Внесение изменений](dev/contribution.md)
-
-          [Публикация](deploy.md)
 
           [Программа для контрибьюторов](dev/for-contributors.yaml)
 

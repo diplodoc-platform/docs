@@ -41,10 +41,10 @@ items:
   - name: Платформа Diplodoc
     labeled: true
     href: index.yaml
-  - name: О платформе
-    href: about.md
   - name: Функциональные возможности
     href: features.md
+  - name: Варианты использования
+    href: about.md
   - name: Релизы YFM
     hidden: true
     href: changelog.md
