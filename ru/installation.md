@@ -8,7 +8,7 @@
 
 ## Установка
 
-Установите пакет Diplodoc CLI, выполнив команду: `npm i @diplodoc/cli -g`.
+Установите пакет Diplodoc CLI, выполнив команду: `npm i @diplodoc/cli@latest -g`.
 
 ## Создание простого документационного проекта в YFM
 

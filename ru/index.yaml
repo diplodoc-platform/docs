@@ -80,6 +80,8 @@ blocks:
 
           [Подключение JS и CSS](style/css-js.md)
 
+          [Подключение темизатора](style/theme.md)
+
       - type: basic-card
         title: 
           text: CLI
