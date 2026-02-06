@@ -64,6 +64,10 @@ log-levels:
   YFM011: 'warn'    # Max svg size
   YFM012: 'error'   # Max output html size
   YFM013: 'error'   # Max single asset size
+  YFM014: 'warn'   # Anchor cannot be used as file path
+  YFM015: 'warn'   # Anchor not found in file
+  YFM016: 'error'   # The file is included in itself
+
 
 # Inline code length
 YFM001:
@@ -75,6 +79,12 @@ YFM001:
 Подробное описание всех правил с префиксом `YFM` можно найти [по ссылке](https://github.com/diplodoc-platform/yfmlint/blob/master/README.md).
 
 Вы можете переопределить уровень логирования в конфиге `.yfmlint` в секции `log-levels` отдельно для каждого правила: `error`, `warn`, `disabled`.
+
+{% note warning %}
+
+Нельзя переопределить ошибки `YFM014`, `YFM015` и `YFM016`.
+
+{% endnote %}
 
 В корневой секции конфига можно настроить значения, передаваемые правилам. Например:
 
