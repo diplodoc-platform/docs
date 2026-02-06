@@ -70,6 +70,8 @@ items:
             href: syntax/vars.md
           - name: Definition
             href: syntax/term.md
+          - name: Content reuse
+            href: syntax/includes.md
           - name: Additional features
             href: syntax/additional.md
       - name: Settings

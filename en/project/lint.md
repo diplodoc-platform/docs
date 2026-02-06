@@ -54,6 +54,19 @@ log-levels:
   YFM001: 'warn'    # Inline code length
   YFM002: 'warn'    # No header found in the file for the link text
   YFM003: 'error'   # Link is unreachable
+  YFM004: 'error'   # Table not closed
+  YFM005: 'error'   # Tab list not closed
+  YFM006: 'warn'    # Term definition duplicated
+  YFM007: 'warn'    # Term used without definition
+  YFM008: 'warn'    # Term inside definition not allowed
+  YFM009: 'warn'    # Term definition used not at the end of file
+  YFM010: 'warn'    # Autotitle anchor is missed
+  YFM011: 'warn'    # Max svg size
+  YFM012: 'error'   # Max output html size
+  YFM013: 'error'   # Max single asset size
+  YFM014: 'warn'   # Anchor cannot be used as file path
+  YFM015: 'warn'   # Anchor not found in file
+  YFM016: 'error'   # The file is included in itself
 
 # Inline code length
 YFM001:
@@ -65,6 +78,12 @@ A detailed description of all the rules with `MD` prefix can be found [here](htt
 A detailed description of all the rules with `YFM` prefix can be found [here](https://github.com/diplodoc-platform/transform/blob/master/src/transform/yfmlint/README.md).
 
 In the `.yfmlint` config in the `log-levels` section, you can override the logging level separately for each rule: `error`, `warn`, `disabled`.
+
+{% note warning %}
+
+Errors `YFM014`, `YFM015`, and `YFM016` cannot be overridden.
+
+{% endnote %}
 
 In the root section of the config, you can configure the values passed to the rules. For example:
 
