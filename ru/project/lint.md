@@ -1,8 +1,8 @@
 # Файл конфигурации линтера
 
-Проект может содержать файл конфигурации линтера `.yfmlint` Он должен лежать в корне проекта.
+В корне проекта можно разместить файл конфигурации линтера `.yfmlint` для управления проверками сборки документации.
 
-Конфиг по умолчанию выглядит так:
+Значения настроек по умолчанию:
 
 ```yaml
 log-levels:
@@ -64,8 +64,8 @@ log-levels:
   YFM011: 'warn'    # Max svg size
   YFM012: 'error'   # Max output html size
   YFM013: 'error'   # Max single asset size
-  YFM014: 'warn'   # Anchor cannot be used as file path
-  YFM015: 'warn'   # Anchor not found in file
+  YFM014: 'warn'    # Anchor cannot be used as file path
+  YFM015: 'warn'    # Anchor not found in file
   YFM016: 'error'   # The file is included in itself
 
 
@@ -78,7 +78,7 @@ YFM001:
 Подробное описание всех правил с префиксом `MD` можно найти [по ссылке](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).
 Подробное описание всех правил с префиксом `YFM` можно найти [по ссылке](https://github.com/diplodoc-platform/yfmlint/blob/master/README.md).
 
-Вы можете переопределить уровень логирования в конфиге `.yfmlint` в секции `log-levels` отдельно для каждого правила: `error`, `warn`, `disabled`.
+Вы можете переопределить уровень логирования в файле `.yfmlint` в секции `log-levels` отдельно для каждого правила: `error`, `warn`, `disabled`.
 
 {% note warning %}
 
@@ -86,7 +86,7 @@ YFM001:
 
 {% endnote %}
 
-В корневой секции конфига можно настроить значения, передаваемые правилам. Например:
+В корневой секции можно настроить значения, передаваемые правилам. Например:
 
 ```yaml
 # Inline code length

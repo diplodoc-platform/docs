@@ -70,7 +70,7 @@
 Для форсированного отключения инлайнинга SVG используйте атрибут `inline=false`, тогда
 
 ```
-![](_images/image.png){inline=false}
+![](_images/image.svg){inline=false}
 ```
 
 будет преобразован в 
