@@ -43,12 +43,12 @@ doc-folder
 
 ### Сборка проекта {#build}
 
-Сборка выполняется с помощью инструмента [**Builder**](tools/docs/index.md) (команда `yfm`) в командной строке.
+Сборка выполняется с консольной утилиты yfm и команды `yfm build`.
 
 Чтобы собрать проект, выполните команду:
 
 ```bash
-yfm -i ./doc-folder -o ./output-folder
+yfm build -i ./doc-folder -o ./output-folder
 ```
 
 Где:
@@ -64,8 +64,18 @@ yfm -i ./doc-folder -o ./output-folder
 1. Соберите проект:
    
     ```bash
-    yfm -i ./doc-folder -o ./output-folder
+    yfm build -i ./doc-folder -o ./output-folder
     ```
+
+    {% note tip %}
+    
+    Используйте watch-режим, чтобы вносимые изменения сразу отображались в локальной сборке проекта. Для этого добавьте к команде флаг `--watch`.
+
+    ```
+    yfm build -i ./doc-folder -o ./output-folder --watch
+    ```
+
+    {% endnote %}
 
 2. Запустите сервер для папки с результатом сборки с помощью пакета `http-server`:
 
