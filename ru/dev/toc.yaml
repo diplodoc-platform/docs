@@ -33,7 +33,7 @@ navigation:
 items:
   - name: Быстрый старт
     href: quickstart.md
-  - name: Требования к контрибьюторам
+  - name: Правила для контрибьюторов
     href: requirements.md
   - name: Внесение изменений
     href: contribution.md
