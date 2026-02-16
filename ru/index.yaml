@@ -38,16 +38,19 @@ blocks:
           [Возможности платформы](features.md)
 
           [Варианты использования](about.md)
+          
+          [Быстрый старт](quickstart.md)
+
       - type: basic-card
         title: 
-          text: Начало работы
+          text: Быстрый старт
           textSize: s
         text: |
-          [Публикация на Diplodoc.com](how-it-work.md)
+          [Подготовка](quickstart.md#prepare)
 
-          [Локальная сборка проекта](installation.md)
+          [Создание проекта](quickstart.md#create)
 
-          [Шаблон проекта](static-template.md)
+          [Сборка проекта](quickstart.md#build)
 
       - type: basic-card
         title: 
