@@ -189,4 +189,10 @@ npx @diplodoc/lint update
 - [ ] Коммиты оформлены согласно [conventional commits](https://www.conventionalcommits.org/)
 - [ ] Используются только поддерживаемые инструменты (Vitest, esbuild)
 
+## Дополнительные ресурсы
+
+- [Требования к участию в метапакете](https://github.com/diplodoc-platform/diplodoc/blob/master/.agents/metapackage-requirements.md)
+- [Управление метапакетами](https://github.com/diplodoc-platform/diplodoc/blob/master/.agents/monorepo.md)
+- [Инфраструктура разработки](https://github.com/diplodoc-platform/diplodoc/blob/master/.agents/dev-infrastructure.md)
+
 [*adr]: Architecture Decision Record
