@@ -1,4 +1,4 @@
-# Правила для контрибьюторов
+# Правила для внешних контрибьюторов
 
 На странице описано, что нужно сделать, чтобы ваши изменения приняли в проект Diplodoc.
 
@@ -8,11 +8,29 @@
 
 {% endnote %}
 
+## Процесс сборки документации
+
+```mermaid
+flowchart LR
+    A[Liquid syntax] --> B[Загрузка конфига]
+    B --> C[Применение preset]
+    C --> D[Подстановка в Liquid]
+    D --> E[Обработка условий if]
+    E --> F[Валидация toc]
+    F --> G[Выполнение инклюдов]
+    G --> H[Готовая документация]
+    
+    style A fill:#e1f5ff
+    style H fill:#d4edda
+```
+
+Схема показывает последовательность этапов сборки документации в Diplodoc: от исходных файлов с Liquid-синтаксисом до финальной версии документации.
+
 ## Требования к коду {#code-requirements}
 
 ### Код-стайл и линтинг
 
-Пишите код в едином стиле. Для проверки используйте `@diplodoc/lint`:
+Пишите код в едином стиле. Для проверки используйте [пакет `@diplodoc/lint`](https://www.npmjs.com/package/@diplodoc/lint):
 
 - ESLint — проверка JavaScript/TypeScript кода.
 - Prettier — форматирование кода.
@@ -145,11 +163,23 @@ npx @diplodoc/lint update
 || `build:declarations` | Генерация TypeScript деклараций ||
 || `typecheck` | Проверка типов: `tsc --noEmit` ||
 || `test` | Запуск тестов: `vitest run` ||
-|| `test:watch` | Запуск тестов в watch-режиме (рекомендуется) ||
+|| `test:watch` | Запуск тестов в watch-режиме ||
 || `lint` | Проверка кода: `lint update && lint` ||
 || `lint:fix` | Исправление ошибок: `lint update && lint fix` ||
 || `prepublishOnly` | Проверки перед публикацией ||
 |#
+
+{% note tip %}
+
+Используйте скрипт `test:watch` в процессе разработки. Он запускает тесты в режиме отслеживания изменений и автоматически перезапускает их при сохранении файлов. Это позволяет оперативно проверять работу кода без необходимости ручного перезапуска.
+
+{% endnote %}
+
+### Режим watch
+
+Команда `npm run watch` запускает среду разработки: собирает пакеты, следит за изменениями и автоматически перезапускает сборку. Это позволяет сразу видеть результат изменений без ручного запуска команд сборки.
+
+[Подробнее на GitHub](https://github.com/diplodoc-platform/diplodoc/blob/master/.agents/monorepo.md#watch-mode)
 
 ### Файлы модуля
 
@@ -195,4 +225,4 @@ npx @diplodoc/lint update
 - [Управление метапакетами](https://github.com/diplodoc-platform/diplodoc/blob/master/.agents/monorepo.md)
 - [Инфраструктура разработки](https://github.com/diplodoc-platform/diplodoc/blob/master/.agents/dev-infrastructure.md)
 
-[*adr]: Architecture Decision Record
+[*adr]: Architecture Decision Records
