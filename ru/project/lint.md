@@ -67,6 +67,7 @@ log-levels:
   YFM014: 'warn'    # Anchor cannot be used as file path
   YFM015: 'warn'    # Anchor not found in file
   YFM016: 'error'   # The file is included in itself
+  YFM017: 'error'   # Invalid front matter format: duplicated mapping key
 
 
 # Inline code length
@@ -82,7 +83,7 @@ YFM001:
 
 {% note warning %}
 
-Нельзя переопределить ошибки `YFM014`, `YFM015` и `YFM016`.
+Нельзя переопределить ошибки `YFM014`, `YFM015`, `YFM016` и `YFM017`.
 
 {% endnote %}
 
