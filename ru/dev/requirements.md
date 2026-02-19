@@ -39,7 +39,6 @@ flowchart LR
 
 ```
 
-
 ## Требования к коду {#code-requirements}
 
 ### Код-стайл и линтинг
@@ -204,6 +203,38 @@ npx @diplodoc/lint update
 - `LICENSE` — лицензия проекта
 - `vitest.config.mjs` — конфигурация Vitest
 - `.github/workflows/` — CI/CD workflows
+
+### GitHub Workflows
+
+Каждый пакет должен содержать стандартные workflows в директории `.github/workflows/`.
+
+Обязательные workflows:
+
+- `tests.yml` — основной workflow для тестирования (запускает lint, typecheck, tests)
+- `release.yml` — workflow для релиза
+- `release-please.yml` — конфигурация release-please
+- `package-lock.yml` — обновление package lock
+- `security.yml` — сканирование безопасности
+- `update-deps.yml` — обновление зависимостей
+
+Специальные workflows (сохраняйте при необходимости):
+
+- E2E-специфичные workflows (например, `diplodoc-e2e-tests.yaml`)
+- Кастомные workflows для специфичных нужд пакета
+
+Workflows для удаления (дубликаты):
+
+- `tests.yaml` (дубликат `tests.yml`)
+
+При настройке workflows:
+
+1. Проверьте существующие workflows в `.github/workflows/`.
+1. Удалите дублирующиеся workflows (`.yaml` vs `.yml`).
+1. Убедитесь, что присутствуют все стандартные workflows.
+1. Сохраните специальные workflows, если они выполняют специфичную функцию.
+1. Проверьте корректность конфигурации workflows.
+
+[Подробнее в документации](https://github.com/diplodoc-platform/diplodoc/blob/master/.agents/dev-infrastructure.md#github-workflows)
 
 ## Неподдерживаемые инструменты {#unsupported}
 
