@@ -8,15 +8,15 @@
 
 {% endnote %}
 
-## Процесс сборки документации
+Процесс сборки документации:
 
 ```mermaid
 flowchart LR
     subgraph Row1 [ ]
         direction LR
-        A[Liquid syntax] --> B[Загрузка конфига]
-        B --> C[Применение preset]
-        C --> D[Подстановка в Liquid]
+        A[Liquid syntax] --> B[Обработка yfm-конфига]
+        B --> C[Фильтрация по presets.yaml]
+        C --> D[Подстановка в Liquid syntax]
         D --> E[Обработка условий if]
     end
 
@@ -25,7 +25,7 @@ flowchart LR
 
     subgraph Row2 [ ]
         direction LR
-        F[Валидация toc] --> G[Выполнение инклюдов]
+        F[Сборка toc] --> G[Выполнение инклюдов]
         G --> H[Готовая документация]
     end
 
@@ -39,7 +39,6 @@ flowchart LR
 
 ```
 
-Схема показывает последовательность этапов сборки документации в Diplodoc: от исходных файлов с Liquid-синтаксисом до финальной версии документации.
 
 ## Требования к коду {#code-requirements}
 
