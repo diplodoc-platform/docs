@@ -24,7 +24,7 @@ flowchart TB
 
     subgraph Row2[ ]
         direction LR
-        F[Сборка toc] --> G[Выполнение инклюдов]
+        F[Сборка toc] --> G[Обработка инклюдов]
         G --> H[Готовая документация]
     end
 
