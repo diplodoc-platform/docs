@@ -43,7 +43,7 @@
 
   [{#T}](base.md#headers)
 
-## Ограничение относительных путей в HTML
+## Ограничение относительных путей в HTML {#constraints}
 
 В HTML-ссылках используйте абсолютные пути от корня документации.
 
@@ -110,7 +110,7 @@ This is the _[YFM Guide](https://yadocs.tech)_.
 See the section on [`code`](#code).
 Super [^men^](https://en.wikipedia.org/wiki/Major_Grom_(2017_film)).
 
-## Файлы {#files}
+## Произвольные файлы {#files}
 
 Чтобы выложить файлы для скачивания, загрузите их на внешнее хранилище. 
 
