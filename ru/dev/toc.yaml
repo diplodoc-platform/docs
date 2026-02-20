@@ -33,6 +33,8 @@ navigation:
 items:
   - name: Быстрый старт
     href: quickstart.md
+  - name: Правила для контрибьюторов
+    href: requirements.md
   - name: Внесение изменений
     href: contribution.md
   - name: Метапакет
