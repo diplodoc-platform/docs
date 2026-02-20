@@ -8,11 +8,13 @@
 
 {% endnote %}
 
-Процесс сборки документации:
+
+{% cut "Процесс сборки документации" %}
 
 ```mermaid
-flowchart LR
-    subgraph Row1 [ ]
+flowchart TB
+
+    subgraph Row1[ ]
         direction LR
         A[Liquid syntax] --> B[Обработка yfm-конфига]
         B --> C[Фильтрация по presets.yaml]
@@ -20,24 +22,23 @@ flowchart LR
         D --> E[Обработка условий if]
     end
 
-    %% Невидимая связь для переноса (A под E)
-    A ~~~ F
-
-    subgraph Row2 [ ]
+    subgraph Row2[ ]
         direction LR
         F[Сборка toc] --> G[Выполнение инклюдов]
         G --> H[Готовая документация]
     end
 
-    %% Видимая связь между рядами
+    %% Связь между рядами
     E --> F
 
     style A fill:#e1f5ff
     style H fill:#d4edda
     style Row1 stroke-width:0px,fill:none
     style Row2 stroke-width:0px,fill:none
-
 ```
+
+{% endcut %}
+
 
 ## Требования к коду {#code-requirements}
 
