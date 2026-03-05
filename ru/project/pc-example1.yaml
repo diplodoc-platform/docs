@@ -81,7 +81,6 @@ blocks:
           type: 'layout-item'
           media:
             image: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/diplodoc-tab-1.png'
-            disableCompress: true
           border: true
           content:
             links:
@@ -97,7 +96,6 @@ blocks:
           type: 'layout-item'
           media:
             image: 'https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-trust-support.png'
-            disableCompress: true
           border: true
           content:
             links:
@@ -112,7 +110,6 @@ blocks:
           type: 'layout-item'
           media:
             image: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/ddos-index-trust-yandex-cloud.png'
-            disableCompress: true
           border: true
           content:
             links:
@@ -127,7 +124,6 @@ blocks:
           type: 'layout-item'
           media:
             image: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/ddos-index-trust-ydb.png'
-            disableCompress: true
           border: true
           content:
             links:
@@ -142,7 +138,6 @@ blocks:
           type: 'layout-item'
           media:
             image: 'https://storage.yandexcloud.net/cloud-www-assets/pages/index-diplodoc/ddos-index-trust-yandex-cat.png'
-            disableCompress: true
           border: true
           content:
             links:
@@ -168,7 +163,6 @@ blocks:
           disableCompress: true
         fullScreen: true
         border: true
-        disableCompress: true
       - type: 'layout-item'
         content:
           title: 'Интеграция с GitHub'
@@ -178,7 +172,6 @@ blocks:
           disableCompress: true
         fullScreen: true
         border: true
-        disableCompress: true
       - type: 'layout-item'
         content:
           title: 'Развёртывание'
@@ -188,7 +181,6 @@ blocks:
           disableCompress: true
         fullScreen: true
         border: true
-        disableCompress: true
 
   - type: 'card-layout-block'
     title: 'Как попробовать Diplodoc'
