@@ -9,39 +9,6 @@
 {% endnote %}
 
 
-{% cut "Процесс сборки документации" %}
-
-```mermaid
-flowchart TB
-
-    subgraph Row1[ ]
-        direction LR
-        A[Liquid syntax] --> B[Обработка yfm-конфига]
-        B --> C[Фильтрация по presets.yaml]
-        C --> D[Подстановка в Liquid syntax]
-        D --> E[Обработка условий if]
-    end
-
-    subgraph Row2[ ]
-        direction LR
-        F[Сборка toc] --> G[Обработка инклюдов]
-        G --> H[Готовая документация]
-    end
-
-    %% Связь между рядами
-    E --> F
-
-    style A fill:#e1f5ff
-    style H fill:#d4edda
-    style Row1 stroke-width:0px,fill:none
-    style Row2 stroke-width:0px,fill:none
-```
-
-Liquid — это язык шаблонов, созданный Shopify. Diplodoc использует Liquid-совместимый синтаксис для динамической генерации контента: подстановку значений из переменных и теги вида if, for для условий и циклов.
-
-{% endcut %}
-
-
 ## Требования к коду {#code-requirements}
 
 ### Код-стайл и линтинг

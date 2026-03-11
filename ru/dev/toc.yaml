@@ -33,12 +33,12 @@ navigation:
 items:
   - name: Быстрый старт
     href: quickstart.md
-  - name: Правила для внешних контрибьюторов
-    href: requirements.md
   - name: Внесение изменений
     href: contribution.md
   - name: Метапакет
     href: metapackage.md
+  - name: Правила для внешних контрибьюторов
+    href: requirements.md
   - name: Extensions API
     href: extensions-api.md
     items:
