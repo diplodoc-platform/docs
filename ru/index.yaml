@@ -1,4 +1,3 @@
-# fullScreen: true
 blocks:
   - type: header-block
     title: Diplodoc
@@ -6,6 +5,7 @@ blocks:
       Платформа работы с документацией в парадигме Documentation as Code.
     textWidth: 'm'
     verticalOffset: 'm'
+    indent: 's'
     background:
       light:
         image:
@@ -28,8 +28,8 @@ blocks:
       xl: 4
       sm: 6
       md: 4
+    indent: 's'
     children:
-
       - type: basic-card
         title: 
           text: О платформе
@@ -126,9 +126,3 @@ blocks:
           [Внесение изменений](dev/contribution.md)
 
           [Программа для контрибьюторов](dev/for-contributors.yaml)
-
-  - type: content-layout-block
-    size: s
-    textContent:
-      text: "\_"
-animated: true             
