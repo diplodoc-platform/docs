@@ -1,0 +1,8 @@
+base-brand: rgb(106, 226, 154)
+
+link: rgb(78, 168, 115)
+base-selection: rgba(106, 226, 154, 0.2)
+
+dark:
+  base-background: rgba(22, 32, 27, 1)
+  link: rgb(97, 207, 141)
