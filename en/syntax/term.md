@@ -21,7 +21,7 @@ At the moment, the use of definitions in code blocks is possible only if the cod
 
 {% endnote %}
 
-![terms_sample](../_images/terms_sample.png)
+![Example of displaying a popup hint](../_images/terms_sample.png)
 
 [*term]: Explaining a term or abbreviation using definition syntax.
 The _term_ definition may *include* [basic markup](base.md):
