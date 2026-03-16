@@ -32,7 +32,7 @@
 
 {% endnote %}
 
-![terms_sample](../_images/terms_sample.png)
+![Пример отображения всплывающей подсказки](../_images/terms_sample.png)
 
 ### Переиспользование {#reusing}
 
