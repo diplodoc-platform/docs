@@ -9,6 +9,7 @@ Standard YFM settings are listed below. Depending on the tool you use, you can c
 | :--- | :--- | :--- | :--- |
 | `vars` | [Variables](./syntax/vars.md) | `Object` | `{}` |
 | `allowHTML` | Allow HTML in markup | `bool` | `false` |
+| `disableCsp` | Disable Content-Security-Policy meta tag injection into generated HTML pages. Use when CSP is managed externally (e.g. via server HTTP headers). | `bool` | `false` |
 | `linkify` | Convert link-like strings to links | `bool` | `false` |
 | `breaks` | Use the carriage return character for a line break | `bool` | `true` |
 | `conditionsInCode` | Meet conditions in code blocks | `bool` | `false` |

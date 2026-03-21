@@ -27,6 +27,11 @@ parameter: value
 || `allowCustomResources` {#allow-custom-resources} | Разрешить загрузки пользовательских ресурсов в статически сгенерированные страницы. | `bool`
 
 `false` ||
+|| `disableCsp` {#disable-csp} | Отключить добавление мета-тега [Content-Security-Policy](./guides/csp.md) в сгенерированные HTML-страницы.
+
+Используйте, когда CSP управляется внешним образом (например, через HTTP-заголовки сервера). | `bool`
+
+`false` ||
 || `allowHtml` | Разрешить [использование html-элементов](syntax/base.md#html) в разметке. | `bool`
 
 `false` ||
