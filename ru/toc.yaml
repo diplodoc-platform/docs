@@ -37,6 +37,14 @@ navigation:
         url: "../../docs/ru/dev/"
     rightItems:
       - type: controls
+      - type: button
+        url: https://sourcecraft.dev/find/repositories
+        text: Просто посмотреть
+        theme: normal
+      - type: button
+        url: https://sourcecraft.dev/?auth=1
+        text: Войти
+        theme: monochrome
 items:
   - name: Платформа Diplodoc
     labeled: true
