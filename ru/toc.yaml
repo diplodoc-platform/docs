@@ -36,6 +36,12 @@ navigation:
         type: "link"
         url: "../../docs/ru/dev/"
     rightItems:
+      - text: "AAABBB"
+        type: "link"
+        url: "https://github.com/diplodoc-platform/"
+      - text: "CCCDDD"
+        type: "link"
+        url: "https://github.com/diplodoc-platform/"
       - type: controls
       - type: button
         url: https://sourcecraft.dev/find/repositories
