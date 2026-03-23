@@ -42,7 +42,6 @@ navigation:
       - text: "CCCDDD"
         type: "link"
         url: "https://github.com/diplodoc-platform/"
-      - type: controls
       - type: button
         url: https://sourcecraft.dev/find/repositories
         text: Просто посмотреть
@@ -51,6 +50,7 @@ navigation:
         url: https://sourcecraft.dev/?auth=1
         text: Войти
         theme: monochrome
+      - type: controls
 items:
   - name: Платформа Diplodoc
     labeled: true
