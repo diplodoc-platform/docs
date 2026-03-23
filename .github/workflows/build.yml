@@ -18,4 +18,4 @@ jobs:
         env:
           VCS_TOKEN: ${{ secrets.YC_UI_BOT_GITHUB_TOKEN }}
         with:
-          revision: "pr-${{ github.event.pull_request.number }}"
+          revision: "${{ github.event.pull_request.head.sha }}"
