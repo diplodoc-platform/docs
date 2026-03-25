@@ -50,6 +50,9 @@ items:
   - name: Релизы YFM
     hidden: true
     href: changelog.md
+  - name: Restricted Access
+    restricted-access: test
+    href: test-restricted.md
   - name: Редактирование контента
     labeled: true
     items:
