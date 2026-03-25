@@ -51,7 +51,7 @@ items:
     hidden: true
     href: changelog.md
   - name: Restricted Access
-    restricted-access: test
+    restricted-access: testtts
     href: test-restricted.md
   - name: Редактирование контента
     labeled: true
