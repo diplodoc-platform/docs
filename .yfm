@@ -1,6 +1,8 @@
 allowHTML: true
 langs: ['en','ru']
 
+protected: true
+
 vcs: true
 mtimes: true
 authors: true
