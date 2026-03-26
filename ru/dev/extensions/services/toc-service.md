@@ -1,14 +1,13 @@
 # TOC Service
 
-TOC Service управляет обработкой оглавления (Table of Contents) в Diplodoc. 
-Этот сервис позволяет модифицировать структуру документации на различных этапах сборки.
+TOC Service управляет обработкой [оглавления](../../../project/toc.md) (Table of Contents, ToC) в Diplodoc. Этот сервис позволяет модифицировать структуру документации на различных этапах сборки.
 
 ## Основные возможности
 
-- Загрузка и обработка файлов `toc.yaml`
-- Управление структурой документации
-- Поддержка включателей (includers)
-- Поддержка условной логики в TOC
+- Загрузка и обработка файлов `toc.yaml`.
+- Управление структурой документации.
+- Поддержка [инклюдеров](../../../guides/includers.md) (includers).
+- Поддержка условной логики в ToC.
 
 ## Получение доступа к сервису
 
@@ -30,7 +29,7 @@ export class Extension {
 
 ### Item
 
-Hook для обработки отдельных элементов TOC. Вызывается для каждого элемента в процессе обработки.
+Обработка отдельных элементов ToC. Вызывается для каждого элемента в процессе обработки.
 
 ```typescript
 tocHooks.Item.tapPromise('MyProcessor', async (item, tocPath) => {
@@ -51,7 +50,7 @@ tocHooks.Item.tapPromise('MyProcessor', async (item, tocPath) => {
 
 ### Includer
 
-Hook для регистрации пользовательских включателей. Позволяет добавлять динамически генерируемые разделы в TOC.
+Хук для регистрации пользовательских включателей. Позволяет добавлять динамически генерируемые разделы в ToC.
 
 ```typescript
 tocHooks.Includer.for('my-includer').tapPromise('MyProcessor', async (toc, options, tocPath) => {
@@ -67,7 +66,7 @@ tocHooks.Includer.for('my-includer').tapPromise('MyProcessor', async (toc, optio
 
 ### Resolved
 
-Hook для работы с полностью разрешенным TOC. На этом этапе TOC уже содержит все включенные элементы и является read-only.
+Хук для работы с полностью разрешенным ToC. На этом этапе ToC уже содержит все включенные элементы и является read-only.
 
 ```typescript
 tocHooks.Resolved.tapPromise('MyProcessor', async (toc, tocPath) => {
@@ -81,7 +80,7 @@ tocHooks.Resolved.tapPromise('MyProcessor', async (toc, tocPath) => {
 
 ### Included
 
-Hook для обработки TOC после его включения через директиву include.
+Хук для обработки ToC после его включения через ##[include](../../../project/toc.md#includes)##.
 
 ```typescript
 tocHooks.Included.tapPromise('MyProcessor', async (toc, tocPath, includeInfo) => {
@@ -98,7 +97,7 @@ tocHooks.Included.tapPromise('MyProcessor', async (toc, tocPath, includeInfo) =>
 
 ### Dump
 
-Hook для финальной модификации TOC перед сохранением.
+Хук для финальной модификации ToC перед сохранением.
 
 ```typescript
 tocHooks.Dump.tapPromise('MyProcessor', async (toc, path) => {
@@ -115,11 +114,11 @@ tocHooks.Dump.tapPromise('MyProcessor', async (toc, path) => {
 
 ### Loaded
 
-Hook для обработки TOC после его загрузки из файла.
+Хук для обработки ToC после его загрузки из файла.
 
 ```typescript
 tocHooks.Loaded.tapPromise('MyProcessor', async (toc, path) => {
-    // Модифицируем загруженный TOC
+    // Модифицируем загруженный ToC
     return {
         ...toc,
         meta: {
@@ -134,13 +133,13 @@ tocHooks.Loaded.tapPromise('MyProcessor', async (toc, path) => {
 
 ### Метод init
 
-Инициализирует сервис, загружая TOC из указанных путей.
+Инициализирует сервис, загружая ToC из указанных путей.
 
 **Параметры:**
-- `paths: NormalizedPath[]` - массив путей к файлам `toc.yaml` для загрузки
+- `paths: NormalizedPath[]` — массив путей к файлам `toc.yaml` для загрузки.
 
 **Вызывает хуки:**
-- `Loaded` - после загрузки каждого TOC файла
+- `Loaded` — после загрузки каждого ToC файла.
 
 ```typescript
 // Инициализация сервиса с указанием путей
@@ -149,78 +148,78 @@ await tocService.init(['path/to/toc.yaml']);
 
 ### Метод for
 
-Возвращает TOC для указанного пути.
+Возвращает ToC для указанного пути.
 
 **Параметры:**
-- `path: RelativePath` - относительный путь к файлу, для которого нужно получить TOC
+- `path: RelativePath` — относительный путь к файлу, для которого нужно получить ToC.
 
 **Возвращает:**
-- `Toc` - объект TOC, содержащий структуру документации
+- `Toc` — объект ToC, содержащий структуру документации.
 
 ```typescript
-// Получение TOC для конкретного пути
+// Получение ToC для конкретного пути
 const toc = tocService.for('path/to/file.md');
 ```
 
 ### Метод dump
 
-Сохраняет TOC в файл.
+Сохраняет ToC в файл.
 
 **Параметры:**
-- `file: NormalizedPath` - путь к файлу для сохранения
-- `toc?: Toc` - объект TOC для сохранения (если не указан, используется TOC из кэша)
+- `file: NormalizedPath` — путь к файлу для сохранения.
+- `toc?: Toc` — объект ToC для сохранения (если не указан, используется ToC из кэша).
 
 **Возвращает:**
-- `Promise<VFile<Toc>>` - промис с виртуальным файлом, содержащим сохраненный TOC
+- `Promise<VFile<Toc>>` — промис с виртуальным файлом, содержащим сохраненный ToC.
 
 **Вызывает хуки:**
-- `Dump` - перед сохранением TOC в файл
+- `Dump` — перед сохранением ToC в файл.
 
 ```typescript
-// Сохранение TOC в файл
+// Сохранение ToC в файл
 await tocService.dump('path/to/toc.yaml', toc);
 ```
 
 ### Метод load
 
-Загружает TOC из файла.
+Загружает ToC из файла.
 
 **Параметры:**
-- `path: NormalizedPath` - путь к файлу `toc.yaml`
+- `path: NormalizedPath` — путь к файлу `toc.yaml`.
 
 **Возвращает:**
-- `Promise<Toc | undefined>` - промис с загруженным TOC или undefined, если файл не найден
+- `Promise<Toc | undefined>` — промис с загруженным ToC или undefined, если файл не найден.
 
 **Вызывает хуки:**
-- `Loaded` - после успешной загрузки TOC
-- `Item` - для каждого элемента в загруженном TOC
+- `Loaded` — после успешной загрузки ToC.
+- `Item` — для каждого элемента в загруженном ToC.
 
 ```typescript
-// Загрузка TOC из файла
+// Загрузка ToC из файла
 const toc = await tocService.load('path/to/toc.yaml');
 ```
 
 ### Метод include
 
-Включает TOC через директиву include.
+Включает ToC через директиву ##include##.
 
 **Параметры:**
-- `path: RelativePath` - путь к включаемому файлу `toc.yaml`
-- `include: IncludeInfo` - информация о включении:
-  - `from?: string` - путь к исходному файлу
-  - `mode?: 'merge' | 'replace'` - режим включения
-  - `base?: string` - базовый путь для относительных ссылок
-  - `content?: string` - содержимое файла (если уже загружено)
+- `path: RelativePath` — путь к включаемому файлу `toc.yaml`.
+- `include: IncludeInfo` — информация о включении:
+  - `from?: string` — путь к исходному файлу.
+  - `mode?: 'merge' | 'replace'` — режим включения.
+  - `base?: string` — базовый путь для относительных ссылок.
+  - `content?: string` — содержимое файла (если уже загружено).
 
 **Возвращает:**
-- `Promise<Toc | undefined>` - промис с включенным TOC или undefined, если файл не найден
+- `Promise<Toc | undefined>` — промис с включенным ToC или ##undefined##, если файл не найден.
 
 **Вызывает хуки:**
-- `Included` - после включения TOC
-- `Item` - для каждого элемента во включенном TOC
+- `Included` — после включения ToC.
+- `Item` — для каждого элемента во включенном ToC.
 
 ```typescript
-// Включение TOC
+// Включение ToC
 const includedToc = await tocService.include('path/to/toc.yaml', {
     from: 'source/path',
     mode: 'merge',
@@ -230,20 +229,20 @@ const includedToc = await tocService.include('path/to/toc.yaml', {
 
 ### Метод setToc
 
-Устанавливает TOC для указанного пути.
+Устанавливает ToC для указанного пути.
 
 **Параметры:**
-- `toc: Toc` - объект TOC для установки:
-  - `path: NormalizedPath` - путь к файлу
-  - `items?: TocItem[]` - элементы TOC
-  - `href?: string` - ссылка на страницу
-  - `meta?: Record<string, unknown>` - метаданные
+- `toc: Toc` — объект ToC для установки:
+  - `path: NormalizedPath` — путь к файлу.
+  - `items?: TocItem[]` — элементы ToC.
+  - `href?: string` — ссылка на страницу.
+  - `meta?: Record<string, unknown>` — метаданные.
 
 **Вызывает хуки:**
-- `Item` - для каждого элемента в устанавливаемом TOC
+- `Item` — для каждого элемента в устанавливаемом ToC.
 
 ```typescript
-// Установка TOC
+// Установка ToC
 tocService.setToc({
     path: 'path/to/toc.yaml',
     items: [...]
@@ -252,10 +251,10 @@ tocService.setToc({
 
 ### Свойство entries
 
-Возвращает список всех entry во всех TOC.
+Возвращает список всех entry во всех ToC.
 
 **Возвращает:**
-- `Set<NormalizedPath>` - множество путей к файлам, включенным в TOC
+- `Set<NormalizedPath>` — множество путей к файлам, включенным в ToC.
 
 ```typescript
 // Получение всех entry
@@ -264,13 +263,13 @@ const entries = tocService.entries;
 
 ### Свойство tocs
 
-Возвращает список всех загруженных TOC.
+Возвращает список всех загруженных ToC.
 
 **Возвращает:**
-- `Toc[]` - массив загруженных объектов TOC
+- `Toc[]` — массив загруженных объектов ToC.
 
 ```typescript
-// Получение всех TOC
+// Получение всех ToC
 const tocs = tocService.tocs;
 ```
 
@@ -279,7 +278,7 @@ const tocs = tocService.tocs;
 Возвращает карту копирования файлов.
 
 **Возвращает:**
-- `Record<NormalizedPath, NormalizedPath>` - объект, где ключ - исходный путь, значение - целевой путь
+- `Record<NormalizedPath, NormalizedPath>` — объект, где ключ - исходный путь, значение - целевой путь.
 
 ```typescript
 // Получение карты копирования

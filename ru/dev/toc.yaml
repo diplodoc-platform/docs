@@ -42,9 +42,9 @@ items:
   - name: Extensions API
     href: extensions-api.md
     items:
-      - name: Core Concepts
+      - name: Принципы разработки
         href: extensions/core-concepts.md
-      - name: Services
+      - name: Сервисы
         href: extensions/services.md
         items:
           - name: TOC Service

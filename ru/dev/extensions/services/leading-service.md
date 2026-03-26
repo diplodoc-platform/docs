@@ -1,13 +1,13 @@
 # Leading Service
 
-Leading Service отвечает за обработку страниц оглавления (leading pages) в Diplodoc. Эти специальные страницы описывают разделы документации и содержат метаданные для них.
+Leading Service отвечает за обработку [разводящих страниц](../../../project/leading-page.md) в Diplodoc. Эти страницы описывают разделы документации и упрощают навигацию по ним.
 
 ## Основные возможности
 
-- Обработка YAML-файлов с описанием разделов
-- Управление метаданными разделов
-- Поддержка шаблонов с условиями и подстановками
-- Сбор и анализ зависимостей и ассетов
+- Обработка YAML-файлов с описанием разделов.
+- Управление метаданными разделов.
+- Поддержка шаблонов с условиями и подстановками.
+- Сбор и анализ зависимостей и ассетов.
 
 ## Получение доступа к сервису
 
@@ -28,7 +28,7 @@ export class Extension {
 ## Доступные хуки
 
 ### Plugins
-Хук для регистрации плагинов обработки leading-страниц. Вызывается при инициализации сервиса.
+Хук для регистрации плагинов обработки разводящих страниц. Вызывается при инициализации сервиса.
 
 ```typescript
 leadingHooks.Plugins.tapPromise('MyExtension', async (plugins) => {
@@ -40,7 +40,7 @@ leadingHooks.Plugins.tapPromise('MyExtension', async (plugins) => {
         {
             name: 'my-plugin',
             transform: (leading) => {
-                // Трансформация leading-страницы
+                // Трансформация разводящей страницы
                 return leading;
             }
         }
@@ -49,11 +49,11 @@ leadingHooks.Plugins.tapPromise('MyExtension', async (plugins) => {
 ```
 
 ### Loaded
-Хук вызывается после загрузки и начальной обработки leading-страницы.
+Хук вызывается после загрузки и начальной обработки разводящей страницы.
 
 ```typescript
 leadingHooks.Loaded.tapPromise('MyProcessor', async (leading, meta, path) => {
-    // leading: Загруженная leading-страница
+    // leading: Загруженная разводящая страница
     // meta: Метаданные страницы
     // path: Путь к файлу
     
@@ -63,11 +63,11 @@ leadingHooks.Loaded.tapPromise('MyProcessor', async (leading, meta, path) => {
 ```
 
 ### Resolved
-Хук вызывается после полного разрешения leading-страницы.
+Хук вызывается после полного разрешения разводящей страницы.
 
 ```typescript
 leadingHooks.Resolved.tapPromise('MyProcessor', async (leading, meta, path) => {
-    // leading: Разрешенная leading-страница
+    // leading: Разрешенная разводящая страница
     // meta: Метаданные страницы
     // path: Путь к файлу
     
@@ -77,11 +77,11 @@ leadingHooks.Resolved.tapPromise('MyProcessor', async (leading, meta, path) => {
 ```
 
 ### Dump
-Хук вызывается перед сохранением leading-страницы.
+Хук вызывается перед сохранением разводящей страницы.
 
 ```typescript
 leadingHooks.Dump.tapPromise('MyProcessor', async (vfile) => {
-    // vfile: VFile с leading-страницей и метаданными
+    // vfile: VFile с разводящей страницей и метаданными
     
     // Модификация перед сохранением
     return vfile;
@@ -100,17 +100,17 @@ await leadingService.init();
 
 ### Метод load
 
-Загружает и обрабатывает leading-страницу.
+Загружает и обрабатывает разводящую страницу.
 
 **Параметры:**
-- `path: RelativePath` - относительный путь к файлу
+- `path: RelativePath` — относительный путь к файлу.
 
 **Возвращает:**
-- `Promise<LeadingPage>` - промис с обработанной leading-страницей
+- `Promise<LeadingPage>` — промис с обработанной разводящей страницей.
 
 **Вызывает хуки:**
-- `Loaded` - после загрузки файла
-- `Resolved` - после полного разрешения страницы
+- `Loaded` — после загрузки файла.
+- `Resolved` — после полного разрешения страницы.
 
 ```typescript
 const leading = await leadingService.load('path/to/leading.yaml');
@@ -118,17 +118,17 @@ const leading = await leadingService.load('path/to/leading.yaml');
 
 ### Метод dump
 
-Сохраняет leading-страницу.
+Сохраняет разводящую страницу.
 
 **Параметры:**
-- `path: RelativePath` - путь к файлу
-- `leading?: LeadingPage` - страница для сохранения (если не указана, загружается из файла)
+- `path: RelativePath` — путь к файлу.
+- `leading?: LeadingPage` — страница для сохранения (если не указана, загружается из файла).
 
 **Возвращает:**
-- `Promise<VFile<LeadingPage>>` - промис с VFile
+- `Promise<VFile<LeadingPage>>` — промис с VFile.
 
 **Вызывает хуки:**
-- `Dump` - перед сохранением файла
+- `Dump` — перед сохранением файла
 
 ```typescript
 const vfile = await leadingService.dump('path/to/leading.yaml', leading);
@@ -136,14 +136,14 @@ const vfile = await leadingService.dump('path/to/leading.yaml', leading);
 
 ### Метод walkLinks
 
-Обходит все ссылки в leading-странице.
+Обходит все ссылки в разводящей странице.
 
 **Параметры:**
-- `leading: LeadingPage | undefined` - leading-страница
-- `walker: (link: string) => string | void` - функция обработки ссылки
+- `leading: LeadingPage | undefined` — разводящая страница.
+- `walker: (link: string) => string | void` — функция обработки ссылки.
 
 **Возвращает:**
-- `LeadingPage | undefined` - модифицированная leading-страница или undefined
+- `LeadingPage | undefined` — модифицированная разводящая страница или ##undefined##.
 
 ```typescript
 const modifiedLeading = leadingService.walkLinks(leading, (link) => {
@@ -154,13 +154,13 @@ const modifiedLeading = leadingService.walkLinks(leading, (link) => {
 
 ### Метод deps
 
-Получает зависимости leading-страницы.
+Получает зависимости разводящей страницы.
 
 **Параметры:**
-- `path: RelativePath` - путь к файлу
+- `path: RelativePath` — путь к файлу.
 
 **Возвращает:**
-- `Promise<never[]>` - промис с массивом зависимостей
+- `Promise<never[]>` — промис с массивом зависимостей.
 
 ```typescript
 const deps = await leadingService.deps('path/to/leading.yaml');
@@ -168,13 +168,13 @@ const deps = await leadingService.deps('path/to/leading.yaml');
 
 ### Метод assets
 
-Получает список ассетов leading-страницы.
+Получает список ассетов разводящей страницы.
 
 **Параметры:**
-- `path: RelativePath` - путь к файлу
+- `path: RelativePath` — путь к файлу.
 
 **Возвращает:**
-- `Promise<NormalizedPath[]>` - промис с массивом путей к ассетам
+- `Promise<NormalizedPath[]>` — промис с массивом путей к ассетам.
 
 ```typescript
 const assets = await leadingService.assets('path/to/leading.yaml');
