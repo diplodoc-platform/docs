@@ -4,10 +4,10 @@ Search Service предназначен для организации поиск
 
 ## Основные возможности
 
-- Поддержка различных поисковых провайдеров
-- Генерация поискового индекса
-- Поддержка многоязычности
-- Интеграция с клиентской частью
+- Поддержка различных поисковых провайдеров.
+- Генерация поискового индекса.
+- Поддержка многоязычности.
+- Интеграция с клиентской частью.
 
 ## Получение доступа к сервису
 
@@ -63,10 +63,10 @@ await searchService.init();
 Получает конфигурацию поиска для указанного языка.
 
 **Параметры:**
-- `lang: string` - код языка
+- `lang: string` — код языка.
 
 **Возвращает:**
-- `SearchAppConfig | undefined` - конфигурация поиска или undefined, если поиск отключен
+- `SearchAppConfig | undefined` — конфигурация поиска или ##undefined##, если поиск отключен.
 
 ```typescript
 const config = searchService.config('ru');
@@ -77,9 +77,9 @@ const config = searchService.config('ru');
 Добавляет документ в поисковый индекс.
 
 **Параметры:**
-- `path: RelativePath` - путь к документу
-- `lang: string` - код языка
-- `info: EntryInfo` - информация о документе
+- `path: RelativePath` — путь к документу.
+- `lang: string` — код языка.
+- `info: EntryInfo` — информация о документе.
 
 ```typescript
 await searchService.add('path/to/doc.md', 'ru', info);
@@ -98,10 +98,10 @@ await searchService.release();
 Генерирует страницу поиска для указанного языка.
 
 **Параметры:**
-- `lang: string` - код языка
+- `lang: string` — код языка.
 
 **Возвращает:**
-- `Promise<string>` - HTML страницы поиска
+- `Promise<string>` — HTML страницы поиска.
 
 ```typescript
 const html = await searchService.page('ru');

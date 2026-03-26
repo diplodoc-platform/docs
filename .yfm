@@ -1,9 +1,8 @@
 allowHTML: true
-langs: ['en','ru']
+langs: ['ru', 'en']
 
 vcs: true
 mtimes: true
-authors: true
 
 interface:
   toc-header: false
@@ -31,7 +30,7 @@ resources:
 
 docs-viewer:
   project-name: diplodoc
-  langs: ['en','ru']
+  langs: ['ru', 'en']
   favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
   github-url-prefix: https://github.com/diplodoc-platform/docs/blob/master
   logo-link-preview: https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg
