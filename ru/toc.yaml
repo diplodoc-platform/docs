@@ -144,6 +144,8 @@ items:
         href: project/presets.md
       - name: Файл конфигурации линтера
         href: project/lint.md
+      - name: Редиректы
+        href: project/redirects.md
   - name: Пакет CLI
     href: tools/docs/index.md
     labeled: true
