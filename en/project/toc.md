@@ -234,6 +234,73 @@ links:
     href: docs/
 ```
 
+##### Parameters
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `autotitle` | `boolean` | `true` | When `true`, navigation displays headings from files. When `false`, displays file names. |
+| `linkIndex` | `boolean` | `false` | When `true`, `index.md` files inside subdirectories are used as the `href` of the parent navigation item. The section becomes clickable and opens `index.md`, while `index.md` is not duplicated in child items. |
+
+##### Clickable sections with `linkIndex` {#includers-generic-link-index}
+
+By default, the generic includer creates sections based on directory names. Section items are only expandable — clicking them toggles the list of child pages, and `index.md` becomes a regular child item.
+
+With `linkIndex: true`, `index.md` inside a subdirectory becomes the `href` of the parent navigation item. Clicking the section opens `index.md`, while the child pages list can be expanded using the arrow.
+
+```yaml
+# doc_root/toc.yaml
+title: documentation
+href: index.yaml
+items:
+  - name: docs
+    include:
+      path: docs
+      includers:
+        - name: generic
+          linkIndex: true
+      mode: link
+```
+
+**Example**
+
+Directory structure:
+
+```
+docs/
+  section-a/
+    index.md
+    page1.md
+    page2.md
+  section-b/
+    index.md
+    page1.md
+```
+
+Without `linkIndex` (default):
+
+```yaml
+- name: section-a        # not clickable, only expandable
+  items:
+    - name: index
+      href: section-a/index.md
+    - name: page1
+      href: section-a/page1.md
+    - name: page2
+      href: section-a/page2.md
+```
+
+With `linkIndex: true`:
+
+```yaml
+- name: section-a        # clickable, opens index.md
+  href: section-a/index.md
+  items:
+    - name: page1
+      href: section-a/page1.md
+    - name: page2
+      href: section-a/page2.md
+```
+
 #### Open API {#includers-open-api}
 You can generate documentation from the [Open API](https://www.openapis.org/) specification file and include it into your main document.
 
