@@ -3,6 +3,7 @@ langs: ['en','ru']
 
 vcs: true
 mtimes: true
+authors: true
 
 interface:
   toc-header: false
