@@ -37,6 +37,7 @@ items:
     href: contribution.md
   - name: Метапакет
     href: metapackage.md
+    hidden: true
   - name: Правила для внешних контрибьюторов
     href: requirements.md
   - name: Extensions API
