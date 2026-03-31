@@ -59,7 +59,7 @@ log-levels:
   YFM006: 'warn'    # Term definition duplicated
   YFM007: 'warn'    # Term used without definition
   YFM008: 'warn'    # Term inside definition not allowed
-  YFM009: 'warn'    # Term definition used not at the end of file
+  YFM009: 'error'   # Term definition used not at the end of file
   YFM010: 'warn'    # Autotitle anchor is missed
   YFM011: 'warn'    # Max svg size
   YFM012: 'error'   # Max output html size
