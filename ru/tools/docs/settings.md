@@ -189,6 +189,9 @@ build -i ./ -o ./build --ignore ./build
 По умолчанию ##2M##, максимальное значение ##16M##.
 ||
 ||
+ `--multiline-term-definitions` {#multiline-term-definitions} | Включает поддержку множественных переносов строк во [всплывающих подсказках](../../syntax/term.md).
+||
+||
  `--version` | Текущая версия.
 ||
 |#
