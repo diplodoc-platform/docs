@@ -27,13 +27,6 @@ parameter: value
 || `allowCustomResources` {#allow-custom-resources} | Разрешить загрузки пользовательских ресурсов в статически сгенерированные страницы. | `bool`
 
 `false` ||
-|| `disableCsp` {#disable-csp} | Отключить добавление мета-тега [Content-Security-Policy](./guides/csp.md) в сгенерированные HTML-страницы.
-
-Используйте, когда CSP управляется внешним образом (например, через HTTP-заголовки сервера).
-
-CLI-флаг: `--disable-csp` | `bool`
-
-`false` ||
 || `allowHtml` | Разрешить [использование html-элементов](syntax/base.md#html) в разметке. | `bool`
 
 `false` ||
@@ -89,6 +82,11 @@ authors:
     - noreply@company.com
 ```
 ||
+|| `disableCsp` {#disable-csp} | Отключить добавление мета-тега [Content-Security-Policy](./guides/csp.md#disable-csp) в сгенерированные HTML-страницы.
+
+Используйте, когда CSP управляется внешним образом (например, через HTTP-заголовки сервера).| `bool`
+
+`false` ||
 || `extensions` {#extensions} | Список [расширений Diplodoc](extensions/index.md), используемых для сборки проекта. 
 
 Объекты в списке должны содержать параметр `name` с названием расширения, а также параметры работы, уникальные для каждого расширения.
