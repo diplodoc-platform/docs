@@ -164,11 +164,6 @@ items:
       - name: Внесение изменений
         hidden: true
         href: contribution.md
-#  - name: Настройка внешнего вида
-#    labeled: true
-#    items:
-      #- name: Темизация
-      #  href: style/theme.md
   - name: Практические руководства
     labeled: true
     items:
