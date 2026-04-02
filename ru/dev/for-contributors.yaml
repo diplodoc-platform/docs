@@ -2,6 +2,7 @@ blocks:
   - type: header-block
     title: "Программа для контрибьюторов"
     verticalOffset: 's'
+    resetPaddings: true
     description: |
       Программа для контрибьюторов — это возможность внести вклад в развитие Diplodoc и получить призы за участие.
     background:
