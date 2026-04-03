@@ -108,6 +108,8 @@ items:
                 href: project/pc-example2.yaml
               - name: Пример 3 (fullScreen mode)
                 href: project/pc-example3.yaml 
+          - name: Разводящая страница
+            href: project/leading-page.md
           - name: Диаграммы
             href: custom-plugins/mermaid.md
             items:
@@ -115,21 +117,21 @@ items:
                 href: custom-plugins/mermaid-info.md
       - name: Организация контента
         items:
-          - name: Обзор
+          - name: Структура проекта
             href: project/index.md
           - name: Оглавление
             href: project/toc.md
             items:
-              - name: Оглавление на странице документации
-                href: project/minitoc.md
+              - name: Вставка оглавлений
+                href: project/toc-includes.md
           - name: Расширенная навигация
             href: project/navigation.md
-          - name: Разводящая страница
-            href: project/leading-page.md
-          - name: Метаданные
-            href: project/meta.md
           - name: Редиректы
             href: project/redirects.md
+          - name: Метаданные
+            href: project/meta.md
+          - name: Оглавление на странице документации
+            href: project/minitoc.md
   - name: Конфигурация проекта
     labeled: true
     items:
@@ -164,11 +166,6 @@ items:
       - name: Внесение изменений
         hidden: true
         href: contribution.md
-#  - name: Настройка внешнего вида
-#    labeled: true
-#    items:
-      #- name: Темизация
-      #  href: style/theme.md
   - name: Практические руководства
     labeled: true
     items:
@@ -192,6 +189,7 @@ items:
             href: guides/unarchive.md
           - name: Source Docs
             href: guides/source-docs.md
+            hidden: true
       - name: Content Security Policy (CSP)
         href: guides/csp.md
       - name: Настройка версионирования документации
