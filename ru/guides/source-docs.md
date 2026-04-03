@@ -2,7 +2,7 @@
 
 Вы можете включить документацию в формате [Source Docs](https://github.com/SourceDocs/SourceDocs) в основной документ.
 
-{% note warning %}
+{% note alert %}
 
 sourcedocs-инклюдер находится в процессе деприкации в пользу [generic-инклюдера](generic.md).
 

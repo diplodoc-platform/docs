@@ -80,7 +80,7 @@ tocHooks.Resolved.tapPromise('MyProcessor', async (toc, tocPath) => {
 
 ### Included
 
-Хук для обработки ToC после его включения через ##[include](../../../project/toc.md#includes)##.
+Хук для обработки ToC после его включения через ##[include](../../../project/toc-includes.md)##.
 
 ```typescript
 tocHooks.Included.tapPromise('MyProcessor', async (toc, tocPath, includeInfo) => {
