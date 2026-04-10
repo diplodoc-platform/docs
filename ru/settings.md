@@ -243,6 +243,8 @@ extensions:
 
 ### Секция `interface` {#interface}
 
+Настройки отображения интерфейса. Все настройки из секции можно переопределять для отдельных статей, указывая их значения в [метаданных](./project/meta.md#interface) страниц.
+
 #|
 || **Название** | **Описание** | **Тип и значение по умолчанию** ||
 || `favicon-src` | Иконка во вкладке браузера.
@@ -292,23 +294,20 @@ extensions:
 {% cut "Пример структуры" %}
 
 ```yaml
-csp:
-	- "script-src":
-    	- "self"
+resources:
+  csp:
+    - "script-src":
+        - "self"
         - "domain1.com"
         - "domain2.com"
         "*.domain3.com"
     - "style-src":
     	- "self"
-    ...
-    ...
-    ...
-    
 ```
 Данная конфигурация преобразуется в HTML-тег вида:
 
 ```html
-<meta http-equiv="content-security-policy" content="script-src 'self' domain1.com domain2.com *.domain3.com; style-src 'self' ... ... ...">
+<meta http-equiv="content-security-policy" content="script-src 'self' domain1.com domain2.com *.domain3.com; style-src 'self'">
 ```
 
 Ключи объекта соответствуют поддерживаемым директивам CSP. Система не проверяет корректность указанных значений — они берутся из `.yfm`-файла и автоматически включаются в мета-тег.
