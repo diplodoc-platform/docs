@@ -55,7 +55,7 @@ log-levels:
   YFM002: 'warn'    # No header found in the file for the link text
   YFM003: 'error'   # Link is unreachable
   YFM004: 'error'   # Table not closed
-  YFM005: 'error'   # Tab list not closed
+  YFM005: 'warn'    # Tab list, cut, note not opened or closed
   YFM006: 'warn'    # Term definition duplicated
   YFM007: 'warn'    # Term used without definition
   YFM008: 'warn'    # Term inside definition not allowed
@@ -68,6 +68,8 @@ log-levels:
   YFM015: 'warn'    # Anchor not found in file
   YFM016: 'error'   # The file is included in itself
   YFM017: 'error'   # Invalid front matter format: duplicated mapping key
+  YFM018: 'info'    # Term definition from include
+  YFM020: 'warn'    # Invalid yfm directive
 
 
 # Inline code length
@@ -92,8 +94,15 @@ YFM001:
 ```yaml
 # Inline code length
 YFM001:
+  level: warn
   maximum: 100
-  
+
+# Supported yfm directives
+YFM020:
+  level: warn
+  customDirectives:
+    - diagram       # skip warning on {% diagram %} directive
+
 # Line length
 MD013:
   line_length: 100 # default: 80 characters
