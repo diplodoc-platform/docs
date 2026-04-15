@@ -48,8 +48,6 @@ This is a tip.
 
 {% endnote %}
 
-{% endcut %}
-
 ## Warning
 
 ```markdown

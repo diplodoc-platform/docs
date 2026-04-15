@@ -36,6 +36,4 @@
 
 {% endlist %}
 
-{% endcut %}
-
 {% include [common-params](../../_includes/common-params-note.md) %}

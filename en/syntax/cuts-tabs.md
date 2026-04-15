@@ -108,6 +108,3 @@ Description...
   The state of the tabs is saved upon page reload.
 
 {% endnote %}
-
-{% endcut %}
-
