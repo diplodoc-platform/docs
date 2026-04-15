@@ -29,6 +29,10 @@ resources:
     - "style-src":
         - "fonts.googleapis.com"
 
+analytics:
+  metrika:
+    - id: 94828406
+
 docs-viewer:
   project-name: diplodoc
   langs: ['ru','en']
