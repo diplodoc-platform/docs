@@ -190,6 +190,39 @@ extensions:
 || `gtm.mode` | Тип уведомления перед отправкой событий `base` или `notification`. | `string`
 
 `base` ||
+|| `metrika` |
+
+Подключение счётчиков [Яндекс Метрики](https://metrika.yandex.ru/).
+
+Каждый элемент списка — объект с обязательным полем `id` (номер счётчика) и опциональным полем `params` для передачи [параметров инициализации счётчика](https://yandex.ru/support/metrica/ru/code/counter-initialize#parametry-inicializacii-schetchika).
+
+Минимальная конфигурация:
+```yaml
+analytics:
+  metrika:
+    - id: 123456
+```
+
+{% cut "Пример с несколькими счётчиками" %}
+
+```yaml
+analytics:
+  metrika:
+    - id: 123456
+      params:
+        clickmap: true
+    - id: 456789
+      params:
+        clickmap: true
+        webvisor: true
+```
+
+{% endcut %}
+
+| `object[]`
+
+—
+||
 |#
 
 ### Секция `content` {#content}
@@ -508,17 +541,6 @@ src:
 | —
 
 — ||
-|| `metrika` | Номер счетчика [Яндекс Метрики](https://metrika.yandex.ru/).
-
-Можно подключить несколько счетчиков. Пример:
-
-```yaml
-docs-viewer:
-  metrika: [21930706, 96924079]
-```
-| `number` \| `array[number]`
-
-`undefined` ||
 || `no-index` | Запрет на индексирование внешними роботами.
 
 Рекомендуется использовать до публичных запусков, чтобы документ не отображался в поисковиках. |  `bool`
