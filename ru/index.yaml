@@ -27,7 +27,7 @@ blocks:
       xl: 4
       sm: 6
       md: 4
-    indent: 's'
+    # indent: 's'
     children:
       - type: basic-card
         title: 
