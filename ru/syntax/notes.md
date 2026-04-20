@@ -47,8 +47,6 @@
 
 {% endnote %}
 
-{% endcut %}
-
 ## Важно {#warning}
 
 ```markdown
