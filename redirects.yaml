@@ -9,6 +9,8 @@ ru:
       to: quickstart
     - from: /how-it-work
       to: quickstart
+    - from: /syntax/interactive-elements/dropdawn
+      to: /syntax/interactive-elements/dropdown
 common:
     - from: /project/includes
       to: /syntax/includes
