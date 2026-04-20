@@ -80,7 +80,7 @@ items:
               - name: Радиобаттоны
                 href: syntax/interactive-elements/radio.md
               - name: Дропдаун
-                href: syntax/interactive-elements/dropdawn.md
+                href: syntax/interactive-elements/dropdown.md
               - name: Аккордеон
                 href: syntax/interactive-elements/accordion.md
               - name: Общие параметры

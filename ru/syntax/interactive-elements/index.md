@@ -5,7 +5,7 @@
 - [каты](./cuts.md);
 - [табы](./tabs.md);
 - [радиобаттоны](./radio.md);
-- [дропдаун](./dropdawn.md);
+- [дропдаун](./dropdown.md);
 - [аккордеон](./accordion.md).
 
 {% note info %}
