@@ -15,6 +15,9 @@ extensions:
     - '@diplodoc/transform/lib/plugins/checkbox'
   - github-vcs
 
+preprocess:
+  mergeIncludes: true
+
 resources:
   style:
     - _assets/style/custom.css
