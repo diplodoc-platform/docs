@@ -1,6 +1,7 @@
 allowHTML: true
 langs: ['ru','en']
 
+singlePage: true
 vcs: true
 mtimes: true
 authors: true
