@@ -152,6 +152,8 @@ items:
     href: tools/docs/index.md
     labeled: true
     items:
+      - name: Создание проекта
+        href: tools/docs/init.md
       - name: Сборка
         href: tools/docs/build.md
         items:
