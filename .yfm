@@ -1,9 +1,12 @@
-allowHTML: true
+allowHtml: true
 langs: ['ru','en']
 
 vcs: true
 mtimes: true
 authors: true
+
+search:
+  provider: local
 
 interface:
   toc-header: false

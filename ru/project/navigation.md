@@ -1,17 +1,11 @@
 # Расширенная навигация
 
 Платформа поддерживает гибкую настройку верхней навигации («шапки») на странице.
-Для этого используется пакет [page-constructor](https://gravity-ui.com/libraries/page-constructor).
-
-В [StoryBook](https://preview.gravity-ui.com/page-constructor/?path=/docs/navigation-navigation--docs) можно ознакомиться с примерами конфигурации навигации.
-
-## Настройка
+Для этого используется пакет [page-constructor](https://gravity-ui.com/libraries/page-constructor). В [StoryBook](https://preview.gravity-ui.com/page-constructor/?path=/docs/navigation-navigation--docs) можно ознакомиться с примерами конфигурации навигации.
 
 Блок конфигурации добавляется в `toc.yaml` следующим образом:
 
 ```yaml
-title: Docs navigationExample
-href: index.md
 navigation:
   logo:
     url: 'https://diplodoc.com'
@@ -36,11 +30,79 @@ navigation:
       - type: controls
 ```
 
-Относительные ссылки рассчитываются всегда от корня проекта, на каком бы уровне ни находился toc.yaml
+Для элементов списков `leftItems` и `rightItems` *первого уровня* можно использовать условия вывода `when` и подстановки переменных по аналогии с [разделами оглавления](toc.md#when).
 
-Для элементов списков `leftItems` и `rightItems` можно использовать условия вывода `when` и подстановки переменных по аналогии с [разделами оглавления](toc.md#when).
+## Поддерживаемые элементы верхнего меню {#item-types}
 
-## Специальные элементы
+Тип элемента указывается в свойстве `type`.
+На первом уровне доступны:
 
-- `controls` — отвечает за позицию размещения поиска и настроек в навигации.
-  Если не указан вручную, то автоматически добавляется последним элементом в `rightItems`.
+- `dropdown` — выпадающий список; свойство `items` содержит вложенные элементы списка — поддерживаются только элементы типа `link`.
+
+    {% cut "Пример конфигурации выпадающего списка" %}
+
+    ```yaml
+    - type: dropdown
+      text: 'Dropdown'
+      items:
+        - type: link
+          text: 'Link 1'
+          url: 'https://diplodoc.com'
+        - type: link
+          text: 'Link 2'
+          url: 'https://diplodoc.com/docs/'
+    ```
+
+    {% endcut %}
+
+- `label` — статичный текст; свойство `theme` определяет стиль блока:
+
+  ![Пример со стилями блоков статичного текста](../../_images/header_label_themes.png){ width=600 }
+
+  {% cut "Пример конфигурации с блоками текста" %}
+
+    ```yaml
+    - type: label
+      theme: normal
+      text: normal
+
+    - type: label
+      theme: info
+      text: info
+
+    - type: label
+      theme: danger
+      text: danger
+
+    - type: label
+      theme: warning
+      text: warning
+
+    - type: label
+      theme: success
+      text: success
+
+    - type: label
+      theme: utility
+      text: utility
+
+    - type: label
+      theme: unknown
+      text: unknown
+
+    - type: label
+      theme: clear
+      text: clear
+    ```
+
+    {% endcut %}
+
+- `search` — точка размещения поля поиска в навигации.
+  Если не указана вручную, то автоматически добавляется последним элементом в `rightItems`.
+
+- `controls` — точка размещения настроек в навигации.
+  Если не указана вручную, то автоматически добавляется последним элементом в `rightItems`.
+
+На первом уровне и в выпадающих списках доступен элемент:
+
+- `link` — ссылка, свойство `url` содержит текст ссылки; относительные ссылки всегда рассчитываются от корня проекта, на каком бы уровне ни находился ##toc.yaml##.
