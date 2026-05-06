@@ -41,3 +41,56 @@ yfm -o ./output-folder
 Вы можете автоматизировать пересборку отдельных статей при их изменении. Для этого вызовите `yfm build` с параметром `--watch`: после сборки проекта программа перейдёт в режим инкрементальной пересборки и будет создавать или обновлять статьи после сохранения изменений в исходных файлах документации.
 
 Для удобства, после пересборки открытого в браузере файла выполняется автоматическая перезагрузка страницы.
+
+## Статистика сборки {#build-stats}
+
+При запуске с ключом [`--build-stats`](settings.md#build-stats-flag) (или `buildStats: true` в [файле конфигурации](../../settings.md#config)) рядом с output записывается файл `yfm-build-stats.json` с метриками текущей сборки. Файл предназначен для CI-дашбордов, отслеживания регрессий и диагностики — для рантайма он не нужен.
+
+Что попадает в файл:
+
+* `cli` — версия пакета, версия Node, платформа, архитектура, релиз ОС.
+* `build` — `startedAt`, `finishedAt`, `durationMs`, грубое разбиение по фазам `phasesMs.{prepare, entries, finalize}` (на основе времени `Entry`-хука), `outputFormat`, `langs`, `inputDir`, `outputDir`, `configHash` (sha256 от стабильно сериализованного конфига), `features` (включённые булевы флаги), `worker.maxOldSpace`.
+* `counters` — `tocs`, `entriesPlanned` / `entriesProcessed`, разбивки `entriesByExtension` и `entriesByLang`, `headings` и `contentBytes` (для md-страниц), а также `graph.{entries, sources, resources, missed, edges}` — снимок графа зависимостей: страницы, включаемые файлы, ассеты, отсутствующие пути и число рёбер.
+* `output` — `files`, `totalBytes`, `bytesByExtension`, `largestFile`.
+* `schemaVersion` — версия формата файла. При расширении формата схема будет совместимой; ломающие изменения увеличат это число.
+
+Пример выходного файла:
+
+```json
+{
+  "schemaVersion": 1,
+  "cli": { "version": "5.29.0", "node": "v22.22.0", "platform": "darwin", "arch": "arm64" },
+  "build": {
+    "durationMs": 990,
+    "phasesMs": { "prepare": 951, "entries": 16, "finalize": 23 },
+    "outputFormat": "html",
+    "langs": ["en", "ru"],
+    "configHash": "6a5891269cbab2b5",
+    "features": ["addAlternateMeta", "allowHtml", "buildStats", "sanitizeHtml"]
+  },
+  "counters": {
+    "tocs": 3,
+    "entriesPlanned": 130,
+    "entriesProcessed": 130,
+    "entriesByExtension": { ".md": 119, ".yaml": 11 },
+    "entriesByLang": { "ru": 88, "en": 42 },
+    "headings": 338,
+    "contentBytes": 1596875,
+    "graph": { "entries": 128, "sources": 11, "resources": 69, "missed": 0, "edges": 118 },
+    "warnings": 0,
+    "errors": 0
+  },
+  "output": {
+    "files": 403,
+    "totalBytes": 42513143,
+    "largestFile": { "path": "ru/_images/highload.png", "bytes": 5436055 }
+  }
+}
+```
+
+Типичные сценарии использования:
+
+* отслеживать `durationMs` и `phasesMs` от сборки к сборке, чтобы поймать замедления;
+* мониторить `output.totalBytes` и `output.largestFile`, чтобы заметить случайно залитые тяжёлые ассеты;
+* проверять `counters.graph.missed` и `counters.errors` в CI как сигнал о битых ссылках или сломанной сборке;
+* сохранять `build.configHash` рядом с артефактами, чтобы знать, какой именно конфиг использовался.
