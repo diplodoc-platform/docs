@@ -87,10 +87,3 @@ yfm -o ./output-folder
   }
 }
 ```
-
-Типичные сценарии использования:
-
-* отслеживать `durationMs`, `phasesMs` и `memoryUsageMb` от сборки к сборке, чтобы поймать замедления и резкий рост потребления памяти;
-* мониторить `output.totalBytes` и `output.bytesByExtension`, чтобы заметить случайно залитые тяжёлые ассеты;
-* проверять `counters.graph.missed` и `counters.errors` в CI как сигнал о битых ссылках или сломанной сборке;
-* сравнивать `counters.entriesPlanned` и `counters.entriesProcessed` — расхождение указывает на сбой обработки части страниц.

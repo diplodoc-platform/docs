@@ -74,10 +74,3 @@ Example output:
   }
 }
 ```
-
-Typical use cases:
-
-* track `durationMs`, `phasesMs` and `memoryUsageMb` across builds to catch slowdowns and memory regressions;
-* monitor `output.totalBytes` and `output.bytesByExtension` to spot accidentally committed heavy assets;
-* fail CI on `counters.graph.missed > 0` or `counters.errors > 0` as a broken-build signal;
-* compare `counters.entriesPlanned` against `counters.entriesProcessed` — a mismatch means some pages failed mid-build.
