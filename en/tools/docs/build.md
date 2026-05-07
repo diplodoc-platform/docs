@@ -36,9 +36,9 @@ When started with [`--build-stats`](settings.md) (or `buildStats: true` in the [
 What goes in:
 
 * `cli` — package version, Node version, platform, architecture, OS release.
-* `build` — `startedAt`, `finishedAt`, `durationMs`, a coarse phase split `phasesMs.{prepare, entries, finalize}` derived from `Entry`-hook timestamps, plus `outputFormat`, `langs`, `inputDir`, `outputDir`, `configHash` (sha256 over a stably-serialized config), `features` (enabled boolean flags) and `worker.maxOldSpace`.
+* `build` — `startedAt`, `finishedAt`, `durationMs`, a coarse phase split `phasesMs.{prepare, entries, finalize}` derived from `Entry`-hook timestamps, plus `outputFormat`, `langs`, `inputDir`, `outputDir`, `features` (enabled boolean flags), `memoryUsageMb` (`heapUsed` snapshot at finish, in MB) and `worker.maxOldSpace`.
 * `counters` — `tocs`, `entriesPlanned` / `entriesProcessed`, breakdowns `entriesByExtension` and `entriesByLang`, `headings` and `contentBytes` (for markdown entries), plus `graph.{entries, sources, resources, missed, edges}` — a snapshot of the dependency graph: pages, included files, assets, missing paths and total edge count.
-* `output` — `files`, `totalBytes`, `bytesByExtension`, `largestFile`.
+* `output` — `files`, `totalBytes`, `bytesByExtension`.
 * `schemaVersion` — format version. Additive changes keep the schema backward compatible; breaking changes will bump this number.
 
 Example output:
@@ -48,36 +48,36 @@ Example output:
   "schemaVersion": 1,
   "cli": { "version": "5.29.0", "node": "v22.22.0", "platform": "darwin", "arch": "arm64" },
   "build": {
-    "durationMs": 990,
-    "phasesMs": { "prepare": 951, "entries": 16, "finalize": 23 },
+    "durationMs": 1474,
+    "phasesMs": { "prepare": 1242, "entries": 148, "finalize": 84 },
     "outputFormat": "html",
-    "langs": ["en", "ru"],
-    "configHash": "6a5891269cbab2b5",
-    "features": ["addAlternateMeta", "allowHtml", "buildStats", "sanitizeHtml"]
+    "langs": ["ru", "en"],
+    "features": ["addAlternateMeta", "allowHtml", "buildStats", "sanitizeHtml"],
+    "memoryUsageMb": 256
   },
   "counters": {
     "tocs": 3,
-    "entriesPlanned": 130,
-    "entriesProcessed": 130,
-    "entriesByExtension": { ".md": 119, ".yaml": 11 },
-    "entriesByLang": { "ru": 88, "en": 42 },
-    "headings": 338,
-    "contentBytes": 1596875,
-    "graph": { "entries": 128, "sources": 11, "resources": 69, "missed": 0, "edges": 118 },
+    "entriesPlanned": 133,
+    "entriesProcessed": 133,
+    "entriesByExtension": { ".md": 122, ".yaml": 11 },
+    "entriesByLang": { "ru": 91, "en": 42 },
+    "headings": 345,
+    "contentBytes": 1693771,
+    "graph": { "entries": 130, "sources": 12, "resources": 74, "missed": 0, "edges": 129 },
     "warnings": 0,
     "errors": 0
   },
   "output": {
-    "files": 403,
-    "totalBytes": 42513143,
-    "largestFile": { "path": "ru/_images/highload.png", "bytes": 5436055 }
+    "files": 421,
+    "totalBytes": 45350699,
+    "bytesByExtension": { ".html": 2865454, ".js": 9721257, ".png": 24588860 }
   }
 }
 ```
 
 Typical use cases:
 
-* track `durationMs` and `phasesMs` across builds to catch slowdowns;
-* monitor `output.totalBytes` and `output.largestFile` to spot accidentally committed heavy assets;
+* track `durationMs`, `phasesMs` and `memoryUsageMb` across builds to catch slowdowns and memory regressions;
+* monitor `output.totalBytes` and `output.bytesByExtension` to spot accidentally committed heavy assets;
 * fail CI on `counters.graph.missed > 0` or `counters.errors > 0` as a broken-build signal;
-* keep `build.configHash` alongside published artifacts so you know which exact config produced them.
+* compare `counters.entriesPlanned` against `counters.entriesProcessed` — a mismatch means some pages failed mid-build.

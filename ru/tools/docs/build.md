@@ -49,9 +49,9 @@ yfm -o ./output-folder
 Что попадает в файл:
 
 * `cli` — версия пакета, версия Node, платформа, архитектура, релиз ОС.
-* `build` — `startedAt`, `finishedAt`, `durationMs`, грубое разбиение по фазам `phasesMs.{prepare, entries, finalize}` (на основе времени `Entry`-хука), `outputFormat`, `langs`, `inputDir`, `outputDir`, `configHash` (sha256 от стабильно сериализованного конфига), `features` (включённые булевы флаги), `worker.maxOldSpace`.
+* `build` — `startedAt`, `finishedAt`, `durationMs`, грубое разбиение по фазам `phasesMs.{prepare, entries, finalize}` (на основе времени `Entry`-хука), `outputFormat`, `langs`, `inputDir`, `outputDir`, `features` (включённые булевы флаги), `memoryUsageMb` (`heapUsed` в момент завершения, в МБ), `worker.maxOldSpace`.
 * `counters` — `tocs`, `entriesPlanned` / `entriesProcessed`, разбивки `entriesByExtension` и `entriesByLang`, `headings` и `contentBytes` (для md-страниц), а также `graph.{entries, sources, resources, missed, edges}` — снимок графа зависимостей: страницы, включаемые файлы, ассеты, отсутствующие пути и число рёбер.
-* `output` — `files`, `totalBytes`, `bytesByExtension`, `largestFile`.
+* `output` — `files`, `totalBytes`, `bytesByExtension`.
 * `schemaVersion` — версия формата файла. При расширении формата схема будет совместимой; ломающие изменения увеличат это число.
 
 Пример выходного файла:
@@ -61,36 +61,36 @@ yfm -o ./output-folder
   "schemaVersion": 1,
   "cli": { "version": "5.29.0", "node": "v22.22.0", "platform": "darwin", "arch": "arm64" },
   "build": {
-    "durationMs": 990,
-    "phasesMs": { "prepare": 951, "entries": 16, "finalize": 23 },
+    "durationMs": 1474,
+    "phasesMs": { "prepare": 1242, "entries": 148, "finalize": 84 },
     "outputFormat": "html",
-    "langs": ["en", "ru"],
-    "configHash": "6a5891269cbab2b5",
-    "features": ["addAlternateMeta", "allowHtml", "buildStats", "sanitizeHtml"]
+    "langs": ["ru", "en"],
+    "features": ["addAlternateMeta", "allowHtml", "buildStats", "sanitizeHtml"],
+    "memoryUsageMb": 256
   },
   "counters": {
     "tocs": 3,
-    "entriesPlanned": 130,
-    "entriesProcessed": 130,
-    "entriesByExtension": { ".md": 119, ".yaml": 11 },
-    "entriesByLang": { "ru": 88, "en": 42 },
-    "headings": 338,
-    "contentBytes": 1596875,
-    "graph": { "entries": 128, "sources": 11, "resources": 69, "missed": 0, "edges": 118 },
+    "entriesPlanned": 133,
+    "entriesProcessed": 133,
+    "entriesByExtension": { ".md": 122, ".yaml": 11 },
+    "entriesByLang": { "ru": 91, "en": 42 },
+    "headings": 345,
+    "contentBytes": 1693771,
+    "graph": { "entries": 130, "sources": 12, "resources": 74, "missed": 0, "edges": 129 },
     "warnings": 0,
     "errors": 0
   },
   "output": {
-    "files": 403,
-    "totalBytes": 42513143,
-    "largestFile": { "path": "ru/_images/highload.png", "bytes": 5436055 }
+    "files": 421,
+    "totalBytes": 45350699,
+    "bytesByExtension": { ".html": 2865454, ".js": 9721257, ".png": 24588860 }
   }
 }
 ```
 
 Типичные сценарии использования:
 
-* отслеживать `durationMs` и `phasesMs` от сборки к сборке, чтобы поймать замедления;
-* мониторить `output.totalBytes` и `output.largestFile`, чтобы заметить случайно залитые тяжёлые ассеты;
+* отслеживать `durationMs`, `phasesMs` и `memoryUsageMb` от сборки к сборке, чтобы поймать замедления и резкий рост потребления памяти;
+* мониторить `output.totalBytes` и `output.bytesByExtension`, чтобы заметить случайно залитые тяжёлые ассеты;
 * проверять `counters.graph.missed` и `counters.errors` в CI как сигнал о битых ссылках или сломанной сборке;
-* сохранять `build.configHash` рядом с артефактами, чтобы знать, какой именно конфиг использовался.
+* сравнивать `counters.entriesPlanned` и `counters.entriesProcessed` — расхождение указывает на сбой обработки части страниц.
