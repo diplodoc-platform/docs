@@ -37,7 +37,7 @@ What goes in:
 
 * `cli` — package version, Node version, platform, architecture, OS release.
 * `build` — `startedAt`, `finishedAt`, `durationMs`, a coarse phase split `phasesMs.{prepare, entries, finalize}` derived from `Entry`-hook timestamps, plus `outputFormat`, `langs`, `inputDir`, `outputDir`, `features` (enabled boolean flags), `memoryUsageMb` (`heapUsed` snapshot at finish, in MB) and `worker.maxOldSpace`.
-* `counters` — `tocs`, `entriesPlanned` / `entriesProcessed`, breakdowns `entriesByExtension` and `entriesByLang`, `headings` and `contentBytes` (for markdown entries), plus `graph.{entries, sources, resources, missed, edges}` — a snapshot of the dependency graph: pages, included files, assets, missing paths and total edge count.
+* `counters` — `tocs`, `entriesPlanned` / `entriesProcessed`, breakdowns `entriesByExtension` and `entriesByLang`, `headings` and `contentBytes` (for markdown entries), `graph.{entries, sources, resources, missed, edges}` — a snapshot of the dependency graph (pages, included files, assets, missing paths and total edge count), plus `warnings` / `errors` (totals) and `warningsByCode` / `errorsByCode` — per-YFM-code breakdown (`YFM013`, `YFM016`, etc.); messages without a recognizable code fall into the `(uncoded)` bucket.
 * `output` — `files`, `totalBytes`, `bytesByExtension`.
 * `schemaVersion` — format version. Additive changes keep the schema backward compatible; breaking changes will bump this number.
 
@@ -64,8 +64,10 @@ Example output:
     "headings": 345,
     "contentBytes": 1693771,
     "graph": { "entries": 130, "sources": 12, "resources": 74, "missed": 0, "edges": 129 },
-    "warnings": 0,
-    "errors": 0
+    "warnings": 3,
+    "errors": 1,
+    "warningsByCode": { "YFM013": 2, "(uncoded)": 1 },
+    "errorsByCode": { "YFM016": 1 }
   },
   "output": {
     "files": 421,

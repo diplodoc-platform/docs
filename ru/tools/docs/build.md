@@ -50,7 +50,7 @@ yfm -o ./output-folder
 
 * `cli` — версия пакета, версия Node, платформа, архитектура, релиз ОС.
 * `build` — `startedAt`, `finishedAt`, `durationMs`, грубое разбиение по фазам `phasesMs.{prepare, entries, finalize}` (на основе времени `Entry`-хука), `outputFormat`, `langs`, `inputDir`, `outputDir`, `features` (включённые булевы флаги), `memoryUsageMb` (`heapUsed` в момент завершения, в МБ), `worker.maxOldSpace`.
-* `counters` — `tocs`, `entriesPlanned` / `entriesProcessed`, разбивки `entriesByExtension` и `entriesByLang`, `headings` и `contentBytes` (для md-страниц), а также `graph.{entries, sources, resources, missed, edges}` — снимок графа зависимостей: страницы, включаемые файлы, ассеты, отсутствующие пути и число рёбер.
+* `counters` — `tocs`, `entriesPlanned` / `entriesProcessed`, разбивки `entriesByExtension` и `entriesByLang`, `headings` и `contentBytes` (для md-страниц), `graph.{entries, sources, resources, missed, edges}` — снимок графа зависимостей (страницы, включаемые файлы, ассеты, отсутствующие пути, число рёбер), а также `warnings` / `errors` (общее число) и `warningsByCode` / `errorsByCode` — разбивка по кодам ошибок (`YFM013`, `YFM016` и т.п.; сообщения без распознанного кода попадают в бакет `(uncoded)`).
 * `output` — `files`, `totalBytes`, `bytesByExtension`.
 * `schemaVersion` — версия формата файла. При расширении формата схема будет совместимой; ломающие изменения увеличат это число.
 
@@ -77,8 +77,10 @@ yfm -o ./output-folder
     "headings": 345,
     "contentBytes": 1693771,
     "graph": { "entries": 130, "sources": 12, "resources": 74, "missed": 0, "edges": 129 },
-    "warnings": 0,
-    "errors": 0
+    "warnings": 3,
+    "errors": 1,
+    "warningsByCode": { "YFM013": 2, "(uncoded)": 1 },
+    "errorsByCode": { "YFM016": 1 }
   },
   "output": {
     "files": 421,
