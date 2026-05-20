@@ -25,5 +25,6 @@ The name of the startup key corresponds to the name of the setting.
 | `--lint-disabled`           | Should whether to turn off a linter |
 | `--build-disabled`          | Should whether to turn off a build |
 | `--add-map-file`            | Should add all paths of documentation into file.json. Disabled by default. |
+| `--build-stats`             | Write a `yfm-build-stats.json` file next to the output with build metrics (duration, page and asset counters, output size). See [Build stats](build.md#build-stats) for the full schema. Disabled by default. |
 
 To view the full list of keys, run the `yfm --help` command.

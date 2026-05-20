@@ -168,6 +168,9 @@ build -i ./ -o ./build --ignore ./build
  `--add-map-file` | Добавлять создание file.json со всеми путями к документации. По умолчанию выключено.
 ||
 ||
+ `--build-stats` {#build-stats-flag} | Записать рядом с output файл `yfm-build-stats.json` с метриками сборки (длительность, счётчики страниц и ассетов, размер артефактов). Подробнее — в [Статистика сборки](build.md#build-stats). По умолчанию выключено.
+||
+||
  `--disable-csp` | Отключить добавление мета-тега [Content-Security-Policy](../../guides/csp.md#disable-csp) в сгенерированные HTML-страницы. По умолчанию включено.
 ||
 ||

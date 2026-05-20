@@ -28,3 +28,51 @@ Building in YFM allows you to use:
 * [Variable substitutions](../../syntax/vars.md#subtitudes) if the `apply-presets` parameter is specified.
 
 Use this type of build to support multiple document versions for different users. For example, if there are sections with internal information in the documentation, you can keep two repositories: private and public, and synchronize private with public using conditions.
+
+## Build stats {#build-stats}
+
+When started with [`--build-stats`](settings.md) (or `buildStats: true` in the [configuration file](../../project/config.md)), a `yfm-build-stats.json` file is written next to the output with metrics for the current build. The file is intended for CI dashboards, regression tracking and diagnostics — runtime doesn't need it.
+
+What goes in:
+
+* `cli` — package version, Node version, platform, architecture, OS release.
+* `build` — `startedAt`, `finishedAt`, `durationMs`, a coarse phase split `phasesMs.{prepare, entries, finalize}` derived from `Entry`-hook timestamps, plus `outputFormat`, `langs`, `inputDir`, `outputDir`, `features` (enabled boolean flags), `memoryUsageMb` (`heapUsed` snapshot at finish, in MB) and `worker.maxOldSpace`.
+* `counters` — `tocs`, `entriesPlanned` / `entriesProcessed`, breakdowns `entriesByExtension` and `entriesByLang`, `headings` and `contentBytes` (for markdown entries), `graph.{entries, sources, resources, missed, edges}` — a snapshot of the dependency graph (pages, included files, assets, missing paths and total edge count), plus `warnings` / `errors` (totals) and `warningsByCode` / `errorsByCode` — per-YFM-code breakdown (`YFM013`, `YFM016`, etc.); messages without a recognizable code fall into the `(uncoded)` bucket.
+* `output` — `files`, `totalBytes`, `bytesByExtension`.
+* `schemaVersion` — format version. Additive changes keep the schema backward compatible; breaking changes will bump this number.
+
+Example output:
+
+```json
+{
+  "schemaVersion": 1,
+  "cli": { "version": "5.29.0", "node": "v22.22.0", "platform": "darwin", "arch": "arm64" },
+  "build": {
+    "durationMs": 1474,
+    "phasesMs": { "prepare": 1242, "entries": 148, "finalize": 84 },
+    "outputFormat": "html",
+    "langs": ["ru", "en"],
+    "features": ["addAlternateMeta", "allowHtml", "buildStats", "sanitizeHtml"],
+    "memoryUsageMb": 256
+  },
+  "counters": {
+    "tocs": 3,
+    "entriesPlanned": 133,
+    "entriesProcessed": 133,
+    "entriesByExtension": { ".md": 122, ".yaml": 11 },
+    "entriesByLang": { "ru": 91, "en": 42 },
+    "headings": 345,
+    "contentBytes": 1693771,
+    "graph": { "entries": 130, "sources": 12, "resources": 74, "missed": 0, "edges": 129 },
+    "warnings": 3,
+    "errors": 1,
+    "warningsByCode": { "YFM013": 2, "(uncoded)": 1 },
+    "errorsByCode": { "YFM016": 1 }
+  },
+  "output": {
+    "files": 421,
+    "totalBytes": 45350699,
+    "bytesByExtension": { ".html": 2865454, ".js": 9721257, ".png": 24588860 }
+  }
+}
+```

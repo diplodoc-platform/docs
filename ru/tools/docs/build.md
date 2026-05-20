@@ -41,3 +41,51 @@ yfm -o ./output-folder
 Вы можете автоматизировать пересборку отдельных статей при их изменении. Для этого вызовите `yfm build` с параметром `--watch`: после сборки проекта программа перейдёт в режим инкрементальной пересборки и будет создавать или обновлять статьи после сохранения изменений в исходных файлах документации.
 
 Для удобства, после пересборки открытого в браузере файла выполняется автоматическая перезагрузка страницы.
+
+## Статистика сборки {#build-stats}
+
+При запуске с ключом [`--build-stats`](settings.md#build-stats-flag) (или `buildStats: true` в [файле конфигурации](../../settings.md#config)) рядом с output записывается файл `yfm-build-stats.json` с метриками текущей сборки. Файл предназначен для CI-дашбордов, отслеживания регрессий и диагностики — для рантайма он не нужен.
+
+Что попадает в файл:
+
+* `cli` — версия пакета, версия Node, платформа, архитектура, релиз ОС.
+* `build` — `startedAt`, `finishedAt`, `durationMs`, грубое разбиение по фазам `phasesMs.{prepare, entries, finalize}` (на основе времени `Entry`-хука), `outputFormat`, `langs`, `inputDir`, `outputDir`, `features` (включённые булевы флаги), `memoryUsageMb` (`heapUsed` в момент завершения, в МБ), `worker.maxOldSpace`.
+* `counters` — `tocs`, `entriesPlanned` / `entriesProcessed`, разбивки `entriesByExtension` и `entriesByLang`, `headings` и `contentBytes` (для md-страниц), `graph.{entries, sources, resources, missed, edges}` — снимок графа зависимостей (страницы, включаемые файлы, ассеты, отсутствующие пути, число рёбер), а также `warnings` / `errors` (общее число) и `warningsByCode` / `errorsByCode` — разбивка по кодам ошибок (`YFM013`, `YFM016` и т.п.; сообщения без распознанного кода попадают в бакет `(uncoded)`).
+* `output` — `files`, `totalBytes`, `bytesByExtension`.
+* `schemaVersion` — версия формата файла. При расширении формата схема будет совместимой; ломающие изменения увеличат это число.
+
+Пример выходного файла:
+
+```json
+{
+  "schemaVersion": 1,
+  "cli": { "version": "5.29.0", "node": "v22.22.0", "platform": "darwin", "arch": "arm64" },
+  "build": {
+    "durationMs": 1474,
+    "phasesMs": { "prepare": 1242, "entries": 148, "finalize": 84 },
+    "outputFormat": "html",
+    "langs": ["ru", "en"],
+    "features": ["addAlternateMeta", "allowHtml", "buildStats", "sanitizeHtml"],
+    "memoryUsageMb": 256
+  },
+  "counters": {
+    "tocs": 3,
+    "entriesPlanned": 133,
+    "entriesProcessed": 133,
+    "entriesByExtension": { ".md": 122, ".yaml": 11 },
+    "entriesByLang": { "ru": 91, "en": 42 },
+    "headings": 345,
+    "contentBytes": 1693771,
+    "graph": { "entries": 130, "sources": 12, "resources": 74, "missed": 0, "edges": 129 },
+    "warnings": 3,
+    "errors": 1,
+    "warningsByCode": { "YFM013": 2, "(uncoded)": 1 },
+    "errorsByCode": { "YFM016": 1 }
+  },
+  "output": {
+    "files": 421,
+    "totalBytes": 45350699,
+    "bytesByExtension": { ".html": 2865454, ".js": 9721257, ".png": 24588860 }
+  }
+}
+```
