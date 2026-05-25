@@ -111,14 +111,31 @@ A table can have attributes at three levels: for the entire table, for an indivi
 | Row   | `\|\|:{ ... }`  | On the same line as `\|\|`, immediately after it                                                  |
 | Cell  | `::{ ... }`     | At the start of the cell content, right after `\|` (or after `\|\|:{ ... }` for the first cell of a row) |
 
-Example of a table with attributes at all three levels:
+Attributes for the whole table are placed on a dedicated line between `#|` and the first `||` row:
 
 ```markdown
 #|
 |:{header-rows="1"}
-||:{class="row"} ::{align="center"} Header1 | Header2 | Header3 ||
-||::{align="top-left"} Text | Text |::{align="top-right"} Text ||
-|| Text | Text | Text ||
+|| **Header1** | **Header2** ||
+|| Text | Text ||
+|#
+```
+
+Row attributes are placed right after the opening `||`:
+
+```markdown
+#|
+||:{class="header"} **Header1** | **Header2** ||
+|| Text | Text ||
+|#
+```
+
+Cell attributes are placed at the start of the cell content. For the first cell of a row — right after `||` (or after row attributes, if any); for other cells — right after `|`:
+
+```markdown
+#|
+||::{align="center"} **Header1** | **Header2** ||
+|| Text |::{align="top-right"} Text ||
 |#
 ```
 
@@ -131,42 +148,6 @@ Example of a table with attributes at all three levels:
 - A table-attribute line (`|:{ ... }`) may appear multiple times between `#|` and the first `||` row; when keys match, later values override earlier ones.
 
 {% endnote %}
-
-### Table attributes {#table-attributes}
-
-Attributes for the whole table are placed on a dedicated line between `#|` and the first `||` row:
-
-```markdown
-#|
-|:{header-rows="1"}
-|| **Header1** | **Header2** ||
-|| Text | Text ||
-|#
-```
-
-### Row attributes {#row-attributes}
-
-Row attributes are placed right after the opening `||`:
-
-```markdown
-#|
-||:{class="header"} **Header1** | **Header2** ||
-|| Text | Text ||
-|#
-```
-
-### Cell attributes {#cell-attributes}
-
-Cell attributes are placed at the start of the cell content. For the first cell of a row — right after `||` (or after row attributes, if any); for other cells — right after `|`:
-
-```markdown
-#|
-||::{align="center"} **Header1** | **Header2** ||
-|| Text |::{align="top-right"} Text ||
-|#
-```
-
-See [Text Alignment in Cells](#cell-align) for the available cell attributes.
 
 ## Header rows {#header-rows}
 
