@@ -41,19 +41,19 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
 * Перевести проект в текущей директории с `not_var{{translate.source-lang}}` на `not_var{{translate.target-lang}}`:
 
-  ```
+  ```bash
   {{PROGRAM}} translate --source not_var{{translate.source-lang}} --target not_var{{translate.target-lang}}
   ```
 
 * Не переводить скрытые файлы в проекте:
 
-  ```
+  ```bash
   {{PROGRAM}} translate --exclude not_var{{translate.source-lang}}/**/_*.* --source not_var{{translate.source-lang}} --target not_var{{translate.target-lang}}
   ```
 
 ### Параметры вызова
 
-##### Основные
+#### Основные
 
 #|
 || Параметр             | Формат    | Описание ||
@@ -67,10 +67,10 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 \
 `{{PROGRAM}} translate --target {{translate.target}}`
 ||
-|| `--input`              | Path      | 
+|| `--input`              | Path      |
 Путь до **корня** переводимого проекта или конкретного файла в проекте. Если не указан, используется директория запуска команды.
 \
-Директорию языка в пути указывать не надо — она добавляется автоматически. 
+Директорию языка в пути указывать не надо — она добавляется автоматически.
 \
 `{{PROGRAM}} translate -i ./docs`
 \
@@ -101,7 +101,7 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 ||
 |#
 
-##### Система переводов
+#### Система переводов
 
 {% list tabs %}
 

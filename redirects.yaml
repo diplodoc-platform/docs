@@ -11,6 +11,8 @@ ru:
       to: quickstart
     - from: /syntax/interactive-elements/dropdawn
       to: /syntax/interactive-elements/dropdown
+    - from: /project/multitoc
+      to: /project/toc-multiple#multitoc
 common:
     - from: /project/includes
       to: /syntax/includes
