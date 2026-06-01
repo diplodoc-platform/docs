@@ -122,6 +122,8 @@ items:
           - name: Оглавление
             href: project/toc.md
             items:
+              - name: Несколько оглавлений
+                href: project/toc-multiple.md
               - name: Вставка оглавлений
                 href: project/toc-includes.md
           - name: Расширенная навигация
