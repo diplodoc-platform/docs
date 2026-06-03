@@ -26,5 +26,6 @@ The name of the startup key corresponds to the name of the setting.
 | `--build-disabled`          | Should whether to turn off a build |
 | `--add-map-file`            | Should add all paths of documentation into file.json. Disabled by default. |
 | `--build-stats`             | Write a `yfm-build-stats.json` file next to the output with build metrics (duration, page and asset counters, output size). See [Build stats](build.md#build-stats) for the full schema. Disabled by default. |
+| `--build-content`           | Write a `yfm-build-content.json` file next to the output with per-file content hashes and page→asset dependencies. Consumed by downstream tools (search reindexing, change notifications) to compute the set of pages changed between any two build revisions. See [Build content map](build.md#build-content) for the full schema. Disabled by default. |
 
 To view the full list of keys, run the `yfm --help` command.

@@ -76,3 +76,58 @@ Example output:
   }
 }
 ```
+
+## Build content map {#build-content}
+
+When started with [`--build-content`](settings.md) (or `buildContent: true` in the [configuration file](../../project/config.md)), a `yfm-build-content.json` file is written next to the output with a content fingerprint for every output page and asset. The file is intended for offline tools that compare two builds and need to know exactly which pages changed — search reindexing, change notifications and similar consumers. It is not needed at runtime.
+
+The build itself doesn't know about other revisions and doesn't perform incremental builds: the diff is a post-process over two manifest files.
+
+What goes in:
+
+* `schemaVersion` — format version. Additive changes keep the schema backward compatible; breaking changes will bump this number.
+* `contentHashes` — map keyed by **source-path** (stable across builds; output-paths can shift due to `hashIncludes`). For each file: `hash` (sha256 of a content-stable view of the file in output, prefixed with `sha256-`) and `size` (byte size in output). The content-stable view strips VCS-injected fields (`updatedAt`, `contributors`, `author`) and the CLI-injected `metadata.generator` from `.md` frontmatter and `.yaml` `meta:` blocks before hashing, so the hash reflects what readers see rather than every commit or CLI release. Binary assets are hashed as raw bytes.
+* `pageAssets` — for every entry, the sorted list of its direct `resource`-type dependencies (images, videos, SVGs, etc.), normalized to source-paths. Required because asset references aren't fingerprinted in the entry's body — a change to `pic.png` doesn't change the entry's hash, but it changes `contentHashes["pic.png"]`, and `pageAssets` lets the consumer connect the two.
+
+How include changes show up in the diff:
+
+* `mergeIncludes: true` — include content is embedded inline, so its bytes flow into the entry's hash. The include file isn't written to output and isn't present in `contentHashes`.
+* `mergeIncludes: false`, `hashIncludes: true` (the default) — the entry references the include via a signed filename `inc-{12hex}.md`. A change to the include changes its hash and renames it, which changes the reference in the entry, which changes the entry's hash.
+
+Diff algorithm (consumer side):
+
+```
+changed_pages = {
+  p ∈ entries(curr) |
+       prev.contentHashes[p]?.hash ≠ curr.contentHashes[p]?.hash
+    OR ∃ a ∈ curr.pageAssets[p]:
+         prev.contentHashes[a]?.hash ≠ curr.contentHashes[a]?.hash
+}
+
+added_pages   = keys(curr.contentHashes) \ keys(prev.contentHashes)
+removed_pages = keys(prev.contentHashes) \ keys(curr.contentHashes)
+```
+
+Example output:
+
+```json
+{
+  "schemaVersion": 1,
+  "contentHashes": {
+    "en/foo.md": { "hash": "sha256-...", "size": 1234 },
+    "en/foo/inc.md": { "hash": "sha256-...", "size": 567 },
+    "en/img/pic.png": { "hash": "sha256-...", "size": 8901 }
+  },
+  "pageAssets": {
+    "en/foo.md": ["en/img/pic.png"]
+  }
+}
+```
+
+### Known limitations
+
+A few cases where keys in `contentHashes` can drift or be noisy independently of user-doc content changes. None block the primary use cases (search reindex, change notifications), but consumers should be aware of them:
+
+* `_bundle/*` — the `output-html` pipeline copies CLI-bundled JS/CSS chunks under `_bundle/`, and the hash baked into those filenames shifts on every `@diplodoc/cli` upgrade. Consumers comparing builds should filter out keys starting with `_bundle/`.
+* `_search/*` — when local search is enabled, `LocalSearchProvider` writes resources at `_search/<lang>/{timeOrigin}-resources.js`, where `{timeOrigin}` is the build start time. Every build produces a new filename and a new key. Consumers should filter `_search/` or accept the churn.
+* `mergeSvg: true` (default) — an SVG referenced as `![](logo.svg)` is inlined into the entry's body *and* kept as a standalone file in output. A change to the SVG flips three signals at once: the entry's hash, the standalone `.svg`'s hash, and the entry through `pageAssets`. To avoid the double-counting, reference SVGs with `{inline=false}`.
