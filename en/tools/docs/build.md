@@ -33,6 +33,8 @@ Use this type of build to support multiple document versions for different users
 
 When started with [`--build-stats`](settings.md) (or `buildStats: true` in the [configuration file](../../project/config.md)), a `yfm-build-stats.json` file is written next to the output with metrics for the current build. The file is intended for CI dashboards, regression tracking and diagnostics — runtime doesn't need it.
 
+Enabled by default for `--output-format=md` builds; disabled for other formats. Pass `--no-build-stats` (or set `buildStats: false` in the configuration file) to opt out.
+
 What goes in:
 
 * `cli` — package version, Node version, platform, architecture, OS release.
@@ -80,6 +82,8 @@ Example output:
 ## Build content map {#build-content}
 
 When started with [`--build-content`](settings.md) (or `buildContent: true` in the [configuration file](../../project/config.md)), a `yfm-build-content.json` file is written next to the output with a content fingerprint for every output page and asset. The file is intended for offline tools that compare two builds and need to know exactly which pages changed — search reindexing, change notifications and similar consumers. It is not needed at runtime.
+
+Enabled by default for `--output-format=md` builds; disabled for other formats. Pass `--no-build-content` (or set `buildContent: false` in the configuration file) to opt out.
 
 The build itself doesn't know about other revisions and doesn't perform incremental builds: the diff is a post-process over two manifest files.
 
