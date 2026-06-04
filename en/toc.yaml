@@ -17,6 +17,13 @@ navigation:
       icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
   header:
     leftItems:
+      - text: 'Тестовый дропдаун'
+        type: 'dropdown'
+        items:
+          - text: 'Тест пункт 1'
+            url: 'syntax/index'
+          - text: 'Тест пункт 2'
+            url: 'tools/docs'
       - text: 'How it works'
         type: 'link'
         url: '../../en/how-to/'
