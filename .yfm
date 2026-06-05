@@ -15,7 +15,7 @@ interface:
 extensions:
   - name: mdit-plugins
     plugins:
-    - '@diplodoc/transform/lib/plugins/checkbox'
+      - '@diplodoc/transform/lib/plugins/checkbox'
   - github-vcs
 
 preprocess:
