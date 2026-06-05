@@ -11,7 +11,7 @@ The name of the startup key corresponds to the name of the setting.
 |-----------------------------| --- |
 | `--input, -i`               | Path to the project directory (required parameter). |
 | `--output, -o`              | The path to the folder for output data (required parameter). |
-| `--varsPreset`              | Name of the [variable preset](../../project/presets.md) used. |
+| `--vars-preset`              | Name of the [variable preset](../../project/presets.md) used. |
 | `--vars, -v`                | Values of [variables](../../syntax/vars.md). |
 | `--strict, -s`              | Launch in strict mode.</br></br>YFM warnings are treated as errors. Disabled by default. |
 | `--quiet, -q`               | Start in quiet mode.</br></br>Do not output logs to stdout. Disabled by default. |
