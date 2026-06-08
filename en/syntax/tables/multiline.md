@@ -173,6 +173,50 @@ The value `N` must be a positive integer.
 || Text | Text | Text ||
 |#
 
+## Custom cell sizes {#size}
+
+Cell sizes can be controlled using attributes.
+
+{% list tabs %}
+
+- Cell width
+
+  To set a custom cell width, use the `{style="width: 400px"}` syntax inside the cell.
+
+  ```markdown
+  #|
+  || **Header1** {style="width: 400px"} | **Header2** ||
+  || Text | Text ||
+  |#
+  ```
+
+  **Result**
+
+  #|
+  || **Header1** {style="width: 400px"} | **Header2** ||
+  || Text | Text ||
+  |#
+
+- Cell height
+
+  To set a custom cell height, use the `{style="height:100px"}` syntax inside the cell.
+
+  ```markdown
+  #|
+  || **Header1** {style="height:100px"} | **Header2** ||
+  || Text | Text ||
+  |#
+  ```
+
+  **Result**
+
+  #|
+  || **Header1** {style="height:100px"} | **Header2** ||
+  || Text | Text ||
+  |#
+
+{% endlist %}
+
 ## Cell Merging {#span}
 
 Cells can be merged vertically using the "^" symbol:
