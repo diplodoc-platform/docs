@@ -37,9 +37,19 @@ navigation:
 Тип элемента указывается в свойстве `type`.
 На первом уровне доступны:
 
-- `dropdown` — выпадающий список; свойство `items` содержит вложенные элементы списка — поддерживаются только элементы типа `link`.
+- `dropdown` — выпадающий список; свойство `items` может содержать элементы следующих типов:
+  - `column` — группа элементов, отображаемых в одну колонку;
+  - `section` — группа ссылок, объединённых заголовком, задаваемым через поле `title`;
+  - `link` — ссылка;
 
-    {% cut "Пример конфигурации выпадающего списка" %}
+    {% cut "Примеры конфигурации выпадающего списка" %}
+
+    #|
+    ||
+    Простой список:
+    |>
+    ||
+    ||
 
     ```yaml
     - type: dropdown
@@ -52,6 +62,86 @@ navigation:
           text: 'Link 2'
           url: 'https://diplodoc.com/docs/'
     ```
+
+    |
+    ||
+    ||
+    Несколько групп ссылок в одной колонке:
+    |>
+    ||
+    ||
+
+    ```yaml
+    - type: dropdown
+      text: 'Dropdown'
+      items:
+        - type: section
+          title: 'Section 1'
+          items:
+            - type: link
+              text: Link 1
+              url: 'https://diplodoc.com'
+            - type: link
+              text: Link 2
+              url: 'https://diplodoc.com/docs/'
+        - type: section
+          title: 'Section 2'
+          items:
+            - type: link
+              text: 'Link 3'
+              url: 'https://diplodoc.com/docs/'
+    ```
+    |
+    ![Пример с группами ссылок в одной колонке](../../_images/header_sections.png){ height=200 }
+    ||
+    ||
+    Группы ссылок в нескольких колонках:
+    |>
+    ||
+    ||
+
+    ```yaml
+    - type: dropdown
+      text: 'Dropdown'
+      items:
+        - type: column
+          items:
+          - type: section
+            title: 'Section 1'
+            items:
+              - type: link
+                text: 'Link 1'
+                url: 'https://diplodoc.com'
+              - type: link
+                text: 'Link 2'
+                url: 'https://diplodoc.com/docs/'
+          - type: section
+            title: 'Section 2'
+            items:
+              - type: link
+                text: 'Link 3'
+                url: 'https://diplodoc.com/docs/'
+        - type: column
+          items:
+          - type: section
+            title: 'Section 3'
+            items:
+              - type: link
+                text: 'Link 4'
+                url: 'https://diplodoc.com/docs/ru/dev/'
+              - type: link
+                text: 'Link 5'
+                url: 'https://diplodoc.com/docs/ru/quickstart/'
+              - type: link
+                text: 'Link 6'
+                url: 'https://diplodoc.com/docs/ru/project/'
+    ```
+
+    |
+
+    ![Пример с несколькими колонками](../../_images/header_columns.png){ height=200 }
+    ||
+    |#
 
     {% endcut %}
 
@@ -103,6 +193,6 @@ navigation:
 - `controls` — точка размещения настроек в навигации.
   Если не указана вручную, то автоматически добавляется последним элементом в `rightItems`.
 
-На первом уровне и в выпадающих списках доступен элемент:
+На первом уровне, в выпадающих списках, группах элементов и ссылок доступен элемент:
 
 - `link` — ссылка, свойство `url` содержит текст ссылки; относительные ссылки всегда рассчитываются от корня проекта, на каком бы уровне ни находился ##toc.yaml##.
