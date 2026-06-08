@@ -8,6 +8,8 @@ The content of cuts and tabs can include any YFM markup.
 
 {% endnote %}
 
+{% include [blank-lines](../_includes/blank-lines-note.md) %}
+
 ## Cuts {#cuts}
 
 Use cuts to hide content. For example, additional information or long blocks of code.

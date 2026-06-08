@@ -12,6 +12,8 @@ Depending on the content, notes with different titles and formatting are used:
 
 Notes can include any YFM markup, but we don't recommend overloading them with elements. Choose a simple design and don't overuse notes because this will distract the user from the main content.
 
+{% include [blank-lines](../_includes/blank-lines-note.md) %}
+
 ## Comment
 
 ```markdown

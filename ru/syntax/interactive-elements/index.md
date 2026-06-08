@@ -13,3 +13,5 @@
 Содержимое интерактивных элементов разметки может включать любую разметку YFM.
 
 {% endnote %}
+
+{% include [blank-lines](../../_includes/blank-lines-note.md) %}

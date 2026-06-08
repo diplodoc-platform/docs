@@ -2,6 +2,8 @@
 
 Дропдаун — выпадающий список. Используйте его для группировки элементов со скрытым контентом.
 
+{% include [blank-lines](../../_includes/blank-lines-note.md) %}
+
 ```markdown
 {% list tabs dropdown %}
 
