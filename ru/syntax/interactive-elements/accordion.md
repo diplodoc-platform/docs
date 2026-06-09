@@ -2,6 +2,8 @@
 
 Аккордеон позволяет свернуть или раскрыть содержимое по вашему выбору, подходит для организации больших объемов информации.
 
+{% include [blank-lines](../../_includes/blank-lines-note.md) %}
+
 ```markdown
 {% list tabs accordion %}
 

@@ -2,6 +2,8 @@
 
 Используйте табы для взаимоисключающих разделов. Например, чтобы разделить инструкции для разных ОС.
 
+{% include [blank-lines](../../_includes/blank-lines-note.md) %}
+
 ```markdown
 {% list tabs %}
 
