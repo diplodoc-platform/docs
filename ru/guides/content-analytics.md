@@ -41,19 +41,13 @@
    
    ![](../_images/opengraph.png)
 
-2. Добавьте счётчик в документационный проект, используя конфигурационный файл [`.yfm`](../settings.md#config).
+2. Добавьте счётчик в документационный проект, используя [конфигурационный файл `.yfm`](../settings.md#analytics-metrika).
   
    Пример:
 
-   ```
-   allowHTML: true
-   apply-presets: true
-   varsPreset: external
-   langs: ['ru', 'en']
-
-   docs-viewer:
-     metrika: 44444444
-     project-name: your-project-name
+   ```yaml
+   analytics:
+     - id: 44444444
    ```
 
 ### Добавление метаинформации {#meta-information}

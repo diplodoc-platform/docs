@@ -175,6 +175,8 @@ items:
     items:
       - name: Контентная аналитика
         href: guides/content-analytics.md
+      - name: Отправка целей в Метрику
+        href: project/analytics/ym.md
       - name: Настройка личного домена
         href: personal-domain-ya-cloud.md
       - name: Единый источник
