@@ -179,6 +179,7 @@ items:
         href: project/analytics/ym.md
       - name: Настройка личного домена
         href: personal-domain-ya-cloud.md
+        hidden: true
       - name: Единый источник
         href: guides/single-source/index.md
         items:

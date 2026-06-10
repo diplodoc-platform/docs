@@ -3,7 +3,6 @@ langs: ['ru','en']
 
 vcs: true
 mtimes: true
-authors: true
 
 search:
   provider: local
@@ -17,9 +16,6 @@ extensions:
     plugins:
     - '@diplodoc/transform/lib/plugins/checkbox'
   - github-vcs
-
-preprocess:
-  mergeIncludes: true
 
 resources:
   style:
