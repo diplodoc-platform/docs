@@ -9,6 +9,7 @@
 navigation:
   logo:
     url: 'https://diplodoc.com'
+    urlTitle : "Текст всплывающей подсказки"
     dark:
       icon: 'https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg'
       text: 'Diplodoc'
