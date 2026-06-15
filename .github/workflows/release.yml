@@ -18,6 +18,7 @@ jobs:
           VCS_TOKEN: ${{ secrets.YC_UI_BOT_GITHUB_TOKEN }}
         with:
           revision: "${{ github.sha }}"
+          use-ya-opensource: true
   upload:
     needs: build
     runs-on: ubuntu-latest

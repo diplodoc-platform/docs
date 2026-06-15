@@ -19,3 +19,4 @@ jobs:
           VCS_TOKEN: ${{ secrets.YC_UI_BOT_GITHUB_TOKEN }}
         with:
           revision: "${{ github.event.pull_request.head.sha }}"
+          use-ya-opensource: true
