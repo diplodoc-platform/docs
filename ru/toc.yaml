@@ -26,6 +26,7 @@ navigation:
       - text: "Онлайн редактор"
         type: "link"
         url: "https://diplodoc-platform.github.io/playground/?prefill=true"
+        target: _self
       - text: "Telegram"
         type: "link"
         url: "https://t.me/diplodoc_ru"
