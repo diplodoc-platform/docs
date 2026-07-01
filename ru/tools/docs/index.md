@@ -16,4 +16,5 @@ npm i @diplodoc/cli -g
 
 - [создание проекта](./init.md);
 - [сборка](./build.md);
+- [сборка одного файла](./content.md);
 - [перевод](./translate.md).

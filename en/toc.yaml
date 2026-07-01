@@ -84,6 +84,8 @@ items:
                 href: tools/docs/index.md
               - name: Build
                 href: tools/docs/build.md
+              - name: Single file
+                href: tools/docs/content.md
               - name: Translate
                 href: tools/docs/translate.md
               - name: Settings

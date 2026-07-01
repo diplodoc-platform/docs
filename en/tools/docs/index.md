@@ -15,4 +15,5 @@ npm i @diplodoc/cli -g
 ## Commands
 
 - [Build](./build.md)
+- [Single file](./content.md)
 - [Translate](./translate.md)
