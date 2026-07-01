@@ -163,6 +163,8 @@ items:
             href: tools/docs/settings.md
           - name: Одностраничная сборка
             href: tools/docs/singlepage.md
+      - name: Сборка одного файла
+        href: tools/docs/content.md
       - name: Локализация
         href: tools/docs/translate.md
       - name: Выкладка на S3
