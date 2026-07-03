@@ -34,7 +34,7 @@ npm run lint:fix
 ### TypeScript
 
 - Пишите весь исходный код на TypeScript.
-- Расширяйте общую конфигурацию `@diplodoc/tsconfig`.
+- Расширяйте общую конфигурацию `@diplodoc/infra/tsconfig.json`.
 - Проверяйте типы командой `npm run typecheck`.
 
 ### Документирование архитектурных изменений (ADR)
