@@ -123,6 +123,21 @@ extensions:
 || `lint` | Подключить [файл линтера](./project/lint.md). | `bool`
 
 `false` ||
+|| `llms` {#llms} |
+
+Настройки генерации [файлов llms.txt и llms-full.txt](./guides/llms.md) для проекта:
+
+```yaml
+llms:
+  enabled: true
+  description: описание проекта
+```
+
+Значение опционального поля `description` добавляется в начало файлов ##llms*.txt##.
+
+| `object`
+
+`—` ||
 || `mtimes` {#vcs-mtimes} | Включить отображение даты изменения статьи, которая берётся из данных VCS.
 
 Работает при включенном параметре [##vcs##](#vcs).
