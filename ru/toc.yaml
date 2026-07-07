@@ -156,7 +156,7 @@ items:
     items:
       - name: Создание проекта
         href: tools/docs/init.md
-      - name: Сборка
+      - name: Сборка проекта
         href: tools/docs/build.md
         items:
           - name: Параметры сборки
@@ -201,6 +201,8 @@ items:
             hidden: true
       - name: Content Security Policy (CSP)
         href: guides/csp.md
+      - name: Генерация llms.txt
+        href: guides/llms.md
       - name: Настройка версионирования документации
         href: guides/release-version.md
       - name: Подключение CSS и JS

@@ -38,7 +38,7 @@ description: Описание
 Прописывается в `<meta name="copyright" content="..."/>`. | `string`
 
 — ||
-|| `description` | Мета-описание страницы.
+|| `description` {#description} | Мета-описание страницы.
 
 Прописывается в `<meta name="description" content="..."/>`. | `string`
 
