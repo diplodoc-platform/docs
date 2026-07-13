@@ -23,3 +23,15 @@ Standard YFM settings are listed below. Depending on the tool you use, you can c
 `analytics.gtm` | Options for Google Tag Manager analytics | `Object` | `undefined`
 `analytics.gtm.id` | ID of Google Tag Manager at format GTM-* | `string` | `undefined`
 `analytics.gtm.mode` | Notification type before analytics events start being sent `base` or `notification`  | `string` | `base`
+
+## `publish` section {#publish}
+
+Settings for publishing built documentation to [S3 storage](https://cloud.yandex.com/services/storage). See also: [Uploading to S3](./tools/docs/publish-s3.md).
+
+| Name | Description | Default value |
+| :--- | :--- | :--- |
+| `endpoint` | Endpoint for S3 storage. | `https://s3.amazonaws.com` |
+| `bucket` | Bucket. | — |
+| `prefix` | Prefix for file paths. Optional. Can be used to pass the build version so that each build is placed in a separate folder. | — |
+| `region` | S3 storage region. | `eu-central-1` |
+| `hidden` | List of glob patterns for files that should not be uploaded to the storage. | — |
