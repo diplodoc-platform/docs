@@ -4,6 +4,10 @@ langs: ['ru','en']
 vcs: true
 mtimes: true
 
+llms:
+  enabled: true
+  description: "Diplodoc test llms files"
+
 search:
   provider: local
 
