@@ -1,27 +1,37 @@
 # Настройки YFM-проекта
 
-В зависимости от используемого инструмента вы можете задать стандартные настройки YFM-проекта одним из способов:
+Настройки проекта указываются в yaml-файле `.yfm` в корне документа. При сборке можно указать путь до другого файла с помощью [ключа запуска `--config`](tools/docs/settings.md#config).
 
-* в [файле конфигурации](#config);
-* через [ключи запуска команды](./tools/docs/settings.md) `yfm`.
+Также некоторые параметры можно задать через [ключи запуска команды `yfm build`](./tools/docs/settings.md).
 
-## Файл конфигурации {#config}
+{% cut "Пример файла .yfm" %}{#yfm}
 
-По умолчанию используется файл `.yfm` в корне документа. При сборке можно указать путь до другого файла с помощью [ключа запуска](tools/docs/settings.md) `--config`.
+```yaml wrap
+# Корневая секция параметров
+allowHtml: false
 
-Файл конфигурации содержит список всех параметров в формате YAML:
+# Настройки интерфейса документации
+interface:
+  favicon-src: https://raw.githubusercontent.com/yandex-cloud/yfm-documentation/master/_images/logo_blue_32x32.png
 
-```yaml
-parameter: value
-parameter: value
+# Секция параметров вьюера (docs-viewer)
+docs-viewer:
+  # Настройки логотипа
+  logo-options:
+    url: https://diplodoc.com/docs/{lang}/
+    src: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+    src-dark: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+    src-mobile: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+    src-mobile-dark: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
+    src-preview: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/share-logo-dark.svg
+    # Если логотипа нет, то вместо него можно задать текст
+    title: Yandex Flavored Markdown
+
 ```
 
-* `parameter` — имя задаваемой настройки;
-* `value` — значение настройки.
+{% endcut %}
 
-## Параметры {#parameters}
-
-### Корневая секция {#root-settings}
+## Корневая секция .yfm {#root-settings}
 
 #|
 || **Параметр** | **Описание** | **Тип и значение по умолчанию** ||
@@ -200,7 +210,7 @@ llms:
 `false` ||
 |#
 
-### Секция `analytics` {#analytics}
+## Секция `analytics` {#analytics}
 
 #|
 || **Название** | **Описание** | **Тип и значение по умолчанию** ||
@@ -250,7 +260,7 @@ analytics:
 ||
 |#
 
-### Секция `content` {#content}
+## Секция `content` {#content}
 
 Управление обработкой и проверками контента статей.
 
@@ -299,7 +309,7 @@ analytics:
 `true` ||
 |#
 
-### Секция `interface` {#interface}
+## Секция `interface` {#interface}
 
 Настройки отображения интерфейса. Все настройки из секции можно переопределять для отдельных статей, указывая их значения в [метаданных](./project/meta.md#interface) страниц.
 
@@ -324,9 +334,9 @@ analytics:
 
 |#
 
-### Секция `pdf` {#pdf}
+## Секция `pdf` {#pdf}
 
-Содержит параметры предобработки данных для [генерации pdf-версии](guides/generate-pdf.md) документации.
+Содержит параметры предобработки данных для [генерации pdf-версии документации](guides/generate-pdf.md).
 
 #|
 || **Название** | **Описание** | **Тип и значение по умолчанию** ||
@@ -340,7 +350,7 @@ analytics:
 `true` ||
 |#
 
-### Секция `resources` {#resources}
+## Секция `resources` {#resources}
 
 Управление подключаемыми к проекту ресурсами.
 
@@ -405,7 +415,7 @@ resources:
 — ||
 |#
 
-### Секция `template` {#template}
+## Секция `template` {#template}
 
 Управление поддерживаемыми конструкциями [синтаксиса шаблонов](./syntax/vars.md).
 
@@ -433,14 +443,129 @@ resources:
 `true` ||
 |#
 
-### Секция `docs-viewer` {#docs-viewer}
+## Секция `search` {#search}
+
+Чтобы добавить поиск в документацию, явно пропишите секцию `search` в файле `.yfm`.  
+Diplodoc поддерживает в режиме статической сборки документации два типа интеграции поиска:
+
+* [локальный поиск на клиенте (на базе Lunr.js)](./project/lunr.md);
+* [облачный поиск на базе платформы Algolia](./project/algolia.md).
+
+По умолчанию поиск **отключен**, для его появления настройте секцию `search`.
+
+### Общие параметры {#search-common}
 
 #|
 || **Название** | **Описание** | **Тип и значение по умолчанию** ||
-|| `favicon-src` | Иконка во вкладке браузера.
-Можно использовать любую ссылку на изображение, подходящее под стандартные требования к фавиконкам. | `string`
+|| `provider` | Выбор поисковой системы.
+Варианты:
+
+* `local` — локальный поиск (Lunr.js);
+* `algolia` — облачный поиск на базе Algolia. | `string`
+
+— (поиск не подключен) ||
+|#
+
+### Параметры для локального поиска (`provider: local`) {#search-local}
+
+#|
+|| **Название** | **Описание** | **Тип и значение по умолчанию** ||
+|| `tolerance`  | Глубина расширения совпадений:
+
+* 0 — только полное совпадение слова;
+* 1 — совпадение по префиксу (`word*`);
+* 2 — совпадение по любой подстроке слова (`*word*`). | `number`
+
+`2` ||
+|| `confidense` | Режим ранжирования результатов:
+
+* `phrased` — выше ранжируются результаты по длине найденной фразы;
+* `sparsed` — выше ранжируются результаты по количеству найденных слов. | `string`
+
+`phrased` ||
+|#
+
+{% cut "Пример настройки локального поиска" %}
+
+```yaml
+search:
+  provider: local
+  tolerance: 2
+  confidense: phrased
+```
+
+{% endcut %}
+
+### Параметры для поиска через Algolia (`provider: algolia`) {#search-algolia}
+
+#|
+|| **Название** | **Описание** | **Тип и значение по умолчанию** ||
+|| `appId` | Algolia App ID.
+Обязательный параметр для облачного поиска. | `string`
 
 — ||
+|| `apiKey` | **Секретный** Admin API Key для индексации.
+Рекомендуется передавать через переменные среды или CLI. | `string`
+
+— ||
+|| `indexName` | Имя индекса в Algolia. | `string`
+
+`docs` ||
+|| `index` | Если `true`, индекс будет автоматически загружаться в Algolia после сборки.
+Если `false`, только создается локальный индекс. | `boolean`
+
+`false` ||
+|| `searchApiKey`  | Search API Key.
+Клиентский ключ для поиска на фронте. Без него облачный поиск не работает на клиенте. | `string`
+
+`search-api-key` ||
+|| `api` | Путь к js-API поиска на клиенте. | `string`
+
+`_search/api.js` ||
+|| `indexSettings` | [Настройки индекса Algolia](https://www.algolia.com/doc/api-reference/settings-api-parameters/). | `object`
+
+— ||
+|| `querySettings` | [Настройки параметров поиска Algolia](https://www.algolia.com/doc/api-reference/api-parameters/). | `object`
+
+— ||
+|#
+
+{% cut "Пример настройки поиска через Algolia" %}
+
+```yaml
+search:
+  provider: algolia
+  appId: <ВАШ_APP_ID>
+  indexName: docs
+  index: true
+  searchApiKey: <ВАШ_SEARCH_API_KEY>
+  indexSettings:
+    searchableAttributes:
+      - title
+      - content
+      - headings
+  querySettings:
+    hitsPerPage: 10
+    attributesToRetrieve:
+      - title
+      - content
+      - url
+```
+
+{% endcut %}
+
+{% note info %}
+
+* Для активации поиска **обязательно** добавьте секцию `search` и укажите `provider`.
+* Для больших проектов рекомендуется облачный поиск Algolia.
+* Не публикуйте `apiKey` от Algolia в публичных репозиториях или продакшн-конфигурациях — используйте переменные среды либо CLI-параметры.
+
+{% endnote %}
+
+## Секция `docs-viewer` {#docs-viewer}
+
+#|
+|| **Название** | **Описание** | **Тип и значение по умолчанию** ||
 || `lang` | Язык по умолчанию для локализации.
 Для [следующих языков](https://github.com/diplodoc-platform/client/blob/34a5139620874627cfdebe9be74902cf9d3961b1/src/constants.ts#L15) контент будет отображаться в формате RTL (right-to-left). | `string`
 
@@ -604,161 +729,3 @@ themes: ['dark']
 | `string[]`
 `['light', 'dark']` ||
 |#
-
-### Секция `search` {#search}
-
-Чтобы добавить поиск в документацию, явно пропишите секцию `search` в файле `.yfm`.  
-Diplodoc поддерживает в режиме статической сборки документации два типа интеграции поиска:
-
-* [локальный поиск на клиенте (на базе Lunr.js)](./project/lunr.md);
-* [облачный поиск на базе платформы Algolia](./project/algolia.md).
-
-По умолчанию поиск **отключен**, для его появления настройте секцию `search`.
-
-#### Общие параметры {#search-common}
-
-#|
-|| **Название** | **Описание** | **Тип и значение по умолчанию** ||
-|| `provider` | Выбор поисковой системы.
-Варианты:
-
-* `local` — локальный поиск (Lunr.js);
-* `algolia` — облачный поиск на базе Algolia. | `string`
-
-— (поиск не подключен) ||
-|#
-
-#### Параметры для локального поиска (`provider: local`) {#search-local}
-
-#|
-|| **Название** | **Описание** | **Тип и значение по умолчанию** ||
-|| `tolerance`  | Глубина расширения совпадений:
-
-* 0 — только полное совпадение слова;
-* 1 — совпадение по префиксу (`word*`);
-* 2 — совпадение по любой подстроке слова (`*word*`). | `number`
-
-`2` ||
-|| `confidense` | Режим ранжирования результатов:
-
-* `phrased` — выше ранжируются результаты по длине найденной фразы;
-* `sparsed` — выше ранжируются результаты по количеству найденных слов. | `string`
-
-`phrased` ||
-|#
-
-#### Параметры для поиска через Algolia (`provider: algolia`) {#search-algolia}
-
-#|
-|| **Название** | **Описание** | **Тип и значение по умолчанию** ||
-|| `appId` | Algolia App ID.
-Обязательный параметр для облачного поиска. | `string`
-
-— ||
-|| `apiKey` | **Секретный** Admin API Key для индексации.
-Рекомендуется передавать через переменные среды или CLI. | `string`
-
-— ||
-|| `indexName` | Имя индекса в Algolia. | `string`
-
-`docs` ||
-|| `index` | Если `true`, индекс будет автоматически загружаться в Algolia после сборки.
-Если `false`, только создается локальный индекс. | `boolean`
-
-`false` ||
-|| `searchApiKey`  | Search API Key.
-Клиентский ключ для поиска на фронте. Без него облачный поиск не работает на клиенте. | `string`
-
-`search-api-key` ||
-|| `api` | Путь к js-API поиска на клиенте. | `string`
-
-`_search/api.js` ||
-|| `indexSettings` | [Настройки индекса Algolia](https://www.algolia.com/doc/api-reference/settings-api-parameters/). | `object`
-
-— ||
-|| `querySettings` | [Настройки параметров поиска Algolia](https://www.algolia.com/doc/api-reference/api-parameters/). | `object`
-
-— ||
-|#
-
-#### Примеры настройки поиска
-
-**Локальный поиск:**
-
-```yaml
-search:
-  provider: local
-  tolerance: 2
-  confidense: phrased
-```
-
-**Поиск через Algolia:**
-
-```yaml
-search:
-  provider: algolia
-  appId: <ВАШ_APP_ID>
-  indexName: docs
-  index: true
-  searchApiKey: <ВАШ_SEARCH_API_KEY>
-  indexSettings:
-    searchableAttributes:
-      - title
-      - content
-      - headings
-  querySettings:
-    hitsPerPage: 10
-    attributesToRetrieve:
-      - title
-      - content
-      - url
-```
-
-{% note info %}
-
-* Для активации поиска обязательно добавьте секцию `search` и укажите `provider`.
-* Для больших проектов рекомендуется облачный поиск Algolia.
-* Не публикуйте `apiKey` от Algolia в публичных репозиториях или продакшн-конфигурациях — используйте переменные среды либо CLI-параметры.
-
-{% endnote %}
-
-## Пример файла `.yfm` {#yfm}
-
-```yaml
-# Корневая секция параметров
-strict: true
-breaks: false
-apply-presets: true
-varsPreset: 'external'
-needToSanitizeHtml: true
-langs: ['en', 'ru']
-
-# Настройки интерфейса документации
-interface:
-  favicon-src: https://raw.githubusercontent.com/yandex-cloud/yfm-documentation/master/_images/logo_blue_32x32.png
-
-# Секция параметров вьюера (docs-viewer)
-docs-viewer:
-  project-name: project-name
-  no-index: true
-  langs: ['en', 'ru']
-  metrika: 678489
-
-  # Настройки логотипа
-  logo-options:
-    url: https://diplodoc.com/docs/{lang}/
-    src: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
-    src-dark: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
-    src-mobile: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
-    src-mobile-dark: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/logo.svg
-    src-preview: https://storage.yandexcloud.net/docs-external/yfm-documentation/_images/share-logo-dark.svg
-    # Если логотипа нет, то вместо него можно задать текст
-    title: Yandex Flavored Markdown
-
-# Секция ресурсов
-resources:
-  csp:
-    - "frame-src":
-        - "https://test.site"
-
-```

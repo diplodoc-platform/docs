@@ -41,7 +41,7 @@
 `--jobs 4`, `-j4`, `-j`
 ||
 ||
-`--config, -c` | Путь до [файла конфигурации](../../settings.md#config).
+`--config, -c` {#config} | Путь до [файла конфигурации](../../settings.md).
 ||
 ||
 `--extensions, -e`
