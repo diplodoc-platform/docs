@@ -36,6 +36,44 @@
 
 В ячейке таблицы можно размещать любой многострочный текст. Например, списки. 
 
+| head1  | head2  |
+| ----------- | ----------- |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+| Text       | Text       |
+
+{ sticky-header }
+
+
 ```markdown
 #|
 ||Текст
