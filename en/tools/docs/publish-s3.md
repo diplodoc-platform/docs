@@ -1,19 +1,60 @@
 # Uploading to S3
 
-You can configure the building so that the documentation is automatically uploaded to [S3 storage](https://cloud.yandex.com/services/storage). To do this, when executing the `yfm` command, specify the `--publish` startup key.
+You can configure your build so that documentation is automatically published to [S3 storage](https://cloud.yandex.com/services/storage). To do this, use the `yfm publish` command.
 
-You can set layout settings in one of the following ways:
+You can set upload settings in one of the following ways (secret keys can only be passed as command-line arguments):
+* via startup keys — the key name corresponds to the setting name;
+* in the [configuration file](settings.md#config).
 
-* Using startup keys: The name of the key corresponds to the name of the setting.
-* In a [configuration file](../../project/config.md).
+Secret keys are passed exclusively as arguments:
 
-## Uploading settings {#settings}
+```bash
+--access-key-id "XXXXXX"
+--secret-access-key "XXXXX"
+```
 
-| Configuration | Description |
-| --- | --- |
-| `storageEndpoint` | Endpoint for S3 storage. |
-| `storageBucket` | Bucket. |
-| `storageKeyId` | Authorization key ID.</br></br>Can be set in the `YFM_STORAGE_KEY_ID` environment variable. |
-| `storageSecretKey` | Authorization key.</br></br>Can be set in the `YFM_STORAGE_SECRET_KEY` environment variable. |
-| `storagePrefix` | Prefix for file paths.</br></br>Optional parameter. Can be used to pass the build version, so each build is placed in a separate folder. |
+## `publish` section {#publish}
 
+Parameter | Description | Default value
+--- | --- | ---
+`endpoint` | Endpoint for S3 storage. | `https://s3.amazonaws.com`
+`bucket` | Bucket. | —
+`prefix` | Prefix for file paths.<br><br>Optional parameter. Can be used to pass the build version so that each build is placed in a separate folder. | —
+`region` | S3 storage region. | `eu-central-1`
+`hidden` | List of glob patterns for files that should not be uploaded to the storage. | —
+
+Example:
+
+```yaml
+publish:
+ endpoint: "https://s3.example.com"
+ bucket: "my-docs-bucket"
+ prefix: "docs/"
+ region: "eu-central-1"
+ hidden:
+   - ".yfm"
+```
+
+If you prefer not to store settings in `.yfm`, all parameters can be passed via the command:
+
+```bash
+yfm publish -i docs-html/ \
+  --endpoint "" \
+  --bucket "" \
+  --prefix "" \
+  --region "" \
+  --access-key-id "" \
+  --secret-access-key ""
+```
+
+
+{% note info %}
+
+The `publish` command only uploads files to S3 — it does not build the documentation. If you want to upload already-built static files to S3, you need to build the documentation first:
+
+```bash
+yfm -i docs/ -o docs-html/
+yfm publish -i docs-html/ ...
+```
+
+{% endnote %}
