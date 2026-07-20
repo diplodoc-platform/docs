@@ -124,3 +124,5 @@ log-levels:
 
 Правила можно включить, выключить, настроить для всего файла или абзаца в файле.
 Примеры можно посмотреть [по ссылке](https://github.com/DavidAnson/markdownlint/blob/a852407c887ec60949aa5365ed964bab833f962f/README.md#configuration).
+
+> Смотри также: [Ajv схема файлов конфигурации линтера .yfmlint](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/yfmlint-schema.json)

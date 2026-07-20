@@ -81,6 +81,8 @@ dark:
 `mini-toc-active` | Цвет текста активного пункта оглавления статьи.
 `mini-toc-active-border` | Цвет линии активного пункта оглавления статьи.
 
+> Смотри также: [Ajv схема конфигурации темизатора theme.yaml](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/theme-schema.json)
+
 ## Определение base-brand при сборке {#build}
 
 При отсутствии файла конфигурации цвет base-brand может быть задан с помощью ключа запуска `--theme`

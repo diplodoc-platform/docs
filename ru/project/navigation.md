@@ -225,3 +225,5 @@ navigation:
   - `target` (необязательный параметр) — для открытия ссылки в той-же вкладке браузера можно указать в этом поле значение `_self`.
 
 Полный список поддерживаемых параметров можно найти на [странице компонента Footer на сайте Gravity UI](https://gravity-ui.com/ru/components/navigation/footer).
+
+> Смотри также: [Ajv схема файлов оглавления toc.yaml](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/toc-schema.json)
