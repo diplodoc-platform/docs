@@ -61,3 +61,5 @@ links:
   description: "not_var{{ link_description }}"
   href: path/to/conditional/file.md
 ```
+
+> Смотри также: [Ajv схема разводящих страниц](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/frontmatter-schema.json)
