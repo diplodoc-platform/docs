@@ -40,7 +40,7 @@ For build initiation run the following with **mandatory** keys:
 
 #### Example
 ```
-yfm -i ./input-folder -o ./output-folder
+yfm build -i ./input-folder -o ./output-folder
 ```
 
 

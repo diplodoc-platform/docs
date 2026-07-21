@@ -90,7 +90,7 @@ dark:
 Например:
 
 ```shell
-yfm -i ./input-folder -o ./output-folder --theme green
+yfm build -i ./input-folder -o ./output-folder --theme green
 ```
 
 Так же цвет base-brand может быть задан с помощью настройки в корневой секции `.yfm`.

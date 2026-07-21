@@ -308,10 +308,10 @@ You can generate documentation from the [Open API](https://www.openapis.org/) sp
 
 openapi includer requires you to enable usage of HTML inside documentation
 
-set `allowHTML` to `true` inside `.yfm` config
+set `allowHtml` to `true` inside `.yfm` config
 
 ```
-allowHTML: true
+allowHtml: true
 ```
 
 {% endnote %}
