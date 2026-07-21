@@ -38,7 +38,7 @@ title: Поиск с Algolia
 4. **Передайте ключи и запустите сборку**  
    Для безопасной сборки передавайте Write API Key через флаг CLI:
    ```bash
-   yfm -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia-extension" --api-key "your-write-key"
+   yfm build -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia-extension" --api-key "your-write-key"
    ```
 
 ### Регистрация и настройки Algolia
@@ -64,7 +64,7 @@ npm install -g @diplodoc/algolia-extension
 ```
 Запуск сборки с расширением:
 ```bash
-yfm -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia-extension" --api-key "your-write-key"
+yfm build -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia-extension" --api-key "your-write-key"
 ```
 
 **Локальная установка в проекте @diplodoc/cli:**
