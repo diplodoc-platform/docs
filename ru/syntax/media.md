@@ -9,6 +9,8 @@
 ![alt-текст](_images/image.png "текст_подсказки"){width=100 height=100}
 ```
 
+![][image1]
+
   * `alt-текст` —  работает как [атрибут alt в HTML](https://en.wikipedia.org/wiki/Alt_attribute). Отображается, если изображение не загружено, используется для SEO и чтения скринридерами.
 
       {% note info %}
@@ -44,7 +46,7 @@
 
 **Результат:**
 
-[![An old rock in the desert](../_images/mountain.jpg "Mountain"){width=100 height=200}](https://yandex.com/images/search?text=mountain)
+[![](../_images/mountain.jpg "Mountain"){width=100 height=200}](https://yandex.com/images/search?text=mountain)
 
 ### Reference-style разметка для изображений {#reference-style}
 
