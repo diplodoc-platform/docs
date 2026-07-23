@@ -1,11 +1,12 @@
 # Расширенная навигация
 
 Платформа поддерживает гибкую настройку верхней и нижней навигации («шапки» и «подвала») на странице.
+
 Для этого используется пакет [page-constructor](https://gravity-ui.com/libraries/page-constructor). В [StoryBook](https://preview.gravity-ui.com/page-constructor/?path=/docs/navigation-navigation--docs) можно ознакомиться с примерами конфигурации навигации.
 
-## Верхнее меню {#header}
+## Логотип {#logo}
 
-Конфигурация верхнего меню добавляется в `toc.yaml` следующим образом:
+Логотип в верхнем меню задается в `toc.yaml` с помощью параметра `navigation.logo`:
 
 ```yaml
 navigation:
@@ -18,6 +19,14 @@ navigation:
     light:
       icon: 'https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg'
       text: 'Diplodoc'
+```
+
+## Верхнее меню {#header}
+
+Конфигурация верхнего меню добавляется в `toc.yaml` следующим образом:
+
+```yaml
+navigation:
   header:
     leftItems:
       - text: 'Relative Link'
