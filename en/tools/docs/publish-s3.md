@@ -1,19 +1,66 @@
-# Uploading to S3
+# Publishing to S3
 
-You can configure the building so that the documentation is automatically uploaded to [S3 storage](https://cloud.yandex.com/services/storage). To do this, when executing the `yfm` command, specify the `--publish` startup key.
+To publish documentation to [S3 storage](https://cloud.yandex.ru/services/storage), use the `yfm publish` command.
 
-You can set layout settings in one of the following ways:
+{% note warning %}
 
-* Using startup keys: The name of the key corresponds to the name of the setting.
-* In a [configuration file](../../project/config.md).
+The command does not build documentation — you need to build it with `yfm build` before publishing.
 
-## Uploading settings {#settings}
+```bash
+# Build documentation
+yfm build -i docs/ -o docs-html/
 
-| Configuration | Description |
-| --- | --- |
-| `storageEndpoint` | Endpoint for S3 storage. |
-| `storageBucket` | Bucket. |
-| `storageKeyId` | Authorization key ID.</br></br>Can be set in the `YFM_STORAGE_KEY_ID` environment variable. |
-| `storageSecretKey` | Authorization key.</br></br>Can be set in the `YFM_STORAGE_SECRET_KEY` environment variable. |
-| `storagePrefix` | Prefix for file paths.</br></br>Optional parameter. Can be used to pass the build version, so each build is placed in a separate folder. |
+# Publish to S3
+yfm publish -i docs-html/ \
+  --bucket "my-docs-bucket" \
+  --access-key-id "YCAJE..." \
+  --secret-access-key "YCO..."
+```
 
+{% endnote %}
+
+## publish command arguments
+
+#|
+|| **Argument** | **Description** | **Default** ||
+|| `--input` (`-i`){{required}} | Path to the directory with the built documentation | — ||
+|| `--endpoint` | S3 storage endpoint | `https://s3.amazonaws.com` ||
+|| `--bucket`{{required}} | Bucket name | — ||
+|| `--prefix` |
+File path prefix.
+\
+Can be used to pass the build version, so each build is stored in a separate folder.
+| — ||
+|| `--region` | S3 storage region | `eu-central-1` ||
+|| `--hidden` | List of glob patterns for files that should not be uploaded to the storage | — ||
+|| `--access-key-id`{{required}} | S3 access key ID | — ||
+|| `--secret-access-key`{{required}} | S3 secret access key | — ||
+|#
+
+Some parameters are recommended to be specified in the [configuration file](../../settings.md). This avoids repeating them on every command run. Sensitive data (`--access-key-id`, `--secret-access-key`) should be passed **only as command-line arguments**.
+
+## Examples
+
+### publish section in the **.yfm** configuration file
+
+```yaml
+publish:
+  endpoint: "https://storage.yandexcloud.net"
+  bucket: "my-docs-bucket"
+  prefix: "docs/"
+  region: "eu-central-1"
+  hidden:
+    - ".yfm"
+```
+
+### Command-line arguments
+
+```bash
+yfm publish -i docs-html/ \
+  --endpoint "https://storage.yandexcloud.net" \
+  --bucket "my-docs-bucket" \
+  --prefix "docs/v1.0/" \
+  --region "eu-central-1" \
+  --access-key-id "YCAJE..." \
+  --secret-access-key "YCO..."
+```

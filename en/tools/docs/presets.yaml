@@ -1,0 +1,2 @@
+default:
+  required: '<b style="color:red" title="Required">*</b>'
