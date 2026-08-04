@@ -109,7 +109,17 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
   #|
   || Параметр             | Формат         | Описание ||
-  || `--auth`{{required}}  | Path<br/>{{fmt.iam-token}}<br/>{{fmt.api-key}} |
+  ||
+
+  `--auth`{{required}} 
+  
+  |
+  
+  Path
+  {{fmt.iam-token}}
+  {{fmt.api-key}}
+
+  |
   Токен авторизации. Может быть передан несколькими способами:
   \
   {{fmt.iam-token}} как параметр командной строки
@@ -125,14 +135,30 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
   `{{PROGRAM}} translate --auth path/to/.api-key`
 
   ||
-  || `--folder`{{required}}  | Id |
+  ||
+  
+  `--folder`{{required}} 
+  
+  |
+  
+  Id
+  
+  |
   [Идентификатор каталога](https://cloud.yandex.ru/ru/docs/resource-manager/operations/folder/get-id), для которого у вашего аккаунта есть роль `ai.translate.user` или выше.
   ||
-  {% if glossary-support == true %}
-  || `--glossary` | Path |
-  TODO
   ||
-  {% endif %}
+  
+  `--timeout` 
+  
+  |
+  
+  Число
+  
+  |
+
+  Время ожидания перевода в миллисекундах, значение по умолчанию — 5000 (5 секунд).
+
+  ||
   |#
   
 {% endlist %}

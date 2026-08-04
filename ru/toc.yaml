@@ -132,7 +132,7 @@ items:
             href: project/redirects.md
           - name: Метаданные
             href: project/meta.md
-          - name: Оглавление на странице документации
+          - name: Оглавление страницы документации
             href: project/minitoc.md
   - name: Конфигурация проекта
     labeled: true

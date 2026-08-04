@@ -140,10 +140,10 @@ resources:
         - "ссылка_на_видеохостинг"
 ```
 
-{% cut "Пример конфига" %}
+{% cut "Пример конфигурации" %}
 
 ```yaml
-allowHTML: true
+allowHtml: true
 langs: ['en','ru']
 
 resources:
@@ -154,7 +154,6 @@ resources:
         - "https://runtime.strm.yandex.ru"
 
 docs-viewer:
-  project-name: diplodoc
   langs: ['en','ru']
 ...
 ```

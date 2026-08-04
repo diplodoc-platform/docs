@@ -109,5 +109,5 @@ Super\^script^
 
 ## Using HTML {#html}
 
-By default, YFM escapes HTML. To disable escaping, in the [settings](../settings.md), set `allowHTML: true`.
+By default, YFM escapes HTML. To disable escaping, in the [settings](../settings.md), set `allowHtml: true`.
 

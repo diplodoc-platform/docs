@@ -7,7 +7,7 @@ Presets are used to support multiple documentation versions from the same source
 How to work with presets:
 
 1. Describe the presets in `presets.yaml`.
-1. When [building](../tools/docs/index.md), specify the name of the preset used in the `varsPreset` parameter.
+1. When building, specify the name of the preset used in the ##vars-preset## parameter.
 
 ## Structure {#structure}
 

@@ -42,7 +42,7 @@
     |-- content-page.md # Страница с контентом
     ```
 
-    - [Конфигурационный файл .yfm](./settings.md#config).
+    - [Конфигурационный файл .yfm](./settings.md).
     - [Разводящая страница](./project/leading-page.md).
     - Страницы с контентом.
     - [Файл оглавления toc.yaml](./project/toc.md).

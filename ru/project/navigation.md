@@ -1,9 +1,12 @@
 # Расширенная навигация
 
-Платформа поддерживает гибкую настройку верхней навигации («шапки») на странице.
+Платформа поддерживает гибкую настройку верхней и нижней навигации («шапки» и «подвала») на странице.
+
 Для этого используется пакет [page-constructor](https://gravity-ui.com/libraries/page-constructor). В [StoryBook](https://preview.gravity-ui.com/page-constructor/?path=/docs/navigation-navigation--docs) можно ознакомиться с примерами конфигурации навигации.
 
-Блок конфигурации добавляется в `toc.yaml` следующим образом:
+## Логотип {#logo}
+
+Логотип в верхнем меню задается в `toc.yaml` с помощью параметра `navigation.logo`:
 
 ```yaml
 navigation:
@@ -16,6 +19,14 @@ navigation:
     light:
       icon: 'https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg'
       text: 'Diplodoc'
+```
+
+## Верхнее меню {#header}
+
+Конфигурация верхнего меню добавляется в `toc.yaml` следующим образом:
+
+```yaml
+navigation:
   header:
     leftItems:
       - text: 'Relative Link'
@@ -33,7 +44,7 @@ navigation:
 
 Для элементов списков `leftItems` и `rightItems` *первого уровня* можно использовать условия вывода `when` и подстановки переменных по аналогии с [разделами оглавления](toc.md#when).
 
-## Поддерживаемые элементы верхнего меню {#item-types}
+### Поддерживаемые элементы {#item-types}
 
 Тип элемента указывается в свойстве `type`.
 На первом уровне доступны:
@@ -101,7 +112,7 @@ navigation:
     ||
     ||
 
-    ```yaml
+    ```yaml wrap
     - type: dropdown
       text: 'Dropdown'
       items:
@@ -196,4 +207,32 @@ navigation:
 
 На первом уровне, в выпадающих списках, группах элементов и ссылок доступен элемент:
 
-- `link` — ссылка, свойство `url` содержит текст ссылки; относительные ссылки всегда рассчитываются от корня проекта, на каком бы уровне ни находился ##toc.yaml##.
+- `link` — ссылка, свойство `url` содержит текст ссылки, `target: _blank` включает открытие ссылки в новой вкладке; относительные ссылки всегда рассчитываются от корня проекта, на каком бы уровне ни находился ##toc.yaml##.
+
+## Нижнее меню {#footer}
+
+Конфигурация нижнего меню добавляется в `toc.yaml` следующим образом:
+
+```yaml
+navigation:
+  footer:
+    copyright: 'Diplodoc'
+    withDivider: true
+    menuItems:
+      - text: "GitHub"
+        url: "https://github.com/diplodoc-platform"
+      - text: "Для разработчиков"
+        url: "https://diplodoc.com/docs/ru/dev/"
+        target: '_self' # по умолчанию _blank
+```
+
+Основные параметры:
+- `copyright` (строка) — текст копирайта для вывода,
+- `menuItems` — список ссылок, в котором каждая ссылка описывается следующими полями:
+  - `text` — заголовок,
+  - `url` — ссылка,
+  - `target` (необязательный параметр) — для открытия ссылки в той-же вкладке браузера можно указать в этом поле значение `_self`.
+
+Полный список поддерживаемых параметров можно найти на [странице компонента Footer на сайте Gravity UI](https://gravity-ui.com/ru/components/navigation/footer).
+
+> Смотри также: [Ajv схема файлов оглавления toc.yaml](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/toc-schema.json)
