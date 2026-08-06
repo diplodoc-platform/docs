@@ -25,7 +25,8 @@ blocks:
       - text: 'Начать'
         theme: 'outlined'
         size: 'promo'
-        url: '/'
+        url: 'https://diplodoc.com/docs/ru/settings'
+        target: _self
       - text: 'GitHub'
         theme: 'outlined'
         size: 'promo'
