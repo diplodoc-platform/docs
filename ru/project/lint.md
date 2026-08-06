@@ -70,6 +70,8 @@ log-levels:
   YFM017: 'error'   # Invalid front matter format: duplicated mapping key
   YFM018: 'info'    # Term definition from include
   YFM020: 'warn'    # Invalid yfm directive
+  YFM021: 'warn'    # Non-BMP (UTF-16 surrogate pair) character
+  YFM022: 'info'    # llms-full.txt max size reached
 
 
 # Inline code length

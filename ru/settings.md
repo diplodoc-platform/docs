@@ -147,9 +147,14 @@ extensions:
 llms:
   enabled: true
   description: описание проекта
+  llmsFullMaxSize: 8M
+  url: https://example.com/llms.txt
 ```
 
-Значение опционального поля `description` добавляется в начало файлов ##llms*.txt##.
+Параметры:
+- `description` – `string` — строка с описанием проекта, добавляется в начало файлов ##llms*.txt##;
+- `llmsFullMaxSize` — `number`\|`string` — максимальный размер файла ##llms-full.txt##, принимает числа и строки вида ##1024##, ##512K##, ##8M##;
+- `url` – `string` — ссылка на внешний файл ##llms.txt##, которая будет прописываться в статьях документации.
 
 | `object`
 
