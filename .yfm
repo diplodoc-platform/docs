@@ -7,8 +7,6 @@ mtimes: true
 
 llms:
   enabled: true
-  url: https://diplodoc.com/llms.txt
-  llmsFullMaxSize: 10
 
 search:
   provider: local

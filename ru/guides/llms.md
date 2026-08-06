@@ -29,7 +29,8 @@ For more comprehensive documentation, see [llms-full.txt](llms-full.txt)
 
 - для каждого ##toc.yaml## генерируется отдельная пара файлов ##llms.txt## / ##llms-full.txt##;
 - поле `llms: description` из `.yfm` добавляется в качестве описания проекта;
-- описание содержимого каждой статьи для ##llms.txt## берется из [поля ##description## в метаданных](../project/meta.md#description) страницы.
+- описание содержимого каждой статьи для ##llms.txt## берется из [поля ##description## в метаданных](../project/meta.md#description) страницы;
+- в ##llms-full.txt## для уменьшения размера файла вырезаются теги `<style>` и `<script>` со всем их содержимым, а также не выполняется инлайнинг svg-изображений.
 
 ## Ограничение размера llms-full.txt {#llms-full-max-size}
 
