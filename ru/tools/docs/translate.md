@@ -5,6 +5,8 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
 Для перевода документации на разные языки используется команда `{{PROGRAM}} translate`, которая обеспечивает быстрые [автоматические переводы](#auto).
 
+Помимо перевода через [Yandex Translate](#auto), поддерживается [AI-перевод](translate-ai.md) большими языковыми моделями (провайдеры `yandexgpt`, `openai`, `openrouter` и `anthropic`).
+
 Подкоманды `extract` и `compose` этой команды позволяют работать с системами [машинного перевода](#cat) (Computer Assisted Translation, или CAT), обмениваясь с ними `*.xliff` файлами.
 
 Поддерживается перевод как `*.md` файлов, так и `*.json` (в том числе `*.yaml`) файлов по [описанным схемам](#json-schemas).
