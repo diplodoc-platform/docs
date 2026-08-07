@@ -4,6 +4,17 @@
 
 Изображения должны храниться в каталоге, имя которого начинается с символа `_`, иначе они будут удалены при сборке. Рекомендуемый размер загружаемого файла — 5 МБ, максимальный — 10 МБ.
 
+![An old rock in the desert](../_images/user-settings.svg){gallery=true gallery-id=50 width=300}
+![An old rock in the desert][image1]{gallery-id=0}
+
+Текст между картинками 
+
+![An old rock in the desert][image1]{gallery-id=0}
+
+![An old rock in the desert](../_images/user-settings.svg)
+
+![An old rock in the desert][image1]{gallery-id=0}
+
 Стандартная разметка для вставки изображения имеет вид:
 ```
 ![alt-текст](_images/image.png "текст_подсказки"){width=100 height=100}
@@ -61,6 +72,7 @@
 ![An old rock in the desert][image1]
 
 [image1]: ../_images/mountain.jpg "Mountain"
+[image2]: ../_images/Gallery.jpeg "Gallery"
 
 
 ### Инлайнинг SVG {#img-inline}
@@ -85,6 +97,90 @@
 Настройка изображения `inline` имеет более высокий приоритет, чем настройка проекта `maxInlineSvgSize`: если у SVG-изображения установлен параметр `inline=true` и оно превышает заданное ограничение размера, встраивание в HTML-код будет выполнено.
 
 {% endnote %}
+
+### Проверка группировки изображений {#gallery-grouping-test}
+
+Этот раздел предназначен для проверки автоматической группировки изображений в галереи. Название каждой картинки указано в ее `alt`-тексте и отображается в галерее.
+
+#### Автоматическая группировка по разделу и табам
+
+Текст перед первой картинкой.
+
+![Картинка 1 — отдельная галерея перед первым блоком табов](../_images/mountain.jpg){width=240 gallery=true}
+
+{% list tabs %}
+
+- Таб 1
+
+  ![Картинка 2 — отдельная галерея первого таба](../_images/user_settings.jpg){width=240 gallery=true}
+
+- Таб 2
+
+  ![Картинка 3 — отдельная галерея второго таба](../_images/mountain.jpg){width=240 gallery=true}
+
+{% endlist %}
+
+Текст между первым и вторым блоками табов.
+
+![Картинка 4 — общая галерея с картинкой 5](../_images/user_settings.jpg){width=240 gallery=true}
+
+Текст между картинками 4 и 5.
+
+![Картинка 5 — общая галерея с картинкой 4](../_images/mountain.jpg){width=240 gallery=true}
+
+{% list tabs %}
+
+- Таб 3
+
+  ![Картинка 6 — отдельная галерея третьего таба](../_images/user_settings.jpg){width=240 gallery=true}
+
+- Таб 4
+
+  ![Картинка 7 — общая галерея с картинкой 8](../_images/mountain.jpg){width=240 gallery=true}
+
+  ![Картинка 8 — общая галерея с картинкой 7](../_images/user_settings.jpg){width=240 gallery=true}
+
+{% endlist %}
+
+Ожидаемые группы: `1`, `2`, `3`, `4 + 5`, `6`, `7 + 8`.
+
+#### Группировка с помощью `gallery-id`
+
+![Картинка 9 — отдельная обычная галерея](../_images/mountain.jpg){width=240 gallery=true}
+
+![Картинка 10 — группа manual-x](../_images/user_settings.jpg){width=240 gallery-id=manual-x}
+
+![Картинка 11 — группа manual-x](../_images/mountain.jpg){width=240 gallery-id=manual-x}
+
+![Картинка 12 — общая обычная галерея с картинкой 13](../_images/user_settings.jpg){width=240 gallery=true}
+
+Текст между картинками 12 и 13.
+
+![Картинка 13 — общая обычная галерея с картинкой 12](../_images/mountain.jpg){width=240 gallery=true}
+
+Ожидаемые группы: `9`, `10 + 11`, `12 + 13`. У картинок 10 и 11 не указан `gallery=true`: наличие `gallery-id` должно включить галерею автоматически.
+
+#### Одинаковый `gallery-id` в разных разделах и табах
+
+![Картинка 14 — сквозная группа cross-section](../_images/user_settings.jpg){width=240 gallery-id=cross-section}
+
+##### Другой h-раздел
+
+{% list tabs %}
+
+- Таб со сквозной группой
+
+  ![Картинка 15 — сквозная группа cross-section внутри таба](../_images/mountain.jpg){width=240 gallery-id=cross-section}
+
+- Другой таб
+
+  ![Картинка 16 — отдельная галерея другого таба](../_images/user_settings.jpg){width=240 gallery=true}
+
+{% endlist %}
+
+![Картинка 17 — сквозная группа cross-section после табов](../_images/mountain.jpg){width=240 gallery-id=cross-section}
+
+Ожидаемая сквозная группа: `14 + 15 + 17`. Картинка 16 должна открываться отдельно.
 
 ## Видео {#video}
 
