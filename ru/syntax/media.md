@@ -182,6 +182,16 @@
 
 Ожидаемая сквозная группа: `14 + 15 + 17`. Картинка 16 должна открываться отдельно.
 
+### Gallery ID grouping
+
+![Gallery ID landscape one](../_images/mountain.jpg){gallery-id="landscapes"}
+
+#### Different gallery ID
+
+![Gallery ID portrait](../_images/mountain.jpg){gallery-id="portraits"}
+
+![Gallery ID landscape two](../_images/mountain.jpg){gallery-id="landscapes"}
+
 ## Видео {#video}
 
 {% note info %}
