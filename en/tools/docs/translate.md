@@ -1,43 +1,217 @@
-# Translate
+---
+keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'internationalization']
+---
+# Localization
 
-`yfm translate` translates your documentation using [Yandex Translator](https://cloud.yandex.com/en/docs/translate/)
+To translate documentation into different languages, the `{{PROGRAM}} translate` command is used, which provides fast [automatic translations](#auto).
 
-## Setup
+In addition to translation via [Yandex Translate](#auto), [AI translation](translate-ai.md) using large language models is supported (providers `yandexgpt`, `openai`, `openrouter` and `anthropic`).
 
-- get your OAUTH token as described in [yandex.cloud documentation](https://cloud.yandex.com/en/docs/iam/concepts/authorization/oauth-token)
+The `extract` and `compose` subcommands of this command allow working with [machine translation](#cat) systems (Computer Assisted Translation, or CAT), exchanging `*.xliff` files with them.
 
-- put it inside `.ya_oauth_token` file inside home folder or set it with `YANDEX_OAUTH_TOKEN` environment variable
+Translation is supported for both `*.md` files and `*.json` (including `*.yaml`) files according to the [described schemas](#json-schemas).
 
-- get the ID of any folder that your account is granted the editor role or higher for as described in [yandex.cloud documentation](https://cloud.yandex.com/en/docs/resource-manager/operations/folder/get-id)
+## Parameters for invoking the extract subcommand
 
-- set `yandexCloudTranslateFolderId` inside `.yfm` config file to folder id you got from previous step
+#|
+|| Parameter             | Path
+|| `--schema not_var{{optional}}` | 
+Путь до одного или нескольких файлов, содержащих кастомные схемы для перевода.
+\
+`{{PROGRAM}} translate extract --schema ./some/path/to/file.yaml ./some/path/toAnother/file.yaml`
+|#
 
-- set `yandexCloudTranslateGlossaryPairs` inside `.yfm` config file if you need to use glossary dictionary while translating (example below)
+## Automatic translation {#auto}
 
-```
-# glossary example
-
-yandexCloudTranslateGlossaryPairs:
-    - { sourceText: InstreamAdBreakPositionType, translatedText: InstreamAdBreakPositionType }
-```
-
-_This will make **InstreamAdBreakPositionType** stay without change in the target(translated) document_
-
-Now you can use yfm cli to translate your documentation.
-
-## Flags
-
-| Option name       | required | value         | description                                                                  |
-| ----------------- | -------- | ------------- | ---------------------------------------------------------------------------- |
-| --input           | yes      | path          | source path to the documentation                                             |
-| --output          | yes      | path          | target path to the translated documentation                                  |
-| --source-language | yes      | language code | language code in [ISO 639-1 format](https://en.wikipedia.org/wiki/ISO_639-1) |
-| --target-language | yes      | language code | language code in [ISO 639-1 format](https://en.wikipedia.org/wiki/ISO_639-1) |
-
-## Usage
-
-```
-yfm translate --input input_folder --output output_folder --source-language ru --target-language en
+```bash
+{{PROGRAM}} translate --source not_var{{translate.source}} --target not_var{{translate.target}}
 ```
 
-_This will translate your russian documentation in the **input_folder** into english one putting it to **output_folder**_
+Automatic translation can be performed using services such as [Yandex Translate](https://cloud.yandex.ru/docs/translate/){% if translate.google-support == true %} or [Cloud Translate](https://cloud.google.com/translate/docs){% endif %}.
+
+These systems have [limits](https://cloud.yandex.ru/ru/docs/translate/concepts/limits) on the volume of translated documents and translation quality. However, they are characterized by high processing speed.
+
+To reduce the volume of text for translation, the document is split into shorter segments, such as sentences or headings. Repeated segments are then removed.
+
+To further reduce the volume of translations, `include` and `exclude` filters are supported.
+
+The `--dry-run` launch parameter can be used to determine the volume of text ready for translation.
+
+If limits are exceeded, the command will terminate with the error `TRANSLATE_LIMIT_EXCEED`.
+
+### Usage
+
+* Translate a project in the current directory from `not_var{{translate.source-lang}}` to `not_var{{translate.target-lang}}`:
+
+  ```bash
+  {{PROGRAM}} translate --source not_var{{translate.source-lang}} --target not_var{{translate.target-lang}}
+  ```
+
+* Do not translate hidden files in the project:
+
+  ```bash
+  {{PROGRAM}} translate --exclude not_var{{translate.source-lang}}/**/_*.* --source not_var{{translate.source-lang}} --target not_var{{translate.target-lang}}
+  ```
+
+### Call parameters
+
+#### Main
+
+#|
+|| Parameter             | Format    | Description ||
+|| `--source`{{required}}| {{fmt.locale}} |
+Language code of the original document in ISO 639-1 format
+\
+`{{PROGRAM}} translate --source {{translate.source}}`
+||
+|| `--target`{{required}}| {{fmt.locale}} |
+Language code of the translated document in ISO 639-1 format
+\
+`{{PROGRAM}} translate --target {{translate.target}}`
+||
+|| `--input`              | Path      |
+Path to the **root** of the project being translated or a specific file in the project. If not specified, the directory from which the command is launched is used.
+\
+You do not need to specify the language directory in the path — it is added automatically.
+\
+`{{PROGRAM}} translate -i ./docs`
+\
+`{{PROGRAM}} translate -i ./docs/index.md`
+\
+You can also specify a [filter file](#filter) as the path.
+\
+`{{PROGRAM}} translate -i translate.list` 
+||
+|| `--output`             | Path      |
+Path to the **root** of the project where the translation should be saved. If not specified, the `input` directory is used.
+||
+|| `--include`            | {{fmt.glob}} |
+A set of rules for filtering files sent for translation. By default, `{lang}/**/*.@(md\|yaml\|json)`.
+\
+Can be passed multiple times.
+\
+Ignored if a [filter file](#filter) is used.
+\
+`{{PROGRAM}} translate --include {{translate.source-lang}}/**/*.md`
+||
+|| `--exclude`            | {{fmt.glob}} |
+A set of rules that prohibit sending files for translation. Applied after `include`.
+\
+Can be passed multiple times.
+\
+`{{PROGRAM}} translate --exclude {{translate.source-lang}}/_no-translate/**/*.md`
+||
+|#
+
+#### Translation system
+
+{% list tabs %}
+
+- Yandex Translation
+
+  #|
+  || Parameter             | Format         | Description ||
+  ||
+
+  `--auth`{{required}} 
+  
+  |
+  
+  Path
+  {{fmt.iam-token}}
+  {{fmt.api-key}}
+
+  |
+  Authorization token. Can be passed in several ways:
+  \
+  {{fmt.iam-token}} as a command-line parameter
+  \
+    `{{PROGRAM}} translate --auth <token>`
+  \
+  Path to a file that stores the {{fmt.iam-token}}
+  \
+  `{{PROGRAM}} translate --auth path/to/.auth`
+  \
+  Path to a file that stores the {{fmt.api-key}} of the service account.
+  \
+  `{{PROGRAM}} translate --auth path/to/.api-key`
+
+  ||
+  ||
+  
+  `--folder`{{required}} 
+  
+  |
+  
+  Id
+  
+  |
+  [Identifier of the folder](https://cloud.yandex.ru/ru/docs/resource-manager/operations/folder/get-id) for which your account has the role `ai.translate.user` or higher.
+  ||
+  ||
+  
+  `--timeout` 
+  
+  |
+  
+  Number
+  
+  |
+
+  Translation wait time in milliseconds, default value is 5000 (5 seconds).
+
+  ||
+  |#
+  
+{% endlist %}
+
+### File filtering {#file-filter}
+
+If you need to limit the translated texts to a fixed set of files, the flexible `include/exclude` filter mechanism may not be suitable.
+In this case, you can create a file with the `*.list` extension. For example, `translate.list`.
+
+```
+# Файл поддерживает комментарии и пустые строки
+
+# Пути до файлов должны быть сформированы относительно самого файла translate.list.
+./some/path/to/translated/file-1.md
+./some/path/to/translated/file-2.md
+
+# Пути до файлов не должны находиться выше, чем translate.list.
+# Пример неправильного пути:
+../some/path/to/translated/file.md
+```
+
+Example of calling the command with a filter file
+
+```bash
+{{PROGRAM}} translate --input ./translate.list --source not_var{{translate.source-lang}} --target not_var{{translate.target-lang}}
+```
+
+### Filtering page content {#content-filter}
+
+To exclude parts of content from translation, the platform provides the following syntactic constructs.
+
+* `translate=no` for code blocks:
+  ````
+  ```sql translate=no
+  // этот блок не уйдёт на перевод
+  SELECT * FROM posts WHERE id=123 LIMIT 1
+  ```
+  ````
+
+* `:no-translate` for string fragments (works in yaml and md files):
+  ```
+  Формат даты: :no—translate[ISO 8601] со смещением относительно :no—translate[UTC].
+  ```
+
+* `:::no-translate` for content blocks:
+  ```
+  :::no–translate
+  // весь этот блок не уйдёт на перевод
+  Inconsistent indentation for list items at the same level:
+    * One
+  * Two
+  * Three
+  :::
+  ```

@@ -1,35 +1,34 @@
-# Publishing to S3
+# Deploying to S3
 
 To publish documentation to [S3 storage](https://cloud.yandex.ru/services/storage), use the `yfm publish` command.
 
 {% note warning %}
 
-The command does not build documentation — you need to build it with `yfm build` before publishing.
+The command does not build the documentation — it must be built with `yfm build` before publishing.
 
 ```bash
-# Build documentation
+# Building documentation
 yfm build -i docs/ -o docs-html/
 
-# Publish to S3
+# Publishing to S3
 yfm publish -i docs-html/ \
-  --bucket "my-docs-bucket" \
   --access-key-id "YCAJE..." \
   --secret-access-key "YCO..."
 ```
 
 {% endnote %}
 
-## publish command arguments
+## Arguments of the publish command
 
 #|
-|| **Argument** | **Description** | **Default** ||
+|| **Argument** | **Description** | **Default value** ||
 || `--input` (`-i`){{required}} | Path to the directory with the built documentation | — ||
-|| `--endpoint` | S3 storage endpoint | `https://s3.amazonaws.com` ||
+|| `--endpoint` | Endpoint for the S3 storage | `https://s3.amazonaws.com` ||
 || `--bucket`{{required}} | Bucket name | — ||
 || `--prefix` |
-File path prefix.
+Prefix for file paths.
 \
-Can be used to pass the build version, so each build is stored in a separate folder.
+Can be used to pass a build version, so each build is placed in a separate folder.
 | — ||
 || `--region` | S3 storage region | `eu-central-1` ||
 || `--hidden` | List of glob patterns for files that should not be uploaded to the storage | — ||
@@ -37,11 +36,11 @@ Can be used to pass the build version, so each build is stored in a separate fol
 || `--secret-access-key`{{required}} | S3 secret access key | — ||
 |#
 
-Some parameters are recommended to be specified in the [configuration file](../../settings.md). This avoids repeating them on every command run. Sensitive data (`--access-key-id`, `--secret-access-key`) should be passed **only as command-line arguments**.
+It is recommended to move some parameters to the [configuration file](../../settings.md). This avoids repeating them every time the command is run. Sensitive data (`--access-key-id`, `--secret-access-key`) is passed **only via arguments**.
 
 ## Examples
 
-### publish section in the **.yfm** configuration file
+### The publish section in the configuration file **.yfm**
 
 ```yaml
 publish:

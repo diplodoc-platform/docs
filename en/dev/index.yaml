@@ -1,0 +1,20 @@
+title: Guides for Diplodoc platform developers
+links:
+  - title: Quick start
+    description: How to quickly start development using GitHub Codespaces
+    href: quickstart.md
+  - title: Requirements for contributors
+    description: Requirements for code, tests, and pull requests. Module infrastructure and prohibited practices.
+    href: requirements.md
+  - title: Making changes
+    description: Rules for formatting commits and pull requests. Recommendations for the technologies used.
+    href: contribution.md
+  - title: Metapackage
+    description: Description of the metapackage structure. Nuances of working with the metapackage.
+    href: metapackage.md
+  - title: Extensions API
+    description: How to create extensions for Diplodoc functionality. Examples and reference.
+    href: extensions-api.md
+  - title: Contributor program
+    description: 'Improving the platform together: where to start, list of known issues, participation rules.'
+    href: for-contributors.md

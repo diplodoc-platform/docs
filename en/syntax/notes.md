@@ -1,122 +1,120 @@
 # Notes
 
-A note is a highlighted block that contains important information.
+A note is a highlighted block with important information.
 
-Depending on the content, notes with different titles and formatting are used:
+Depending on the content, notes with different headings and formatting are used:
+* ["Note"](#info) — additional information.
+* ["Tip"](#tip) — a recommendation.
+* ["Important"](#warning) — a caution.
+* ["Alert"](#alert) — a restriction.
+* A note with a custom heading.
 
-* Note: Additional information.
-* Advice: A recommendation.
-* Important: A warning.
-* Attention: A restriction.
-* A note with its own header.
-
-Notes can include any YFM markup, but we don't recommend overloading them with elements. Choose a simple design and don't overuse notes because this will distract the user from the main content.
+Notes can include any YFM markup, but it is not recommended to overload them with elements. Choose simple formatting and do not use notes too often, as this will distract the user from the main content.
 
 {% include [blank-lines](../_includes/blank-lines-note.md) %}
 
-## Comment
+## Note {#info}
 
 ```markdown
 {% note info %}
 
-This is info.
+Это примечание.
 
 {% endnote %}
 ```
 
-**Result**
+**Result:**
 
 {% note info %}
 
-This is info.
+This is a note.
 
 {% endnote %}
 
-## Tip
-
+## Tip {#tip}
+  
 ```markdown
+{% note tip %}
+
+Это совет.
+
+{% endnote %}
+```
+
+**Result:**
+
 {% note tip %}
 
 This is a tip.
 
 {% endnote %}
-```
 
-**Result**
-
-{% note tip %}
-
-This is a tip.
-
-{% endnote %}
-
-## Warning
+## Important {#warning}
 
 ```markdown
 {% note warning %}
 
-This is a warning.
+Это важная информация.
 
 {% endnote %}
 ```
 
-**Result**
+**Result:**
 
 {% note warning %}
 
+This is important information.
+
+{% endnote %}
+  
+## Alert {#alert}
+
+```markdown
+{% note alert %}
+
+Это предупреждение.
+
+{% endnote %}
+```
+
+**Result:**
+
+{% note alert %}
+
 This is a warning.
 
 {% endnote %}
 
-## Alert
+## Custom heading {#title}
 
 ```markdown
-{% note alert %}
+{% note info "Свой заголовок" %}
 
-This is an alert.
+Это заметка со своим заголовком.
 
 {% endnote %}
 ```
 
-**Result**
+**Result:**
 
-{% note alert %}
+{% note info "Custom heading" %}
 
-This is an alert.
-
-{% endnote %}
-
-## Custom header
-
-```markdown
-{% note info "Custom header" %}
-
-This is a note with its own header.
-
-{% endnote %}
-```
-
-**Result**
-
-{% note info "Custom header" %}
-
-This is a note with its own header.
+This is a note with a custom heading.
 
 {% endnote %}
 
 ```markdown
 {% note info "" %}
 
-This is a note without a header.
+Это заметка без заголовка.
 
 {% endnote %}
 ```
 
-**Result**
+**Result:**
 
 {% note info "" %}
 
-This is a note without a header.
+This is a note without a heading.
 
 {% endnote %}
-

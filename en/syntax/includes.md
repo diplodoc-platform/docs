@@ -1,41 +1,41 @@
 # Content reuse
 
-You can move repeating content into a separate file and include it where needed in the document using the `{% include %}` construct.
+You can move repeated content to a separate file and add it to the desired places in the document using the `{% include %}` construct.
 
-Reuse helps reduce the time spent on editing and searching for source text: the information is stored in one place only, and changes are automatically applied to all files.
+Reuse will help reduce time spent on editing and searching for source text: information is stored in only one place, and changes are automatically applied to all files.
 
-## Reuse Workflow {#steps}
+## Reuse procedure {#steps}
 
-1. Create a directory to store reusable content. For example, `_includes`.
+1. Create a directory for storing repeated content. For example, `_includes`.
 
    {% note warning %}
 
-   Files for reuse must be stored in a directory whose name starts with the `_` character, otherwise they will be removed during the build.
+   Files for reuse must be stored in a directory whose name starts with the `_` character, otherwise they will be deleted during the build.
 
    {% endnote %}
 
-1. In the `_includes` directory, create a separate md file with the reusable text.
+1. In the `_includes` directory, create a separate md file with the repeated text.
 
-1. In the sections of the document where you need to insert the text, add a reference to the file in the following format:
+1. In the document sections where you need to insert the text, add a link to the file in the following format:
 
    ```markdown
-   {% include [Description](../_includes/file.md) %}
+   {% include [Описание](../_includes/file.md) %}
    ```
 
-    * `[Description]` — description of the file. Information for document authors; it does not affect the build.
+    * `[Description]` — file description. Information for document authors, does not affect the build.
     * `(_includes/file.md)` — path to the file.
 
-    If you do not need to add the title of the reusable file to the section text, add the `notitle` keyword:
+    If the header of the file for reuse does not need to be added to the section text, add the `notitle` keyword:
 
     ```markdown
-    {% include notitle [Description](../_includes/file.md) %}
+    {% include notitle [Описание](../_includes/file.md) %}
     ```
 
-During the document build, the file content will be inserted into the sections at the include locations. If the file contains relative links, they will be rewritten.
+During the document build, the file text will be added to the sections at the include locations. If the file contains relative links, they will be rebuilt.
 
-## Reusing a Part of an Article {#include-headers}
+## Reusing part of an article {#include-headers}
 
-You can reuse a specific section of an article by specifying its anchor link in `{% include %}`. The resulting file will include the section and all its subsections.
+You can reuse a separate section of an article by specifying its anchor link in `{% include %}`. The final file will include the section and all subsections of the article.
 
 ### Example
 
@@ -43,32 +43,32 @@ The file `file.md` looks like this:
 
 ```markdown
 
-## Part 1
-Content of the first part.
+## Часть 1
+Контент первой части.
 
-## Part 2 {#part}
-Content of the second part.
+## Часть 2 {#part}
+Контент второй части.
 
-### Subsection of Part 2
-Content of the subsection.
+### Подраздел части 2
+Контент подраздела.
 
-## Part 3
-Content of the third part.
+## Часть 3
+Контент третьей части.
 
 ```
 
-Using `{% include [Description](file.md#part) %}` will add the "Part 2" section and its subsection to the article:
+Using `{% include [Description](file.md#part) %}` will add the section "Part 2" and its subsection to the article:
 
 ```markdown
-## Part 2 {#part}
-Content of the second part.
+## Часть 2 {#part}
+Контент второй части.
 
-### Subsection of Part 2
-Content of the subsection.
+### Подраздел части 2
+Контент подраздела.
 ```
 
 {% note warning %}
 
-You cannot use the `include` construct to add an article (or parts of an article) into itself.
+Using the `include` construct, you cannot include an article (or parts of an article) into itself.
 
 {% endnote %}

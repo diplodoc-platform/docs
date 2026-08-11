@@ -1,14 +1,40 @@
-# Plugins
+# Plugins in Diplodoc
 
-Besides the basic [CommonMark Spec](https://spec.commonmark.org/) syntax, YFM provides a set of plugins with additional features and unique markup elements.
+Diplodoc provides extended Markdown markup capabilities through a plugin system. Plugins allow you to extend the base syntax of [CommonMark Spec](https://spec.commonmark.org/) with unique markup elements and new features for your technical and project documentation.
 
-{% note warning %}
+Two types of plugins are available:
 
-The order of plugins is important. When adding plugins, you should specify the full set of plugins
+- [Installed plugins](installed.md) – built into Diplodoc. Some of them are enabled by default, while others can be enabled as needed.
+- [External plugins](external.md) – can be downloaded, installed separately, and then connected to your project.
+Diplodoc uses the [markdown-it](https://www.npmjs.com/package/markdown-it) parser, so you can connect any plugin from the [list of plugins for markdown-it](https://www.npmjs.com/search?q=keywords:markdown-it-plugin).
 
-{% endnote %}
+The difference between built-in and external plugins is that the former only need to be connected in the configuration, while the latter must first be installed via the package manager [npm](https://www.npmjs.com/package/npm) and then connected.
 
-{% include [plugins.md](../_includes/plugins.md) %}
+## How to connect plugins
 
-The plugins included in the YFM package are listed above. You can also [add additional](import.md) plugins or write your own using the [markdown-it guidelines](https://github.com/markdown-it/markdown-it/tree/master/docs).
+In Diplodoc, one way to connect plugins is to use the built-in extension `mdit-plugins`, which is managed through the configuration file `.yfm` of your project. You just need to add or modify the `extensions` section as follows:
+
+```yaml
+extensions:
+  - name: mdit-plugins # включаем встроенное в CLI расширение для подключения плагинов к markdown-it
+    plugins:
+      - "имя плагина" # если у плагина нет параметров - можно указать его имя строкой
+      - name: "имя плагина" # если у плагина есть какие-то параметры или нужно что-то еще прописать, тогда используется полная форма передачи
+        options: #...список опций плагина, которые у каждого могут отличаться...
+```
+
+If a plugin exports its code not via `export default`, but via a named export — for example, `export const somename = ...,` — specify the name of such an export in the `exportName` field. For example, for [markdown-it-emoji](https://www.npmjs.com/package/markdown-it-emoji) (which has several export variants: full, light, bare), you will need to explicitly specify the required export:
+
+
+```yaml
+extensions:
+  - name: mdit-plugins
+    plugins:
+      - name: markdown-it-emoji
+        exportName: full # Доступные значения: full, light, bare
+```
+
+Read more about connecting plugins in the sections:
+- [Preinstalled plugins](installed.md)
+- [External plugins](external.md)
 

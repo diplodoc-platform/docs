@@ -1,5 +1,5 @@
 {% note warning %}
 
-A construction works only when it is separated by empty lines — outside (before the opening tag and after the closing one) and inside (between the tags and the content). Otherwise it won't render and will stay as plain text.
+The construct works only if it is separated by blank lines — outside (before the opening and after the closing tag) and inside (between the tags and the content). Otherwise, it will not be processed and will remain plain text.
 
 {% endnote %}

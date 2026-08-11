@@ -1,4 +1,8 @@
-# Revision history
+---
+noindex: true
+---
+
+# Changelog
 
 ## December 2022
 
@@ -6,11 +10,11 @@
 
 #### 2.0.0
 
-- [New Includers Interface](./project/toc.md#includers)
-- [Generic Includer](./project/toc.md#includers-generic)
-- [Open API Includer](./project/toc.md#includers-open-api)
-- [Unarchive Includer](./project/toc.md#includers-unarchive)
-- [Source Docs Includer](./project/toc.md#includers-source-docs)
+- [New interface for includers](./project/toc.md#includers).
+- [Generic includer](./project/toc.md#includers-generic).
+- [Open API includer](./project/toc.md#includers-open-api).
+- [Unarchive includer](./project/toc.md#includers-unarchive).
+- [Source Docs includer](./project/toc.md#includers-source-docs).
 
 ## November 2022
 
@@ -24,11 +28,11 @@
 
 #### 2.16.0
 
-- Added support for inline markup in [task lists](./syntax/additional.md#tasks-list)
+- Added support for inline markup in [task lists](./syntax/additional.md#tasks-list).
 
 #### 2.15.0
 
-- Added `linkifyTlds` option that allows configure tld for the linkify plugin.
+- Added the `linkifyTlds` option, which allows you to configure the TLD for the linkify plugin.
 
 ## September 2022
 
@@ -36,19 +40,18 @@
 
 #### 1.26.0
 
-- services/leading: add [substitutions and conditional operators support](./project/leading-page.md#subtitudes) on leading page for title and description.
-- services/tocs: add [substitutions and conditional operators support](./project/toc.md#subtitudes) in document title.
+- services/leading: added support for [substitutions and conditional operators](./project/leading-page.md#subtitudes) in the title and description of the leading page.
+- services/tocs: added support for [substitutions and conditional operators](./project/toc.md#subtitudes) in the document title.
 
 #### 1.24.0
 
-- includers/openapi: allows autogeneration from openapi specification and inclusion into the main document.
-  [Open API](./project/toc.md#open-api)
+- includers/openapi: added the ability to [auto-generate documentation from an Open API specification](./project/toc.md#open-api) and include it in the main documentation.
 
 ### yfm-transform
 
 #### 2.14.0
 
-- Added sanitizing of generated HTML. Disabled by default. Parameter to enable: `needToSanitizeHtml: true`. You can override the default settings via the `sanitizeOptions` parameter.
+- Added sanitization of generated HTML. The default value is disabled. Parameter to enable: `needToSanitizeHtml: true`. You can override the default settings via the `sanitizeOptions` parameter.
 
 #### 2.13.0
 
@@ -56,7 +59,7 @@
 
 #### 2.12.0
 
-- Functionality to [set image size](./syntax/media.md) enabled by default.
+- The ability to [set the image size](./syntax/media.md) is enabled by default.
 
 ## August 2022
 
@@ -64,11 +67,11 @@
 
 #### 2.11.0
 
- - Support for inline formatting in the title of cuts and notes.
+- Support for inline formatting in cut and note headings.
 
 #### 2.10.0
 
-- Added the `needFlatListHeadings?: boolean;` parameter, which allows to form a flat list of all document headers in `transform().result.headings`. By default – `false`.
+- Added the `needFlatListHeadings?: boolean;` parameter, which allows you to generate a flat list of all document headings in `transform().result.headings`. The default value is `false`.
 
 ## July 2022
 
@@ -76,9 +79,9 @@
 
 #### 1.23.0
 
-- include/includers: allows 3rd party generated content integration into documentation.
-- include/includers/sourcedocs: allows you to integrate sourcedocs generated document into yfm documentation.
-  [Includers](./project/toc.md#includers).
+- include/includers: the ability to integrate third-party formats into documentation.
+- include/includers/sourcedocs: the ability to integrate sourcedocs documentation into yfm documentation.
+  [Includers](./project/toc.md#includers)
 
 ## June 2022
 
@@ -86,15 +89,15 @@
 
 #### 2.9.0
 
-- Added plugin for [file links](./syntax/links.md#files)
+- Added a plugin for [file links](./syntax/links.md#files).
 
 #### 2.8.0
 
-- Spaces inside inline conditions are not deleted.
+- Whitespace inside inline conditions is no longer removed.
 
 #### 2.7.0
 
-- Single-page logic has been removed from the plugins (temporarily reverted in version 2.8.2).
+- Removed the single-page logic from plugins (the change was temporarily reverted in version 2.8.2).
 
 ## May 2022
 
@@ -102,7 +105,7 @@
 
 #### 2.6.0
 
-- Added plugin for [task lists syntax](./syntax/additional.md#tasks-list).
+- Added a plugin for the [task list syntax](./syntax/additional.md#tasks-list).
 
 ## April 2022
 
@@ -110,12 +113,12 @@
 
 #### 1.22.0
 
-- Support filtering of the title and title of the meta on the leading page (index.yaml).
-- Support filtering of the title on the contents (toc.yaml).
+- Added filtering of the page title and page title in meta information on the landing page (index.yaml).
+- Added filtering of the page title in the table of contents (toc.yaml).
 
 #### 1.21.0
 
-- Supported using of symlinks with a relative path.
+- Added support for symlinks with a relative path.
 
 ## March 2022
 
@@ -123,19 +126,19 @@
 
 #### 1.20.0
 
-- Supported filtering of the description on the leading page (index.yaml).
+- Added filtering of the description on the landing page (index.yaml).
 
 #### 1.19.0
 
-- The linter runs in parallel with the build
-- The arguments `--link-disabled`, `--build-disabled` and `--add-map-file` are supported, by default they have the value `false`.
-  [Read more](tools/docs/settings.md)
+- The linter runs in parallel with the build.
+- Added support for the `--link-disabled`, `--build-disabled`, and `--add-map-file` arguments, which default to `false`.
+  [For more details](tools/docs/settings.md).
 
 ### yfm-transform
 
 #### 2.5.0
 
-- Rewritten in Typescript.
+- Rewritten in TypeScript.
 
 ## December 2021
 
@@ -143,29 +146,29 @@
 
 #### 1.18.0
 
-Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multiline tables](./syntax/tables/multiline.md).
+Updated the YFM version to 2.4. Added support for [monospaced font](./syntax/base.md) and [multiline tables](./syntax/tables/multiline.md).
 
 #### 1.17.0
 
-* After pre-processing the documentation (with output-format=md), we do not remove not_var from the syntax similar to variables.
-  [Substitutions](./syntax/vars.md#subtitudes)
+- After building documentation in preprocessing mode (with output-format=md), we no longer remove not_var from syntax that resembles variables.
+  [Variable substitutions](./syntax/vars.md#subtitudes).
 
 #### 1.16.0
 
-* Added modes for including toc: `root_merge`, `merge`, `link`. [Read more](./project/toc.md#include-mode).
+- Added table of contents inclusion modes: `root_merge`, `merge`, `link`. [For more details](./project/toc.md#include-mode).
 
-* If the toc includes another one under the `root_merge` and `merge` modes, the original path will be added
-  to the `sourcePath` meta field.
+- When including the table of contents in the `root_merge` and `merge` modes, the original path to the sources will be added
+to the `sourcePath` field of the meta information.
 
 ### yfm-transform
 
 #### 2.4.0
 
-* [Multiline tables](./syntax/tables/multiline.md) enabled by default.
+- Support for [multiline tables](./syntax/tables/multiline.md) is enabled by default.
 
 #### 2.3.0
 
-* Added support [monospaced text](./syntax/base.md).
+- Added support for [monospaced font](./syntax/base.md).
 
 ## November 2021
 
@@ -173,19 +176,17 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.15.0
 
-* Added the ability to include `toc.yaml` with the addition of its elements to the same table of contents level.
-
-  [Read more](./project/toc.md#include-as-pages)
+- Added the ability to include `toc.yaml` with its elements added to the same level of the table of contents. [For more details](./project/toc.md#include-as-pages).
 
 #### 1.14.0
 
-* Added the ability to [configure the linter](./project/lint.md).
+- Added the ability to [configure the linter](./project/lint.md).
 
 ### yfm-transform
 
 #### 2.2.0
 
-* Added the ability to redefine delimiters in the plugin [markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs).
+- Added the ability to override delimiters in the [markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs) plugin.
 
 ## October 2021
 
@@ -193,7 +194,7 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 2.1.0
 
-* Added beta-plugin for support multiline tables.
+- Added experimental support for multiline tables.
 
 ## September 2021
 
@@ -201,16 +202,16 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.13.0
 
-* YFM2 is used.
+- YFM2 is used.
 
 ### yfm-transform
 
 #### 2.0
 
-* YFM can be used on the client.
-* The plug-in connection scheme has been changed.
-* The [markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs) plugin is always connected.
-* The [highlight.js](https://www.npmjs.com/package/highlight.js) package must be installed independently.
+- YFM can be used on the client.
+- The plugin connection scheme has been changed.
+- The [markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs) plugin is always enabled.
+- The [highlight.js](https://www.npmjs.com/package/highlight.js) package must be installed separately.
 
 ## July 2021
 
@@ -218,13 +219,13 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.12.0
 
-* The experimental YFM linter was disabled.
+- Disabled the use of the experimental YFM linter.
 
 ### yfm-transform
 
 #### 1.9.0
 
-* Added the ability to enable support for GitHub compatible anchors (GFM).
+- Added the ability to enable support for GitHub-compatible (GFM) anchors.
 
 ## June 2021
 
@@ -232,21 +233,21 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.11.0
 
-* An experimental YFM linter was enabled.
+- Enabled the use of the experimental YFM linter.
 
 #### 1.10.0
 
-* Now you can configure redirects using a special file. Static builds are not supported.
+- Added the ability to configure redirects using a special file. Static builds do not support it.
 
 #### 1.9.0
 
-* Added support for sections accessible only by direct link.
+- Added support for sections available only via a direct link.
 
 ### yfm-transform
 
 #### 1.8.0
 
-* Added experimental linter support.
+- Added experimental linter support.
 
 ## April 2021
 
@@ -254,7 +255,7 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.8.0
 
-* Added the option to add file contributors to metadata. Only GitHub is supported out-of-the-box. It isn't displayed visually in any way, but can be used by a custom viewer.
+- Added the ability to collect file contributors into metadata. Only GitHub is supported out of the box. It is not displayed visually, but can be used by a custom viewer.
 
 ## March 2021
 
@@ -262,13 +263,13 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.7.0
 
-* Added complete disabling of variables: conditions are not calculated and values are not substituted.
+- Added full variable disabling: conditions are not evaluated, values are not substituted.
 
 ### yfm-transform
 
 #### 1.7.0
 
-* Added complete disabling of variables: conditions are not calculated and values are not substituted.
+- Added full variable disabling: conditions are not evaluated, values are not substituted.
 
 ## January 2021
 
@@ -276,25 +277,25 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.6.0
 
-* Now you can build a document as a single HTML file.
+- You can now build a document as a single HTML file.
 
 #### 1.5.0
 
-* Refactoring and bug fixes.
+- Refactoring and bug fixes.
 
 #### 1.4.0
 
-* Added disabling the calculation of conditions with variables.
+- Added the ability to disable evaluation of conditions with variables.
 
 ### yfm-transform
 
 #### 1.6.0
 
-* Added support for loops, filters, and functions.
+- Added support for loops, filters, and functions.
 
 #### 1.5.0
 
-* Added a feature to use the `not_var` flag for variables that don't need to be substituted with values. For example, `not_var{{ variable_name }}`.
+- Added the ability to use the `not_var` flag for variables that should not be substituted with values. For example, `not_var{{ variable_name }}`.
 
 ## October 2020
 
@@ -302,7 +303,7 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.3.0
 
-* Added the ability to display built files on S3.
+- Added the ability to deploy built files to S3.
 
 ## August 2020
 
@@ -310,13 +311,13 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.2.0
 
-* Now the documentation interface allows the user to change the font size, turn on the dark theme, and hide the table of contents.
+- Added the ability for users to change the font size in the documentation interface, enable dark theme, and hide tables of contents.
 
 ### yfm-transform
 
 #### 1.4.0
 
-* Added an option to use '|' in variables.
+- Added the ability to use '|' in variables.
 
 ## July 2020
 
@@ -324,15 +325,15 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.3.0
 
-* Basic element styles have been updated.
+- Updated styles for base elements.
 
 #### 1.2.0
 
-* Added support for inserting videos.
+- Added support for video embedding.
 
 #### 1.1.0
 
-* Added support for multiple custom anchors per header.
+- Added support for multiple custom anchors per heading.
 
 ## June 2020
 
@@ -340,4 +341,4 @@ Update YFM to v2.4. Added support [monospaced text](./syntax/base.md) and [multi
 
 #### 1.1.0
 
-* Added silent mode without outputting build logs.
+- Added a quiet mode without build logs output.

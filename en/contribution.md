@@ -1,12 +1,11 @@
-# Making edits
+# Making changes
 
-The source files of this document and Diplodoc Platform tools are stored in repositories:
+The source files for this document and the YFM tools are stored in the repositories:
 
-* [Documentation](https://github.com/diplodoc-platform/docs).
+* [YFM documentation](https://github.com/diplodoc-platform/docs).
 * [Transformer](https://github.com/diplodoc-platform/transform).
 * [CLI](https://github.com/diplodoc-platform/cli).
 
-You can submit bugs and suggestions as GitHub issues in the corresponding repository.
+Bugs and feature requests can be filed as GitHub issues in the corresponding repository.
 
-To make edits, create a pull request from your fork. Edits will be reviewed by the repository owner.
-
+To make changes, create a pull request from your fork. Edits will be reviewed by the repository owner.
