@@ -1,93 +1,87 @@
-# Rendering a single file
+# Building a single file
 
-The `yfm content` command processes a **single** Markdown file and prints the result to `stdout` (or writes it to a file). Unlike [`yfm build`](build.md), it does not traverse the whole project and does not produce a full page: for the `html` format it emits only the **content fragment** — without the table of contents, header, or page chrome.
+The command `yfm content` processes **a single** md file and outputs the result to `stdout` (or writes it to a file). Unlike [`yfm build`](build.md), it does not build a full page: for the `html` format, only the **content** is output — without a table of contents, header, or page wrapper.
 
-The command is handy when you need the preprocessed content of a single file quickly — for example, to pipe it into another tool, render a preview in an editor, or use it in your own pipeline.
+The command is convenient when you need to quickly get preprocessed content of a single file — for example, to pass it to another tool, render a preview in an editor, or use it in your own pipeline.
 
 ## Usage {#usage}
 
 ```shell
-# self-contained markdown to stdout
+# self-contained markdown in stdout
 yfm content -i ./page.md -f md
 
-# html content fragment into a file
+# html fragment to a file
 yfm content -i ./page.md -f html -o ./page.html
 ```
 
-Run `yfm content --help` to see the full list of options.
+The full list of parameters can be displayed in the console with the command `yfm content --help`.
 
 ## Output format {#output-format}
 
-The format is set with the `--output-format` (`-f`) option:
+The format is set by the parameter `--output-format` (`-f`):
 
-* `md` — self-contained Markdown: [includes](../../syntax/includes.md) and autotitles are merged into the file, and frontmatter is added. This is the default for a single file.
-* `html` — the content HTML fragment only (no toc, header, or page chrome).
+* `md` — preprocessed Markdown. Default for a single file.
+* `html` — HTML content of the page (without a table of contents, header, or wrapper).
 
-The same transformations as in a [YFM → YFM build](build.md) are applied: visibility conditions, [variable substitutions](../../syntax/vars.md), inline SVG, and heading substitutions.
+The same transformations are applied as in [YFM → YFM build](build.md#yfm): visibility condition checks, [variable substitution](../../syntax/vars.md#subtitudes), [SVG inlining](../../syntax/media.md#img-inline), [title insertion](../../syntax/links.md#autotitle), and [content from files](../../syntax/includes.md).
 
 ## Project root {#project-root}
 
-Presets (`presets.yaml`), includes, links, and variables are resolved relative to a project root:
+Presets (`presets.yaml`), [includes](../../syntax/includes.md), links, and [variables](../../syntax/vars.md) are searched relative to the project root:
 
-* by default the root is the **current working directory**;
-* pass `--config` (`-c`) with a path to a `.yfm` file — its directory becomes the root.
+* by default, the **current working directory** is considered the root;
+* pass `--config` (`-c`) with a path to `.yfm` — the directory of this file will become the root.
 
 {% note info %}
 
-If the processed file lives outside the chosen root, the file's own directory becomes the root, so includes and presets resolve correctly.
+If the processed file is located outside the selected root, the directory of the file itself becomes the root.
 
 {% endnote %}
 
 ## Output streams {#streams}
 
-Warnings and errors are always written to `stderr`. On any build error the process exits with a non-zero code.
+Warnings and errors are always written to `stderr`. On any build error, the process exits with a non-zero return code.
 
-By default the rendered content is printed to `stdout` wrapped in delimiter markers so it can be extracted from the surrounding output (version line, build timer):
+By default, the built content is output to `stdout`, framed with delimiter markers so it can be separated from accompanying output (version line, build timer):
 
 ```
 <<<<<< YFM CONTENT START >>>>>>
-...content...
+...контент...
 <<<<<< YFM CONTENT END >>>>>>
 ```
 
-When `--output` (`-o`) is used, the result is written to the file raw — without the markers.
+When using `--output` (`-o`), the result is written to a file "raw" — without markers.
 
-## `--raw` mode {#raw}
+## The `--raw mode` {#raw}
 
-The `--raw` flag prints **only** the content to `stdout` — without the delimiter markers and without the framework banners (version line, build timer, completion banner). This is useful when piping the result straight to a file or another tool:
+The `--raw` flag outputs **only** the content to `stdout` — without delimiter markers and without framework banners (version line, build timer, completion banner). This is convenient when the result needs to be directed straight to a file or another tool.
 
 ```shell
 yfm content -i ./page.md -f md --raw > page.md
 ```
 
-Diagnostics (warnings, errors) still go to `stderr`, and the exit code stays non-zero on error, so `stdout` carries valid content only.
+At the same time, diagnostics (warnings, errors) still go to `stderr`, and the exit code remains non-zero on error — so `stdout` contains only valid content.
 
-`--raw` has no effect together with `-o`: file output is always raw.
+Together with the `-o` flag, the `--raw` flag changes nothing: the file always receives "raw" content.
 
 ## Watch mode {#watch}
 
-{% note info "Beta feature" %}
+With the `--watch` (`-w`) parameter, the command tracks changes to the input file, its includes, and presets, and redraws the result on every save.
 
-If you run into problems, please report them via [GitHub issues](https://github.com/diplodoc-platform/cli/issues).
+## Parameters {#options}
 
-{% endnote %}
+| Parameter                            | Default | Description                                                       |
+| ----------------------------------- | ------------ | -------------------------------------------------------------- |
+| `-i, --input <file>`                | —            | Path to the md file to process (required)          |
+| `-o, --output <file>`               | stdout       | Write the result to a file instead of stdout                        |
+| `-f, --output-format <md \| html>`  | `html`       | Output format                                                  |
+| `--raw`                             | `false`      | Output only content to stdout (without markers and banners)     |
+| `-w, --watch`                       | `false`      | Rebuild when the file, its includes, or presets change         |
+| `-c, --config <path>`               | `.yfm`       | Configuration file; its directory becomes the project root    |
+| `--vars-preset <name>`              | `default`    | Variable preset to apply                                  |
+| `-v, --vars <json>`                 | —            | Inline variables (JSON) that override presets             |
+| `--allow-html` / `--no-allow-html`  | `true`       | Allow raw HTML in Markdown                              |
+| `--sanitize-html`                   | `true`       | Sanitize the resulting HTML                                 |
+| `-s, --strict`                      | `false`      | Exit with a non-zero code on warnings              |
 
-With the `--watch` (`-w`) option the command watches the input file, its includes, and presets, and re-renders the result on every save.
-
-## Options {#options}
-
-| Option                              | Default | Description                                                  |
-| ----------------------------------- | ------- | ------------------------------------------------------------ |
-| `-i, --input <file>`                | —       | Path to the Markdown file to process (required)              |
-| `-o, --output <file>`               | stdout  | Write the result to a file instead of stdout                 |
-| `-f, --output-format <md \| html>`  | `html`  | Output format                                                |
-| `--raw`                             | `false` | Print only the content to stdout (no markers, no banners)    |
-| `-w, --watch`                       | `false` | Re-render on changes to the file, its includes, and presets  |
-| `-c, --config <path>`               | `.yfm`  | Config file; its directory becomes the project root          |
-| `--vars-preset <name>`              | `default` | Variables preset to apply                                  |
-| `-v, --vars <json>`                 | —       | Inline variables (JSON) overriding presets                   |
-| `--allow-html` / `--no-allow-html`  | `true`  | Allow raw HTML in Markdown                                   |
-| `--sanitize-html`                   | `true`  | Sanitize the produced HTML                                   |
-| `-s, --strict`                      | `false` | Exit with a non-zero code on warnings                        |
-
-Other options match the [build](settings.md) options.
+The remaining parameters match those of [build](settings.md).

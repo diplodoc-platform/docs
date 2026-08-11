@@ -1,19 +1,25 @@
 # Syntax
 
-The Yandex Flavored Markdown syntax is based on [CommonMark Spec](https://spec.commonmark.org/) and has been supplemented with unique elements from other markup languages and template engines.
+Diplodoc uses **Yandex Flavored Markdown (YFM)** syntax — a Markdown dialect with an additional set of tools for transforming Markdown into HTML and building documentation projects.
 
-To format text, the following is used:
+Features:
 
-* [Basic markup](./base.md)
-* [Lists](./lists.md)
-* [GFM](./tables/gfm.md) and [multiline tables](./tables/multiline.md)
-* [Notes](./notes.md)
-* [Cuts and tabs](./cuts-tabs.md)
-* [Links](./links.md)
-* [Media](./media.md)
-* [Code snippets](./code.md)
-* [Comments and metadata](./meta.md)
-* [Variables](./vars.md)
+* Compatibility with the [CommonMark Spec](https://spec.commonmark.org/) standard.
+* The ability to [connect](../plugins/external.md) third-party markdown-it plugins.
+* Security: HTML is escaped by default.
+* Dynamic validation.
+* Building a documentation project.
 
-In addition to the items included in the package, [additional features](./additional.md) are available. They can be added using [plugins for markdown-it](https://www.npmjs.com/search?q=keywords:markdown-it-plugin).
+The following are used for formatting:
+* [basic markup](./base.md);
+* [links](./links.md);
+* [lists](./lists.md);
+* [simple](./tables/gfm.md) and [multiline tables](./tables/multiline.md);
+* [notes](./notes.md);
+* [cuts, tabs, and radio buttons](./interactive-elements/index.md);
+* [images and videos](./media.md);
+* [code fragments](./code.md);
+* [tooltips](./term.md);
+* [variables](./vars.md).
 
+In addition to the elements included in the package, you can connect [additional features](./additional.md) via markdown-it plugins. 

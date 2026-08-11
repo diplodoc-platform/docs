@@ -1,8 +1,8 @@
 # Linter configuration file
 
-A project may contain a linter configuration file. By default, a `.yfmlint` file is used in the root of the project.
+In the project root, you can place a linter configuration file `.yfmlint` to manage documentation build checks.
 
-The default config looks like this:
+Default configuration values:
 
 ```yaml
 log-levels:
@@ -55,48 +55,61 @@ log-levels:
   YFM002: 'warn'    # No header found in the file for the link text
   YFM003: 'error'   # Link is unreachable
   YFM004: 'error'   # Table not closed
-  YFM005: 'error'   # Tab list not closed
+  YFM005: 'warn'    # Tab list, cut, note not opened or closed
   YFM006: 'warn'    # Term definition duplicated
   YFM007: 'warn'    # Term used without definition
   YFM008: 'warn'    # Term inside definition not allowed
-  YFM009: 'warn'    # Term definition used not at the end of file
+  YFM009: 'error'   # Term definition used not at the end of file
   YFM010: 'warn'    # Autotitle anchor is missed
   YFM011: 'warn'    # Max svg size
   YFM012: 'error'   # Max output html size
   YFM013: 'error'   # Max single asset size
-  YFM014: 'warn'   # Anchor cannot be used as file path
-  YFM015: 'warn'   # Anchor not found in file
+  YFM014: 'warn'    # Anchor cannot be used as file path
+  YFM015: 'warn'    # Anchor not found in file
   YFM016: 'error'   # The file is included in itself
+  YFM017: 'error'   # Invalid front matter format: duplicated mapping key
+  YFM018: 'info'    # Term definition from include
+  YFM020: 'warn'    # Invalid yfm directive
+  YFM021: 'warn'    # Non-BMP (UTF-16 surrogate pair) character
+  YFM022: 'info'    # llms-full.txt max size reached
+
 
 # Inline code length
 YFM001:
   maximum: 100
 ```
 
-Rules with the prefix `MD` are provided by the library [markdownlint](https://github.com/DavidAnson/markdownlint).
-A detailed description of all the rules with `MD` prefix can be found [here](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).
-A detailed description of all the rules with `YFM` prefix can be found [here](https://github.com/diplodoc-platform/transform/blob/master/src/transform/yfmlint/README.md).
+Rules with the `MD` prefix are provided by the [markdownlint](https://github.com/DavidAnson/markdownlint) library.
+A detailed description of all rules with the `MD` prefix can be found [at the link](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).
+A detailed description of all rules with the `YFM` prefix can be found [at the link](https://github.com/diplodoc-platform/yfmlint/blob/master/README.md).
 
-In the `.yfmlint` config in the `log-levels` section, you can override the logging level separately for each rule: `error`, `warn`, `disabled`.
+You can override the logging level in the `.yfmlint` file in the `log-levels` section separately for each rule: `error`, `warn`, `disabled`.
 
 {% note warning %}
 
-Errors `YFM014`, `YFM015`, and `YFM016` cannot be overridden.
+You cannot override the errors `YFM014`, `YFM015`, `YFM016`, and `YFM017`.
 
 {% endnote %}
 
-In the root section of the config, you can configure the values passed to the rules. For example:
+In the root section, you can configure the values passed to the rules. For example:
 
 ```yaml
 # Inline code length
 YFM001:
+  level: warn
   maximum: 100
-  
+
+# Supported yfm directives
+YFM020:
+  level: warn
+  customDirectives:
+    - diagram       # skip warning on {% diagram %} directive
+
 # Line length
 MD013:
   line_length: 100 # default: 80 characters
   code_blocks: false # exclude this rule for code_blocks
-  tables: fales # exclude this rule for tables
+  tables: false # exclude this rule for tables
   headings: false # exclude this rule for headings
 
 # Inline HTML
@@ -108,8 +121,10 @@ MD033:
 log-levels:
 ```
 
-Default values for rules with the prefix `MD` are specified [here.](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml)
-Default values for rules with the prefix `YFM` are specified [here.](https://github.com/diplodoc-platform/transform/blob/master/src/transform/yfmlint/yfmlint.ts)
+The default values for rules with the `MD` prefix are specified [at the link](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml).
+The default values for rules with the `YFM` prefix are specified [at the link](https://github.com/diplodoc-platform/yfmlint/blob/master/src/config.ts).
 
-Rules can be enabled, disabled, and configured for an entire file or a paragraph of a file.
-Look at the examples [here.](https://github.com/DavidAnson/markdownlint/blob/a852407c887ec60949aa5365ed964bab833f962f/README.md#configuration) 
+Rules can be enabled, disabled, or configured for an entire file or a paragraph within a file.
+Examples can be viewed [at the link](https://github.com/DavidAnson/markdownlint/blob/a852407c887ec60949aa5365ed964bab833f962f/README.md#configuration).
+
+> See also: [Ajv schema of .yfmlint linter configuration files](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/yfmlint-schema.json)

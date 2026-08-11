@@ -1,79 +1,106 @@
-# GFM Tables
+# Simple tables
 
-Tables with syntax similar to tables in GitHub Flavored Markdown. Suitable for simple tables with single-line content in cells.
+Tables with syntax similar to tables in GitHub Flavored Markdown. This format is suitable for tables with single-line content in cells.
+
+In simple table cells, you can use [inline formatting](../base.md#line), [links](../links.md), [inline code fragments](../code.md#inline), [images](../media.md#images).
 
 {% note tip %}
 
-To quickly create tables, you can use online generators. For example, [Tables Generator](https://www.tablesgenerator.com/markdown_tables).
+For quick table creation, you can use online generators. For example, [Tables Generator](https://www.tablesgenerator.com/markdown_tables).
 
 {% endnote %}
 
+## Syntax
+
 A table consists of:
+* a header row;
+* a separator row;
+* data rows.
 
-* A header row.
-* A separator row.
-* Rows with data.
-
-The header row is separated from table cells by three or more `-` characters. Columns are separated by `|`.
+The header row is separated from the table cells by three or more `-` characters. Columns are separated by `|` characters.
 
 ```markdown
-| Header 1  | Header 2  |
+| Заголовок1  | Заголовок2  |
 | ----------- | ----------- |
-| Text       | Text       |
-| Text       | Text       |
+| Текст       | Текст       |
+| Текст       | Текст       |
 ```
 
-**Result**
+**Result:**
 
-| Header 1 | Header 2 |
+| Header1  | Header2  |
 | ----------- | ----------- |
-| Text | Text |
-| Text | Text |
+| Text       | Text       |
+| Text       | Text       |
 
-In the table cells, you can use [line formatting](../base.md#line), [links](../links.md), [single-line code snippets](../code.md#inline), and [images](../media.md#images).
+
 
 ## Text alignment
 
-Use the `:` symbol in the separator row to align the text in the columns to the left, right, or center.
+Use the `:` character in the separator row to align text in columns to the left, right, or center.
 
 ```markdown
-| Align left  | Align center        | Align right |
+| По левому краю  | По центру        | По правому краю |
+| :---            |      :----:      |            ---: |
+| Текст           | Текст            | Текст           |
+| Текст           | Текст            | Текст           |
+```
+
+**Result:**
+
+| Left-aligned  |     Centered    | Right-aligned |
 | :---            |      :----:      |            ---: |
 | Text           | Text            | Text           |
 | Text           | Text            | Text           |
+
+
+
+## Opening wide tables in a modal window
+
+Wide tables are convenient to open in a modal window. In simple tables, this is implemented using the `{wide-content title="table title"}` attribute. The attribute must be added after the table, leaving one empty line between them.
+
+```markdown
+| Заголовок1  | Заголовок2  |
+| ----------- | ----------- |
+| Текст       | Текст       |
+| Текст       | Текст       |
+
+{wide-content title="Название таблицы"}
 ```
 
 **Result**
 
-| Left-aligned | Centered | Right-aligned |
-| :--- | :----: | ---: |
-| Text | Text | Text |
-| Text | Text | Text |
+| Header1  | Header2  |
+| ----------- | ----------- |
+| Text       | Text       |
+| Text       | Text       |
 
-## Adding "sticky header" to a table
+{wide-content title="Table title"}
 
-For tables, you can add a "sticky header". To do this, you need to add the `{sticky-header}` attribute after the table.
+## Adding a "sticky header" to a table
+
+You can add a "sticky header" to tables. To do this, add the `{sticky-header}` attribute after the table.
 
 ```markdown
-| Header1   | Header2   |
-| --------- | --------- |
-| Text      | Text      |
-| Text      | Text      |
-| Text      | Text      |
+| Заголовок1 | Заголовок2 |
+| ---------- | ---------- |
+| Текст      | Текст      |
+| Текст      | Текст      |
+| Текст      | Текст      |
 ...
-| Text      | Text      |
-| Text      | Text      |
-| Text      | Text      |
-| Text      | Text      |
-| Text      | Text      |
+| Текст      | Текст      |
+| Текст      | Текст      |
+| Текст      | Текст      |
+| Текст      | Текст      |
+| Текст      | Текст      |
 
 {sticky-header}
 ```
 
-**Результат**
+**Result**
 
-| Header1   | Header2   |
-| --------- | --------- |
+| Header1 | Header2 |
+| ---------- | ---------- |
 | Text      | Text      |
 | Text      | Text      |
 | Text      | Text      |

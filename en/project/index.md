@@ -1,35 +1,37 @@
-# Documentation project
+# Project structure
 
-YFM supports creating and maintaining documentation projects of any size.
+The basic project includes a [table of contents file](./toc.md) and content files.
 
-**Example**: [Yandex.Cloud documentation](https://github.com/yandex-cloud/docs).
+Recommended additional elements:
 
-## Project structure
+- [Landing page](./leading-page.md)
+- Directories for [images](../syntax/media.md#images)
+- Directories for [content reuse](../syntax/includes.md)
+- [Configuration file](../settings.md)
+- [Variable presets](./presets.md)
 
-In the most basic case, a project consists of a [table of contents file](./toc.md) and files with content.
-
-To optimize the documenting process and improve the appearance of pages, you can additionally include:
-
-* [A leading page](./leading-page.md) for quick navigation.
-* [Variable presets](./presets.md) to support multiple versions of documentation from the same source files.
-* [A configuration file](./config.md) with project settings.
-* Folders for [reusing content](./includes.md) and storing [images](../syntax/media.md#images).
-
-## Example
+**Example of project structure**
 
 ```
 input-folder
-|-- .yfm (Configuration file)
-|-- toc.yaml (Table of contents)
-|-- presets.yaml (Variable presets)
-|-- index.yaml (Leading page)
-|-- pages (Content files)
+|-- .yfm # файл конфигурации
+|-- toc.yaml # оглавление
+|-- presets.yaml # пресеты переменных
+|-- index.yaml # разводящая страница
+|-- pages # файлы с контентом
     |-- faq.md
     |-- how-to.md
-|-- _assets (Folder with images)
+|-- _assets # каталог с изображениями
     |-- image1.png
     |-- image2.png
-|--_includes (Folder with files to be reused)
+|-- _includes # каталог с файлами для переиспользования
     |-- faq_shared_block.md
 ```
 
+## Supported file types {#file-types}
+
+When building the project, files of the following types are copied to the build results:
+
+- images `svg`, `png`, `gif` , `jpeg`/`jpg`, `bmp`, `webp`, `ico`
+- documents `pdf`, `docx`, `xlsx`, `csv`, `vsd`, `pptx`
+- files `txt` and `yml`/`yaml`

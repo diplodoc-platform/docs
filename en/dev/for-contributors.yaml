@@ -1,0 +1,68 @@
+blocks:
+  - type: header-block
+    title: Contributor program
+    verticalOffset: s
+    resetPaddings: true
+    description: |
+      The contributor program is an opportunity to contribute to the development of Diplodoc and receive prizes for participation.
+    background:
+      light:
+        image:
+          mobile: ../_images/cover.png
+          desktop: https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover.png
+          disableCompress: true
+        color: '#C6FE4D'
+        fullWidth: false
+      dark:
+        image:
+          mobile: ../_images/cover-dark.png
+          desktop: https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover-dark.png
+          disableCompress: true
+        color: '#C6FE4D'
+        fullWidth: false
+    buttons:
+      - text: On GitHub
+        size: promo
+        url: https://github.com/diplodoc-platform
+      - text: Ask a question
+        theme: outlined
+        size: promo
+        url: https://t.me/diplodoc_ru
+  - type: card-layout-block
+    title: How to participate
+    colSizes:
+      all: 12
+      sm: 6
+    children:
+      - type: basic-card
+        title: Choose a task
+        text: |
+          The list is [here](https://github.com/orgs/diplodoc-platform/projects/7). There are different difficulty levels: easy, medium, and hard.
+      - type: basic-card
+        title: Study the guides
+        text: |
+          [About the nuances of Diplodoc development](https://diplodoc.com/docs/ru/dev/).
+      - type: basic-card
+        title: Accept the license agreement
+        text: |
+          Add a comment to the pull request: "I agree to the terms of the license agreement posted at the [link](https://yandex.ru/legal/cla/?lang=ru)".
+      - type: basic-card
+        title: |
+          Get a prize
+        text: |
+          If our team accepts the pull request.
+      - type: basic-card
+        title: |
+          Diplodoc merch
+        text: |
+          For tasks of [easy](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Aeasy) level.
+      - type: basic-card
+        title: |
+          Yandex Cloud promo code
+        text: |
+          For tasks of [medium](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Amedium) and [hard](https://github.com/orgs/diplodoc-platform/projects/7/views/1?filterQuery=difficulty%3Ahard) levels. The prize is awarded only once.
+  - type: content-layout-block
+    size: s
+    textContent:
+      text:  
+animated: true

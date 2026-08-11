@@ -1,18 +1,119 @@
-title: Diplodoc
-description: Diplodoc Platform is open platform for work with your documentation in accordance with "Documentation as Code" paradigm. 
-meta:
-  title: Diplodoc
-  noIndex: true
-links:
-- title: Overview
-  description: Platform Overview, Capabilities and Benefits.
-  href: about.md
-- title: Quick Start
-  description: How to start
-  href: how-it-work.md
-- title: Yandex Flavored Markdown
-  description: Definition for Yandex Flavored Markdown.
-  href: index-yfm.md
+blocks:
+  - type: header-block
+    title: Diplodoc
+    description: |
+      A documentation work platform in the Documentation as Code paradigm.
+    textWidth: m
+    verticalOffset: m
+    resetPaddings: true
+    background:
+      light:
+        image:
+          mobile: ../_images/cover.png
+          desktop: https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover.png
+          disableCompress: true
+        color: '#C6FE4D'
+        fullWidth: false
+      dark:
+        image:
+          mobile: ../_images/cover-dark.png
+          desktop: https://storage.yandexcloud.net/diplodoc-www-assets/pages/index-diplodoc/ddos-index-cover-dark.png
+          disableCompress: true
+        color: '#C6FE4D'
+        fullWidth: false
+  - type: card-layout-block
+    colSizes:
+      all: 12
+      xl: 4
+      sm: 6
+      md: 4
+    indent: s
+    children:
+      - type: basic-card
+        title:
+          text: About the platform
+          textSize: s
+        text: |
+          [Platform capabilities](features.md)
 
-   
-  
+          [Use cases](about.md)
+
+          [Quick start](quickstart.md)
+      - type: basic-card
+        title:
+          text: Quick start
+          textSize: s
+        text: |
+          [Preparation](quickstart.md#prepare)
+
+          [Creating a project](quickstart.md#create)
+
+          [Building a project](quickstart.md#build)
+      - type: basic-card
+        title:
+          text: Documentation content
+          textSize: s
+        text: |
+          [Syntax](syntax/index.md)
+
+          [Content organization](project/index.md)
+
+          [Page Constructor](project/page-constructor.md)
+      - type: basic-card
+        title:
+          text: Project configuration
+          textSize: s
+        text: |
+          [Project settings](settings.md)
+
+          [Enabling search](project/search.md)
+
+          [Variable presets](project/presets.md)
+      - type: basic-card
+        title:
+          text: Customizing the appearance
+          textSize: s
+        text: |
+          [Extended navigation](project/navigation.md)
+
+          [Connecting JS and CSS](style/css-js.md)
+
+          [Connecting themizer](style/theme.md)
+      - type: basic-card
+        title:
+          text: CLI
+          textSize: s
+        text: |
+          [Installation](tools/docs/index.md) and [usage](tools/docs/build.md)
+
+          [Call parameters](tools/docs/settings.md)
+
+          [Localization](tools/docs/translate.md)
+      - type: basic-card
+        title:
+          text: Practical guides
+          textSize: s
+        text: |
+          [Content analytics](guides/content-analytics.md)
+
+          [Setting up a custom domain](personal-domain-ya-cloud.md)
+
+          [Documentation autogeneration and integration](guides/includers.md)
+      - type: basic-card
+        title:
+          text: More capabilities
+          textSize: s
+        text: |
+          [Diplodoc extensions](extensions/index.md)
+
+          [Connecting markdown-it plugins](plugins/index.md)
+      - type: basic-card
+        title:
+          text: For developers
+          textSize: s
+        text: |
+          [Quick start](dev/quickstart.md)
+
+          [Making changes](dev/contribution.md)
+
+          [Contributor program](dev/for-contributors.yaml)

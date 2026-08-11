@@ -1,20 +1,29 @@
 # Links
 
-The standard markup for a link is:
+The standard markup for a link looks like this:
 
+```markdown
+[текст_ссылки](ссылка "текст_подсказки")
 ```
-[link_text](link "hint_text")
-```
 
-  * `link_text`: The link text.
-  * `link`: A URL or path to a file.
-  * `"hint_text"`: A hint that will be displayed when you hover over the link text. Optional.
+  * `link_text` — explicit specification of the link text.
+  * `link` — URL or file path.
+  * `"tooltip_text"` — a tooltip that will be displayed when hovering over the link text. Optional parameter.
 
-Depending on the type of link, simplifications and other design options are allowed.
+Depending on the type of link, simplifications and other formatting options are allowed.
 
-## Link to MD file {#autotitle}
+## Opening in a new tab {#target}
 
-You can create a link to an MD file without explicitly specifying the link text. To do this, add the symbols `{#T}` in place of the text, and they will automatically be substituted with the title of the specified file.
+By default, all relative links open in the current browser tab, and all absolute links open in a new tab. You can override this behavior using the `target` attribute.
+
+Examples:
+
+* `[text](link){target=_blank}` — will open in a new tab,
+* `[text](link){target=_self}` — will open in the current tab.
+
+## Link to an md file {#autotitle}
+
+You can create a link to an md file without explicitly specifying the link text. To do this, add the character combination `{#T}` in place of the text, and it will be substituted automatically from the heading of the specified file.
 
 ```markdown
 [{#T}](./index.md)
@@ -24,30 +33,39 @@ You can create a link to an MD file without explicitly specifying the link text.
 
 [{#T}](./index.md)
 
+## Link to a section in an md file {#auto-section-title}
 
-## Link to MD file section {#auto-section-title}
+You can link to:
 
-You can refere:
-
-* To the section of the current page.
+* a section on the current page;
 
   `[text](#anchor)`
 
   **Result**
-
+  
   [{#T}](#formatting)
 
-* To a section of another page.
+* a section on another page.
 
-  `[text](base.md#anchor)`
+  `[text](base.md#headers)`
 
   **Result**
 
   [{#T}](base.md#headers)
 
-## A URL or an email address {#url-email}
+## Restriction of relative paths in HTML {#constraints}
 
-To convert a URL or an email address to a link, add angle brackets `<>` on both sides.
+In HTML links, use absolute paths from the documentation root.
+
+Example:
+
+```html
+<a href="/root_folder/path_to_file">Ссылка</a>
+```
+
+## URL or email address {#url-email}
+
+To convert a URL or email address into a link, add angle brackets `<>` on both sides.
 
 ```markdown
 <https://yandex.com/>
@@ -63,15 +81,14 @@ To convert a URL or an email address to a link, add angle brackets `<>` on both 
 
 ## Reference-style markup for links {#reference-style}
 
-Use reference-style links to make the source text of a document easier to read. These links consist of two parts connected by tags:
+Use reference-style links to make the source text of the document easier to read. Links of this type consist of two parts connected by labels:
+* a brief description of the link in the text.
+  
+  `[link_text][link_label]`
 
-* A brief link description in the text.
-
-  `[link_text][link_tag]`
-
-* A long URL placed in a special place at the end of a paragraph or document.
-
-  `[link_tag]: URL`
+* a long URL placed in a special location at the end of a paragraph or document. 
+  
+  `[link_label]: URL`
 
 ```markdown
 My favorite search engine is [Yandex][1].
@@ -84,9 +101,10 @@ My favorite search engine is [Yandex][1].
 My favorite search engine is [Yandex][1].
 
 [1]: https://yandex.com/ "The best search engine"
-## Link text style {#formatting}
 
-You can apply [line formatting](./base.md#line) to the link text.
+## Link text formatting {#formatting}
+
+You can apply [inline formatting](./base.md#line) to the link text.
 
 ```markdown
 I love the **[Yandex Cloud](https://cloud.yandex.com)**.
@@ -97,17 +115,20 @@ Super [^men^](https://en.wikipedia.org/wiki/Major_Grom_(2017_film)).
 
 **Result**
 
-I love **[Yandex.Cloud](https://cloud.yandex.com)**.
+I love the **[Yandex Cloud](https://cloud.yandex.com)**.
 This is the _[YFM Guide](https://yadocs.tech)_.
 See the section on [`code`](#code).
 Super [^men^](https://en.wikipedia.org/wiki/Major_Grom_(2017_film)).
 
-## Files {#files}
+## Links for downloading files {#files}
 
-If you need to specify a link to a file, you can use a special link with a file icon. After clicking on such a link, the browser will start downloading the specified file to the device.
+To provide files for download, upload them to an external storage. 
+
+Then use a link to the external source as a link to the file. You can use a special link with a file icon. After clicking such a link, the browser will start downloading the specified file to the device.
 
 ```markdown
 {% file src="data:text/plain;base64,Cg==" name="empty.txt" %}
 ```
 
-{% file src="data:text/plain;base64,Cg==" name="empty.txt" %}
+{% file src="data:text/plain;base64,Cg==" name="{% src="data:text/plain;base64,Cg==" name="empty.txt" %}" %}
+
