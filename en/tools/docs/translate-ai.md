@@ -95,6 +95,7 @@ Common command options (`--source`, `--target`, `--files`, `--include`, `--exclu
 
 #|
 || **Option** | **Default** | **Description** ||
+|| `--provider` | `yandex` | Translation provider. For AI translation: `yandexgpt`, `openai`, `openrouter`, or `anthropic`. The default value `yandex` is machine translation via [Yandex Translate](translate.md#auto), not an LLM ||
 || `--auth` | from the environment variable | Token or path to a file with the token. Cannot be placed in the configuration file ||
 || `--model` | depends on the provider | Model identifier ||
 || `--folder` | - | Identifier of the Yandex AI Studio folder. Only for `yandexgpt`, required with a short model name ||

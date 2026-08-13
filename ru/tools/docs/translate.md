@@ -29,6 +29,8 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 
 Автоматический перевод может быть выполнен с использованием таких сервисов, как [Yandex Translate](https://cloud.yandex.ru/docs/translate/){% if translate.google-support == true %} или [Cloud Translate](https://cloud.google.com/translate/docs){% endif %}.
 
+Этот режим включен по умолчанию: без опции `--provider` используется значение `yandex`, поэтому в примерах ниже опция опущена.
+
 У этих систем есть [ограничения](https://cloud.yandex.ru/ru/docs/translate/concepts/limits) по объему переводимых документов и качеству перевода. Однако они отличаются высокой скоростью работы.
 
 Для уменьшения объема текста для перевода документ разбивается на более короткие сегменты, например, предложения или заголовки. Повторяющиеся сегменты затем удаляются.
@@ -69,6 +71,13 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 \
 `{{PROGRAM}} translate --target {{translate.target}}`
 ||
+|| `--provider`           | `yandex` \| `yandexgpt` \| `openai` \| `openrouter` \| `anthropic` |
+Система перевода. Значение по умолчанию - `yandex`, машинный перевод через [Yandex Translate](#auto).
+\
+Остальные значения включают [AI-перевод](translate-ai.md) большими языковыми моделями.
+\
+`{{PROGRAM}} translate --provider yandex`
+||
 || `--input`              | Path      |
 Путь до **корня** переводимого проекта или конкретного файла в проекте. Если не указан, используется директория запуска команды.
 \
@@ -104,6 +113,8 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 |#
 
 #### Система переводов
+
+Набор дополнительных опций зависит от значения `--provider`. Опции AI-провайдеров (`yandexgpt`, `openai`, `openrouter`, `anthropic`) описаны в статье [AI-перевод](translate-ai.md#options).
 
 {% list tabs %}
 
