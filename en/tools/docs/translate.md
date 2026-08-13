@@ -29,6 +29,8 @@ Translation is supported for both `*.md` files and `*.json` (including `*.yaml`)
 
 Automatic translation can be performed using services such as [Yandex Translate](https://cloud.yandex.ru/docs/translate/){% if translate.google-support == true %} or [Cloud Translate](https://cloud.google.com/translate/docs){% endif %}.
 
+This mode is enabled by default: without the `--provider` option the `yandex` value is used, so the option is omitted in the examples below.
+
 These systems have [limits](https://cloud.yandex.ru/ru/docs/translate/concepts/limits) on the volume of translated documents and translation quality. However, they are characterized by high processing speed.
 
 To reduce the volume of text for translation, the document is split into shorter segments, such as sentences or headings. Repeated segments are then removed.
@@ -69,6 +71,13 @@ Language code of the translated document in ISO 639-1 format
 \
 `{{PROGRAM}} translate --target {{translate.target}}`
 ||
+|| `--provider`           | `yandex` \| `yandexgpt` \| `openai` \| `openrouter` \| `anthropic` |
+Translation system. The default value is `yandex` - machine translation via [Yandex Translate](#auto).
+\
+The other values enable [AI translation](translate-ai.md) using large language models.
+\
+`{{PROGRAM}} translate --provider yandex`
+||
 || `--input`              | Path      |
 Path to the **root** of the project being translated or a specific file in the project. If not specified, the directory from which the command is launched is used.
 \
@@ -104,6 +113,8 @@ Can be passed multiple times.
 |#
 
 #### Translation system
+
+The set of additional options depends on the `--provider` value. Options for AI providers (`yandexgpt`, `openai`, `openrouter`, `anthropic`) are described in the [AI translation](translate-ai.md#options) article.
 
 {% list tabs %}
 
