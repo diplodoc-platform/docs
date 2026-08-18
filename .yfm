@@ -1,5 +1,6 @@
 allowHtml: true
 langs: ['ru','en']
+buildManifest: true
 
 vcs: true
 mtimes: true
