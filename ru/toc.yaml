@@ -165,8 +165,6 @@ items:
             href: tools/docs/singlepage.md
       - name: Сборка одного файла
         href: tools/docs/content.md
-      - name: Многоязычные проекты
-        href: tools/docs/multilingual-projects.md  
       - name: Локализация
         href: tools/docs/translate.md
         items:
