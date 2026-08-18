@@ -70,7 +70,7 @@ log-levels:
   YFM017: 'error'   # Invalid front matter format: duplicated mapping key
   YFM018: 'info'    # Term definition from include
   YFM020: 'warn'    # Invalid yfm directive
-  YFM021: 'warn'    # Non-BMP (UTF-16 surrogate pair) character
+  YFM021: 'warn'    # Empty automatic heading anchor
   YFM022: 'info'    # llms-full.txt max size reached
 
 
@@ -82,6 +82,8 @@ YFM001:
 Rules with the `MD` prefix are provided by the [markdownlint](https://github.com/DavidAnson/markdownlint) library.
 A detailed description of all rules with the `MD` prefix can be found [at the link](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).
 A detailed description of all rules with the `YFM` prefix can be found [at the link](https://github.com/diplodoc-platform/yfmlint/blob/master/README.md).
+
+YFM021 reports headings whose automatic anchor is empty. It relies on the anchors plugin from `@diplodoc/transform`; Diplodoc CLI and the VS Code extension include this plugin by default.
 
 You can override the logging level in the `.yfmlint` file in the `log-levels` section separately for each rule: `error`, `warn`, `disabled`.
 
