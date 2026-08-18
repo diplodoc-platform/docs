@@ -165,6 +165,8 @@ items:
             href: tools/docs/singlepage.md
       - name: Сборка одного файла
         href: tools/docs/content.md
+      - name: Многоязычные проекты
+        href: tools/docs/multilingual-projects.md  
       - name: Локализация
         href: tools/docs/translate.md
         items:
@@ -190,6 +192,8 @@ items:
         items:
           - name: Профилирование
             href: guides/single-source/profiling.md
+      - name: Многоязычные проекты
+        href: guides/multilingual-projects.md
       - name: Автогенерация и интеграция документации
         href: guides/includers.md
         items:
