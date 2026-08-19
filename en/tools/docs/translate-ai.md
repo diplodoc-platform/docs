@@ -75,14 +75,13 @@ A self-hosted model or an internal gateway with a compatible API is connected us
 
 For `openai`, `openrouter`, and `anthropic`, include `/v1` in the base. The base can also be set via the environment variables `OPENAI_BASE_URL`, `OPENROUTER_BASE_URL`, `ANTHROPIC_BASE_URL`.
 
-If the gateway requires its own authorization scheme, pass the headers using the `--api-header` option (can be repeated). Custom headers override the standard ones, so you can completely replace authorization this way. The `--auth` option is formally required in this case - pass a placeholder:
+If the gateway requires its own authorization scheme, pass the headers using the `--api-header` option (can be repeated). Custom headers override the standard ones, so you can completely replace authorization this way. When the authorization header comes via `--api-header`, the `--auth` option is not required - the standard authorization header is not sent in this case:
 
 ```bash
 {{PROGRAM}} translate -i . -o ./translated \
   --provider openai \
   --api-base https://llm.internal.example.com/v1 \
   --model my-model \
-  --auth dummy \
   --api-header "Authorization: OAuth $(cat ~/.tokens/llm)" \
   --source ru --target en --cache-dir .translate-cache
 ```
@@ -91,19 +90,21 @@ The request path for each provider is fixed: if the gateway uses a non-standard 
 
 ## Options reference {#options}
 
-Common command options (`--source`, `--target`, `--files`, `--include`, `--exclude`, `--dry-run`, and others) are described on the [Localization](translate.md) page. The `--target` option can be passed multiple times - translation will be performed into each language. Below are the AI provider options.
+Common command options (`--source`, `--target`, `--files`, `--include`, `--exclude`, `--include-vcs-diff`, `--dry-run`, and others) are described on the [Localization](translate.md) page. The `--target` option can be passed multiple times - translation will be performed into each language. Below are the AI provider options.
 
 #|
 || **Option** | **Default** | **Description** ||
 || `--provider` | `yandex` | Translation provider. For AI translation: `yandexgpt`, `openai`, `openrouter`, or `anthropic`. The default value `yandex` is machine translation via [Yandex Translate](translate.md#auto), not an LLM ||
 || `--auth` | from the environment variable | Token or path to a file with the token. Cannot be placed in the configuration file ||
 || `--model` | depends on the provider | Model identifier ||
+|| `--fallback-model` | - | Fallback model in the same format as `--model`. See [Fallback model](#fallback) ||
 || `--folder` | - | Identifier of the Yandex AI Studio folder. Only for `yandexgpt`, required with a short model name ||
 || `--api-base` | Provider API URL | Base URL for [compatible installations](#custom-api) ||
 || `--api-header` | - | Additional HTTP header in the format `"Name: value"`. Can be repeated. Overrides standard headers ||
 || `--system-prompt` | built-in | System prompt: string or path to a file. See [Prompts](#prompts) ||
 || `--user-prompt` | built-in | User prompt: string or path to a file ||
 || `--prompt-mode` | `append` | `append` - your system prompt is appended to the built-in one, `replace` - completely replaces it ||
+|| `--context-file` | - | Additional context for the prompt: a path to a text file or a multi-line text block. Can be repeated. See [Translation context](#context) ||
 || `--glossary` | - | Path to a YAML file with mandatory term translations, relative to input. See [Glossary](#glossary) ||
 || `--judge` | disabled | Translation quality assessment by a second model. See [Quality assessment](#judge) ||
 || `--judge-model` | translation model | Model for quality assessment ||
@@ -115,6 +116,7 @@ Common command options (`--source`, `--target`, `--files`, `--include`, `--exclu
 || `--max-batch-tokens` | `2000` | Input token budget for a single request. Segments are grouped into batches up to this limit ||
 || `--max-concurrency` | `5` | Maximum concurrent API requests ||
 || `--retry` | `3` | Number of retries on temporary API errors ||
+|| `--rate-limit-retry` | `8` | Number of retries for requests rejected with code 429. Counted separately from `--retry`. See [Error 429](#throttling) ||
 || `--timeout` | `60000` | Timeout for a single request in milliseconds ||
 |#
 
@@ -140,11 +142,12 @@ The built-in system prompt is tuned for technical translation: preserve markup, 
 
 The value of `--system-prompt` and `--user-prompt` is a string or a path to a file. Placeholders are supported:
 
-* ``{{source}}`, `{{target}}` - translation languages;
-* ``{{glossary}}` - glossary in text form;
-* ``{{context}}` - document context (title and file path);
-* ``{{separator}}` - fragment separator;
-* ``{{fragments}}`, `{{text}}` - fragments to translate (only in `--user-prompt`).
+* `not_var{{source}}`, `not_var{{target}}` - translation languages;
+* `not_var{{glossary}}` - glossary in text form;
+* `not_var{{context}}` - document context (title and file path);
+* `not_var{{contextFiles}}` - sections from [`--context-file`](#context);
+* `not_var{{separator}}` - fragment separator;
+* `not_var{{fragments}}`, `not_var{{text}}` - fragments to translate (only in `--user-prompt`).
 
 Example: require adherence to a corporate tone:
 
@@ -152,6 +155,31 @@ Example: require adherence to a corporate tone:
 {{PROGRAM}} translate -i . -o ./translated --provider openai --source ru --target en \
   --system-prompt "Use formal tone. Address the reader as 'you'."
 ```
+
+### Translation context {#context}
+
+The `--context-file` option passes reference materials of arbitrary structure to the model: project description, style guide, UI texts, terminology notes. The option can be repeated - each value becomes a separate section.
+
+The value is a path to a text file (`md`, `json`, `txt` - the content is passed to the model as-is) or a multi-line text block. A value without a line break is treated as a path: if no such file exists, the command fails with `Context file not found`.
+
+```bash
+{{PROGRAM}} translate -i . -o ./translated --provider openai --source ru --target en \
+  --context-file ./styleguide.md --context-file ./ui-texts.json
+```
+
+Sections are appended to the end of the system prompt. To control placement, use the `not_var{{contextFiles}}` placeholder in `--system-prompt` or `--user-prompt`.
+
+In the [configuration file](#config), the option is named `contextFiles` and accepts a list. Command-line paths are resolved from the current directory, configuration paths - from the location of `.yfm`:
+
+```yaml
+translate:
+  contextFiles:
+    - styleguide.md
+    - |
+      Product names are never translated.
+```
+
+Like the glossary, the context goes into every request and consumes tokens on each batch - keep it compact. Changing the context invalidates the [translation cache](#cache).
 
 ### Glossary {#glossary}
 
@@ -207,6 +235,17 @@ The pairs are inserted into the prompt of each request to the model as a list of
 
 Changing the glossary invalidates the [translation cache](#cache): after editing the file, all segments are translated again.
 
+### Fallback model {#fallback}
+
+The `--fallback-model` option sets a second model on the same provider. If a request keeps failing after all retries (including rate limit retries), the batch is sent to the fallback model - with the same credentials, API base, and headers. A different provider or a different key for the fallback model cannot be specified.
+
+```bash
+{{PROGRAM}} translate -i . -o ./translated --provider openai --source ru --target en \
+  --model gpt-4o-mini --fallback-model gpt-4o --cache-dir .translate-cache
+```
+
+The switch is visible in the log: `WARN ... Primary model failed (...); retrying with the fallback model`, and the final `PROCESSED` line gets a `fallback-requests` counter. An authorization error is fatal and is not retried with the fallback model - the models share credentials.
+
 ## Translation cache {#cache}
 
 The `--cache-dir` option enables a persistent cache: "segment — translation" pairs are saved to disk, and repeated runs send only new and changed segments to the model. The cache is flushed to disk after each processed file, so interrupting a run is safe — a restart will continue from the same point.
@@ -218,6 +257,27 @@ How the cache works:
 * `--no-cache` disables the cache for one run without deleting saved translations.
 
 It makes sense to commit the cache directory to the repository or keep it between CI runs - then, with regular translations, only the changed segments are paid for.
+
+### Seeding the cache from existing translations {#seed}
+
+If the project already has translations - manual ones or from another system - the `seed` subcommand populates the cache directly from them. The next translation run takes the existing pairs from the cache and sends only new and changed segments to the model:
+
+```bash
+{{PROGRAM}} translate seed -i . --source ru --target en --cache-dir .translate-cache
+```
+
+The translations must live in the same root as the sources, in the target language directory (`ru/page.md` -> `en/page.md`). For each source file, its translation is split into segments the same way as during translation, and the segments are paired positionally:
+
+* Files where the segment counts diverge are skipped with a warning - positional pairing would produce shifted pairs there.
+* Segments left untranslated (the text matches the source and contains source-script characters) are also skipped - the model will translate them.
+
+The result is saved to the file `seed.<source>-<target>.json` in the cache directory. Unlike the main cache, it is not tied to a provider or model and survives changes of prompts, glossary, and model. During translation it is consulted before the main cache, so it reflects the actual state of the translations, including manual edits. Re-running `seed` fully replaces the file.
+
+The subcommand accepts the same scope options as translation (`--files`, `--include`, `--exclude`, `--vars`); the `--cache-dir` option is required. The log summary:
+
+```
+PROCESSED ru-en seeded-files: 120 seeded-units: 3400 skipped-units: 12 missing-targets: 3 mismatched: 2
+```
 
 ## Quality assessment {#judge}
 
@@ -270,8 +330,9 @@ The evaluation does not affect the translation result and does not interrupt the
 || `WARN ... Part is too big (~N tokens > M)` | The segment is larger than `--max-batch-tokens` and remained in the source language ||
 || `WARN ... Batch of N fragments failed ... retrying one-by-one` | The model's response could not be parsed into fragments; the batch is retried one segment at a time ||
 || `WARN <file> Translation quality N/100: ...` | The segment's score is below `--judge-threshold` ||
+|| `WARN ... Primary model failed ... retrying with the fallback model` | The batch was not translated by the primary model and was sent to the [fallback model](#fallback) ||
 || `ERR <file> ...` | The file was not translated; the run continues. Only an authorization error is fatal ||
-|| `PROCESSED requests: R input-tokens: I output-tokens: O bytes: B cached-units: C` | Run summary: requests, tokens, text volume, and the number of segments from the cache ||
+|| `PROCESSED requests: R input-tokens: I output-tokens: O bytes: B cached-units: C` | Run summary: requests, tokens, text volume, and the number of segments from the cache. With a fallback model configured, a `fallback-requests` counter is added ||
 || `PROCESSED judge: N units scored, average score A/100, M below threshold T` | Quality assessment summary ||
 |#
 
@@ -279,7 +340,7 @@ The evaluation does not affect the translation result and does not interrupt the
 
 ### Error 429 (rate limit) {#throttling}
 
-The CLI itself retries the request up to `--retry` times with an exponential pause and takes the `Retry-After` header into account. If API limits are still exceeded, restart the run with lower parallelism:
+The CLI itself retries such requests up to `--rate-limit-retry` times (8 by default) - a separate, bigger budget than `--retry` used for other temporary errors. Pauses grow exponentially up to 60 seconds, the `Retry-After` header is honored, and while a rate limit window lasts, all requests of the run are paused together. If API limits are still exceeded, restart the run with lower parallelism:
 
 ```bash
 {{PROGRAM}} translate -i . -o ./translated --provider openai --source ru --target en \

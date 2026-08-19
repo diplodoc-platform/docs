@@ -110,6 +110,17 @@ keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'interna
 \
 `{{PROGRAM}} translate --exclude {{translate.source-lang}}/_no-translate/**/*.md`
 ||
+|| `--include-vcs-diff`   | Ref |
+Добавляет к переводу файлы, измененные в рабочей копии git или arc. Директория `input` должна находиться внутри репозитория.
+\
+Необязательное значение - реф, относительно которого считается diff (по умолчанию `HEAD`). Диапазоны в git-синтаксисе (`a..b`, `a...b`) работают для обеих систем. Неотслеживаемые файлы включаются всегда.
+\
+Комбинируется с `--include`: переводятся файлы из обоих наборов. Если изменений нет, команда успешно завершается без перевода.
+\
+`{{PROGRAM}} translate --include-vcs-diff`
+\
+`{{PROGRAM}} translate --include-vcs-diff origin/main`
+||
 |#
 
 #### Система переводов
