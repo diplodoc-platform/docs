@@ -70,7 +70,7 @@ log-levels:
   YFM017: 'error'   # Invalid front matter format: duplicated mapping key
   YFM018: 'info'    # Term definition from include
   YFM020: 'warn'    # Invalid yfm directive
-  YFM021: 'warn'    # Non-BMP (UTF-16 surrogate pair) character
+  YFM021: 'warn'    # Empty automatic heading anchor
   YFM022: 'info'    # llms-full.txt max size reached
 
 
@@ -82,6 +82,8 @@ YFM001:
 Правила с префиксом `MD` предоставляются библиотекой [markdownlint](https://github.com/DavidAnson/markdownlint).
 Подробное описание всех правил с префиксом `MD` можно найти [по ссылке](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).
 Подробное описание всех правил с префиксом `YFM` можно найти [по ссылке](https://github.com/diplodoc-platform/yfmlint/blob/master/README.md).
+
+YFM021 сообщает о заголовках с пустым автоматическим якорем. Правило использует плагин anchors из `@diplodoc/transform`; Diplodoc CLI и расширение для VS Code подключают его по умолчанию.
 
 Вы можете переопределить уровень логирования в файле `.yfmlint` в секции `log-levels` отдельно для каждого правила: `error`, `warn`, `disabled`.
 
