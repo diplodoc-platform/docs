@@ -190,6 +190,8 @@ items:
         items:
           - name: Профилирование
             href: guides/single-source/profiling.md
+      - name: Многоязычные проекты
+        href: guides/multilingual-projects.md
       - name: Автогенерация и интеграция документации
         href: guides/includers.md
         items:
