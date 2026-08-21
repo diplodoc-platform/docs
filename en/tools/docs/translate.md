@@ -110,6 +110,17 @@ Can be passed multiple times.
 \
 `{{PROGRAM}} translate --exclude {{translate.source-lang}}/_no-translate/**/*.md`
 ||
+|| `--include-vcs-diff`   | Ref |
+Adds files changed in the git or arc working copy to the translation. The `input` directory must be inside a repository.
+\
+The optional value is the ref against which the diff is computed (`HEAD` by default). Git-style ranges (`a..b`, `a...b`) work for both systems. Untracked files are always included.
+\
+Combines with `--include`: files from both sets are translated. If there are no changes, the command finishes successfully without translation.
+\
+`{{PROGRAM}} translate --include-vcs-diff`
+\
+`{{PROGRAM}} translate --include-vcs-diff origin/main`
+||
 |#
 
 #### Translation system
