@@ -172,6 +172,8 @@ items:
             href: tools/docs/translate-ai.md
       - name: Выкладка на S3
         href: tools/docs/publish-s3.md
+      - name: Portable-версия для Windows
+        href: tools/docs/windows-exe.md
       - name: Внесение изменений
         hidden: true
         href: contribution.md
