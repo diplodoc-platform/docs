@@ -24,61 +24,85 @@ Node.js is only required on the computer where you build the file.
 
    It should print a version number, for example `v24.18.0`.
 
-## Step 2. Create a folder and install the packages {#install-packages}
+## Step 2. Build the EXE {#build}
 
-Run the following commands in the terminal one by one:
+Copy the entire block for your system into the terminal and press Enter. It creates the `yfm-exe` folder, downloads the required packages into it, and builds the file.
 
-```shell
-mkdir yfm-exe
-cd yfm-exe
-npm init -y
-npm install @diplodoc/cli @yao-pkg/pkg
-```
+{% list tabs %}
 
-These commands create the `yfm-exe` folder and download the CLI and the [@yao-pkg/pkg](https://github.com/yao-pkg/pkg) packaging tool into it.
+- Windows (PowerShell)
 
-## Step 3. Create the configuration file {#config}
-
-Create a file named `pkg.config.json` in the `yfm-exe` folder and copy the following content into it as is:
-
-```json
-{
-  "pkg": {
-    "scripts": [
-      "node_modules/@diplodoc/cli/build/**/*.js",
-      "node_modules/@diplodoc/client/build/server/**/*.js"
-    ],
-    "assets": [
-      "node_modules/@diplodoc/cli/assets/**/*",
-      "node_modules/@diplodoc/cli/build/manifest.json",
-      "node_modules/@diplodoc/cli/package.json",
-      "node_modules/highlight.js/styles/**/*"
-    ]
+  ```powershell
+  mkdir yfm-exe
+  cd yfm-exe
+  @'
+  {
+    "name": "yfm-portable",
+    "version": "1.0.0",
+    "bin": "node_modules/@diplodoc/cli/build/index.js",
+    "pkg": {
+      "scripts": [
+        "node_modules/@diplodoc/cli/build/**/*.js",
+        "node_modules/@diplodoc/cli/lib/**/*.js",
+        "node_modules/@diplodoc/client/build/server/**/*.js"
+      ],
+      "assets": [
+        "node_modules/@diplodoc/cli/assets/**/*",
+        "node_modules/@diplodoc/cli/build/manifest.json",
+        "node_modules/@diplodoc/cli/package.json",
+        "node_modules/highlight.js/styles/**/*"
+      ]
+    }
   }
-}
-```
+  '@ | Set-Content -Encoding Ascii package.json
+  npm install @diplodoc/cli @yao-pkg/pkg
+  npx pkg --compress GZip --public -t node24-win-x64 -o dist/yfm.exe package.json
+  ```
 
-This file tells the packaging tool which internal CLI files must be packed into `yfm.exe`. Without it, the resulting file won't start.
+- macOS and Linux
 
-{% note tip %}
+  ```shell
+  mkdir yfm-exe && cd yfm-exe
+  cat > package.json <<'EOF'
+  {
+    "name": "yfm-portable",
+    "version": "1.0.0",
+    "bin": "node_modules/@diplodoc/cli/build/index.js",
+    "pkg": {
+      "scripts": [
+        "node_modules/@diplodoc/cli/build/**/*.js",
+        "node_modules/@diplodoc/cli/lib/**/*.js",
+        "node_modules/@diplodoc/client/build/server/**/*.js"
+      ],
+      "assets": [
+        "node_modules/@diplodoc/cli/assets/**/*",
+        "node_modules/@diplodoc/cli/build/manifest.json",
+        "node_modules/@diplodoc/cli/package.json",
+        "node_modules/highlight.js/styles/**/*"
+      ]
+    }
+  }
+  EOF
+  npm install @diplodoc/cli @yao-pkg/pkg
+  npx pkg --compress GZip --public -t node24-win-x64 -o dist/yfm.exe package.json
+  ```
 
-You can create the file with any text editor, such as Notepad. When saving, make sure the file name is exactly `pkg.config.json`, not `pkg.config.json.txt`.
+{% endlist %}
 
-{% endnote %}
+On the first run, the last command downloads a base Node.js build for Windows, so it may take a few minutes. `Warning` messages during the process are normal.
 
-## Step 4. Build the EXE {#build}
+The resulting file appears at `yfm-exe/dist/yfm.exe`. It's about 160 MB, as it contains a full Node.js runtime.
 
-Run a single command in the terminal (all of it, it's one line):
+{% cut "What this block does" %}
 
-```shell
-npx pkg node_modules/@diplodoc/cli/build/index.js -c pkg.config.json -t node24-win-x64 -o dist/yfm.exe
-```
+1. Creates the `yfm-exe` folder and switches into it.
+2. Puts a `package.json` file into it - the list of internal CLI files that must be packed into `yfm.exe`. Without this list, the resulting file won't start.
+3. Installs two packages: the CLI itself and the [@yao-pkg/pkg](https://github.com/yao-pkg/pkg) packaging tool.
+4. Runs the packaging: the `-t node24-win-x64` parameter sets the target system, `--compress GZip` roughly halves the file size, and `-o` sets the output path.
 
-On the first run, the command downloads a base Node.js build for Windows, so it may take a few minutes. `Warning` messages during the process are normal.
+{% endcut %}
 
-The resulting file appears at `yfm-exe/dist/yfm.exe`. It's about 300 MB, as it contains a full Node.js runtime.
-
-## Step 5. Check the result {#check}
+## Step 3. Check the result {#check}
 
 Run the built file:
 
@@ -101,11 +125,25 @@ dist\yfm.exe -i path-to-sources -o path-to-output
 ## Limitations {#limitations}
 
 * Custom plugins (a `plugins.js` file next to the project) don't load in the portable build.
-* To update the CLI to a new version, rebuild the file: run `npm install @diplodoc/cli@latest` in the `yfm-exe` folder and repeat [step 4](#build).
+
+  {% cut "How to bake plugins into the file" %}
+
+  Plugins can be packed into `yfm.exe` at build time. Before the last command of step 2, copy your plugins file into the CLI package:
+
+  ```shell
+  mkdir -p node_modules/@diplodoc/cli/build/plugins
+  cp path-to-your-plugins.js node_modules/@diplodoc/cli/build/plugins/index.js
+  ```
+
+  Then rebuild the file - the plugins will work on all machines without any extra files.
+
+  {% endcut %}
+
+* To update the CLI to a new version, rebuild the file: run `npm install @diplodoc/cli@latest` in the `yfm-exe` folder and repeat the last command of [step 2](#build).
 
 ## Building for other systems {#other-targets}
 
-The same approach works for macOS and Linux - change the `-t` parameter value and the output file name:
+The same approach works for macOS and Linux - change the `-t` parameter value and the output file name in the last command:
 
 | System | `-t` parameter |
 | --- | --- |
@@ -119,5 +157,5 @@ The same approach works for macOS and Linux - change the `-t` parameter value an
 For example, a Linux build:
 
 ```shell
-npx pkg node_modules/@diplodoc/cli/build/index.js -c pkg.config.json -t node24-linux-x64 -o dist/yfm-linux
+npx pkg --compress GZip --public -t node24-linux-x64 -o dist/yfm-linux package.json
 ```

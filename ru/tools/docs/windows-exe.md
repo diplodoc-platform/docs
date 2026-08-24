@@ -24,61 +24,85 @@ Node.js нужен только на том компьютере, где вы с
 
    В ответ должен появиться номер версии, например `v24.18.0`.
 
-## Шаг 2. Создайте папку и установите пакеты {#install-packages}
+## Шаг 2. Соберите EXE {#build}
 
-Выполните в терминале по очереди:
+Скопируйте в терминал целиком блок для своей системы и нажмите Enter. Он создаст папку `yfm-exe`, скачает в нее нужные пакеты и соберет файл.
 
-```shell
-mkdir yfm-exe
-cd yfm-exe
-npm init -y
-npm install @diplodoc/cli @yao-pkg/pkg
-```
+{% list tabs %}
 
-Команды создадут папку `yfm-exe` и скачают в нее CLI и инструмент сборки [@yao-pkg/pkg](https://github.com/yao-pkg/pkg).
+- Windows (PowerShell)
 
-## Шаг 3. Создайте файл настроек {#config}
-
-Создайте в папке `yfm-exe` файл с именем `pkg.config.json` и скопируйте в него содержимое без изменений:
-
-```json
-{
-  "pkg": {
-    "scripts": [
-      "node_modules/@diplodoc/cli/build/**/*.js",
-      "node_modules/@diplodoc/client/build/server/**/*.js"
-    ],
-    "assets": [
-      "node_modules/@diplodoc/cli/assets/**/*",
-      "node_modules/@diplodoc/cli/build/manifest.json",
-      "node_modules/@diplodoc/cli/package.json",
-      "node_modules/highlight.js/styles/**/*"
-    ]
+  ```powershell
+  mkdir yfm-exe
+  cd yfm-exe
+  @'
+  {
+    "name": "yfm-portable",
+    "version": "1.0.0",
+    "bin": "node_modules/@diplodoc/cli/build/index.js",
+    "pkg": {
+      "scripts": [
+        "node_modules/@diplodoc/cli/build/**/*.js",
+        "node_modules/@diplodoc/cli/lib/**/*.js",
+        "node_modules/@diplodoc/client/build/server/**/*.js"
+      ],
+      "assets": [
+        "node_modules/@diplodoc/cli/assets/**/*",
+        "node_modules/@diplodoc/cli/build/manifest.json",
+        "node_modules/@diplodoc/cli/package.json",
+        "node_modules/highlight.js/styles/**/*"
+      ]
+    }
   }
-}
-```
+  '@ | Set-Content -Encoding Ascii package.json
+  npm install @diplodoc/cli @yao-pkg/pkg
+  npx pkg --compress GZip --public -t node24-win-x64 -o dist/yfm.exe package.json
+  ```
 
-Этот файл говорит инструменту сборки, какие внутренние файлы CLI нужно упаковать внутрь `yfm.exe`. Без него собранный файл не запустится.
+- macOS и Linux
 
-{% note tip %}
+  ```shell
+  mkdir yfm-exe && cd yfm-exe
+  cat > package.json <<'EOF'
+  {
+    "name": "yfm-portable",
+    "version": "1.0.0",
+    "bin": "node_modules/@diplodoc/cli/build/index.js",
+    "pkg": {
+      "scripts": [
+        "node_modules/@diplodoc/cli/build/**/*.js",
+        "node_modules/@diplodoc/cli/lib/**/*.js",
+        "node_modules/@diplodoc/client/build/server/**/*.js"
+      ],
+      "assets": [
+        "node_modules/@diplodoc/cli/assets/**/*",
+        "node_modules/@diplodoc/cli/build/manifest.json",
+        "node_modules/@diplodoc/cli/package.json",
+        "node_modules/highlight.js/styles/**/*"
+      ]
+    }
+  }
+  EOF
+  npm install @diplodoc/cli @yao-pkg/pkg
+  npx pkg --compress GZip --public -t node24-win-x64 -o dist/yfm.exe package.json
+  ```
 
-Создать файл можно любым текстовым редактором, например «Блокнотом». При сохранении убедитесь, что имя файла именно `pkg.config.json`, а не `pkg.config.json.txt`.
+{% endlist %}
 
-{% endnote %}
+Последняя команда при первом запуске скачивает базовую сборку Node.js для Windows, поэтому может работать несколько минут. Предупреждения `Warning` в процессе - это нормально.
 
-## Шаг 4. Соберите EXE {#build}
+Готовый файл появится в папке `yfm-exe/dist/yfm.exe`. Размер около 160 МБ - внутри лежит полноценный Node.js.
 
-Выполните в терминале одну команду (целиком, это одна строка):
+{% cut "Что делает этот блок" %}
 
-```shell
-npx pkg node_modules/@diplodoc/cli/build/index.js -c pkg.config.json -t node24-win-x64 -o dist/yfm.exe
-```
+1. Создает папку `yfm-exe` и переходит в нее.
+2. Кладет в нее файл `package.json` - список внутренних файлов CLI, которые нужно упаковать внутрь `yfm.exe`. Без этого списка собранный файл не запустится.
+3. Устанавливает два пакета: сам CLI и инструмент упаковки [@yao-pkg/pkg](https://github.com/yao-pkg/pkg).
+4. Запускает упаковку: параметр `-t node24-win-x64` задает целевую систему, `--compress GZip` уменьшает размер файла примерно вдвое, `-o` - путь к результату.
 
-При первом запуске команда скачает базовую сборку Node.js для Windows, поэтому может работать несколько минут. Предупреждения `Warning` в процессе - это нормально.
+{% endcut %}
 
-Готовый файл появится в папке `yfm-exe/dist/yfm.exe`. Размер около 300 МБ - внутри лежит полноценный Node.js.
-
-## Шаг 5. Проверьте результат {#check}
+## Шаг 3. Проверьте результат {#check}
 
 Запустите собранный файл:
 
@@ -101,11 +125,25 @@ dist\yfm.exe -i путь-к-исходникам -o путь-к-результа
 ## Ограничения {#limitations}
 
 * Пользовательские плагины (файл `plugins.js` рядом с проектом) из portable-версии не подключаются.
-* Чтобы обновить CLI до новой версии, соберите файл заново: выполните в папке `yfm-exe` команду `npm install @diplodoc/cli@latest` и повторите [шаг 4](#build).
+
+  {% cut "Как вшить плагины внутрь файла" %}
+
+  Плагины можно упаковать внутрь `yfm.exe` на этапе сборки. Перед последней командой шага 2 скопируйте файл с плагинами в пакет CLI:
+
+  ```shell
+  mkdir -p node_modules/@diplodoc/cli/build/plugins
+  cp путь-к-вашему-plugins.js node_modules/@diplodoc/cli/build/plugins/index.js
+  ```
+
+  После этого соберите файл заново - плагины будут работать на всех машинах без дополнительных файлов.
+
+  {% endcut %}
+
+* Чтобы обновить CLI до новой версии, соберите файл заново: выполните в папке `yfm-exe` команду `npm install @diplodoc/cli@latest` и повторите последнюю команду [шага 2](#build).
 
 ## Сборка под другие системы {#other-targets}
 
-Тем же способом можно собрать файл для macOS или Linux - поменяйте значение параметра `-t` и имя выходного файла:
+Тем же способом можно собрать файл для macOS или Linux - поменяйте в последней команде значение параметра `-t` и имя выходного файла:
 
 | Система | Параметр `-t` |
 | --- | --- |
@@ -119,5 +157,5 @@ dist\yfm.exe -i путь-к-исходникам -o путь-к-результа
 Например, сборка для Linux:
 
 ```shell
-npx pkg node_modules/@diplodoc/cli/build/index.js -c pkg.config.json -t node24-linux-x64 -o dist/yfm-linux
+npx pkg --compress GZip --public -t node24-linux-x64 -o dist/yfm-linux package.json
 ```
