@@ -595,7 +595,7 @@ input-folder
 
 {% endcut %}
 
-{% include [supported-languages](.\_includes\supported-languages.md) %}
+{% include [supported-languages](./_includes/supported-languages.md) %}
 
 {% note warning %}
 
