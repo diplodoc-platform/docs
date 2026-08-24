@@ -172,6 +172,8 @@ items:
             href: tools/docs/translate-ai.md
       - name: Deploying to S3
         href: tools/docs/publish-s3.md
+      - name: Portable CLI build
+        href: tools/docs/portable.md
       - name: Making changes
         hidden: true
         href: contribution.md
