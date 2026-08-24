@@ -235,4 +235,10 @@ navigation:
 
 Полный список поддерживаемых параметров можно найти на [странице компонента Footer на сайте Gravity UI](https://gravity-ui.com/ru/components/navigation/footer).
 
+{% note info %}
+
+При переводе оглавления проверяйте, что ссылки в блоке `navigation` ведут на страницы соответствующей языковой версии. Подробнее: [Многоязычные проекты](../guides/multilingual-projects.md).
+
+{% endnote %}
+
 > Смотри также: [Ajv схема файлов оглавления toc.yaml](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/toc-schema.json)
