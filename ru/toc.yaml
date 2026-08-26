@@ -215,7 +215,7 @@ items:
       - name: Создание PDF из документации
         href: guides/generate-pdf.md
         items:
-          - name: Кастомные стили в PDF
+          - name: Пользовательские стили в PDF
             href: guides/pdf-styles.md
   - name: Инструменты и библиотеки
     labeled: true
