@@ -218,6 +218,9 @@ items:
         href: style/theme.md
       - name: Создание PDF из документации
         href: guides/generate-pdf.md
+        items:
+          - name: Пользовательские стили в PDF
+            href: guides/pdf-styles.md
   - name: Инструменты и библиотеки
     labeled: true
     items:
