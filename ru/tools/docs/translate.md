@@ -1,5 +1,7 @@
 ---
 keywords: ['translate', 'xliff', 'cat', 'i18n', 'l10n', 'localization', 'internationalization']
+tags:
+    - Локализация
 ---
 # Локализация
 

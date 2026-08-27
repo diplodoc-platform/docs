@@ -4,7 +4,7 @@
 
 {% note alert %}
 
-sourcedocs-инклюдер находится в процессе деприкации в пользу [generic-инклюдера](generic.md).
+sourcedocs-инклюдер находится в процессе отключения в пользу [generic-инклюдера](generic.md).
 
 {% endnote %}
 

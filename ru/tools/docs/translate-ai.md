@@ -1,5 +1,7 @@
 ---
 keywords: ['translate', 'ai', 'llm', 'yandexgpt', 'openai', 'openrouter', 'anthropic', 'перевод', 'машинный перевод']
+tags:
+    - Локализация
 ---
 # AI-перевод
 

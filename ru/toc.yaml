@@ -119,7 +119,7 @@ items:
         items:
           - name: Структура проекта
             href: project/index.md
-          - name: Оглавление
+          - name: Оглавление проекта
             href: project/toc.md
             items:
               - name: Несколько оглавлений
@@ -130,9 +130,9 @@ items:
             href: project/navigation.md
           - name: Редиректы
             href: project/redirects.md
-          - name: Метаданные
+          - name: Метаданные статьи
             href: project/meta.md
-          - name: Оглавление страницы документации
+          - name: Оглавление статьи
             href: project/minitoc.md
   - name: Конфигурация проекта
     labeled: true
