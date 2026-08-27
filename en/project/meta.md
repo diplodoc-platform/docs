@@ -111,6 +111,30 @@ Only extending the list of values in [##csp##](../settings.md#resources-csp) is 
 | `object`
 
 — ||
+|| `tags` | List of page tags. After the build, tags are displayed below the article and added to the HTML as separate `<meta property="article:tag" content="...">` elements.
+
+If [search](./search.md) is configured for the project, each tag links to related articles. On the search page, you can select several tags; the results include articles that have at least one of them.
+
+During processing, tags are converted to lowercase, surrounding whitespace is removed, and duplicate values are merged. A tag can contain up to 32 characters.
+
+Tags that start with `_` are considered technical. They are not displayed below the article, added to the HTML as `article:tag`, or used in search.
+
+{% cut "Example" %}
+
+```yaml
+---
+title: Working with tables
+tags:
+  - Markdown
+  - Tables
+---
+```
+
+{% endcut %}
+
+| `string[]`
+
+— ||
 || `title` | Meta title of the page.
 
 Specified in `<meta name="title" content="..."/>`. | `string`
