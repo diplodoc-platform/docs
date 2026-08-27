@@ -1,3 +1,7 @@
+---
+tags:
+    - Стизилизация
+---
 # Подключение CSS и JavaScript
 
 {% note warning %}
