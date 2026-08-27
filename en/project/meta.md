@@ -117,6 +117,8 @@ If [search](./search.md) is configured for the project, each tag links to relate
 
 During processing, tags are converted to lowercase, surrounding whitespace is removed, and duplicate values are merged. A tag can contain up to 32 characters.
 
+Tags that start with `_` are considered technical. They are not displayed below the article, added to the HTML as `article:tag`, or used in search.
+
 {% cut "Example" %}
 
 ```yaml
