@@ -68,6 +68,17 @@ links:
 Прописывается в `<meta name="keywords" content="key1,key2,..."/>`. | `string[]`
 
 — ||
+|| `noIndex` {#no-index} | Запрещает индексирование текущей страницы и исключает её из `llms.txt` и `llms-full.txt`.
+
+```yaml
+---
+noIndex: true
+---
+```
+
+Значение `false` не отменяет `true`, установленное для страницы или её раздела в [`toc.yaml`](./toc.md#no-index), либо глобальный [`docs-viewer.no-index`](../settings.md#no-index). | `boolean`
+
+`false` ||
 || `interface` {#interface} | Секция с настройками отображения интерфейса. Переопределяет установленные в [одноимённой секции .yfm](../settings.md#interface) настройки для текущей страницы.
 
 {% cut "Пример с отключением оглавления на странице" %}
