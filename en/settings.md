@@ -696,9 +696,14 @@ Examples of links and displayed logos:
 | —
 
 — ||
-|| `no-index` | Prohibition on indexing by external robots.
+|| `no-index` {#no-index} | Globally prohibits external robots from indexing the entire documentation.
 
-It is recommended to use it before public launches so that the document is not displayed in search engines. |  `boolean`
+```yaml
+docs-viewer:
+  no-index: true
+```
+
+It is recommended before public launches so that the document is not displayed in search engines. Per-page and per-section [`noIndex`](project/toc.md#no-index) settings cannot cancel the global restriction with `false`. |  `boolean`
 
 `false` ||
 || `project-name` | Forms the project URL. Requirements:

@@ -153,6 +153,51 @@ To make a section accessible only via a direct link and exclude it from the tabl
 
 To completely exclude hidden sections from the build, use the [build key](../tools/docs/settings.md) `--remove-hidden-toc-items=true`.
 
+The `hidden` parameter controls navigation visibility and, together with `--remove-hidden-toc-items`, removal from the build. It does not prohibit indexing. Hidden pages are omitted from `llms.txt` and `llms-full.txt`, but use [`noIndex: true`](#no-index) as well to exclude them from other indexes.
+
+## Disabling indexing {#no-index}
+
+To exclude pages from search indexes and from `llms.txt` and `llms-full.txt`, add `noIndex: true`. You can set it at the `toc.yaml` root, on an individual page, or on a section.
+
+Disable indexing for all documentation in this TOC:
+
+```yaml
+title: Internal documentation
+href: index.md
+noIndex: true
+items:
+  - name: Getting started
+    href: start.md
+```
+
+Disable indexing for an individual page and a section:
+
+```yaml
+items:
+  - name: Draft
+    href: draft.md
+    noIndex: true
+  - name: Internal section
+    href: internal/index.md
+    noIndex: true
+    items:
+      - name: Details
+        href: internal/details.md
+```
+
+For a section, the restriction applies to its own `href` page and every descendant. A root `noIndex` from an included TOC also applies to the inserted pages.
+
+The `true` value is cumulative: `noIndex: false` on a nested page does not cancel a restriction from its parent section, the TOC root, or [page metadata](./meta.md#no-index). The global [`.yfm` `docs-viewer.no-index`](../settings.md#no-index) setting cannot be canceled locally either.
+
+To both hide a page from navigation and disable its indexing, specify both independent parameters:
+
+```yaml
+- name: Service page
+  href: service.md
+  hidden: true
+  noIndex: true
+```
+
 ## Auto-generation of the table of contents
 
 To automatically build a table of contents from a list of md files in a folder, you can use the [generic includer](../guides/generic.md).
