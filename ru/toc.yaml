@@ -168,8 +168,12 @@ items:
       - name: Локализация
         href: tools/docs/translate.md
         items:
+          - name: Машинный перевод
+            href: tools/docs/translate-yandex.md
           - name: AI-перевод
             href: tools/docs/translate-ai.md
+          - name: Обмен XLIFF с CAT-системами
+            href: tools/docs/translate-xliff.md
       - name: Выкладка на S3
         href: tools/docs/publish-s3.md
       - name: Portable-версия CLI

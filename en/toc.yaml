@@ -168,8 +168,12 @@ items:
       - name: Localization
         href: tools/docs/translate.md
         items:
+          - name: Machine translation
+            href: tools/docs/translate-yandex.md
           - name: AI translation
             href: tools/docs/translate-ai.md
+          - name: XLIFF exchange with CAT tools
+            href: tools/docs/translate-xliff.md
       - name: Deploying to S3
         href: tools/docs/publish-s3.md
       - name: Portable CLI build
