@@ -5,7 +5,7 @@ keywords: ['translate', 'ai', 'llm', 'yandexgpt', 'openai', 'openrouter', 'anthr
 
 The command `{{PROGRAM}} translate` can translate documentation using large language models (LLMs). Supported providers are `yandexgpt`, `openai`, `openrouter`, and `anthropic`.
 
-The pipeline is the same as for [other translation providers](translate.md): text is extracted from the markup, translated, and assembled back. Markdown markup, HTML tags, code, and Liquid constructs do not reach the model — only text segments are translated.
+The pipeline is the same as for [other translation methods](translate.md#pipeline): text is extracted from the markup, translated, and assembled back. Markdown markup, HTML tags, code, and Liquid constructs do not reach the model — only text segments are translated.
 
 Here, a provider describes an API protocol, not a specific vendor: any compatible installation (self-hosted model, internal gateway) can be connected with the same provider by [replacing the API address](#custom-api).
 
@@ -90,11 +90,11 @@ The request path for each provider is fixed: if the gateway uses a non-standard 
 
 ## Options reference {#options}
 
-Common command options (`--source`, `--target`, `--files`, `--include`, `--exclude`, `--include-vcs-diff`, `--dry-run`, and others) are described on the [Localization](translate.md) page. The `--target` option can be passed multiple times - translation will be performed into each language. Below are the AI provider options.
+Common command options (`--source`, `--target`, `--files`, `--include`, `--exclude`, `--include-vcs-diff`, `--dry-run`, and others) are described on the [Localization](translate.md#options) page. The `--target` option can be passed multiple times - translation will be performed into each language. Below are the AI provider options.
 
 #|
 || **Option** | **Default** | **Description** ||
-|| `--provider` | `yandex` | Translation provider. For AI translation: `yandexgpt`, `openai`, `openrouter`, or `anthropic`. The default value `yandex` is machine translation via [Yandex Translate](translate.md#auto), not an LLM ||
+|| `--provider` | `yandex` | Translation provider. For AI translation: `yandexgpt`, `openai`, `openrouter`, or `anthropic`. The default value `yandex` is machine translation via [Yandex Translate](translate-yandex.md), not an LLM ||
 || `--auth` | from the environment variable | Token or path to a file with the token. Cannot be placed in the configuration file ||
 || `--model` | depends on the provider | Model identifier ||
 || `--fallback-model` | - | Fallback model in the same format as `--model`. See [Fallback model](#fallback) ||
