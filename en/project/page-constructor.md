@@ -2,7 +2,7 @@
 
 Page constructor (hereinafter – PC) is a library of the [Gravity UI](https://gravity-ui.com/) family for rendering web pages based on data presented in YAML format.
 When creating pages, a component-based approach is used: the page is built using a set of ready-made blocks that can be placed in any order. Each block has a specific type and a set of input data parameters.
-The input data format and the list of available blocks can be found in the [library documentation](https://preview.gravity-ui.com/page-constructor/?path=/docs/documentation-blocks--docs). In the PC storybook, there is a [convenient sandbox](https://preview.gravity-ui.com/page-constructor/1116/?path=/story/editor-main--default) where you can first try out all the blocks and assemble a page, and then copy the ready-made config into your documentation.
+The input data format and the list of available blocks can be found in the [library documentation](https://preview.gravity-ui.com/page-constructor/?path=/docs/documentation-blocks--docs). In the PC storybook, there is a [convenient sandbox](https://diplodoc-platform.github.io/playground/?prefill=true&mode=PC) where you can first try out all the blocks and assemble a page, and then copy the ready-made config into your documentation.
 
 Examples of page design using PC [\[1\]](./pc-example1.yaml) [\[2\]](./pc-example2.yaml) [\[3\]](./pc-example3.yaml)
 
