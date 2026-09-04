@@ -33,12 +33,19 @@ Run in quiet mode.
 Do not output logs to stdout. Disabled by default.
 ||
 ||
-`--jobs, -j`
+`--jobs, -j` {#jobs}
 |
-Run in multithreaded mode.
+Run in [multithreaded mode](../../dev/extensions/multithreading.md).
 If a specific number of threads is not specified, it is calculated automatically based on system parameters
 
 `--jobs 4`, `-j4`, `-j`
+||
+||
+`--worker-max-old-space` {#worker-max-old-space}
+|
+Old space memory limit for each worker thread, in megabytes. Only takes effect when the build is started with `--jobs`.
+
+`--worker-max-old-space 4096`
 ||
 ||
 `--config, -c` {#config} | Path to the [configuration file](../../settings.md).
