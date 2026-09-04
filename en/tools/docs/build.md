@@ -17,6 +17,8 @@ The standard output format of the builder is HTML.
 
 The full list of build parameters can be [found in the article](settings.md) or displayed in the console by running `yfm build --help`.
 
+Builds of large projects can be sped up by processing pages in parallel, see [Multithreaded build](multithreading.md).
+
 ## YFM → YFM {#yfm}
 
 You can perform an intermediate build from YFM to YFM. To do this, specify the launch flag `--output-format=md` when running the command.

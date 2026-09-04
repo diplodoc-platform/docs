@@ -35,7 +35,7 @@ Do not output logs to stdout. Disabled by default.
 ||
 `--jobs, -j` {#jobs}
 |
-Run in [multithreaded mode](../../dev/extensions/multithreading.md).
+Run in [multithreaded mode](multithreading.md).
 If a specific number of threads is not specified, it is calculated automatically based on system parameters
 
 `--jobs 4`, `-j4`, `-j`

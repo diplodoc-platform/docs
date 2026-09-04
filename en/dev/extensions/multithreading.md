@@ -1,11 +1,8 @@
-# Multithreading
+# Multithreading and hooks
 
-The builder can process pages in several threads. The mode is off by default and is enabled with the [`--jobs`](../../tools/docs/settings.md) flag.
+When a build is started with the `--jobs` flag, pages are processed in parallel, in several threads. How to enable the mode and what to expect from it is described in the [Multithreaded build](../../tools/docs/multithreading.md) article. This page is about what it means for an extension.
 
-| Flag | Description |
-| --- | --- |
-| `--jobs, -j [number]` | Build in the given number of threads. If no number is passed, `number of cores - 1` is used. A value of `1` or less does not enable multithreading. |
-| `--worker-max-old-space <MB>` | Old space memory limit for each worker thread. |
+An extension must work correctly in both modes: enabling `--jobs` is the user's choice and the extension cannot influence it.
 
 ## Execution model {#model}
 
@@ -81,6 +78,12 @@ What works here without reservations:
 
 What does not work: accumulating state in the extension's memory expecting to read it later in the main thread. Such state must be returned through `Build.Entry` or collected again in the main thread.
 
+{% note info %}
+
+This is why an extension that "works without `--jobs` and silently loses data with `--jobs`" is almost always accumulating state in an isolated hook.
+
+{% endnote %}
+
 ## What crosses the thread boundary {#serialization}
 
 Only serializable data is passed between threads:
@@ -94,16 +97,20 @@ Functions, classes and closures do not cross the thread boundary. If an extensio
 
 The `Base.Error` hook fires in the thread where the error occurred. Errors from processing individual pages are propagated to the main thread and logged there.
 
+## Idempotent writes {#idempotent-writes}
+
+The same file can be written by different processing paths: as a page from the table of contents and as an included file. In a single threaded build the order of those writes is stable, in a multithreaded one it is not.
+
+Therefore every write path must produce the same result: write the file as a whole, with complete metadata, instead of amending it in parts. Otherwise the build result depends on which thread wrote the file last.
+
 ## Limitations {#limitations}
 
 * **Watch mode is single threaded.** Worker threads are stopped after the first build, incremental rebuilds run in one thread.
 * **VCS data is collected in the main thread only** and is sent to the workers ready made. Version control cannot be accessed from isolated hooks.
-* **Fallback to a single threaded build.** If worker threads fail to initialize within 30 seconds, the build silently continues in one thread. The log will contain the `Threads setup timed out` line.
-* **File write order is not defined.** The same file can be written by different processing paths: as a page from the table of contents and as an included file. In a single threaded build the order is stable, in a multithreaded one it is not. Therefore every write path must produce the same result: write the file as a whole, with complete metadata, instead of amending it in parts.
-* Multithreading pays off on CPU bound work - parsing and rendering a large number of pages. On projects with a few dozen pages the cost of starting the threads may outweigh the gain.
+* **Fallback to a single threaded build.** If worker threads fail to initialize within 30 seconds, the build silently continues in one thread.
 
 ## What to read next {#see-also}
 
+* [Multithreaded build](../../tools/docs/multithreading.md)
 * [Extension Development Principles](./core-concepts.md)
 * [Diplodoc Services](./services.md)
-* [Documentation build settings](../../tools/docs/settings.md)

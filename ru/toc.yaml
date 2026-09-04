@@ -161,6 +161,8 @@ items:
         items:
           - name: Параметры сборки
             href: tools/docs/settings.md
+          - name: Многопоточная сборка
+            href: tools/docs/multithreading.md
           - name: Одностраничная сборка
             href: tools/docs/singlepage.md
       - name: Сборка одного файла

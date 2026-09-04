@@ -64,7 +64,7 @@ items:
             href: extensions/services/search-service.md
           - name: Logger Service
             href: extensions/services/logger-service.md
-      - name: Multithreading
+      - name: Multithreading and hooks
         href: extensions/multithreading.md
   - name: Contributor program
     href: for-contributors.yaml
