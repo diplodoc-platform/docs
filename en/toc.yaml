@@ -161,6 +161,8 @@ items:
         items:
           - name: Build parameters
             href: tools/docs/settings.md
+          - name: Multithreaded build
+            href: tools/docs/multithreading.md
           - name: Single-page build
             href: tools/docs/singlepage.md
       - name: Building a single file

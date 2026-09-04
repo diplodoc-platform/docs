@@ -64,6 +64,8 @@ items:
             href: extensions/services/search-service.md
           - name: Logger Service
             href: extensions/services/logger-service.md
+      - name: Многопоточность и хуки
+        href: extensions/multithreading.md
   - name: Программа для контрибьюторов
     href: for-contributors.yaml
   - name: Релизы
