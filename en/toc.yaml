@@ -95,6 +95,8 @@ items:
             href: syntax/term.md
           - name: Content reuse
             href: syntax/includes.md
+          - name: Audience-specific content
+            href: syntax/audience.md
           - name: Additional features
             href: syntax/additional.md
       - name: Additional YFM features
