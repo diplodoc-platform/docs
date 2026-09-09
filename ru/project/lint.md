@@ -72,6 +72,7 @@ log-levels:
   YFM020: 'warn'    # Invalid yfm directive
   YFM021: 'warn'    # Empty automatic heading anchor
   YFM022: 'info'    # llms-full.txt max size reached
+  YFM023: 'error'   # Invalid or missing visibility audience
 
 
 # Inline code length
@@ -84,6 +85,8 @@ YFM001:
 Подробное описание всех правил с префиксом `YFM` можно найти [по ссылке](https://github.com/diplodoc-platform/yfmlint/blob/master/README.md).
 
 YFM021 сообщает о заголовках с пустым автоматическим якорем. Правило использует плагин anchors из `@diplodoc/transform`; Diplodoc CLI и расширение для VS Code подключают его по умолчанию.
+
+YFM023 сообщает об отсутствующей или некорректной аудитории в блоке `visibility`. Поддерживаются значения `human` и `agent`.
 
 Вы можете переопределить уровень логирования в файле `.yfmlint` в секции `log-levels` отдельно для каждого правила: `error`, `warn`, `disabled`.
 
