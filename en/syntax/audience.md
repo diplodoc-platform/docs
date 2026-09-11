@@ -28,5 +28,5 @@ A regular HTML page and its Markdown companion use the human audience by default
 
 The JSON document API supports the audience parameter for both rendered and raw content, for example `?format=json&audience=agent` and `?format=json&content=raw&audience=agent`. The response contains:
 
-- `audience`: the specific block types found in the article, in stable `human`, `agent` order. For example, `[]` means that there are no audience-specific blocks and `["human", "agent"]` means that both types are present.
-- `contentAudience`: the audience applied to `content`.
+- `audience`: the audience applied to `content`.
+- `audienceSpecificContent`: the specific block types found in the article, in stable `human`, `agent` order. For example, `[]` means that there are no audience-specific blocks and `["human", "agent"]` means that both types are present.
