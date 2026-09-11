@@ -16,7 +16,7 @@ Create a project by sending `POST /projects` with the required fields.
 :::
 ```
 
-The regular HTML and Markdown output includes common and `human` content. Agent-oriented output, such as `llms-full.txt`, includes common and `agent` content. The directive markers themselves are not included in either result.
+The regular HTML, Markdown, and statically generated `llms-full.txt` output includes common and `human` content. When `llms-full.txt` is served by Docs Viewer, add `?audience=agent` to receive common and `agent` content. The Viewer defaults to the human variant. The directive markers themselves are not included in either result.
 
 Only the exact lowercase values `human` and `agent` are supported. YFM lint reports an invalid or missing value as an error, while rendering remains fail-closed and omits the invalid block.
 
@@ -24,7 +24,7 @@ During localization, both variants are translated and the `visibility` markers a
 
 ## Machine-readable representations
 
-A regular HTML page and its Markdown companion use the human audience by default. Add `?audience=agent` to request the agent variant or `?audience=human` to select the human variant explicitly. If the opposite specific variant exists, a Markdown companion response includes an HTTP `Link` header with `rel="alternate"` and the URL of that variant.
+A regular HTML page, its Markdown companion, and Viewer-served `llms-full.txt` use the human audience by default. Add `?audience=agent` to request the agent variant or `?audience=human` to select the human variant explicitly. If the opposite specific variant exists, a Markdown companion response includes an HTTP `Link` header with `rel="alternate"` and the URL of that variant.
 
 The JSON document API supports the audience parameter for both rendered and raw content, for example `?format=json&audience=agent` and `?format=json&content=raw&audience=agent`. The response contains:
 
