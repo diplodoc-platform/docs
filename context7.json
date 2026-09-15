@@ -1,0 +1,31 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Diplodoc",
+  "description": "Docs-as-code platform: YFM (Yandex Flavored Markdown) syntax, the yfm CLI builder (@diplodoc/cli), toc.yaml navigation, translation, and publishing.",
+  "folders": [
+    "en"
+  ],
+  "excludeFolders": [
+    "_assets",
+    "_images",
+    ".github"
+  ],
+  "excludeFiles": [
+    "README.md"
+  ],
+  "rules": [
+    "Diplodoc uses YFM (Yandex Flavored Markdown): CommonMark plus extensions processed by the yfm builder. Keep base text GFM-compatible and put YFM specifics in explicit blocks.",
+    "Every YFM block must be closed and surrounded by blank lines: {% note %}...{% endnote %}, {% cut %}...{% endcut %}, {% list tabs %}...{% endlist %}, multiline tables #|...|#. An unclosed block is a build error.",
+    "Links to other pages are relative paths with the .md extension and must point to files listed in toc.yaml, otherwise the build fails with YFM003 unreachable-link.",
+    "Every page must be listed in toc.yaml (items with name and href). Files that are not in toc.yaml are not built.",
+    "Use {% note info|tip|warning|alert %} only for genuinely important remarks. A plain quote is a blockquote with >.",
+    "Use GFM tables for simple data. For block content or merged cells use multiline tables: #| || cell | cell || |#, where > joins with the cell to the left and ^ with the cell above.",
+    "Includes: {% include [text](path/to/file.md) %} with the path relative to the current file. Variables come from presets.yaml and are written as {{ name }}.",
+    "Image size is set with attributes: ![Alt](_images/pic.png){width=800}. Keep images in a directory prefixed with an underscore, such as _images.",
+    "Do not use raw HTML, footnotes [^1], task lists - [ ], subscript ~x~ or underline ++x++: they are not enabled by default and render as literal text.",
+    "One H1 per file, consecutive heading levels, no emoji (linter rule YFM021).",
+    "Build locally with: npx -p @diplodoc/cli yfm -i <docs dir> -o <output dir>. Add --strict to turn warnings into errors."
+  ],
+  "url": "https://context7.com/diplodoc-platform/docs",
+  "public_key": "pk_rUH3BG1SSobCfrNiJn0k6"
+}
