@@ -2,9 +2,17 @@
   "$schema": "https://context7.com/schema/context7.json",
   "projectTitle": "Diplodoc",
   "description": "Docs-as-code platform: YFM (Yandex Flavored Markdown) syntax, the yfm CLI builder (@diplodoc/cli), toc.yaml navigation, translation, and publishing.",
-  "folders": ["en"],
-  "excludeFolders": ["_assets", "_images", ".github"],
-  "excludeFiles": ["README.md"],
+  "folders": [
+    "en"
+  ],
+  "excludeFolders": [
+    "_assets",
+    "_images",
+    ".github"
+  ],
+  "excludeFiles": [
+    "README.md"
+  ],
   "rules": [
     "Diplodoc uses YFM (Yandex Flavored Markdown): CommonMark plus extensions processed by the yfm builder. Keep base text GFM-compatible and put YFM specifics in explicit blocks.",
     "Every YFM block must be closed and surrounded by blank lines: {% note %}...{% endnote %}, {% cut %}...{% endcut %}, {% list tabs %}...{% endlist %}, multiline tables #|...|#. An unclosed block is a build error.",
@@ -17,5 +25,7 @@
     "Do not use raw HTML, footnotes [^1], task lists - [ ], subscript ~x~ or underline ++x++: they are not enabled by default and render as literal text.",
     "One H1 per file, consecutive heading levels, no emoji (linter rule YFM021).",
     "Build locally with: npx -p @diplodoc/cli yfm -i <docs dir> -o <output dir>. Add --strict to turn warnings into errors."
-  ]
+  ],
+  "url": "https://context7.com/diplodoc-platform/docs",
+  "public_key": "pk_rUH3BG1SSobCfrNiJn0k6"
 }
