@@ -333,6 +333,9 @@ You can use any image link that meets standard favicon requirements. | `string`
 || `feedback` | Hides the feedback at the end of the page. If not specified, feedback is enabled. | `boolean`
 
 `true` ||
+|| `markdownActions` | Controls how the **Copy as Markdown** and **View as Markdown** actions are displayed: as separate buttons (`visible`), in a dropdown (`dropdown`), or hidden (`none`). | `string`
+
+`dropdown` ||
 || `search` | Hides search. If not specified, search is considered enabled. | `boolean`
 
 `true` ||
