@@ -336,6 +336,9 @@ analytics:
 || `gallery` {#gallery} | Открывать [изображения и видео в галерее](./syntax/media.md#gallery). По умолчанию включено. | `boolean`
 
 `true` ||
+|| `markdownActions` | Определяет отображение действий **Скопировать как Markdown** и **Открыть Markdown**: отдельными кнопками (`visible`), в выпадающем меню (`dropdown`) или скрытыми (`none`). | `string`
+
+`dropdown` ||
 || `search` | Скрывает поиск. Если не указан, поиск считается включенным. | `boolean`
 
 `true` ||
