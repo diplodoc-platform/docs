@@ -37,11 +37,26 @@ At the root:
 
 Each table of contents item contains the following fields:
 
-* `name` — the name of a section or group of sections.
+* `name` — the name of a section or group of sections. For a section that links to an article, the field can be omitted, see [name from the article heading](#autoname).
 * `href` — the relative path to the file.
 * `items` — a list of nested items.
 
 All relative paths are calculated from the _location_ of the `toc.yaml` file in which they are specified.
+
+### Section name from the article heading {#autoname}
+
+If a section with an `href` to an md file has no `name` field, or the field is set to `{#T}`, the build takes the name from the first-level heading of that article, including a heading that comes from an [include](../syntax/includes.md). If the article has no first-level heading, the file name without the extension is used.
+
+```yaml
+items:
+  - href: overview.md
+  - name: "{#T}"
+    href: setup.md
+  - name: API reference
+    href: api.md
+```
+
+This way the item name in the table of contents always matches the article heading and is edited in one place. It also helps with translations: such an item does not need to be translated in `toc.yaml`, each language gets the article heading in that language. The rule works the same way as [heading substitution in links](../syntax/links.md#autotitle).
 
 You can group parts of the documentation into [multiple separate tables of contents](./toc-multiple.md).
 
