@@ -80,6 +80,38 @@ For syntax highlighting, specify the language in which the code is written in th
 
 You can find the full list of available languages in [GitHub](https://github.com/highlightjs/highlight.js/tree/master/src/languages).
 
+### Including code from a file {#include-code}
+
+Use the `{% code %}` directive to include a local file as a code block:
+
+````markdown
+{% code "./examples/main.ts" lang="typescript" %}
+````
+
+A path without a leading `/` is resolved relative to the Markdown file containing the directive. A path with a leading `/` is resolved relative to the documentation input root. The `lang` parameter sets the code block language for syntax highlighting. Without this parameter, the block language is empty.
+
+By default, the common indentation is removed from all non-empty lines. Add `keep-indents` to preserve the original indentation:
+
+````markdown
+{% code "./examples/main.ts" keep-indents %}
+````
+
+Use the `lines` parameter to include part of a file. Numeric ranges are one-based and include both boundaries:
+
+````markdown
+{% code "./examples/main.ts" lines="10-25" %}
+````
+
+You can also provide two substring markers separated by `-`. The lines containing the markers are excluded:
+
+````markdown
+{% code "./examples/main.ts" lines="[BEGIN example]-[END example]" %}
+````
+
+If the start or end marker is missing, the CLI emits a warning and uses the beginning or end of the file, respectively. If the end marker occurs before the start marker, the CLI emits a warning and creates an empty code block.
+
+The directive reads only local files inside the documentation input directory. External HTTP and Git sources, automatic named-region selection, and `jsonpath` are not processed by the OSS CLI. A missing file, a path outside the input directory, or an invalid numeric range causes a build error.
+
 ### Displaying line numbers {#line-numbers}
 
 If you need to enable line numbers in a code block, use the keyword `showLineNumbers`.
