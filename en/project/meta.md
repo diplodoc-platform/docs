@@ -54,6 +54,17 @@ Specified in `<meta name="description" content="..."/>` and in [##llms.txt##](..
 Specified in `<meta name="keywords" content="key1,key2,..."/>`. | `string[]`
 
 — ||
+|| `noIndex` {#no-index} | Disables indexing for the current page and excludes it from `llms.txt` and `llms-full.txt`.
+
+```yaml
+---
+noIndex: true
+---
+```
+
+The `false` value does not cancel `true` set for the page or its section in [`toc.yaml`](./toc.md#no-index), or the global [`docs-viewer.no-index`](../settings.md#no-index) setting. | `boolean`
+
+`false` ||
 || `interface` {#interface} | Section with interface display settings. Overrides the settings from the [same-named section of .yfm](../settings.md#interface) for the current page.
 
 {% cut "Example with disabling the table of contents on the page" %}
