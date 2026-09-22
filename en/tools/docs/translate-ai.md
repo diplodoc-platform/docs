@@ -100,6 +100,7 @@ Common command options (`--source`, `--target`, `--files`, `--include`, `--exclu
 || `--fallback-model` | - | Fallback model in the same format as `--model`. See [Fallback model](#fallback) ||
 || `--folder` | - | Identifier of the Yandex AI Studio folder. Only for `yandexgpt`, required with a short model name ||
 || `--api-base` | Provider API URL | Base URL for [compatible installations](#custom-api) ||
+|| `--fallback-api-base` | the `--api-base` value | Base URL for the fallback model only. Requires `--fallback-model`. See [Fallback model](#fallback) ||
 || `--api-header` | - | Additional HTTP header in the format `"Name: value"`. Can be repeated. Overrides standard headers ||
 || `--system-prompt` | built-in | System prompt: string or path to a file. See [Prompts](#prompts) ||
 || `--user-prompt` | built-in | User prompt: string or path to a file ||
@@ -111,7 +112,7 @@ Common command options (`--source`, `--target`, `--files`, `--include`, `--exclu
 || `--judge-threshold` | `70` | Threshold: segments with a lower score are included in the report and log ||
 || `--cache-dir` | - | Directory for the persistent translation cache. See [Cache](#cache) ||
 || `--no-cache` | - | Disable cache for the current run ||
-|| `--temperature` | `0` | Sampling temperature. `0` - deterministic translation ||
+|| `--temperature` | `0` | Sampling temperature. `0` - deterministic translation. The value `none` leaves the parameter out of the request, so the model uses its own value. See [The model rejects temperature](#temperature) ||
 || `--max-output-tokens` | `4000` | Maximum tokens in a single model response ||
 || `--max-batch-tokens` | `2000` | Input token budget for a single request. Segments are grouped into batches up to this limit ||
 || `--max-concurrency` | `5` | Maximum concurrent API requests ||
@@ -244,7 +245,18 @@ The `--fallback-model` option sets a second model on the same provider. If a req
   --model gpt-4o-mini --fallback-model gpt-4o --cache-dir .translate-cache
 ```
 
-The switch is visible in the log: `WARN ... Primary model failed (...); retrying with the fallback model`, and the final `PROCESSED` line gets a `fallback-requests` counter. An authorization error is fatal and is not retried with the fallback model - the models share credentials.
+The switch is visible in the log: `WARN ... Primary model failed (...); retrying with the fallback model`, and the `fallback` counter inside `requests` grows in the final run summary. An authorization error is fatal and is not retried with the fallback model - the models share credentials.
+
+The `--fallback-api-base` option overrides the base URL for the fallback model only. It is needed with gateways that route by URL path: when the vendor is part of the path and the model name travels in the request body, a reserve from another vendor is unreachable through the base URL of the primary model - the gateway answers with an error like "model is not available for vendor".
+
+```bash
+{{PROGRAM}} translate -i . -o ./translated --provider openai --source ru --target en \
+  --api-base https://gateway.example.com/anthropic/v1 --model claude-sonnet-4-5 \
+  --fallback-api-base https://gateway.example.com/openai/v1 --fallback-model gpt-4o \
+  --cache-dir .translate-cache
+```
+
+The fallback model keeps the provider, credentials and headers of the primary one - only the base URL is overridden, so both addresses must speak the protocol of the selected provider. Without `--fallback-model` the option is a configuration error.
 
 ## Translation cache {#cache}
 
@@ -266,18 +278,57 @@ If the project already has translations - manual ones or from another system - t
 {{PROGRAM}} translate seed -i . --source ru --target en --cache-dir .translate-cache
 ```
 
-The translations must live in the same root as the sources, in the target language directory (`ru/page.md` -> `en/page.md`). For each source file, its translation is split into segments the same way as during translation, and the segments are paired positionally:
+The translations must live in the same root as the sources, in the target language directory (`ru/page.md` -> `en/page.md`). For each source file, its translation is split into segments the same way as during translation, and the segments are then paired.
 
-* Files where the segment counts diverge are skipped with a warning - positional pairing would produce shifted pairs there.
-* Segments left untranslated (the text matches the source and contains source-script characters) are also skipped - the model will translate them.
+#### How files are aligned {#seed-align}
+
+Pairing works block by block. A block is a paragraph, a list item, a table row, a heading, a cut title: one line of the document skeleton carrying segments (for YAML files, one translatable property). Blocks of the two files are aligned by their structure and by language-independent anchors of their text: links, inline code and numbers. Inside an aligned block pair, segments are paired positionally.
+
+A divergence stays inside its block. When a translator merged two sentences of a paragraph into one, only that paragraph drops out of the seed and the rest of the file still fills the cache. A section that is not translated yet is left out; a section that moved is found again by its anchors.
+
+A pair is kept only when the two segments can be translations of each other at all: same numbers, every link and code span of one present in the other, inline markup consistent between them. An unpaired segment costs one model request, while a wrong pair puts a foreign sentence into the document.
+
+Segments left untranslated (the text matches the source and contains source-script characters) do not fill the cache - the model will translate them.
+
+#### Repeated sentences {#seed-memory}
+
+The seed keeps two views of the pairs:
+
+* the **dictionary** maps a sentence to its most frequent translation across the project, so a sentence new to a file gets the wording the documentation already uses;
+* the **per-file memory** keeps the pairs of every file in document order: on the next translation the segments of a file are matched against that sequence first, so a sentence repeated in the file with different wordings keeps each of them in place.
+
+A pair the anchors accept but the text makes unlikely (the translation contains an identifier or a name the original does not, the lengths differ several times over) is considered doubtful. Usually it means the translation diverged from the source at this place. Such a pair still reproduces what the file holds, so it stays in the per-file memory, but it does not enter the dictionary.
+
+#### Result {#seed-output}
 
 The result is saved to the file `seed.<source>-<target>.json` in the cache directory. Unlike the main cache, it is not tied to a provider or model and survives changes of prompts, glossary, and model. During translation it is consulted before the main cache, so it reflects the actual state of the translations, including manual edits. Re-running `seed` fully replaces the file.
 
 The subcommand accepts the same scope options as translation (`--files`, `--include`, `--exclude`, `--vars`); the `--cache-dir` option is required. The log summary:
 
 ```
-PROCESSED ru-en seeded-files: 120 seeded-units: 3400 skipped-units: 12 missing-targets: 3 mismatched: 2
+PROCESSED ru-en seeded-files: 1090 seeded-units: 24500 skipped-units: 12 missing-targets: 34 mismatched: 3 failed: 34 partial-files: 140 unseeded-units: 900 doubtful-units: 25
 ```
+
+#|
+|| **Counter** | **Meaning** ||
+|| `seeded-files`, `seeded-units` | Files and segments that produced pairs, partially seeded files included ||
+|| `skipped-units` | Untranslated segments left for the model ||
+|| `missing-targets` | Source files without a translation ||
+|| `partial-files`, `unseeded-units` | Files whose translation aligned only in part, and their segments left without a pair ||
+|| `mismatched` | Files whose translation did not align with the source at all ||
+|| `failed` | Files whose source or translation could not be read or parsed ||
+|| `doubtful-units` | Doubtful pairs: kept for their own file, but out of the dictionary ||
+|#
+
+Files that did not fill the cache completely are listed in the log - a handy list to mark them in a review:
+
+```
+WARN ru/releases.md Existing translation diverges in 13 of 270 units; they were not seeded.
+WARN ru/alien.md Existing translation does not align with the source; the file was not seeded.
+WARN ru/broken.md Failed to seed the file: ...
+```
+
+The translation output follows the skeleton of the source file: blank lines, trailing whitespace and the placement of inline markup markers come from the source, not from the existing translation. A marker the translation lost to its own skeleton (a code span or emphasis right at a segment boundary) is put back into the segment while seeding. The reverse does not compose: when the source hoists a marker that the translation keeps inside the segment, the segment is not reused and goes to the model.
 
 ## Quality assessment {#judge}
 
@@ -319,6 +370,19 @@ Results:
 
 The evaluation does not affect the translation result and does not interrupt the run: a failure in evaluating an individual batch is logged and skipped. In `--dry-run` mode, evaluation is not performed.
 
+## Repairing model answers {#fixes}
+
+Sometimes the model answers with something other than what it was asked for: it adds emphasis around a fragment, drops an inline markup marker or returns the text untranslated. The CLI handles three such cases on its own, before composing the file. Each of them lands in the `fixes` block of the [run report](translate.md#report) and in the summary line of the log, and the last two also produce their own log warnings.
+
+#|
+|| **Case** | **What the CLI does** | **Counters** ||
+|| Added markup | The model wrapped the translation into `**`, `_` or another delimiter that the original did not have. The extra delimiters are stripped silently - in fresh and cached translations alike | `markupStripped` ||
+|| Damaged markup | The model dropped a markup marker and the line does not compose. The fragment is re-requested; when the retry does not fix the markup, the fragment keeps its source text - an untranslated fragment composes cleanly, damaged markup does not | `markupRetried`, `markupDamaged` ||
+|| Untranslated fragment | The model returned the text unchanged in the source language. The fragment is re-requested; when the retry returns the same thing again, the source text is kept. Such a segment does not enter the [cache](#cache), so the next run tries it again | `untranslatedRetried`, `untranslatedKept` ||
+|#
+
+Fragments left with their source text are counted in the `units.untranslated` counter of the report. In `--dry-run` mode no repairs are performed.
+
 ## How to read the log {#log}
 
 #|
@@ -329,12 +393,25 @@ The evaluation does not affect the translation result and does not interrupt the
 || `TRANSLATED <file>` | The file has been translated and written to the output ||
 || `WARN ... Part is too big (~N tokens > M)` | The segment is larger than `--max-batch-tokens` and remained in the source language ||
 || `WARN ... Batch of N fragments failed ... retrying one-by-one` | The model's response could not be parsed into fragments; the batch is retried one segment at a time ||
+|| `WARN ... N fragment(s) came back untranslated; retrying them` | The model returned the fragments unchanged and they are re-requested. See [Repairing model answers](#fixes) ||
+|| `WARN ... N fragment(s) came back with damaged markup; retrying them` | The model damaged the markup of the fragments and they are re-requested ||
+|| `WARN ... N fragment(s) stayed damaged after the retry; keeping their source text` | The retry did not fix the markup, so the fragments kept their source text ||
+|| `WARN <file> Unit returned untranslated by the model.` | The segment came back untranslated even after the retry. It is not written to the cache ||
 || `WARN <file> Translation quality N/100: ...` | The segment's score is below `--judge-threshold` ||
 || `WARN ... Primary model failed ... retrying with the fallback model` | The batch was not translated by the primary model and was sent to the [fallback model](#fallback) ||
+|| `WARN ... The model refused the configured temperature; requests continue without it` | The model does not accept the configured temperature, so requests go without the parameter. See [The model rejects temperature](#temperature) ||
 || `ERR <file> ...` | The file was not translated; the run continues. Only an authorization error is fatal ||
-|| `PROCESSED requests: R input-tokens: I output-tokens: O bytes: B cached-units: C` | Run summary: requests, tokens, text volume, and the number of segments from the cache. With a fallback model configured, a `fallback-requests` counter is added ||
+|| `PROCESSED run <status> in Ts; files: ...; units: ...; requests: ...` | Run summary: status, duration, files, segments and the cache share, characters, tokens, requests (with the number of fallback requests and retries) and errors. The [`--report`](translate.md#report) option writes the same numbers in a machine-readable form ||
 || `PROCESSED judge: N units scored, average score A/100, M below threshold T` | Quality assessment summary ||
 |#
+
+The summary line looks like this:
+
+```
+INFO PROCESSED run success in 12.4s; files: 12 translated, 0 failed; units: 340 (154 cached, 45.3% hit rate); chars: 15200 in / 16900 out; tokens: 5200 in / 4800 out; requests: 18 (2 fallback, 3 retries); errors: 0
+```
+
+When something was repaired during the run, sections about stripped and damaged markup and about untranslated fragments are added to the line: counters that stayed at zero do not make it into the summary.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -357,6 +434,19 @@ The segment turned out to be larger than `--max-batch-tokens` and remained in th
 
 Errors like `response was truncated` mean that the model ran out of the response limit. Increase `--max-output-tokens` or decrease `--max-batch-tokens`.
 
+### The model rejects temperature {#temperature}
+
+Some newer models accept nothing but their own temperature and answer with an error to `temperature: 0`, which the CLI sends by default. Such a refusal is recognized: the request is repeated without the parameter, further requests go without it as well, and the log gets a single `WARN ... The model refused the configured temperature; requests continue without it`. Nothing has to be configured for that.
+
+To leave the parameter out from the start, pass the value `none`:
+
+```bash
+{{PROGRAM}} translate -i . -o ./translated --provider openai --source ru --target en \
+  --temperature none --cache-dir .translate-cache
+```
+
+The default value is `0`: at zero temperature the model answers with the same translation for the same text. For documentation that matters more than variety of wording - otherwise a repeated run rewrites phrases that have already been proofread, and the translation pull request fills up with noise.
+
 ### File is not translated {#out-of-scope}
 
 If an edit in a file does not make it into the translation, first check the run scope: the `--files` and `--include` options narrow the set of files, and changes outside this set do not get into the run — the log for such a file has no `TRANSLATE` line. This is not a cache issue.
@@ -367,9 +457,9 @@ Also keep in mind that the cache is maintained separately for each model: after 
 
 * After `--dry-run` this is expected: files are assembled without calling the model, with the source text.
 * An individual segment may match the original even in a regular run: the model deliberately does not translate text that is already in the target language, proper names, and non-text fragments. An empty model response is never accepted as a translation — in this case, the source text is preserved.
+* When a segment comes back untranslated or with damaged markup, the CLI re-requests it and, if the retry does not help, keeps the source text. Such segments are visible in the log and in the `fixes` and `units.untranslated` counters of the [run report](translate.md#report), and they do not enter the cache - the next run will try to translate them again. See [Repairing model answers](#fixes).
 
 ## Known limitations {#limitations}
 
-* Pages with `::: page-constructor` blocks inside `.md` files are translated unreliably ([translation#273](https://github.com/diplodoc-platform/translation/issues/273)). For now, it is recommended to exclude them from the run via `--exclude`.
 * The request path is fixed for each provider — a gateway with a non-standard API path cannot be connected.
-* The model may corrupt inline markup within a segment (links, emphasis). There is no structural Markdown validation after translation — [quality assessment](#judge) helps find such cases.
+* The model may corrupt inline markup within a segment (links, emphasis). The CLI catches and re-requests some of those cases on its own, see [Repairing model answers](#fixes), but there is no structural Markdown validation after translation — [quality assessment](#judge) helps find the rest.
