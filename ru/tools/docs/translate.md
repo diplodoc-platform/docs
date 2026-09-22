@@ -45,6 +45,8 @@ tags:
 * [пресетов переменных](../../project/presets.md) `presets.yaml`;
 * страниц [Page constructor](../../project/page-constructor.md).
 
+Блоки `::: page-constructor` внутри `.md` тоже разбираются по схеме: на перевод уходят только текстовые поля блоков, YAML-структура блока остается в скелете документа и возвращается в файл без изменений.
+
 Собственные схемы можно подключить опцией `--schema` подкоманды [extract](translate-xliff.md#extract).
 
 ## Общие параметры {#options}
@@ -104,6 +106,9 @@ tags:
 || `--copy-assets` |
 Скопировать непереводимые файлы (изображения и другие ассеты) из папки исходного языка в папки целевых языков, чтобы переведенная версия собиралась самостоятельно
 ||
+|| `--report` |
+Путь к файлу, в который записывается машиночитаемый JSON-отчет о прогоне. По умолчанию отчет не пишется, короткая итоговая строка в логе выводится всегда. См. [Отчет о прогоне](#report)
+||
 || `--timeout` |
 Время ожидания одного запроса к API перевода в миллисекундах. По умолчанию - `5000`
 ||
@@ -128,6 +133,119 @@ tags:
 # Пример неправильного пути:
 ../some/path/to/translated/file.md
 ```
+
+## Отчет о прогоне {#report}
+
+Опция `--report` записывает машиночитаемый отчет о прогоне в JSON: тайминги, объем перевода, использование кэша и резервной модели, оценки качества и ошибки. Отчет предназначен для автоматизации вокруг перевода - пайплайнов CI, учета расхода, дашбордов. На сам перевод опция не влияет и по умолчанию выключена.
+
+```bash
+{{PROGRAM}} translate -i . -o ./translated --provider openai --source ru --target en \
+  --report ./translate-report.json
+```
+
+Путь из командной строки считается от текущей директории, путь из [файла конфигурации](translate-ai.md#config) (ключ `report`) - от расположения `.yfm`.
+
+Короткая итоговая строка пишется в лог всегда, с опцией и без нее:
+
+```
+INFO PROCESSED run success in 12.4s; files: 12 translated, 0 failed; units: 340 (154 cached, 45.3% hit rate); chars: 15200 in / 16900 out; tokens: 5200 in / 4800 out; requests: 18 (2 fallback, 3 retries); errors: 0
+```
+
+### Структура отчета {#report-schema}
+
+Схема отчета - публичный контракт. Поле `schemaVersion` увеличивается при любом несовместимом изменении формата, поэтому потребителю стоит проверять его и отклонять незнакомые версии, а не читать данные наугад. Текущая версия - `1`.
+
+Поля верхнего уровня:
+
+#|
+|| **Поле** | **Описание** ||
+|| `schemaVersion` | Версия схемы отчета ||
+|| `startedAt`, `finishedAt` | Время начала и конца прогона в формате ISO 8601 ||
+|| `durationMs` | Длительность прогона в миллисекундах ||
+|| `status` | `success`, `partial` (прогон завершился, но были ошибки) или `failed` (прогон прерван фатальной ошибкой) ||
+|| `provider` | Провайдер перевода: `yandex`, `yandexgpt`, `openai`, `openrouter` или `anthropic` ||
+|| `model`, `fallbackModel` | Модель и [резервная модель](translate-ai.md#fallback). Только у AI-провайдеров ||
+|| `fallbackUsed` | `true`, если хотя бы один запрос обслужила резервная модель ||
+|| `dryRun` | `true` для прогона с `--dry-run`: объем и токены в таком отчете - оценка ||
+|| `sourceLanguage`, `targetLanguages` | Языки прогона ||
+|| `files` | `selected` - файлы, отобранные для перевода, `skipped` - отфильтрованные до перевода ||
+|| `totals` | Счетчики, просуммированные по всем целевым языкам ||
+|| `targets` | Счетчики по каждому целевому языку, плюс блок `judge` при включенной [оценке качества](translate-ai.md#judge) ||
+|| `errors` | Список ошибок: `target`, `path`, устойчивый код `code` и сообщение ||
+|#
+
+Счетчики (`totals` и каждый элемент `targets`):
+
+#|
+|| **Поле** | **Описание** ||
+|| `files` | `translated` - обработанные файлы, `failed` - упавшие, `retried` - отправленные на повторный заход после временных ошибок ||
+|| `units` | Сегменты: `total` - всего, `translated` - переведено в этом прогоне, `fromCache` - взято из [кэша](translate-ai.md#cache), `untranslated` - вернулись от модели непереведенными, `oversized` - пропущены как слишком большие для одного запроса ||
+|| `chars` | Символы: `source` - в исходных сегментах, `translated` - в переводах этого прогона, `request` - фактически отправлено в запросах ||
+|| `tokens` | Расход токенов по данным провайдера: `input` и `output`. `null`, если провайдер не сообщает расход ||
+|| `requests` | Запросы: `total` - всего, `fallback` - обслужены резервной моделью, `retries` - дополнительные попытки после временных ошибок ||
+|| `cache` | `enabled` - был ли включен кэш, `hits` и `misses` - обращения, `hitRate` - доля попаданий или `null` ||
+|| `fixes` | Починка ответов модели, см. [Починка ответов модели](translate-ai.md#fixes) ||
+|#
+
+Блок `judge` в элементе `targets` появляется при включенной оценке качества и содержит модель-судью (`model`), порог (`threshold`), число оцененных пар (`scored`), средний балл (`averageScore`), число пар ниже порога (`belowThreshold`), число пар, которые судья не смог оценить (`unscored`), и гистограмму баллов `distribution` с ключами `0-9` ... `90-99` и `100`.
+
+Все счетчики заполняют только AI-провайдеры. У [машинного перевода](translate-yandex.md) нет ни расхода токенов, ни кэша, ни оценки качества, ни починки разметки: `tokens` в его отчете - `null`, `cache.enabled` - `false`, счетчики `fixes` нулевые, блока `judge` нет.
+
+Пример отчета:
+
+```json
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-25T10:00:00.000Z",
+  "finishedAt": "2026-08-25T10:00:12.400Z",
+  "durationMs": 12400,
+  "status": "success",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "fallbackModel": "gpt-4o",
+  "fallbackUsed": true,
+  "dryRun": false,
+  "sourceLanguage": "ru",
+  "targetLanguages": ["en"],
+  "files": {"selected": 12, "skipped": 3},
+  "totals": {
+    "files": {"translated": 12, "failed": 0, "retried": 1},
+    "units": {"total": 340, "translated": 182, "fromCache": 154, "untranslated": 4, "oversized": 0},
+    "chars": {"source": 15200, "translated": 16900, "request": 8300},
+    "tokens": {"input": 5200, "output": 4800},
+    "requests": {"total": 18, "fallback": 2, "retries": 3},
+    "cache": {"enabled": true, "hits": 154, "misses": 186, "hitRate": 0.4529},
+    "fixes": {
+      "markupStripped": 2,
+      "markupRetried": 1,
+      "markupDamaged": 0,
+      "untranslatedRetried": 1,
+      "untranslatedKept": 0
+    }
+  },
+  "targets": [
+    {
+      "language": "en",
+      "files": {"translated": 12, "failed": 0, "retried": 1},
+      "units": {"total": 340, "translated": 182, "fromCache": 154, "untranslated": 4, "oversized": 0},
+      "chars": {"source": 15200, "translated": 16900, "request": 8300},
+      "tokens": {"input": 5200, "output": 4800},
+      "requests": {"total": 18, "fallback": 2, "retries": 3},
+      "cache": {"enabled": true, "hits": 154, "misses": 186, "hitRate": 0.4529},
+      "fixes": {
+        "markupStripped": 2,
+        "markupRetried": 1,
+        "markupDamaged": 0,
+        "untranslatedRetried": 1,
+        "untranslatedKept": 0
+      }
+    }
+  ],
+  "errors": []
+}
+```
+
+Отчет о прогоне и отчет [оценки качества](translate-ai.md#judge) - разные файлы. В отчете о прогоне только агрегаты оценки, разбор по сегментам остается в `translate-quality.<язык>.json`.
 
 ## Исключение контента из перевода {#content-filter}
 

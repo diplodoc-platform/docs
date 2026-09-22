@@ -43,6 +43,8 @@ A schema defines which fields of a structured file contain translatable text. Bu
 * [variable presets](../../project/presets.md) `presets.yaml`;
 * [Page constructor](../../project/page-constructor.md) pages.
 
+`::: page-constructor` blocks inside `.md` files are parsed schema-aware as well: only the text fields of the blocks are sent for translation, while the YAML structure of the block stays in the document skeleton and returns to the file unchanged.
+
 Custom schemas can be plugged in with the `--schema` option of the [extract](translate-xliff.md#extract) subcommand.
 
 ## Common parameters {#options}
@@ -102,6 +104,9 @@ Do not translate, only estimate the amount of text and the number of provider re
 || `--copy-assets` |
 Copy non-translatable files (images and other assets) from the source language folder to the target language folders, so the translated version builds on its own
 ||
+|| `--report` |
+Path of the file to write a machine-readable JSON run report to. Disabled by default; a short summary line is always logged. See [Run report](#report)
+||
 || `--timeout` |
 Timeout for a single translation API request, in milliseconds. Defaults to `5000`
 ||
@@ -126,6 +131,119 @@ If you need to limit translation to a known set of files, a list file - for exam
 # Example of an invalid path:
 ../some/path/to/translated/file.md
 ```
+
+## Run report {#report}
+
+The `--report` option writes a machine-readable JSON report of the translation run: timings, translation volume, cache and fallback usage, quality scores and errors. The report is meant for automation around translation - CI pipelines, usage accounting, dashboards. It does not affect translation itself and is disabled by default.
+
+```bash
+{{PROGRAM}} translate -i . -o ./translated --provider openai --source ru --target en \
+  --report ./translate-report.json
+```
+
+A command-line path is resolved from the current directory; a path from the [configuration file](translate-ai.md#config) (the `report` key) is resolved from the location of `.yfm`.
+
+A short summary line is always logged, with or without the option:
+
+```
+INFO PROCESSED run success in 12.4s; files: 12 translated, 0 failed; units: 340 (154 cached, 45.3% hit rate); chars: 15200 in / 16900 out; tokens: 5200 in / 4800 out; requests: 18 (2 fallback, 3 retries); errors: 0
+```
+
+### Report structure {#report-schema}
+
+The report shape is a public contract. The `schemaVersion` field is bumped on any breaking change of the format, so a consumer should check it and reject versions it does not understand instead of reading the data blindly. The current version is `1`.
+
+Top-level fields:
+
+#|
+|| **Field** | **Description** ||
+|| `schemaVersion` | Report schema version ||
+|| `startedAt`, `finishedAt` | Run start and finish time in ISO 8601 format ||
+|| `durationMs` | Run duration in milliseconds ||
+|| `status` | `success`, `partial` (the run finished but recorded errors) or `failed` (the run was aborted by a fatal error) ||
+|| `provider` | Translation provider: `yandex`, `yandexgpt`, `openai`, `openrouter` or `anthropic` ||
+|| `model`, `fallbackModel` | The model and the [fallback model](translate-ai.md#fallback). AI providers only ||
+|| `fallbackUsed` | `true` when at least one request was served by the fallback model ||
+|| `dryRun` | `true` for a `--dry-run` run: volume and tokens in such a report are estimates ||
+|| `sourceLanguage`, `targetLanguages` | Languages of the run ||
+|| `files` | `selected` - files picked for translation, `skipped` - files filtered out before translation ||
+|| `totals` | Counters summed over all target languages ||
+|| `targets` | Counters per target language, plus a `judge` block when [quality assessment](translate-ai.md#judge) is enabled ||
+|| `errors` | Recorded errors: `target`, `path`, a stable `code` and a message ||
+|#
+
+Counters (`totals` and every entry of `targets`):
+
+#|
+|| **Field** | **Description** ||
+|| `files` | `translated` - processed files, `failed` - failed ones, `retried` - files re-queued after transient errors ||
+|| `units` | Segments: `total` - seen in total, `translated` - translated during this run, `fromCache` - served from the [cache](translate-ai.md#cache), `untranslated` - returned by the model untranslated, `oversized` - skipped as too big for a single request ||
+|| `chars` | Characters: `source` - in the source segments, `translated` - in the translations of this run, `request` - actually sent in requests ||
+|| `tokens` | Token usage as reported by the provider: `input` and `output`. `null` when the provider does not report usage ||
+|| `requests` | Requests: `total` - in total, `fallback` - served by the fallback model, `retries` - extra attempts after transient errors ||
+|| `cache` | `enabled` - whether the cache was active, `hits` and `misses` - lookups, `hitRate` - the hit ratio or `null` ||
+|| `fixes` | Repairs of model answers, see [Repairing model answers](translate-ai.md#fixes) ||
+|#
+
+The `judge` block of a `targets` entry appears when quality assessment is enabled and holds the judge model (`model`), the threshold (`threshold`), the number of scored pairs (`scored`), the average score (`averageScore`), the number of pairs below the threshold (`belowThreshold`), the number of pairs the judge failed to score (`unscored`) and the `distribution` histogram with the keys `0-9` ... `90-99` and `100`.
+
+All counters are filled by AI providers only. [Machine translation](translate-yandex.md) has no token usage, no cache, no quality assessment and no markup repair: `tokens` in its report is `null`, `cache.enabled` is `false`, the `fixes` counters stay zero and there is no `judge` block.
+
+An example report:
+
+```json
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-25T10:00:00.000Z",
+  "finishedAt": "2026-08-25T10:00:12.400Z",
+  "durationMs": 12400,
+  "status": "success",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "fallbackModel": "gpt-4o",
+  "fallbackUsed": true,
+  "dryRun": false,
+  "sourceLanguage": "ru",
+  "targetLanguages": ["en"],
+  "files": {"selected": 12, "skipped": 3},
+  "totals": {
+    "files": {"translated": 12, "failed": 0, "retried": 1},
+    "units": {"total": 340, "translated": 182, "fromCache": 154, "untranslated": 4, "oversized": 0},
+    "chars": {"source": 15200, "translated": 16900, "request": 8300},
+    "tokens": {"input": 5200, "output": 4800},
+    "requests": {"total": 18, "fallback": 2, "retries": 3},
+    "cache": {"enabled": true, "hits": 154, "misses": 186, "hitRate": 0.4529},
+    "fixes": {
+      "markupStripped": 2,
+      "markupRetried": 1,
+      "markupDamaged": 0,
+      "untranslatedRetried": 1,
+      "untranslatedKept": 0
+    }
+  },
+  "targets": [
+    {
+      "language": "en",
+      "files": {"translated": 12, "failed": 0, "retried": 1},
+      "units": {"total": 340, "translated": 182, "fromCache": 154, "untranslated": 4, "oversized": 0},
+      "chars": {"source": 15200, "translated": 16900, "request": 8300},
+      "tokens": {"input": 5200, "output": 4800},
+      "requests": {"total": 18, "fallback": 2, "retries": 3},
+      "cache": {"enabled": true, "hits": 154, "misses": 186, "hitRate": 0.4529},
+      "fixes": {
+        "markupStripped": 2,
+        "markupRetried": 1,
+        "markupDamaged": 0,
+        "untranslatedRetried": 1,
+        "untranslatedKept": 0
+      }
+    }
+  ],
+  "errors": []
+}
+```
+
+The run report and the [quality assessment](translate-ai.md#judge) report are different files. The run report carries only the aggregate scores; the per-segment breakdown stays in `translate-quality.<language>.json`.
 
 ## Excluding content from translation {#content-filter}
 
