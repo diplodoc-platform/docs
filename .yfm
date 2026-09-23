@@ -15,6 +15,7 @@ search:
 interface:
   toc-header: false
   favicon-src: https://storage.yandexcloud.net/diplodoc-www-assets/favicon/favicon.ico
+  markdownActions: visible
 
 extensions:
   - name: mdit-plugins
