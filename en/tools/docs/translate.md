@@ -23,7 +23,7 @@ If translation is done by people in a Computer Assisted Translation (CAT) tool, 
 
 ## How translation works {#pipeline}
 
-Each document is split into segments - sentences, headings, table cells. YFM markup, HTML tags, code, and Liquid constructs are not sent for translation: they stay in the document "skeleton", and after translation the segments are put back in place. Repeated segments are translated once.
+Each document is split into segments - sentences, headings, table cells. YFM markup, HTML tags, Liquid constructs, and code (except comments and labels, see [Code and diagrams](#code)) are not sent for translation: they stay in the document "skeleton", and after translation the segments are put back in place. Repeated segments are translated once.
 
 Files of each language live in their own language folder: sources, for example, in `ru/`, and the translation result in the target language folder, for example `en/`. You don't need to specify the language folder in paths - it is added automatically based on the `--source` and `--target` values.
 
@@ -46,6 +46,31 @@ A schema defines which fields of a structured file contain translatable text. Bu
 `::: page-constructor` blocks inside `.md` files are parsed schema-aware as well: only the text fields of the blocks are sent for translation, while the YAML structure of the block stays in the document skeleton and returns to the file unchanged.
 
 Custom schemas can be plugged in with the `--schema` option of the [extract](translate-xliff.md#extract) subcommand.
+
+### Code and diagrams {#code}
+
+Only the parts of code blocks written for the reader go to translation. How much exactly is set by the `--code` option (the `code` key in the `translate` section of `.yfm`):
+
+#|
+|| **Mode** | **What is translated** ||
+|| `no` | Nothing, code blocks are copied as they are ||
+|| `precise` | Placeholders in angle brackets (`<cluster-name>`) and comments in `bash` and `shell` blocks ||
+|| `adaptive` | Also line comments in blocks of any language (`#`, `//`, `--`) and labels of [Mermaid](../../custom-plugins/mermaid.md) diagrams: nodes, edges, notes, titles. Commented-out code, tool directives, and separators stay as they are ||
+|| `all` | The whole block, code included ||
+|#
+
+AI providers work in the `adaptive` mode by default, [Yandex Translate](translate-yandex.md) in the `precise` mode. The code itself is not translated in any mode except `all`.
+
+The mode of a single block is set in its info string:
+
+````markdown
+```yaml translate=precise
+# This comment stays in the source language
+key: value
+```
+````
+
+The [`seed`](translate-ai.md#seed) subcommand must run in the same mode as the translation: the mode decides which segments a file is split into. If you change the mode, pass the same `--code` value to both commands.
 
 ## Common parameters {#options}
 
@@ -94,6 +119,9 @@ Adds files changed in the git or arc working copy to the translation. The `input
 The optional value is the ref to compute the diff against (defaults to `HEAD`). Git-syntax ranges (`a..b`, `a...b`) work for both systems. Untracked files are always included.
 \
 Combines with `--include`: files from both sets are translated. If there are no changes, the command finishes successfully without translation
+||
+|| `--code` |
+How much of code blocks goes to translation: `no`, `precise`, `adaptive`, or `all`. Defaults to `adaptive` for AI providers and `precise` for Yandex Translate. See [Code and diagrams](#code)
 ||
 || `--vars`, `-v` |
 Build variables in JSON format. The `translate` command ignores `presets.yaml` - variables are passed only via this option
@@ -181,7 +209,7 @@ Counters (`totals` and every entry of `targets`):
 || `chars` | Characters: `source` - in the source segments, `translated` - in the translations of this run, `request` - actually sent in requests ||
 || `tokens` | Token usage as reported by the provider: `input` and `output`. `null` when the provider does not report usage ||
 || `requests` | Requests: `total` - in total, `fallback` - served by the fallback model, `retries` - extra attempts after transient errors ||
-|| `cache` | `enabled` - whether the cache was active, `hits` and `misses` - lookups, `hitRate` - the hit ratio or `null` ||
+|| `cache` | `enabled` - whether the cache was active, `hits` and `misses` - lookups, `hitRate` - the hit ratio or `null`, `hints` - segments sent with their previous version from the seed (see [Changed sentences](translate-ai.md#seed-hints)) ||
 || `fixes` | Repairs of model answers, see [Repairing model answers](translate-ai.md#fixes) ||
 |#
 
@@ -212,7 +240,7 @@ An example report:
     "chars": {"source": 15200, "translated": 16900, "request": 8300},
     "tokens": {"input": 5200, "output": 4800},
     "requests": {"total": 18, "fallback": 2, "retries": 3},
-    "cache": {"enabled": true, "hits": 154, "misses": 186, "hitRate": 0.4529},
+    "cache": {"enabled": true, "hits": 154, "misses": 186, "hitRate": 0.4529, "hints": 12},
     "fixes": {
       "markupStripped": 2,
       "markupRetried": 1,
@@ -229,7 +257,7 @@ An example report:
       "chars": {"source": 15200, "translated": 16900, "request": 8300},
       "tokens": {"input": 5200, "output": 4800},
       "requests": {"total": 18, "fallback": 2, "retries": 3},
-      "cache": {"enabled": true, "hits": 154, "misses": 186, "hitRate": 0.4529},
+      "cache": {"enabled": true, "hits": 154, "misses": 186, "hitRate": 0.4529, "hints": 12},
       "fixes": {
         "markupStripped": 2,
         "markupRetried": 1,
