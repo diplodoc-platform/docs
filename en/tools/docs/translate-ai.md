@@ -112,6 +112,7 @@ Common command options (`--source`, `--target`, `--files`, `--include`, `--exclu
 || `--judge-threshold` | `70` | Threshold: segments with a lower score are included in the report and log ||
 || `--cache-dir` | - | Directory for the persistent translation cache. See [Cache](#cache) ||
 || `--no-cache` | - | Disable cache for the current run ||
+|| `--no-memory-hints` | - | Do not send a changed sentence together with its previous version. See [Changed sentences](#seed-hints) ||
 || `--temperature` | `0` | Sampling temperature. `0` - deterministic translation. The value `none` leaves the parameter out of the request, so the model uses its own value. See [The model rejects temperature](#temperature) ||
 || `--max-output-tokens` | `4000` | Maximum tokens in a single model response ||
 || `--max-batch-tokens` | `2000` | Input token budget for a single request. Segments are grouped into batches up to this limit ||
@@ -148,6 +149,7 @@ The value of `--system-prompt` and `--user-prompt` is a string or a path to a fi
 * `not_var{{context}}` - document context (title and file path);
 * `not_var{{contextFiles}}` - sections from [`--context-file`](#context);
 * `not_var{{separator}}` - fragment separator;
+* `not_var{{memory}}` - previous versions of changed sentences (see [Changed sentences](#seed-hints)). Without the placeholder the block goes before the fragments;
 * `not_var{{fragments}}`, `not_var{{text}}` - fragments to translate (only in `--user-prompt`).
 
 Example: require adherence to a corporate tone:
@@ -267,6 +269,7 @@ How the cache works:
 * For each combination of "provider + model + language pair", a separate file `<provider>.<model>.<source>-<target>.json` is created. Changing `--model` does not overwrite the cache of another model, but it does not use it either.
 * Changing prompts or the glossary automatically invalidates the cache: saved translations become outdated and are performed again. Updating the CLI with built-in prompts has the same effect.
 * `--no-cache` disables the cache for one run without deleting saved translations.
+* Markup inside a segment is numbered per segment. A block added at the top of a file does not change the segments below it, and they are still taken from the cache.
 
 It makes sense to commit the cache directory to the repository or keep it between CI runs - then, with regular translations, only the changed segments are paid for.
 
@@ -298,6 +301,14 @@ The seed keeps two views of the pairs:
 * the **per-file memory** keeps the pairs of every file in document order: on the next translation the segments of a file are matched against that sequence first, so a sentence repeated in the file with different wordings keeps each of them in place.
 
 A pair the anchors accept but the text makes unlikely (the translation contains an identifier or a name the original does not, the lengths differ several times over) is considered doubtful. Usually it means the translation diverged from the source at this place. Such a pair still reproduces what the file holds, so it stays in the per-file memory, but it does not enter the dictionary.
+
+#### Changed sentences {#seed-hints}
+
+A segment the seed does not cover goes to the model. When the per-file memory knows its previous version (the sentence was edited, not written anew), the request also carries that previous source, its existing translation, and the list of changed words, with the instruction to apply exactly these changes to the translation. The model changes what the edit changed and keeps the rest of the wording: the translated page gets a diff of the same size as the source, and terminology does not drift from edit to edit.
+
+The previous version is the unused entry of the per-file memory that shares the most words with the segment (at least 60%); every entry is used once. A segment without such an entry is translated as usual. For the memory to know the versions the files had before the edit, run `seed` right before the translation.
+
+The number of segments sent with a previous version is shown by the `memory-hints: N` counter in the `PROCESSED requests: ...` log line and by the `cache.hints` field of the [report](translate.md#report). The previous version counts towards `--max-batch-tokens` together with the segment. To turn the feature off, use `--no-memory-hints` or `memoryHints: false` in the `translate` section of the configuration.
 
 #### Result {#seed-output}
 
