@@ -1,4 +1,4 @@
-# О Diplodoc
+# О Diplodoc1
 
 Diplodoc — платформа для работы с документацией на основе подхода «docs as code».
 
