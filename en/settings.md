@@ -188,6 +188,9 @@ Build a [single-page build](tools/docs/singlepage.md). A file `single-page.html`
 
 `false`
 ||
+|| `sitemap` {#sitemap} | Generate a `sitemap.xml` file in the build output. The file lists the documentation pages as absolute URLs resolved against the `baseHref` parameter, so setting `baseHref` is required. Pages marked `noIndex` are not included. | `boolean`
+
+`false` ||
 || `staticContent` | Build the article's HTML content as part of the layout. By default, it is in a JS object and is inserted into the page during rendering in the browser. | `boolean`
 
 `false` ||
