@@ -168,7 +168,7 @@ To make a section accessible only via a direct link and exclude it from the tabl
 
 To completely exclude hidden sections from the build, use the [build key](../tools/docs/settings.md) `--remove-hidden-toc-items=true`.
 
-The `hidden` parameter controls navigation visibility and, together with `--remove-hidden-toc-items`, removal from the build. It does not prohibit indexing. Hidden pages are omitted from `llms.txt` and `llms-full.txt`, but use [`noIndex: true`](#no-index) as well to exclude them from other indexes.
+The `hidden` parameter controls navigation visibility and, together with `--remove-hidden-toc-items`, removal from the build. On its own it does not prohibit indexing. Hidden pages are omitted from `llms.txt` and `llms-full.txt`, but to exclude them from other indexes either add [`noIndex: true`](#no-index) or enable the [`search.hiddenPolicy`](../settings.md#search-hidden-policy) parameter in `.yfm`, which applies `noIndex` to all hidden pages and their nested items. An explicit `noIndex` value on a hidden page or section takes precedence over this setting.
 
 ## Disabling indexing {#no-index}
 

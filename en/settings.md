@@ -475,6 +475,13 @@ Options:
 * `algolia` — cloud search based on Algolia. | `string`
 
 — (search not connected) ||
+|| `hiddenPolicy` {#search-hidden-policy} | If set to ##true##, pages hidden with the [`hidden`](project/toc.md#hidden) parameter in `toc.yaml` get [`noIndex: true`](project/toc.md#no-index) and are excluded from search indexes: local, Algolia, and external search engines. All pages nested in a hidden section are excluded as well.
+
+An explicit `noIndex` value on a page or section takes precedence over the policy: `noIndex: false` keeps a hidden page searchable, `noIndex: true` excludes it regardless of the setting.
+
+The parameter also applies when search is disabled and in `md` builds: the restriction is written to page metadata. | `boolean`
+
+`false` ||
 |#
 
 ### Parameters for local search (`provider: local`) {#search-local}
