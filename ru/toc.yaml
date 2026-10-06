@@ -95,8 +95,6 @@ items:
             href: syntax/term.md
           - name: Переиспользование контента
             href: syntax/includes.md
-          - name: Контент для разных аудиторий
-            href: syntax/audience.md
           - name: Дополнительные возможности
             href: syntax/additional.md
       - name: Дополнительные возможности YFM
@@ -251,4 +249,3 @@ items:
     href: jam.md
   - name: Для разработчиков
     href: dev/index.yaml
-
