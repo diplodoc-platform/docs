@@ -5,7 +5,7 @@ keywords: ['translate', 'ai', 'llm', 'yandexgpt', 'openai', 'openrouter', 'anthr
 
 The command `{{PROGRAM}} translate` can translate documentation using large language models (LLMs). Supported providers are `yandexgpt`, `openai`, `openrouter`, and `anthropic`.
 
-The pipeline is the same as for [other translation methods](translate.md#pipeline): text is extracted from the markup, translated, and assembled back. Markdown markup, HTML tags, code, and Liquid constructs do not reach the model — only text segments are translated.
+The pipeline is the same as for [other translation methods](translate.md#pipeline): the CLI extracts translatable segments and assembles documents using the saved skeleton. Inline markup within segments can change in the model response, so [review the result](#verify).
 
 Here, a provider describes an API protocol, not a specific vendor: any compatible installation (self-hosted model, internal gateway) can be connected with the same provider by [replacing the API address](#custom-api).
 
@@ -41,9 +41,18 @@ Here, a provider describes an API protocol, not a specific vendor: any compatibl
      --cache-dir .translate-cache --copy-assets
    ```
 
-5. Check the result: re-running the same command should show `requests: 0` — all segments are taken from the [cache](#cache). The translated version can be built with the usual `{{PROGRAM}} build`.
+5. [Review the result](#verify) and build the translated version with the usual `{{PROGRAM}} build`. A repeated run may show `requests: 0` when all segments come from the [cache](#cache), but this does not confirm translation completeness or quality.
 
 An error in one file or exceeding limits does not stop the run: failed files are marked with `ERR`, while the rest continue. Re-running the command will finish the leftovers — already translated segments will be taken from the cache.
+
+## Review the result {#verify}
+
+1. Read the [run report](translate.md#report): check file errors, partial results, and `units.untranslated`. No model requests means memory reuse, not a quality check.
+2. Compare the source before and after the change with the translation before and after the run. Check that the changed meaning reaches the translation and that approved wording is preserved where the source has not changed.
+3. Review glossary terms, numbers, negations, links, code, headings, lists, and tables. Check meaning and formatting separately; a high [judge](#judge) score does not replace proofreading.
+4. Build the target documentation with its usual variables and presets. A successful build helps check structure and links, but does not confirm translation accuracy.
+
+Before using a new option, check the running CLI version with `{{PROGRAM}} --version` and confirm the option is listed in `{{PROGRAM}} translate --help`. GitHub master, the published package, and the version pinned in CI can differ.
 
 ## Providers {#providers}
 
@@ -111,9 +120,9 @@ Common command options (`--source`, `--target`, `--files`, `--include`, `--exclu
 || `--judge-model` | translation model | Model for quality assessment ||
 || `--judge-threshold` | `70` | Threshold: segments with a lower score are included in the report and log ||
 || `--cache-dir` | - | Directory for the persistent translation cache. See [Cache](#cache) ||
-|| `--no-cache` | - | Disable cache for the current run ||
+|| `--no-cache` | - | Disable the model response cache, seed, and its hints for the current run. See [Retranslate selected files](#retranslate) ||
 || `--no-memory-hints` | - | Do not send a changed sentence together with its previous version. See [Changed sentences](#seed-hints) ||
-|| `--temperature` | `0` | Sampling temperature. `0` - deterministic translation. The value `none` leaves the parameter out of the request, so the model uses its own value. See [The model rejects temperature](#temperature) ||
+|| `--temperature` | `0` | Sampling temperature. `0` reduces sampling randomness but does not guarantee identical results across repeated requests. The value `none` leaves the parameter out of the request, so the model uses its own value. See [The model rejects temperature](#temperature) ||
 || `--max-output-tokens` | `4000` | Maximum tokens in a single model response ||
 || `--max-batch-tokens` | `2000` | Input token budget for a single request. Segments are grouped into batches up to this limit ||
 || `--max-concurrency` | `5` | Maximum concurrent API requests ||
@@ -236,7 +245,7 @@ The pairs are inserted into the prompt of each request to the model as a list of
 * The model handles word forms on its own; you do not need to add separate entries for cases and plural forms.
 * The entire glossary goes into every request and consumes tokens on each batch. Keep only terms that are truly important or that the model confuses, not the entire product dictionary.
 
-Changing the glossary invalidates the [translation cache](#cache): after editing the file, all segments are translated again.
+Changing the glossary invalidates the [model response cache](#cache), but not the [seed from existing translations](#seed-output). A matching seed pair is reused before calling the model, so an approved term may remain unchanged. To generate a new translation for selected files, [disable saved memory for the run](#retranslate).
 
 ### Fallback model {#fallback}
 
@@ -267,11 +276,28 @@ The `--cache-dir` option enables a persistent cache: "segment — translation" p
 How the cache works:
 
 * For each combination of "provider + model + language pair", a separate file `<provider>.<model>.<source>-<target>.json` is created. Changing `--model` does not overwrite the cache of another model, but it does not use it either.
-* Changing prompts or the glossary automatically invalidates the cache: saved translations become outdated and are performed again. Updating the CLI with built-in prompts has the same effect.
-* `--no-cache` disables the cache for one run without deleting saved translations.
+* Changing prompts or the glossary invalidates the model response cache. Updating the CLI with built-in prompts has the same effect. The [seed from existing translations](#seed-output) remains available: matching seed pairs can be reused without a model request.
+* `--no-cache` disables the model response cache and seed for one run without deleting saved translations. See [Retranslate selected files](#retranslate).
 * Markup inside a segment is numbered per segment. A block added at the top of a file does not change the segments below it, and they are still taken from the cache.
 
 It makes sense to commit the cache directory to the repository or keep it between CI runs - then, with regular translations, only the changed segments are paid for.
+
+### Retranslate selected files {#retranslate}
+
+To generate a new translation after changing the model, glossary, or prompt, disable saved memory for this run:
+
+```bash
+{{PROGRAM}} translate -i . -o ./translated \
+  --provider openai --source ru --target en \
+  --files ru/index.md --cache-dir .translate-cache --no-cache \
+  --report ./translate-report.json
+```
+
+`--no-cache` does not delete cache files. The CLI does not open the persistent store and does not use the model response cache, seed, per-file memory, or previous-translation hints. The glossary and context still apply. Repeated segments within a run can still share a request, so each occurrence does not require its own request.
+
+`--no-memory-hints` only disables sending previous versions of changed sentences to the model. Existing pairs for unchanged segments can still be reused from memory.
+
+The scope is still controlled by `--files`, `--include`, and `--exclude`: disabling the cache does not automatically select the entire project. Token usage and the diff can grow. [Review the result](#verify) before accepting the new wording.
 
 ### Seeding the cache from existing translations {#seed}
 
