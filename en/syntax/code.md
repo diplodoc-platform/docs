@@ -166,7 +166,7 @@ By default, the common indentation is removed from all non-empty lines. Add `kee
 {% code "./examples/main.ts" keep-indents %}
 ````
 
-Use the `lines` parameter to include part of a file by providing two substring markers separated by `-`. The lines containing the markers are excluded. Selection by line numbers is not supported.
+Use the `lines` parameter to include part of a file by providing two substring markers separated by `-`. The lines containing the markers are excluded.
 
 For example, `examples/main.ts` contains:
 
