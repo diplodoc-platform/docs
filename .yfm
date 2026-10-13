@@ -5,6 +5,8 @@ buildManifest: true
 vcs: true
 mtimes: true
 
+ai:
+  mdCompanions: true
 
 llms:
   enabled: true

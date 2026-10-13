@@ -70,13 +70,13 @@ OpenGraph позволяет контролировать представлен
 
 {% endnote %}
 
-Пример использования в статье документации: {#meta-information-example}
+Пример использования в статье документации. {#meta-information-example}
 
 #|
-|| **Исходный код в файле** | **Результат в документации** ||
-||
+||**Исходный код в файле**:||
 
-```yaml
+||
+```yaml wrap
 ---
 metadata:
     - property: 'og:type'
@@ -95,16 +95,15 @@ metadata:
       content: 'Иван Иванов'
     - property: 'article:author'
       content: 'Петр Петров'
-    - property: 'article:tag'
-      content: 'Жара'
-    - property: 'article:tag'
-      content: 'Москва'
+tags:
+  - Жара
+  - Москва
 ---
 ```
-
-|
-
-```html
+||
+||**Результат в документации**:||
+||
+```html wrap
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="В Москве побит температурный рекорд 1922 года"/>
 <meta property="og:url" content="https://www.example-news.com/life/weather/moscow#cao"/>
@@ -116,7 +115,6 @@ metadata:
 <meta property="article:tag" content="Жара">
 <meta property="article:tag" content="Москва">
 ```
-
 ||
 |#
 
@@ -124,75 +122,76 @@ metadata:
 
 Статьи документации можно разметить [следующими элементами](https://yandex.ru/support/metrica/publishers/open-graph/open-graph.html#open-graph__material):
 
-#|
-|| **Элемент** | **Комментарий** ||
-|| Тип описываемого объекта[*](*parametr) | Метрика поддерживает только разметку объектов типа [article](https://ogp.me/#type_article). Другие объекты, размеченные по стандарту [Open Graph](https://ogp.me/#type_article), не попадут в отчеты Метрики. Тип объекта указывается в свойстве `og:type`.
+[Тип описываемого объекта *](*parametr)
+:   Метрика поддерживает только разметку объектов типа [article](https://ogp.me/#type_article). Другие объекты, размеченные по стандарту [Open Graph](https://ogp.me/#type_article), не попадут в отчеты Метрики. Тип объекта указывается в свойстве `og:type`.
 
-```html
-<meta property="og:type" content="article">
-```
+    ```html
+    <meta property="og:type" content="article">
+    ```
 
-||
-|| Заголовок[*](*parametr) | Заголовок отображается в отчетах Метрики. Он указывается в свойстве `og:title`.
+[Заголовок *](*parametr)
+:   Заголовок отображается в отчетах Метрики. Он указывается в свойстве `og:title`.
 
-```html
-<meta property="og:title" content="В Москве побит температурный рекорд 1922 года">
-```
+    ```html
+    <meta property="og:title" content="В Москве побит температурный рекорд 1922 года">
+    ```
 
-||
-|| Текст[*](*parametr) | В качестве текста берется содержимое узла, в который вложен описываемый материал. Если разметка находится в теге `head`, текстом будет все содержимое тега `body`. Символы тегов не учитываются. В тексте определяется количество символов — это нужно для расчета объема материала и метрик доскроллов и дочтения.
+[Текст *](*parametr)
+:   В качестве текста берется содержимое узла, в который вложен описываемый материал. Если разметка находится в теге `head`, текстом будет все содержимое тега `body`. Символы тегов не учитываются. В тексте определяется количество символов — это нужно для расчета объема материала и метрик доскроллов и дочтения.
 
-{% note info %}
+    {% note info %}
 
-Полную статистику можно получить по материалу, в тексте которого больше 500 символов.
+    Полную статистику можно получить по материалу, в тексте которого больше 500 символов.
 
-{% endnote %}
-||
-|| Автор | Автор указывается с помощью свойства `article:author`. Если авторов несколько, перечислите их в разных метатегах.
+    {% endnote %}
 
-```html
-<meta property="article:author" content="Иван Иванов">
-<meta property="article:author" content="Петр Петров">
-```
+Автор
+:   Автор указывается с помощью свойства `article:author`. Если авторов несколько, перечислите их в разных метатегах.
 
-Благодаря этим данным можно посмотреть статистику по отдельным авторам. ||
-|| Тематика | В качестве тематик можно указать, например, ключевые слова или хэштеги. Укажите тематики в свойстве `article:tag`. Если тематик несколько, перечислите их в разных метатегах.
+    ```html
+    <meta property="article:author" content="Иван Иванов">
+    <meta property="article:author" content="Петр Петров">
+    ```
 
-```html
-<meta property="article:tag" content="Жара">
-<meta property="article:tag" content="Москва">
-```
+    Благодаря этим данным можно посмотреть статистику по отдельным авторам.
 
-||
-|| Даты публикации и изменения | Даты публикации и изменения указываются в свойствах `article:published_time` и `article:modified_time`. Даты записываются в формате [ISO 8601](https://www.iso.org/standard/40874.html).
+Тематика
+:   В качестве тематик можно указать, например, ключевые слова или хэштеги. Укажите тематики в свойстве `article:tag`. Если тематик несколько, перечислите их в разных метатегах.
 
-```html
-<meta property="article:modified_time" content="2018-12-11T08:56:49Z">
-<meta property="article:published_time" content="2018-11-06T09:26:10+04:00">
-```
+    ```html
+    <meta property="article:tag" content="Жара">
+    <meta property="article:tag" content="Москва">
+    ```
 
-||
-|| Рубрика | Рубрика — это раздел сайта, посвященный определенной теме. Чтобы указать рубрику материала, используйте свойство `article:section`.
+Даты публикации и изменения
+:   Даты публикации и изменения указываются в свойствах `article:published_time` и `article:modified_time`. Даты записываются в формате [ISO 8601](https://www.iso.org/standard/40874.html).
 
-```html
-<meta property="article:section" content="Погода">
-```
+    ```html
+    <meta property="article:modified_time" content="2018-12-11T08:56:49Z">
+    <meta property="article:published_time" content="2018-11-06T09:26:10+04:00">
+    ```
 
-||
-|| URL материала | URL материала должен содержаться в свойстве `og:url`.
+Рубрика
+:   Рубрика — это раздел сайта, посвященный определенной теме. Чтобы указать рубрику материала, используйте свойство `article:section`.
 
-```html
-<meta property="og:url" content="https://www.example-news.com/life/weather/moscow"/>
-```
+    ```html
+    <meta property="article:section" content="Погода">
+    ```
 
-Иначе значение будет взято из канонической ссылки:
+URL материала
+:   URL материала должен содержаться в свойстве `og:url`.
 
-```html
-<link rel="canonical" href="https://www.example-news.com/life/weather/moscow">
-```
+    ```html
+    <meta property="og:url" content="https://www.example-news.com/life/weather/moscow"/>
+    ```
 
-Если разметка верна и правильно подключен счетчик, через некоторое время по материалу начнет собираться статистика в Метрике. ||
-|#
+    Иначе значение будет взято из канонической ссылки:
+
+    ```html
+    <link rel="canonical" href="https://www.example-news.com/life/weather/moscow">
+    ```
+
+    Если разметка верна и правильно подключен счетчик, через некоторое время по материалу начнет собираться статистика в Метрике.
 
 \* Обязательный элемент
 
