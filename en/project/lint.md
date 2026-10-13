@@ -130,3 +130,9 @@ Rules can be enabled, disabled, or configured for an entire file or a paragraph 
 Examples can be viewed [at the link](https://github.com/DavidAnson/markdownlint/blob/a852407c887ec60949aa5365ed964bab833f962f/README.md#configuration).
 
 > See also: [Ajv schema of .yfmlint linter configuration files](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/yfmlint-schema.json)
+
+## Code directive warnings {#code-directive-warnings}
+
+When [including code from a file](../syntax/code.md#include-code), [Diplodoc CLI](../tools/docs/build.md), the documentation builder, emits warnings with the `Code directive:` prefix if a fragment marker is missing or the end marker occurs before the start marker. This prefix is also used for warnings about ignored unknown attributes, extra arguments, or duplicate directive attributes.
+
+The message level is `warn`. These messages do not have a dedicated `MD` or `YFM` code. The builder emits this diagnostic while processing the directive, so it cannot be configured through `log-levels` in `.yfmlint`; it is emitted even when linting is disabled. See the [directive description](../syntax/code.md#include-code) for the exact messages and builder behavior.
