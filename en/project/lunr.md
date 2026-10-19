@@ -15,16 +15,16 @@ keywords:
 search:
   provider: local
   tolerance: 2
-  confidense: phrased
+  confidence: phrased
 ```
 
-#### confidense
+#### confidence
 
 Toggles the mode of additional search result ranking.
 
-`confidense: phrased` - default value. Additionally ranks results by the length of the found phrase.
+`confidence: phrased` - default value. Additionally ranks results by the length of the found phrase.
 
-`confidense: sparsed` - Uses the standard ranking from LunrJS. That is, it simply counts the number of words found in the document, without considering the distance between them.
+`confidence: sparsed` - Uses the standard ranking from LunrJS. That is, it simply counts the number of words found in the document, without considering the distance between them.
 
 #### tolerance
 
