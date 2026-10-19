@@ -495,7 +495,7 @@ The parameter also applies when search is disabled and in `md` builds: the restr
 * 2 — match by any substring of the word (`*word*`). | `number`
 
 `2` ||
-|| `confidense` | Result ranking mode:
+|| `confidence` | Result ranking mode:
 
 * `phrased` — results are ranked higher by the length of the found phrase;
 * `sparsed` — results are ranked higher by the number of found words. | `string`
@@ -509,7 +509,7 @@ The parameter also applies when search is disabled and in `md` builds: the restr
 search:
   provider: local
   tolerance: 2
-  confidense: phrased
+  confidence: phrased
 ```
 
 {% endcut %}
