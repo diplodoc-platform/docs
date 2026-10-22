@@ -72,6 +72,7 @@ log-levels:
   YFM020: 'warn'    # Invalid yfm directive
   YFM021: 'warn'    # Empty automatic heading anchor
   YFM022: 'info'    # llms-full.txt max size reached
+  YFM025: 'warn'    # Local link anchor is missing in the target document
 
 
 # Inline code length
@@ -136,3 +137,48 @@ Examples can be viewed [at the link](https://github.com/DavidAnson/markdownlint/
 When [including code from a file](../syntax/code.md#include-code), [Diplodoc CLI](../tools/docs/build.md), the documentation builder, emits warnings with the `Code directive:` prefix if a fragment marker is missing or the end marker occurs before the start marker. This prefix is also used for warnings about ignored unknown attributes, extra arguments, or duplicate directive attributes.
 
 The message level is `warn`. These messages do not have a dedicated `MD` or `YFM` code. The builder emits this diagnostic while processing the directive, so it cannot be configured through `log-levels` in `.yfmlint`; it is emitted even when linting is disabled. See the [directive description](../syntax/code.md#include-code) for the exact messages and builder behavior.
+
+## Where checks run {#check-implementation}
+
+[Diplodoc CLI](../tools/docs/build.md) performs project checks and prepares information about pages, includes, and resources. [@diplodoc/transform](https://github.com/diplodoc-platform/transform) processes markup, and [@diplodoc/yfmlint](https://github.com/diplodoc-platform/yfmlint) produces diagnostics using lint rules.
+
+### Builder diagnostics
+
+| Codes | Check | Builder responsibility |
+| --- | --- | --- |
+| `YFM012` | Page HTML size | Checks the output size against the configured limit |
+| `YFM013` | Resource size | Checks project file sizes against the configured limit |
+| `YFM014`, `YFM015` | File path and anchor in `include` | Checks the included file path and fragment anchor; skips an invalid include |
+| `YFM016` | A file including itself | Checks dependencies when loading source files |
+| `YFM017` | A duplicate metadata key | Checks page metadata when loading source files |
+| `YFM022` | The `llms-full.txt` limit | Stops adding articles before exceeding the limit |
+| `YAML001` | Local links in YAML pages | Checks that files exist; `log-levels.YAML001` sets the level, and `disabled` turns the check off |
+
+Sources: [source-file processing](https://github.com/diplodoc-platform/cli/tree/master/src/core/markdown/loader), [HTML output checks](https://github.com/diplodoc-platform/cli/tree/master/src/commands/build/features/output-html), [full-text generation](https://github.com/diplodoc-platform/cli/blob/master/src/commands/build/features/llms/index.ts).
+
+### Checks shared between packages
+
+For these rules, the builder prepares data used by plugins and the linter.
+
+| Codes | Check | Builder responsibility |
+| --- | --- | --- |
+| `YFM003` | Link availability | Checks local files and whether pages are listed in the table of contents |
+| `YFM010` | Automatic link titles | Collects target-page titles |
+| `YFM011` | Inline SVG size | Supplies file content and the size limit |
+| `YFM009`, `YFM018` | Term definitions in included files | Loads includes and preserves information about where definitions come from |
+| `YFM025` | Local link anchors | Collects target-page anchors for link validation |
+
+Source: [data preparation for checks](https://github.com/diplodoc-platform/cli/blob/master/src/commands/build/run.ts).
+
+## YFM025 — missing local link anchor
+
+When building HTML, [Diplodoc CLI](../tools/docs/build.md), the documentation builder, checks that the anchor after `#` in a local link exists on the target page. It checks links to the current page (`#section`) and other project pages (`guide.md#section`), using both automatically generated and explicit anchors, including anchors from included files.
+
+For example, `[Section](guide.md#installation)` produces `YFM025 / missing-local-anchor` if `guide.md` is reachable but has no `installation` anchor. Correct the link fragment or add the anchor to the target page. If the target page itself is unreachable, the builder reports `YFM003`.
+
+The default level is `warn`, independently of the `YFM002` setting. To change it, add the following to `.yfmlint`:
+
+```yaml
+log-levels:
+  YFM025: error # warn to report a warning, disabled to disable the check
+```
