@@ -76,7 +76,7 @@ Works when the [##vcs##](#vcs) parameter is **enabled**. | `boolean` \| `object`
 Example:
 
 ```yaml
-authors:
+contributors:
   enabled: true
   ignore:
     - robot-*
