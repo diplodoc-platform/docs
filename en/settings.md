@@ -34,6 +34,7 @@ docs-viewer:
 ## Root section of .yfm {#root-settings}
 
 #|
+|:{header-rows="1"}
 || **Parameter** | **Description** | **Type and default value** ||
 || `allowCustomResources` {#allow-custom-resources} | Allow loading custom resources into statically generated pages. | `boolean`
 
@@ -221,6 +222,7 @@ Requires [connecting the built-in extension](#extensions) `github-vcs`.
 ## Section `analytics` {#analytics}
 
 #|
+|:{header-rows="1"}
 || **Name** | **Description** | **Type and default value** ||
 || `gtm` | Google Tag Manager analytics settings.
 
@@ -273,6 +275,7 @@ Goals are [sent](./project/analytics/ym.md) to the connected counters from the d
 Managing article content processing and checks.
 
 #|
+|:{header-rows="1"}
 || **Name** | **Description** | **Type and default value** ||
 || `maxAssetSize` | Maximum allowed asset size in the project. If exceeded, the build will fail with an error.
 
@@ -322,6 +325,7 @@ Whether tooltips can contain content with multiple line breaks:
 Interface display settings. All settings in the section can be overridden for individual articles by specifying their values in the [page metadata](./project/meta.md#interface).
 
 #|
+|:{header-rows="1"}
 || **Name** | **Description** | **Type and default value** ||
 || `favicon-src` | Icon in the browser tab.
 You can use any image link that meets standard favicon requirements. | `string`
@@ -350,6 +354,7 @@ You can use any image link that meets standard favicon requirements. | `string`
 Contains data preprocessing parameters for [generating a PDF version of the documentation](guides/generate-pdf.md).
 
 #|
+|:{header-rows="1"}
 || **Name** | **Description** | **Type and default value** ||
 || `enabled` | Enable data preprocessing for the `@diplodoc/pdf-generator` service. | `boolean`
 
@@ -366,6 +371,7 @@ If set to ##false##, hidden pages will be displayed in the PDF version of the do
 Managing resources attached to the project.
 
 #|
+|:{header-rows="1"}
 || **Name** | **Description** | **Type and default value** ||
 
 || `csp` {#resources-csp} | Managing [Content Security Policy](./guides/csp.md) (CSP).
@@ -431,6 +437,7 @@ To connect styles, the parameter ##[allowCustomResources](#allow-custom-resource
 Managing supported constructs of [template syntax](./syntax/vars.md).
 
 #|
+|:{header-rows="1"}
 || **Parameter** | **Description** | **Type and default value** ||
 || `enabled` | Enables processing of template syntax in the documentation. If not specified, templating is considered enabled. | `boolean`
 
@@ -467,6 +474,7 @@ By default, search is **disabled**; to enable it, configure the `search` section
 ### Common parameters {#search-common}
 
 #|
+|:{header-rows="1"}
 || **Name** | **Description** | **Type and default value** ||
 || `provider` | Selection of the search engine.
 Options:
@@ -487,6 +495,7 @@ The parameter also applies when search is disabled and in `md` builds: the restr
 ### Parameters for local search (`provider: local`) {#search-local}
 
 #|
+|:{header-rows="1"}
 || **Name** | **Description** | **Type and default value** ||
 || `tolerance`  | Depth of match expansion:
 
@@ -517,6 +526,7 @@ search:
 ### Parameters for search via Algolia (`provider: algolia`) {#search-algolia}
 
 #|
+|:{header-rows="1"}
 || **Name** | **Description** | **Type and default value** ||
 || `appId` | Algolia App ID.
 Required parameter for cloud search. | `string`
@@ -583,6 +593,7 @@ search:
 ## The `docs-viewer` {#docs-viewer}
 
 #|
+|:{header-rows="1"}
 || **Name** | **Description** | **Type and default value** ||
 || `lang` | Default language for localization.
 For [the following languages](https://github.com/diplodoc-platform/client/blob/34a5139620874627cfdebe9be74902cf9d3961b1/src/constants.ts#L15), content will be displayed in RTL (right-to-left) format. | `string`
@@ -608,6 +619,7 @@ input-folder
 {% cut "Full list of supported languages" %}
 
 #|
+|:{header-rows="1"}
 || **Language code (ISO 639-1)** | **Language** ||
 || `am` | Amharic  ||
 || `ar` | Arabic   ||
