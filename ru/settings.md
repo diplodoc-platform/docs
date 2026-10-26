@@ -95,7 +95,7 @@ authors:
 Пример:
 
 ```yaml
-authors:
+contributors:
   enabled: true
   ignore:
     - robot-*
