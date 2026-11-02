@@ -67,7 +67,8 @@ Inline markup inside a segment - emphasis, links, code - is encoded with the aux
 ## extract parameters {#extract}
 
 #|
-|| **Parameter** | **Description** ||
+|:{header-rows="1"}
+|| Parameter | Description ||
 || `--source`, `-sl` |
 Source language in ISO 639-1 format: `ru` or `ru-RU`. Required
 ||
@@ -90,7 +91,8 @@ The common parameters `--input`, `--output`, `--files`, `--include`, and `--excl
 ## compose parameters {#compose}
 
 #|
-|| **Parameter** | **Description** ||
+|:{header-rows="1"}
+|| Parameter | Description ||
 || `--input`, `-i` |
 Directory with `*.xliff` + `*.skl` pairs. Defaults to the directory the command is run from
 ||

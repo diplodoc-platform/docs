@@ -57,7 +57,8 @@ Before using a new option, check the running CLI version with `{{PROGRAM}} --ver
 ## Providers {#providers}
 
 #|
-|| **Provider** | **API** | **Default model** | **Environment variables** ||
+|:{header-rows="1"}
+|| Provider | API | Default model | Environment variables ||
 || `yandexgpt` | [Yandex AI Studio](https://yandex.cloud/ru/docs/ai-studio/) | `yandexgpt-lite` | `YANDEX_API_KEY`, `YC_IAM_TOKEN` ||
 || `openai` | [OpenAI Chat Completions](https://platform.openai.com/docs/api-reference/chat) | `gpt-4o-mini` | `OPENAI_API_KEY` ||
 || `openrouter` | [OpenRouter](https://openrouter.ai/docs) | `openai/gpt-4o-mini` | `OPENROUTER_API_KEY` ||
@@ -75,7 +76,8 @@ Authorization:
 A self-hosted model or an internal gateway with a compatible API is connected using the same provider with the `--api-base` option. The request path is appended to the base automatically:
 
 #|
-|| **Provider** | **Default base** | **Request path** ||
+|:{header-rows="1"}
+|| Provider | Default base | Request path ||
 || `yandexgpt` | `https://llm.api.cloud.yandex.net` | `/foundationModels/v1/completion` ||
 || `openai` | `https://api.openai.com/v1` | `/chat/completions` ||
 || `openrouter` | `https://openrouter.ai/api/v1` | `/chat/completions` ||
@@ -102,7 +104,8 @@ The request path for each provider is fixed: if the gateway uses a non-standard 
 Common command options (`--source`, `--target`, `--files`, `--include`, `--exclude`, `--include-vcs-diff`, `--dry-run`, and others) are described on the [Localization](translate.md#options) page. The `--target` option can be passed multiple times - translation will be performed into each language. Below are the AI provider options.
 
 #|
-|| **Option** | **Default** | **Description** ||
+|:{header-rows="1"}
+|| Option | Default | Description ||
 || `--provider` | `yandex` | Translation provider. For AI translation: `yandexgpt`, `openai`, `openrouter`, or `anthropic`. The default value `yandex` is machine translation via [Yandex Translate](translate-yandex.md), not an LLM ||
 || `--auth` | from the environment variable | Token or path to a file with the token. Cannot be placed in the configuration file ||
 || `--model` | depends on the provider | Model identifier ||
@@ -216,7 +219,8 @@ glossaryPairs:
 ```
 
 #|
-|| **Field** | **Description** ||
+|:{header-rows="1"}
+|| Field | Description ||
 || `sourceText` | The term in the source language, i.e., in the language from `--source` ||
 || `translatedText` | The translation that should appear in the result. Repeat the original spelling to keep the term unchanged ||
 |#
@@ -347,7 +351,8 @@ PROCESSED ru-en seeded-files: 1090 seeded-units: 24500 skipped-units: 12 missing
 ```
 
 #|
-|| **Counter** | **Meaning** ||
+|:{header-rows="1"}
+|| Counter | Meaning ||
 || `seeded-files`, `seeded-units` | Files and segments that produced pairs, partially seeded files included ||
 || `skipped-units` | Untranslated segments left for the model ||
 || `missing-targets` | Source files without a translation ||
@@ -412,7 +417,8 @@ The evaluation does not affect the translation result and does not interrupt the
 Sometimes the model answers with something other than what it was asked for: it adds emphasis around a fragment, drops an inline markup marker or returns the text untranslated. The CLI handles three such cases on its own, before composing the file. Each of them lands in the `fixes` block of the [run report](translate.md#report) and in the summary line of the log, and the last two also produce their own log warnings.
 
 #|
-|| **Case** | **What the CLI does** | **Counters** ||
+|:{header-rows="1"}
+|| Case | What the CLI does | Counters ||
 || Added markup | The model wrapped the translation into `**`, `_` or another delimiter that the original did not have. The extra delimiters are stripped silently - in fresh and cached translations alike | `markupStripped` ||
 || Damaged markup | The model dropped a markup marker and the line does not compose. The fragment is re-requested; when the retry does not fix the markup, the fragment keeps its source text - an untranslated fragment composes cleanly, damaged markup does not | `markupRetried`, `markupDamaged` ||
 || Untranslated fragment | The model returned the text unchanged in the source language. The fragment is re-requested; when the retry returns the same thing again, the source text is kept. Such a segment does not enter the [cache](#cache), so the next run tries it again | `untranslatedRetried`, `untranslatedKept` ||
@@ -423,7 +429,8 @@ Fragments left with their source text are counted in the `units.untranslated` co
 ## How to read the log {#log}
 
 #|
-|| **Line** | **Meaning** ||
+|:{header-rows="1"}
+|| Line | Meaning ||
 || `TRANSLATE <file>` | The file has been taken into processing. If the line is absent, the file did not fall within the run's scope (filters `--files`, `--include`, `--exclude`, language) ||
 || `SKIPPED [reason] <file>` | The file was filtered out; the reason is in parentheses: `exclude`, `include`, `language` ||
 || `REQUEST <file> N units, ~X tokens` | A batch of N segments has been sent to the model. In `--dry-run` mode, there are no such lines ||

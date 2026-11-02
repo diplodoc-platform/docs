@@ -28,7 +28,8 @@ Translated files appear in the target language folder - `docs/en` in the example
 Common parameters (`--source`, `--target`, `--files`, `--include`, `--exclude`, `--dry-run`, and others) are described on the [Localization](translate.md#options) page. Below are the `yandex` provider parameters.
 
 #|
-|| **Parameter** | **Description** ||
+|:{header-rows="1"}
+|| Parameter | Description ||
 || `--auth` |
 Authorization token: a value or a path to a file with the token. The type is detected by prefix: `y0_` - OAuth token, `t1.` - IAM token, `AQVN` - service account API key. Required
 ||

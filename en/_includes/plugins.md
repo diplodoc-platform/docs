@@ -1,5 +1,6 @@
 #|
-|| Plugin name | Description | Parameters | Enabled by default |
+|:{header-rows="1"}
+|| Plugin name | Description | Parameters | Enabled by default ||
 || **Anchors**| Automatic generation of [anchors for headings](../syntax/base.md#headers) | `extractTitle`: consider the first-level heading</br> Type: `bool`, Default: `false` </br></br>`supportGithubAnchors`: generate additional GitHub-compatible anchors</br> Type: `bool`, Default: `false` </br></br>`disableCommonAnchors`: disable generation of heading anchors</br> Type: `bool`, Default: `false` | + ||
 || **Code**| Displaying a copy button in [code blocks](../syntax/code.md#block) | - | + ||
 || **Cut** | Support for [cut markup](../syntax/interactive-elements/cuts.md) | - | + ||

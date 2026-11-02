@@ -43,7 +43,8 @@ Include the popup text by applying `include`. [Learn more about using `include`]
 Таблица
 
 #|
-|| **Заголовок таблицы** | > ||
+|:{header-rows="1"}
+|| Заголовок таблицы | > ||
 || Текст | Текст ||
 || Текст | Текст ||
 |#

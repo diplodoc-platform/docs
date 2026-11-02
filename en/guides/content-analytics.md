@@ -73,7 +73,8 @@ More about OpenGraph:
 Example of use in a documentation article: {#meta-information-example}
 
 #|
-|| **Source code in the file** | **Result in the documentation** ||
+|:{header-rows="1"}
+|| Source code in the file | Result in the documentation ||
 ||
 
 ```yaml
@@ -125,7 +126,8 @@ metadata:
 Documentation articles can be marked up with the [following elements](https://yandex.ru/support/metrica/publishers/open-graph/open-graph.html#open-graph__material):
 
 #|
-|| **Element** | **Comment** ||
+|:{header-rows="1"}
+|| Element | Comment ||
 || Type of the described object[*](*parametr) | Metrika only supports marking up objects of the [article](https://ogp.me/#type_article) type. Other objects marked up according to the [Open Graph](https://ogp.me/#type_article) standard will not appear in Metrika reports. The object type is specified in the `og:type` property.
 
 ```html
@@ -203,7 +205,8 @@ If the markup is correct and the counter is properly connected, statistics for t
 ### Summary reports {#summary-reports}
 
 #|
-|| **Report** | **Description** ||
+|:{header-rows="1"}
+|| Report | Description ||
 || Summary
 |
 The report provides brief statistics on content for a selected day or period. Statistics include data on views and user interactions with documentation materials.
@@ -289,7 +292,8 @@ Unlike sections, the number of topics for a material is not limited.
 ### Standard reports {#standard-reports}
 
 #|
-|| **Report** | **Description** ||
+|:{header-rows="1"}
+|| Report | Description ||
 || Traffic sources for materials
 |
 The report allows you to collect overall statistics on topics that reflect the content of an article. Unlike sections, the number of topics for a material is not limited.

@@ -52,7 +52,8 @@ Custom schemas can be plugged in with the `--schema` option of the [extract](tra
 Only the parts of code blocks written for the reader go to translation. How much exactly is set by the `--code` option (the `code` key in the `translate` section of `.yfm`):
 
 #|
-|| **Mode** | **What is translated** ||
+|:{header-rows="1"}
+|| Mode | What is translated ||
 || `no` | Nothing, code blocks are copied as they are ||
 || `precise` | Placeholders in angle brackets (`<cluster-name>`) and comments in `bash` and `shell` blocks ||
 || `adaptive` | Also line comments in blocks of any language (`#`, `//`, `--`) and labels of [Mermaid](../../custom-plugins/mermaid.md) diagrams: nodes, edges, notes, titles. Commented-out code, tool directives, and separators stay as they are ||
@@ -77,7 +78,8 @@ The [`seed`](translate-ai.md#seed) subcommand must run in the same mode as the t
 These parameters work the same in all translation methods. Method-specific parameters are described in the articles on [machine translation](translate-yandex.md#options), [AI translation](translate-ai.md#options), and [XLIFF exchange](translate-xliff.md).
 
 #|
-|| **Parameter** | **Description** ||
+|:{header-rows="1"}
+|| Parameter | Description ||
 || `--source`, `-sl` |
 Source document language in ISO 639-1 format: `ru` or `ru-RU`. Required
 ||
@@ -109,7 +111,8 @@ Path to the configuration file. Defaults to `.yfm` in the project root
 These work when translating via [Yandex Translate](translate-yandex.md) and [AI providers](translate-ai.md), but not in the `extract` and `compose` subcommands.
 
 #|
-|| **Parameter** | **Description** ||
+|:{header-rows="1"}
+|| Parameter | Description ||
 || `--provider` |
 Translation system: `yandex` (default), `yandexgpt`, `openai`, `openrouter`, or `anthropic`
 ||
@@ -184,7 +187,8 @@ The report shape is a public contract. The `schemaVersion` field is bumped on an
 Top-level fields:
 
 #|
-|| **Field** | **Description** ||
+|:{header-rows="1"}
+|| Field | Description ||
 || `schemaVersion` | Report schema version ||
 || `startedAt`, `finishedAt` | Run start and finish time in ISO 8601 format ||
 || `durationMs` | Run duration in milliseconds ||
@@ -203,7 +207,8 @@ Top-level fields:
 Counters (`totals` and every entry of `targets`):
 
 #|
-|| **Field** | **Description** ||
+|:{header-rows="1"}
+|| Field | Description ||
 || `files` | `translated` - processed files, `failed` - failed ones, `retried` - files re-queued after transient errors ||
 || `units` | Segments: `total` - seen in total, `translated` - translated during this run, `fromCache` - served from the [cache](translate-ai.md#cache), `untranslated` - returned by the model untranslated, `oversized` - skipped as too big for a single request ||
 || `chars` | Characters: `source` - in the source segments, `translated` - in the translations of this run, `request` - actually sent in requests ||

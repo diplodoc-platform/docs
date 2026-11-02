@@ -43,7 +43,8 @@ npm install @diplodoc/algolia-extension
 В Diplodoc встроено несколько расширений в качестве примеров работы Extensions API:
 
 #|
-|| **Название** | **Описание** ||
+|:{header-rows="1"}
+|| Название | Описание ||
 ||
 `github-vcs`
 |

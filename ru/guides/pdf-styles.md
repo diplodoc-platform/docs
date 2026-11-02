@@ -139,7 +139,8 @@ graph TD
 Селекторы для каждой части документа:
 
 #|
-|| **Часть документа** | **Селектор** ||
+|:{header-rows="1"}
+|| Часть документа | Селектор ||
 || Титульные страницы | `body.pdf > .pdf-page-wrapper` ||
 || Оглавление | `body.pdf > nav .toc` ||
 || Статья | `body.pdf main.yfm > .pdf-page-wrapper` ||
@@ -249,7 +250,8 @@ body.pdf main.yfm > [data-page-break="true"] {
 При генерации PDF-версии все статьи проекта склеиваются в один документ, поэтому уровни заголовков понижаются на единицу:
 
 #|
-|| **Markdown** | **HTML (сайт)**  | **PDF** ||
+|:{header-rows="1"}
+|| Markdown | HTML (сайт)  | PDF ||
 || `# Заголовок` | `h1` | `h2[data-original-article]` ||
 || `## Раздел` | `h2` | `h3` ||
 || `### Подраздел` | `h3` | `h4` ||
@@ -282,7 +284,8 @@ body.pdf main.yfm h2[data-original-article] {
 Правила, которые действуют в PDF сейчас:
 
 #|
-|| **Что** | **Правило** | **Результат** ||
+|:{header-rows="1"}
+|| Что | Правило | Результат ||
 || `.pdf-page-wrapper` | `page-break-after: always`, `page-break-inside: avoid` | Каждая статья начинается с новой страницы. ||
 || `h2[data-original-article]` | `page-break-before: always` | То же самое, дублирующий механизм. ||
 || `nav` | `page-break-after: always` | Контент начинается после оглавления. ||

@@ -3,8 +3,9 @@
 The build parameters supported when running the `yfm build` command are listed below.
 
 #|
+|:{header-rows="1"}
 ||
-**Launch flag** | **Description**
+Launch flag | Description
 ||
 ||
 `--input, -i` | Path to the project directory. By default, the current directory.

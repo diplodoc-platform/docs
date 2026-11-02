@@ -96,7 +96,8 @@ Add to the pull request:
 - Links — to related issues or documentation.
 
 #|
-|| **Type of changes** | **What to add** ||
+|:{header-rows="1"}
+|| Type of changes | What to add ||
 || Bug fix | Link to the issue or a description of the bug ||
 || New functionality | Description of the functionality, usage examples ||
 || Visual changes | Screenshots or videos before/after ||
@@ -140,7 +141,8 @@ npx @diplodoc/lint update
 Define the following scripts in `package.json`:
 
 #|
-|| **Script** | **Purpose** ||
+|:{header-rows="1"}
+|| Script | Purpose ||
 || `build` | Full package build ||
 || `build:js` | JavaScript build (esbuild) ||
 || `build:declarations` | Generate TypeScript declarations ||
