@@ -21,7 +21,8 @@ yfm publish -i docs-html/ \
 ## Arguments of the publish command
 
 #|
-|| **Argument** | **Description** | **Default value** ||
+|:{header-rows="1"}
+|| Argument | Description | Default value ||
 || `--input` (`-i`){{required}} | Path to the directory with the built documentation | — ||
 || `--endpoint` | Endpoint for the S3 storage | `https://s3.amazonaws.com` ||
 || `--bucket`{{required}} | Bucket name | — ||

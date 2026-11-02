@@ -35,7 +35,7 @@ docs-viewer:
 
 #|
 |:{header-rows="1"}
-|| **Parameter** | **Description** | **Type and default value** ||
+|| Parameter | Description | Type and default value ||
 || `allowCustomResources` {#allow-custom-resources} | Allow loading custom resources into statically generated pages. | `boolean`
 
 `false` ||
@@ -226,7 +226,7 @@ Requires [connecting the built-in extension](#extensions) `github-vcs`.
 
 #|
 |:{header-rows="1"}
-|| **Name** | **Description** | **Type and default value** ||
+|| Name | Description | Type and default value ||
 || `gtm` | Google Tag Manager analytics settings.
 
 Parameters:
@@ -279,7 +279,7 @@ Managing article content processing and checks.
 
 #|
 |:{header-rows="1"}
-|| **Name** | **Description** | **Type and default value** ||
+|| Name | Description | Type and default value ||
 || `maxAssetSize` | Maximum allowed asset size in the project. If exceeded, the build will fail with an error.
 
 Accepts numbers and strings: ##1024##, ##512K##, ##8M##.
@@ -334,7 +334,7 @@ feedback:
 
 #|
 |:{header-rows="1"}
-|| **Name** | **Description** | **Type and default value** ||
+|| Name | Description | Type and default value ||
 || `url` | URL of the feedback handler. | `string`
 
 Not set ||
@@ -350,7 +350,7 @@ Interface display settings. All settings in the section can be overridden for in
 
 #|
 |:{header-rows="1"}
-|| **Name** | **Description** | **Type and default value** ||
+|| Name | Description | Type and default value ||
 || `favicon-src` | Icon in the browser tab.
 You can use any image link that meets standard favicon requirements. | `string`
 
@@ -379,7 +379,7 @@ Contains data preprocessing parameters for [generating a PDF version of the docu
 
 #|
 |:{header-rows="1"}
-|| **Name** | **Description** | **Type and default value** ||
+|| Name | Description | Type and default value ||
 || `enabled` | Enable data preprocessing for the `@diplodoc/pdf-generator` service. | `boolean`
 
 `false` ||
@@ -396,7 +396,7 @@ Managing resources attached to the project.
 
 #|
 |:{header-rows="1"}
-|| **Name** | **Description** | **Type and default value** ||
+|| Name | Description | Type and default value ||
 
 || `csp` {#resources-csp} | Managing [Content Security Policy](./guides/csp.md) (CSP).
 
@@ -462,7 +462,7 @@ Managing supported constructs of [template syntax](./syntax/vars.md).
 
 #|
 |:{header-rows="1"}
-|| **Parameter** | **Description** | **Type and default value** ||
+|| Parameter | Description | Type and default value ||
 || `enabled` | Enables processing of template syntax in the documentation. If not specified, templating is considered enabled. | `boolean`
 
 `true` ||
@@ -499,7 +499,7 @@ By default, search is **disabled**; to enable it, configure the `search` section
 
 #|
 |:{header-rows="1"}
-|| **Name** | **Description** | **Type and default value** ||
+|| Name | Description | Type and default value ||
 || `provider` | Selection of the search engine.
 Options:
 
@@ -520,7 +520,7 @@ The parameter also applies when search is disabled and in `md` builds: the restr
 
 #|
 |:{header-rows="1"}
-|| **Name** | **Description** | **Type and default value** ||
+|| Name | Description | Type and default value ||
 || `tolerance`  | Depth of match expansion:
 
 * 0 — only exact word match;
@@ -551,7 +551,7 @@ search:
 
 #|
 |:{header-rows="1"}
-|| **Name** | **Description** | **Type and default value** ||
+|| Name | Description | Type and default value ||
 || `appId` | Algolia App ID.
 Required parameter for cloud search. | `string`
 
@@ -618,7 +618,7 @@ search:
 
 #|
 |:{header-rows="1"}
-|| **Name** | **Description** | **Type and default value** ||
+|| Name | Description | Type and default value ||
 || `lang` | Default language for localization.
 For [the following languages](https://github.com/diplodoc-platform/client/blob/34a5139620874627cfdebe9be74902cf9d3961b1/src/constants.ts#L15), content will be displayed in RTL (right-to-left) format. | `string`
 
@@ -644,7 +644,7 @@ input-folder
 
 #|
 |:{header-rows="1"}
-|| **Language code (ISO 639-1)** | **Language** ||
+|| Language code (ISO 639-1) | Language ||
 || `am` | Amharic  ||
 || `ar` | Arabic   ||
 || `az` | Azerbaijani ||

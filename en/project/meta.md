@@ -22,7 +22,8 @@ description: Описание
 Supported parameters:
 
 #|
-|| **Name** | **Description** | **Type and default value** ||
+|:{header-rows="1"}
+|| Name | Description | Type and default value ||
 || `alternate` | Links to other language versions of the page.
 
 Each link is specified in `<link rel="alternate" hreflang="..." href="..."/>`.

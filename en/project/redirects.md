@@ -151,7 +151,8 @@ common:
 ### Examples for files {#file-examples-single}
 
 #|
-|| **Redirect** | **Example** ||
+|:{header-rows="1"}
+|| Redirect | Example ||
 || The file was renamed | 
 
 ```yaml
@@ -209,7 +210,8 @@ common:
 ### Examples for directories {#file-examples-dir}
 
 #|
-|| **Redirect** | **Example** ||
+|:{header-rows="1"}
+|| Redirect | Example ||
 || The directory was renamed |
 
 ```yaml

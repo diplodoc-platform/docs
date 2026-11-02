@@ -96,6 +96,7 @@ To create basic documentation:
     #### Description of OpenAPI specification parameters
 
     #|
+    |:{header-rows="1"}
     || Parameter | Parameter description ||
     || `servers` | Configuring the nested `url` parameters of the `servers` section allows you to specify the address to which the documentation should be proxied.
     To proxy documentation to your domain, configure the nested parameters:

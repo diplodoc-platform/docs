@@ -3,7 +3,8 @@
 Table
 
 #|
-|| **Table header** | > ||
+|:{header-rows="1"}
+|| Table header | > ||
 || Text | Text ||
 || Text | Text ||
 |#

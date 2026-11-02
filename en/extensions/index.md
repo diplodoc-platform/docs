@@ -43,7 +43,8 @@ If an extension is not connected when running the yfm command, but is necessary 
 Diplodoc includes several extensions as examples of the Extensions API:
 
 #|
-|| **Name** | **Description** ||
+|:{header-rows="1"}
+|| Name | Description ||
 ||
 `github-vcs`
 |
