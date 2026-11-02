@@ -126,6 +126,9 @@ extensions:
 | `(string\|object)[]`
 
 — ||
+|| `feedback` | Settings for [submitting feedback](#feedback) in statically generated documentation. | `object`
+
+Not set ||
 || `langs` | An array of languages involved in the build. | —
 
 — ||
@@ -320,6 +323,27 @@ Whether tooltips can contain content with multiple line breaks:
 `true` ||
 |#
 
+## Section `feedback` {#feedback}
+
+Sets the URL for submitting feedback in statically generated HTML documentation. Add the section to the root of the `.yfm` file:
+
+```yaml
+feedback:
+  url: https://api.example.com/feedback
+```
+
+#|
+|:{header-rows="1"}
+|| **Name** | **Description** | **Type and default value** ||
+|| `url` | URL of the feedback handler. | `string`
+
+Not set ||
+|#
+
+The handler must accept POST requests with `Content-Type: application/json`. The request includes the feedback data, the page path (`page`), and the submission time in ISO 8601 format (`timestamp`). For a URL on another domain, configure CORS on the handler.
+
+Without `feedback.url`, the feedback form is hidden in static documentation. To hide it when a URL is configured, set `interface.feedback: false` in `.yfm` or in the [metadata of an individual page](./project/meta.md#interface).
+
 ## Section `interface` {#interface}
 
 Interface display settings. All settings in the section can be overridden for individual articles by specifying their values in the [page metadata](./project/meta.md#interface).
@@ -337,7 +361,7 @@ You can use any image link that meets standard favicon requirements. | `string`
 || `toc-header` {#toc-header} | Hides the header in the ToC. If not specified, the header is considered enabled. | `boolean`
 
 `true` ||
-|| `feedback` | Hides the feedback at the end of the page. If not specified, feedback is enabled. | `boolean`
+|| `feedback` | Controls feedback form visibility. Setting it to `false` hides the form in the side menu and at the end of the page. Static documentation also requires [##feedback.url##](#feedback) to display the form. | `boolean`
 
 `true` ||
 || `markdownActions` | Controls how the **Copy as Markdown** and **View as Markdown** actions are displayed: as separate buttons (`visible`), in a dropdown (`dropdown`), or hidden (`none`). | `string`
