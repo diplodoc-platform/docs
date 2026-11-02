@@ -2,7 +2,7 @@
 
 Project settings are specified in the yaml file `.yfm` in the document root. During build, you can specify a path to another file using the [launch key `--config`](tools/docs/settings.md#config).
 
-Some parameters can also be set via the [launch keys of the `yfm build` command](./tools/docs/settings.md).
+Some parameters can also be set or overridden via the [launch keys of the `yfm build` command](./tools/docs/settings.md).
 
 {% cut "Example of the .yfm file" %}{#yfm}
 
@@ -69,6 +69,25 @@ Works when the [##vcs##](#vcs) parameter is **enabled**. | `boolean` \| `object`
 `false`
 
 ||
+|| `baseHref` {#base-href} | Set the root URL at which the documentation will be available on the website.
+
+Example:
+
+```yaml
+baseHref: 'https://diplodoc.com/docs/'
+```
+
+The value of this parameter:
+- is added to the `<base href="...">` tag;
+- is used to construct absolute URLs in `hreflang` metadata tags;
+- is used to construct absolute page URLs when generating [sitemap.xml](#sitemap) and [llms.txt](#llms);
+- is used to construct absolute URLs in page [Markdown companions](#ai-md-companions).
+
+**Important:** a `/` character is always appended to the ##baseHref## value when constructing an absolute URL.
+
+| `string`
+
+— ||
 || `breaks` | [Wrap lines](syntax/base.md#breaks) at the carriage return character. | `boolean`
 
 `true` ||
@@ -157,6 +176,7 @@ llms:
 
 Parameters:
 - `description` – `string` — a string with the project description, added to the beginning of the ##llms*.txt## files;
+- `enabled` — `boolean` — enable file generation;
 - `llmsFullMaxSize` — `number`\|`string` — the maximum size of the ##llms-full.txt## file, accepts numbers and strings like ##1024##, ##512K##, ##8M##;
 - `url` – `string` — a link to the external ##llms.txt## file, which will be written into documentation articles.
 
@@ -192,7 +212,7 @@ Build a [single-page build](tools/docs/singlepage.md). A file `single-page.html`
 
 `false`
 ||
-|| `sitemap` {#sitemap} | Generate a `sitemap.xml` file in the build output. The file lists the documentation pages as absolute URLs resolved against the `baseHref` parameter, so setting `baseHref` is required. Pages marked `noIndex` are not included. | `boolean`
+|| `sitemap` {#sitemap} | Generate a `sitemap.xml` file in the build output. The file lists the documentation pages as absolute URLs resolved against the [##baseHref##](#base-href) parameter, which must be set in the configuration file or passed as a launch parameter. Pages marked `noIndex` are not included. | `boolean`
 
 `false` ||
 || `staticContent` | Build the article's HTML content as part of the layout. By default, it is in a JS object and is inserted into the page during rendering in the browser. | `boolean`
@@ -218,6 +238,24 @@ You can find the full list of YFM rules [here](./project/lint.md).
 Requires [connecting the built-in extension](#extensions) `github-vcs`.
 
 | `boolean` \| `object`
+
+`false` ||
+|#
+
+## Section `ai` {#ai}
+
+#|
+|:{header-rows="1"}
+|| Name | Description | Type and default value ||
+|| `mdCompanions` {#ai-md-companions} | Include Markdown versions of pages (Markdown companions) in the final documentation build:
+- internal links in Markdown companions are converted to absolute URLs using the [##baseHref##](#base-href) parameter;
+- links in [##llms.txt##](./guides/llms.md) files point to Markdown versions of articles instead of HTML versions;
+- the **Copy as Markdown** and **View as Markdown** actions are added to the interface.
+
+| `boolean`
+
+`false` ||
+|| `openapiCompanions` {#ai-openapi-companions} | Include JSON schemas of OpenAPI specifications as `*.openapi.json` files in the final documentation build, with links in [##llms.txt##](./guides/llms.md). | `boolean`
 
 `false` ||
 |#
@@ -364,7 +402,10 @@ You can use any image link that meets standard favicon requirements. | `string`
 || `feedback` | Controls feedback form visibility. Setting it to `false` hides the form in the side menu and at the end of the page. Static documentation also requires [##feedback.url##](#feedback) to display the form. | `boolean`
 
 `true` ||
-|| `markdownActions` | Controls how the **Copy as Markdown** and **View as Markdown** actions are displayed: as separate buttons (`visible`), in a dropdown (`dropdown`), or hidden (`none`). | `string`
+|| `gallery` {#gallery} | Open [images and videos in a gallery](./syntax/media.md#gallery). Enabled by default. | `boolean`
+
+`true` ||
+|| `markdownActions` | Controls how the **Copy as Markdown** and **View as Markdown** [actions](#ai-md-companions) are displayed: as separate buttons (`visible`), in a dropdown (`dropdown`), or hidden (`none`). | `string`
 
 `dropdown` ||
 || `search` | Hides search. If not specified, search is considered enabled. | `boolean`

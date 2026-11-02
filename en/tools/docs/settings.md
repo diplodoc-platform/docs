@@ -118,7 +118,7 @@ build -i ./ -o ./build --ignore ./build
 Do not process table of contents files with the specified level. By default, `["skip"]`.
 ||
 ||
-`--template`
+`--template <value>`
 |
 Select the operating mode for [templates](../../syntax/vars.md). By default, text mode is enabled, which ignores code blocks. Use `all` or `code` to process code blocks.
 
@@ -169,7 +169,7 @@ Each VCS connector has its own configuration. It should be described in the conn
  `--single-page` | Build the project as a single HTML file. See more in the [Single-page build](./singlepage.md) section.
 ||
 ||
- `--output-format` | Generation format. HTML by default, but you can configure [building in YFM](build.md#yfm).
+ `--output-format <value>` | Generation format. HTML by default, but you can configure [building in YFM](build.md#yfm).
 ||
 ||
  `--apply-presets` | Substitute variable values from presets when building in YFM.
@@ -196,7 +196,7 @@ For links without extensions to open correctly, configure the web server to hand
  `--build-content` {#build-content-flag} | Write a `yfm-build-content.json` file next to the output with content hashes of each file and `page → assets` dependencies. Used by external tools (search reindexing, change notifications) to compute the set of pages changed between two builds. See more in [Build content map](build.md#build-content). Enabled by default for builds with `--output-format=md`, disabled for others. To disable, use `--no-build-content`.
 ||
 ||
- `--sitemap` {#sitemap-flag} | Generate a `sitemap.xml` file in the build output with absolute page URLs. Works only for HTML builds and requires the ##--base-href <url>## flag. Pages marked `noIndex` are not included. To disable, use `--no-sitemap`.
+ `--sitemap` {#sitemap-flag} | Generate a `sitemap.xml` file in the build output with absolute URLs for all pages that can be indexed by search engines. Works only for HTML builds and requires the ##--base-href <url>## flag. Pages marked `noIndex` are not included. To disable, use `--no-sitemap`.
 ||
 ||
  `--disable-csp` | Disable adding the [Content-Security-Policy](../../guides/csp.md#disable-csp) meta tag to generated HTML pages. Enabled by default.
@@ -236,3 +236,7 @@ If you specify ##0##, there is no limit.
 |#
 
 To view the full list of keys, run the command `yfm build --help`.
+
+Build parameters take **higher priority** than parameters in the [project configuration file](../../settings.md).
+
+Adding the `no-` prefix to a flag that _enables_ a behavior makes it **disable** that behavior. For example, `--no-llms` _disables_ generation of `llms.txt`, and `--no-allow-html` _prohibits_ HTML in markdown files.
