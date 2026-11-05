@@ -529,10 +529,11 @@ Managing supported constructs of [template syntax](./syntax/vars.md).
 ## Section `search` {#search}
 
 To add search to the documentation, explicitly specify the `search` section in the `.yfm` file.  
-Diplodoc supports two types of search integration in the static documentation build mode:
+Diplodoc supports three types of search integration in the static documentation build mode:
 
 * [local client-side search (based on Lunr.js)](./project/lunr.md);
-* [cloud search based on the Algolia platform](./project/algolia.md).
+* [cloud search based on the Algolia platform](./project/algolia.md);
+* [external HTTP search](./project/external-search.md).
 
 By default, search is **disabled**; to enable it, configure the `search` section.
 
@@ -545,7 +546,8 @@ By default, search is **disabled**; to enable it, configure the `search` section
 Options:
 
 * `local` — local search (Lunr.js);
-* `algolia` — cloud search based on Algolia. | `string`
+* `algolia` - cloud search based on Algolia;
+* `external` - a custom HTTP endpoint. | `string`
 
 — (search not connected) ||
 || `hiddenPolicy` {#search-hidden-policy} | If set to ##true##, pages hidden with the [`hidden`](project/toc.md#hidden) parameter in `toc.yaml` get [`noIndex: true`](project/toc.md#no-index) and are excluded from search indexes: local, Algolia, and external search engines. All pages nested in a hidden section are excluded as well.
@@ -556,6 +558,22 @@ The parameter also applies when search is disabled and in `md` builds: the restr
 
 `false` ||
 |#
+
+### External HTTP search (`provider: external`) {#search-external}
+
+```yaml
+search:
+  provider: external
+  endpoint: /api/docs/search
+  options:
+    version: v1
+```
+
+`endpoint` is required when external search is enabled. It accepts an HTTP(S) URL, an origin-relative path, or a path relative to the documentation root. `options` contains public extra query parameters with string, number, or boolean values. These settings are included in the generated pages; keep backend credentials on your server.
+
+CLI equivalents: `--search-provider external --search-endpoint /api/docs/search --search-options '{"version":"v1"}'`. CLI values override their `.yfm` counterparts. Use `--no-search` to disable search for a build.
+
+See the [HTTP contract](./project/external-search.md) for request and response fields. The build does not create or upload an external index.
 
 ### Parameters for local search (`provider: local`) {#search-local}
 
