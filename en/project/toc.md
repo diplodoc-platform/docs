@@ -116,6 +116,9 @@ continuing a paginated read.
 Static HTML hosting does not select content by query parameters: agent HTML pages
 are omitted. Its generated `llms-agent.txt` links to filtered `.agent.md` and
 `.agent.yaml` source artifacts, with `llms-full-agent.txt` as the full agent corpus.
+Links inside these artifacts also select the agent representation, including links
+from YAML pages. Linked pages excluded by `hidden` or `noIndex` receive individual
+agent artifacts without being added to LLMS indexes or full corpora.
 Rebuild the documentation with the updated CLI and use matching Viewer/MCP code
 before relying on the new field. Audience selection does not replace authorization.
 
