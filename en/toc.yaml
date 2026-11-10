@@ -142,6 +142,8 @@ items:
       - name: Search
         href: project/search.md
         items:
+          - name: Search JSON export
+            href: project/search-index.md
           - name: Local search (lunr.js)
             href: project/lunr.md
           - name: Algolia

@@ -196,6 +196,9 @@ For links without extensions to open correctly, configure the web server to hand
  `--build-content` {#build-content-flag} | Write a `yfm-build-content.json` file next to the output with content hashes of each file and `page → assets` dependencies. Used by external tools (search reindexing, change notifications) to compute the set of pages changed between two builds. See more in [Build content map](build.md#build-content). Enabled by default for builds with `--output-format=md`, disabled for others. To disable, use `--no-build-content`.
 ||
 ||
+ `--search-index` | Save resolved pages to `_search/documents.json` for external search. Disabled by default. Supports HTML builds without `--watch`. See [Search JSON export](../../project/search-index.md).
+||
+||
  `--sitemap` {#sitemap-flag} | Generate a `sitemap.xml` file in the build output with absolute URLs for all pages that can be indexed by search engines. Works only for HTML builds and requires the ##--base-href <url>## flag. Pages marked `noIndex` are not included. To disable, use `--no-sitemap`.
 ||
 ||

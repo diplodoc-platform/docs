@@ -17,6 +17,8 @@ The standard output format of the builder is HTML.
 
 The full list of build parameters can be [found in the article](settings.md) or displayed in the console by running `yfm build --help`.
 
+The `--search-index` flag saves resolved pages as JSON for external search. See [Search JSON export](../../project/search-index.md) for usage and the file format.
+
 Builds of large projects can be sped up by processing pages in parallel, see [Multithreaded build](multithreading.md).
 
 ## YFM → YFM {#yfm}
