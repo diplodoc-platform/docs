@@ -11,3 +11,7 @@ In a static documentation build based on Diplodoc, you can enable built-in searc
   For details: [Cloud search Algolia](./algolia.md)
 
 By default, search is not enabled. To use one of the implementations, add and configure the `search` section in the [project settings file .yfm](../settings.md#search).
+
+## Search JSON export
+
+To prepare page content in a common format for an external search system, enable [JSON export](./search-index.md) during the build. Export works independently of search on the website.
