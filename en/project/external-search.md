@@ -2,6 +2,8 @@
 
 Connect any search service that implements the Diplodoc HTTP contract. For example, a gateway can translate these requests to OpenSearch and return its results in the format below. The documentation frontend does not depend on the underlying search engine.
 
+External HTTP search requires `@diplodoc/cli` version `5.69.0` or later.
+
 ## Configuration
 
 Add to the project's `.yfm`:
