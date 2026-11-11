@@ -148,6 +148,8 @@ items:
             href: project/lunr.md
           - name: Algolia
             href: project/algolia.md
+          - name: External HTTP search
+            href: project/external-search.md
       - name: Variable presets
         href: project/presets.md
       - name: Linter configuration file

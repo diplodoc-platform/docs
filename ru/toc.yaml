@@ -148,6 +148,8 @@ items:
             href: project/lunr.md
           - name: Algolia
             href: project/algolia.md
+          - name: Внешний HTTP-поиск
+            href: project/external-search.md
       - name: Пресеты переменных
         href: project/presets.md
       - name: Файл конфигурации линтера
