@@ -416,23 +416,57 @@ You can use any image link that meets standard favicon requirements. | `string`
 
 ## Section `pdf` {#pdf}
 
-Contains data preprocessing parameters for [generating a PDF version of the documentation](guides/generate-pdf.md).
+Settings for [PDF generation](guides/generate-pdf.md) and the download button.
+
+The `enabled`, `hiddenPolicy`, and `showAbsoluteUrls` fields control generation. The `icon`, `position`, `size`, and `pdfFileUrl` fields configure the download button. In a static HTML build, the link appears when `pdfFileUrl` is set; setting `enabled` alone does not display it.
 
 #|
 |:{header-rows="1"}
 || Name | Description | Type and default value ||
-|| `enabled` | Enable data preprocessing for the `@diplodoc/pdf-generator` service. | `boolean`
+|| `enabled` | Enables data preparation for `@diplodoc/pdf-generator`. Displaying a download link requires the button configuration described below. | `boolean`
 
 `false` ||
-|| `hiddenPolicy` | If set to ##true##, pages hidden by the `hidden` parameter will be removed from the PDF version of the documentation.
-
-If set to ##false##, hidden pages will be displayed in the PDF version of the documentation. | `boolean`
+|| `hiddenPolicy` | When `true`, excludes pages hidden by the `hidden` parameter in `toc.yaml` and their descendants from the PDF. When `false`, includes them in the PDF. | `boolean`
 
 `true` ||
 || `showAbsoluteUrls` {#pdf-show-absolute-urls} | Appends absolute HTTP(S) URLs in parentheses after link text in the PDF. If the link text already matches the URL, the URL is not repeated. [Usage example](guides/generate-pdf.md#absolute-urls). | `boolean`
 
 `false` ||
+|| `icon` | Download button icon: SVG markup, an absolute image URL, or a path relative to the project root starting with `_assets/`, such as `_assets/pdf-icon.svg`. | `string`
+
+Standard PDF icon ||
+|| `position` | Download button location: `toc` — below the table of contents; `header` — in the documentation header. | `string`
+
+`toc` ||
+|| `size` | Download button size. When omitted, inherits the size of the surrounding controls. See the limitation below before using this option. | `string`
+
+Not set ||
+|| `pdfFileUrl` | URL or path to an existing PDF file for the download button in a static HTML build. Generate and publish the file separately. In the web viewer, the PDF URL is computed automatically. | `string`
+
+Not set ||
 |#
+
+{% note info %}
+
+The `size` option currently has a limitation: the `.yfm` schema accepts `S`, `M`, and `L`, while the UI uses `m`, `l`, and `xl`. Until these values are aligned, omit the option so the button inherits the size of the surrounding controls.
+
+{% endnote %}
+
+Example `.yfm` configuration for a static HTML build with a button in the header:
+
+```yaml
+pdf:
+  enabled: true
+  hiddenPolicy: true
+  showAbsoluteUrls: true
+  icon: _assets/pdf-icon.svg
+  position: header
+  pdfFileUrl: ./single-page.pdf
+```
+
+Place the icon image at `_assets/pdf-icon.svg` and publish the PDF at the URL specified by `pdfFileUrl`.
+
+[Title and closing pages](guides/generate-pdf.md#start-pages) are configured separately in `toc.yaml` using `pdf.startPages` and `pdf.endPages`.
 
 ## Section `resources` {#resources}
 
