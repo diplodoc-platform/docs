@@ -24,7 +24,7 @@ At this stage, several preparatory actions take place:
 - basic code quality checks (`npm run lint`)
 - basic tests (`npm run test`)
 
-When the preparation is successfully completed, i.e., the module builds and passes the basic checks, it is ready for [making changes](#add-changes). 
+When the preparation is successfully completed, i.e., the module builds and passes the basic checks, it is ready for [making changes](./#add-changes). 
 
 ## Preparing the metapackage
 
@@ -41,7 +41,7 @@ By default, code quality checks and tests are not run when initializing the meta
 You can run them yourself by executing `npm run lint` and `npm run test` in the root directory, respectively.
 This will run the corresponding checks in all dependent modules.
 
-When the preparation is successfully completed, i.e., the module builds and passes the basic checks, it is ready for [making changes](#add-changes). 
+When the preparation is successfully completed, i.e., the module builds and passes the basic checks, it is ready for [making changes](./#add-changes). 
 
 ## Making changes {add-changes}
 

@@ -1,5 +1,5 @@
 ---
-noindex: true
+noIndex: true
 ---
 
 # История изменений
@@ -10,11 +10,11 @@ noindex: true
 
 #### 2.0.0
 
-- [Новый интерфейс инклюдеров](./project/toc.md#includers).
-- [Generic инклюдер](./project/toc.md#includers-generic).
-- [Open API инклюдер](./project/toc.md#includers-open-api).
-- [Unarchive инклюдер](./project/toc.md#includers-unarchive).
-- [Source Docs инклюдер](./project/toc.md#includers-source-docs).
+- [Новый интерфейс инклюдеров](./guides/includers.md).
+- [Generic инклюдер](./guides/generic.md).
+- [Open API инклюдер](./guides/openapi.md).
+- [Unarchive инклюдер](./guides/unarchive.md).
+- [Source Docs инклюдер](./guides/source-docs.md).
 
 ## Ноябрь 2022
 
@@ -45,7 +45,7 @@ noindex: true
 
 #### 1.24.0
 
-- includers/openapi: добавлена возможность [автогенерации документации из Open API спецификации](./project/toc.md#open-api) и её включение в основную.
+- includers/openapi: добавлена возможность [автогенерации документации из Open API спецификации](./guides/openapi.md) и её включение в основную.
 
 ### yfm-transform
 
@@ -81,7 +81,7 @@ noindex: true
 
 - include/includers: возможность интеграции сторонних форматов в документацию.
 - include/includers/sourcedocs: возможность интеграции sourcedocs документации в yfm-документацию.
-  [Includers](./project/toc.md#includers)
+  [Includers](./guides/includers.md)
 
 ## Июнь 2022
 
@@ -155,7 +155,7 @@ noindex: true
 
 #### 1.16.0
 
-- Добавлены режимы включения оглавления: `root_merge`, `merge`, `link`. [Подробнее](./project/toc.md#include-mode).
+- Добавлены режимы включения оглавления: `root_merge`, `merge`, `link`. [Подробнее](./project/toc-includes.md#include-mode).
 
 - При включении оглавления в режимах `root_merge` и `merge`, будет добавлен оригинальный путь до исходников
 в `sourcePath` поле мета информации.
@@ -176,7 +176,7 @@ noindex: true
 
 #### 1.15.0
 
-- Добавлена возможность включать `toc.yaml` с добавлением его элементов на тот же уровень оглавления. [Подробнее](./project/toc.md#include-as-pages).
+- Добавлена возможность включать `toc.yaml` с добавлением его элементов на тот же уровень оглавления.
 
 #### 1.14.0
 
