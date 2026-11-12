@@ -94,6 +94,20 @@ For each `toc.yaml` file, Diplodoc creates a separate `single-page.pdf`.
 
 {% endnote %}
 
+## Link URLs in PDF {#absolute-urls}
+
+To make link URLs visible in printed documentation, enable [`pdf.showAbsoluteUrls`](../settings.md#pdf-show-absolute-urls) in the `.yfm` file:
+
+```yaml
+pdf:
+  enabled: true
+  showAbsoluteUrls: true
+```
+
+The PDF will show the absolute HTTP(S) URL in parentheses after the link text. For example, `[Documentation](https://example.com)` becomes `Documentation (https://example.com)`.
+
+The option is disabled (`false`) by default. If the link text already matches the URL, the URL is not repeated. Relative links and anchor links do not have a URL appended.
+
 ## Styling { #styles }
 
 You can change the appearance of the PDF document using [CSS styles](../style/css-js.md).
