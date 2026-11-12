@@ -418,7 +418,7 @@ You can use any image link that meets standard favicon requirements. | `string`
 
 Settings for [PDF generation](guides/generate-pdf.md) and the download button.
 
-The `enabled`, `hiddenPolicy`, and `showAbsoluteUrls` fields control generation. The `icon`, `position`, `size`, and `pdfFileUrl` fields configure the download button. In a static HTML build, the link appears when `pdfFileUrl` is set; setting `enabled` alone does not display it.
+The `enabled`, `hiddenPolicy`, and `showAbsoluteUrls` fields control generation. The `icon`, `position`, `size`, and `pdfFileUrl` fields configure the download button. In a static HTML build, the link appears when `pdfFileUrl` is set. Setting `enabled` alone does not display it.
 
 #|
 |:{header-rows="1"}
@@ -435,7 +435,7 @@ The `enabled`, `hiddenPolicy`, and `showAbsoluteUrls` fields control generation.
 || `icon` | Download button icon: SVG markup, an absolute image URL, or a path relative to the project root starting with `_assets/`, such as `_assets/pdf-icon.svg`. | `string`
 
 Standard PDF icon ||
-|| `position` | Download button location: `toc` — below the table of contents; `header` — in the documentation header. | `string`
+|| `position` | Download button location: `toc` — below the table of contents, `header` — in the documentation header. | `string`
 
 `toc` ||
 || `size` | Download button size. When omitted, inherits the size of the surrounding controls. See the limitation below before using this option. | `string`
