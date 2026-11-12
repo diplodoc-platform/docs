@@ -32,6 +32,14 @@ Features:
 - the description of each article's content for ##llms.txt## is taken from the [##description## field in the page metadata](../project/meta.md#description);
 - in ##llms-full.txt##, to reduce file size, `<style>` and `<script>` tags are stripped along with all their content, and svg images are not inlined.
 
+The link text for an article in ##llms.txt## is selected from the first non-empty value in the following order:
+
+1. The `title` field in the [article metadata](../project/meta.md) (`meta.title`). In a Markdown file, set it at the beginning of the file between `---` lines.
+2. The first level-one heading (H1) in the article. It is determined after variable substitution and [include](../syntax/includes.md) expansion, respecting content visibility for human readers. For a [leading page](../project/leading-page.md), the page's own `title` field is used.
+3. The `name` field of the corresponding item in the [`toc.yaml` table of contents](../project/toc.md).
+
+Values containing only whitespace are skipped. If none of these values is set, the article's metadata `description` is used, followed by the path from the TOC item's `href`.
+
 ## Limiting the size of llms-full.txt {#llms-full-max-size}
 
 For projects with many articles, the ##llms-full.txt## file may become too large for AI systems to read. To set the maximum allowed size of the generated file, you can specify a limit in the [`llms: llmsFullMaxSize`](../settings.md#llms) parameter in `.yfm`.
