@@ -456,7 +456,7 @@ feedback:
 
 Настройки [генерации PDF-версии документации](guides/generate-pdf.md) и кнопки скачивания.
 
-Поля `enabled`, `hiddenPolicy` и `showAbsoluteUrls` управляют генерацией. Поля `icon`, `position`, `size` и `pdfFileUrl` настраивают кнопку скачивания. В статической HTML-сборке ссылка появляется при заданном `pdfFileUrl`; включения `enabled` для этого недостаточно.
+Поля `enabled`, `hiddenPolicy` и `showAbsoluteUrls` управляют генерацией. Поля `icon`, `position`, `size` и `pdfFileUrl` настраивают кнопку скачивания. В статической HTML-сборке ссылка появляется при заданном `pdfFileUrl`. Включения `enabled` для этого недостаточно.
 
 #|
 |:{header-rows="1"}
