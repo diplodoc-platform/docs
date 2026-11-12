@@ -15,14 +15,14 @@ title: Search with Algolia
 
 1. **Register with Algolia**  
    Go to [algolia.com](https://www.algolia.com/) and create an account. After that, obtain the App ID, Write API Key, and Search API Key for your application.  
-   _(For details, see the section [“Algolia registration and settings”](#registraciya-i-nastrojki-algolia))_
+   _(For details, see the section [“Algolia registration and settings”](#service-signup))_
 
 2. **Install the Diplodoc CLI and the Algolia extension (globally)**  
    ```bash
    npm install -g @diplodoc/cli
    npm install -g @diplodoc/algolia-extension
    ```
-   _(For more details on installation options, see the section [“Installation”](#ustanovka))_
+   _(For more details on installation options, see the section [“Installation”](#install))_
 
 3. **Configure search in `.yfm`**  
    In the root `.yfm`, specify:
@@ -33,7 +33,7 @@ title: Search with Algolia
      searchApiKey: <your search key>
      index: true
    ```
-   _(For an example with advanced settings, see [“Example of advanced settings”](#primer-rasshirennoj-nastrojki))_
+   _(For an example with advanced settings, see [“Example of advanced settings”](#advanced-example))_
 
 4. **Pass the keys and run the build**  
    For a secure build, pass the Write API Key via the CLI flag:
@@ -41,7 +41,7 @@ title: Search with Algolia
    yfm build -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia-extension" --api-key "your-write-key"
    ```
 
-### Algolia registration and settings
+### Algolia registration and settings {#service-signup}
 
 1. Register at [algolia.com](https://www.algolia.com/) (a VPN may be required).
 2. In the Algolia panel, create an application and obtain:
@@ -50,7 +50,7 @@ title: Search with Algolia
    - **Search API Key** ― key for client-side search
 3. The index name (`indexName`) can be left unset; by default it is `"docs"`.
 
-### Installation
+### Installation {#install}
 
 There are two ways to install the Algolia search extension:
 
@@ -103,7 +103,7 @@ Extension parameters can be set via the CLI, environment variables, and the `.yf
 
 {% endnote %}
 
-### Example of advanced configuration
+### Example of advanced configuration {#advanced-example}
 
 ```yaml
 search:

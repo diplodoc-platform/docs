@@ -31,7 +31,7 @@ Currently, using popups in code blocks is only possible if the code block does n
 
 ### Reuse {#reusing}
 
-Place the contents of the popups in a separate file under a fourth-level heading. Format the heading as an [anchor](base.md#anchor).
+Place the contents of the popups in a separate file under a fourth-level heading. Format the heading as an [anchor](base.md#headers).
 
 Include the popup text by applying `include`. [Learn more about using `include`](../syntax/includes.md).
 
