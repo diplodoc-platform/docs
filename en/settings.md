@@ -429,7 +429,7 @@ The `enabled`, `hiddenPolicy`, and `showAbsoluteUrls` fields control generation.
 || `hiddenPolicy` | When `true`, excludes pages hidden by the `hidden` parameter in `toc.yaml` and their descendants from the PDF. When `false`, includes them in the PDF. | `boolean`
 
 `true` ||
-|| `showAbsoluteUrls` {#pdf-show-absolute-urls} | Appends absolute HTTP(S) URLs in parentheses after link text in the PDF. If the link text already matches the URL, the URL is not repeated. [Usage example](guides/generate-pdf.md#absolute-urls). | `boolean`
+|| `showAbsoluteUrls` {#pdf-show-absolute-urls} | Appends absolute HTTP(S) URLs in parentheses after link text in the PDF. If the link text already matches the URL, the URL is not repeated. See [Link URLs in PDF](guides/generate-pdf.md#absolute-urls). | `boolean`
 
 `false` ||
 || `icon` | Download button icon: SVG markup, an absolute image URL, or a path relative to the project root starting with `_assets/`, such as `_assets/pdf-icon.svg`. | `string`

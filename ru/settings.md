@@ -467,7 +467,7 @@ feedback:
 || `hiddenPolicy` | При значении `true` исключает из PDF страницы, скрытые параметром `hidden` в `toc.yaml`, и их дочерние страницы. При `false` включает их в PDF. | `boolean`
 
 `true` ||
-|| `showAbsoluteUrls` {#pdf-show-absolute-urls} | Добавляет абсолютные HTTP(S)-адреса в скобках после текста ссылок в PDF. Если текст ссылки уже совпадает с адресом, адрес не дублируется. [Пример использования](guides/generate-pdf.md#absolute-urls). | `boolean`
+|| `showAbsoluteUrls` {#pdf-show-absolute-urls} | Добавляет абсолютные HTTP(S)-адреса в скобках после текста ссылок в PDF. Если текст ссылки уже совпадает с адресом, адрес не дублируется. Подробнее: [Адреса ссылок в PDF](guides/generate-pdf.md#absolute-urls). | `boolean`
 
 `false` ||
 || `icon` | Иконка кнопки скачивания: SVG-разметка, абсолютный URL изображения или путь от корня проекта, начинающийся с `_assets/`, например `_assets/pdf-icon.svg`. | `string`
