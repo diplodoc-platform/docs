@@ -429,6 +429,9 @@ Contains data preprocessing parameters for [generating a PDF version of the docu
 If set to ##false##, hidden pages will be displayed in the PDF version of the documentation. | `boolean`
 
 `true` ||
+|| `showAbsoluteUrls` {#pdf-show-absolute-urls} | Appends absolute HTTP(S) URLs in parentheses after link text in the PDF. If the link text already matches the URL, the URL is not repeated. [Usage example](guides/generate-pdf.md#absolute-urls). | `boolean`
+
+`false` ||
 |#
 
 ## Section `resources` {#resources}

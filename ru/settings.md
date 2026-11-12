@@ -467,6 +467,9 @@ feedback:
 При значении ##false## скрытые страницы будут отображаться в pdf-версии документации. | `boolean`
 
 `true` ||
+|| `showAbsoluteUrls` {#pdf-show-absolute-urls} | Добавляет абсолютные HTTP(S)-адреса в скобках после текста ссылок в PDF. Если текст ссылки уже совпадает с адресом, адрес не дублируется. [Пример использования](guides/generate-pdf.md#absolute-urls). | `boolean`
+
+`false` ||
 |#
 
 ## Секция `resources` {#resources}
