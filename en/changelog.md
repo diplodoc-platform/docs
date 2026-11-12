@@ -1,5 +1,5 @@
 ---
-noindex: true
+noIndex: true
 ---
 
 # Changelog
@@ -10,11 +10,11 @@ noindex: true
 
 #### 2.0.0
 
-- [New interface for includers](./project/toc.md#includers).
-- [Generic includer](./project/toc.md#includers-generic).
-- [Open API includer](./project/toc.md#includers-open-api).
-- [Unarchive includer](./project/toc.md#includers-unarchive).
-- [Source Docs includer](./project/toc.md#includers-source-docs).
+- [New interface for includers](./guides/includers.md).
+- [Generic includer](./guides/generic.md).
+- [Open API includer](./guides/openapi.md).
+- [Unarchive includer](./guides/unarchive.md).
+- [Source Docs includer](./guides/source-docs.md).
 
 ## November 2022
 
@@ -45,7 +45,7 @@ noindex: true
 
 #### 1.24.0
 
-- includers/openapi: added the ability to [auto-generate documentation from an Open API specification](./project/toc.md#open-api) and include it in the main documentation.
+- includers/openapi: added the ability to [auto-generate documentation from an Open API specification](./guides/openapi.md) and include it in the main documentation.
 
 ### yfm-transform
 
@@ -81,7 +81,7 @@ noindex: true
 
 - include/includers: the ability to integrate third-party formats into documentation.
 - include/includers/sourcedocs: the ability to integrate sourcedocs documentation into yfm documentation.
-  [Includers](./project/toc.md#includers)
+  [Includers](./guides/includers.md)
 
 ## June 2022
 
@@ -155,7 +155,7 @@ Updated the YFM version to 2.4. Added support for [monospaced font](./syntax/bas
 
 #### 1.16.0
 
-- Added table of contents inclusion modes: `root_merge`, `merge`, `link`. [For more details](./project/toc.md#include-mode).
+- Added table of contents inclusion modes: `root_merge`, `merge`, `link`. [For more details](./project/toc-includes.md#include-mode).
 
 - When including the table of contents in the `root_merge` and `merge` modes, the original path to the sources will be added
 to the `sourcePath` field of the meta information.
@@ -176,7 +176,7 @@ to the `sourcePath` field of the meta information.
 
 #### 1.15.0
 
-- Added the ability to include `toc.yaml` with its elements added to the same level of the table of contents. [For more details](./project/toc.md#include-as-pages).
+- Added the ability to include `toc.yaml` with its elements added to the same level of the table of contents.
 
 #### 1.14.0
 
