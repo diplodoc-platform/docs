@@ -15,14 +15,14 @@ title: Поиск с Algolia
 
 1. **Зарегистрируйтесь в Algolia**  
    Перейдите на [algolia.com](https://www.algolia.com/) и создайте аккаунт. После этого получите App ID, Write API Key и Search API Key для вашего приложения.  
-   _(Подробнее см. раздел [“Регистрация и настройки Algolia”](#registraciya-i-nastrojki-algolia))_
+   _(Подробнее см. раздел [“Регистрация и настройки Algolia”](#service-signup))_
 
 2. **Установите Diplodoc CLI и расширение Algolia (глобально)**  
    ```bash
    npm install -g @diplodoc/cli
    npm install -g @diplodoc/algolia-extension
    ```
-   _(Подробнее о вариантах установки — в разделе [“Установка”](#ustanovka))_
+   _(Подробнее о вариантах установки — в разделе [“Установка”](#install))_
 
 3. **Сконфигурируйте поиск в `.yfm`**  
    В корневом `.yfm` пропишите:
@@ -33,7 +33,7 @@ title: Поиск с Algolia
      searchApiKey: <ваш search key>
      index: true
    ```
-   _(Пример с расширенными настройками — см. [“Пример расширенной настройки”](#primer-rasshirennoj-nastrojki))_
+   _(Пример с расширенными настройками — см. [“Пример расширенной настройки”](#advanced-example))_
 
 4. **Передайте ключи и запустите сборку**  
    Для безопасной сборки передавайте Write API Key через флаг CLI:
@@ -41,7 +41,7 @@ title: Поиск с Algolia
    yfm build -i ./docs -o ./docs-out --extensions "$(npm root -g)/@diplodoc/algolia-extension" --api-key "your-write-key"
    ```
 
-### Регистрация и настройки Algolia
+### Регистрация и настройки Algolia {#service-signup}
 
 1. Зарегистрируйтесь на [algolia.com](https://www.algolia.com/) (может потребоваться VPN).
 2. В панели Algolia создайте приложение (Application) и получите:
@@ -50,7 +50,7 @@ title: Поиск с Algolia
    - **Search API Key** ― ключ для поиска на клиенте
 3. Имя индекса (`indexName`) можно не задавать, по умолчанию `"docs"`.
 
-### Установка
+### Установка {#install}
 
 Существует два варианта установки расширения для поиска Algolia:
 
@@ -103,7 +103,7 @@ npm start -- -i ./docs -o ./docs-out --extensions @diplodoc/algolia-extension --
 
 {% endnote %}
 
-### Пример расширенной настройки
+### Пример расширенной настройки {#advanced-example}
 
 ```yaml
 search:

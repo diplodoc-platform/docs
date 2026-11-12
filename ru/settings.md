@@ -596,7 +596,7 @@ resources:
 || `features.conditions` | Включает обработку синтаксиса [условных операторов](syntax/vars#conditions). | `boolean`
 
 `true` ||
-|| `features.substitutions` | Включает обработку синтаксиса [переменных](syntax/vars#substitutions). | `boolean`
+|| `features.substitutions` | Включает обработку синтаксиса [переменных](syntax/vars#subtitudes). | `boolean`
 
 `true` ||
 |#
