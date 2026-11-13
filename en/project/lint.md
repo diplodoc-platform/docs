@@ -136,7 +136,9 @@ Examples can be viewed [at the link](https://github.com/DavidAnson/markdownlint/
 
 When [including code from a file](../syntax/code.md#include-code), [Diplodoc CLI](../tools/docs/build.md), the documentation builder, emits warnings with the `Code directive:` prefix if a fragment marker is missing or the end marker occurs before the start marker. This prefix is also used for warnings about ignored unknown attributes, extra arguments, or duplicate directive attributes.
 
-The message level is `warn`. These messages do not have a dedicated `MD` or `YFM` code. The builder emits this diagnostic while processing the directive, so it cannot be configured through `log-levels` in `.yfmlint`; it is emitted even when linting is disabled. See the [directive description](../syntax/code.md#include-code) for the exact messages and builder behavior.
+Using the legacy `lines` parameter emits an informational `INFO` notice recommending [named regions](../syntax/code.md#code-regions). This notice does not fail `--strict` builds and is hidden by `--quiet`. Legacy marker fallback behavior is preserved; warnings about missing markers or ignored directive attributes still fail strict builds. Invalid named regions are errors and fail the build, rather than falling back to file boundaries.
+
+The message level for warnings is `warn`. These messages do not have a dedicated `MD` or `YFM` code. The builder emits this diagnostic while processing the directive, so it cannot be configured through `log-levels` in `.yfmlint`; it is emitted even when linting is disabled. See the [directive description](../syntax/code.md#include-code) for the exact messages and builder behavior.
 
 ## Where checks run {#check-implementation}
 
