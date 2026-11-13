@@ -169,16 +169,20 @@ Settings for generating [llms.txt and llms-full.txt files](./guides/llms.md) for
 ```yaml wrap
 llms:
   enabled: true
-  description: описание проекта
+  description: Product documentation.
+  details: Additional Markdown information.
   llmsFullMaxSize: 8M
   url: https://example.com/llms.txt
 ```
 
 Parameters:
-- `description` – `string` — a string with the project description, added to the beginning of the ##llms*.txt## files;
+- `description` – `string` — a short project summary at the beginning of ##llms.txt##;
+- `details` — `string` — additional Markdown paragraphs and lists after the summary and before the link sections in ##llms.txt##. Not added to ##llms-full.txt##;
 - `enabled` — `boolean` — enable file generation;
 - `llmsFullMaxSize` — `number`\|`string` — the maximum size of the ##llms-full.txt## file, accepts numbers and strings like ##1024##, ##512K##, ##8M##;
 - `url` – `string` — a link to the external ##llms.txt## file, which will be written into documentation articles.
+
+The `description`, `details`, and `url` fields can be [overridden independently at the root of `toc.yaml`](./guides/llms.md#toc-metadata). An omitted field uses the `.yfm` value; an empty string clears it. The `enabled` and `llmsFullMaxSize` fields remain project settings.
 
 | `object`
 
