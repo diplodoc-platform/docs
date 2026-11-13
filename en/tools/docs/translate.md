@@ -23,7 +23,7 @@ If translation is done by people in a Computer Assisted Translation (CAT) tool, 
 
 ## How translation works {#pipeline}
 
-Each document is split into segments - sentences, headings, table cells. YFM markup, HTML tags, Liquid constructs, and code (except comments and labels, see [Code and diagrams](#code)) are not sent for translation: they stay in the document "skeleton", and after translation the segments are put back in place. Repeated segments are translated once.
+Each document is split into segments - sentences, headings, table cells. YFM markup, HTML tags, and Liquid constructs are preserved during extraction and assembly. Which parts of code content are included for translation depends on the translation method and settings, see [Code and diagrams](#code). After translation, the segments are put back in place. Repeated segments are translated once.
 
 Files of each language live in their own language folder: sources, for example, in `ru/`, and the translation result in the target language folder, for example `en/`. You don't need to specify the language folder in paths - it is added automatically based on the `--source` and `--target` values.
 
@@ -49,7 +49,7 @@ Custom schemas can be plugged in with the `--schema` option of the [extract](tra
 
 ### Code and diagrams {#code}
 
-Only the parts of code blocks written for the reader go to translation. How much exactly is set by the `--code` option (the `code` key in the `translate` section of `.yfm`):
+When translating via Yandex Translate or an AI provider, the `--code` option controls how much of code blocks is included for translation (the `code` key in the `translate` section of `.yfm`):
 
 #|
 |:{header-rows="1"}
@@ -61,6 +61,8 @@ Only the parts of code blocks written for the reader go to translation. How much
 |#
 
 AI providers work in the `adaptive` mode by default, [Yandex Translate](translate-yandex.md) in the `precise` mode. The code itself is not translated in any mode except `all`.
+
+When [exporting XLIFF](translate-xliff.md), the `extract` subcommand exports the entire content of code blocks by default. Inline code is also included in segment text. The `--code` option does not change the extraction mode of `extract`; code can be [excluded directly in the markup](#content-filter).
 
 The mode of a single block is set in its info string:
 
@@ -280,7 +282,9 @@ The run report and the [quality assessment](translate-ai.md#judge) report are di
 
 ## Excluding content from translation {#content-filter}
 
-Parts of the content can be excluded from translation right in the markup.
+Parts of the content can be excluded from translation right in the markup. Backticks mark code formatting, but do not by themselves exclude its content from XLIFF.
+
+<!-- Encode directive colons so the build loader does not resolve the examples. -->
 
 * `translate=no` - for code blocks:
 
@@ -290,16 +294,15 @@ Parts of the content can be excluded from translation right in the markup.
   ```
   ````
 
-* `:no-translate[]` - for inline fragments (works in md and yaml files):
+* <code>&#58;no-translate[]</code> - for inline fragments (works in md and yaml files):
 
-  ```
-  Date format: :no-translate[ISO 8601] with an offset from :no-translate[UTC].
-  ```
+  <pre><code>Date format: &#58;no-translate[ISO 8601] with an offset from &#58;no-translate[UTC].
+  Specify &#58;no-translate[`NODE_1`].
+  </code></pre>
 
 * `:::no-translate` - for content blocks:
 
-  ```
-  :::no-translate
+  <pre><code>&#58;::no-translate
   This entire block will not be sent for translation.
-  :::
-  ```
+  &#58;::
+  </code></pre>

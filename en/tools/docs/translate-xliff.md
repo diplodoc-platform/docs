@@ -18,7 +18,19 @@ The `extract` and `compose` subcommands of the `{{PROGRAM}} translate` command i
 * `<file>.xliff` - translatable segments: sentences, headings, table cells;
 * `<file>.skl` - the skeleton: the source file with markers in place of the segments.
 
-Markup, code, and Liquid constructs stay in the skeleton and never reach the CAT tool - see [How translation works](translate.md#pipeline) for details.
+Markup and Liquid constructs are preserved in the skeleton or auxiliary XLIFF tags. Code block content is exported in full by default, and inline code is included in segment text between auxiliary tags. The tags preserve formatting, but do not exclude the text itself from translation.
+
+<!-- Encode directive colons so the build loader does not resolve the examples. -->
+To exclude a code block, add `translate=no` after the language. For an inline fragment, use <code>&#58;no-translate[]</code>, keeping backticks inside the brackets if needed:
+
+<pre><code>Specify &#58;no-translate[`NODE_1`].
+
+```plaintext translate=no
+export NODE_1="192.168.1.101"
+```
+</code></pre>
+
+Other ways to exclude content are described in [Excluding content from translation](translate.md#content-filter). The `--code` option applies to provider translation and does not change the extraction mode of the `extract` subcommand.
 
 Both files are saved under the target language path. For example, when translating from `ru` into `en`, the file `ru/guide/index.md` produces `en/guide/index.md.xliff` and `en/guide/index.md.skl`.
 
