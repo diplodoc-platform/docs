@@ -87,6 +87,35 @@ dark:
 
 > Смотри также: [Ajv схема конфигурации темизатора theme.yaml](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/theme-schema.json)
 
+### Подчёркивание и выделение в верхней навигации {#navigation-colors}
+
+Для выбранного пункта верхней навигации доступны две независимые настройки:
+
+Ключ в `theme.yaml` | CSS-переменная в `theme.css` | Назначение
+--- | --- | ---
+`navigation-active-underline` | `--dc-color-navigation-active-underline` | Цвет линии под выбранным пунктом верхней навигации.
+`navigation-dropdown-selected-background` | `--dc-color-navigation-dropdown-selected-background` | Цвет фона выбранного пункта в выпадающем меню навигации.
+
+Эти настройки не меняют общие цвета Gravity UI, включая `base-brand` и `base-selection`, и не задают цвет текста или состояния наведения. Параметр `tab-active` относится к табам в содержимом документа, а `mini-toc-active-border` — к линии активного пункта оглавления статьи.
+
+Пример `theme.yaml`:
+
+```yaml
+navigation-active-underline: '#0066cc'
+navigation-dropdown-selected-background: '#e6f0ff'
+
+light:
+    navigation-active-underline: '#0055aa'
+
+dark:
+    navigation-active-underline: '#80bfff'
+    navigation-dropdown-selected-background: '#253850'
+```
+
+Общие значения применяются к обеим темам; значения в `light` и `dark` переопределяют их для соответствующей темы. Если ключ не задан, CLI не выпускает для него CSS-переменную и сохраняется стандартное оформление.
+
+Для применения этих настроек нужны версия CLI и схема `@diplodoc/ajv`, поддерживающие новые ключи, а также интерфейс документации, использующий указанные CSS-переменные.
+
 ## Определение base-brand при сборке {#build}
 
 При отсутствии файла конфигурации цвет base-brand может быть задан с помощью ключа запуска `--theme`

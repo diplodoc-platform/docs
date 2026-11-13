@@ -83,6 +83,35 @@ Parameters | Description
 
 > See also: [Ajv schema of the themizer configuration theme.yaml](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/theme-schema.json)
 
+### Underline and selection in the top navigation {#navigation-colors}
+
+Two independent settings control the selected item in the top navigation:
+
+Key in `theme.yaml` | CSS variable in `theme.css` | Purpose
+--- | --- | ---
+`navigation-active-underline` | `--dc-color-navigation-active-underline` | Color of the line below the selected top navigation item.
+`navigation-dropdown-selected-background` | `--dc-color-navigation-dropdown-selected-background` | Background color of the selected item in the navigation dropdown.
+
+These settings leave shared Gravity UI colors, including `base-brand` and `base-selection`, unchanged. They do not set text or hover colors. The `tab-active` parameter controls tabs in document content, while `mini-toc-active-border` controls the active item line in the article table of contents.
+
+Example `theme.yaml`:
+
+```yaml
+navigation-active-underline: '#0066cc'
+navigation-dropdown-selected-background: '#e6f0ff'
+
+light:
+    navigation-active-underline: '#0055aa'
+
+dark:
+    navigation-active-underline: '#80bfff'
+    navigation-dropdown-selected-background: '#253850'
+```
+
+Global values apply to both themes; values in `light` and `dark` override them for the respective theme. If a key is omitted, the CLI does not emit its CSS variable and the default appearance is preserved.
+
+These settings require a CLI version and an `@diplodoc/ajv` schema that support the new keys, as well as a documentation interface that uses these CSS variables.
+
 ## Defining base-brand during build {#build}
 
 If there is no configuration file, the base-brand color can be set using the launch key `--theme`
