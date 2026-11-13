@@ -176,7 +176,53 @@ By default, the common indentation is removed from all non-empty lines. Add `kee
 {% code "./examples/main.ts" keep-indents %}
 ````
 
-Use the `lines` parameter to include part of a file by providing two substring markers separated by `-`. The lines containing the markers are excluded.
+### Named regions {#code-regions}
+
+To include a named region from a local file, append `#<region-name>` to its path:
+
+````markdown
+{% code "./examples/main.ts#auth" lang="typescript" %}
+````
+
+Mark the region boundaries in the source file using either convention:
+
+```typescript
+// #region auth
+connect();
+// #endregion auth
+```
+
+```typescript
+// [START auth]
+connect();
+// [END auth]
+```
+
+Both conventions can be used in the same file. Names are case-sensitive, must be unique within the file, and may contain ASCII letters, digits, `_`, `.`, `/`, and `-`. A bare `#endregion` closes the innermost open region. As in the source conventions, markers are recognized anywhere on a line without parsing the programming language; put them on dedicated comment lines because the entire marker line is removed.
+
+The keywords `#region` and `#endregion` must be followed by a space, tab, end of line or block-comment terminator (`*/` or `-->`). Text such as `#region-banner` and `#endregion-old` is not a marker and remains part of the selected code. Opening markers still require a region name.
+
+Nested regions are supported. Selecting an outer region includes the code of its inner regions, with all marker lines removed. Inner regions can also be selected independently. Surrounding blank lines are removed, while `keep-indents` controls the indentation of the selected code. Rendering options such as `showLineNumbers` and `wrap` remain available through `lang`.
+
+The build fails if the requested region is missing or empty, a name is duplicated, a marker is unmatched, or the boundaries violate nesting. The entire region structure of each file referenced by `#<region-name>` is validated. Diagnostics identify the documentation page, source file, region, and reason. For example:
+
+```text
+index.md: Code directive: region "auth" was not found while including "./examples/main.ts#auth".
+```
+
+Whole-file inclusion without a fragment and legacy `lines` inclusion do not perform these region checks. You cannot combine a named region and `lines` in one directive.
+
+#### If the file path contains `#` {#code-path-hash}
+
+File and directory names may contain literal `#` characters, for example `./C#/Program.cs`. By default, if the complete path names an existing file, that file is included. Only when the complete path does not name a file is the final `#` interpreted as the region separator: `./C#/Program#v2.cs#auth` selects `auth` from `./C#/Program#v2.cs`. If a file named `example.ts#auth` exists, it takes precedence over the `auth` region in `example.ts`. Legacy `lines` also works with literal `#` paths.
+
+A suffix after the final `#` containing `/./` or `/../` segments, including a trailing `/.` or `/..`, is always treated as a region name without probing a literal file path. These segments remain part of the region name. For example, `./example.ts#section/../other.ts` selects the region `section/../other.ts` from `example.ts`.
+
+### Legacy substring markers {#legacy-code-markers}
+
+The `lines` parameter is retained for compatibility and emits an informational `INFO` notice recommending `path#region`. This deprecation notice does not fail a `--strict` build and is hidden by `--quiet`. Other warnings, such as missing substring markers or ignored directive attributes, still fail strict builds. The parameter includes part of a file by providing two substring markers separated by `-`. The lines containing the markers are excluded.
+
+To migrate, replace arbitrary markers such as `[BEGIN auth]` / `[END auth]` with one of the supported region conventions, then replace `lines="..."` with `#auth` in the path. For the bracket convention, use `[START auth]`, not `[BEGIN auth]`. No removal date for `lines` has been set.
 
 For example, `examples/main.ts` contains:
 
