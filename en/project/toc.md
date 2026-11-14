@@ -30,16 +30,16 @@ items:
 
 At the root:
 
-* `title` — the document title. It is displayed in the table of contents above the list of all sections. You can hide it using the ##interface: toc-header## setting in the [.yfm file](../settings.md#toc-header).
-* `href` — the relative path to the file.
-* `items` — table of contents items.
-* `navigation` — a settings section for [extended navigation](./navigation.md).
+- `title` — the document title. It is displayed in the table of contents above the list of all sections. You can hide it using the ##interface: toc-header## setting in the [.yfm file](../settings.md#toc-header).
+- `href` — the relative path to the file.
+- `items` — table of contents items.
+- `navigation` — a settings section for [extended navigation](./navigation.md).
 
 Each table of contents item contains the following fields:
 
-* `name` — the name of a section or group of sections. For a section that links to an article, the field can be omitted, see [name from the article heading](#autoname).
-* `href` — the relative path to the file.
-* `items` — a list of nested items.
+- `name` — the name of a section or group of sections. For a section that links to an article, the field can be omitted, see [name from the article heading](#autoname).
+- `href` — the relative path to the file.
+- `items` — a list of nested items.
 
 All relative paths are calculated from the _location_ of the `toc.yaml` file in which they are specified.
 
@@ -68,14 +68,59 @@ To simplify working with large tables of contents and reuse blocks, [inserting t
 
 By default, all relative links in the table of contents open in the current browser tab, and all absolute links open in a new tab. This behavior can be changed using the `target` parameter:
 
-* `_self` — a link from the table of contents will open in the current tab,
-* `_blank` — a link from the table of contents will open in a new tab.
+- `_self` — a link from the table of contents will open in the current tab,
+- `_blank` — a link from the table of contents will open in a new tab.
 
 ```yaml
 - name: Абсолютная ссылка
   href: https://github.com
   target: _self
 ```
+
+## Agent-only pages {#agent-pages}
+
+Use the singular lowercase `visibility: agent` to make a page or section available
+only in the agent representation:
+
+```yaml
+items:
+  - name: Shared instructions
+    href: index.md
+  - name: Autonomous operations
+    visibility: agent
+    items:
+      - href: agent.md
+```
+
+The field also works at the TOC root and on TOC includes. It is inherited by all
+descendants and cannot be reset below an agent-only ancestor. Omit the field for
+shared content. Other values, including `agents` and `human`, are invalid. If the
+same document is referenced from both shared and agent-only sections, the build
+reports a conflict. Different languages have independent document paths.
+
+Agent-only pages do not appear in human navigation, search, sitemap, single-page,
+or PDF output. A human request to such a page returns 404 in Viewer. Authors and
+reviewers can preview it with `?audience=agent`; ordinary access checks still apply.
+Put links to agent-only pages inside an agent visibility block so that the human
+representation does not contain broken links. Page visibility and
+`:::visibility human` / `:::visibility agent` blocks apply together. The sources
+retain both block variants for authors and translation.
+
+With LLMS generation enabled, human `llms.txt` and `llms-full.txt` omit these pages.
+Agent artifacts include them. In Viewer, request `llms.txt?audience=agent` or
+`llms-full.txt?audience=agent`. Machine API, Markdown companions and Docs MCP
+`read_toc` / `read_doc` also select the agent representation with `audience=agent`.
+The default is `human`; reuse the selected audience when following links or
+continuing a paginated read.
+
+Static HTML hosting does not select content by query parameters: agent HTML pages
+are omitted. Its generated `llms-agent.txt` links to filtered `.agent.md` and
+`.agent.yaml` source artifacts, with `llms-full-agent.txt` as the full agent corpus.
+Links inside these artifacts also select the agent representation, including links
+from YAML pages. Linked pages excluded by `hidden` or `noIndex` receive individual
+agent artifacts without being added to LLMS indexes or full corpora.
+Rebuild the documentation with the updated CLI and use matching Viewer/MCP code
+before relying on the new field. Audience selection does not replace authorization.
 
 ## Section visibility conditions {#when}
 
