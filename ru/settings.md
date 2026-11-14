@@ -174,15 +174,19 @@ extensions:
 llms:
   enabled: true
   description: описание проекта
+  details: Дополнительные сведения в формате Markdown.
   llmsFullMaxSize: 8M
   url: https://example.com/llms.txt
 ```
 
 Параметры:
-- `description` – `string` — строка с описанием проекта, добавляется в начало файлов ##llms*.txt##;
+- `description` – `string` — краткое описание проекта в начале ##llms.txt##;
+- `details` — `string` — дополнительные Markdown-абзацы и списки после описания, перед разделами со ссылками в ##llms.txt##. В ##llms-full.txt## не добавляются;
 - `enabled` — `boolean` — включить генерацию файлов;
 - `llmsFullMaxSize` — `number`\|`string` — максимальный размер файла ##llms-full.txt##, принимает числа и строки вида ##1024##, ##512K##, ##8M##;
 - `url` – `string` — ссылка на внешний файл ##llms.txt##, которая будет прописываться в статьях документации.
+
+Поля `description`, `details` и `url` можно независимо [переопределить в корне `toc.yaml`](./guides/llms.md#toc-metadata). Отсутствующее поле использует значение из `.yfm`, а пустая строка отменяет его. Поля `enabled` и `llmsFullMaxSize` остаются настройками проекта.
 
 | `object`
 

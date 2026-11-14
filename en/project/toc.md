@@ -34,6 +34,7 @@ At the root:
 * `href` — the relative path to the file.
 * `items` — table of contents items.
 * `navigation` — a settings section for [extended navigation](./navigation.md).
+* `llms` — [llms.txt settings for this TOC](../guides/llms.md#toc-metadata): the string fields `description`, `details`, and `url`, which override `.yfm` defaults.
 
 Each table of contents item contains the following fields:
 
