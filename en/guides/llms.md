@@ -40,6 +40,40 @@ The link text for an article in ##llms.txt## is selected from the first non-empt
 
 Values containing only whitespace are skipped. If none of these values is set, the article's metadata `description` is used, followed by the path from the TOC item's `href`.
 
+## Configuring UTF-8 when publishing {#utf-8}
+
+When publishing ##llms.txt## and ##llms-full.txt##, configure the web server to explicitly declare UTF-8 in the `Content-Type` HTTP header. Otherwise, a client may misidentify the encoding and display Cyrillic and other non-ASCII characters incorrectly.
+
+The encoding of a file on disk and the encoding declared in an HTTP response are separate things. For example, on macOS, `file -I llms.txt` reporting `text/plain; charset=utf-8` confirms the file encoding, but does not confirm that the server response includes `charset=utf-8`.
+
+If nginx serves your documentation, add `charset utf-8;` to the existing `server` or `location` block that serves the documentation root. For example, for documentation at `https://example.com/docs/`:
+
+```nginx
+location /docs/ {
+    alias /var/www/documentation/;
+    charset utf-8;
+}
+```
+
+Here, `/var/www/documentation/` is the directory containing the build output. Replace the path and the `/docs/` URL prefix with your own values. The setting must apply to both files, including those in nested sections with a separate `toc.yaml`. If a more specific `location` block serves them, check its configuration as well.
+
+The expected MIME type for `.txt` files is `text/plain`. By default, it is included in [`charset_types`](https://nginx.org/en/docs/http/ngx_http_charset_module.html#charset_types), the list of types to which nginx applies the `charset` setting. If you override MIME types or `charset_types`, make sure the setting applies to responses serving these files.
+
+After checking the configuration and reloading nginx, check the headers of both files, replacing the domain and path with your documentation URL:
+
+```bash
+curl -I https://example.com/docs/llms.txt
+curl -I https://example.com/docs/llms-full.txt
+```
+
+Both responses should include this header:
+
+```http
+Content-Type: text/plain; charset=utf-8
+```
+
+Open both files in a browser and check that Cyrillic characters are displayed correctly.
+
 ## Limiting the size of llms-full.txt {#llms-full-max-size}
 
 For projects with many articles, the ##llms-full.txt## file may become too large for AI systems to read. To set the maximum allowed size of the generated file, you can specify a limit in the [`llms: llmsFullMaxSize`](../settings.md#llms) parameter in `.yfm`.
