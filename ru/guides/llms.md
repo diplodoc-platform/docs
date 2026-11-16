@@ -74,6 +74,27 @@ Content-Type: text/plain; charset=utf-8
 
 Откройте оба файла в браузере и убедитесь, что кириллица отображается корректно.
 
+### Markdown-компаньоны
+
+Эта настройка нужна и для Markdown-компаньонов, включенных через [`ai.mdCompanions`](../settings.md#ai-md-companions). Для них ожидается заголовок `Content-Type: text/markdown; charset=utf-8`.
+
+Одной директивы `charset utf-8;` может быть недостаточно: стандартный файл `mime.types` nginx не содержит сопоставления для `.md`, а `text/markdown` не входит в стандартный список `charset_types`.
+
+Если сопоставление еще не задано, добавьте его в блок `types` используемого файла `mime.types`, сохранив остальные типы:
+
+```nginx
+text/markdown md;
+```
+
+В блоке, обслуживающем документацию, добавьте `text/markdown` к используемому списку `charset_types`. Например, следующий список сохраняет стандартные типы и добавляет Markdown (`text/html` обрабатывается всегда):
+
+```nginx
+charset_types text/xml text/plain text/vnd.wap.wml
+              application/javascript application/rss+xml text/markdown;
+```
+
+После перезагрузки nginx проверьте заголовок конкретной страницы, например `curl -I https://example.com/docs/ru/guides/llms.md`, и отображение кириллицы в ее Markdown-версии. URL должен соответствовать файлу из вашей сборки.
+
 ## Ограничение размера llms-full.txt {#llms-full-max-size}
 
 Для проектов с множеством статей файл ##llms-full.txt## может получиться слишком большим для чтения ИИ-системами. Чтобы задать предельно допустимый размер создаваемого файла, можно указать ограничение в параметре [##llms.llmsFullMaxSize##](../settings.md#llms) в `.yfm`.
