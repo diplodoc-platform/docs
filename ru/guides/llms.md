@@ -44,8 +44,6 @@ For more comprehensive documentation, see [llms-full.txt](llms-full.txt)
 
 При публикации ##llms.txt## и ##llms-full.txt## настройте веб-сервер так, чтобы он явно указывал UTF-8 в HTTP-заголовке `Content-Type`. Иначе клиент может неверно определить кодировку и некорректно отобразить кириллицу и другие не-ASCII символы.
 
-Кодировка файла на диске и кодировка, объявленная в HTTP-ответе, — разные вещи. Например, в macOS вывод `file -I llms.txt` со значением `text/plain; charset=utf-8` подтверждает кодировку файла, но не наличие `charset=utf-8` в ответе сервера.
-
 Если документацию раздает nginx, добавьте `charset utf-8;` в существующий блок `server` или `location`, который обслуживает корень документации. Например, для документации по адресу `https://example.com/docs/`:
 
 ```nginx
@@ -73,27 +71,6 @@ Content-Type: text/plain; charset=utf-8
 ```
 
 Откройте оба файла в браузере и убедитесь, что кириллица отображается корректно.
-
-### Markdown-компаньоны
-
-Эта настройка нужна и для Markdown-компаньонов, включенных через [`ai.mdCompanions`](../settings.md#ai-md-companions). Для них ожидается заголовок `Content-Type: text/markdown; charset=utf-8`.
-
-Одной директивы `charset utf-8;` может быть недостаточно: стандартный файл `mime.types` nginx не содержит сопоставления для `.md`, а `text/markdown` не входит в стандартный список `charset_types`.
-
-Если сопоставление еще не задано, добавьте его в блок `types` используемого файла `mime.types`, сохранив остальные типы:
-
-```nginx
-text/markdown md;
-```
-
-В блоке, обслуживающем документацию, добавьте `text/markdown` к используемому списку `charset_types`. Например, следующий список сохраняет стандартные типы и добавляет Markdown (`text/html` обрабатывается всегда):
-
-```nginx
-charset_types text/xml text/plain text/vnd.wap.wml
-              application/javascript application/rss+xml text/markdown;
-```
-
-После перезагрузки nginx проверьте заголовок конкретной страницы, например `curl -I https://example.com/docs/ru/guides/llms.md`, и отображение кириллицы в ее Markdown-версии. URL должен соответствовать файлу из вашей сборки.
 
 ## Ограничение размера llms-full.txt {#llms-full-max-size}
 

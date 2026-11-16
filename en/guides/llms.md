@@ -44,8 +44,6 @@ Values containing only whitespace are skipped. If none of these values is set, t
 
 When publishing ##llms.txt## and ##llms-full.txt##, configure the web server to explicitly declare UTF-8 in the `Content-Type` HTTP header. Otherwise, a client may misidentify the encoding and display Cyrillic and other non-ASCII characters incorrectly.
 
-The encoding of a file on disk and the encoding declared in an HTTP response are separate things. For example, on macOS, `file -I llms.txt` reporting `text/plain; charset=utf-8` confirms the file encoding, but does not confirm that the server response includes `charset=utf-8`.
-
 If nginx serves your documentation, add `charset utf-8;` to the existing `server` or `location` block that serves the documentation root. For example, for documentation at `https://example.com/docs/`:
 
 ```nginx
@@ -73,27 +71,6 @@ Content-Type: text/plain; charset=utf-8
 ```
 
 Open both files in a browser and check that Cyrillic characters are displayed correctly.
-
-### Markdown companions
-
-This setting also applies to Markdown companions enabled with [`ai.mdCompanions`](../settings.md#ai-md-companions). Their expected header is `Content-Type: text/markdown; charset=utf-8`.
-
-The `charset utf-8;` directive alone may be insufficient: the standard nginx `mime.types` file does not map `.md` files, and `text/markdown` is not in the default `charset_types` list.
-
-If the mapping is not already defined, add it to the `types` block in your `mime.types` file, preserving the other types:
-
-```nginx
-text/markdown md;
-```
-
-In the block serving the documentation, add `text/markdown` to your `charset_types` list. For example, the following list preserves the default types and adds Markdown (`text/html` is always processed):
-
-```nginx
-charset_types text/xml text/plain text/vnd.wap.wml
-              application/javascript application/rss+xml text/markdown;
-```
-
-After reloading nginx, check the header of a specific page, for example with `curl -I https://example.com/docs/en/guides/llms.md`, and check Cyrillic characters in its Markdown version. The URL must match a file in your build.
 
 ## Limiting the size of llms-full.txt {#llms-full-max-size}
 

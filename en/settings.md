@@ -252,8 +252,6 @@ Requires [connecting the built-in extension](#extensions) `github-vcs`.
 - links in [##llms.txt##](./guides/llms.md) files point to Markdown versions of articles instead of HTML versions;
 - the **Copy as Markdown** and **View as Markdown** actions are added to the interface.
 
-When publishing static files, [configure the MIME type and UTF-8 in your web server](./guides/llms.md#utf-8) so that Markdown companions display Cyrillic characters correctly.
-
 | `boolean`
 
 `false` ||
