@@ -1,0 +1,62 @@
+schema_version: 1
+scope:
+  product: Diplodoc CLI
+  interface: Инициализация проекта, параметры сборки и подготовка Markdown
+  lang: ru
+  audience: human
+findings:
+  - id: init-force-removes-directory
+    status: open
+    documentation:
+      - 'ru/tools/docs/init.md:14'
+    product:
+      - 'src/commands/init/config.ts:7'
+      - 'src/commands/init/index.ts:74'
+      - 'src/commands/init/index.ts:148'
+      - 'src/commands/init/index.ts:166'
+    check: Проследить обычную инициализацию в непустом каталоге с флагом --force и без него.
+    expected: Указать, что при записи --force рекурсивно удаляет целевой каталог перед созданием файлов проекта, а без флага обычная инициализация в непустом каталоге завершается ошибкой. Для сохранения файлов предложить выбрать пустой каталог через --output.
+    observed: Описание говорит о перезаписи содержимого. При обычной инициализации без --force функция ensureEmpty отклоняет непустой каталог. С флагом writeAll сначала удаляет каталог целиком, включая файлы, отсутствующие в шаблоне. В режиме --dry-run запись пропускается.
+    checked_against:
+      documentation: 6f11f1f6c782f4739d04e2548e4d901f7e5f5754
+      product: e48bbdd94a21ca8f8275dba1fae9e5cc74dc90d9
+  - id: build-md-substitutes-by-default
+    status: open
+    documentation:
+      - 'ru/tools/docs/build.md:35'
+      - 'ru/tools/docs/settings.md:136'
+    product:
+      - 'src/commands/build/features/templating/index.ts:62'
+      - 'src/commands/build/features/templating/index.ts:87'
+      - 'src/commands/build/features/legacy/config.ts:12'
+      - 'src/commands/build/features/legacy/index.ts:65'
+      - 'src/commands/build/features/output-md/renderer.ts:82'
+      - 'src/commands/build/features/output-md/collect.ts:246'
+      - 'src/core/markdown/MarkdownService.ts:526'
+      - 'src/core/markdown/loader.ts:70'
+      - 'src/core/markdown/loader/template-content.ts:5'
+    check: Сверить утверждение о подстановке переменных при сборке в Markdown без флагов или настроек, меняющих шаблонизацию.
+    expected: Для текста статей подстановка включена по умолчанию. Чтобы оставить выражения переменных без подстановки, можно указать --no-template-vars.
+    observed: Статья о сборке указывает apply-presets как условие подстановки, хотя таблица параметров прямо указывает, что обработка переменных включена по умолчанию. CLI включает substitutions по умолчанию и передаёт это значение обработчику Markdown. Устаревший --apply-presets меняет настройку при явном задании. Без флагов и настроек, меняющих шаблонизацию, известные значения переменных в тексте статей попадают в выходной Markdown.
+    checked_against:
+      documentation: 6f11f1f6c782f4739d04e2548e4d901f7e5f5754
+      product: e48bbdd94a21ca8f8275dba1fae9e5cc74dc90d9
+  - id: content-raw-truncates-source
+    status: open
+    documentation:
+      - 'ru/tools/docs/content.md:64'
+    product:
+      - 'src/commands/content/config.ts:25'
+      - 'src/commands/content/config-resolve.ts:51'
+      - 'src/commands/content/index.ts:121'
+      - 'src/commands/content/index.ts:147'
+      - 'src/commands/build/features/output-md/collect.ts:246'
+      - 'src/core/markdown/MarkdownService.ts:373'
+      - 'src/core/markdown/MarkdownService.ts:152'
+      - 'src/core/run/index.ts:89'
+    check: Сопоставить входной путь и цель перенаправления stdout и проследить момент чтения входного файла.
+    expected: В примере перенаправлять stdout в отдельный файл, например page.prepared.md, чтобы сохранить исходный page.md.
+    observed: В примере документации и в справке CLI оба пути указывают на page.md в текущем каталоге. Оболочка обнуляет исходник при открытии файла для перенаправления stdout до запуска CLI. Обработчик Markdown затем читает уже обнулённый файл.
+    checked_against:
+      documentation: 6f11f1f6c782f4739d04e2548e4d901f7e5f5754
+      product: e48bbdd94a21ca8f8275dba1fae9e5cc74dc90d9

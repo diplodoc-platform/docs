@@ -231,6 +231,8 @@ items:
         items:
           - name: Пользовательские стили в PDF
             href: guides/pdf-styles.md
+      - name: Создание скриншотов и видео
+        href: guides/screencaster.md
   - name: Инструменты и библиотеки
     labeled: true
     items:

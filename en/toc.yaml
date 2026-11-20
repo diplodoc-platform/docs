@@ -226,6 +226,8 @@ items:
         href: style/theme.md
       - name: Creating PDF from documentation
         href: guides/generate-pdf.md
+      - name: Creating screenshots and videos
+        href: guides/screencaster.md
   - name: Tools and libraries
     labeled: true
     items:
