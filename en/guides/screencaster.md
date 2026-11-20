@@ -2,18 +2,18 @@
 
 The [@diplodoc/screencaster](https://github.com/diplodoc-platform/screencaster) package creates screenshots and videos for documentation. It opens a page in Chromium, performs actions in the interface, and saves the result.
 
-An agent with MCP support controls Screencaster. You describe what to show, and the agent finds the page elements and follows the scenario. The package also provides a TypeScript API for use in your own application.
+An agent with MCP (Model Context Protocol) support controls Screencaster. You describe what to show, and the agent finds the page elements and follows the scenario. The package also provides a TypeScript API for use in your own application.
 
 ## Features {#features}
 
 Use Screencaster to:
 
-- capture the viewport, a full page, or an individual element,
-- highlight an element in a screenshot or video,
-- record a workflow and shorten pauses between actions,
-- add narration and captions,
-- cut a clip or export it as a GIF,
-- crop screenshots, combine images, and prepare YFM markup for illustrations.
+- Capture the viewport, a full page, or an individual element.
+- Highlight an element in a screenshot or video.
+- Record a workflow and shorten pauses between actions.
+- Add narration and captions.
+- Cut a clip or export it as a GIF.
+- Crop screenshots, combine images, and prepare YFM markup for illustrations.
 
 The original recording is kept alongside the processed files. You can create another version of the video without repeating the browser actions.
 
@@ -170,7 +170,7 @@ Connect a TTS provider to add narration. The package includes an adapter for [Ya
     chmod 600 run.config.json .env
     ```
 
-Write a short line of narration for each step. The agent uses these lines in the plan's `actionText` fields. After capture finishes, Screencaster adds narration to successfully completed steps. Setting `captions: true` also creates a WebVTT captions file.
+Write a short line of narration for each step. The agent uses these lines in the plan's `actionText` fields. After capture finishes, Screencaster adds narration to successfully completed steps. Setting `captions: true` also creates a WebVTT captions file. Attach this file to the player separately. Captions are not burned into the video frames.
 
 If a line is longer than the available segment, Screencaster can hold a frame for up to `maxHoldSeconds`. For a short video, shorten the line so the viewer can hear it and follow the action.
 
