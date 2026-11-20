@@ -133,7 +133,7 @@ npx @diplodoc/screencaster --config ./run.config.json
 
 ## Озвучка и субтитры {#narration}
 
-Для озвучки подключите TTS-провайдер. В пакет входит адаптер [Yandex SpeechKit](https://yandex.cloud/ru/docs/speechkit/tts/).
+Для озвучки подключите сервис синтеза речи (TTS, text-to-speech). В пакет входит адаптер [Яндекс SpeechKit](https://yandex.cloud/ru/docs/speechkit/tts/).
 
 1. Создайте рядом с `run.config.json` файл `.env` и сохраните в нём API-ключ:
 

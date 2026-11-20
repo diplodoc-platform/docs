@@ -128,7 +128,7 @@ Before publishing, check that the recording shows the intended result, the text 
 
 ## Narration and captions {#narration}
 
-Connect a TTS provider to add narration. The package includes an adapter for [Yandex SpeechKit](https://yandex.cloud/en/docs/speechkit/tts/).
+Connect a text-to-speech (TTS) provider to add narration. The package includes an adapter for [Yandex SpeechKit](https://yandex.cloud/en/docs/speechkit/tts/).
 
 1. Create an `.env` file next to `run.config.json` and add your API key:
 
