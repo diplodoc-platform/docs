@@ -170,7 +170,9 @@ Connect a TTS provider to add narration. The package includes an adapter for [Ya
     chmod 600 run.config.json .env
     ```
 
-Write a short line of narration for each step. The agent uses these lines in the plan's `actionText` fields. After capture finishes, Screencaster adds narration to successfully completed steps. Setting `captions: true` also creates a WebVTT captions file. Attach this file to the player separately. Captions are not burned into the video frames.
+Write a short line of narration for each step. The agent uses these lines in the plan's `actionText` fields. After capture finishes, Screencaster adds narration to successfully completed steps.
+
+Setting `captions: true` also creates a WebVTT captions file. Attach this file to the player separately. Captions are not burned into the video frames.
 
 If a line is longer than the available segment, Screencaster can hold a frame for up to `maxHoldSeconds`. For a short video, shorten the line so the viewer can hear it and follow the action.
 
