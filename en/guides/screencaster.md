@@ -188,6 +188,6 @@ Screenshots have a separate processing workflow for cropping, highlighting, comp
 
 The [tabs article](../syntax/interactive-elements/tabs.md) uses an example with two sections, a list, and bold text. You can use it to record a Playground walkthrough.
 
-[Open the example in the Playground](https://diplodoc-platform.github.io/transform/?input=%7B%2525%20list%20tabs%20%2525%7D%0A%0A-%20Tab%201%20title%0A%0A%20%20Tab%201%20text.%0A%0A%20%20*%20You%20can%20use%20lists.%0A%20%20*%20And%20**other**%20markup.%0A%0A-%20Tab%202%20title%0A%0A%20%20Tab%202%20text.%0A%0A%7B%2525%20endlist%20%2525%7D). To record a similar video, give the agent this instruction:
+[Open the example in the Playground](https://diplodoc-platform.github.io/transform/?input=%7B%2525%20list%20tabs%20%2525%7D%0A%0A-%20Tab%201%20title%0A%0A%20%20Tab%201%20text.%0A%0A%20%20*%20You%20can%20use%20lists.%0A%20%20*%20And%20**other**%20markup.%0A%0A-%20Tab%202%20title%0A%0A%20%20Tab%202%20text.%0A%0A%7B%2525%20endlist%20%2525%7D). To record a similar video, give the agent the example link above and the following instruction:
 
 > Open the tabs example in the Diplodoc Playground and record a short video. Check the rendered result, switch to the second tab, and return to the first. Add narration and captions. Shorten agent waits in the final video, keeping the tab changes and time to read the result. Finish capture and return the output paths.

@@ -38,9 +38,9 @@ Use tabs for mutually exclusive sections. For example, to separate instructions 
 
 {% endlist %}
 
-<video controls playsinline preload="metadata" poster="en/_assets/screencaster/tabs-en.png" style="width:100%">
-  <source src="en/_assets/screencaster/tabs-en.mp4" type="video/mp4" />
-  <track kind="subtitles" src="en/_assets/screencaster/tabs-en.vtt" srclang="en" label="English" default />
+<video controls crossorigin="anonymous" playsinline preload="metadata" poster="https://raw.githubusercontent.com/diplodoc-platform/docs/29c0770fedbbef75333cff1b6cc04fd87ad2704c/en/_assets/screencaster/tabs-en.png" style="width:100%">
+  <source src="https://raw.githubusercontent.com/diplodoc-platform/docs/29c0770fedbbef75333cff1b6cc04fd87ad2704c/en/_assets/screencaster/tabs-en.mp4" type="video/mp4" />
+  <track kind="subtitles" src="https://raw.githubusercontent.com/diplodoc-platform/docs/29c0770fedbbef75333cff1b6cc04fd87ad2704c/en/_assets/screencaster/tabs-en.vtt" srclang="en" label="English" default />
 </video>
 
 Video generated with [Diplodoc Screencaster](../../guides/screencaster.md).
