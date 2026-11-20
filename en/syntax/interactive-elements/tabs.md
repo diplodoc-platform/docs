@@ -7,16 +7,16 @@ Use tabs for mutually exclusive sections. For example, to separate instructions 
 ```markdown
 {% list tabs %}
 
-- Название таба 1
+- Tab 1 title
 
-  Текст таба 1.
+  Tab 1 text.
 
-  * Можно использовать списки.
-  * И **другую** разметку.
+  * You can use lists.
+  * And **other** markup.
 
-- Название таба 2
+- Tab 2 title
 
-  Текст таба 2.
+  Tab 2 text.
 
 {% endlist %}
 ```
@@ -37,5 +37,12 @@ Use tabs for mutually exclusive sections. For example, to separate instructions 
   Tab 2 text.
 
 {% endlist %}
+
+<video controls crossorigin="anonymous" playsinline preload="metadata" poster="https://raw.githubusercontent.com/diplodoc-platform/docs/29c0770fedbbef75333cff1b6cc04fd87ad2704c/en/_assets/screencaster/tabs-en.png" style="width:100%">
+  <source src="https://raw.githubusercontent.com/diplodoc-platform/docs/29c0770fedbbef75333cff1b6cc04fd87ad2704c/en/_assets/screencaster/tabs-en.mp4" type="video/mp4" />
+  <track kind="subtitles" src="https://raw.githubusercontent.com/diplodoc-platform/docs/29c0770fedbbef75333cff1b6cc04fd87ad2704c/en/_assets/screencaster/tabs-en.vtt" srclang="en" label="English" default />
+</video>
+
+Video generated with [Diplodoc Screencaster](../../guides/screencaster.md).
 
 {% include [common-params](../../_includes/common-params-note.md) %}

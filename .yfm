@@ -36,6 +36,10 @@ resources:
     - "img-src":
         - "data:"
         - "https://storage.yandexcloud.net"
+        - "https://raw.githubusercontent.com"
+    - "media-src":
+        - "'self'"
+        - "https://raw.githubusercontent.com"
     - "style-src":
         - "fonts.googleapis.com"
 
