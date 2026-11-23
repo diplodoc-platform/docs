@@ -36,7 +36,7 @@
 
 ### Создание счетчика метрики {#metric-counter}
 
-1. Создайте счетчик метрики в соответствии с [инструкцией](https://yandex.ru/support/metrica/general/).
+1. Создайте счетчик метрики в соответствии с [инструкцией](https://yandex.ru/support/metrica/ru/general/creating-counter).
 1. В настройках счетчика [включите опцию](https://yandex.ru/support/metrica/publishers/about.html#about) «Контентная аналитика» и укажите тип разметки `OpenGraph`:
 
    ![](../_images/opengraph.png)
