@@ -191,6 +191,8 @@ The `description`, `details`, and `url` fields can be [overridden independently 
 
 Works when the [##vcs##](#vcs) parameter is enabled.
 
+A valid [manual `updatedAt` date](./project/meta.md#updated-at) is displayed regardless of `vcs` and `mtimes`. The build does not calculate that article's date from repository history.
+
 Also, the modification date is automatically added to the page metadata ##last-modified## and ##article:modified_time##.
 
 | `boolean`
