@@ -1,6 +1,6 @@
 # Article metadata
 
-Metadata is markup elements used to store settings for a specific article, SEO information, or document author details in the source text. They are not displayed in the assembled article but can affect its assembly.
+Metadata stores article settings, SEO information, and author details in the source text. Some fields, such as the modification date, are displayed in the built article.
 
 In md files, metadata is added in YAML format at the beginning of the file (this part of the file is called ##frontmatter##).
 
@@ -150,6 +150,19 @@ tags:
 || `title` | Meta title of the page.
 
 Specified in `<meta name="title" content="..."/>`. | `string`
+
+— ||
+|| `updatedAt` {#updated-at} | Article modification date set by the author.
+
+```yaml
+---
+updatedAt: '2026-11-12'
+---
+```
+
+Use a quoted date in `YYYY-MM-DD` format. No time is needed: every reader sees the same Moscow calendar day.
+
+A valid manual date is displayed regardless of the `vcs` and `mtimes` settings. When it is set, the build does not calculate this article's date from repository history. If it is not set, the usual [repository date settings](../settings.md#vcs-mtimes) apply. The build warns about invalid dates and ignores them. | `string`
 
 — ||
 
