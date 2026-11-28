@@ -170,3 +170,37 @@ tags:
 |#
 
 > Смотри также: [Ajv схема метаданных статьи](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/frontmatter-schema.json)
+
+## Сниппеты OpenGraph {#opengraph}
+
+Метаданные OpenGraph определяют, как страница выглядит при публикации в социальных сетях и в результатах поиска: её заголовок, описание, изображение для предпросмотра, тип и канонический URL. Они добавляются через параметр `metadata`, при этом для полей OpenGraph используется `property` (а не `name`).
+
+Пример:
+
+```yaml
+---
+metadata:
+  - property: og:title
+    content: Работа с таблицами
+  - property: og:description
+    content: Как создавать и форматировать таблицы в Diplodoc.
+  - property: og:image
+    content: https://example.com/images/tables.png
+  - property: og:type
+    content: article
+  - property: og:url
+    content: https://example.com/docs/tables
+---
+```
+
+В результате в head страницы будут сгенерированы следующие теги:
+
+```html
+<meta property="og:title" content="Работа с таблицами"/>
+<meta property="og:description" content="Как создавать и форматировать таблицы в Diplodoc."/>
+<meta property="og:image" content="https://example.com/images/tables.png"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://example.com/docs/tables"/>
+```
+
+О сценарии использования для Яндекс.Метрики, где та же разметка OpenGraph используется для контентной аналитики, см. [Добавление метаинформации](../guides/content-analytics.md#meta-information) в руководстве по организации контентной аналитики.
