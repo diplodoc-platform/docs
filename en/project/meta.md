@@ -156,3 +156,37 @@ Specified in `<meta name="title" content="..."/>`. | `string`
 |#
 
 > See also: [Ajv schema of article metadata](https://raw.githubusercontent.com/diplodoc-platform/ajv/refs/heads/master/src/json/frontmatter-schema.json)
+
+## OpenGraph snippets {#opengraph}
+
+OpenGraph metadata controls how a page looks when it is shared on social media and in search results: its title, description, preview image, type and canonical URL. Add it with the `metadata` parameter, using `property` for OpenGraph fields (not `name`).
+
+Example:
+
+```yaml
+---
+metadata:
+  - property: og:title
+    content: Working with tables
+  - property: og:description
+    content: How to create and format tables in Diplodoc.
+  - property: og:image
+    content: https://example.com/images/tables.png
+  - property: og:type
+    content: article
+  - property: og:url
+    content: https://example.com/docs/tables
+---
+```
+
+This generates the following tags in the page head:
+
+```html
+<meta property="og:title" content="Working with tables"/>
+<meta property="og:description" content="How to create and format tables in Diplodoc."/>
+<meta property="og:image" content="https://example.com/images/tables.png"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://example.com/docs/tables"/>
+```
+
+For the Yandex Metrica use case, where the same OpenGraph markup feeds content analytics, see [Adding meta information](../guides/content-analytics.md#meta-information) in the guide on organizing content analytics.
